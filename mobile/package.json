@@ -3,16 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.5",
+    "@storybook/addon-links": "^3.4.5",
+    "@storybook/addons": "^3.4.5",
+    "@storybook/react-native": "^3.4.5",
+    "babel-core": "^6.26.3",
     "babel-preset-react-native-stage-0": "^1.0.1",
+    "babel-runtime": "^6.26.0",
     "jest": "^23.0.0",
     "jest-react-native": "^18.0.0",
+    "prop-types": "^15.6.1",
+    "react-dom": "16.3.1",
+    "react-native-storybook-loader": "^1.8.0",
     "react-test-renderer": "16.3.1"
   },
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "jest"
+    "test": "jest",
+    "storybook":
+      "rnstl --searchDir ./storybook ./ui --pattern \"**/*.stories.js\" && storybook start -p 7007"
   },
   "jest": {
     "preset": "react-native"
