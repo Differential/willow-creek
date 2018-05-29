@@ -1,9 +1,12 @@
-## Acceptance Criteria
+## User Story
 
-- [ ] It should [SPEC_DETAIL]
+As a `<type of user>` _(who)_ I want to `<perform an action>` _(what)_ so that I can `<achieve a goal>` _(why)_.
 
-## Context
+#### Problem Details _(Optional)_
 
-Given [CONTEXT] when [ACTION] then [RESULT]
+* Screenshots, GIFs, or a video
+* Any additional information (version, device, etc.)
 
-## UI Screenshot or Wireframe (optional)
+#### Acceptance Criteria _(Optional)_
+
+* [ ] It should [SPEC_DETAIL]
