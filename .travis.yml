@@ -1,0 +1,11 @@
+language: node_js
+node_js: '8.7.0'
+cache: yarn
+stages:
+  - name: lint
+    if: (type IN (pull_request)) OR (type IN (push) AND branch = master)
+jobs:
+  include:
+    - stage: lint
+      script:
+        - bash ./scripts/global-npm-script.sh lint

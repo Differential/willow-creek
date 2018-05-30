@@ -10,12 +10,12 @@ const typeDefs = gql`
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    hello: () => "world"
-  }
+    hello: () => 'world',
+  },
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
 server.listen().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`)
+  console.log(`🚀 Server ready at ${url}`);
 });
