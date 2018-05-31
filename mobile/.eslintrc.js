@@ -10,10 +10,17 @@ module.exports = {
   rules: {
     'prettier/prettier': [
       'error',
-      {singleQuote: true, trailingComma: 'es5', arrowParens: 'always'},
+      {
+        singleQuote: true,
+        trailingComma: 'es5',
+        arrowParens: 'always',
+        bracketSpacing: true,
+        printWidth: 80,
+        semi: true,
+      },
     ],
     'react/jsx-filename-extension': 0,
-    'react/prefer-stateless-function': [2, {ignorePureComponents: true}],
+    'react/prefer-stateless-function': [2, { ignorePureComponents: true }],
     'import/no-extraneous-dependencies': 0,
     'react/jsx-curly-brace-presence': 0,
     'react/require-default-props': 0,
@@ -31,6 +38,11 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
+    },
+  },
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
     },
   },
   env: {
