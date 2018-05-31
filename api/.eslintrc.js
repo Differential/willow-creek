@@ -25,6 +25,7 @@ module.exports = {
     'jsx-a11y/media-has-caption': 0,
     'react-native/no-unused-styles': 0,
     'global-require': 0,
+    'no-underscore-dangle': 0,
   },
   parserOptions: {
     ecmaVersion: 7,

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RestConnector normalize function parses json objects to be consistent with our naming standards 1`] = `
+Object {
+  "anotherKey": "yo-yo",
+  "recursiveYo": Array [
+    Object {
+      "yes": false,
+    },
+    Object {
+      "noWay": true,
+    },
+    Array [
+      Object {
+        "throwForALoop": "huh?",
+      },
+    ],
+  ],
+  "someKey": "Yo yo",
+}
+`;

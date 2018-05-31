@@ -4,13 +4,32 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
-    "lint": "./node_modules/.bin/eslint . --ext .js",
-    "fixlint": "./node_modules/.bin/eslint . --fix"
+    "start": "./node_modules/.bin/nodemon ./index.js --exec babel-node",
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint ./src --ext .js",
+    "fixlint": "./node_modules/.bin/eslint ./src --ext .js --fix"
+  },
+  "engines": {
+    "node": "8.11.2"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "testMatch": [
+      "<rootDir>/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>/**/?(*.)(spec|test|tests).{js,jsx,mjs}"
+    ],
+    "testEnvironment": "node"
   },
   "dependencies": {
     "apollo-server": "^2.0.0-beta.2",
-    "graphql": "^0.13.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "casual": "^1.5.19",
+    "crypto": "^1.0.1",
+    "dataloader": "^1.4.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -20,8 +39,17 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
-    "jest": "^23.0.0",
+    "graphql": "^0.13.2",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.10",
     "prettier": "1.12.1",
-    "babel-eslint": "^8.2.3"
+    "babel-eslint": "^8.2.3",
+    "url-join": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "jest": "^23.0.0",
+    "jest-fetch-mock": "^1.6.2",
+    "nodemon": "^1.17.5"
   }
 }
