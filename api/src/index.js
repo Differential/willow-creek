@@ -1,3 +1,4 @@
+import dotenv from 'dotenv/config'; // eslint-disable-line
 import { ApolloServer } from 'apollo-server';
 
 import { resolvers, schema, models } from './data';

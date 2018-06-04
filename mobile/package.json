@@ -27,6 +27,7 @@
     "prettier": "1.12.1",
     "prop-types": "^15.6.1",
     "react-dom": "16.3.1",
+    "react-native-dotenv": "^0.1.1",
     "react-native-storybook-loader": "^1.8.0",
     "react-test-renderer": "16.3.1"
   },
@@ -37,8 +38,7 @@
     "test": "yarn run lint && jest",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "fixlint": "./node_modules/.bin/eslint . --fix",
-    "storybook":
-      "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007"
+    "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007"
   },
   "jest": {
     "preset": "react-native",
@@ -46,8 +46,12 @@
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|react-navigation))"
     ],
-    "testMatch": ["<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"],
-    "modulePaths": ["<rootDir>/src/"]
+    "testMatch": [
+      "<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/"
+    ]
   },
   "dependencies": {
     "color": "^3.0.0",
