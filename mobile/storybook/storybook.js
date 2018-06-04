@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
-import { getStorybookUI, configure } from '@storybook/react-native';
-import { loadStories } from './storyLoader';
+import {
+  getStorybookUI,
+  configure,
+  addDecorator,
+} from '@storybook/react-native';
+
+// storyLoader.js is generated on storybook start. next line disabled for CI test.
+import { loadStories } from './storyLoader'; // eslint-disable-line
+import AppContext from './decorators/AppContext';
+
+addDecorator(AppContext);
 
 // import stories
 configure(() => {

@@ -1,3 +1,4 @@
+import fontStack from './fontStack';
 import * as types from './types';
 
 /**
@@ -51,38 +52,40 @@ export const colors = {
 export const typography = {
   baseFontSize: 18,
   baseLineHeight: 20,
-  fontFamilySans: {
-    light: {
-      default: 'Colfax-Light',
-      italic: 'Colfax-LightItalic',
-    },
-    regular: {
-      default: 'Colfax-Regular',
-      italic: 'Colfax-RegularItalic',
-    },
-    medium: {
-      default: 'Colfax-Medium',
-      italic: 'Colfax-MediumItalic',
-    },
-    bold: {
-      default: 'Colfax-Bold',
-      italic: 'Colfax-BoldItalic',
-    },
-    black: {
-      display: 'Colfax-Black',
-      italic: 'Colfax-BlackItalic',
-    },
-  },
-  fontFamilySerif: {
-    regular: {
-      default: 'DroidSerif-Regular',
-      italic: 'DroidSerif-RegularItalic',
-    },
-    bold: {
-      default: 'DroidSerif-Bold',
-      italic: 'DroidSerif-BoldItalic',
-    },
-  },
+  // Old fontstack declaration
+  // fontFamilySans: {
+  //   light: {
+  //     default: 'Colfax-Light',
+  //     italic: 'Colfax-LightItalic',
+  //   },
+  //   regular: {
+  //     default: 'Colfax-Regular',
+  //     italic: 'Colfax-RegularItalic',
+  //   },
+  //   medium: {
+  //     default: 'Colfax-Medium',
+  //     italic: 'Colfax-MediumItalic',
+  //   },
+  //   bold: {
+  //     default: 'Colfax-Bold',
+  //     italic: 'Colfax-BoldItalic',
+  //   },
+  //   black: {
+  //     display: 'Colfax-Black',
+  //     italic: 'Colfax-BlackItalic',
+  //   },
+  // },
+  // fontFamilySerif: {
+  //   regular: {
+  //     default: 'DroidSerif-Regular',
+  //     italic: 'DroidSerif-RegularItalic',
+  //   },
+  //   bold: {
+  //     default: 'DroidSerif-Bold',
+  //     italic: 'DroidSerif-BoldItalic',
+  //   },
+  // },
+  ...fontStack,
 };
 
 // TODO: Is this even the right naming for this? Could it include anything else?

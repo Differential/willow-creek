@@ -56,5 +56,8 @@
     "react-native": "~0.55.2",
     "recompose": "^0.27.1",
     "rn-placeholder": "^1.2.0"
+  },
+  "rnpm": {
+    "assets": ["assets/fonts"]
   }
 }
