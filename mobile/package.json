@@ -42,6 +42,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "collectCoverage": true,
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|react-navigation))"
     ],
