@@ -1,24 +1,24 @@
 const fontStack = {
-  Sans: {
+  sans: {
     light: {
-      default: 'Colfax-Light',
-      italic: 'Colfax-LightItalic',
+      default: 'OpenSans-Light',
+      italic: 'OpenSans-LightItalic',
     },
     regular: {
-      default: 'Colfax-Regular',
-      italic: 'Colfax-RegularItalic',
+      default: 'OpenSans-Regular',
+      italic: 'OpenSans-Italic',
     },
-    medium: {
-      default: 'Colfax-Medium',
-      italic: 'Colfax-MediumItalic',
+    semiBold: {
+      default: 'OpenSans-SemiBold',
+      italic: 'OpenSans-SemiBoldItalic',
     },
     bold: {
-      default: 'Colfax-Bold',
-      italic: 'Colfax-BoldItalic',
+      default: 'OpenSans-Bold',
+      italic: 'OpenSans-BoldItalic',
     },
-    black: {
-      display: 'Colfax-Black',
-      italic: 'Colfax-BlackItalic',
+    extraBold: {
+      display: 'OpenSans-ExtraBold',
+      italic: 'OpenSans-ExtraBoldItalic',
     },
   },
   serif: {

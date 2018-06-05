@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the H2 component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 42.3,
+      "lineHeight": 53.58,
+    }
+  }
+>
+  "God is most glorified in us when we are most satisfied in Him" ― John Piper
+</Text>
+`;
+
+exports[`the H2 component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "salmon",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 42.3,
+      "lineHeight": 53.58,
+    }
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the H2 component should render a loading state 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 42.3,
+      "marginVertical": 5.640000000000001,
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`the H2 component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 42.3,
+      "lineHeight": 53.58,
+    }
+  }
+>
+  Default H2 text
+</Text>
+`;

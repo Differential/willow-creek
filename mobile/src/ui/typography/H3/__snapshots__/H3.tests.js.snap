@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the H3 component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 32.4,
+      "lineHeight": 41.04,
+    }
+  }
+>
+  "The Christian shoemaker does his duty not by putting little crosses on the shoes, but by making good shoes, because God is interested in good craftsmanship." ― Martin Luther
+</Text>
+`;
+
+exports[`the H3 component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "salmon",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 32.4,
+      "lineHeight": 41.04,
+    }
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the H3 component should render a loading state 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 32.4,
+      "marginVertical": 4.32,
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`the H3 component should render a loading state 2`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 32.4,
+      "marginVertical": 4.32,
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`the H3 component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 32.4,
+      "lineHeight": 41.04,
+    }
+  }
+>
+  Default H3 text
+</Text>
+`;

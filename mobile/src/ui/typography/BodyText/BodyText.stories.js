@@ -33,6 +33,13 @@ storiesOf('typography/BodyText', module)
       }
     </BodyText>
   ))
+  .add('isLoading', () => (
+    <BodyText isLoading>
+      {
+        '"True faith means holding nothing back. It means putting every hope in God\'s fidelity to His Promises." ― Francis Chan'
+      }
+    </BodyText>
+  ))
   .add('Border Box – platform testing', () => {
     const border = { borderWidth: 1, borderStyle: 'solid' };
 

@@ -41,6 +41,16 @@
 		583588B8484D43E1A21309EF /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA234C92A8B945B19B11F509 /* DroidSerif-BoldItalic.ttf */; };
 		E961E9D5DF5140C3832765BD /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1503A26801D943B488461B3E /* DroidSerif-Italic.ttf */; };
 		C994C64762B948978A7D06F4 /* DroidSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671138B1198C48EE9932E26F /* DroidSerif-Regular.ttf */; };
+		FD7961C5FE9D4D3A909E974F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF8C9728A8FD4EC0A42A60CC /* OpenSans-Bold.ttf */; };
+		18D48DCD27524FC586877AE3 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D9085FF15AD4A97A0EFCF9B /* OpenSans-BoldItalic.ttf */; };
+		E2D7E4527046409E8DC782CB /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B6A1B58C24D459F467AFE /* OpenSans-ExtraBold.ttf */; };
+		5ECF3B1E1880495A9B707574 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5985C8CF39437E8145A0AA /* OpenSans-ExtraBoldItalic.ttf */; };
+		D22B51742A24437ABF1C0731 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CC7551AC1504721923E5336 /* OpenSans-Italic.ttf */; };
+		4D34532AC1A14876B3A488B4 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4500C1E14F40C4A4B1EA88 /* OpenSans-Light.ttf */; };
+		ED7D75A9E21E4112BF8AADE4 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 825AD808761546FBABD44F32 /* OpenSans-LightItalic.ttf */; };
+		BD8453B714234DA9A177A674 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62870F74B0B6486DA71CE543 /* OpenSans-Regular.ttf */; };
+		DBA6E620604945269095F02B /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4973CF950E2F467891A868C3 /* OpenSans-SemiBold.ttf */; };
+		48A077322377443AA6A54BB9 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7B0C5A4D1864F2A80C28F13 /* OpenSans-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -350,6 +360,16 @@
 		FA234C92A8B945B19B11F509 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1503A26801D943B488461B3E /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; name = "DroidSerif-Italic.ttf"; path = "../assets/fonts/DroidSerif-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		671138B1198C48EE9932E26F /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; name = "DroidSerif-Regular.ttf"; path = "../assets/fonts/DroidSerif-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF8C9728A8FD4EC0A42A60CC /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3D9085FF15AD4A97A0EFCF9B /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-BoldItalic.ttf"; path = "../assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0C9B6A1B58C24D459F467AFE /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-ExtraBold.ttf"; path = "../assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6D5985C8CF39437E8145A0AA /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6CC7551AC1504721923E5336 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; name = "OpenSans-Italic.ttf"; path = "../assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E4500C1E14F40C4A4B1EA88 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		825AD808761546FBABD44F32 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-LightItalic.ttf"; path = "../assets/fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		62870F74B0B6486DA71CE543 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4973CF950E2F467891A868C3 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E7B0C5A4D1864F2A80C28F13 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBoldItalic.ttf"; path = "../assets/fonts/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +639,16 @@
 				FA234C92A8B945B19B11F509 /* DroidSerif-BoldItalic.ttf */,
 				1503A26801D943B488461B3E /* DroidSerif-Italic.ttf */,
 				671138B1198C48EE9932E26F /* DroidSerif-Regular.ttf */,
+				AF8C9728A8FD4EC0A42A60CC /* OpenSans-Bold.ttf */,
+				3D9085FF15AD4A97A0EFCF9B /* OpenSans-BoldItalic.ttf */,
+				0C9B6A1B58C24D459F467AFE /* OpenSans-ExtraBold.ttf */,
+				6D5985C8CF39437E8145A0AA /* OpenSans-ExtraBoldItalic.ttf */,
+				6CC7551AC1504721923E5336 /* OpenSans-Italic.ttf */,
+				9E4500C1E14F40C4A4B1EA88 /* OpenSans-Light.ttf */,
+				825AD808761546FBABD44F32 /* OpenSans-LightItalic.ttf */,
+				62870F74B0B6486DA71CE543 /* OpenSans-Regular.ttf */,
+				4973CF950E2F467891A868C3 /* OpenSans-SemiBold.ttf */,
+				E7B0C5A4D1864F2A80C28F13 /* OpenSans-SemiBoldItalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1074,6 +1104,16 @@
 				583588B8484D43E1A21309EF /* DroidSerif-BoldItalic.ttf in Resources */,
 				E961E9D5DF5140C3832765BD /* DroidSerif-Italic.ttf in Resources */,
 				C994C64762B948978A7D06F4 /* DroidSerif-Regular.ttf in Resources */,
+				FD7961C5FE9D4D3A909E974F /* OpenSans-Bold.ttf in Resources */,
+				18D48DCD27524FC586877AE3 /* OpenSans-BoldItalic.ttf in Resources */,
+				E2D7E4527046409E8DC782CB /* OpenSans-ExtraBold.ttf in Resources */,
+				5ECF3B1E1880495A9B707574 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				D22B51742A24437ABF1C0731 /* OpenSans-Italic.ttf in Resources */,
+				4D34532AC1A14876B3A488B4 /* OpenSans-Light.ttf in Resources */,
+				ED7D75A9E21E4112BF8AADE4 /* OpenSans-LightItalic.ttf in Resources */,
+				BD8453B714234DA9A177A674 /* OpenSans-Regular.ttf in Resources */,
+				DBA6E620604945269095F02B /* OpenSans-SemiBold.ttf in Resources */,
+				48A077322377443AA6A54BB9 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

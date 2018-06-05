@@ -49,6 +49,14 @@ describe('the BodyText component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('should render a loading state', () => {
+    const tree = renderer.create(
+      <Providers>
+        <BodyText isLoading>Default BodyText text</BodyText>
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
   it('should accept additional props', () => {
     const tree = renderer.create(
       <Providers>

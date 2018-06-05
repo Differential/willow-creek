@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the H6 component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 15.75,
+      "lineHeight": 17.75,
+    }
+  }
+>
+  "Radical obedience to Christ is not easy... It's not comfort, not health, not wealth, and not prosperity in this world. Radical obedience to Christ risks losing all these things. But in the end, such risk finds its reward in Christ. And he is more than enough for us." ― David Platt
+</Text>
+`;
+
+exports[`the H6 component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "salmon",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 15.75,
+      "lineHeight": 17.75,
+    }
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the H6 component should render a loading state 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 15.75,
+      "marginVertical": 1,
+      "width": "50%",
+    }
+  }
+/>
+`;
+
+exports[`the H6 component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 15.75,
+      "lineHeight": 17.75,
+    }
+  }
+>
+  Default H6 text
+</Text>
+`;

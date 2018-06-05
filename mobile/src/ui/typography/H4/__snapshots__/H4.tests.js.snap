@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the H4 component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 25.2,
+      "lineHeight": 31.28,
+    }
+  }
+>
+  "What you are is God's gift to you, what you become is your gift to God." ― Hans Urs von Balthasar
+</Text>
+`;
+
+exports[`the H4 component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "salmon",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 25.2,
+      "lineHeight": 31.28,
+    }
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the H4 component should render a loading state 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 25.2,
+      "marginVertical": 3.040000000000001,
+      "width": "80%",
+    }
+  }
+/>
+`;
+
+exports[`the H4 component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "OpenSans-Bold",
+      "fontSize": 25.2,
+      "lineHeight": 31.28,
+    }
+  }
+>
+  Default H4 text
+</Text>
+`;
