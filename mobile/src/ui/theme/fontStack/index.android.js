@@ -31,6 +31,9 @@ const fontStack = {
       italic: 'DroidSerif-BoldItalic',
     },
   },
+  ui: {
+    normal: 'sans-serif',
+  },
 };
 
 export default fontStack;

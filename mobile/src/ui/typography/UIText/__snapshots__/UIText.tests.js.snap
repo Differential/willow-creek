@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the UIText component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "System",
+      "fontSize": 18,
+      "fontStyle": null,
+      "fontWeight": null,
+      "lineHeight": 20,
+    }
+  }
+>
+  "You are the only Bible some unbelievers will ever read." – John MacArthur
+</Text>
+`;
+
+exports[`the UIText component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "salmon",
+      "fontFamily": "System",
+      "fontSize": 18,
+      "fontStyle": null,
+      "fontWeight": null,
+      "lineHeight": 20,
+    }
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the UIText component should render a loading state 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 18,
+      "marginVertical": 1,
+      "width": "40%",
+    }
+  }
+/>
+`;
+
+exports[`the UIText component should render as bold 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "System",
+      "fontSize": 18,
+      "fontStyle": null,
+      "fontWeight": "700",
+      "lineHeight": 20,
+    }
+  }
+>
+  Bold UIText text
+</Text>
+`;
+
+exports[`the UIText component should render as bold italic 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={true}
+  ellipsizeMode="tail"
+  italic={true}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "System",
+      "fontSize": 18,
+      "fontStyle": "italic",
+      "fontWeight": "700",
+      "lineHeight": 20,
+    }
+  }
+>
+  Bold italic UIText text
+</Text>
+`;
+
+exports[`the UIText component should render as italic 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  italic={true}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "System",
+      "fontSize": 18,
+      "fontStyle": "italic",
+      "fontWeight": null,
+      "lineHeight": 20,
+    }
+  }
+>
+  Italic UIText text
+</Text>
+`;
+
+exports[`the UIText component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "System",
+      "fontSize": 18,
+      "fontStyle": null,
+      "fontWeight": null,
+      "lineHeight": 20,
+    }
+  }
+>
+  Default UIText text
+</Text>
+`;
