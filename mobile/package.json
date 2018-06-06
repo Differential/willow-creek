@@ -38,7 +38,8 @@
     "test": "yarn run lint && jest",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "fixlint": "./node_modules/.bin/eslint . --fix",
-    "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007"
+    "storybook":
+      "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007"
   },
   "jest": {
     "preset": "react-native",
@@ -46,18 +47,15 @@
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|react-navigation))"
     ],
-    "testMatch": [
-      "<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"
-    ],
-    "modulePaths": [
-      "<rootDir>/src/"
-    ]
+    "testMatch": ["<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"],
+    "modulePaths": ["<rootDir>/src/"]
   },
   "dependencies": {
     "color": "^3.0.0",
     "lodash": "^4.17.10",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-svg": "^6.3.1",
     "recompose": "^0.27.1",
     "rn-placeholder": "^1.2.0"
   },
