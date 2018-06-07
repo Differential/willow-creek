@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon ./index.js --exec babel-node",
-    "test": "jest",
+    "test": "bash ../scripts/test-script.sh",
     "lint": "./node_modules/.bin/eslint ./src --ext .js",
     "fixlint": "./node_modules/.bin/eslint ./src --ext .js --fix"
   },

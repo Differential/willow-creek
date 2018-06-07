@@ -35,7 +35,7 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
-    "test": "yarn run lint && jest",
+    "test": "bash ../scripts/test-script.sh",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "fixlint": "./node_modules/.bin/eslint . --fix",
     "storybook":
