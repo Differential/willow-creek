@@ -9,14 +9,14 @@ export default class ThemeProvider extends PureComponent {
     themeInput: PropTypes.shape(THEME_PROPS),
   };
 
-  static defaultProps = {
-    children: null,
-    themeInput: {},
-  };
-
   static childContextTypes = {
     theme: PropTypes.shape(THEME_PROPS),
     themeInput: PropTypes.shape(THEME_PROPS),
+  };
+
+  static defaultProps = {
+    children: null,
+    themeInput: {},
   };
 
   getChildContext = () => ({
