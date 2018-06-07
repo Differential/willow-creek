@@ -1,0 +1,699 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Button component should render 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={false}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#6bac43",
+        "borderColor": "#6bac43",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      My Button!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a Tertiary button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={false}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2a4930",
+        "borderColor": "#2a4930",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      Tertiary Action
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a bordered button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={true}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderColor": "#6bac43",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#6bac43",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      Ghost Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a disabled button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+      "disabled",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={false}
+    disabled={true}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#6bac43",
+        "borderColor": "#6bac43",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 0.5,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      Disabled Button 😭
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a ghost button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={true}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderColor": "#303030",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      Ghost Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a ghost pill button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={true}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderColor": "#303030",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      Ghost Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a loading state 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+      "disabled",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={false}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#6bac43",
+        "borderColor": "#6bac43",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#ffffff"
+      hidesWhenStopped={true}
+      size="small"
+    />
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a pill button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={false}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#6bac43",
+        "borderColor": "#6bac43",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      Pill Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a primary button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={false}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#6bac43",
+        "borderColor": "#6bac43",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      Primary Action
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a secondary button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={false}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#1c683e",
+        "borderColor": "#1c683e",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      Secondary Action
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render as default type 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    bordered={false}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#dddddd",
+        "borderColor": "#dddddd",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+        }
+      }
+    >
+      My Button!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render with children 1`] = `
+<View
+  bordered={false}
+  disabled={false}
+  pill={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#6bac43",
+      "borderColor": "#6bac43",
+      "borderRadius": 60,
+      "borderWidth": 2,
+      "elevation": 2,
+      "flexDirection": "row",
+      "height": 60,
+      "justifyContent": "center",
+      "opacity": 1,
+      "overflow": "hidden",
+      "paddingHorizontal": 20,
+    }
+  }
+>
+  <View />
+</View>
+`;

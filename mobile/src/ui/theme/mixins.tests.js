@@ -2,8 +2,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import FlexedView from '@ui/FlexedView';
-import { H3, H7, BodyText } from '@ui/typography';
+import FlexedView from 'ui/FlexedView';
+import { H3, H7, BodyText } from 'ui/typography';
 
 import { ThemeProvider } from './';
 import { withThemeMixin } from './mixins';
