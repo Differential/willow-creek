@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UniversalContentItem filters terms by a match string 1`] = `
+Object {
+  "data": Object {
+    "node": Object {
+      "terms": Array [
+        Object {
+          "value": "Pete Foster",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`UniversalContentItem gets a content item 1`] = `
+Object {
+  "data": Object {
+    "node": Object {
+      "__typename": "UniversalContentItem",
+      "audios": Array [
+        Object {
+          "key": "audioLink",
+          "name": "Audio Link",
+          "sources": Array [
+            Object {
+              "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/sample.mp3",
+            },
+          ],
+        },
+      ],
+      "childContentItemsConnection": Object {
+        "edges": Array [
+          Object {
+            "cursor": "b487224762b030f470967f45d7205823",
+            "node": Object {
+              "__typename": "UniversalContentItem",
+              "id": "61a8c2fafd3ef77cca6226aec3df90592d4e1561bc301897fc184924211750ba",
+            },
+          },
+        ],
+      },
+      "coverImage": Object {
+        "key": "image",
+        "name": "Image",
+        "sources": Array [
+          Object {
+            "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=0241ED2F-B527-424C-917C-1142A398711F",
+          },
+        ],
+      },
+      "htmlContent": "<p>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin condimentum aliquet. In est nulla, lacinia ac dictum et, laoreet vitae elit. Proin tempus tellus ligula, a consequat diam consectetur a. Phasellus luctus velit sed lorem mollis commodo. Nunc sit amet blandit velit. Donec tincidunt congue facilisis. Sed iaculis at neque non porttitor. Phasellus ultrices egestas erat feugiat pellentesque. Duis venenatis, dolor quis fringilla tempus, sem lorem euismod lectus, sed egestas felis magna at felis. Pellentesque ut rhoncus erat, a pulvinar purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sit amet consequat est. Maecenas et porta dui, non condimentum lectus.</p>
+<p>
+	Suspendisse vel nibh odio. Pellentesque porta sapien ligula, in laoreet diam tempus sed. Morbi nunc erat, mattis eu pulvinar blandit, adipiscing quis magna. Ut quis dui lobortis velit suscipit consectetur. Nulla iaculis fermentum egestas. Aenean venenatis sagittis mauris, sed rhoncus purus accumsan ac. Suspendisse potenti. Sed sed tempor turpis. Duis sit amet nisi nec purus fringilla condimentum. Phasellus non lacus arcu. Donec scelerisque, erat sed tempor elementum, nulla risus scelerisque ante, ac imperdiet velit magna ut quam. Nam tristique orci auctor consequat laoreet. Quisque malesuada metus sed sodales eleifend. Aenean rhoncus, mi sit amet ullamcorper tincidunt, sem sem rutrum felis, in semper enim massa ut sem.</p>
+<p>
+	Vivamus diam urna, cursus in sapien in, porta gravida enim. Cras non fringilla arcu, tincidunt laoreet lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam volutpat felis quis augue faucibus ultrices. Morbi lobortis vestibulum sodales. Sed tincidunt urna vitae felis ultrices, pharetra placerat quam dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel adipiscing tellus. In vitae sodales diam. Aliquam pharetra orci a porta molestie. In et neque bibendum, viverra leo sit amet, auctor magna. Morbi posuere massa sed metus euismod, et adipiscing sem dictum. Cras eget elementum risus, non imperdiet ligula.</p>
+",
+      "id": "61a8c2fafd3ef77cca6226aec3df90592d4e1561bc301897fc184924211750ba",
+      "images": Array [
+        Object {
+          "key": "image",
+          "name": "Image",
+          "sources": Array [
+            Object {
+              "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=0241ED2F-B527-424C-917C-1142A398711F",
+            },
+          ],
+        },
+        Object {
+          "key": "detailImage",
+          "name": "Detail Image",
+          "sources": Array [
+            Object {
+              "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=3DA90982-118A-4BFE-9A32-58D9F610090A",
+            },
+          ],
+        },
+        Object {
+          "key": "imageByUrlTest",
+          "name": "Image By Url Test",
+          "sources": Array [
+            Object {
+              "uri": "https://some-domain.com/some/path/to/image.jpg",
+            },
+          ],
+        },
+        Object {
+          "key": "imageBySchemalessUrlTest",
+          "name": "Image By Schemaless Url Test",
+          "sources": Array [
+            Object {
+              "uri": "https://some-domain.com/some/path/to/image.jpg",
+            },
+          ],
+        },
+        Object {
+          "key": "imageUnknownFormat",
+          "name": "Image Of Unknown format",
+          "sources": Array [
+            Object {
+              "uri": "ftp://some-domain.com/some/path/to/image.jpg",
+            },
+          ],
+        },
+      ],
+      "parentChannel": Object {
+        "__typename": "ContentChannel",
+        "id": "2c83ae5edf3ecb8557bf3e77677296854a403a0b0ee37b818de3f6ff1442cb3c",
+      },
+      "terms": Array [
+        Object {
+          "key": "summaryText",
+          "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin condimentum aliquet. In est nulla, lacinia ac dictum et, laoreet vitae elit. Proin tempus tellus ligula, a consequat diam consectetur a.",
+        },
+        Object {
+          "key": "campuses",
+          "value": "",
+        },
+        Object {
+          "key": "primaryAudience",
+          "value": "B364CDEE-F000-4965-AE67-0C80DDA365DC",
+        },
+        Object {
+          "key": "secondaryAudiences",
+          "value": "",
+        },
+        Object {
+          "key": "speaker",
+          "value": "Pete Foster",
+        },
+      ],
+      "title": "SAMPLE: Easter",
+      "videos": Array [
+        Object {
+          "embedHtml": "<script src=\\"//fast.wistia.com/embed/medias/kqykx8xbzq.jsonp\\" async></script><script src=\\"//fast.wistia.com/assets/external/E-v1.js\\" async></script><div class=\\"wistia_responsive_padding\\" style=\\"padding:56.25% 0 0 0;position:relative;\\"><div class=\\"wistia_responsive_wrapper\\" style=\\"height:100%;left:0;position:absolute;top:0;width:100%;\\"><div class=\\"wistia_embed wistia_async_kqykx8xbzq videoFoam=true\\" style=\\"height:100%;width:100%\\">&nbsp;</div></div></div>",
+          "key": "videoLink",
+          "name": "Video Link",
+          "sources": Array [
+            Object {
+              "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/money-wise.mp4",
+            },
+          ],
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`UniversalContentItem gets a user feed 1`] = `
+Object {
+  "data": Object {
+    "userFeed": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "__typename": "UniversalContentItem",
+            "audios": Array [
+              Object {
+                "key": "audioLink",
+                "name": "Audio Link",
+                "sources": Array [
+                  Object {
+                    "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/sample.mp3",
+                  },
+                ],
+              },
+            ],
+            "childContentItemsConnection": Object {
+              "edges": Array [
+                Object {
+                  "cursor": "b487224762b030f470967f45d7205823",
+                  "node": Object {
+                    "__typename": "UniversalContentItem",
+                    "id": "61a8c2fafd3ef77cca6226aec3df90592d4e1561bc301897fc184924211750ba",
+                  },
+                },
+              ],
+            },
+            "coverImage": Object {
+              "key": "image",
+              "name": "Image",
+              "sources": Array [
+                Object {
+                  "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=0241ED2F-B527-424C-917C-1142A398711F",
+                },
+              ],
+            },
+            "htmlContent": "<p>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin condimentum aliquet. In est nulla, lacinia ac dictum et, laoreet vitae elit. Proin tempus tellus ligula, a consequat diam consectetur a. Phasellus luctus velit sed lorem mollis commodo. Nunc sit amet blandit velit. Donec tincidunt congue facilisis. Sed iaculis at neque non porttitor. Phasellus ultrices egestas erat feugiat pellentesque. Duis venenatis, dolor quis fringilla tempus, sem lorem euismod lectus, sed egestas felis magna at felis. Pellentesque ut rhoncus erat, a pulvinar purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sit amet consequat est. Maecenas et porta dui, non condimentum lectus.</p>
+<p>
+	Suspendisse vel nibh odio. Pellentesque porta sapien ligula, in laoreet diam tempus sed. Morbi nunc erat, mattis eu pulvinar blandit, adipiscing quis magna. Ut quis dui lobortis velit suscipit consectetur. Nulla iaculis fermentum egestas. Aenean venenatis sagittis mauris, sed rhoncus purus accumsan ac. Suspendisse potenti. Sed sed tempor turpis. Duis sit amet nisi nec purus fringilla condimentum. Phasellus non lacus arcu. Donec scelerisque, erat sed tempor elementum, nulla risus scelerisque ante, ac imperdiet velit magna ut quam. Nam tristique orci auctor consequat laoreet. Quisque malesuada metus sed sodales eleifend. Aenean rhoncus, mi sit amet ullamcorper tincidunt, sem sem rutrum felis, in semper enim massa ut sem.</p>
+<p>
+	Vivamus diam urna, cursus in sapien in, porta gravida enim. Cras non fringilla arcu, tincidunt laoreet lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam volutpat felis quis augue faucibus ultrices. Morbi lobortis vestibulum sodales. Sed tincidunt urna vitae felis ultrices, pharetra placerat quam dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel adipiscing tellus. In vitae sodales diam. Aliquam pharetra orci a porta molestie. In et neque bibendum, viverra leo sit amet, auctor magna. Morbi posuere massa sed metus euismod, et adipiscing sem dictum. Cras eget elementum risus, non imperdiet ligula.</p>
+",
+            "id": "61a8c2fafd3ef77cca6226aec3df90592d4e1561bc301897fc184924211750ba",
+            "images": Array [
+              Object {
+                "key": "image",
+                "name": "Image",
+                "sources": Array [
+                  Object {
+                    "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=0241ED2F-B527-424C-917C-1142A398711F",
+                  },
+                ],
+              },
+              Object {
+                "key": "detailImage",
+                "name": "Detail Image",
+                "sources": Array [
+                  Object {
+                    "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=3DA90982-118A-4BFE-9A32-58D9F610090A",
+                  },
+                ],
+              },
+              Object {
+                "key": "imageByUrlTest",
+                "name": "Image By Url Test",
+                "sources": Array [
+                  Object {
+                    "uri": "https://some-domain.com/some/path/to/image.jpg",
+                  },
+                ],
+              },
+              Object {
+                "key": "imageBySchemalessUrlTest",
+                "name": "Image By Schemaless Url Test",
+                "sources": Array [
+                  Object {
+                    "uri": "https://some-domain.com/some/path/to/image.jpg",
+                  },
+                ],
+              },
+              Object {
+                "key": "imageUnknownFormat",
+                "name": "Image Of Unknown format",
+                "sources": Array [
+                  Object {
+                    "uri": "ftp://some-domain.com/some/path/to/image.jpg",
+                  },
+                ],
+              },
+            ],
+            "parentChannel": Object {
+              "__typename": "ContentChannel",
+              "id": "2c83ae5edf3ecb8557bf3e77677296854a403a0b0ee37b818de3f6ff1442cb3c",
+            },
+            "terms": Array [
+              Object {
+                "key": "summaryText",
+                "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin condimentum aliquet. In est nulla, lacinia ac dictum et, laoreet vitae elit. Proin tempus tellus ligula, a consequat diam consectetur a.",
+              },
+              Object {
+                "key": "campuses",
+                "value": "",
+              },
+              Object {
+                "key": "primaryAudience",
+                "value": "B364CDEE-F000-4965-AE67-0C80DDA365DC",
+              },
+              Object {
+                "key": "secondaryAudiences",
+                "value": "",
+              },
+              Object {
+                "key": "speaker",
+                "value": "Pete Foster",
+              },
+            ],
+            "title": "SAMPLE: Easter",
+            "videos": Array [
+              Object {
+                "embedHtml": "<script src=\\"//fast.wistia.com/embed/medias/kqykx8xbzq.jsonp\\" async></script><script src=\\"//fast.wistia.com/assets/external/E-v1.js\\" async></script><div class=\\"wistia_responsive_padding\\" style=\\"padding:56.25% 0 0 0;position:relative;\\"><div class=\\"wistia_responsive_wrapper\\" style=\\"height:100%;left:0;position:absolute;top:0;width:100%;\\"><div class=\\"wistia_embed wistia_async_kqykx8xbzq videoFoam=true\\" style=\\"height:100%;width:100%\\">&nbsp;</div></div></div>",
+                "key": "videoLink",
+                "name": "Video Link",
+                "sources": Array [
+                  Object {
+                    "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/money-wise.mp4",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
+}
+`;

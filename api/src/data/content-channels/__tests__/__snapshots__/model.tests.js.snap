@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentChannelModel gets all 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannels?%24expand=ChildContentChannels",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`ContentChannelModel gets all 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`ContentChannelModel gets by id 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannels?%24filter=Id%20eq%201&%24expand=ChildContentChannels&%24top=1",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`ContentChannelModel gets by id 2`] = `
+Object {
+  "id": 1,
+}
+`;

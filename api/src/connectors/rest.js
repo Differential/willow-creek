@@ -63,6 +63,7 @@ export default class RestConnector {
 
     return Promise.all(
       urls.map(async (url) => {
+        console.log('Fetching', url);
         const cachedRes = eTagCache[url];
         if (cachedRes && cachedRes.etag) {
           options.headers['If-None-Match'] = cachedRes.etag;

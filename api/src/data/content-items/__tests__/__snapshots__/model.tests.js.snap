@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentItemsModel filters by content channel id 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItems?loadAttributes=expanded&%24filter=ContentChannelId%20eq%201",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`ContentItemsModel filters by content channel id 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding child content items of a provided parent 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItemAssociations?%24filter=ContentChannelItemId%20eq%201",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItems?loadAttributes=expanded&%24filter=%28Id%20eq%20101%29%20or%20%28Id%20eq%20201%29&%24orderby=Order%20asc",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding child content items of a provided parent 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding parent content items of a provided child 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItemAssociations?%24filter=ChildContentChannelItemId%20eq%201",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItems?loadAttributes=expanded&%24filter=%28Id%20eq%20101%29%20or%20%28Id%20eq%20201%29&%24orderby=Order%20asc",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding parent content items of a provided child 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`ContentItemsModel gets by id 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItems/1?loadAttributes=expanded",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`ContentItemsModel gets by id 2`] = `
+Object {
+  "id": 1,
+}
+`;

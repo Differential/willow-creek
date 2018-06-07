@@ -1,12 +1,11 @@
 import dotenv from 'dotenv/config'; // eslint-disable-line
 import { ApolloServer } from 'apollo-server';
-
 import { resolvers, schema, models } from './data';
 
 import RockConnector from './connectors/rock';
 
 // Construct a context object for each request
-const getContext = () => {
+export const getContext = () => {
   // todo: load user
   const user = null;
 

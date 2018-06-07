@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentChannel gets a list of content channels 1`] = `
+Object {
+  "data": Object {
+    "contentChannels": Array [
+      Object {
+        "__typename": "ContentChannel",
+        "childContentChannels": null,
+        "childContentItemsConnection": Object {
+          "edges": Array [
+            Object {
+              "cursor": "b487224762b030f470967f45d7205823",
+              "node": Object {
+                "__typename": "UniversalContentItem",
+                "id": "61a8c2fafd3ef77cca6226aec3df90592d4e1561bc301897fc184924211750ba",
+              },
+            },
+          ],
+        },
+        "description": "Some description",
+        "id": "2c83ae5edf3ecb8557bf3e77677296854a403a0b0ee37b818de3f6ff1442cb3c",
+        "name": "My super cool content channel",
+      },
+    ],
+  },
+}
+`;
+
+exports[`ContentChannel gets a single content channel when querying by root node 1`] = `
+Object {
+  "data": Object {
+    "node": Object {
+      "__typename": "ContentChannel",
+      "childContentChannels": null,
+      "childContentItemsConnection": Object {
+        "edges": Array [
+          Object {
+            "cursor": "b487224762b030f470967f45d7205823",
+            "node": Object {
+              "__typename": "UniversalContentItem",
+              "id": "61a8c2fafd3ef77cca6226aec3df90592d4e1561bc301897fc184924211750ba",
+            },
+          },
+        ],
+      },
+      "description": "Some description",
+      "id": "2c83ae5edf3ecb8557bf3e77677296854a403a0b0ee37b818de3f6ff1442cb3c",
+      "name": "My super cool content channel",
+    },
+  },
+}
+`;
