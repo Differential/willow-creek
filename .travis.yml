@@ -1,6 +1,9 @@
 language: node_js
 node_js: '8.11.2'
-cache: yarn
+cache:
+  yarn: true
+  directories:
+    - node_modules
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
 install:
@@ -18,3 +21,10 @@ jobs:
     - stage: test
       script:
         - travis_wait bash ./scripts/global-npm-script.sh test "travis"
+before_deploy: npm install now --no-save
+deploy:
+  - provider: script
+    script: cd api && now --token --public $NOW_TOKEN && now alias --token $NOW_TOKEN
+    skip_cleanup: true
+    on:
+      master: true
