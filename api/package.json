@@ -7,7 +7,8 @@
     "start": "./node_modules/.bin/nodemon ./index.js --exec babel-node",
     "test": "bash ../scripts/test-script.sh",
     "lint": "./node_modules/.bin/eslint ./src --ext .js",
-    "fixlint": "./node_modules/.bin/eslint ./src --ext .js --fix"
+    "fixlint": "./node_modules/.bin/eslint ./src --ext .js --fix",
+    "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
   },
   "engines": {
     "node": "8.11.2"
@@ -51,6 +52,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "codecov": "^3.0.2",
+    "coveralls": "^3.0.1",
     "jest": "^23.0.0",
     "jest-fetch-mock": "^1.6.2",
     "nodemon": "^1.17.5"

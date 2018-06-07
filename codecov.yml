@@ -1,0 +1,12 @@
+coverage:
+  status:
+    project:
+      api:
+        paths:
+          - api/*
+      mobile:
+        paths:
+          - mobile/*
+comment:
+  layout: "reach, diff, files"
+  behavior: once
