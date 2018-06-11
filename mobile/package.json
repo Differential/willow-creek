@@ -57,6 +57,8 @@
   },
   "dependencies": {
     "color": "^3.0.0",
+    "entities": "^1.1.1",
+    "htmlparser2": "^3.9.2",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "react": "16.3.1",
@@ -65,7 +67,8 @@
     "react-native-svg": "^6.3.1",
     "react-navigation": "^2.0.4",
     "recompose": "^0.27.1",
-    "rn-placeholder": "^1.2.0"
+    "rn-placeholder": "^1.2.0",
+    "stream": "^0.0.2"
   },
   "rnpm": {
     "assets": [
