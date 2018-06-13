@@ -18,3 +18,7 @@ export const TabStack = createBottomTabNavigator({
   Search: SearchStack,
   Profile: ProfileStack,
 });
+
+TabStack.navigationOptions = {
+  header: null,
+};

@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import PropTypes from 'prop-types';
+import FlexedView from 'ui/FlexedView';
+import LiveNowButton from '../../live';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,12 +20,20 @@ export class ProfileScreen extends React.Component {
   };
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Profile Screen</Text>
-      </View>
+      <FlexedView>
+        <LiveNowButton navigation={this.props.navigation} />
+        <View style={styles.container}>
+          <Text>Profile Screen</Text>
+        </View>
+      </FlexedView>
     );
   }
 }
+ProfileScreen.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }),
+};
 
 export const ProfileStack = createStackNavigator(
   {
