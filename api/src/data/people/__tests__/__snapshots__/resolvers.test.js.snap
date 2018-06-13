@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Person gets a single person when querying by root node 1`] = `
+Object {
+  "data": Object {
+    "node": Object {
+      "email": "isaac.hardy@newspring.cc",
+      "firstName": "Isaac",
+      "id": "e812510c2fe5ed7b099fd1284df96615",
+      "lastName": "Hardy",
+      "nickName": "Isaac",
+    },
+  },
+}
+`;
+
+exports[`Person gets people by an email 1`] = `
+Object {
+  "data": Object {
+    "people": Array [
+      Object {
+        "email": "isaac.hardy@newspring.cc",
+        "firstName": "Isaac",
+        "id": "e812510c2fe5ed7b099fd1284df96615",
+        "lastName": "Hardy",
+        "nickName": "Isaac",
+      },
+    ],
+  },
+}
+`;

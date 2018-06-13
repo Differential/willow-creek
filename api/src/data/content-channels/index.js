@@ -23,11 +23,12 @@ export const resolver = {
       context.models.ContentChannel.all(),
   },
   ContentChannel: {
-    id: ({ id }, _, $, { parentType }) => createGlobalId(id, parentType.name),
-    childContentItemsConnection: ({ id }, input, { models }) =>
+    id: ({ id }, args, context, { parentType }) =>
+      createGlobalId(id, parentType.name),
+    childContentItemsConnection: ({ id }, args, { models }) =>
       models.ContentItem.paginate({
         cursor: models.ContentItem.byContentChannelId(id),
-        input,
+        args,
       }),
   },
 };

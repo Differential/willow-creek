@@ -32,6 +32,14 @@ fetch.mockRockAPI = () => {
       return resolveWith([rockMocks.contentChannelItemAssociation()]);
     }
 
+    if (url.match('api/People/\\d')) {
+      return resolveWith(rockMocks.people());
+    }
+
+    if (url.match('api/People')) {
+      return resolveWith([rockMocks.people()]);
+    }
+
     return Promise.reject();
   });
 };

@@ -65,7 +65,7 @@ describe('RestModel', () => {
       const model = new RestModel(context);
       const cursor = context.connectors.Rock.request('TestResource');
       const after = createCursor({ position: 25 });
-      const result = model.paginate({ cursor, input: { after } });
+      const result = model.paginate({ cursor, args: { after } });
       expect(result).toBeTruthy();
       expect(get.mock.calls[0][0]).toBe('TestResource?%24top=20&%24skip=26');
     });
@@ -74,14 +74,14 @@ describe('RestModel', () => {
       const model = new RestModel(context);
       const cursor = context.connectors.Rock.request('TestResource');
       const after = createCursor({ bad: 'brah!' });
-      const result = model.paginate({ cursor, input: { after } });
+      const result = model.paginate({ cursor, args: { after } });
       expect(result).rejects.toThrow();
     });
 
     it('sets page size', () => {
       const model = new RestModel(context);
       const cursor = context.connectors.Rock.request('TestResource');
-      const result = model.paginate({ cursor, input: { first: 2 } });
+      const result = model.paginate({ cursor, args: { first: 2 } });
       expect(result).toBeTruthy();
       expect(get.mock.calls[0][0]).toBe('TestResource?%24top=2&%24skip=0');
     });

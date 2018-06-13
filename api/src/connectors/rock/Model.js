@@ -48,12 +48,12 @@ export default class RockModel {
    *
    * @param {object} param Named request parameters
    * @param {object} param.cursor A RequestBuilder cursor to fetch results
-   * @param {object} param.input The input supplied to the graphql query
-   * @param {string} param.input.after
-   * @param {number} param.input.first
+   * @param {object} param.args The args supplied to the graphql query
+   * @param {string} param.args.after
+   * @param {number} param.args.first
    * @returns {object}
    */
-  paginate = async ({ cursor, input: { after, first = 20 } = {} }) => {
+  paginate = async ({ cursor, args: { after, first = 20 } = {} }) => {
     let skip = 0;
     if (after) {
       const parsed = parseCursor(after);

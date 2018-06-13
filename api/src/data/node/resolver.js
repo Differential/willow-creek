@@ -1,8 +1,8 @@
 export default {
   Query: {
-    node: (_, { id }, { models }) => models.Node.get(id),
+    node: (root, { id }, { models }) => models.Node.get(id),
   },
   Node: {
-    __resolveType: ({ __type }, _, { schema }) => schema.getType(__type),
+    __resolveType: ({ __type }, args, { schema }) => schema.getType(__type),
   },
 };

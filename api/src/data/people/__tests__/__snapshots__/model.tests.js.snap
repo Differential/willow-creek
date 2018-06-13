@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Person gets person from email 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/People?%24filter=Email%20eq%20%27isaac.hardy%40newspring.cc%27",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`Person gets person from email 2`] = `
+Object {
+  "email": "isaac.hardy@newspring.cc",
+}
+`;
+
+exports[`Person gets person from id 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/People/51",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`Person gets person from id 2`] = `
+Object {
+  "id": 51,
+}
+`;
