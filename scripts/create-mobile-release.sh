@@ -6,4 +6,4 @@ DIR="$(pwd)"
 MOBILE_DIR="$DIR/mobile"
 
 
-echo "HELLO, WORLD"
+echo "HELLO, WORLD!"
