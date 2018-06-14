@@ -1,5 +1,6 @@
 import 'isomorphic-fetch';
 import fetch from 'jest-fetch-mock';
+import { mapValues } from 'lodash';
 
 import { Constants } from '../src/connectors/rock';
 
@@ -18,6 +19,13 @@ fetch.mockRockAPI = () => {
 
     if (url.match('api/ContentChannels')) {
       return resolveWith([rockMocks.contentChannel()]);
+    }
+
+    if (url.match('api/ContentChannelItems/test-case-no-attributes')) {
+      const mock = rockMocks.contentItem();
+      mock.AttributeValues = {};
+      mock.Attributes = {};
+      return resolveWith(mock);
     }
 
     if (url.match('api/ContentChannelItems/\\d')) {

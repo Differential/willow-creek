@@ -1,43 +1,41 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Query } from 'react-apollo';
 import { createStackNavigator } from 'react-navigation';
+import { get } from 'lodash';
+import FeedView from 'ui/FeedView';
 import PropTypes from 'prop-types';
 import FlexedView from 'ui/FlexedView';
+import GET_USER_FEED from './query';
 import LiveNowButton from '../../live';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Home',
   };
+
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }),
+  };
+
   render() {
     return (
       <FlexedView>
         <LiveNowButton navigation={this.props.navigation} />
-        <View style={styles.container}>
-          <Text>This is the home screen</Text>
-          <Button
-            title="Go to Article"
-            onPress={() => this.props.navigation.navigate('ArticleSingle')}
-          />
-        </View>
+        <Query query={GET_USER_FEED}>
+          {({ loading, error, data }) => (
+            <FeedView
+              content={get(data, 'userFeed.edges', [])}
+              isLoading={loading}
+              error={error}
+            />
+          )}
+        </Query>
       </FlexedView>
     );
   }
 }
-HomeScreen.propTypes = {
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func,
-  }),
-};
 
 export const HomeStack = createStackNavigator(
   {

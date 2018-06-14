@@ -104,6 +104,23 @@ describe('UniversalContentItem', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('properly handles empty attribute values', async () => {
+    const query = gql`
+      query {
+        node(id: "${createGlobalId(
+          'test-case-no-attributes',
+          'UniversalContentItem'
+        )}") {
+          ...ContentItemFragment
+        }
+      }
+      ${contentItemFragment}
+    `;
+    const rootValue = {};
+    const result = await graphql(schema, query, rootValue, context);
+    expect(result).toMatchSnapshot();
+  });
+
   it('filters terms by a match string', async () => {
     const query = gql`
     query {

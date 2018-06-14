@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import CardWrapper from './';
 
-storiesOf('CardWrapper', module)
+storiesOf('Card/CardWrapper', module)
   .add('Default', () => {
     const centered = {
       justifyContent: 'center',

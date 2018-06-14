@@ -11,7 +11,7 @@ export const schema = gql`
   }
 
   interface MediaSource {
-    uri: String!
+    uri: String
   }
 
   type ImageMedia implements Media {
@@ -36,19 +36,19 @@ export const schema = gql`
   }
 
   type AudioMediaSource implements MediaSource {
-    uri: String!
+    uri: String
     # format: String
     # size: String
   }
 
   type ImageMediaSource implements MediaSource {
-    uri: String!
+    uri: String
     # width: Int
     # height: Int
   }
 
   type VideoMediaSource implements MediaSource {
-    uri: String!
+    uri: String
     # format: String
     # size: String
   }
@@ -63,6 +63,7 @@ export const schema = gql`
 export const resolver = {
   ImageMediaSource: {
     uri: ({ uri = '' }) => {
+      if (!uri || typeof uri !== 'string') return null;
       if (uri.startsWith('http')) return uri;
       if (uri.startsWith('//')) return `https:${uri}`;
 

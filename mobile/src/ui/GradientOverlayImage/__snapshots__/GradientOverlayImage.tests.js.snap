@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the GradientOverlayImage component should render 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "width": "100%",
+    }
+  }
+>
+  <Image
+    onLoad={[Function]}
+    source={
+      Array [
+        Object {
+          "height": 400,
+          "uri": "https://picsum.photos/600/400/?random",
+          "width": 600,
+        },
+      ]
+    }
+    style={
+      Object {
+        "backgroundColor": "#dddddd",
+        "height": "100%",
+        "opacity": 0,
+        "resizeMode": "cover",
+        "width": "100%",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`the GradientOverlayImage component should render with an overlayColor 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "width": "100%",
+    }
+  }
+>
+  <Image
+    onLoad={[Function]}
+    source={
+      Array [
+        Object {
+          "height": 400,
+          "uri": "https://picsum.photos/600/400/?random",
+          "width": 600,
+        },
+      ]
+    }
+    style={
+      Object {
+        "backgroundColor": "#dddddd",
+        "height": "100%",
+        "opacity": 0,
+        "resizeMode": "cover",
+        "width": "100%",
+      }
+    }
+  />
+  <BVLinearGradient
+    colors={
+      Array [
+        16416882,
+        4294606962,
+      ]
+    }
+    endPoint={
+      Object {
+        "x": 0,
+        "y": 1,
+      }
+    }
+    locations={
+      Array [
+        0.3,
+        1,
+      ]
+    }
+    startPoint={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+</View>
+`;

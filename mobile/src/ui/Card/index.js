@@ -1,4 +1,5 @@
-export { default as Card } from './CardWrapper';
-export { default as CardImage } from './Image';
-export { default as CardContent } from './Content';
-export { default as CardActions } from './Actions';
+export Card from './CardWrapper';
+export CardImage from './Image';
+export CardContent from './Content';
+export CardActions from './Actions';
+export ErrorCard from './ErrorCard';

@@ -71,18 +71,21 @@ export const schema = gql`
 const isImage = ({ key, attributeValues, attributes }) =>
   attributes[key].fieldTypeId === Constants.FIELD_TYPES.IMAGE ||
   (key.toLowerCase().includes('image') &&
+    typeof attributeValues[key].value === 'string' &&
     attributeValues[key].value.startsWith('http')); // looks like an image url
 
 const isVideo = ({ key, attributeValues, attributes }) =>
   attributes[key].fieldTypeId === Constants.FIELD_TYPES.VIDEO_FILE ||
   attributes[key].fieldTypeId === Constants.FIELD_TYPES.VIDEO_URL ||
   (key.toLowerCase().includes('video') &&
+    typeof attributeValues[key].value === 'string' &&
     attributeValues[key].value.startsWith('http')); // looks like a video url
 
 const isAudio = ({ key, attributeValues, attributes }) =>
   attributes[key].fieldTypeId === Constants.FIELD_TYPES.AUDIO_FILE ||
   attributes[key].fieldTypeId === Constants.FIELD_TYPES.AUDIO_URL ||
   (key.toLowerCase().includes('audio') &&
+    typeof attributeValues[key].value === 'string' &&
     attributeValues[key].value.startsWith('http')); // looks like an audio url
 
 export const defaultContentItemResolvers = {
@@ -109,7 +112,9 @@ export const defaultContentItemResolvers = {
     return imageKeys.map((key) => ({
       key,
       name: attributes[key].name,
-      sources: [{ uri: attributeValues[key].value }],
+      sources: attributeValues[key].value
+        ? [{ uri: attributeValues[key].value }]
+        : [],
     }));
   },
 
@@ -125,7 +130,9 @@ export const defaultContentItemResolvers = {
       key,
       name: attributes[key].name,
       embedHtml: get(attributeValues, 'videoEmbed.value', null), // TODO: this assumes that the key `VideoEmebed` is always used on Rock
-      sources: [{ uri: attributeValues[key].value }],
+      sources: attributeValues[key].value
+        ? [{ uri: attributeValues[key].value }]
+        : [],
     }));
   },
 
@@ -140,12 +147,15 @@ export const defaultContentItemResolvers = {
     return audioKeys.map((key) => ({
       key,
       name: attributes[key].name,
-      sources: [{ uri: attributeValues[key].value }],
+      sources: attributeValues[key].value
+        ? [{ uri: attributeValues[key].value }]
+        : [],
     }));
   },
 
   coverImage: async (root, args, { models }) => {
-    const defaultImages = defaultContentItemResolvers.images(root);
+    let defaultImages = defaultContentItemResolvers.images(root) || [];
+    defaultImages = defaultImages.filter((image) => image.sources.length); // filter images w/o URLs
     // return top image by defalt. TODO: probably better logic to default to.
     if (defaultImages.length) return defaultImages[0];
 
@@ -157,7 +167,8 @@ export const defaultContentItemResolvers = {
     if (parentItems.length) {
       const parentImages = parentItems
         .map(defaultContentItemResolvers.images)
-        .find((images) => images.length);
+        .find((images) => images.length)
+        .filter((image) => image.sources.length); // filter images w/o URLs
 
       if (parentImages && parentImages.length) return parentImages[0];
     }

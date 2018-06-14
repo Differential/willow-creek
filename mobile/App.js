@@ -1,8 +1,10 @@
 import React from 'react';
+import { ApolloProvider } from 'react-apollo';
 import { createStackNavigator } from 'react-navigation';
 import ArticleSingle from 'articles/Single';
 import { ThemeProvider } from 'ui/theme';
 import { TabStack } from 'tabs';
+import client from 'client';
 import LiveNowModal from 'live/liveModal';
 
 export const RootStack = createStackNavigator(
@@ -21,9 +23,11 @@ export const RootStack = createStackNavigator(
 export default class App extends React.Component {
   render() {
     return (
-      <ThemeProvider>
-        <RootStack />
-      </ThemeProvider>
+      <ApolloProvider client={client}>
+        <ThemeProvider>
+          <RootStack />
+        </ThemeProvider>
+      </ApolloProvider>
     );
   }
 }
