@@ -6,6 +6,7 @@ Fixes [issue-number]
 - [ ] Ensure there are no new warnings (in app AND in storybook)
 - [ ] Upload an animated GIF showcasing the solution (if it applies)
 - [ ] Set a relevant reviewer
+- [ ] Add a line to the changelog documenting the high-level change this PR introduces
 
 ## Reviewer
 
@@ -15,3 +16,4 @@ Fixes [issue-number]
 - [ ] Review new stories if any apply
 - [ ] Review test coverage: Are all new or changed states tested?
 - [ ] Review new test logic
+- [ ] Review the changelog entry
