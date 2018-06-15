@@ -6,3 +6,4 @@ v0.1: June 15, 2018
 - Created a live bar button that redirects to a web view displaying a Church Online stream
 - Imported numerous reusable components
 - Designed initial project deployment and release processes
+- Added a version tool for quickly updating iOS and Android version numbers

@@ -30,17 +30,21 @@
     "react-dom": "16.3.1",
     "react-native-dotenv": "^0.1.1",
     "react-native-storybook-loader": "^1.8.0",
+    "react-native-version": "^2.6.2",
     "react-test-renderer": "16.3.1"
   },
   "scripts": {
-    "start": "react-native start",
     "android": "react-native run-android",
-    "ios": "react-native run-ios --simulator=\"iPhone X\"",
-    "test": "bash ../scripts/test-script.sh",
-    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov",
     "fixlint": "./node_modules/.bin/eslint . --fix",
-    "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
-    "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
+    "ios": "react-native run-ios --simulator=\"iPhone X\"",
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "postversion":
+      "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
+    "start": "react-native start",
+    "storybook":
+      "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
+    "test": "bash ../scripts/test-script.sh"
   },
   "jest": {
     "preset": "react-native",
@@ -48,12 +52,8 @@
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|react-navigation))"
     ],
-    "testMatch": [
-      "<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"
-    ],
-    "modulePaths": [
-      "<rootDir>/src/"
-    ]
+    "testMatch": ["<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"],
+    "modulePaths": ["<rootDir>/src/"]
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.2",
@@ -79,8 +79,6 @@
     "stream": "^0.0.2"
   },
   "rnpm": {
-    "assets": [
-      "assets/fonts"
-    ]
+    "assets": ["assets/fonts"]
   }
 }
