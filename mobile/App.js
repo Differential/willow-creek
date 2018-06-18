@@ -2,6 +2,7 @@ import React from 'react';
 import { ApolloProvider } from 'react-apollo';
 import { createStackNavigator } from 'react-navigation';
 import ArticleSingle from 'articles/Single';
+import ContentSingle from 'content/Single';
 import { ThemeProvider } from 'ui/theme';
 import { TabStack } from 'tabs';
 import client from 'client';
@@ -11,6 +12,7 @@ export const RootStack = createStackNavigator(
   {
     Tab: TabStack,
     ArticleSingle,
+    ContentSingle,
     LiveNowModal,
   },
   {

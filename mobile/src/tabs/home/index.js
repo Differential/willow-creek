@@ -19,6 +19,12 @@ export class HomeScreen extends React.Component {
     }),
   };
 
+  onPress = (item) =>
+    this.props.navigation.navigate('ContentSingle', {
+      itemId: item.node.id,
+      itemTitle: item.node.title,
+    });
+
   render() {
     return (
       <FlexedView>
@@ -29,6 +35,7 @@ export class HomeScreen extends React.Component {
               content={get(data, 'userFeed.edges', [])}
               isLoading={loading}
               error={error}
+              onPressItem={this.onPress}
             />
           )}
         </Query>

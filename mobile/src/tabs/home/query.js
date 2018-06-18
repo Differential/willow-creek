@@ -5,9 +5,8 @@ const GET_USER_FEED = gql`
     userFeed {
       edges {
         node {
-          id
           __typename
-          title
+          id
           coverImage {
             name
             sources {
@@ -19,6 +18,7 @@ const GET_USER_FEED = gql`
             name
             iconName
           }
+          title
         }
       }
     }

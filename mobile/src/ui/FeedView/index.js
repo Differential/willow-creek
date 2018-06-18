@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import { pure, compose, branch, withProps, defaultProps } from 'recompose';
 
@@ -12,29 +12,102 @@ const StyledFlatList = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 4,
 }))(FlatList);
 
-// eslint-disable-next-line
-const defaultFeedItemRenderer = ({ item }) => {
-  if (!item) return null;
-  return (
-    // <Link to={item.link} component={TouchableWithoutFeedback}>
+export class FeedView extends React.Component {
+  static propTypes = {
+    content: PropTypes.array, // eslint-disable-line
+    error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    fetchMore: PropTypes.func,
+    isLoading: PropTypes.bool,
+    keyExtractor: PropTypes.func,
+    ListEmptyComponent: PropTypes.func,
+    numColumns: PropTypes.number,
+    onEndReachedThreshold: PropTypes.number,
+    onPressItem: PropTypes.func,
+    refetch: PropTypes.func,
+    renderEmptyState: PropTypes.func,
+    renderItem: PropTypes.func,
+  };
 
-    // These are all props of FeedItemCard but they do not have data coming
-    // back yet. So I moved them here for safe keeping. TODO: Move them back
-    // when the data is ready.
-    // backgroundColor={item.theme.colors.background.paper}
-    // isLight={item.theme.isLight}
-    // isLiked={item.isLiked}
-    <FeedItemCard
-      id={item.node.id}
-      title={item.node.title || item.node.name || ' '}
-      channelType={item.node.parentChannel.name}
-      channelTypeIcon={item.node.parentChannel.iconName}
-      images={item.node.coverImage.sources}
-      isLoading={item.node.isLoading}
-    />
-    // </Link>
-  );
-};
+  static defaultProps = {
+    isLoading: false,
+    // renderItem: this.defaultFeedItemRenderer,
+    onEndReachedThreshold: 0.7,
+    keyExtractor: (item) => item && item.node.id,
+    content: [],
+    refetch: undefined,
+    fetchMore: undefined,
+  };
+
+  refetchHandler = ({ isLoading, refetch }) =>
+    refetch && ((...args) => !isLoading && refetch(...args));
+
+  fetchMoreHandler = ({ fetchMore, error, isLoading }) =>
+    fetchMore && ((...args) => !isLoading && !error && fetchMore(...args));
+
+  renderItem = ({ item }) => {
+    if (this.props.renderItem) {
+      return this.props.renderItem({ item });
+    }
+    return (
+      // These are all props of FeedItemCard but they do not have data coming
+      // back yet. So I moved them here for safe keeping.
+      // TODO: Move them back when the data is ready.
+      // backgroundColor={item.theme.colors.background.paper}
+      // isLight={item.theme.isLight}
+      // isLiked={item.isLiked}
+      <TouchableWithoutFeedback
+        onPress={() => this.props.onPressItem({ ...item })}
+      >
+        <FeedItemCard
+          id={item.node.id}
+          title={item.node.title || item.node.name || ' '}
+          channelType={item.node.parentChannel.name}
+          channelTypeIcon={item.node.parentChannel.iconName}
+          images={item.node.coverImage.sources}
+          isLoading={item.node.isLoading}
+        />
+      </TouchableWithoutFeedback>
+    );
+  };
+
+  render() {
+    const {
+      content,
+      error,
+      fetchMore,
+      isLoading,
+      keyExtractor,
+      ListEmptyComponent,
+      numColumns,
+      onEndReachedThreshold,
+      refetch,
+      renderEmptyState,
+      renderItem,
+      ...otherProps
+    } = this.props;
+
+    return (
+      <StyledFlatList
+        {...otherProps}
+        data={content}
+        keyExtractor={keyExtractor}
+        ListEmptyComponent={
+          error && !isLoading && (!content || !content.length) ? (
+            <ErrorCard error={error} />
+          ) : (
+            ListEmptyComponent
+          )
+        }
+        numColumns={numColumns}
+        onEndReached={this.fetchMoreHandler({ fetchMore, error, isLoading })}
+        onEndReachedThreshold={onEndReachedThreshold}
+        onRefresh={this.refetchHandler({ isLoading, refetch })}
+        refreshing={isLoading}
+        renderItem={this.renderItem}
+      />
+    );
+  }
+}
 
 const generateLoadingStateData = (numberOfItems = 1) => {
   const itemData = () => ({
@@ -77,7 +150,7 @@ const enhance = compose(
     withProps({
       isLoading: true,
       content: generateLoadingStateData(10),
-      fetchMore: false,
+      fetchMore: () => {},
     })
   ),
   mediaQuery(
@@ -87,61 +160,4 @@ const enhance = compose(
   )
 );
 
-const refetchHandler = ({ isLoading, refetch }) =>
-  refetch && ((...args) => !isLoading && refetch(...args));
-
-const fetchMoreHandler = ({ fetchMore, error, isLoading }) =>
-  fetchMore && ((...args) => !isLoading && !error && fetchMore(...args));
-
-const FeedView = enhance(
-  ({
-    isLoading,
-    refetch,
-    content,
-    error,
-    fetchMore,
-    numColumns,
-    renderItem,
-    ListEmptyComponent,
-    ...otherProps
-  }) => (
-    <StyledFlatList
-      {...otherProps}
-      renderItem={renderItem}
-      refreshing={isLoading}
-      onRefresh={refetchHandler({ isLoading, refetch })}
-      onEndReached={fetchMoreHandler({ fetchMore, error, isLoading })}
-      numColumns={numColumns}
-      data={content}
-      ListEmptyComponent={
-        error && !isLoading && (!content || !content.length) ? (
-          <ErrorCard error={error} />
-        ) : (
-          ListEmptyComponent
-        )
-      }
-    />
-  )
-);
-
-FeedView.defaultProps = {
-  isLoading: false,
-  renderItem: defaultFeedItemRenderer,
-  onEndReachedThreshold: 0.7,
-  keyExtractor: (item) => item && item.node.id,
-  content: [],
-  refetch: undefined,
-  fetchMore: undefined,
-};
-
-FeedView.propTypes = {
-  isLoading: PropTypes.bool,
-  content: PropTypes.array, // eslint-disable-line
-  refetch: PropTypes.func,
-  fetchMore: PropTypes.func,
-  renderItem: PropTypes.func,
-  renderEmptyState: PropTypes.func,
-  numColumns: PropTypes.number,
-};
-
-export { FeedView as default, defaultFeedItemRenderer };
+export default enhance(FeedView);
