@@ -52,53 +52,95 @@ export default class RestConnector {
     return mapKeys(normalizedValues, (value, key) => camelCase(key));
   };
 
+  handleResponse = async ({ path, response }) => {
+    const { status, statusText } = response;
+
+    if (status === 204) {
+      return null; // todo: how best to handle?
+    }
+
+    if (status >= 400) {
+      const err = new Error(statusText);
+      err.code = status;
+      throw err;
+    }
+
+    const body = this.normalize(await response.json());
+    const etag = response.headers.get('etag');
+    if (etag) {
+      eTagCache[path] = {
+        result: body,
+        etag,
+      };
+    }
+    return body;
+  };
+
   // Used with DataLoader to fetch resources with eTag support
   fetchWithCacheForDataLoader = (urlInput = []) => {
-    let urls = urlInput;
-    if (!Array.isArray(urls)) urls = [urls];
+    let paths = urlInput;
+    if (!Array.isArray(paths)) paths = [paths];
 
     const options = {
-      ...this.defaultRequestOptions,
+      headers: {},
     };
 
     return Promise.all(
-      urls.map(async (url) => {
-        console.log('Fetching', url);
-        const cachedRes = eTagCache[url];
+      paths.map(async (path) => {
+        const cachedRes = eTagCache[path];
         if (cachedRes && cachedRes.etag) {
           options.headers['If-None-Match'] = cachedRes.etag;
         }
 
-        const response = await fetch(url, options);
-
-        const { status, statusText } = response;
-
-        if (status === 304) {
+        const response = await this.fetch(path, options);
+        if (response.status === 304) {
           return cachedRes.result;
         }
-
-        if (status === 204) {
-          return null; // todo: how best to handle?
-        }
-
-        if (status >= 400) {
-          const err = new Error(statusText);
-          err.code = status;
-          throw err;
-        }
-
-        const body = this.normalize(await response.json());
-        const etag = response.headers.get('etag');
-        if (etag) {
-          eTagCache[url] = {
-            result: body,
-            etag,
-          };
-        }
-        return body;
+        return this.handleResponse({ path, response });
       })
     );
   };
 
-  get = (path) => this.loader.load(urlJoin(this.baseUrl, path));
+  fetch = (path, options) => {
+    const url = urlJoin(this.baseUrl, path);
+    console.log('fetching', url);
+    return fetch(
+      url,
+      merge(
+        {
+          ...this.defaultRequestOptions,
+        },
+        options
+      )
+    );
+  };
+
+  get = (path) => this.loader.load(path);
+
+  post = async (path, data, config) => {
+    const response = await this.fetch(path, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      ...config,
+    });
+    return this.handleResponse({ path, response });
+  };
+
+  put = async (path, data, config) => {
+    const response = await this.fetch(path, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      ...config,
+    });
+    return this.handleResponse({ path, response });
+  };
+
+  patch = async (path, data, config) => {
+    const response = await this.fetch(path, {
+      method: 'PATCH',
+      body: JSON.stringify(data),
+      ...config,
+    });
+    return this.handleResponse({ path, response });
+  };
 }

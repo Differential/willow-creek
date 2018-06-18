@@ -21,7 +21,7 @@ export default class RockRequestBuilder {
   }
 
   /**
-   * Sends the request to the server, resolves with results
+   * Sends a GET request to the server, resolves with results
    * @returns promise
    */
   get = () =>

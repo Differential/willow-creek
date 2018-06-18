@@ -198,4 +198,61 @@ describe('RestConnector', () => {
     fetch.mockReject(error);
     expect(connector.get('/endpoint')).rejects.toEqual(error);
   });
+
+  it('posts data', () => {
+    const connector = new RestConnector({
+      baseUrl,
+    });
+
+    fetch.mockResponseOnce(
+      JSON.stringify({
+        response: data,
+      })
+    );
+
+    connector.post('/endpoint', { request: data }).then((result) => {
+      expect(result).toMatchSnapshot();
+    });
+
+    expect(fetch.mock.calls.length).toEqual(1);
+    expect(fetch.mock.calls[0]).toMatchSnapshot();
+  });
+
+  it('puts data', () => {
+    const connector = new RestConnector({
+      baseUrl,
+    });
+
+    fetch.mockResponseOnce(
+      JSON.stringify({
+        response: data,
+      })
+    );
+
+    connector.put('/endpoint', { request: data }).then((result) => {
+      expect(result).toMatchSnapshot();
+    });
+
+    expect(fetch.mock.calls.length).toEqual(1);
+    expect(fetch.mock.calls[0]).toMatchSnapshot();
+  });
+
+  it('patches data', () => {
+    const connector = new RestConnector({
+      baseUrl,
+    });
+
+    fetch.mockResponseOnce(
+      JSON.stringify({
+        response: data,
+      })
+    );
+
+    connector.patch('/endpoint', { request: data }).then((result) => {
+      expect(result).toMatchSnapshot();
+    });
+
+    expect(fetch.mock.calls.length).toEqual(1);
+    expect(fetch.mock.calls[0]).toMatchSnapshot();
+  });
 });

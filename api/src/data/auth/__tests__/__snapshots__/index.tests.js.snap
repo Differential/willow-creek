@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth currentUser query queries current user when logged in 1`] = `
+Object {
+  "data": Object {
+    "currentUser": Object {
+      "id": "a3f40bfc6d358bab15e8842d198bd7e05dda0fb542a841c90b388fae1b6f788a",
+      "profile": Object {
+        "id": "e812510c2fe5ed7b099fd1284df96615",
+      },
+    },
+  },
+}
+`;
+
+exports[`Auth currentUser query requires you to be logged in 1`] = `
+Object {
+  "data": Object {
+    "currentUser": null,
+  },
+  "errors": Array [
+    [GraphQLError: Must be logged in],
+  ],
+}
+`;
+
+exports[`Auth logs in a user 1`] = `
+Object {
+  "data": Object {
+    "authenticate": Object {
+      "user": Object {
+        "id": "a3f40bfc6d358bab15e8842d198bd7e05dda0fb542a841c90b388fae1b6f788a",
+        "profile": Object {
+          "id": "e812510c2fe5ed7b099fd1284df96615",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Auth registers an auth token and passes the cookie on requests to rock 1`] = `
+Object {
+  "headers": Object {
+    "Authorization-Token": "some-rock-token",
+    "Content-Type": "application/json",
+    "cookie": "some-cookie",
+    "user-agent": "Apollos",
+  },
+}
+`;
+
+exports[`Auth throws invalid credentials error on bad password 1`] = `
+Object {
+  "data": Object {
+    "authenticate": null,
+  },
+  "errors": Array [
+    [GraphQLError: Invalid Credentials],
+  ],
+}
+`;

@@ -1,14 +1,12 @@
 import dotenv from 'dotenv/config'; // eslint-disable-line
 import { ApolloServer } from 'apollo-server';
+import { get } from 'lodash';
 import { resolvers, schema, models } from './data';
 
 import RockConnector from './connectors/rock';
 
 // Construct a context object for each request
-export const getContext = () => {
-  // todo: load user
-  const user = null;
-
+export const getContext = ({ req = {} } = {}) => {
   // initialize connectors for every request so API fetches
   // are deduplicated per-request only.
   const connectors = {
@@ -18,7 +16,6 @@ export const getContext = () => {
   const initiatedModels = {};
 
   const context = {
-    user,
     models: initiatedModels,
     connectors,
   };
@@ -26,6 +23,10 @@ export const getContext = () => {
   Object.keys(models).forEach((modelName) => {
     initiatedModels[modelName] = new models[modelName](context);
   });
+
+  if (get(req, 'headers.authorization')) {
+    initiatedModels.Auth.registerToken(req.headers.authorization);
+  }
 
   return context;
 };

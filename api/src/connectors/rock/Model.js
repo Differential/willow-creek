@@ -24,10 +24,11 @@ export default class RockModel {
    *
    * @returns {object} Instance of RockRequest
    */
-  request() {
-    if (!this.resource)
+  request(resource) {
+    const _resource = resource || this.resource;
+    if (!_resource)
       throw new Error('Please set a resource string on your RockModel');
-    return this.context.connectors.Rock.request(this.resource);
+    return this.context.connectors.Rock.request(_resource);
   }
 
   /**

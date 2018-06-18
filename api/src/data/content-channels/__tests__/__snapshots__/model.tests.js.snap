@@ -15,7 +15,7 @@ Array [
 ]
 `;
 
-exports[`ContentChannelModel gets all 2`] = `
+exports[`ContentChannelModel gets by id 1`] = `
 Array [
   Object {
     "id": 1,
@@ -26,7 +26,7 @@ Array [
 ]
 `;
 
-exports[`ContentChannelModel gets by id 1`] = `
+exports[`ContentChannelModel gets by id 2`] = `
 Array [
   Array [
     "https://apollosrock.newspring.cc/api/ContentChannels?%24filter=Id%20eq%201&%24expand=ChildContentChannels&%24top=1",
@@ -41,7 +41,7 @@ Array [
 ]
 `;
 
-exports[`ContentChannelModel gets by id 2`] = `
+exports[`ContentChannelModel gets by id 3`] = `
 Object {
   "id": 1,
 }

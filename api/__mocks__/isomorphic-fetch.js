@@ -10,7 +10,7 @@ const resolveWith = (data) =>
   Promise.resolve(new fetch.Response(JSON.stringify(data)));
 
 fetch.mockRockAPI = () => {
-  fetch.mockImplementation((url) => {
+  fetch.mockImplementation((url, options) => {
     if (!url.match(Constants.ROCK_API)) return Promise.reject();
 
     if (url.match('api/ContentChannels/\\d')) {
@@ -38,6 +38,21 @@ fetch.mockRockAPI = () => {
 
     if (url.match('api/ContentChannelItemAssociations')) {
       return resolveWith([rockMocks.contentChannelItemAssociation()]);
+    }
+
+    if (url.match('api/Auth/Login')) {
+      const body = JSON.parse(options.body);
+      const response = new fetch.Response('');
+      if (body.Password === 'good') {
+        response.headers.set('set-cookie', 'some cookie');
+        return Promise.resolve(response);
+      }
+      response.status = 401;
+      return Promise.reject(response);
+    }
+
+    if (url.match('api/People/GetCurrentPerson')) {
+      return resolveWith(rockMocks.people());
     }
 
     if (url.match('api/People/\\d')) {

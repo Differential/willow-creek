@@ -30,6 +30,7 @@ describe('Person', () => {
       }
     `;
     const rootValue = {};
+
     const result = await graphql(schema, query, rootValue, context);
     expect(result).toMatchSnapshot();
   });
