@@ -41,7 +41,7 @@ exports[`the H6 component should render a loading state 1`] = `
   style={
     Object {
       "alignSelf": "stretch",
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#A5A5A5",
       "borderRadius": 6,
       "height": 15.75,
       "marginVertical": 1,

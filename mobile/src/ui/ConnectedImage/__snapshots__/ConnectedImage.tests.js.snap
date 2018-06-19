@@ -15,7 +15,7 @@ exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
   style={
     Object {
       "aspectRatio": 1,
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#A5A5A5",
       "opacity": 0,
     }
   }
@@ -36,7 +36,7 @@ exports[`the ConnectedImage component should render immediately with a network i
   }
   style={
     Object {
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#A5A5A5",
       "opacity": 0,
     }
   }

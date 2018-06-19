@@ -4,11 +4,11 @@ exports[`the Card component it should render a placeholder 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -104,8 +104,8 @@ exports[`the Card component it should render a placeholder 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#6bac43",
-            "borderColor": "#6bac43",
+            "backgroundColor": "#17B582",
+            "borderColor": "#17B582",
             "borderRadius": 6,
             "borderWidth": 2,
             "elevation": 2,
@@ -124,7 +124,7 @@ exports[`the Card component it should render a placeholder 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "color": "#ffffff",
+              "color": "#FFFFFF",
               "fontFamily": "OpenSans-Bold",
               "fontSize": 20.02,
               "lineHeight": 25.33,
@@ -140,7 +140,7 @@ exports[`the Card component it should render a placeholder 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#6bac43",
+            "color": "#17B582",
             "textDecorationLine": "underline",
           }
         }
@@ -154,11 +154,11 @@ exports[`the Card component should render 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -180,7 +180,7 @@ exports[`the Card component should render 1`] = `
       style={
         Object {
           "aspectRatio": 1,
-          "backgroundColor": "#dddddd",
+          "backgroundColor": "#A5A5A5",
           "width": "100%",
         }
       }
@@ -189,7 +189,7 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "aspectRatio": 1,
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "width": "100%",
           }
         }
@@ -279,8 +279,8 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#6bac43",
-            "borderColor": "#6bac43",
+            "backgroundColor": "#17B582",
+            "borderColor": "#17B582",
             "borderRadius": 6,
             "borderWidth": 2,
             "elevation": 2,
@@ -299,7 +299,7 @@ exports[`the Card component should render 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "color": "#ffffff",
+              "color": "#FFFFFF",
               "fontFamily": "OpenSans-Bold",
               "fontSize": 20.02,
               "lineHeight": 25.33,
@@ -315,7 +315,7 @@ exports[`the Card component should render 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#6bac43",
+            "color": "#17B582",
             "textDecorationLine": "underline",
           }
         }

@@ -9,7 +9,7 @@ const light = ({ colors, alpha }) => ({
       link: colors.primary,
     },
     background: {
-      default: colors.lightSecondary,
+      default: colors.lightPrimary,
       paper: colors.white,
       primary: colors.primary,
       secondary: colors.secondary,

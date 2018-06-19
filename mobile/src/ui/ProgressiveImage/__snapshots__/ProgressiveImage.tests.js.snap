@@ -5,7 +5,7 @@ exports[`the ProgressiveImage component should render 1`] = `
   style={
     Object {
       "aspectRatio": 1,
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#A5A5A5",
       "width": "100%",
     }
   }
@@ -24,7 +24,7 @@ exports[`the ProgressiveImage component should render 1`] = `
     }
     style={
       Object {
-        "backgroundColor": "#dddddd",
+        "backgroundColor": "#A5A5A5",
         "height": "100%",
         "opacity": 0,
         "resizeMode": "cover",
@@ -45,7 +45,7 @@ exports[`the ProgressiveImage component should render 1`] = `
     }
     style={
       Object {
-        "backgroundColor": "#dddddd",
+        "backgroundColor": "#A5A5A5",
         "height": "100%",
         "opacity": 0,
         "resizeMode": "cover",

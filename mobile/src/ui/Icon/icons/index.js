@@ -19,6 +19,7 @@ export { default as Failed } from './Failed';
 export { default as Filter } from './Filter';
 export { default as Fullscreen } from './Fullscreen';
 export { default as Groups } from './Groups';
+export { default as Home } from './Home';
 export { default as Information } from './Information';
 export { default as Like } from './Like';
 export { default as LikeSolid } from './LikeSolid';

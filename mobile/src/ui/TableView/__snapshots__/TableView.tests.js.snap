@@ -11,9 +11,9 @@ exports[`the TableView Component should render 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#FFFFFF",
         "borderBottomWidth": 0.5,
-        "borderColor": "rgba(133, 133, 133, 0.30000000000000004)",
+        "borderColor": "rgba(165, 165, 165, 0.30000000000000004)",
         "borderLeftWidth": 0,
         "borderRightWidth": 0,
         "borderTopWidth": 0.5,
@@ -25,7 +25,7 @@ exports[`the TableView Component should render 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#FFFFFF",
           "flexDirection": "row",
           "height": 50,
           "justifyContent": "flex-start",
@@ -131,7 +131,7 @@ exports[`the TableView Component should render 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "backgroundColor": "rgba(165, 165, 165, 0.30000000000000004)",
           "height": 0.5,
           "marginLeft": 13.333333333333334,
           "width": "100%",
@@ -142,7 +142,7 @@ exports[`the TableView Component should render 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#FFFFFF",
           "flexDirection": "row",
           "height": 50,
           "justifyContent": "flex-start",
@@ -324,13 +324,13 @@ exports[`the TableView Component should render 1`] = `
               }
             >
               <RCTSwitch
-                activeThumbColor="#ffffff"
-                activeTrackColor="#6bac43"
+                activeThumbColor="#FFFFFF"
+                activeTrackColor="#17B582"
                 disabled={false}
                 onChange={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
-                onTintColor="#6bac43"
+                onTintColor="#17B582"
                 style={
                   Array [
                     Object {
@@ -340,8 +340,8 @@ exports[`the TableView Component should render 1`] = `
                     undefined,
                   ]
                 }
-                tintColor="#dddddd"
-                trackColor="#dddddd"
+                tintColor="#A5A5A5"
+                trackColor="#A5A5A5"
                 value={false}
               />
             </View>
@@ -352,7 +352,7 @@ exports[`the TableView Component should render 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "backgroundColor": "rgba(165, 165, 165, 0.30000000000000004)",
           "height": 0.5,
           "marginLeft": 13.333333333333334,
           "width": "100%",
@@ -363,7 +363,7 @@ exports[`the TableView Component should render 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#FFFFFF",
           "flexDirection": "row",
           "height": 50,
           "justifyContent": "flex-start",
@@ -395,7 +395,7 @@ exports[`the TableView Component should render 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "backgroundColor": "rgba(165, 165, 165, 0.30000000000000004)",
           "height": 0.5,
           "marginLeft": 13.333333333333334,
           "width": "100%",
@@ -406,7 +406,7 @@ exports[`the TableView Component should render 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#FFFFFF",
           "flexDirection": "row",
           "height": 50,
           "justifyContent": "flex-start",

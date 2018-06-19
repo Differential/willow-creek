@@ -1,28 +1,32 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import { withNavigation } from 'react-navigation';
 import { UIText } from 'ui/typography';
+import Card, { CardContent } from 'ui/Card';
+import Touchable from 'ui/Touchable';
 import styled from 'ui/styled';
+import ChannelLabel from 'ui/ChannelLabel';
 
-const Container = styled(({ theme }) => ({
-  justifyContent: 'center',
-  backgroundColor: theme.colors.primary,
-  paddingVertical: theme.sizing.baseUnit / 4,
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-}))(View);
-
-const Button = styled(({ theme }) => ({
-  backgroundColor: theme.colors.primary,
-}))(TouchableOpacity);
-
-const Title = styled({ textAlign: 'center' })(UIText);
+const LiveCard = styled(({ theme }) => ({
+  backgroundColor: theme.colors.lightSecondary,
+}))(Card);
 
 const LiveNowButton = (props) => (
-  <Container>
-    <Button onPress={() => props.navigation.navigate('LiveNowModal')}>
-      <Title> Live Now! </Title>
-    </Button>
-  </Container>
+  <Touchable onPress={() => props.navigation.navigate('LiveNowModal')}>
+    <LiveCard>
+      <CardContent>
+        <ChannelLabel
+          icon="video"
+          label={
+            <UIText>
+              <UIText bold>{`We're live. `}</UIText>
+              Watch now!
+            </UIText>
+          }
+        />
+      </CardContent>
+    </LiveCard>
+  </Touchable>
 );
 
 LiveNowButton.propTypes = {
@@ -31,4 +35,4 @@ LiveNowButton.propTypes = {
   }),
 };
 
-export default LiveNowButton;
+export default withNavigation(LiveNowButton);

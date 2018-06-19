@@ -22,7 +22,7 @@ exports[`the GradientOverlayImage component should render 1`] = `
     }
     style={
       Object {
-        "backgroundColor": "#dddddd",
+        "backgroundColor": "#A5A5A5",
         "height": "100%",
         "opacity": 0,
         "resizeMode": "cover",
@@ -55,7 +55,7 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
     }
     style={
       Object {
-        "backgroundColor": "#dddddd",
+        "backgroundColor": "#A5A5A5",
         "height": "100%",
         "opacity": 0,
         "resizeMode": "cover",

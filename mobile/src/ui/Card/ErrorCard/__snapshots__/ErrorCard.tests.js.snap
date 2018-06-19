@@ -4,11 +4,11 @@ exports[`the Card component should render 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -75,11 +75,11 @@ exports[`the Card component should render with an error inside an object 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -146,11 +146,11 @@ exports[`the Card component should render with an error message inside an object
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,

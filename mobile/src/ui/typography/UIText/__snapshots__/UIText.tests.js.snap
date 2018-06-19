@@ -45,7 +45,7 @@ exports[`the UIText component should render a loading state 1`] = `
   style={
     Object {
       "alignSelf": "stretch",
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#A5A5A5",
       "borderRadius": 6,
       "height": 18,
       "marginVertical": 1,

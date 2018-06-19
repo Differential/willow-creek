@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styled from 'ui/styled';
 import { H4, H7 } from 'ui/typography';
-import { Card, CardContent } from 'ui/Card';
+import Card, { CardContent } from 'ui/Card';
 
 const Header = styled({ textAlign: 'center' }, 'Error.Header')(H4);
 const ErrorText = styled({ textAlign: 'center' }, 'Error.Text')(H7);

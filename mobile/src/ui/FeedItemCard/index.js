@@ -7,7 +7,7 @@ import { withThemeMixin, withTheme } from 'ui/theme';
 // import Icon from 'ui/Icon';
 import ChannelLabel from 'ui/ChannelLabel';
 import GradientOverlayImage from 'ui/GradientOverlayImage';
-import { Card, CardContent, CardActions } from 'ui/Card';
+import Card, { CardContent, CardActions } from 'ui/Card';
 import { H4 } from 'ui/typography';
 import styled from 'ui/styled';
 // import ConnectedImage from 'ui/ConnectedImage';

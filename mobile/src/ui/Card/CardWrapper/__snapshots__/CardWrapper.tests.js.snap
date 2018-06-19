@@ -5,11 +5,11 @@ exports[`the CardWrapper component should accept a backgroundColor 1`] = `
   backgroundColor="salmon"
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -43,11 +43,11 @@ exports[`the CardWrapper component should accept additional props 1`] = `
   accessible={false}
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -72,12 +72,12 @@ exports[`the CardWrapper component should accept and render passed in styles 1`]
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "height": 400,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -103,11 +103,11 @@ exports[`the CardWrapper component should render 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -132,11 +132,11 @@ exports[`the CardWrapper component should render children 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,

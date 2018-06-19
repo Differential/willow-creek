@@ -121,7 +121,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "bottom": -0.5,
             "height": 0.5,
           }
@@ -145,7 +145,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
+              "backgroundColor": "#17B582",
               "bottom": 0,
               "height": 0.5,
             }
@@ -353,7 +353,7 @@ exports[`The Text Input component should render as a password field with an icon
       <View
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "bottom": -0.5,
             "height": 0.5,
           }
@@ -377,7 +377,7 @@ exports[`The Text Input component should render as a password field with an icon
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
+              "backgroundColor": "#17B582",
               "bottom": 0,
               "height": 0.5,
             }
@@ -510,7 +510,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "bottom": -0.5,
             "height": 0.5,
           }
@@ -534,7 +534,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
+              "backgroundColor": "#17B582",
               "bottom": 0,
               "height": 0.5,
             }
@@ -669,7 +669,7 @@ exports[`The Text Input component should render as an email field 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "bottom": -0.5,
             "height": 0.5,
           }
@@ -693,7 +693,7 @@ exports[`The Text Input component should render as an email field 1`] = `
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
+              "backgroundColor": "#17B582",
               "bottom": 0,
               "height": 0.5,
             }
@@ -824,7 +824,7 @@ exports[`The Text Input component should render correctly 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "bottom": -0.5,
             "height": 0.5,
           }
@@ -848,7 +848,7 @@ exports[`The Text Input component should render correctly 1`] = `
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
+              "backgroundColor": "#17B582",
               "bottom": 0,
               "height": 0.5,
             }

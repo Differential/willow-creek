@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The BackgroundView component should render 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4294967295,
+      4294506484,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+/>
+`;

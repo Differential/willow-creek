@@ -83,13 +83,13 @@ exports[`The Picker Input component should render correctly 1`] = `
         }
       >
         <RCTSwitch
-          activeThumbColor="#ffffff"
-          activeTrackColor="#6bac43"
+          activeThumbColor="#FFFFFF"
+          activeTrackColor="#17B582"
           disabled={false}
           onChange={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          onTintColor="#6bac43"
+          onTintColor="#17B582"
           style={
             Array [
               Object {
@@ -99,8 +99,8 @@ exports[`The Picker Input component should render correctly 1`] = `
               undefined,
             ]
           }
-          tintColor="#dddddd"
-          trackColor="#dddddd"
+          tintColor="#A5A5A5"
+          trackColor="#A5A5A5"
           value={false}
         />
       </View>

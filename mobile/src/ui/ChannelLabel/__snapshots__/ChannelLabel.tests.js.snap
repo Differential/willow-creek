@@ -61,7 +61,7 @@ exports[`the ChannelLabel component should render a skeleton view 1`] = `
       style={
         Object {
           "alignSelf": "stretch",
-          "backgroundColor": "#dddddd",
+          "backgroundColor": "#A5A5A5",
           "borderRadius": 6,
           "height": 14,
           "marginVertical": 0.8899999999999997,
@@ -87,7 +87,7 @@ exports[`the ChannelLabel component should render a skeleton view that supports 
   <View
     style={
       Object {
-        "backgroundColor": "#dddddd",
+        "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
         "height": 21.6,
         "width": 21.6,
@@ -107,7 +107,7 @@ exports[`the ChannelLabel component should render a skeleton view that supports 
       style={
         Object {
           "alignSelf": "stretch",
-          "backgroundColor": "#dddddd",
+          "backgroundColor": "#A5A5A5",
           "borderRadius": 6,
           "height": 14,
           "marginVertical": 0.8899999999999997,

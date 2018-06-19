@@ -1,4 +1,4 @@
-export Card from './CardWrapper';
+export { default } from './CardWrapper';
 export CardImage from './Image';
 export CardContent from './Content';
 export CardActions from './Actions';

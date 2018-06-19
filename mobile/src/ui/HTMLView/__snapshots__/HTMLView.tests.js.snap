@@ -38,7 +38,7 @@ exports[`the HTMLView component should render a block quote 1`] = `
       Object {
         "alignSelf": "stretch",
         "borderBottomWidth": 0.5,
-        "borderColor": "#858585",
+        "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
         "marginVertical": 40,
         "paddingHorizontal": 20,
@@ -145,7 +145,7 @@ exports[`the HTMLView component should render a link 1`] = `
         onPress={[Function]}
         style={
           Object {
-            "color": "#6bac43",
+            "color": "#17B582",
             "textDecorationLine": "underline",
           }
         }
@@ -562,7 +562,7 @@ exports[`the HTMLView component should render an image 1`] = `
     style={
       Object {
         "aspectRatio": 1,
-        "backgroundColor": "#dddddd",
+        "backgroundColor": "#A5A5A5",
         "width": "100%",
       }
     }
@@ -660,7 +660,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
         onPress={[Function]}
         style={
           Object {
-            "color": "#6bac43",
+            "color": "#17B582",
             "textDecorationLine": "underline",
           }
         }
@@ -780,7 +780,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
       Object {
         "alignSelf": "stretch",
         "borderBottomWidth": 0.5,
-        "borderColor": "#858585",
+        "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
         "marginVertical": 40,
         "paddingHorizontal": 20,
@@ -915,7 +915,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
         onPress={[Function]}
         style={
           Object {
-            "color": "#6bac43",
+            "color": "#17B582",
             "textDecorationLine": "underline",
           }
         }
@@ -1004,7 +1004,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
       Object {
         "alignSelf": "stretch",
         "borderBottomWidth": 0.5,
-        "borderColor": "#858585",
+        "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
         "marginVertical": 40,
         "paddingHorizontal": 20,
@@ -1386,7 +1386,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
         onPress={[Function]}
         style={
           Object {
-            "color": "#6bac43",
+            "color": "#17B582",
             "textDecorationLine": "underline",
           }
         }
@@ -1767,7 +1767,7 @@ exports[`the HTMLView component should render handle relative links 1`] = `
         onPress={[Function]}
         style={
           Object {
-            "color": "#6bac43",
+            "color": "#17B582",
             "textDecorationLine": "underline",
           }
         }

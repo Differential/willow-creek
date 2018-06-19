@@ -26,24 +26,23 @@ import * as types from './types';
 // on a per-component basis with "overrides"
 export const colors = {
   // Brand colors
-  primary: '#6bac43',
-  secondary: '#1c683e',
-  tertiary: '#2a4930',
+  primary: '#17B582',
+  secondary: '#00676D',
+  tertiary: '#6EC5B8',
   // Dark shades
   darkPrimary: '#303030',
   darkSecondary: '#505050',
-  darkTertiary: '#858585',
+  darkTertiary: '#A5A5A5',
   // Light shades
-  lightPrimary: '#ffffff',
-  lightSecondary: '#f7f7f7',
-  lightTertiary: '#dddddd',
+  lightPrimary: '#F8F7F4',
+  lightSecondary: '#DBDBD9',
+  lightTertiary: '#A5A5A5',
   // Statics
   black: '#000000',
-  white: '#ffffff',
+  white: '#FFFFFF',
   transparent: 'transparent',
 
   alert: '#c64f55',
-  wordOfChrist: '#8b0000', // only used in Scripture. TODO: consider theme changes.
 };
 
 // Base Typography sizing and fonts.

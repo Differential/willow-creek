@@ -9,7 +9,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -48,7 +48,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
         }
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
@@ -175,12 +175,12 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "height": 400,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -220,7 +220,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         }
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
@@ -312,11 +312,11 @@ exports[`the FeedItemCard component should render 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -355,7 +355,7 @@ exports[`the FeedItemCard component should render 1`] = `
         }
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
@@ -447,11 +447,11 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -490,7 +490,7 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
         }
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
@@ -582,11 +582,11 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#FFFFFF",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -625,7 +625,7 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
         }
         style={
           Object {
-            "backgroundColor": "#dddddd",
+            "backgroundColor": "#A5A5A5",
             "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
@@ -793,7 +793,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -832,7 +832,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         }
         style={
           Object {
-            "backgroundColor": "#858585",
+            "backgroundColor": "#A5A5A5",
             "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
@@ -856,7 +856,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#ffffff",
+            "color": "#F8F7F4",
             "fontFamily": "OpenSans-Bold",
             "fontSize": 25.2,
             "lineHeight": 31.28,
@@ -904,7 +904,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#f7f7f7",
+                "color": "#DBDBD9",
                 "fontFamily": "OpenSans-Regular",
                 "fontSize": 14,
                 "lineHeight": 15.78,

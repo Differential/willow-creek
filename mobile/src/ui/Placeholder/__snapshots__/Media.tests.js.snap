@@ -17,7 +17,7 @@ exports[`The Media placeholder accepts size 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#A5A5A5",
       "borderRadius": 6,
       "height": "50%",
       "width": "50%",
@@ -30,7 +30,7 @@ exports[`The Media placeholder renders correctly 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#A5A5A5",
       "borderRadius": 6,
       "height": "100%",
       "width": "100%",

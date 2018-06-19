@@ -47,7 +47,7 @@ const ChannelLabel = enhance(({ label, icon, withFlex, isLoading, theme }) => (
 ));
 
 ChannelLabel.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   icon: PropTypes.oneOf(Object.keys(Icons).map(kebabCase)),
   isLoading: PropTypes.bool,
   withFlex: PropTypes.bool,

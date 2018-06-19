@@ -60,7 +60,7 @@ exports[`The Picker Input component should render correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#858585",
+                "color": "#A5A5A5",
                 "fontFamily": "OpenSans-Bold",
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
@@ -176,8 +176,8 @@ exports[`The Picker Input component should render correctly 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "#ffffff",
-          "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "backgroundColor": "#FFFFFF",
+          "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
           "borderTopWidth": 0.5,
           "bottom": 0,
           "left": 0,
@@ -190,7 +190,7 @@ exports[`The Picker Input component should render correctly 1`] = `
         style={
           Object {
             "alignItems": "flex-end",
-            "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
+            "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
             "padding": 10,
           }
         }
@@ -202,7 +202,7 @@ exports[`The Picker Input component should render correctly 1`] = `
           onPress={[Function]}
           style={
             Object {
-              "color": "#6bac43",
+              "color": "#17B582",
               "textDecorationLine": "underline",
             }
           }
@@ -213,7 +213,7 @@ exports[`The Picker Input component should render correctly 1`] = `
       <View
         style={
           Object {
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#A5A5A5",
             "borderTopWidth": 0.5,
           }
         }
@@ -303,7 +303,7 @@ exports[`The Picker Input component should render correctly 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "#dddddd",
+          "backgroundColor": "#A5A5A5",
           "bottom": -0.5,
           "height": 0.5,
         }
@@ -327,7 +327,7 @@ exports[`The Picker Input component should render correctly 1`] = `
         hasError={false}
         style={
           Object {
-            "backgroundColor": "#6bac43",
+            "backgroundColor": "#17B582",
             "bottom": 0,
             "height": 0.5,
           }
