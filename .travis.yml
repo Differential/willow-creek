@@ -25,6 +25,6 @@ jobs:
       before_deploy: npm install -g now
       deploy:
         - provider: script
-          script: cd api && now --public --team Apolloschurch --token $NOW_TOKEN && now alias --team Apolloschurch --token $NOW_TOKEN && now rm apollos-church-api --team Apolloschurch --safe --yes --token $NOW_TOKEN
+          script: cd api && now --public --team apolloschurch --token $NOW_TOKEN && now alias --team apolloschurch --token $NOW_TOKEN && now rm apollos-church-api --team apolloschurch --safe --yes --token $NOW_TOKEN
           skip_cleanup: true
           master: true
