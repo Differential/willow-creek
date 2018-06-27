@@ -1,12 +1,12 @@
 import { createBottomTabNavigator } from 'react-navigation';
 import ConnectStack from './connect';
 import HomeStack from './home';
-import SectionsStack from './sections';
+import DiscoverStack from './discover';
 
 export const TabStack = createBottomTabNavigator(
   {
     Home: HomeStack,
-    Sections: SectionsStack,
+    Discover: DiscoverStack,
     Connect: ConnectStack,
   },
   {
