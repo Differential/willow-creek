@@ -1,6 +1,5 @@
 import 'isomorphic-fetch';
 import fetch from 'jest-fetch-mock';
-import { mapValues } from 'lodash';
 
 import { Constants } from '../src/connectors/rock';
 
@@ -60,7 +59,42 @@ fetch.mockRockAPI = () => {
     }
 
     if (url.match('api/People')) {
+      if (options.method === 'POST') {
+        const { Email } = JSON.parse(options.body);
+        if (!Email) {
+          const response = new fetch.Response('');
+          response.status = 400;
+          return Promise.reject(response);
+        }
+        return resolveWith({ personId: 35 });
+      }
+
       return resolveWith([rockMocks.people()]);
+    }
+
+    if (url.match('api/UserLogins')) {
+      if (options.method === 'POST') {
+        const { UserName } = JSON.parse(options.body);
+        if (!UserName) {
+          const response = new fetch.Response('');
+          response.status = 400;
+          return Promise.reject(response);
+        }
+        return resolveWith({ id: 21 });
+      }
+      const identity = url // identity = UserName
+        .split('eq')
+        .pop()
+        .trim(' '); // EXAMPLE URL: /api/UserLogins?$filter=UserName eq 'isaac.hardy@newspring.cc'
+      if (!identity) {
+        const response = new fetch.Response('');
+        response.status = 400;
+        return Promise.reject(response);
+      }
+      if (identity === `'isaac.hardy@newspring.cc'`)
+        return resolveWith([rockMocks.userLogins()]);
+
+      return resolveWith([]);
     }
 
     return Promise.reject();

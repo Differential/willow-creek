@@ -30,5 +30,7 @@ export const resolver = {
   Mutation: {
     authenticate: (root, { identity, password }, { models }) =>
       models.Auth.authenticate({ identity, password }),
+    registerPerson: (root, args, { models }) =>
+      models.Auth.registerPerson(args),
   },
 };

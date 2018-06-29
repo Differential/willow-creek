@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Auth User Registration creates new registration 1`] = `
+Object {
+  "data": Object {
+    "registerPerson": Object {
+      "user": Object {
+        "id": "a3f40bfc6d358bab15e8842d198bd7e05dda0fb542a841c90b388fae1b6f788a",
+        "profile": Object {
+          "email": "isaac.hardy@newspring.cc",
+          "id": "e812510c2fe5ed7b099fd1284df96615",
+        },
+      },
+    },
+  },
+}
+`;
+
 exports[`Auth currentUser query queries current user when logged in 1`] = `
 Object {
   "data": Object {

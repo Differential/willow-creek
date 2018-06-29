@@ -77,6 +77,16 @@ describe('Auth', () => {
       const result = await graphql(schema, query, rootValue, context);
       expect(result).toMatchSnapshot();
     });
+
+    it('queries current user when logged in', async () => {
+      const rootValue = {};
+      try {
+        context.models.Auth.registerToken('asdfasdfasdf');
+        await graphql(schema, query, rootValue, context);
+      } catch (e) {
+        expect(e.message).toEqual('Invalid token');
+      }
+    });
   });
 
   it('registers an auth token and passes the cookie on requests to rock', async () => {
@@ -96,5 +106,84 @@ describe('Auth', () => {
     const rootValue = {};
     await graphql(schema, query, rootValue, secondContext);
     expect(fetch.mock.calls[0][1]).toMatchSnapshot();
+  });
+
+  describe('User Registration', () => {
+    it('checks if user is already registered', async () => {
+      const result = await context.models.Auth.personExists({
+        identity: 'isaac.hardy@newspring.cc',
+      });
+
+      expect(result).toEqual(true);
+    });
+
+    it('throws error in personExists', async () => {
+      const result = await context.models.Auth.personExists({
+        identity: 'fake',
+      });
+
+      expect(result).toEqual(false);
+    });
+
+    it('creates user profile', async () => {
+      const result = await context.models.Auth.createUserProfile({
+        email: 'isaac.hardy@newspring.cc',
+      });
+
+      expect(result).toEqual({ personId: 35 });
+    });
+
+    it('throws error in createUserProfile', async () => {
+      try {
+        await context.models.Auth.createUserProfile({
+          email: '',
+        });
+      } catch (e) {
+        expect(e.message).toEqual('Unable to create profile!');
+      }
+    });
+
+    it('creates user login', async () => {
+      const result = await context.models.Auth.createUserLogin({
+        email: 'isaac.hardy@newspring.cc',
+        password: 'password',
+        personId: 35,
+      });
+
+      expect(result).toEqual({ id: 21 });
+    });
+
+    it('throws error in createUserLogin', async () => {
+      try {
+        await context.models.Auth.createUserLogin({
+          email: '',
+          password: 'password',
+          personId: 35,
+        });
+      } catch (e) {
+        expect(e.message).toEqual('Unable to create user login!');
+      }
+    });
+
+    it('creates new registration', async () => {
+      const query = gql`
+        mutation {
+          registerPerson(email: "hello.world@earth.org", password: "good") {
+            user {
+              id
+              profile {
+                id
+                email
+              }
+            }
+          }
+        }
+      `;
+
+      const rootValue = {};
+
+      const result = await graphql(schema, query, rootValue, context);
+      expect(result).toMatchSnapshot();
+    });
   });
 });

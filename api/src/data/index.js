@@ -30,6 +30,7 @@ export const schema = gql`
 
   type Mutation {
     authenticate(identity: String, password: String): Authentication
+    registerPerson(email: String, password: String): Authentication
   }
 `;
 
