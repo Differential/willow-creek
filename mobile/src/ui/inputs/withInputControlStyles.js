@@ -20,7 +20,7 @@ const textStyle = ({ theme }) => ({
   color: theme.colors.text.primary,
 });
 
-export const withInputControlViewStyles = styled(baseStyle);
-export const withInputControlTextStyles = styled(textStyle, 'Input.Control');
+const withInputControlTextStyles = styled(textStyle, 'Input.Control');
+const withInputControlViewStyles = styled(baseStyle);
 
-export default withInputControlTextStyles;
+export { withInputControlTextStyles as default, withInputControlViewStyles };

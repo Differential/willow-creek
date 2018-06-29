@@ -23,6 +23,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
+    "formik": "^0.11.11",
     "jest": "^23.0.0",
     "jest-react-native": "^18.0.0",
     "prettier": "1.12.1",
@@ -31,7 +32,8 @@
     "react-native-dotenv": "^0.1.1",
     "react-native-storybook-loader": "^1.8.0",
     "react-native-version": "^2.6.2",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "16.3.1",
+    "yup": "^0.25.1"
   },
   "scripts": {
     "android": "react-native run-android",
@@ -39,11 +41,9 @@
     "fixlint": "./node_modules/.bin/eslint . --fix",
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "postversion":
-      "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
+    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
     "start": "node ./scripts/get-introspection-data.js && react-native start",
-    "storybook":
-      "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
+    "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
     "test": "bash ../scripts/test-script.sh"
   },
   "jest": {

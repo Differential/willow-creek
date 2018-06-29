@@ -1,4 +1,2 @@
-import Button from './Button';
-
-export { default as ButtonLink } from './ButtonLink';
-export default Button;
+export default from './Button';
+export ButtonLink from './ButtonLink';

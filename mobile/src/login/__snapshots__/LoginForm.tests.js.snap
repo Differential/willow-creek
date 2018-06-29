@@ -1,0 +1,377 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The LoginForm component should render 1`] = `
+<View>
+  <View
+    disabled={false}
+    style={
+      Object {
+        "marginVertical": 20,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 0,
+            }
+          }
+        >
+          <TextInput
+            allowFontScaling={true}
+            autoCapitalize="none"
+            autoCorrect={false}
+            editable={true}
+            keyboardType="email-address"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "OpenSans-Bold",
+                "fontSize": 15.75,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="email"
+            underlineColorAndroid="transparent"
+            value=""
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "bottom": 0,
+            "justifyContent": "center",
+            "opacity": 1,
+            "position": "absolute",
+            "top": 0,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#505050",
+              "fontFamily": "OpenSans-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Email
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#A5A5A5",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 0.0001,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#17B582",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    disabled={false}
+    style={
+      Object {
+        "marginVertical": 20,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 0,
+            }
+          }
+        >
+          <TextInput
+            allowFontScaling={true}
+            autoCapitalize="none"
+            autoCorrect={false}
+            editable={true}
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
+            secureTextEntry={true}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "OpenSans-Bold",
+                "fontSize": 15.75,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="password"
+            underlineColorAndroid="transparent"
+            value=""
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "bottom": 0,
+            "justifyContent": "center",
+            "opacity": 1,
+            "position": "absolute",
+            "top": 0,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#505050",
+              "fontFamily": "OpenSans-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Password
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#A5A5A5",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 0.0001,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#17B582",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      bordered={false}
+      disabled={false}
+      pill={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#17B582",
+          "borderColor": "#17B582",
+          "borderRadius": 60,
+          "borderWidth": 2,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "paddingHorizontal": 20,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontFamily": "OpenSans-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+          }
+        }
+      >
+        Submit
+      </Text>
+    </View>
+  </View>
+</View>
+`;

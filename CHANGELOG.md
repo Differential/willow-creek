@@ -1,6 +1,7 @@
 v0.2.0: July 3, 2018
 
 - Created script to automate introspection fragment for client-side cache
+- Added a static login form component with validation
 - Ability to register through the api using an email and password
 - Created individual content channel feeds
 - Added horizontal scrollers and their associated tiles
