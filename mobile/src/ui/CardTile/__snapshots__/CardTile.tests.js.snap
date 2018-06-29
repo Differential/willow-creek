@@ -228,6 +228,7 @@ exports[`the CardTile component should render a loading skeleton for all availab
   }
 >
   <View
+    showDetails={true}
     style={
       Object {
         "aspectRatio": 1,
@@ -481,6 +482,7 @@ exports[`the CardTile component should render card details 1`] = `
   }
 >
   <View
+    showDetails={true}
     style={
       Object {
         "aspectRatio": 1,
@@ -700,6 +702,7 @@ exports[`the CardTile component should render card details with date 1`] = `
   }
 >
   <View
+    showDetails={true}
     style={
       Object {
         "aspectRatio": 1,

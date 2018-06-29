@@ -22,7 +22,6 @@ storiesOf('CardTile', module)
       <CardTile
         number={7}
         title={'Why Jesus is Timeless'}
-        showDetails
         byLine={'Marty McFly'}
         date={'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)'}
         isLoading
@@ -34,12 +33,11 @@ storiesOf('CardTile', module)
       <CardTile number={7} title={'Why Jesus is Timeless'} />
     </View>
   ))
-  .add('With card details', () => (
+  .add('With byLine', () => (
     <View style={containerStyles}>
       <CardTile
         number={7}
         title={'Why Jesus is Timeless'}
-        showDetails
         byLine={'Marty McFly'}
       />
     </View>
@@ -49,7 +47,6 @@ storiesOf('CardTile', module)
       <CardTile
         number={7}
         title={'Why Jesus is Timeless'}
-        showDetails
         byLine={'Marty McFly'}
         date={'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)'} // this snapshot will expire in a year
       />

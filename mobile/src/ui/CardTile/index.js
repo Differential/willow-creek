@@ -86,7 +86,6 @@ export const CardTile = enhance(
   ({
     number,
     title,
-    showDetails,
     byLine,
     date,
     style: styleProp = {},
@@ -122,7 +121,7 @@ export const CardTile = enhance(
             </CardContent>
           )}
 
-          {showDetails ? (
+          {byLine ? (
             <CardActions>
               <ChannelLabel
                 label={byLine}
@@ -146,15 +145,10 @@ export const CardTile = enhance(
 CardTile.propTypes = {
   title: PropTypes.string,
   number: PropTypes.number,
-  showDetails: PropTypes.bool,
   byLine: PropTypes.string,
   date: PropTypes.string,
   style: PropTypes.any, // eslint-disable-line
   isLoading: PropTypes.bool,
-};
-
-CardTile.defaultProps = {
-  showDetails: false,
 };
 
 export default CardTile;

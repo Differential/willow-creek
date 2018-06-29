@@ -5,13 +5,19 @@ import Providers from 'TestProviders';
 
 import CardTile from 'ui/CardTile';
 
-import TileFeed from './';
+import HorizontalTileFeed from './';
 
-describe('The TileFeed component', () => {
+const loadingStateObject = {
+  id: 'fakeId0',
+  title: '',
+  isLoading: true,
+};
+
+describe('The HorizontalTileFeed component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
       <Providers>
-        <TileFeed
+        <HorizontalTileFeed
           content={[
             {
               id: 'fakeId0',
@@ -22,11 +28,6 @@ describe('The TileFeed component', () => {
               title: 'Why Jesus is Timeless',
             },
           ]}
-          loadingStateData={{
-            id: 'fakeId0',
-            title: '',
-            isLoading: false,
-          }}
           renderItem={({ item, index }) => (
             <CardTile
               number={index + 1}
@@ -34,6 +35,7 @@ describe('The TileFeed component', () => {
               isLoading={item.isLoading}
             />
           )}
+          loadingStateObject={loadingStateObject}
         />
       </Providers>
     );
@@ -42,14 +44,9 @@ describe('The TileFeed component', () => {
   it('renders empty state', () => {
     const tree = renderer.create(
       <Providers>
-        <TileFeed
-          refreshing
+        <HorizontalTileFeed
+          isLoading
           content={[]}
-          loadingStateObject={{
-            id: 'fakeId0',
-            title: '',
-            isLoading: true,
-          }}
           renderItem={({ item, index }) => (
             <CardTile
               number={index + 1}
@@ -57,6 +54,7 @@ describe('The TileFeed component', () => {
               isLoading={item.isLoading}
             />
           )}
+          loadingStateObject={loadingStateObject}
         />
       </Providers>
     );
