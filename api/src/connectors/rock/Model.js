@@ -66,15 +66,17 @@ export default class RockModel {
     }
 
     const edges = cursor
-      .top(first)
-      .skip(skip)
-      .transform((result) =>
-        result.map((node, i) => ({
-          node,
-          cursor: createCursor({ position: i + skip }),
-        }))
-      )
-      .get();
+      ? cursor
+          .top(first)
+          .skip(skip)
+          .transform((result) =>
+            result.map((node, i) => ({
+              node,
+              cursor: createCursor({ position: i + skip }),
+            }))
+          )
+          .get()
+      : [];
 
     return {
       edges,

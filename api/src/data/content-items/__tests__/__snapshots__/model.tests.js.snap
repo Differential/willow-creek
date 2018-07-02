@@ -118,3 +118,33 @@ Array [
   ],
 ]
 `;
+
+exports[`ContentItemsModel returns null when there are no child content items 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItemAssociations?%24filter=ContentChannelItemId%20eq%201",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`ContentItemsModel returns null when there are no parent content items 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItemAssociations?%24filter=ChildContentChannelItemId%20eq%201",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;

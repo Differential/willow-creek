@@ -45,6 +45,14 @@ describe('ContentItemsModel', () => {
     expect(fetch.mock.calls).toMatchSnapshot();
   });
 
+  it('returns null when there are no child content items', async () => {
+    fetch.mockResponseOnce(JSON.stringify([]));
+    const model = new ContentItemsModel(context);
+    const cursor = await model.getCursorByParentContentItemId(1);
+    expect(cursor).toBe(null);
+    expect(fetch.mock.calls).toMatchSnapshot();
+  });
+
   it('gets a cursor finding parent content items of a provided child', async () => {
     fetch.mockResponseOnce(
       JSON.stringify([
@@ -56,6 +64,14 @@ describe('ContentItemsModel', () => {
     const model = new ContentItemsModel(context);
     const cursor = await model.getCursorByChildContentItemId(1);
     expect(cursor.get()).resolves.toMatchSnapshot();
+    expect(fetch.mock.calls).toMatchSnapshot();
+  });
+
+  it('returns null when there are no parent content items', async () => {
+    fetch.mockResponseOnce(JSON.stringify([]));
+    const model = new ContentItemsModel(context);
+    const cursor = await model.getCursorByChildContentItemId(1);
+    expect(cursor).toBe(null);
     expect(fetch.mock.calls).toMatchSnapshot();
   });
 });

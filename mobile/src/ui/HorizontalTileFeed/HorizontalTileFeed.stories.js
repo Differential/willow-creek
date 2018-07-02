@@ -8,15 +8,11 @@ import TileImage from 'ui/TileImage';
 import HorizontalTileFeed from './';
 
 const loadingStateObject = {
-  id: 'fakeId0',
-  title: '',
-  meta: {
-    date: '',
+  node: {
+    id: 'fakeId0',
+    title: '',
+    isLoading: true,
   },
-  content: {
-    speaker: '',
-  },
-  isLoading: true,
 };
 
 const containerStyles = {
@@ -29,30 +25,26 @@ const containerStyles = {
 const renderCardTile = (
   { item, index } //eslint-disable-line
 ) => (
-  <CardTile number={index + 1} title={item.title} isLoading={item.isLoading} />
+  <CardTile
+    number={index + 1}
+    title={item.node.title}
+    isLoading={item.node.isLoading}
+  />
 );
 
 storiesOf('HorizontalTileFeed', module)
   .add('With CardTile', () => {
     const CardTileData = [
       {
-        id: 'fakeId0',
-        title: 'Why Jesus is Timeless',
-        meta: {
-          date: 'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)', // this snapshot will expire in a year
-        },
-        content: {
-          speaker: 'Marty McFly',
+        node: {
+          id: 'fakeId0',
+          title: 'Why Jesus is Timeless',
         },
       },
       {
-        id: 'fakeId1',
-        title: 'Tall Hat Tales',
-        meta: {
-          date: 'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)', // this snapshot will expire in a year
-        },
-        content: {
-          speaker: 'A-bro-ham Lincoln',
+        node: {
+          id: 'fakeId1',
+          title: 'Tall Hat Tales',
         },
       },
     ];
@@ -80,19 +72,25 @@ storiesOf('HorizontalTileFeed', module)
   .add('With TileImage', () => {
     const imageData = [
       {
-        id: 'fakeId0',
-        source: 'https://picsum.photos/300/300/?random',
-        link: 'https://github.com',
+        node: {
+          id: 'fakeId0',
+          source: 'https://picsum.photos/300/300/?random',
+          link: 'https://github.com',
+        },
       },
       {
-        id: 'fakeId1',
-        source: 'https://picsum.photos/300/300/?random',
-        link: 'https://github.com',
+        node: {
+          id: 'fakeId1',
+          source: 'https://picsum.photos/300/300/?random',
+          link: 'https://github.com',
+        },
       },
       {
-        id: 'fakeId2',
-        source: 'https://picsum.photos/300/300/?random',
-        link: 'https://github.com',
+        node: {
+          id: 'fakeId2',
+          source: 'https://picsum.photos/300/300/?random',
+          link: 'https://github.com',
+        },
       },
     ];
 
@@ -100,7 +98,7 @@ storiesOf('HorizontalTileFeed', module)
       { item, index } //eslint-disable-line
     ) => (
       <View style={{ flex: 1, paddingHorizontal: 10 }}>
-        <TileImage image={item.source} link={item.link} />
+        <TileImage image={item.node.source} link={item.node.link} />
       </View>
     );
 
@@ -110,9 +108,11 @@ storiesOf('HorizontalTileFeed', module)
           content={imageData}
           renderItem={renderTileImage}
           loadingStateObject={{
-            id: 'fakeId1',
-            source: '',
-            link: '',
+            node: {
+              id: 'fakeId1',
+              source: '',
+              link: '',
+            },
           }}
         />
       </View>

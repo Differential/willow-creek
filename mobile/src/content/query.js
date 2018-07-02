@@ -13,6 +13,26 @@ const GET_CONTENT = gql`
             uri
           }
         }
+        childContentItemsConnection {
+          edges {
+            node {
+              __typename
+              id
+              coverImage {
+                name
+                sources {
+                  uri
+                }
+              }
+              parentChannel {
+                id
+                name
+                iconName
+              }
+              title
+            }
+          }
+        }
       }
     }
   }

@@ -5,12 +5,16 @@ exports[`The TileFeed component renders correctly 1`] = `
   data={
     Array [
       Object {
-        "id": "fakeId0",
-        "title": "Why Jesus is Timeless",
+        "node": Object {
+          "id": "fakeId0",
+          "title": "Why Jesus is Timeless",
+        },
       },
       Object {
-        "id": "fakeId1",
-        "title": "Why Jesus is Timeless",
+        "node": Object {
+          "id": "fakeId1",
+          "title": "Why Jesus is Timeless",
+        },
       },
     ]
   }
@@ -22,7 +26,7 @@ exports[`The TileFeed component renders correctly 1`] = `
   initialNumToRender={10}
   initialScrollIndex={0}
   keyExtractor={[Function]}
-  loadingStateData={
+  loadingStateObject={
     Object {
       "id": "fakeId0",
       "isLoading": false,
@@ -136,30 +140,6 @@ exports[`The TileFeed component renders correctly 1`] = `
                 </Text>
               </View>
             </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#303030",
-                    "fontFamily": "OpenSans-Bold",
-                    "fontSize": 25.2,
-                    "lineHeight": 31.28,
-                  }
-                }
-              >
-                Why Jesus is Timeless
-              </Text>
-            </View>
           </View>
         </View>
       </View>
@@ -241,30 +221,6 @@ exports[`The TileFeed component renders correctly 1`] = `
                   2
                 </Text>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#303030",
-                    "fontFamily": "OpenSans-Bold",
-                    "fontSize": 25.2,
-                    "lineHeight": 31.28,
-                  }
-                }
-              >
-                Why Jesus is Timeless
-              </Text>
             </View>
           </View>
         </View>

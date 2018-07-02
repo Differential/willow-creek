@@ -14,15 +14,19 @@ describe('The TileFeed component', () => {
         <TileFeed
           content={[
             {
-              id: 'fakeId0',
-              title: 'Why Jesus is Timeless',
+              node: {
+                id: 'fakeId0',
+                title: 'Why Jesus is Timeless',
+              },
             },
             {
-              id: 'fakeId1',
-              title: 'Why Jesus is Timeless',
+              node: {
+                id: 'fakeId1',
+                title: 'Why Jesus is Timeless',
+              },
             },
           ]}
-          loadingStateData={{
+          loadingStateObject={{
             id: 'fakeId0',
             title: '',
             isLoading: false,

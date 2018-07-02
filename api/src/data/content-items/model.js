@@ -16,6 +16,8 @@ export default class ContentItem extends RockModel {
       .filter(`ContentChannelItemId eq ${id}`)
       .get();
 
+    if (!associations || !associations.length) return null;
+
     const request = this.request();
     associations.forEach(({ childContentChannelItemId }) => {
       request.filter(`Id eq ${childContentChannelItemId}`);
@@ -30,6 +32,8 @@ export default class ContentItem extends RockModel {
     )
       .filter(`ChildContentChannelItemId eq ${id}`)
       .get();
+
+    if (!associations || !associations.length) return null;
 
     const request = this.request();
     associations.forEach(({ contentChannelItemId }) => {
