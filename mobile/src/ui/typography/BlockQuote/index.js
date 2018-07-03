@@ -1,5 +1,5 @@
 import React from 'react';
-import { compose, pure } from 'recompose';
+import { compose, setDisplayName, pure } from 'recompose';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
 
@@ -8,10 +8,11 @@ import { withThemeMixin } from 'ui/theme';
 import { BodyText } from 'ui/typography';
 
 const Block = compose(
+  setDisplayName('BlockQuote'),
   styled(({ theme }) => ({
     alignSelf: 'stretch',
-    marginVertical: theme.sizing.baseUnit * 2,
-    paddingVertical: theme.sizing.baseUnit * 1.5,
+    marginVertical: theme.helpers.verticalRhythm(2),
+    paddingVertical: theme.helpers.verticalRhythm(1.5),
     paddingHorizontal: theme.sizing.baseUnit,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderBottomWidth: StyleSheet.hairlineWidth,
@@ -22,7 +23,7 @@ const Block = compose(
   withThemeMixin(({ theme }) => ({
     overrides: {
       BodyText: {
-        fontFamily: theme.typography.serif.regular.italic,
+        fontFamily: theme.typography.sans.regular.italic,
         textAlign: 'center',
         color: theme.colors.text.primary,
       },

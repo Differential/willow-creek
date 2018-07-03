@@ -6,7 +6,7 @@ import PaddedView from 'ui/PaddedView';
 
 import BlockQuote from './';
 
-storiesOf('BlockQuote', module)
+storiesOf('typography/BlockQuote', module)
   .add('Default', () => (
     <PaddedView>
       <BlockQuote>

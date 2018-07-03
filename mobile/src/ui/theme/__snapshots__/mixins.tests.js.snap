@@ -22,9 +22,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
+          "fontFamily": "InterUI-Black",
+          "fontSize": 24,
+          "lineHeight": 27.6,
         }
       }
     >
@@ -36,10 +36,10 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "OpenSans-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
+          "color": "#505050",
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
+          "lineHeight": 17.28,
         }
       }
     >
@@ -54,9 +54,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -77,9 +77,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#F8F7F4",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
+          "fontFamily": "InterUI-Black",
+          "fontSize": 24,
+          "lineHeight": 27.6,
         }
       }
     >
@@ -91,10 +91,10 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#F8F7F4",
-          "fontFamily": "OpenSans-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
+          "color": "#DBDBD9",
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
+          "lineHeight": 17.28,
         }
       }
     >
@@ -109,9 +109,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#F8F7F4",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -132,9 +132,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
+          "fontFamily": "InterUI-Black",
+          "fontSize": 24,
+          "lineHeight": 27.6,
         }
       }
     >
@@ -146,10 +146,10 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "OpenSans-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
+          "color": "#505050",
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
+          "lineHeight": 17.28,
         }
       }
     >
@@ -164,9 +164,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -198,9 +198,9 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
+          "fontFamily": "InterUI-Black",
+          "fontSize": 24,
+          "lineHeight": 27.6,
         }
       }
     >
@@ -212,10 +212,10 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "OpenSans-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
+          "color": "#505050",
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
+          "lineHeight": 17.28,
         }
       }
     >
@@ -230,9 +230,9 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -253,9 +253,9 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#F8F7F4",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
+          "fontFamily": "InterUI-Black",
+          "fontSize": 24,
+          "lineHeight": 27.6,
         }
       }
     >
@@ -267,10 +267,10 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#F8F7F4",
-          "fontFamily": "OpenSans-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
+          "color": "#DBDBD9",
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
+          "lineHeight": 17.28,
         }
       }
     >
@@ -285,9 +285,9 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#F8F7F4",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >

@@ -41,9 +41,9 @@ exports[`the Card component it should render a placeholder 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 32.4,
-            "lineHeight": 41.04,
+            "fontFamily": "InterUI-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
           }
         }
       />
@@ -53,17 +53,17 @@ exports[`the Card component it should render a placeholder 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "OpenSans-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
+            "color": "#505050",
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 12,
+            "lineHeight": 17.28,
           }
         }
       />
       <View
         style={
           Object {
-            "paddingVertical": 10,
+            "paddingVertical": 11.52,
           }
         }
       >
@@ -76,9 +76,9 @@ exports[`the Card component it should render a placeholder 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "DroidSerif",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
             }
           }
         />
@@ -125,9 +125,9 @@ exports[`the Card component it should render a placeholder 1`] = `
           style={
             Object {
               "color": "#FFFFFF",
-              "fontFamily": "OpenSans-Bold",
-              "fontSize": 20.02,
-              "lineHeight": 25.33,
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 16,
+              "lineHeight": 23.04,
             }
           }
         >
@@ -210,9 +210,9 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 32.4,
-            "lineHeight": 41.04,
+            "fontFamily": "InterUI-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
           }
         }
       >
@@ -224,10 +224,10 @@ exports[`the Card component should render 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "OpenSans-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
+            "color": "#505050",
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 12,
+            "lineHeight": 17.28,
           }
         }
       >
@@ -236,7 +236,7 @@ exports[`the Card component should render 1`] = `
       <View
         style={
           Object {
-            "paddingVertical": 10,
+            "paddingVertical": 11.52,
           }
         }
       >
@@ -249,9 +249,9 @@ exports[`the Card component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "DroidSerif",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
             }
           }
         >
@@ -300,9 +300,9 @@ exports[`the Card component should render 1`] = `
           style={
             Object {
               "color": "#FFFFFF",
-              "fontFamily": "OpenSans-Bold",
-              "fontSize": 20.02,
-              "lineHeight": 25.33,
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 16,
+              "lineHeight": 23.04,
             }
           }
         >

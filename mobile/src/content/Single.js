@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import { ScrollView, TouchableWithoutFeedback } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
+
 import { ErrorCard } from 'ui/Card';
 import CardTile from 'ui/CardTile';
 import GradientOverlayImage from 'ui/GradientOverlayImage';
 import HorizontalTileFeed from 'ui/HorizontalTileFeed';
 import HTMLView from 'ui/HTMLView';
 import PaddedView from 'ui/PaddedView';
-import { H3 } from 'ui/typography';
+import { H2 } from 'ui/typography';
+
 import GET_CONTENT from './query';
 
-class ContentSingle extends React.Component {
+class ContentSingle extends PureComponent {
   static navigationOptions = ({ navigation }) => {
     const itemTitle = navigation.getParam('itemTitle', 'Content');
     return {
@@ -46,7 +48,6 @@ class ContentSingle extends React.Component {
     return (
       <Query query={GET_CONTENT} variables={{ itemId }}>
         {({ loading, error, data }) => {
-          // if (loading) return null;
           if (error) return <ErrorCard error={error} />;
 
           return (
@@ -56,7 +57,7 @@ class ContentSingle extends React.Component {
                 isLoading={loading}
               />
               <PaddedView>
-                <H3 isLoading={loading}>{get(data, 'node.title', '')}</H3>
+                <H2 isLoading={loading}>{get(data, 'node.title', '')}</H2>
                 <HTMLView isLoading={loading}>
                   {get(data, 'node.htmlContent', '')}
                 </HTMLView>

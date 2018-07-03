@@ -12,7 +12,6 @@ import {
   H4,
   H5,
   H6,
-  H7,
   Paragraph,
   BlockQuote,
   BulletListItem,
@@ -52,7 +51,15 @@ export const wrapTextChildren = (children, Component = BodyText) => {
 
 export const defaultRenderer = (node, { children }) => {
   if (node.type === 'text' && node.data && node.data.trim()) {
-    return <Text>{decodeHTML(node.data)}</Text>;
+    const text = decodeHTML(node.data);
+    if (!node.parent) {
+      return (
+        <Paragraph>
+          <BodyText>{text}</BodyText>
+        </Paragraph>
+      );
+    }
+    return <Text>{text}</Text>;
   }
 
   switch (node.name) {
@@ -76,8 +83,6 @@ export const defaultRenderer = (node, { children }) => {
       return <H5>{wrapTextChildren(children, Text)}</H5>;
     case 'h6':
       return <H6>{wrapTextChildren(children, Text)}</H6>;
-    case 'h7':
-      return <H7>{wrapTextChildren(children, Text)}</H7>;
     case 'ul':
       return children; // todo
     case 'li':
@@ -116,7 +121,7 @@ export const defaultRenderer = (node, { children }) => {
       );
     }
     case 'br':
-      return <Text>{LINE_BREAK}</Text>;
+      return <BodyText>{LINE_BREAK}</BodyText>;
     default:
       return children;
   }

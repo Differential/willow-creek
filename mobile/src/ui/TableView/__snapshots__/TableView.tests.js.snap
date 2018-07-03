@@ -117,9 +117,9 @@ exports[`the TableView Component should render 1`] = `
             "color": "#303030",
             "flexGrow": 1,
             "flexShrink": 1,
-            "fontFamily": "OpenSans-Regular",
+            "fontFamily": "InterUI-Medium",
             "fontSize": 14,
-            "lineHeight": 15.78,
+            "lineHeight": 20.16,
             "paddingLeft": 10,
             "paddingRight": 10,
           }
@@ -234,9 +234,9 @@ exports[`the TableView Component should render 1`] = `
             "color": "#303030",
             "flexGrow": 1,
             "flexShrink": 1,
-            "fontFamily": "OpenSans-Regular",
+            "fontFamily": "InterUI-Medium",
             "fontSize": 14,
-            "lineHeight": 15.78,
+            "lineHeight": 20.16,
             "paddingLeft": 10,
             "paddingRight": 10,
           }
@@ -306,9 +306,9 @@ exports[`the TableView Component should render 1`] = `
                     Object {
                       "backgroundColor": "transparent",
                       "color": "#505050",
-                      "fontFamily": "OpenSans-Bold",
-                      "fontSize": 15.75,
-                      "lineHeight": 17.75,
+                      "fontFamily": "InterUI-Bold",
+                      "fontSize": 12,
+                      "lineHeight": 17.28,
                       "paddingVertical": 5,
                     }
                   }
@@ -381,9 +381,9 @@ exports[`the TableView Component should render 1`] = `
             "color": "#303030",
             "flexGrow": 1,
             "flexShrink": 1,
-            "fontFamily": "OpenSans-Regular",
+            "fontFamily": "InterUI-Medium",
             "fontSize": 14,
-            "lineHeight": 15.78,
+            "lineHeight": 20.16,
             "paddingLeft": 0,
             "paddingRight": 10,
           }
@@ -424,9 +424,9 @@ exports[`the TableView Component should render 1`] = `
             "color": "#303030",
             "flexGrow": 1,
             "flexShrink": 1,
-            "fontFamily": "OpenSans-Regular",
+            "fontFamily": "InterUI-Medium",
             "fontSize": 14,
-            "lineHeight": 15.78,
+            "lineHeight": 20.16,
             "paddingLeft": 0,
             "paddingRight": 10,
           }

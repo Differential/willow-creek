@@ -108,9 +108,9 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
           }
         }
       >
@@ -156,9 +156,9 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
             style={
               Object {
                 "color": "#505050",
-                "fontFamily": "OpenSans-Regular",
-                "fontSize": 14,
-                "lineHeight": 15.78,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
               }
             }
           >
@@ -245,9 +245,9 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
           }
         }
       >
@@ -293,9 +293,9 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
             style={
               Object {
                 "color": "#505050",
-                "fontFamily": "OpenSans-Regular",
-                "fontSize": 14,
-                "lineHeight": 15.78,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
               }
             }
           >
@@ -380,9 +380,9 @@ exports[`the FeedItemCard component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
           }
         }
       >
@@ -428,9 +428,9 @@ exports[`the FeedItemCard component should render 1`] = `
             style={
               Object {
                 "color": "#505050",
-                "fontFamily": "OpenSans-Regular",
-                "fontSize": 14,
-                "lineHeight": 15.78,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
               }
             }
           >
@@ -515,9 +515,9 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
           }
         }
       >
@@ -563,9 +563,9 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
             style={
               Object {
                 "color": "#505050",
-                "fontFamily": "OpenSans-Regular",
-                "fontSize": 14,
-                "lineHeight": 15.78,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
               }
             }
           >
@@ -650,9 +650,9 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
           }
         }
       >
@@ -684,8 +684,8 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight="21.6"
-          bbWidth="21.6"
+          bbHeight="19.2"
+          bbWidth="19.2"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -698,8 +698,8 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
               false,
               Object {
                 "flex": 0,
-                "height": 21.6,
-                "width": 21.6,
+                "height": 19.2,
+                "width": 19.2,
               },
             ]
           }
@@ -770,9 +770,9 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
             style={
               Object {
                 "color": "#505050",
-                "fontFamily": "OpenSans-Regular",
-                "fontSize": 14,
-                "lineHeight": 15.78,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
               }
             }
           >
@@ -857,9 +857,9 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         style={
           Object {
             "color": "#F8F7F4",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
           }
         }
       >
@@ -905,9 +905,9 @@ exports[`the FeedItemCard component should render with inverted (light) font col
             style={
               Object {
                 "color": "#DBDBD9",
-                "fontFamily": "OpenSans-Regular",
-                "fontSize": 14,
-                "lineHeight": 15.78,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
               }
             }
           >

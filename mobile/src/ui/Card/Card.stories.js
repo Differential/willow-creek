@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import { H3, H7, BodyText, Paragraph } from 'ui/typography';
+import { H3, H6, BodyText, Paragraph } from 'ui/typography';
 import Button, { ButtonLink } from 'ui/Button';
 
-import { Card, CardActions, CardContent, CardImage } from './';
+import Card, { CardActions, CardContent, CardImage } from './';
 
 storiesOf('Card', module)
   .add('simple', () => (
@@ -12,7 +12,7 @@ storiesOf('Card', module)
       <CardImage source={'https://picsum.photos/600/400/?image=63'} />
       <CardContent>
         <H3>Coffee</H3>
-        <H7>noun</H7>
+        <H6>noun</H6>
         <Paragraph>
           <BodyText>
             {
@@ -32,7 +32,7 @@ storiesOf('Card', module)
       <CardImage />
       <CardContent>
         <H3 />
-        <H7 />
+        <H6 />
         <Paragraph>
           <BodyText />
         </Paragraph>

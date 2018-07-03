@@ -8,9 +8,9 @@ exports[`the H5 component should accept additional props 1`] = `
   style={
     Object {
       "color": "#303030",
-      "fontFamily": "OpenSans-Bold",
-      "fontSize": 20.02,
-      "lineHeight": 25.33,
+      "fontFamily": "InterUI-Medium",
+      "fontSize": 14,
+      "lineHeight": 20.16,
     }
   }
 >
@@ -26,9 +26,9 @@ exports[`the H5 component should accept and render passed in styles 1`] = `
   style={
     Object {
       "color": "salmon",
-      "fontFamily": "OpenSans-Bold",
-      "fontSize": 20.02,
-      "lineHeight": 25.33,
+      "fontFamily": "InterUI-Medium",
+      "fontSize": 14,
+      "lineHeight": 20.16,
     }
   }
 >
@@ -43,8 +43,8 @@ exports[`the H5 component should render a loading state 1`] = `
       "alignSelf": "stretch",
       "backgroundColor": "#A5A5A5",
       "borderRadius": 6,
-      "height": 20.02,
-      "marginVertical": 2.6549999999999994,
+      "height": 14,
+      "marginVertical": 3.08,
       "width": "60%",
     }
   }
@@ -59,9 +59,9 @@ exports[`the H5 component should render correctly 1`] = `
   style={
     Object {
       "color": "#303030",
-      "fontFamily": "OpenSans-Bold",
-      "fontSize": 20.02,
-      "lineHeight": 25.33,
+      "fontFamily": "InterUI-Medium",
+      "fontSize": 14,
+      "lineHeight": 20.16,
     }
   }
 >

@@ -6,7 +6,7 @@ import PaddedView from 'ui/PaddedView';
 
 import BulletListItem from './';
 
-storiesOf('BulletListItem', module)
+storiesOf('typography/BulletListItem', module)
   .add('Default', () => (
     <PaddedView>
       <BulletListItem>

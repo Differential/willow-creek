@@ -63,9 +63,9 @@ exports[`The Picker Input component should render correctly 1`] = `
               Object {
                 "backgroundColor": "transparent",
                 "color": "#505050",
-                "fontFamily": "OpenSans-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
                 "paddingVertical": 5,
               }
             }

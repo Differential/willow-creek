@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the BulletListItem component should render 1`] = `
+exports[`the BlockQuote component should render a loading state 1`] = `
 <View
   style={
     Object {
@@ -8,9 +8,38 @@ exports[`the BulletListItem component should render 1`] = `
       "borderBottomWidth": 0.5,
       "borderColor": "#A5A5A5",
       "borderTopWidth": 0.5,
-      "marginVertical": 40,
+      "marginVertical": 46.08,
       "paddingHorizontal": 20,
-      "paddingVertical": 30,
+      "paddingVertical": 34.56,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "100%",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`the BlockQuote component should render a string 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "borderBottomWidth": 0.5,
+      "borderColor": "#A5A5A5",
+      "borderTopWidth": 0.5,
+      "marginVertical": 46.08,
+      "paddingHorizontal": 20,
+      "paddingVertical": 34.56,
     }
   }
 >
@@ -23,9 +52,9 @@ exports[`the BulletListItem component should render 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "DroidSerif-Italic",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
+        "fontFamily": "InterUI-Italic",
+        "fontSize": 16,
+        "lineHeight": 26,
         "textAlign": "center",
       }
     }
@@ -35,7 +64,7 @@ exports[`the BulletListItem component should render 1`] = `
 </View>
 `;
 
-exports[`the BulletListItem component should render a loading state 1`] = `
+exports[`the BlockQuote component should render child components 1`] = `
 <View
   style={
     Object {
@@ -43,23 +72,26 @@ exports[`the BulletListItem component should render a loading state 1`] = `
       "borderBottomWidth": 0.5,
       "borderColor": "#A5A5A5",
       "borderTopWidth": 0.5,
-      "marginVertical": 40,
+      "marginVertical": 46.08,
       "paddingHorizontal": 20,
-      "paddingVertical": 30,
+      "paddingVertical": 34.56,
     }
   }
 >
-  <View
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
     style={
       Object {
-        "alignSelf": "stretch",
-        "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
-        "height": 20.02,
-        "marginVertical": 6.545,
-        "width": "100%",
+        "color": "#303030",
+        "fontFamily": "InterUI-Medium",
+        "fontSize": 14,
+        "lineHeight": 20.16,
       }
     }
-  />
+  >
+    "You are the only Bible some unbelievers will ever read." – John MacArthur
+  </Text>
 </View>
 `;

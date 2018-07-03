@@ -1,30 +1,35 @@
 import { Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure } from 'recompose';
+import { compose, pure, setDisplayName } from 'recompose';
 
 import styled from 'ui/styled';
 import { withPlaceholder, Typography } from 'ui/Placeholder';
 
 const styles = styled(({ theme, bold, italic }) => {
-  let fontStack = theme.typography.serif.regular.default;
+  let fontStack = theme.typography.sans.regular.default;
 
   if (bold && italic) {
-    fontStack = theme.typography.serif.bold.italic;
+    fontStack = theme.typography.sans.bold.italic;
   } else if (bold) {
-    fontStack = theme.typography.serif.bold.default;
+    fontStack = theme.typography.sans.bold.default;
   } else if (italic) {
-    fontStack = theme.typography.serif.regular.italic;
+    fontStack = theme.typography.sans.regular.italic;
   }
 
   return {
-    fontSize: theme.helpers.rem(1.112),
-    lineHeight: theme.helpers.verticalRhythm(1.112, 1.4889),
+    fontSize: theme.helpers.rem(1),
+    lineHeight: theme.helpers.verticalRhythm(1, 1.625),
     fontFamily: fontStack,
     color: theme.colors.text.primary,
   };
 }, 'BodyText');
 
-const BodyText = compose(styles, withPlaceholder(Typography), pure)(Text);
+const BodyText = compose(
+  setDisplayName('BodyText'),
+  styles,
+  withPlaceholder(Typography),
+  pure
+)(Text);
 
 BodyText.propTypes = {
   bold: PropTypes.bool,

@@ -4,7 +4,7 @@ exports[`the UIText component should render a loading state 1`] = `
 <View
   style={
     Object {
-      "paddingVertical": 10,
+      "paddingVertical": 11.52,
     }
   }
 >
@@ -14,7 +14,7 @@ exports[`the UIText component should render a loading state 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "85%",
       }
@@ -26,7 +26,7 @@ exports[`the UIText component should render a loading state 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -38,7 +38,7 @@ exports[`the UIText component should render a loading state 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "75%",
       }
@@ -51,7 +51,7 @@ exports[`the UIText component should render correctly 1`] = `
 <View
   style={
     Object {
-      "paddingVertical": 10,
+      "paddingVertical": 11.52,
     }
   }
 >

@@ -115,10 +115,10 @@ exports[`the TileImage component should render 1`] = `
         "backgroundColor": "transparent",
         "bottom": 20,
         "color": "#F8F7F4",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 15.75,
+        "fontFamily": "InterUI-Bold",
+        "fontSize": 16,
         "left": 20,
-        "lineHeight": 17.75,
+        "lineHeight": 23.04,
         "position": "absolute",
       }
     }

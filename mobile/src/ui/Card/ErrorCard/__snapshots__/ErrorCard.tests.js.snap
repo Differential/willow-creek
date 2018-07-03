@@ -41,9 +41,9 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 16,
+            "lineHeight": 23.04,
             "textAlign": "center",
           }
         }
@@ -56,10 +56,10 @@ exports[`the Card component should render 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "OpenSans-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
+            "color": "#505050",
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 12,
+            "lineHeight": 17.28,
             "textAlign": "center",
           }
         }
@@ -112,9 +112,9 @@ exports[`the Card component should render with an error inside an object 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 16,
+            "lineHeight": 23.04,
             "textAlign": "center",
           }
         }
@@ -127,10 +127,10 @@ exports[`the Card component should render with an error inside an object 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "OpenSans-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
+            "color": "#505050",
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 12,
+            "lineHeight": 17.28,
             "textAlign": "center",
           }
         }
@@ -183,9 +183,9 @@ exports[`the Card component should render with an error message inside an object
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 16,
+            "lineHeight": 23.04,
             "textAlign": "center",
           }
         }
@@ -198,10 +198,10 @@ exports[`the Card component should render with an error message inside an object
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "OpenSans-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
+            "color": "#505050",
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 12,
+            "lineHeight": 17.28,
             "textAlign": "center",
           }
         }

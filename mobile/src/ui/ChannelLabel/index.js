@@ -7,7 +7,7 @@ import { kebabCase } from 'lodash';
 import { withIsLoading } from 'ui/isLoading';
 import { withTheme } from 'ui/theme';
 import styled from 'ui/styled';
-import { H7 } from 'ui/typography';
+import { H6 } from 'ui/typography';
 import Icon from 'ui/Icon';
 import * as Icons from 'ui/Icon/icons';
 
@@ -26,9 +26,9 @@ const PlaceholderWrapper = styled(({ theme, withIcon }) => ({
     : { paddingRight: theme.sizing.baseUnit / 2 }),
 }))(View);
 
-const StyledH7 = styled(({ theme }) => ({
+const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
-}))(H7);
+}))(H6);
 
 const ChannelLabel = enhance(({ label, icon, withFlex, isLoading, theme }) => (
   <Wrapper flexed={withFlex}>
@@ -41,7 +41,7 @@ const ChannelLabel = enhance(({ label, icon, withFlex, isLoading, theme }) => (
       />
     ) : null}
     <PlaceholderWrapper withIcon={icon}>
-      <StyledH7>{label}</StyledH7>
+      <StyledH6>{label}</StyledH6>
     </PlaceholderWrapper>
   </Wrapper>
 ));

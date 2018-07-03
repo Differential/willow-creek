@@ -49,8 +49,8 @@ exports[`The LoginForm component should render 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "OpenSans-Bold",
-                "fontSize": 15.75,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 14,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -102,9 +102,9 @@ exports[`The LoginForm component should render 1`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#505050",
-              "fontFamily": "OpenSans-Bold",
-              "fontSize": 15.75,
-              "lineHeight": 17.75,
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
               "paddingVertical": 5,
             }
           }
@@ -205,8 +205,8 @@ exports[`The LoginForm component should render 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "OpenSans-Bold",
-                "fontSize": 15.75,
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 14,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -258,9 +258,9 @@ exports[`The LoginForm component should render 1`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#505050",
-              "fontFamily": "OpenSans-Bold",
-              "fontSize": 15.75,
-              "lineHeight": 17.75,
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
               "paddingVertical": 5,
             }
           }
@@ -363,9 +363,9 @@ exports[`The LoginForm component should render 1`] = `
         style={
           Object {
             "color": "#FFFFFF",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 25.33,
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 16,
+            "lineHeight": 23.04,
           }
         }
       >

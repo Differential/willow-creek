@@ -60,15 +60,6 @@ describe('the HTMLView component', () => {
 
     expect(tree).toMatchSnapshot();
   });
-  it('should render an H7', () => {
-    const tree = renderer.create(
-      <Providers>
-        <HTMLView>{'<h7>Testings</h7>'}</HTMLView>
-      </Providers>
-    );
-
-    expect(tree).toMatchSnapshot();
-  });
   it('should render a paragraph', () => {
     const tree = renderer.create(
       <Providers>

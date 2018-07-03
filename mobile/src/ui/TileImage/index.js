@@ -3,7 +3,7 @@ import { TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { pure, compose } from 'recompose';
 
-import { H6 } from 'ui/typography';
+import { H4 } from 'ui/typography';
 import styled from 'ui/styled';
 import { withTheme } from 'ui/theme';
 import GradientOverlayImage from 'ui/GradientOverlayImage';
@@ -25,7 +25,7 @@ const Title = styled(
     color: theme.colors.lightPrimary,
   }),
   'TileImage.Text'
-)(H6);
+)(H4);
 
 const enhance = compose(
   withTheme(({ theme: { colors } = {} } = {}) => ({ theme: { colors } })),

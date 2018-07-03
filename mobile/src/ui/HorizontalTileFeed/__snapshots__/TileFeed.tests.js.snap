@@ -113,12 +113,12 @@ exports[`The TileFeed component renders correctly 1`] = `
                   "backgroundColor": "#FFFFFF",
                   "borderBottomRightRadius": 6,
                   "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "height": 32,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
                   "top": 0,
-                  "width": 36,
+                  "width": 32,
                 }
               }
             >
@@ -130,9 +130,9 @@ exports[`The TileFeed component renders correctly 1`] = `
                   style={
                     Object {
                       "color": "#303030",
-                      "fontFamily": "OpenSans-Bold",
-                      "fontSize": 15.75,
-                      "lineHeight": 17.75,
+                      "fontFamily": "InterUI-Medium",
+                      "fontSize": 14,
+                      "lineHeight": 20.16,
                     }
                   }
                 >
@@ -195,12 +195,12 @@ exports[`The TileFeed component renders correctly 1`] = `
                   "backgroundColor": "#FFFFFF",
                   "borderBottomRightRadius": 6,
                   "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "height": 32,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
                   "top": 0,
-                  "width": 36,
+                  "width": 32,
                 }
               }
             >
@@ -212,9 +212,9 @@ exports[`The TileFeed component renders correctly 1`] = `
                   style={
                     Object {
                       "color": "#303030",
-                      "fontFamily": "OpenSans-Bold",
-                      "fontSize": 15.75,
-                      "lineHeight": 17.75,
+                      "fontFamily": "InterUI-Medium",
+                      "fontSize": 14,
+                      "lineHeight": 20.16,
                     }
                   }
                 >

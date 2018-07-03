@@ -1,24 +1,20 @@
 const fontStack = {
   sans: {
-    light: {
-      default: 'OpenSans-Light',
-      italic: 'OpenSans-LightItalic',
-    },
     regular: {
-      default: 'OpenSans-Regular',
-      italic: 'OpenSans-Italic',
+      default: 'InterUI-Regular',
+      italic: 'InterUI-Italic',
     },
-    semiBold: {
-      default: 'OpenSans-SemiBold',
-      italic: 'OpenSans-SemiBoldItalic',
+    medium: {
+      default: 'InterUI-Medium',
+      italic: 'InterUI-MediumItalic',
     },
     bold: {
-      default: 'OpenSans-Bold',
-      italic: 'OpenSans-BoldItalic',
+      default: 'InterUI-Bold',
+      italic: 'InterUI-BoldItalic',
     },
-    extraBold: {
-      display: 'OpenSans-ExtraBold',
-      italic: 'OpenSans-ExtraBoldItalic',
+    black: {
+      default: 'InterUI-Black',
+      italic: 'InterUI-BlackItalic',
     },
   },
   serif: {
@@ -32,7 +28,7 @@ const fontStack = {
     },
   },
   ui: {
-    normal: 'System',
+    regular: 'System',
   },
 };
 

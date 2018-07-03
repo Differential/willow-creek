@@ -8,7 +8,7 @@ import Placeholder from 'ui/Placeholder';
 import { withIsLoading } from 'ui/isLoading';
 import { withTheme, withThemeMixin } from 'ui/theme';
 import styled from 'ui/styled';
-import { H4, H6, H7 } from 'ui/typography';
+import { H3, H5, H6 } from 'ui/typography';
 import { CardContent, CardActions } from 'ui/Card';
 import ChannelLabel from 'ui/ChannelLabel';
 
@@ -109,7 +109,7 @@ export const CardTile = enhance(
                 onReady={!isLoading}
               >
                 <View>
-                  <H6>{number}</H6>
+                  <H5>{number}</H5>
                 </View>
               </Placeholder.Media>
             </TileNumber>
@@ -117,7 +117,7 @@ export const CardTile = enhance(
 
           {typeof title === 'undefined' ? null : (
             <CardContent>
-              <H4>{title}</H4>
+              <H3>{title}</H3>
             </CardContent>
           )}
 
@@ -130,7 +130,7 @@ export const CardTile = enhance(
                 withFlex
               />
               {typeof date === 'undefined' ? null : (
-                <H7>{relativeTime(date)}</H7>
+                <H6>{relativeTime(date)}</H6>
               )}
             </CardActions>
           ) : null}

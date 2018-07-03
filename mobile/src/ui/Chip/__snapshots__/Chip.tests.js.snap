@@ -32,11 +32,11 @@ exports[`The Chip component should be selected 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "color": "#FFFFFF",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 15.75,
+        "color": "#505050",
+        "fontFamily": "InterUI-Bold",
+        "fontSize": 12,
         "justifyContent": "center",
-        "lineHeight": 17.75,
+        "lineHeight": 17.28,
         "paddingHorizontal": 6,
         "textAlign": "center",
       }
@@ -79,12 +79,12 @@ exports[`The Chip component should render an icon 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "color": "#303030",
+        "color": "#505050",
         "flexGrow": 1,
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 15.75,
+        "fontFamily": "InterUI-Bold",
+        "fontSize": 12,
         "justifyContent": "center",
-        "lineHeight": 17.75,
+        "lineHeight": 17.28,
         "paddingHorizontal": 6,
         "textAlign": "center",
       }
@@ -221,11 +221,11 @@ exports[`The Chip component should render correctly 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "color": "#303030",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 15.75,
+          "color": "#505050",
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
           "justifyContent": "center",
-          "lineHeight": 17.75,
+          "lineHeight": 17.28,
           "paddingHorizontal": 6,
           "textAlign": "center",
         }

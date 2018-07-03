@@ -7,7 +7,7 @@ import { get } from 'lodash';
 import { withTheme, withThemeMixin } from 'ui/theme';
 import styled from 'ui/styled';
 import Touchable from 'ui/Touchable';
-import { H5 } from 'ui/typography';
+import { H4 } from 'ui/typography';
 import { InlineActivityIndicator } from 'ui/ActivityIndicator';
 import { withPlaceholder, Line } from 'ui/Placeholder';
 
@@ -93,7 +93,7 @@ const Button = enhance(
         {loading ? (
           <InlineActivityIndicator color={accent} />
         ) : (
-          children || <H5>{title}</H5>
+          children || <H4>{title}</H4>
         )}
       </ButtonStyles>
     );

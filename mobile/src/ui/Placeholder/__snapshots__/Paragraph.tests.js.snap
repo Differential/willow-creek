@@ -55,7 +55,7 @@ exports[`The Paragraph placeholder accepts custom styles 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "85%",
       }
@@ -67,7 +67,7 @@ exports[`The Paragraph placeholder accepts custom styles 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -79,7 +79,7 @@ exports[`The Paragraph placeholder accepts custom styles 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "75%",
       }
@@ -96,7 +96,7 @@ exports[`The Paragraph placeholder has varying width lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "23%",
       }
@@ -108,7 +108,7 @@ exports[`The Paragraph placeholder has varying width lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -120,7 +120,7 @@ exports[`The Paragraph placeholder has varying width lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": 33,
       }
@@ -137,7 +137,7 @@ exports[`The Paragraph placeholder renders correctly 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "85%",
       }
@@ -149,7 +149,7 @@ exports[`The Paragraph placeholder renders correctly 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -161,7 +161,7 @@ exports[`The Paragraph placeholder renders correctly 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "75%",
       }
@@ -178,7 +178,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "85%",
       }
@@ -190,7 +190,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -202,7 +202,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -214,7 +214,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -226,7 +226,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -238,7 +238,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -250,7 +250,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -262,7 +262,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -274,7 +274,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -286,7 +286,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -298,7 +298,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -310,7 +310,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -322,7 +322,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -334,7 +334,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -346,7 +346,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -358,7 +358,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -370,7 +370,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -382,7 +382,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -394,7 +394,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -406,7 +406,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -418,7 +418,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -430,7 +430,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -442,7 +442,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -454,7 +454,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -466,7 +466,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -478,7 +478,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -490,7 +490,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -502,7 +502,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -514,7 +514,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -526,7 +526,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -538,7 +538,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -550,7 +550,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -562,7 +562,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -574,7 +574,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -586,7 +586,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -598,7 +598,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -610,7 +610,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -622,7 +622,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -634,7 +634,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -646,7 +646,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -658,7 +658,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -670,7 +670,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -682,7 +682,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -694,7 +694,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -706,7 +706,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -718,7 +718,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -730,7 +730,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -742,7 +742,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -754,7 +754,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "100%",
       }
@@ -766,7 +766,7 @@ exports[`The Paragraph placeholder renders multiple lines 1`] = `
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
         "borderRadius": 6,
-        "height": 18,
+        "height": 16,
         "marginVertical": 4,
         "width": "75%",
       }

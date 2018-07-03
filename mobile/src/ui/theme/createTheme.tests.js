@@ -27,7 +27,10 @@ describe('createTheme', () => {
   it('has helper functions and allows for custom helper functions', () => {
     const custom = { myFunc: () => () => 'yay!' };
     const theme = createTheme({ helpers: custom });
-    expect(theme.helpers.rem(1)).toEqual(18);
+    expect(theme.helpers.rem(1)).toEqual(defaultTheme.typography.baseFontSize);
+    expect(theme.helpers.verticalRhythm(1)).toEqual(
+      defaultTheme.typography.baseLineHeight
+    );
     expect(theme.helpers.myFunc()).toEqual('yay!');
   });
 
@@ -50,6 +53,10 @@ describe('createTheme', () => {
         }),
       })
     );
+  });
+  it('throws an error for an unsupported theme type', () => {
+    const theme = () => createTheme({ type: 'Boom' });
+    expect(theme).toThrowErrorMatchingSnapshot();
   });
 
   describe('getDynamicThemePart', () => {

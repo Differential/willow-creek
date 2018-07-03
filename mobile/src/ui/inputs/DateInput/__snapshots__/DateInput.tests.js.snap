@@ -311,11 +311,11 @@ exports[`The DateInput component should render with a displayValue 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 15.75,
+            "color": "#505050",
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 12,
             "justifyContent": "center",
-            "lineHeight": 17.75,
+            "lineHeight": 17.28,
             "paddingHorizontal": 6,
             "textAlign": "center",
           }
@@ -549,9 +549,9 @@ exports[`The DateInput component should render with a displayValue 1`] = `
         Object {
           "backgroundColor": "transparent",
           "color": "#505050",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 15.75,
-          "lineHeight": 17.75,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
+          "lineHeight": 17.28,
           "paddingVertical": 5,
         }
       }
@@ -621,11 +621,11 @@ exports[`The DateInput component should render with a label 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 15.75,
+            "color": "#505050",
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 12,
             "justifyContent": "center",
-            "lineHeight": 17.75,
+            "lineHeight": 17.28,
             "paddingHorizontal": 6,
             "textAlign": "center",
           }
@@ -859,9 +859,9 @@ exports[`The DateInput component should render with a label 1`] = `
         Object {
           "backgroundColor": "transparent",
           "color": "#505050",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 15.75,
-          "lineHeight": 17.75,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
+          "lineHeight": 17.28,
           "paddingVertical": 5,
         }
       }
@@ -933,11 +933,11 @@ exports[`The DateInput component should render with a placeholder 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "color": "#303030",
-            "fontFamily": "OpenSans-Bold",
-            "fontSize": 15.75,
+            "color": "#505050",
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 12,
             "justifyContent": "center",
-            "lineHeight": 17.75,
+            "lineHeight": 17.28,
             "paddingHorizontal": 6,
             "textAlign": "center",
           }
@@ -1171,9 +1171,9 @@ exports[`The DateInput component should render with a placeholder 1`] = `
         Object {
           "backgroundColor": "transparent",
           "color": "#505050",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 15.75,
-          "lineHeight": 17.75,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 12,
+          "lineHeight": 17.28,
           "paddingVertical": 5,
         }
       }

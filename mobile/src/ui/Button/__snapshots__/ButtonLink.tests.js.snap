@@ -27,9 +27,9 @@ exports[`The Button component should render inherit typographic styles 1`] = `
   style={
     Object {
       "color": "#303030",
-      "fontFamily": "DroidSerif",
-      "fontSize": 20.02,
-      "lineHeight": 33.11,
+      "fontFamily": "InterUI-Regular",
+      "fontSize": 16,
+      "lineHeight": 26,
     }
   }
 >

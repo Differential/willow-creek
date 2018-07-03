@@ -4,7 +4,6 @@ export H3 from './H3';
 export H4 from './H4';
 export H5 from './H5';
 export H6 from './H6';
-export H7 from './H7';
 export UIText from './UIText';
 export BodyText from './BodyText';
 export Paragraph from './Paragraph';

@@ -45,12 +45,13 @@ export const colors = {
   alert: '#c64f55',
 };
 
-// Base Typography sizing and fonts.
-// To control speicfic styles used on different type components (like H1, H2, etc),
-// see "overrides"
+/* Base Typography sizing and fonts.
+ *
+ * To control speicfic styles used on different type components (like H1, H2, etc), see "overrides"
+ */
 export const typography = {
-  baseFontSize: 18,
-  baseLineHeight: 20,
+  baseFontSize: 16,
+  baseLineHeight: 23.04, // 1.44 ratio
   ...fontStack,
 };
 
@@ -86,16 +87,14 @@ export const alpha = {
  * components to a theme. You can still override them,
  * but if you modify only the values above, the values below
  * will be updated to reflect your customizations.
+ *
+ * The available theme types get included into the theme, and the active theme type gets merged into
+ * the theme. This allows for switching of theme values between different color palettes. The theme
+ * types included by default are "light" and "dark". But, you could add your own theme types
+ * (ex: "kids", with a more vibrant set of colors). Most of the colors that a component uses should
+ * come from the active type, not from the base colors above. For example, notice below how
+ * `shadows` gets the shadowColor from `colors.shadows`, which is provided by the active theme type.
  */
-
-// The available theme types get included into the theme,
-// and the active theme type gets merged into the theme.
-// This allows for switching of theme values between different color palettes.
-// The theme types included by default are "light" and "dark".
-// But, you could add your own theme types (ex: "kids", with a more vibrant set of colors).
-// Most of the colors that a component uses should come from the active type, not from the
-// base colors above. For example, notice below how `shadows` gets the shadowColor from
-// `colors.shadows`, which is provided by the active theme type.
 export const type = 'light';
 export { types };
 
@@ -143,20 +142,32 @@ export const buttons = ({ colors: themeColors }) => ({
   },
 });
 
-// Helpers make it easy to expose simple utils in your theme that rely on the current
-// theme to compute its value. They should be a function that takes a single argument -
-// the current theme, and returns a function that gets injected into the theme.
+/*
+ * Helpers make it easy to expose simple utils in your theme that rely on the current theme to
+ * compute its value. They should be a function that takes a single argument - the current theme,
+ * and returns a function that gets injected into the theme.
+ */
 export const helpers = {};
 
-helpers.rem = (theme) => (value) => {
-  const fontSize = value * theme.typography.baseFontSize;
-  return +fontSize.toFixed(2);
+helpers.rem = (theme) => (units) => {
+  const value = units * theme.typography.baseFontSize;
+  return +value.toFixed(2);
 };
 
-helpers.verticalRhythm = (theme) => (fontSize, relativeValue) => {
+/*
+* Vertical rhythm method of spacing objects (typically typographic elements) based on a predefined
+* ratio. A popular ratio that is often used would be something like the Golden Ratio. With the
+* Golden Ratio as an example, all elment spacing on the page is a multiplied derivitive of that
+* ratio resulting in a rhthmic spacing. This is often used in typography to set line heights and
+* vertical paddings. The helper function below takes a `rem` unit (often a font size but not always)
+* and multiplies it by either a custom ratio or a derrived ratio from the themes `baseLineHeight`
+* devided by the `baseFontSize`.
+*/
+helpers.verticalRhythm = (theme) => (units, customRatio) => {
   const verticalRatio =
+    customRatio ||
     theme.typography.baseLineHeight / theme.typography.baseFontSize;
-  return helpers.rem(theme)(verticalRatio * (fontSize * relativeValue));
+  return helpers.rem(theme)(verticalRatio * units);
 };
 
 // Overrides allow you to override the styles of any component styled using the `styled` HOC.

@@ -1,21 +1,22 @@
 import { Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure } from 'recompose';
+import { compose, setDisplayName, pure } from 'recompose';
 
 import styled from 'ui/styled';
 import { withPlaceholder, Typography } from 'ui/Placeholder';
 
 const styles = styled(
   ({ theme }) => ({
-    fontSize: theme.helpers.rem(2.35),
-    lineHeight: theme.helpers.verticalRhythm(2.35, 1.14),
-    fontFamily: theme.typography.sans.bold.default,
+    fontSize: theme.helpers.rem(2.25),
+    lineHeight: theme.helpers.verticalRhythm(2.25, 1.15),
+    fontFamily: theme.typography.sans.black.default,
     color: theme.colors.text.primary,
   }),
   'H2'
 );
 
 const H2 = compose(
+  setDisplayName('H2'),
   styles,
   withPlaceholder(Typography, { width: '100%' }),
   pure

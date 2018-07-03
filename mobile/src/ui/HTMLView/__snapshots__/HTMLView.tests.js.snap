@@ -5,7 +5,7 @@ exports[`the HTMLView component should render a block quote 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -18,9 +18,9 @@ exports[`the HTMLView component should render a block quote 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -40,9 +40,9 @@ exports[`the HTMLView component should render a block quote 1`] = `
         "borderBottomWidth": 0.5,
         "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
-        "marginVertical": 40,
+        "marginVertical": 46.08,
         "paddingHorizontal": 20,
-        "paddingVertical": 30,
+        "paddingVertical": 34.56,
       }
     }
   >
@@ -68,7 +68,7 @@ exports[`the HTMLView component should render a line break (br) 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -81,9 +81,9 @@ exports[`the HTMLView component should render a line break (br) 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -99,7 +99,17 @@ exports[`the HTMLView component should render a line break (br) 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
+    style={
+      Object {
+        "color": "#303030",
+        "fontFamily": "InterUI-Regular",
+        "fontSize": 16,
+        "lineHeight": 26,
+      }
+    }
   >
     
 
@@ -112,7 +122,7 @@ exports[`the HTMLView component should render a link 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -125,9 +135,9 @@ exports[`the HTMLView component should render a link 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -175,7 +185,7 @@ exports[`the HTMLView component should render a list 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -188,9 +198,9 @@ exports[`the HTMLView component should render a list 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -213,9 +223,9 @@ exports[`the HTMLView component should render a list 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -239,7 +249,7 @@ exports[`the HTMLView component should render a list 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -252,9 +262,9 @@ exports[`the HTMLView component should render a list 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -277,9 +287,9 @@ exports[`the HTMLView component should render a list 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -301,7 +311,7 @@ exports[`the HTMLView component should render a paragraph 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -314,9 +324,9 @@ exports[`the HTMLView component should render a paragraph 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -341,9 +351,9 @@ exports[`the HTMLView component should render an H1 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 52.2,
-        "lineHeight": 54.81,
+        "fontFamily": "InterUI-Black",
+        "fontSize": 43,
+        "lineHeight": 49.45,
       }
     }
   >
@@ -373,9 +383,9 @@ exports[`the HTMLView component should render an H2 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 42.3,
-        "lineHeight": 53.58,
+        "fontFamily": "InterUI-Black",
+        "fontSize": 36,
+        "lineHeight": 41.4,
       }
     }
   >
@@ -405,9 +415,9 @@ exports[`the HTMLView component should render an H3 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 32.4,
-        "lineHeight": 41.04,
+        "fontFamily": "InterUI-Black",
+        "fontSize": 24,
+        "lineHeight": 27.6,
       }
     }
   >
@@ -437,9 +447,9 @@ exports[`the HTMLView component should render an H4 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 25.2,
-        "lineHeight": 31.28,
+        "fontFamily": "InterUI-Bold",
+        "fontSize": 16,
+        "lineHeight": 23.04,
       }
     }
   >
@@ -469,9 +479,9 @@ exports[`the HTMLView component should render an H5 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 20.02,
-        "lineHeight": 25.33,
+        "fontFamily": "InterUI-Medium",
+        "fontSize": 14,
+        "lineHeight": 20.16,
       }
     }
   >
@@ -500,42 +510,10 @@ exports[`the HTMLView component should render an H6 1`] = `
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 15.75,
-        "lineHeight": 17.75,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
-        Testings
-      </Text>
-    </Text>
-  </Text>
-</View>
-`;
-
-exports[`the HTMLView component should render an H7 1`] = `
-<View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#303030",
-        "fontFamily": "OpenSans-Regular",
-        "fontSize": 14,
-        "lineHeight": 15.78,
+        "color": "#505050",
+        "fontFamily": "InterUI-Bold",
+        "fontSize": 12,
+        "lineHeight": 17.28,
       }
     }
   >
@@ -575,7 +553,7 @@ exports[`the HTMLView component should render bold text 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -588,9 +566,9 @@ exports[`the HTMLView component should render bold text 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -603,9 +581,9 @@ exports[`the HTMLView component should render bold text 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Bold",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -627,7 +605,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -640,9 +618,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -685,7 +663,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -698,9 +676,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -716,7 +694,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -729,9 +707,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -747,7 +725,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -760,9 +738,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -782,16 +760,16 @@ exports[`the HTMLView component should render example HTML 1`] = `
         "borderBottomWidth": 0.5,
         "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
-        "marginVertical": 40,
+        "marginVertical": 46.08,
         "paddingHorizontal": 20,
-        "paddingVertical": 30,
+        "paddingVertical": 34.56,
       }
     }
   >
     <View
       style={
         Object {
-          "paddingVertical": 10,
+          "paddingVertical": 11.52,
         }
       }
     >
@@ -804,9 +782,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif-Italic",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Italic",
+            "fontSize": 16,
+            "lineHeight": 26,
             "textAlign": "center",
           }
         }
@@ -824,7 +802,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -837,9 +815,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -859,9 +837,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 32.4,
-        "lineHeight": 41.04,
+        "fontFamily": "InterUI-Black",
+        "fontSize": 24,
+        "lineHeight": 27.6,
       }
     }
   >
@@ -882,7 +860,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -895,9 +873,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -940,7 +918,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -953,9 +931,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -971,7 +949,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -984,9 +962,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1006,16 +984,16 @@ exports[`the HTMLView component should render example HTML 1`] = `
         "borderBottomWidth": 0.5,
         "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
-        "marginVertical": 40,
+        "marginVertical": 46.08,
         "paddingHorizontal": 20,
-        "paddingVertical": 30,
+        "paddingVertical": 34.56,
       }
     }
   >
     <View
       style={
         Object {
-          "paddingVertical": 10,
+          "paddingVertical": 11.52,
         }
       }
     >
@@ -1028,9 +1006,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif-Italic",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Italic",
+            "fontSize": 16,
+            "lineHeight": 26,
             "textAlign": "center",
           }
         }
@@ -1048,7 +1026,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1061,9 +1039,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1086,7 +1064,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -1099,9 +1077,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1124,9 +1102,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1150,7 +1128,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -1163,9 +1141,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1188,9 +1166,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1214,7 +1192,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -1227,9 +1205,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1252,9 +1230,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1271,7 +1249,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1284,9 +1262,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1302,7 +1280,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1315,9 +1293,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1337,9 +1315,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "OpenSans-Bold",
-        "fontSize": 32.4,
-        "lineHeight": 41.04,
+        "fontFamily": "InterUI-Black",
+        "fontSize": 24,
+        "lineHeight": 27.6,
       }
     }
   >
@@ -1360,7 +1338,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1373,9 +1351,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1418,7 +1396,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -1431,9 +1409,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1456,9 +1434,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1482,7 +1460,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -1495,9 +1473,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1520,9 +1498,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1546,7 +1524,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -1559,9 +1537,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1584,9 +1562,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1610,7 +1588,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 9,
+          "paddingRight": 8,
         }
       }
     >
@@ -1623,9 +1601,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1648,9 +1626,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Regular",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1667,7 +1645,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1680,9 +1658,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1698,7 +1676,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1711,9 +1689,9 @@ exports[`the HTMLView component should render example HTML 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1734,7 +1712,7 @@ exports[`the HTMLView component should render handle relative links 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1747,9 +1725,9 @@ exports[`the HTMLView component should render handle relative links 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1790,7 +1768,7 @@ exports[`the HTMLView component should render italic text 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1803,9 +1781,9 @@ exports[`the HTMLView component should render italic text 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >
@@ -1818,9 +1796,9 @@ exports[`the HTMLView component should render italic text 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif-Italic",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
+            "fontFamily": "InterUI-Italic",
+            "fontSize": 16,
+            "lineHeight": 26,
           }
         }
       >
@@ -1842,7 +1820,7 @@ exports[`the HTMLView component strips out badly formatted links 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 10,
+        "paddingVertical": 11.52,
       }
     }
   >
@@ -1855,9 +1833,9 @@ exports[`the HTMLView component strips out badly formatted links 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "DroidSerif",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
         }
       }
     >

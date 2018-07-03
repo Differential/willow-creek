@@ -7,10 +7,10 @@ exports[`the H6 component should accept additional props 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "color": "#303030",
-      "fontFamily": "OpenSans-Bold",
-      "fontSize": 15.75,
-      "lineHeight": 17.75,
+      "color": "#505050",
+      "fontFamily": "InterUI-Bold",
+      "fontSize": 12,
+      "lineHeight": 17.28,
     }
   }
 >
@@ -26,9 +26,9 @@ exports[`the H6 component should accept and render passed in styles 1`] = `
   style={
     Object {
       "color": "salmon",
-      "fontFamily": "OpenSans-Bold",
-      "fontSize": 15.75,
-      "lineHeight": 17.75,
+      "fontFamily": "InterUI-Bold",
+      "fontSize": 12,
+      "lineHeight": 17.28,
     }
   }
 >
@@ -43,8 +43,8 @@ exports[`the H6 component should render a loading state 1`] = `
       "alignSelf": "stretch",
       "backgroundColor": "#A5A5A5",
       "borderRadius": 6,
-      "height": 15.75,
-      "marginVertical": 1,
+      "height": 12,
+      "marginVertical": 2.6400000000000006,
       "width": "50%",
     }
   }
@@ -58,10 +58,10 @@ exports[`the H6 component should render correctly 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "color": "#303030",
-      "fontFamily": "OpenSans-Bold",
-      "fontSize": 15.75,
-      "lineHeight": 17.75,
+      "color": "#505050",
+      "fontFamily": "InterUI-Bold",
+      "fontSize": 12,
+      "lineHeight": 17.28,
     }
   }
 >

@@ -50,9 +50,9 @@ exports[`The Button component should render 1`] = `
       style={
         Object {
           "color": "#FFFFFF",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -112,9 +112,9 @@ exports[`The Button component should render a Tertiary button 1`] = `
       style={
         Object {
           "color": "#FFFFFF",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -173,9 +173,9 @@ exports[`The Button component should render a bordered button 1`] = `
       style={
         Object {
           "color": "#17B582",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -236,9 +236,9 @@ exports[`The Button component should render a disabled button 1`] = `
       style={
         Object {
           "color": "#FFFFFF",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -297,9 +297,9 @@ exports[`The Button component should render a ghost button 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -358,9 +358,9 @@ exports[`The Button component should render a ghost pill button 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -474,9 +474,9 @@ exports[`The Button component should render a pill button 1`] = `
       style={
         Object {
           "color": "#FFFFFF",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -536,9 +536,9 @@ exports[`The Button component should render a primary button 1`] = `
       style={
         Object {
           "color": "#FFFFFF",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -598,9 +598,9 @@ exports[`The Button component should render a secondary button 1`] = `
       style={
         Object {
           "color": "#FFFFFF",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
@@ -660,9 +660,9 @@ exports[`The Button component should render as default type 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "OpenSans-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >

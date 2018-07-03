@@ -8,7 +8,7 @@ import { withThemeMixin, withTheme } from 'ui/theme';
 import ChannelLabel from 'ui/ChannelLabel';
 import GradientOverlayImage from 'ui/GradientOverlayImage';
 import Card, { CardContent, CardActions } from 'ui/Card';
-import { H4 } from 'ui/typography';
+import { H3 } from 'ui/typography';
 import styled from 'ui/styled';
 // import ConnectedImage from 'ui/ConnectedImage';
 // import ProgressiveImage from 'ui/ProgressiveImage';
@@ -46,7 +46,7 @@ const FeedItemCard = enhance(
         overlayColor={backgroundColor}
       />
       <StyledCardContent>
-        <H4 isLoading={isLoading}>{title}</H4>
+        <H3 isLoading={isLoading}>{title}</H3>
       </StyledCardContent>
       <CardActions>
         <ChannelLabel
