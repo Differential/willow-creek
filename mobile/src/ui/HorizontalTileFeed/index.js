@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, branch, withProps } from 'recompose';
+import { compose, withProps } from 'recompose';
 
 import { withTheme } from 'ui/theme';
 
@@ -19,7 +19,7 @@ export class HorizontalTileFeed extends PureComponent {
   };
 
   static defaultProps = {
-    keyExtractor: (item) => item && item.node.id,
+    keyExtractor: (item) => item && item.id,
     content: [],
     isLoading: false,
   };
@@ -64,11 +64,11 @@ export class HorizontalTileFeed extends PureComponent {
 const generateLoadingStateData = (loadingStateObject, numberOfItems) => {
   const itemData = () => JSON.parse(JSON.stringify(loadingStateObject));
 
-  const loadingStateData = [itemData()];
+  const loadingStateData = [];
 
   while (loadingStateData.length < numberOfItems) {
     const newData = itemData();
-    newData.node.id = `fakeId${loadingStateData.length}`;
+    newData.id = `fakeId${loadingStateData.length}`;
     loadingStateData.push(newData);
   }
 
@@ -76,12 +76,14 @@ const generateLoadingStateData = (loadingStateObject, numberOfItems) => {
 };
 
 const enhance = compose(
-  branch(
-    ({ isLoading, content }) => isLoading && !content.length,
-    withProps(({ loadingStateObject } = {}) => ({
-      content: generateLoadingStateData(loadingStateObject, 5),
-      fetchMore: () => {},
-    }))
+  withProps(
+    ({ isLoading, content, loadingStateObject } = {}) =>
+      isLoading && (!content || !content.length)
+        ? {
+            content: generateLoadingStateData(loadingStateObject, 5),
+            fetchMore: () => {},
+          }
+        : {}
   ),
   withTheme(({ theme: { sizing: { baseUnit } = {} } = {} } = {}) => ({
     theme: { baseUnit },

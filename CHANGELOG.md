@@ -5,6 +5,7 @@ v0.2.0: July 3, 2018
 - Ability to register through the api using an email and password
 - Created individual content channel feeds
 - Added horizontal scrollers and their associated tiles
+- Implemented horizontal scrolling lists with content for the discover view
 - Added content children to the individual content pages
 
 v0.1.0: June 19, 2018

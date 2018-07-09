@@ -5,6 +5,7 @@ exports[`the GradientOverlayImage component should render 1`] = `
   style={
     Object {
       "aspectRatio": 1,
+      "backgroundColor": "#A5A5A5",
       "width": "100%",
     }
   }
@@ -38,6 +39,7 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
   style={
     Object {
       "aspectRatio": 1,
+      "backgroundColor": "#A5A5A5",
       "width": "100%",
     }
   }

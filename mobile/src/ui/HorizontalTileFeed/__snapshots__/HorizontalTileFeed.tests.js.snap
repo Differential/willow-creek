@@ -285,6 +285,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
   data={
     Array [
       Object {
+        "id": "fakeId0",
         "node": Object {
           "id": "fakeId0",
           "isLoading": true,
@@ -292,29 +293,33 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
         },
       },
       Object {
+        "id": "fakeId1",
         "node": Object {
-          "id": "fakeId1",
+          "id": "fakeId0",
           "isLoading": true,
           "title": "",
         },
       },
       Object {
+        "id": "fakeId2",
         "node": Object {
-          "id": "fakeId2",
+          "id": "fakeId0",
           "isLoading": true,
           "title": "",
         },
       },
       Object {
+        "id": "fakeId3",
         "node": Object {
-          "id": "fakeId3",
+          "id": "fakeId0",
           "isLoading": true,
           "title": "",
         },
       },
       Object {
+        "id": "fakeId4",
         "node": Object {
-          "id": "fakeId4",
+          "id": "fakeId0",
           "isLoading": true,
           "title": "",
         },

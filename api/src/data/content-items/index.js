@@ -160,9 +160,12 @@ export const defaultContentItemResolvers = {
     if (defaultImages.length) return defaultImages[0];
 
     // If no image, check parent for image:
-    const parentItems = await (await models.ContentItem.getCursorByChildContentItemId(
+    const parentItemsCursor = await models.ContentItem.getCursorByChildContentItemId(
       root.id
-    )).get();
+    );
+    if (!parentItemsCursor) return null;
+
+    const parentItems = await parentItemsCursor.get();
 
     if (parentItems.length) {
       const parentImages = parentItems

@@ -36,7 +36,11 @@ export class ContentFeed extends React.Component {
         <Query query={GET_CONTENT_FEED} variables={{ itemId }}>
           {({ loading, error, data, refetch }) => (
             <FeedView
-              content={get(data, 'node.childContentItemsConnection.edges', [])}
+              content={get(
+                data,
+                'node.childContentItemsConnection.edges',
+                []
+              ).map((edge) => edge.node)}
               isLoading={loading}
               error={error}
               refetch={refetch}

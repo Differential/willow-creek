@@ -22,7 +22,7 @@ export const schema = gql`
 export const resolver = {
   Query: {
     contentChannels: (root, args, context) =>
-      context.models.ContentChannel.all(),
+      context.models.ContentChannel.getRootChannels(),
   },
   ContentChannel: {
     id: ({ id }, args, context, { parentType }) =>

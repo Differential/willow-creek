@@ -58,7 +58,7 @@ class HomeScreen extends React.Component {
         <Query query={GET_USER_FEED}>
           {({ loading, error, data, refetch }) => (
             <FeedView
-              content={get(data, 'userFeed.edges', [])}
+              content={get(data, 'userFeed.edges', []).map((edge) => edge.node)}
               isLoading={loading}
               error={error}
               refetch={refetch}

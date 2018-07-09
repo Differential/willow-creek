@@ -11,8 +11,11 @@ exports[`the TileImage component passes an onPressItem prop 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
+      "aspectRatio": 1,
       "borderRadius": 6,
+      "height": "100%",
       "overflow": "hidden",
+      "width": "100%",
     }
   }
 >
@@ -20,6 +23,7 @@ exports[`the TileImage component passes an onPressItem prop 1`] = `
     style={
       Object {
         "aspectRatio": 1,
+        "backgroundColor": "#A5A5A5",
         "width": "100%",
       }
     }
@@ -34,6 +38,26 @@ exports[`the TileImage component passes an onPressItem prop 1`] = `
       }
     />
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "bottom": 20,
+        "color": "#F8F7F4",
+        "fontFamily": "InterUI-Bold",
+        "fontSize": 16,
+        "left": 20,
+        "lineHeight": 23.04,
+        "position": "absolute",
+        "right": 20,
+      }
+    }
+  >
+    
+  </Text>
 </View>
 `;
 
@@ -48,8 +72,11 @@ exports[`the TileImage component should render 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
+      "aspectRatio": 1,
       "borderRadius": 6,
+      "height": "100%",
       "overflow": "hidden",
+      "width": "100%",
     }
   }
 >
@@ -57,6 +84,7 @@ exports[`the TileImage component should render 1`] = `
     style={
       Object {
         "aspectRatio": 1,
+        "backgroundColor": "#A5A5A5",
         "width": "100%",
       }
     }
@@ -120,6 +148,7 @@ exports[`the TileImage component should render 1`] = `
         "left": 20,
         "lineHeight": 23.04,
         "position": "absolute",
+        "right": 20,
       }
     }
   >
@@ -139,8 +168,11 @@ exports[`the TileImage component should render without text 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
+      "aspectRatio": 1,
       "borderRadius": 6,
+      "height": "100%",
       "overflow": "hidden",
+      "width": "100%",
     }
   }
 >
@@ -148,6 +180,7 @@ exports[`the TileImage component should render without text 1`] = `
     style={
       Object {
         "aspectRatio": 1,
+        "backgroundColor": "#A5A5A5",
         "width": "100%",
       }
     }
@@ -162,5 +195,25 @@ exports[`the TileImage component should render without text 1`] = `
       }
     />
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "bottom": 20,
+        "color": "#F8F7F4",
+        "fontFamily": "InterUI-Bold",
+        "fontSize": 16,
+        "left": 20,
+        "lineHeight": 23.04,
+        "position": "absolute",
+        "right": 20,
+      }
+    }
+  >
+    
+  </Text>
 </View>
 `;

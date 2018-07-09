@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import { pure, compose, branch, withProps, defaultProps } from 'recompose';
+import { get } from 'lodash';
 
 import styled from 'ui/styled';
 import FeedItemCard from 'ui/FeedItemCard';
@@ -32,7 +33,7 @@ export class FeedView extends React.Component {
     isLoading: false,
     // renderItem: this.defaultFeedItemRenderer,
     onEndReachedThreshold: 0.7,
-    keyExtractor: (item) => item && item.node.id,
+    keyExtractor: (item) => item && item.id,
     content: [],
     refetch: undefined,
     fetchMore: undefined,
@@ -59,12 +60,12 @@ export class FeedView extends React.Component {
         onPress={() => this.props.onPressItem({ ...item })}
       >
         <FeedItemCard
-          id={item.node.id}
-          title={item.node.title || item.node.name || ' '}
-          channelType={item.node.parentChannel.name}
-          channelTypeIcon={item.node.parentChannel.iconName}
-          images={item.node.coverImage.sources}
-          isLoading={item.node.isLoading}
+          id={get(item, 'id')}
+          title={get(item, 'title') || get(item, 'name') || ' '}
+          channelType={get(item, 'parentChannel.name')}
+          channelTypeIcon={get(item, 'parentChannel.iconName')}
+          images={get(item, 'coverImage.sources')}
+          isLoading={get(item, 'isLoading')}
         />
       </TouchableWithoutFeedback>
     );
@@ -109,34 +110,37 @@ export class FeedView extends React.Component {
   }
 }
 
-const generateLoadingStateData = (numberOfItems = 1) => {
-  const itemData = () => ({
-    node: {
-      id: 'fakeId0',
-      isLoading: true,
-      title: '',
-      channelType: '',
-      coverImage: [],
-      theme: {
-        isLight: '',
-        colors: {
-          background: {
-            paper: '',
-          },
-        },
-      },
-      parentChannel: {
-        id: '',
-        name: '',
+const defaultLoadingState = {
+  id: 'fakeId0',
+  isLoading: true,
+  title: '',
+  channelType: '',
+  coverImage: [],
+  theme: {
+    isLight: '',
+    colors: {
+      background: {
+        paper: '',
       },
     },
-  });
+  },
+  parentChannel: {
+    id: '',
+    name: '',
+  },
+};
 
-  const loadingStateData = [itemData()];
+const generateLoadingStateData = (
+  numberOfItems = 1,
+  loadingStateObject = defaultLoadingState
+) => {
+  const itemData = () => ({ ...loadingStateObject });
+
+  const loadingStateData = [];
 
   while (loadingStateData.length < numberOfItems) {
     const newData = itemData();
-    newData.node.id = `fakeId${loadingStateData.length}`;
+    newData.id = `fakeId${loadingStateData.length}`;
     loadingStateData.push(newData);
   }
 
@@ -147,11 +151,11 @@ const enhance = compose(
   pure,
   branch(
     ({ isLoading, content }) => isLoading && !content.length,
-    withProps({
+    withProps(({ loadingStateObject }) => ({
       isLoading: true,
-      content: generateLoadingStateData(10),
+      content: generateLoadingStateData(10, loadingStateObject),
       fetchMore: () => {},
-    })
+    }))
   ),
   mediaQuery(
     ({ md }) => ({ maxWidth: md }),

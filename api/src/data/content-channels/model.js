@@ -8,6 +8,13 @@ export default class ContentChannel extends RockModel {
       .expand('ChildContentChannels')
       .get();
 
+  getRootChannels = () =>
+    this.request()
+      .filter('Id eq 3')
+      .filter('Id eq 4')
+      .filter('Id eq 6')
+      .get();
+
   getFromId = (id) =>
     // TODO: Rock doesn't seem to support expand on single resource requests
     // so we have to send a query request
