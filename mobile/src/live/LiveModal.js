@@ -1,5 +1,6 @@
 import React from 'react';
 import { WebView } from 'react-native';
+
 import styled from 'ui/styled';
 
 const FullScreenWebView = styled({
@@ -8,8 +9,8 @@ const FullScreenWebView = styled({
   flex: 1,
 })(WebView);
 
-const LiveModalScreen = () => (
+const LiveModal = () => (
   <FullScreenWebView source={{ uri: 'https://apollos.churchonline.org/' }} />
 );
 
-export default LiveModalScreen;
+export default LiveModal;

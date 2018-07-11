@@ -1,10 +1,11 @@
 import React from 'react';
-import FlexedView from 'ui/FlexedView';
 import renderer from 'react-test-renderer';
 
+import FlexedView from 'ui/FlexedView';
 import TestProviders from 'TestProviders';
 import Icon from 'ui/Icon';
 import { Switch } from 'ui/inputs';
+
 import TableView, { Cell, CellText, Divider } from './';
 
 describe('the TableView Component', () => {

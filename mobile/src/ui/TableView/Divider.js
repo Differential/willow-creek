@@ -1,4 +1,5 @@
 import { View, StyleSheet } from 'react-native';
+
 import styled from 'ui/styled';
 
 const Divider = styled(({ theme }) => ({

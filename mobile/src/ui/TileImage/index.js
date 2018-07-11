@@ -47,7 +47,7 @@ const TileImage = enhance(
           isLoading={isLoading}
           overlayColor={text ? theme.colors.black : null}
         />
-        <Title isLoading={isLoading}>{text || ''}</Title>
+        <Title isLoading={isLoading}>{text}</Title>
       </CardView>
     </TouchableWithoutFeedback>
   )
@@ -59,6 +59,10 @@ TileImage.propTypes = {
   onPressItem: PropTypes.func,
   text: PropTypes.string,
   isLoading: PropTypes.bool,
+};
+
+TileImage.defaultProps = {
+  text: '',
 };
 
 export default TileImage;

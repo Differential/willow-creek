@@ -2,7 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import Providers from 'TestProviders';
-
 import CardTile from 'ui/CardTile';
 
 import HorizontalTileFeed from './';

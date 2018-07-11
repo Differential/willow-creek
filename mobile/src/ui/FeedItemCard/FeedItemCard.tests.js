@@ -1,6 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import Providers from 'TestProviders';
+
 import FeedItemCard from './';
 
 describe('the FeedItemCard component', () => {

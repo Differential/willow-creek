@@ -1,6 +1,7 @@
 import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
+
 import styled from 'ui/styled';
 
 const asFirstChild = (child) =>

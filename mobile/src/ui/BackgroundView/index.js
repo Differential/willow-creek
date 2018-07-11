@@ -1,5 +1,6 @@
 import LinearGradient from 'react-native-linear-gradient';
 import { compose } from 'recompose';
+
 import styled from 'ui/styled';
 import { withTheme } from 'ui/theme';
 

@@ -15,9 +15,11 @@ describe('The Typography placeholder', () => {
     expect(tree).toMatchSnapshot();
   });
   it('translates type styles', () => {
+    const customTypeStyles = { fontSize: 24, lineHeight: 32 };
+
     const tree = renderer.create(
       <Providers>
-        <Typography style={{ fontSize: 24, lineHeight: 32 }} />
+        <Typography style={customTypeStyles} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

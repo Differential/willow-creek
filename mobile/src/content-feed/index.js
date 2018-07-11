@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import BackgroundView from 'ui/BackgroundView';
 import FeedView from 'ui/FeedView';
-import GET_CONTENT_FEED from './feedQuery';
 
-export class ContentFeed extends React.Component {
+import getContentFeed from './getContentFeed.graphql';
+
+class ContentFeed extends PureComponent {
   static navigationOptions = ({ navigation }) => {
     const itemTitle = navigation.getParam('itemTitle', 'Content Channel');
     return {
@@ -22,10 +23,10 @@ export class ContentFeed extends React.Component {
     }),
   };
 
-  onPress = (item) =>
+  handleOnPress = (item) =>
     this.props.navigation.navigate('ContentSingle', {
-      itemId: item.node.id,
-      itemTitle: item.node.title,
+      itemId: item.id,
+      itemTitle: item.title,
     });
 
   render() {
@@ -33,7 +34,7 @@ export class ContentFeed extends React.Component {
     const itemId = navigation.getParam('itemId', []);
     return (
       <BackgroundView>
-        <Query query={GET_CONTENT_FEED} variables={{ itemId }}>
+        <Query query={getContentFeed} variables={{ itemId }}>
           {({ loading, error, data, refetch }) => (
             <FeedView
               content={get(
@@ -44,7 +45,7 @@ export class ContentFeed extends React.Component {
               isLoading={loading}
               error={error}
               refetch={refetch}
-              onPressItem={this.onPress}
+              onPressItem={this.handleOnPress}
             />
           )}
         </Query>

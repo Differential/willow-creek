@@ -1,6 +1,7 @@
-const fetch = require('node-fetch');
 const fs = require('fs');
 const Path = require('path');
+
+const fetch = require('node-fetch');
 
 (async () => {
   try {

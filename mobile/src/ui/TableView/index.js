@@ -1,6 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, renderComponent } from 'recompose';
+
 import styled from 'ui/styled';
 import { enhancer as mediaQuery } from 'ui/MediaQuery';
 import { Card } from 'ui/Card';

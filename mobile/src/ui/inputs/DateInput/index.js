@@ -5,6 +5,7 @@ import { Animated } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 
 import Chip from 'ui/Chip';
+
 import InputWrapper from '../InputWrapper';
 import FloatingLabel from '../FloatingLabel';
 

@@ -4,8 +4,9 @@ import { kebabCase } from 'lodash';
 
 import Providers from 'TestProviders';
 
-import Icon from './';
 import * as icons from './icons';
+
+import Icon from './';
 
 Object.keys(icons).forEach((iconName) => {
   describe(`The ${iconName} icon`, () => {

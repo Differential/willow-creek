@@ -29,13 +29,26 @@ describe('the TileImage component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  it('passes an onPressItem prop', () => {
+  it('should render a loading state', () => {
     const tree = renderer.create(
       <Providers>
         <TileImage
           image={'https://picsum.photos/600/400/?random'}
           link={'https://github.com'}
-          onPressItem={jest.fn}
+          isLoading
+        />
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('passes an onPressItem prop', () => {
+    const handleOnPressItem = jest.fn;
+    const tree = renderer.create(
+      <Providers>
+        <TileImage
+          image={'https://picsum.photos/600/400/?random'}
+          link={'https://github.com'}
+          onPressItem={handleOnPressItem}
         />
       </Providers>
     );

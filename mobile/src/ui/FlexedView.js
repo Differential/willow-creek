@@ -1,4 +1,5 @@
 import { View } from 'react-native';
+
 import styled from 'ui/styled';
 
 const FlexedView = styled(

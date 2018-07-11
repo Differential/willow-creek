@@ -11,7 +11,6 @@ import FloatingLabel from '../FloatingLabel';
 import InputUnderline from '../InputUnderline';
 import InputWrapper from '../InputWrapper';
 import ErrorText from '../ErrorText';
-
 import withFocusAnimation from '../withFocusAnimation';
 import InputAddon, { AddonRow } from '../InputAddon';
 import withInputControlStyles from '../withInputControlStyles';
@@ -77,12 +76,15 @@ const Text = enhance(
   }) => {
     const focusAnimation =
       value || !label ? new Animated.Value(1) : focusAnimationInput;
+
+    const animatedStyle = { opacity: focusAnimation, flex: 1 };
+
     return (
       <InputWrapper style={wrapperStyle} disabled={disabled}>
         <View>
           <AddonRow>
             <InputAddon>{prefix}</InputAddon>
-            <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
+            <Animated.View style={animatedStyle}>
               <Component
                 placeholderTextColor={Color(theme.colors.text.primary)
                   .fade(theme.alpha.low)

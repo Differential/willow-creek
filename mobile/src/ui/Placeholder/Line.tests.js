@@ -23,9 +23,11 @@ describe('The Line placeholder', () => {
     expect(tree).toMatchSnapshot();
   });
   it('accepts custom styles', () => {
+    const customStyle = { backgroundColor: 'salmon' };
+
     const tree = renderer.create(
       <Providers>
-        <Line width="50%" style={{ backgroundColor: 'salmon' }} />
+        <Line width="50%" style={customStyle} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

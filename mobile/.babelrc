@@ -7,10 +7,11 @@
     [
       "module-resolver",
       {
-        "root": ["./src"],
-        "extensions": [".android.js", ".ios.js", ".js"]
+        "root": ["./src", "./"],
+        "extensions": [".android.js", ".ios.js", ".js", ".graphql"]
       }
-    ]
+    ],
+    "import-graphql"
   ],
   "env": {
     "development": {

@@ -2,70 +2,34 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
+import CenterView from 'storybook/decorators/CenterView';
+import styled from 'ui/styled';
+
 import ChannelLabel from './';
 
 storiesOf('ChannelLabel', module)
-  .add('Default', () => {
-    const centered = {
-      justifyContent: 'center',
-      alignItems: 'center',
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .add('Default', () => <ChannelLabel label={'Default'} />)
+  .add('isLoading', () => <ChannelLabel label={'Default'} isLoading />)
+  .add('With Icon', () => <ChannelLabel label={'Albums'} icon={'like-solid'} />)
+  .add('isLoading With Icon', () => (
+    <ChannelLabel label={'Albums'} icon={'like-solid'} isLoading />
+  ))
+  .add('withFlex', () => {
+    const Wrapper = styled({
       flex: 1,
-    };
+      width: '100%',
+    })(View);
+
+    const Box = styled({
+      flex: 3,
+      backgroundColor: 'salmon',
+    })(View);
 
     return (
-      <View style={centered}>
-        <ChannelLabel label={'Default'} />
-      </View>
-    );
-  })
-  .add('isLoading', () => {
-    const centered = {
-      justifyContent: 'center',
-      alignItems: 'center',
-      flex: 1,
-    };
-
-    return (
-      <View style={centered}>
-        <ChannelLabel label={'Default'} isLoading />
-      </View>
-    );
-  })
-  .add('With Icon', () => {
-    const centered = {
-      justifyContent: 'center',
-      alignItems: 'center',
-      flex: 1,
-    };
-
-    return (
-      <View style={centered}>
-        <ChannelLabel label={'Albums'} icon={'like-solid'} />
-      </View>
-    );
-  })
-  .add('isLoading With Icon', () => {
-    const centered = {
-      justifyContent: 'center',
-      alignItems: 'center',
-      flex: 1,
-    };
-
-    return (
-      <View style={centered}>
-        <ChannelLabel label={'Albums'} icon={'like-solid'} isLoading />
-      </View>
-    );
-  })
-  .add('Flexed', () => {
-    const centered = {
-      height: '100%',
-    };
-
-    return (
-      <View style={centered}>
+      <Wrapper>
         <ChannelLabel label={'Albums'} icon={'arrow-back'} withFlex />
-        <View style={{ flex: 3, backgroundColor: 'salmon' }} />
-      </View>
+        <Box />
+      </Wrapper>
     );
   });

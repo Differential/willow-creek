@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
+
 import TileImage from 'ui/TileImage';
 import styled from 'ui/styled';
 

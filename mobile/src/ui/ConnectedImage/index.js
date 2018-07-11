@@ -107,14 +107,6 @@ class ConnectedImage extends PureComponent {
     if (this.cacheUpdater) this.cacheUpdater.cancel();
   }
 
-  onLoad = (...args) => {
-    Animated.timing(this.imageOpacity, {
-      toValue: 1,
-      duration: 250,
-    }).start();
-    if (this.props.onLoad) this.props.onLoad(...args);
-  };
-
   get aspectRatio() {
     const style = {};
     if (this.props.maintainAspectRatio) {
@@ -132,6 +124,14 @@ class ConnectedImage extends PureComponent {
       !every(this.state.source, (image) => image.width && image.height)
     );
   }
+
+  handleOnLoad = (...args) => {
+    Animated.timing(this.imageOpacity, {
+      toValue: 1,
+      duration: 250,
+    }).start();
+    if (this.props.onLoad) this.props.onLoad(...args);
+  };
 
   cancleCacheUpdater = (promise) => {
     let hasCanceled = false;
@@ -199,7 +199,7 @@ class ConnectedImage extends PureComponent {
         <ImageComponent
           {...otherProps}
           source={source}
-          onLoad={this.onLoad}
+          onLoad={this.handleOnLoad}
           style={[this.aspectRatio, { opacity: this.imageOpacity }, style]}
         />
       </SkeletonImage>

@@ -4,6 +4,7 @@ import { compose } from 'recompose';
 import { View } from 'react-native';
 
 import Providers from 'TestProviders';
+
 import styled from './';
 
 describe('the styled HOC', () => {
@@ -17,7 +18,10 @@ describe('the styled HOC', () => {
       styled({ backgroundColor: 'red' }),
       styled({ borderColor: 'green' })
     )(View);
-    const tree = renderer.create(<StyledView style={{ height: 100 }} />);
+
+    const customStyle = { height: 100 };
+
+    const tree = renderer.create(<StyledView style={customStyle} />);
     expect(tree).toMatchSnapshot();
   });
   it('should accept a function, works with props', () => {

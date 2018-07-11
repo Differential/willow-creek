@@ -23,9 +23,11 @@ describe('The Media placeholder', () => {
     expect(tree).toMatchSnapshot();
   });
   it('accepts custom styles', () => {
+    const customStyle = { backgroundColor: 'salmon' };
+
     const tree = renderer.create(
       <Providers>
-        <Media style={{ backgroundColor: 'salmon' }} />
+        <Media style={customStyle} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

@@ -1,13 +1,14 @@
 import { createBottomTabNavigator } from 'react-navigation';
-import ConnectStack from './connect';
-import HomeStack from './home';
-import DiscoverStack from './discover';
 
-export const TabStack = createBottomTabNavigator(
+import Connect from './connect';
+import Home from './home';
+import Discover from './discover';
+
+const TabNavigator = createBottomTabNavigator(
   {
-    Home: HomeStack,
-    Discover: DiscoverStack,
-    Connect: ConnectStack,
+    Home,
+    Discover,
+    Connect,
   },
   {
     tabBarOptions: {
@@ -21,6 +22,8 @@ export const TabStack = createBottomTabNavigator(
   }
 );
 
-TabStack.navigationOptions = {
+TabNavigator.navigationOptions = {
   header: null,
 };
+
+export default TabNavigator;

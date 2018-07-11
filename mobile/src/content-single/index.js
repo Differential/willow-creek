@@ -12,7 +12,7 @@ import HTMLView from 'ui/HTMLView';
 import PaddedView from 'ui/PaddedView';
 import { H2 } from 'ui/typography';
 
-import GET_CONTENT from './query';
+import getContentItem from './getContentItem.graphql';
 
 class ContentSingle extends PureComponent {
   static navigationOptions = ({ navigation }) => {
@@ -29,27 +29,47 @@ class ContentSingle extends PureComponent {
     }),
   };
 
-  onPressItem = (item) =>
-    this.props.navigation.push('ContentSingle', {
-      itemId: item.node.id,
-      itemTitle: item.node.title,
-    });
+  constructor(props) {
+    super(props);
 
-  render() {
-    const { navigation } = this.props;
-    const itemId = navigation.getParam('itemId', []);
-    const loadingStateObject = {
+    this.itemId = { itemId: props.navigation.getParam('itemId', []) };
+    this.loadingStateObject = {
       node: {
         id: 'fakeId0',
         title: '',
         isLoading: true,
       },
     };
+  }
+
+  handleOnPressItem(item) {
+    this.props.navigation.push('ContentSingle', {
+      itemId: item.id,
+      itemTitle: item.title,
+    });
+  }
+
+  renderItem = ({ item, index }) => (
+    <TouchableWithoutFeedback onPress={() => this.handleOnPressItem(item)}>
+      <CardTile
+        number={index + 1}
+        title={get(item, 'title', '')}
+        /*
+          * These are props that are not yet being passed in the data.
+          * We will need to make sure they get added back when that data is available.
+          * byLine={item.content.speaker}
+          * date={item.meta.date}
+          */
+        isLoading={item.isLoading}
+      />
+    </TouchableWithoutFeedback>
+  );
+
+  render() {
     return (
-      <Query query={GET_CONTENT} variables={{ itemId }}>
+      <Query query={getContentItem} variables={this.itemId}>
         {({ loading, error, data }) => {
           if (error) return <ErrorCard error={error} />;
-
           return (
             <ScrollView>
               <GradientOverlayImage
@@ -67,26 +87,10 @@ class ContentSingle extends PureComponent {
                   data,
                   'node.childContentItemsConnection.edges',
                   []
-                )}
+                ).map((edge) => edge.node)}
                 isLoading={loading}
-                loadingStateObject={loadingStateObject}
-                renderItem={({ item, index }) => (
-                  <TouchableWithoutFeedback
-                    onPress={() => this.onPressItem({ ...item })}
-                  >
-                    <CardTile
-                      number={index + 1}
-                      title={get(item, 'node.title', '')}
-                      /*
-                      * These are props that are not yet being passed in the data.
-                      * We will need to make sure they get added back when that data is available.
-                      * byLine={item.content.speaker}
-                      * date={item.meta.date}
-                      */
-                      isLoading={item.isLoading}
-                    />
-                  </TouchableWithoutFeedback>
-                )}
+                loadingStateObject={this.loadingStateObject}
+                renderItem={this.renderItem}
               />
             </ScrollView>
           );

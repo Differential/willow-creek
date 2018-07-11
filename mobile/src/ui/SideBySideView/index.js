@@ -1,5 +1,6 @@
 import { View } from 'react-native';
 import { compose, renderComponent } from 'recompose';
+
 import styled from 'ui/styled';
 import { enhancer as mediaQuery } from 'ui/MediaQuery';
 

@@ -31,17 +31,21 @@ describe('The Paragraph placeholder', () => {
     expect(tree).toMatchSnapshot();
   });
   it('accepts custom line styles', () => {
+    const customStyle = { height: 33 };
+
     const tree = renderer.create(
       <Providers>
-        <Paragraph lineStyle={{ height: 33 }} />
+        <Paragraph lineStyle={customStyle} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();
   });
   it('accepts custom styles', () => {
+    const customStyle = { backgroundColor: 'salmon' };
+
     const tree = renderer.create(
       <Providers>
-        <Paragraph style={{ backgroundColor: 'salmon' }} />
+        <Paragraph style={customStyle} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();
