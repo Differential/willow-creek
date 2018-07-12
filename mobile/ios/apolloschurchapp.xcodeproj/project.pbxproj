@@ -51,6 +51,8 @@
 		C994C64762B948978A7D06F4 /* DroidSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671138B1198C48EE9932E26F /* DroidSerif-Regular.ttf */; };
 		E961E9D5DF5140C3832765BD /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1503A26801D943B488461B3E /* DroidSerif-Italic.ttf */; };
 		FA6B22AFFA314B0B95162F51 /* Inter-UI-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5BFC2FE2992D47419C5E5702 /* Inter-UI-MediumItalic.otf */; };
+		5D089324631146E4A92447BF /* libRNSentry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 576F749B5CE74F1FBBD197CA /* libRNSentry.a */; };
+		1ECFA1807DCE47339E50F699 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432A2CB665E4AD49F3D679B /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -400,6 +402,9 @@
 		C05D7E405DA7437DAD5E414B /* Inter-UI-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BoldItalic.otf"; path = "../assets/fonts/Inter-UI-BoldItalic.otf"; sourceTree = "<group>"; };
 		CEFDF76A4BD748A7B33C94F0 /* Inter-UI-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Medium.otf"; path = "../assets/fonts/Inter-UI-Medium.otf"; sourceTree = "<group>"; };
 		FA234C92A8B945B19B11F509 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
+		536557AAF7AF41CDB5A24F28 /* RNSentry.xcodeproj */ = {isa = PBXFileReference; name = "RNSentry.xcodeproj"; path = "../node_modules/react-native-sentry/ios/RNSentry.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		576F749B5CE74F1FBBD197CA /* libRNSentry.a */ = {isa = PBXFileReference; name = "libRNSentry.a"; path = "libRNSentry.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		2432A2CB665E4AD49F3D679B /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,6 +435,8 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				B22D35DD3BB447FF9D5DA95D /* libRNSVG.a in Frameworks */,
 				50DA68394692441187ABAC10 /* libBVLinearGradient.a in Frameworks */,
+				5D089324631146E4A92447BF /* libRNSentry.a in Frameworks */,
+				1ECFA1807DCE47339E50F699 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
+				2432A2CB665E4AD49F3D679B /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -636,6 +644,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				942C307963364AF29453FE63 /* RNSVG.xcodeproj */,
 				09B2C8B9C6154711B3152AE7 /* BVLinearGradient.xcodeproj */,
+				536557AAF7AF41CDB5A24F28 /* RNSentry.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -713,6 +722,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		465499A6ADC04C9AB5F9C06A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			path = Application;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -742,6 +759,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				FC0264948F9E484F9933FD25 /* Upload Debug Symbols to Sentry */,
 			);
 			buildRules = (
 			);
@@ -1244,7 +1262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export SENTRY_PROPERTIES=sentry.properties\nexport NODE_BINARY=node\n../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1258,7 +1276,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export SENTRY_PROPERTIES=sentry.properties\nexport NODE_BINARY=node\n../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		FC0264948F9E484F9933FD25 /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			name = "Upload Debug Symbols to Sentry";
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			shellScript = "export SENTRY_PROPERTIES=sentry.properties\n../node_modules/@sentry/cli/bin/sentry-cli upload-dsym";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1337,11 +1369,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
 				);
 				INFOPLIST_FILE = apolloschurchappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1360,11 +1396,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
 				);
 				INFOPLIST_FILE = apolloschurchappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1387,6 +1427,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
 				);
 				INFOPLIST_FILE = apolloschurchapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1415,6 +1456,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
 				);
 				INFOPLIST_FILE = apolloschurchapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1447,10 +1489,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
 				);
 				INFOPLIST_FILE = "apolloschurchapp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1479,10 +1525,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
 				);
 				INFOPLIST_FILE = "apolloschurchapp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1510,10 +1560,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
 				);
 				INFOPLIST_FILE = "apolloschurchapp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1541,10 +1595,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
 				);
 				INFOPLIST_FILE = "apolloschurchapp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",

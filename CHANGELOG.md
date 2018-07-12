@@ -7,6 +7,7 @@ v0.2.0: July 3, 2018
 - Added horizontal scrollers and their associated tiles
 - Implemented horizontal scrolling lists with content for the discover view
 - Added content children to the individual content pages
+- Added the ability to log errors to Sentry
 
 v0.1.0: June 19, 2018
 

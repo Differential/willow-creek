@@ -78,6 +78,7 @@
     "react-native": "~0.55.2",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-modal-datetime-picker": "^5.1.0",
+    "react-native-sentry": "^0.38.1",
     "react-native-svg": "^6.3.1",
     "react-navigation": "^2.3.1",
     "recompose": "^0.27.1",
