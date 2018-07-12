@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import TestProviders from 'TestProviders';
+import Providers from 'Providers';
 import { H3, H6, BodyText, Paragraph } from 'ui/typography';
 import Button, { ButtonLink } from 'ui/Button';
 
@@ -10,7 +10,7 @@ import Card, { CardImage, CardContent, CardActions } from './';
 describe('the Card component', () => {
   it('should render', () => {
     const tree = renderer.create(
-      <TestProviders>
+      <Providers>
         <Card>
           <CardImage source={'https://picsum.photos/600/400/?image=63'} />
           <CardContent>
@@ -29,13 +29,13 @@ describe('the Card component', () => {
             <ButtonLink>Share</ButtonLink>
           </CardActions>
         </Card>
-      </TestProviders>
+      </Providers>
     );
     expect(tree).toMatchSnapshot();
   });
   it('it should render a placeholder', () => {
     const tree = renderer.create(
-      <TestProviders>
+      <Providers>
         <Card isLoading>
           <CardContent>
             <H3 />
@@ -49,7 +49,7 @@ describe('the Card component', () => {
             <ButtonLink />
           </CardActions>
         </Card>
-      </TestProviders>
+      </Providers>
     );
     expect(tree).toMatchSnapshot();
   });

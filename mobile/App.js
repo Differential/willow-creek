@@ -1,13 +1,11 @@
 import React from 'react';
-import { ApolloProvider } from 'react-apollo';
 import { createStackNavigator } from 'react-navigation';
 import { Sentry } from 'react-native-sentry';
 
+import Providers from 'Providers';
 import ContentFeed from 'content-feed';
 import ContentSingle from 'content-single';
-import { ThemeProvider } from 'ui/theme';
 import Tabs from 'tabs';
-import client from 'client';
 import Live from 'live';
 
 Sentry.config(
@@ -27,11 +25,9 @@ const AppNavigator = createStackNavigator(
 );
 
 const App = () => (
-  <ApolloProvider client={client}>
-    <ThemeProvider>
-      <AppNavigator />
-    </ThemeProvider>
-  </ApolloProvider>
+  <Providers>
+    <AppNavigator />
+  </Providers>
 );
 
 export default App;

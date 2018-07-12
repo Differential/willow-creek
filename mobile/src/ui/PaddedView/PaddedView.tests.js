@@ -3,13 +3,13 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import LoginForm from './';
+import PaddedView from '.';
 
-describe('The LoginForm component', () => {
+describe('the PaddedView component', () => {
   it('should render', () => {
     const tree = renderer.create(
       <Providers>
-        <LoginForm />
+        <PaddedView />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

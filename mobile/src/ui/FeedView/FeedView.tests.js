@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { TouchableWithoutFeedback } from 'react-native';
 import { get } from 'lodash';
 
-import Providers from 'TestProviders';
+import Providers from 'Providers';
 import FeedItemCard from 'ui/FeedItemCard';
 
 import FeedView from './';

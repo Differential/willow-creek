@@ -43,14 +43,11 @@
     "fixlint": "./node_modules/.bin/eslint . --fix",
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "postversion":
-      "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
+    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
     "start": "node ./scripts/get-introspection-data.js && react-native start",
-    "storybook":
-      "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
+    "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
     "test": "bash ../scripts/test-script.sh",
-    "watch-graphql":
-      "./node_modules/.bin/nodemon --exec \"rm -rf\" ./node_modules/.cache/babel-loader --watch src -e .graphql -q"
+    "watch-graphql": "./node_modules/.bin/nodemon --exec \"rm -rf\" ./node_modules/.cache/babel-loader --watch src -e .graphql -q"
   },
   "jest": {
     "preset": "react-native",
@@ -58,18 +55,27 @@
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|react-navigation))"
     ],
-    "testMatch": ["<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"],
-    "modulePaths": ["<rootDir>/src/"]
+    "testMatch": [
+      "<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "setupFiles": [
+      "./jest.setup.js"
+    ]
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.2",
     "apollo-client": "^2.3.2",
     "apollo-link": "^1.2.2",
     "apollo-link-http": "^1.5.4",
+    "apollo-link-schema": "^1.1.0",
     "color": "^3.0.0",
     "entities": "^1.1.1",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
+    "graphql-tools": "^3.0.5",
     "htmlparser2": "^3.9.2",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
@@ -86,6 +92,8 @@
     "stream": "^0.0.2"
   },
   "rnpm": {
-    "assets": ["assets/fonts"]
+    "assets": [
+      "assets/fonts"
+    ]
   }
 }

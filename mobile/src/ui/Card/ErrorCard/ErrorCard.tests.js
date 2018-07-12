@@ -1,16 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import TestProviders from 'TestProviders';
+import Providers from 'Providers';
 
 import ErrorCard from './';
 
 describe('the Card component', () => {
   it('should render', () => {
     const tree = renderer.create(
-      <TestProviders>
+      <Providers>
         <ErrorCard message={'Boom!'} error={'What?'} />
-      </TestProviders>
+      </Providers>
     );
 
     expect(tree).toMatchSnapshot();
@@ -20,9 +20,9 @@ describe('the Card component', () => {
       message: 'You have discovered an error message. Do you open it?',
     };
     const tree = renderer.create(
-      <TestProviders>
+      <Providers>
         <ErrorCard error={errorObject} />
-      </TestProviders>
+      </Providers>
     );
 
     expect(tree).toMatchSnapshot();
@@ -32,9 +32,9 @@ describe('the Card component', () => {
       error: 'Errors, errors, and more errors',
     };
     const tree = renderer.create(
-      <TestProviders>
+      <Providers>
         <ErrorCard error={errorObject} />
-      </TestProviders>
+      </Providers>
     );
 
     expect(tree).toMatchSnapshot();

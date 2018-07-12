@@ -2,14 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { kebabCase } from 'lodash';
 
-import CenterView from 'storybook/decorators/CenterView';
+import CenteredView from 'ui/CenteredView';
 
 import * as icons from './icons';
 
-import Icon from './';
+import Icon from '.';
 
 const stories = storiesOf('Icon', module).addDecorator((getStory) => (
-  <CenterView>{getStory()}</CenterView>
+  <CenteredView>{getStory()}</CenteredView>
 ));
 
 Object.keys(icons).forEach((iconName) => {

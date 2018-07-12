@@ -1,14 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import TestProviders from 'TestProviders';
+import Providers from 'Providers';
 
 import ConnectedImage, { getCachedSources, updateCache } from './';
 
 describe('the ConnectedImage component', () => {
   it('should render immediately with a network image with a known width and height', () => {
     const tree = renderer.create(
-      <TestProviders>
+      <Providers>
         <ConnectedImage
           source={{
             uri: 'https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084',
@@ -16,13 +16,13 @@ describe('the ConnectedImage component', () => {
             height: 150,
           }}
         />
-      </TestProviders>
+      </Providers>
     );
     expect(tree).toMatchSnapshot();
   });
   it('should maintain aspect ratio', () => {
     const tree = renderer.create(
-      <TestProviders>
+      <Providers>
         <ConnectedImage
           source={{
             uri: 'https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084',
@@ -31,7 +31,7 @@ describe('the ConnectedImage component', () => {
           }}
           maintainAspectRatio
         />
-      </TestProviders>
+      </Providers>
     );
     expect(tree).toMatchSnapshot();
   });

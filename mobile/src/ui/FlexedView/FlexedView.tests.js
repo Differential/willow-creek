@@ -3,13 +3,13 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import LoginForm from './';
+import FlexedView from '.';
 
-describe('The LoginForm component', () => {
+describe('the FlexedView component', () => {
   it('should render', () => {
     const tree = renderer.create(
       <Providers>
-        <LoginForm />
+        <FlexedView />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

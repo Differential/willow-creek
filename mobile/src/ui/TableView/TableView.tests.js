@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import FlexedView from 'ui/FlexedView';
-import TestProviders from 'TestProviders';
+import Providers from 'Providers';
 import Icon from 'ui/Icon';
 import { Switch } from 'ui/inputs';
 
@@ -11,7 +11,7 @@ import TableView, { Cell, CellText, Divider } from './';
 describe('the TableView Component', () => {
   it('should render', () => {
     const tree = renderer.create(
-      <TestProviders>
+      <Providers>
         <FlexedView>
           <TableView>
             <Cell>
@@ -35,7 +35,7 @@ describe('the TableView Component', () => {
             </Cell>
           </TableView>
         </FlexedView>
-      </TestProviders>
+      </Providers>
     );
     expect(tree).toMatchSnapshot();
   });
