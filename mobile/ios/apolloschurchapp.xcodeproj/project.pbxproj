@@ -53,6 +53,8 @@
 		FA6B22AFFA314B0B95162F51 /* Inter-UI-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5BFC2FE2992D47419C5E5702 /* Inter-UI-MediumItalic.otf */; };
 		5D089324631146E4A92447BF /* libRNSentry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 576F749B5CE74F1FBBD197CA /* libRNSentry.a */; };
 		1ECFA1807DCE47339E50F699 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432A2CB665E4AD49F3D679B /* libz.tbd */; };
+		A35CC4A401854AE990E8246E /* libSafariViewManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F8357B28EC44E2A33820D8 /* libSafariViewManager.a */; };
+		9593986FB5A14E20848412A5 /* libDBCustomTabs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC74B95FA44CF5B8170452 /* libDBCustomTabs.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -405,6 +407,10 @@
 		536557AAF7AF41CDB5A24F28 /* RNSentry.xcodeproj */ = {isa = PBXFileReference; name = "RNSentry.xcodeproj"; path = "../node_modules/react-native-sentry/ios/RNSentry.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		576F749B5CE74F1FBBD197CA /* libRNSentry.a */ = {isa = PBXFileReference; name = "libRNSentry.a"; path = "libRNSentry.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		2432A2CB665E4AD49F3D679B /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		0B49BF539AA64F54B6A6186F /* SafariViewManager.xcodeproj */ = {isa = PBXFileReference; name = "SafariViewManager.xcodeproj"; path = "../node_modules/react-native-safari-view/SafariViewManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		E0F8357B28EC44E2A33820D8 /* libSafariViewManager.a */ = {isa = PBXFileReference; name = "libSafariViewManager.a"; path = "libSafariViewManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		2A9B4DDE12804541B3064F23 /* ReactNativeCustomTabs.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeCustomTabs.xcodeproj"; path = "../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		05AC74B95FA44CF5B8170452 /* libDBCustomTabs.a */ = {isa = PBXFileReference; name = "libDBCustomTabs.a"; path = "libDBCustomTabs.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +443,8 @@
 				50DA68394692441187ABAC10 /* libBVLinearGradient.a in Frameworks */,
 				5D089324631146E4A92447BF /* libRNSentry.a in Frameworks */,
 				1ECFA1807DCE47339E50F699 /* libz.tbd in Frameworks */,
+				A35CC4A401854AE990E8246E /* libSafariViewManager.a in Frameworks */,
+				9593986FB5A14E20848412A5 /* libDBCustomTabs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +653,8 @@
 				942C307963364AF29453FE63 /* RNSVG.xcodeproj */,
 				09B2C8B9C6154711B3152AE7 /* BVLinearGradient.xcodeproj */,
 				536557AAF7AF41CDB5A24F28 /* RNSentry.xcodeproj */,
+				0B49BF539AA64F54B6A6186F /* SafariViewManager.xcodeproj */,
+				2A9B4DDE12804541B3064F23 /* ReactNativeCustomTabs.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1370,6 +1380,8 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-safari-view",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = apolloschurchappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1397,6 +1409,8 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-safari-view",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = apolloschurchappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1428,6 +1442,8 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-safari-view",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = apolloschurchapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1457,6 +1473,8 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-safari-view",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = apolloschurchapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1490,6 +1508,8 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-safari-view",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = "apolloschurchapp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1526,6 +1546,8 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-safari-view",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = "apolloschurchapp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1561,6 +1583,8 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-safari-view",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = "apolloschurchapp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1596,6 +1620,8 @@
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-sentry/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-safari-view",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = "apolloschurchapp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

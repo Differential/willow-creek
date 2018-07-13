@@ -4,6 +4,8 @@ import { ScrollView } from 'react-native';
 import LoginForm from 'login';
 import BackgroundView from 'ui/BackgroundView';
 import TableView, { Cell, CellIcon, CellText, Divider } from 'ui/TableView';
+import { WebBrowserConsumer } from 'ui/WebBrowser';
+import Touchable from 'ui/Touchable';
 
 class Connect extends PureComponent {
   static navigationOptions = {
@@ -11,37 +13,60 @@ class Connect extends PureComponent {
   };
   render() {
     return (
-      <BackgroundView>
-        <ScrollView>
-          <TableView>
-            <Cell>
-              <CellIcon name="check" />
-              <CellText>Find a serving opportunity</CellText>
-            </Cell>
-            <Divider />
-            <Cell>
-              <CellIcon name="groups" />
-              <CellText>Join a small group</CellText>
-            </Cell>
-            <Divider />
-            <Cell>
-              <CellIcon name="share" />
-              <CellText>I need prayer</CellText>
-            </Cell>
-            <Divider />
-            <Cell>
-              <CellIcon name="download" />
-              <CellText>I would like to give</CellText>
-            </Cell>
-            <Divider />
-            <Cell>
-              <CellIcon name="building" />
-              <CellText>Find Service Times & Locations</CellText>
-            </Cell>
-            <LoginForm />
-          </TableView>
-        </ScrollView>
-      </BackgroundView>
+      <WebBrowserConsumer>
+        {(openUrl) => (
+          <BackgroundView>
+            <ScrollView>
+              <TableView>
+                <Touchable
+                  onPress={() =>
+                    openUrl('https://apollosrock.newspring.cc/page/235')
+                  }
+                >
+                  <Cell>
+                    <CellIcon name="check" />
+                    <CellText>Find a serving opportunity</CellText>
+                  </Cell>
+                </Touchable>
+                <Divider />
+                <Touchable
+                  onPress={() =>
+                    openUrl('https://apollosrock.newspring.cc/page/236')
+                  }
+                >
+                  <Cell>
+                    <CellIcon name="groups" />
+                    <CellText>Join a small group</CellText>
+                  </Cell>
+                </Touchable>
+                <Divider />
+                <Touchable
+                  onPress={() =>
+                    openUrl('https://apollosrock.newspring.cc/page/233')
+                  }
+                >
+                  <Cell>
+                    <CellIcon name="share" />
+                    <CellText>I need prayer</CellText>
+                  </Cell>
+                </Touchable>
+                <Divider />
+                <Touchable
+                  onPress={() =>
+                    openUrl('https://apollosrock.newspring.cc/page/186')
+                  }
+                >
+                  <Cell>
+                    <CellIcon name="download" />
+                    <CellText>I would like to give</CellText>
+                  </Cell>
+                </Touchable>
+                <LoginForm />
+              </TableView>
+            </ScrollView>
+          </BackgroundView>
+        )}
+      </WebBrowserConsumer>
     );
   }
 }

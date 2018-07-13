@@ -7997,6 +7997,10 @@ react-native-compat@^1.0.0:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-custom-tabs@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/react-native-custom-tabs/-/react-native-custom-tabs-0.1.7.tgz#2dfb4028b0a443610d94792b2019810f68dde525"
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
@@ -8042,6 +8046,10 @@ react-native-modal@^5.4.0:
   dependencies:
     prop-types "^15.6.1"
     react-native-animatable "^1.2.4"
+
+react-native-safari-view@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-safari-view/-/react-native-safari-view-2.1.0.tgz#1e0cd12c62bce79bc1759c7e281646b08b61c959"
 
 react-native-safe-area-view@^0.7.0:
   version "0.7.0"
