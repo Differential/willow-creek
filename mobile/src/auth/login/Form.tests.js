@@ -3,13 +3,17 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import LoginForm from './';
+import LoginForm from './Form';
 
 describe('The LoginForm component', () => {
   it('should render', () => {
     const tree = renderer.create(
       <Providers>
-        <LoginForm />
+        <LoginForm
+          values={{ email: '', password: '' }}
+          touched={{ email: false, password: false }}
+          errors={{ email: null, password: null }}
+        />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

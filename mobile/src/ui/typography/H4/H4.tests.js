@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import H4 from './';
+import H4 from '.';
 
 describe('the H4 component', () => {
   it('should render correctly', () => {

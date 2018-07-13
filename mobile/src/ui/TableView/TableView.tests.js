@@ -6,7 +6,7 @@ import Providers from 'Providers';
 import Icon from 'ui/Icon';
 import { Switch } from 'ui/inputs';
 
-import TableView, { Cell, CellText, Divider } from './';
+import TableView, { Cell, CellText, Divider } from '.';
 
 describe('the TableView Component', () => {
   it('should render', () => {

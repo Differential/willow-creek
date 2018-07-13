@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import FeedView from './';
+import FeedView from '.';
 
 storiesOf('FeedView', module).add('Example', () => (
   <FeedView

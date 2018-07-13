@@ -6,7 +6,7 @@ import { get } from 'lodash';
 import Providers from 'Providers';
 import FeedItemCard from 'ui/FeedItemCard';
 
-import FeedView from './';
+import FeedView from '.';
 
 describe('The FeedView component', () => {
   it('renders correctly', () => {

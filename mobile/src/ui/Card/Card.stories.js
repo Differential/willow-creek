@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 import { H3, H6, BodyText, Paragraph } from 'ui/typography';
 import Button, { ButtonLink } from 'ui/Button';
 
-import Card, { CardActions, CardContent, CardImage } from './';
+import Card, { CardActions, CardContent, CardImage } from '.';
 
 storiesOf('Card', module)
   .add('simple', () => (

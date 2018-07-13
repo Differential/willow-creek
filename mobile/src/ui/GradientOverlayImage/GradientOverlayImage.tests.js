@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import GradientOverlayImage from './';
+import GradientOverlayImage from '.';
 
 describe('the GradientOverlayImage component', () => {
   it('should render', () => {

@@ -5,7 +5,7 @@ import Providers from 'Providers';
 import { H5 } from 'ui/typography';
 import { withIsLoading } from 'ui/isLoading';
 
-import BlockQuote from './';
+import BlockQuote from '.';
 
 describe('the BlockQuote component', () => {
   it('should render a string', () => {

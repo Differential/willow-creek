@@ -52,8 +52,7 @@ exports[`The LoginForm component should render 1`] = `
                 "fontFamily": "InterUI-Bold",
                 "fontSize": 14,
                 "height": 40,
-                "lineHeight": 30,
-                "paddingVertical": 5,
+                "paddingVertical": 0,
               }
             }
             type="email"
@@ -208,8 +207,7 @@ exports[`The LoginForm component should render 1`] = `
                 "fontFamily": "InterUI-Bold",
                 "fontSize": 14,
                 "height": 40,
-                "lineHeight": 30,
-                "paddingVertical": 5,
+                "paddingVertical": 0,
               }
             }
             type="password"
@@ -315,63 +313,41 @@ exports[`The LoginForm component should render 1`] = `
     </View>
   </View>
   <View
-    accessibilityComponentType="button"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    bordered={false}
+    disabled={true}
+    pill={true}
     style={
       Object {
-        "opacity": 1,
+        "alignItems": "center",
+        "backgroundColor": "#17B582",
+        "borderColor": "#17B582",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 0.5,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
       }
     }
   >
-    <View
-      bordered={false}
-      disabled={false}
-      pill={true}
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#17B582",
-          "borderColor": "#17B582",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 1,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "color": "#FFFFFF",
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#FFFFFF",
-            "fontFamily": "InterUI-Bold",
-            "fontSize": 16,
-            "lineHeight": 23.04,
-          }
-        }
-      >
-        Submit
-      </Text>
-    </View>
+      Submit
+    </Text>
   </View>
 </View>
 `;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth Store logs a user out 1`] = `
+InMemoryCache {
+  "addTypename": true,
+  "config": Object {
+    "addTypename": true,
+    "dataIdFromObject": [Function],
+    "fragmentMatcher": HeuristicFragmentMatcher {},
+    "storeFactory": [Function],
+  },
+  "data": ObjectCache {
+    "data": Object {
+      "ROOT_QUERY": Object {
+        "authToken": null,
+      },
+    },
+  },
+  "optimistic": Array [],
+  "silenceBroadcast": false,
+  "typenameDocumentCache": WeakMap {},
+  "watches": Array [],
+}
+`;

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import HTMLView from './';
+import HTMLView from '.';
 
 describe('the HTMLView component', () => {
   it('should render an H1', () => {

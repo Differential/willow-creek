@@ -6,7 +6,7 @@ import Providers from 'Providers';
 
 import * as icons from './icons';
 
-import Icon from './';
+import Icon from '.';
 
 Object.keys(icons).forEach((iconName) => {
   describe(`The ${iconName} icon`, () => {

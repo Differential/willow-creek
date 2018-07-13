@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import CardWrapper from './';
+import CardWrapper from '.';
 
 describe('the CardWrapper component', () => {
   it('should render', () => {

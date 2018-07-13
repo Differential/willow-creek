@@ -141,7 +141,6 @@ exports[`the Card component it should render a placeholder 1`] = `
         style={
           Object {
             "color": "#17B582",
-            "textDecorationLine": "underline",
           }
         }
       />
@@ -316,7 +315,6 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "color": "#17B582",
-            "textDecorationLine": "underline",
           }
         }
       >

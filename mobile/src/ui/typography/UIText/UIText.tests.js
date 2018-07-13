@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import UIText from './';
+import UIText from '.';
 
 describe('the UIText component', () => {
   it('should render correctly', () => {

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 import { withIsLoading } from 'ui/isLoading';
 import PaddedView from 'ui/PaddedView';
 
-import BulletListItem from './';
+import BulletListItem from '.';
 
 storiesOf('typography/BulletListItem', module)
   .add('Default', () => (

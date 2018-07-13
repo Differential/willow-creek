@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import Providers from 'Providers';
 import CardTile from 'ui/CardTile';
 
-import TileFeed from './';
+import TileFeed from '.';
 
 describe('The TileFeed component', () => {
   it('renders correctly', () => {

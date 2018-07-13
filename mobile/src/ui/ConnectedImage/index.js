@@ -99,6 +99,7 @@ class ConnectedImage extends PureComponent {
   componentWillMount() {
     this.updateCache(this.props.source);
   }
+
   componentWillReceiveProps(newProps) {
     this.updateCache(newProps.source);
   }

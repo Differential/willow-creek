@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import ThumbnailCard from './';
+import ThumbnailCard from '.';
 
 describe('the ThumbnailCard component', () => {
   it('should render', () => {

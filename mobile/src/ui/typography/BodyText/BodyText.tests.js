@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import BodyText from './';
+import BodyText from '.';
 
 describe('the BodyText component', () => {
   it('should render correctly', () => {

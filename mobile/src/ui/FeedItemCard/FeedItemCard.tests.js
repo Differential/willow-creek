@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import FeedItemCard from './';
+import FeedItemCard from '.';
 
 describe('the FeedItemCard component', () => {
   it('should render', () => {

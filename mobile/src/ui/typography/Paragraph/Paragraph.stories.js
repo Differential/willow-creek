@@ -5,7 +5,7 @@ import { ScrollView } from 'react-native';
 import { BodyText } from 'ui/typography';
 import PaddedView from 'ui/PaddedView';
 
-import Paragraph from './';
+import Paragraph from '.';
 
 storiesOf('typography/Paragraph', module)
   .add('Default', () => (

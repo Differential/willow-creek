@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import Providers from 'Providers';
 import Icon from 'ui/Icon';
 
-import Text from './';
+import Text from '.';
 
 describe('The Text Input component', () => {
   it('should render correctly', () => {

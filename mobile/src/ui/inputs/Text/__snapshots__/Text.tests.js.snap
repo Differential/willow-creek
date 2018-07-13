@@ -49,8 +49,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
               "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
+              "paddingVertical": 0,
             }
           }
           type="numeric"
@@ -208,8 +207,7 @@ exports[`The Text Input component should render as a password field with an icon
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
               "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
+              "paddingVertical": 0,
             }
           }
           type="password"
@@ -438,8 +436,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
               "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
+              "paddingVertical": 0,
             }
           }
           type="phone"
@@ -597,8 +594,7 @@ exports[`The Text Input component should render as an email field 1`] = `
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
               "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
+              "paddingVertical": 0,
             }
           }
           type="email"
@@ -753,8 +749,7 @@ exports[`The Text Input component should render correctly 1`] = `
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
               "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
+              "paddingVertical": 0,
             }
           }
           underlineColorAndroid="transparent"

@@ -8,7 +8,7 @@ import { H4 } from 'ui/typography';
 import Icon from 'ui/Icon';
 import styled from 'ui/styled';
 
-import Button from './';
+import Button from '.';
 
 const ViewWithMargin = styled({ margin: 10 })(View);
 const ButtonWithMargin = nest(ViewWithMargin, Button);

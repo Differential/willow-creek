@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import BackgroundView from './';
+import BackgroundView from '.';
 
 describe('The BackgroundView component', () => {
   it('should render', () => {

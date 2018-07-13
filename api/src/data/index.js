@@ -24,7 +24,7 @@ export const schema = gql`
 
   type Query {
     node(id: ID!): Node
-    people(email: String): [Person]
+    people(email: String!): [Person]
     userFeed(first: Int, after: String): ContentItemsConnection
     contentChannels: [ContentChannel]
     currentUser: AuthenticatedUser
@@ -32,8 +32,8 @@ export const schema = gql`
   }
 
   type Mutation {
-    authenticate(identity: String, password: String): Authentication
-    registerPerson(email: String, password: String): Authentication
+    authenticate(identity: String!, password: String!): Authentication
+    registerPerson(email: String!, password: String!): Authentication
   }
 `;
 

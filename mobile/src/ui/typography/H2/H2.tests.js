@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import H2 from './';
+import H2 from '.';
 
 describe('the H2 component', () => {
   it('should render correctly', () => {

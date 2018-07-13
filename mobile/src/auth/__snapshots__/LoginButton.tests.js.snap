@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginButton component renders a LoginButton when logged out 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  onPress={[Function]}
+  style={
+    Object {
+      "color": "#17B582",
+      "paddingHorizontal": 20,
+    }
+  }
+>
+  Login
+</Text>
+`;
+
+exports[`LoginButton component renders a LogoutButton when logged in 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  onPress={[Function]}
+  style={
+    Object {
+      "color": "#17B582",
+      "paddingHorizontal": 20,
+    }
+  }
+>
+  Logout
+</Text>
+`;

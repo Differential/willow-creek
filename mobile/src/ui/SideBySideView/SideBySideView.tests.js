@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { View } from 'react-native';
 
-import SideBySide, { ResponsiveSideBySideView, Left, Right } from './';
+import SideBySide, { ResponsiveSideBySideView, Left, Right } from '.';
 
 describe('The SideBySide component', () => {
   it('should render correctly', () => {

@@ -5,7 +5,7 @@ import Providers from 'Providers';
 import { withIsLoading } from 'ui/isLoading';
 import { H5 } from 'ui/typography';
 
-import BulletListItem from './';
+import BulletListItem from '.';
 
 describe('the BulletListItem component', () => {
   it('should render a string', () => {

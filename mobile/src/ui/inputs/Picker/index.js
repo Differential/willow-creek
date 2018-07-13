@@ -27,7 +27,7 @@ const Placeholder = styled(
   'Inputs.Picker.Placeholder'
 )(H6);
 
-class Picker extends PureComponent {
+export class Picker extends PureComponent {
   static propTypes = {
     placeholder: PropTypes.string,
     displayValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -47,14 +47,16 @@ class Picker extends PureComponent {
   };
 
   handleOnPress = () => {
-    const focused = !this.state.focused;
-    this.setState({ focused }, () => {
-      if (focused) {
-        this.props.onFocus();
-      } else {
-        this.props.onBlur();
+    this.setState(
+      (previousState) => ({ focused: !previousState.focused }),
+      () => {
+        if (this.state.focused) {
+          this.props.onFocus();
+        } else {
+          this.props.onBlur();
+        }
       }
-    });
+    );
   };
 
   render() {

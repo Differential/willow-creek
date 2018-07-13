@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import { ThemeProvider } from 'ui/theme';
 
-import ProgressiveImage from './';
+import ProgressiveImage from '.';
 
 describe('the ProgressiveImage component', () => {
   it('should render', () => {

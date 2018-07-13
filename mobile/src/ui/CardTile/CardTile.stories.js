@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import CardTile from './';
+import CardTile from '.';
 
 const containerStyles = {
   height: 300,

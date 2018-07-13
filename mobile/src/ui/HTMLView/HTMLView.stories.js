@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import HTMLView from './';
+import HTMLView from '.';
 
 storiesOf('HTMLView', module).add('Example', () => (
   <ScrollView>

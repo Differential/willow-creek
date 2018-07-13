@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 import Icon from 'ui/Icon';
 import FlexedView from 'ui/FlexedView';
 
-import Text from './';
+import Text from '.';
 
 storiesOf('Inputs', module).add('Text', () => (
   <FlexedView>

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import CardWrapper from './';
+import CardWrapper from '.';
 
 storiesOf('Card/CardWrapper', module)
   .add('Default', () => {

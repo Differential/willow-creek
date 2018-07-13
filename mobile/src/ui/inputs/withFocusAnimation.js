@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 // helper HOC to wrap an Input in a floating label and animated underline
 const withFocusAnimation = (Component) =>
   class WrappedInput extends PureComponent {
+    focusAnimation = new Animated.Value(0);
+
     static propTypes = {
       focusAnimationDuration: PropTypes.number,
       focusAnimationEasing: PropTypes.func,
@@ -17,8 +19,6 @@ const withFocusAnimation = (Component) =>
       focusAnimationDuration: 450,
       focusAnimationEasing: Easing.in(Easing.bezier(0.23, 1, 0.32, 1)),
     };
-
-    focusAnimation = new Animated.Value(0);
 
     playAnimation = (toValue) => {
       Animated.timing(this.focusAnimation, {

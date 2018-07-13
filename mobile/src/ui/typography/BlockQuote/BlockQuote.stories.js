@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 import { withIsLoading } from 'ui/isLoading';
 import PaddedView from 'ui/PaddedView';
 
-import BlockQuote from './';
+import BlockQuote from '.';
 
 storiesOf('typography/BlockQuote', module)
   .add('Default', () => (

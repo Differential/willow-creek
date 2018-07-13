@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import FlexedView from 'ui/FlexedView';
 
-import Switch from './';
+import Switch from '.';
 
 storiesOf('Inputs', module).add('Switch', () => (
   <FlexedView>

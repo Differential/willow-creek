@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import Button from './';
+import Button from '.';
 
 describe('The Button component', () => {
   it('should render', () => {

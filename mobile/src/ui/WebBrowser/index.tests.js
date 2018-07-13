@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import { WebBrowserConsumer } from './';
+import { WebBrowserConsumer } from '.';
 
 describe(`WebBrowser Provider and Consumer`, () => {
   it('passes a function', async () => {

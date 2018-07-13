@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import H1 from './';
+import H1 from '.';
 
 storiesOf('typography/H1', module)
   .add('Default', () => (

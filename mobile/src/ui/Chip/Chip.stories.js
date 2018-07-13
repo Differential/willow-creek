@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import ChipList from './List';
 
-import Chip from './';
+import Chip from '.';
 
 storiesOf('Chip', module)
   .add('default', () => (

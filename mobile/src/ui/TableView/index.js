@@ -4,7 +4,7 @@ import { compose, renderComponent } from 'recompose';
 
 import styled from 'ui/styled';
 import { enhancer as mediaQuery } from 'ui/MediaQuery';
-import { Card } from 'ui/Card';
+import Card from 'ui/Card';
 
 export { default as Cell } from './Cell';
 export { default as CellText } from './CellText';

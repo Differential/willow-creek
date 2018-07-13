@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'Providers';
 
-import CardTile from './';
+import CardTile from '.';
 
 describe('the CardTile component', () => {
   it('should render', () => {

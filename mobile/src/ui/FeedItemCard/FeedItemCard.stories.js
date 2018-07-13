@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import FeedItemCard from './';
+import FeedItemCard from '.';
 
 storiesOf('FeedItemCard', module)
   .add('Default', () => {

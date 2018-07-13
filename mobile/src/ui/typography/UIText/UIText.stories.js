@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import UIText from './';
+import UIText from '.';
 
 storiesOf('typography/UIText', module)
   .add('Normal', () => (

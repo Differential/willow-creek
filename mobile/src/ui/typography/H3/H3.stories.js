@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import H3 from './';
+import H3 from '.';
 
 storiesOf('typography/H3', module)
   .add('Default', () => (

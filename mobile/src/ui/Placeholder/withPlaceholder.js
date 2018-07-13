@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getIsLoading } from 'ui/isLoading';
 
-import { Line } from './';
+import { Line } from '.';
 
 const withPlaceholder = (PlaceholderComponent = Line, getProps = {}) => (
   Component

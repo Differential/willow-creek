@@ -6,7 +6,7 @@ import styled from 'ui/styled';
 import CardTile from 'ui/CardTile';
 import TileImage from 'ui/TileImage';
 
-import HorizontalTileFeed from './';
+import HorizontalTileFeed from '.';
 
 storiesOf('HorizontalTileFeed', module)
   .add('With CardTile', () => {

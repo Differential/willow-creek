@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import FlexedView from 'ui/FlexedView';
 
-import Picker, { Item } from './';
+import Picker, { Item } from '.';
 
 storiesOf('Inputs', module).add('Picker', () => (
   <FlexedView>

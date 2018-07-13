@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import Providers from 'Providers';
 import CardTile from 'ui/CardTile';
 
-import HorizontalTileFeed from './';
+import HorizontalTileFeed from '.';
 
 const loadingStateObject = {
   node: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import GradientOverlayImage from './';
+import GradientOverlayImage from '.';
 
 storiesOf('GradientOverlayImage', module)
   .add('Default', () => (
