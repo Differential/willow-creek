@@ -8,6 +8,7 @@ v0.2.0: July 3, 2018
 - Implemented horizontal scrolling lists with content for the discover view
 - Added content children to the individual content pages
 - Added the ability to log errors to Sentry
+- Added a stubbed out liveSteam query to determine when we are or not going to show the live bar
 
 v0.1.0: June 19, 2018
 
