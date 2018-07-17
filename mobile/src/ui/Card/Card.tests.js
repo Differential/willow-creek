@@ -15,7 +15,7 @@ describe('the Card component', () => {
           <CardImage source={'https://picsum.photos/600/400/?image=63'} />
           <CardContent>
             <H3>Coffee</H3>
-            <H6>noun</H6>
+            <H6 padded>noun</H6>
             <Paragraph>
               <BodyText>
                 {
@@ -39,7 +39,7 @@ describe('the Card component', () => {
         <Card isLoading>
           <CardContent>
             <H3 />
-            <H6 />
+            <H6 padded />
             <Paragraph>
               <BodyText />
             </Paragraph>

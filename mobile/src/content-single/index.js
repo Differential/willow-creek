@@ -11,8 +11,17 @@ import HorizontalTileFeed from 'ui/HorizontalTileFeed';
 import HTMLView from 'ui/HTMLView';
 import PaddedView from 'ui/PaddedView';
 import { H2 } from 'ui/typography';
+import BackgroundView from 'ui/BackgroundView';
+import styled from 'ui/styled';
 
 import getContentItem from './getContentItem.graphql';
+import getContentItemMinimalState from './getContentItemMinimalState.graphql';
+
+const FeedContainer = styled({
+  paddingHorizontal: 0,
+})(PaddedView);
+
+const ContentContainer = styled({ paddingVertical: 0 })(PaddedView);
 
 class ContentSingle extends PureComponent {
   static navigationOptions = ({ navigation }) => {
@@ -67,34 +76,56 @@ class ContentSingle extends PureComponent {
 
   render() {
     return (
-      <Query query={getContentItem} variables={this.itemId}>
-        {({ loading, error, data }) => {
-          if (error) return <ErrorCard error={error} />;
-          return (
-            <ScrollView>
-              <GradientOverlayImage
-                source={get(data, 'node.coverImage.sources', [])}
-                isLoading={loading}
-              />
-              <PaddedView>
-                <H2 isLoading={loading}>{get(data, 'node.title', '')}</H2>
-                <HTMLView isLoading={loading}>
-                  {get(data, 'node.htmlContent', '')}
-                </HTMLView>
-              </PaddedView>
-              <HorizontalTileFeed
-                content={get(
-                  data,
-                  'node.childContentItemsConnection.edges',
-                  []
-                ).map((edge) => edge.node)}
-                isLoading={loading}
-                loadingStateObject={this.loadingStateObject}
-                renderItem={this.renderItem}
-              />
-            </ScrollView>
-          );
-        }}
+      <Query
+        query={getContentItemMinimalState}
+        variables={this.itemId}
+        fetchPolicy="cache-only"
+      >
+        {({ data: cachedData }) => (
+          <Query query={getContentItem} variables={this.itemId}>
+            {({ loading, error, data }) => {
+              const content = {
+                ...(cachedData.node || {}),
+                ...(data.node || {}),
+              };
+
+              if (error) return <ErrorCard error={error} />;
+              const childContent = get(
+                data,
+                'node.childContentItemsConnection.edges',
+                []
+              ).map((edge) => edge.node);
+
+              return (
+                <ScrollView>
+                  <GradientOverlayImage
+                    source={get(content, 'coverImage.sources', [])}
+                  />
+                  <BackgroundView>
+                    <ContentContainer>
+                      <H2 padded isLoading={!content.title && loading}>
+                        {content.title}
+                      </H2>
+                      <HTMLView isLoading={!content.htmlContent && loading}>
+                        {content.htmlContent}
+                      </HTMLView>
+                    </ContentContainer>
+                  </BackgroundView>
+                  {(childContent && childContent.length) || loading ? (
+                    <FeedContainer>
+                      <HorizontalTileFeed
+                        content={childContent}
+                        isLoading={loading}
+                        loadingStateObject={this.loadingStateObject}
+                        renderItem={this.renderItem}
+                      />
+                    </FeedContainer>
+                  ) : null}
+                </ScrollView>
+              );
+            }}
+          </Query>
+        )}
       </Query>
     );
   }

@@ -5,7 +5,7 @@ exports[`the HTMLView component should render a block quote 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -68,7 +68,7 @@ exports[`the HTMLView component should render a line break (br) 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -122,7 +122,7 @@ exports[`the HTMLView component should render a link 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -177,131 +177,242 @@ exports[`the HTMLView component should render a list 1`] = `
   <View
     style={
       Object {
-        "flexDirection": "row",
+        "paddingBottom": 17.28,
       }
     }
   >
     <View
       style={
         Object {
-          "paddingRight": 8,
+          "flexDirection": "row",
+          "paddingBottom": 8.64,
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
-          }
-        }
-      >
-        •
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "flexShrink": 1,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
+            "paddingRight": 8,
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
+          }
         >
-          Testings
+          •
         </Text>
-      </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            Testings
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "paddingBottom": 8.64,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingRight": 8,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
+          }
+        >
+          •
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            Testings
+          </Text>
+        </Text>
+      </View>
     </View>
   </View>
+</View>
+`;
+
+exports[`the HTMLView component should render a loading state 1`] = `
+<View>
   <View
     style={
       Object {
-        "flexDirection": "row",
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "85%",
       }
     }
-  >
-    <View
-      style={
-        Object {
-          "paddingRight": 8,
-        }
+  />
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "100%",
       }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
-          }
-        }
-      >
-        •
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "flexShrink": 1,
-        }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "100%",
       }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Testings
-        </Text>
-      </Text>
-    </View>
-  </View>
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#A5A5A5",
+        "borderRadius": 6,
+        "height": 16,
+        "marginVertical": 5,
+        "width": "75%",
+      }
+    }
+  />
 </View>
 `;
 
@@ -310,7 +421,7 @@ exports[`the HTMLView component should render a paragraph 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -347,12 +458,14 @@ exports[`the HTMLView component should render an H1 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    padded={true}
     style={
       Object {
         "color": "#303030",
         "fontFamily": "InterUI-Black",
         "fontSize": 43,
         "lineHeight": 49.45,
+        "paddingVertical": 46.44,
       }
     }
   >
@@ -379,12 +492,15 @@ exports[`the HTMLView component should render an H2 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    padded={true}
     style={
       Object {
         "color": "#303030",
         "fontFamily": "InterUI-Black",
         "fontSize": 36,
         "lineHeight": 41.4,
+        "paddingBottom": 25.92,
+        "paddingTop": 38.88,
       }
     }
   >
@@ -411,12 +527,15 @@ exports[`the HTMLView component should render an H3 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    padded={true}
     style={
       Object {
         "color": "#303030",
         "fontFamily": "InterUI-Black",
         "fontSize": 24,
         "lineHeight": 27.6,
+        "paddingBottom": 17.28,
+        "paddingTop": 25.92,
       }
     }
   >
@@ -443,12 +562,15 @@ exports[`the HTMLView component should render an H4 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    padded={true}
     style={
       Object {
         "color": "#303030",
         "fontFamily": "InterUI-Bold",
         "fontSize": 16,
         "lineHeight": 23.04,
+        "paddingBottom": 11.52,
+        "paddingTop": 15.21,
       }
     }
   >
@@ -475,12 +597,15 @@ exports[`the HTMLView component should render an H5 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    padded={true}
     style={
       Object {
         "color": "#303030",
         "fontFamily": "InterUI-Medium",
         "fontSize": 14,
         "lineHeight": 20.16,
+        "paddingBottom": 10.08,
+        "paddingTop": 13.31,
       }
     }
   >
@@ -507,12 +632,14 @@ exports[`the HTMLView component should render an H6 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    padded={true}
     style={
       Object {
         "color": "#505050",
         "fontFamily": "InterUI-Bold",
         "fontSize": 12,
         "lineHeight": 17.28,
+        "paddingBottom": 8.64,
       }
     }
   >
@@ -536,6 +663,9 @@ exports[`the HTMLView component should render an H6 1`] = `
 exports[`the HTMLView component should render an image 1`] = `
 <View>
   <View
+    animate={null}
+    customAnimate={null}
+    onReady={false}
     style={
       Object {
         "aspectRatio": 1,
@@ -543,7 +673,27 @@ exports[`the HTMLView component should render an image 1`] = `
         "width": "100%",
       }
     }
-  />
+  >
+    <Image
+      onLoad={[Function]}
+      source={
+        Array [
+          Object {
+            "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+            "url": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+          },
+        ]
+      }
+      style={
+        Object {
+          "backgroundColor": "#A5A5A5",
+          "opacity": 0,
+          "resizeMode": "contain",
+          "width": "100%",
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -552,7 +702,7 @@ exports[`the HTMLView component should render bold text 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -604,7 +754,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -661,7 +811,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -692,7 +842,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -723,7 +873,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -767,7 +917,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingVertical": 11.52,
+          "paddingBottom": 17.28,
         }
       }
     >
@@ -800,7 +950,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -832,12 +982,15 @@ exports[`the HTMLView component should render example HTML 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    padded={true}
     style={
       Object {
         "color": "#303030",
         "fontFamily": "InterUI-Black",
         "fontSize": 24,
         "lineHeight": 27.6,
+        "paddingBottom": 17.28,
+        "paddingTop": 25.92,
       }
     }
   >
@@ -858,7 +1011,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -915,7 +1068,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -946,7 +1099,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -990,7 +1143,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     <View
       style={
         Object {
-          "paddingVertical": 11.52,
+          "paddingBottom": 17.28,
         }
       }
     >
@@ -1023,7 +1176,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -1054,199 +1207,210 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "flexDirection": "row",
+        "paddingBottom": 17.28,
       }
     }
   >
     <View
       style={
         Object {
-          "paddingRight": 8,
+          "flexDirection": "row",
+          "paddingBottom": 8.64,
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
-          }
-        }
-      >
-        •
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "flexShrink": 1,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
+            "paddingRight": 8,
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
-        >
-          Am I putting others before myself right now?
-        </Text>
-      </Text>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "flexDirection": "row",
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "paddingRight": 8,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
           }
-        }
-      >
-        •
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "flexShrink": 1,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
+        >
+          •
+        </Text>
+      </View>
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
+            "flexShrink": 1,
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
-        >
-          How can I love the people around me if I’m not even paying attention to them?
-        </Text>
-      </Text>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "flexDirection": "row",
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "paddingRight": 8,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
           }
-        }
-      >
-        •
-      </Text>
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            Am I putting others before myself right now?
+          </Text>
+        </Text>
+      </View>
     </View>
     <View
       style={
         Object {
-          "flexShrink": 1,
+          "flexDirection": "row",
+          "paddingBottom": 8.64,
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        bold={false}
-        ellipsizeMode="tail"
-        italic={false}
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Regular",
-            "fontSize": 16,
-            "lineHeight": 26,
+            "paddingRight": 8,
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
+          }
         >
-          What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
+          •
         </Text>
-      </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            How can I love the people around me if I’m not even paying attention to them?
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "paddingBottom": 8.64,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingRight": 8,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
+          }
+        >
+          •
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Regular",
+              "fontSize": 16,
+              "lineHeight": 26,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
+          </Text>
+        </Text>
+      </View>
     </View>
   </View>
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -1277,7 +1441,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -1309,12 +1473,15 @@ exports[`the HTMLView component should render example HTML 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    padded={true}
     style={
       Object {
         "color": "#303030",
         "fontFamily": "InterUI-Black",
         "fontSize": 24,
         "lineHeight": 27.6,
+        "paddingBottom": 17.28,
+        "paddingTop": 25.92,
       }
     }
   >
@@ -1335,7 +1502,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -1386,6 +1553,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     style={
       Object {
         "flexDirection": "row",
+        "paddingBottom": 8.64,
       }
     }
   >
@@ -1450,6 +1618,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     style={
       Object {
         "flexDirection": "row",
+        "paddingBottom": 8.64,
       }
     }
   >
@@ -1514,6 +1683,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     style={
       Object {
         "flexDirection": "row",
+        "paddingBottom": 8.64,
       }
     }
   >
@@ -1578,6 +1748,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
     style={
       Object {
         "flexDirection": "row",
+        "paddingBottom": 8.64,
       }
     }
   >
@@ -1641,7 +1812,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -1672,7 +1843,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -1708,7 +1879,7 @@ exports[`the HTMLView component should render handle relative links 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -1763,7 +1934,7 @@ exports[`the HTMLView component should render italic text 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >
@@ -1815,7 +1986,7 @@ exports[`the HTMLView component strips out badly formatted links 1`] = `
   <View
     style={
       Object {
-        "paddingVertical": 11.52,
+        "paddingBottom": 17.28,
       }
     }
   >

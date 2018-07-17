@@ -11,7 +11,7 @@ import styled from 'ui/styled';
 const Paragraph = compose(
   setDisplayName('Paragraph'),
   styled(({ theme }) => ({
-    paddingVertical: theme.helpers.verticalRhythm(0.5),
+    paddingBottom: theme.helpers.verticalRhythm(0.75),
   })),
   withPlaceholder(ParagraphPlaceholder)
 )(View);

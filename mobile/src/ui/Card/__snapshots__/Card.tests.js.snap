@@ -51,19 +51,21 @@ exports[`the Card component it should render a placeholder 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
+        padded={true}
         style={
           Object {
             "color": "#505050",
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "lineHeight": 17.28,
+            "paddingBottom": 8.64,
           }
         }
       />
       <View
         style={
           Object {
-            "paddingVertical": 11.52,
+            "paddingBottom": 17.28,
           }
         }
       >
@@ -185,6 +187,9 @@ exports[`the Card component should render 1`] = `
       }
     >
       <View
+        animate={null}
+        customAnimate={null}
+        onReady={false}
         style={
           Object {
             "aspectRatio": 1,
@@ -192,7 +197,28 @@ exports[`the Card component should render 1`] = `
             "width": "100%",
           }
         }
-      />
+      >
+        <Image
+          onLoad={[Function]}
+          source={
+            Array [
+              Object {
+                "uri": "https://picsum.photos/600/400/?image=63",
+                "url": "https://picsum.photos/600/400/?image=63",
+              },
+            ]
+          }
+          style={
+            Object {
+              "backgroundColor": "#A5A5A5",
+              "height": "100%",
+              "opacity": 0,
+              "resizeMode": "cover",
+              "width": "100%",
+            }
+          }
+        />
+      </View>
     </View>
     <View
       style={
@@ -221,12 +247,14 @@ exports[`the Card component should render 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
+        padded={true}
         style={
           Object {
             "color": "#505050",
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "lineHeight": 17.28,
+            "paddingBottom": 8.64,
           }
         }
       >
@@ -235,7 +263,7 @@ exports[`the Card component should render 1`] = `
       <View
         style={
           Object {
-            "paddingVertical": 11.52,
+            "paddingBottom": 17.28,
           }
         }
       >

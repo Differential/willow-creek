@@ -154,10 +154,18 @@ export const defaultContentItemResolvers = {
   },
 
   coverImage: async (root, args, { models }) => {
+    const pickBestImage = (images) => {
+      // TODO: there's probably a _much_ more explicit and better way to handle this
+      const squareImage = images.find((image) =>
+        image.key.toLowerCase().includes('square')
+      );
+      if (squareImage) return squareImage;
+      return images[0];
+    };
+
     let defaultImages = defaultContentItemResolvers.images(root) || [];
     defaultImages = defaultImages.filter((image) => image.sources.length); // filter images w/o URLs
-    // return top image by defalt. TODO: probably better logic to default to.
-    if (defaultImages.length) return defaultImages[0];
+    if (defaultImages.length) return pickBestImage(defaultImages);
 
     // If no image, check parent for image:
     const parentItemsCursor = await models.ContentItem.getCursorByChildContentItemId(
@@ -173,7 +181,8 @@ export const defaultContentItemResolvers = {
         .find((images) => images.length)
         .filter((image) => image.sources.length); // filter images w/o URLs
 
-      if (parentImages && parentImages.length) return parentImages[0];
+      if (parentImages && parentImages.length)
+        return pickBestImage(parentImages);
     }
 
     return null;

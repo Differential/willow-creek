@@ -9,13 +9,10 @@ import ChannelLabel from 'ui/ChannelLabel';
 import GradientOverlayImage from 'ui/GradientOverlayImage';
 import Card, { CardContent, CardActions } from 'ui/Card';
 import { H3 } from 'ui/typography';
-import styled from 'ui/styled';
 // import ConnectedImage from 'ui/ConnectedImage';
 // import ProgressiveImage from 'ui/ProgressiveImage';
 
 // import LikeButton from './LikeButton';
-
-const StyledCardContent = styled({ paddingBottom: 0 })(CardContent);
 
 const enhance = compose(
   pure,
@@ -45,9 +42,9 @@ const FeedItemCard = enhance(
         source={images}
         overlayColor={backgroundColor}
       />
-      <StyledCardContent>
+      <CardContent>
         <H3 isLoading={isLoading}>{title}</H3>
-      </StyledCardContent>
+      </CardContent>
       <CardActions>
         <ChannelLabel
           label={startCase(toLower(channelType))}

@@ -31,6 +31,10 @@ const Title = styled(
   'TileImage.Text'
 )(H4);
 
+const SquareGradientOverlayImage = styled({
+  aspectRatio: 1,
+})(GradientOverlayImage);
+
 const enhance = compose(
   withTheme(({ theme: { colors } = {} } = {}) => ({ theme: { colors } })),
   pure
@@ -42,9 +46,10 @@ const TileImage = enhance(
       onPress={() => !isLoading && onPressItem({ ...link })}
     >
       <CardView>
-        <GradientOverlayImage
+        <SquareGradientOverlayImage
           source={image}
           isLoading={isLoading}
+          maintainAspectRatio={false}
           overlayColor={text ? theme.colors.black : null}
         />
         <Title isLoading={isLoading}>{text}</Title>

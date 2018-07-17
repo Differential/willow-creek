@@ -51,6 +51,23 @@ exports[`the H4 component should render a loading state 1`] = `
 />
 `;
 
+exports[`the H4 component should render a loading state with correct positioning (margins) 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#A5A5A5",
+      "borderRadius": 6,
+      "height": 16,
+      "marginBottom": 11.52,
+      "marginTop": 15.21,
+      "marginVertical": 3.5199999999999996,
+      "width": "80%",
+    }
+  }
+/>
+`;
+
 exports[`the H4 component should render correctly 1`] = `
 <Text
   accessible={true}
@@ -66,5 +83,26 @@ exports[`the H4 component should render correctly 1`] = `
   }
 >
   Default H4 text
+</Text>
+`;
+
+exports[`the H4 component should render with correct padding 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  padded={true}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "InterUI-Bold",
+      "fontSize": 16,
+      "lineHeight": 23.04,
+      "paddingBottom": 11.52,
+      "paddingTop": 15.21,
+    }
+  }
+>
+  Padded H4 text
 </Text>
 `;

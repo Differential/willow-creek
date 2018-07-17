@@ -6,11 +6,17 @@ import styled from 'ui/styled';
 import { withPlaceholder, Typography } from 'ui/Placeholder';
 
 const styles = styled(
-  ({ theme }) => ({
+  ({ theme, padded }) => ({
     fontSize: theme.helpers.rem(2.25),
     lineHeight: theme.helpers.verticalRhythm(2.25, 1.15),
     fontFamily: theme.typography.sans.black.default,
     color: theme.colors.text.primary,
+    ...(padded
+      ? {
+          paddingTop: theme.helpers.verticalRhythm(1.6875),
+          paddingBottom: theme.helpers.verticalRhythm(1.125),
+        }
+      : {}),
   }),
   'H2'
 );
@@ -23,6 +29,7 @@ const H2 = compose(
 )(Text);
 
 H2.propTypes = {
+  padded: PropTypes.bool,
   isLoading: PropTypes.bool, // display loading placeholder
   ...Text.propTypes,
 };

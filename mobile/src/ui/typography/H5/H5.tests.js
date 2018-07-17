@@ -23,10 +23,28 @@ describe('the H5 component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('should render with correct padding', () => {
+    const tree = renderer.create(
+      <Providers>
+        <H5 padded>Padded H5 text</H5>
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
   it('should render a loading state', () => {
     const tree = renderer.create(
       <Providers>
         <H5 isLoading>Default H5 text</H5>
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render a loading state with correct positioning (margins)', () => {
+    const tree = renderer.create(
+      <Providers>
+        <H5 padded isLoading>
+          Padded H5 text
+        </H5>
       </Providers>
     );
     expect(tree).toMatchSnapshot();

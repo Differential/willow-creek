@@ -51,6 +51,22 @@ exports[`the H6 component should render a loading state 1`] = `
 />
 `;
 
+exports[`the H6 component should render a loading state with correct positioning (margins) 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#A5A5A5",
+      "borderRadius": 6,
+      "height": 12,
+      "marginBottom": 8.64,
+      "marginVertical": 2.6400000000000006,
+      "width": "50%",
+    }
+  }
+/>
+`;
+
 exports[`the H6 component should render correctly 1`] = `
 <Text
   accessible={true}
@@ -66,5 +82,25 @@ exports[`the H6 component should render correctly 1`] = `
   }
 >
   Default H6 text
+</Text>
+`;
+
+exports[`the H6 component should render with correct padding 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  padded={true}
+  style={
+    Object {
+      "color": "#505050",
+      "fontFamily": "InterUI-Bold",
+      "fontSize": 12,
+      "lineHeight": 17.28,
+      "paddingBottom": 8.64,
+    }
+  }
+>
+  Padded H6 text
 </Text>
 `;

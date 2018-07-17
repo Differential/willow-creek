@@ -5,6 +5,7 @@ exports[`the BulletListItem component should render a loading state 1`] = `
   style={
     Object {
       "flexDirection": "row",
+      "paddingBottom": 8.64,
     }
   }
 >
@@ -56,6 +57,7 @@ exports[`the BulletListItem component should render a string 1`] = `
   style={
     Object {
       "flexDirection": "row",
+      "paddingBottom": 8.64,
     }
   }
 >
@@ -117,6 +119,7 @@ exports[`the BulletListItem component should render render child components 1`] 
   style={
     Object {
       "flexDirection": "row",
+      "paddingBottom": 8.64,
     }
   }
 >

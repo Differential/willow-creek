@@ -23,10 +23,10 @@ describe('the H3 component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  it('should render a loading state', () => {
+  it('should render with correct padding', () => {
     const tree = renderer.create(
       <Providers>
-        <H3 isLoading>Default H3 text</H3>
+        <H3 padded>Padded H3 text</H3>
       </Providers>
     );
     expect(tree).toMatchSnapshot();
@@ -35,6 +35,16 @@ describe('the H3 component', () => {
     const tree = renderer.create(
       <Providers>
         <H3 isLoading>Default H3 text</H3>
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render a loading state with correct positioning (margins)', () => {
+    const tree = renderer.create(
+      <Providers>
+        <H3 padded isLoading>
+          Padded H3 text
+        </H3>
       </Providers>
     );
     expect(tree).toMatchSnapshot();

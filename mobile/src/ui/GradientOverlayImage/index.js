@@ -28,29 +28,40 @@ const getGradientValues = (overlayColor) => {
 
 const Container = styled(({ theme }) => ({
   width: '100%',
-  aspectRatio: 1,
   backgroundColor: theme.colors.background.inactive,
 }))(View);
 
 const DefaultImageComponent = styled({
   width: '100%',
-  height: '100%',
   resizeMode: 'cover',
 })(ConnectedImage);
+
+const NoImagePlaceholder = styled(({ theme }) => ({
+  width: '100%',
+  aspectRatio: 1,
+  backgroundColor: theme.colors.background.inactive,
+}))(View);
 
 const GradientOverlayImage = pure(
   ({
     source: imageSource,
     overlayColor,
     ImageComponent: ComponentProp,
+    isLoading,
     ...otherProps
   }) => {
     const Component = ComponentProp || DefaultImageComponent;
     return (
       <Container>
-        {imageSource ? (
-          <Component source={imageSource} {...otherProps} />
-        ) : null}
+        {imageSource || isLoading ? (
+          <Component
+            source={imageSource}
+            isLoading={isLoading}
+            {...otherProps}
+          />
+        ) : (
+          <NoImagePlaceholder />
+        )}
         {overlayColor ? (
           <Overlay
             colors={getGradientValues(overlayColor).colors}
@@ -80,6 +91,11 @@ GradientOverlayImage.propTypes = {
   source,
   overlayColor: PropTypes.string,
   ImageComponent: PropTypes.func,
+  maintainAspectRatio: PropTypes.bool,
+};
+
+GradientOverlayImage.defaultProps = {
+  maintainAspectRatio: true,
 };
 
 export default GradientOverlayImage;

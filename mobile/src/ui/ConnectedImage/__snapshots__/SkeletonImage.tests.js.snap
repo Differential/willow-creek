@@ -2,6 +2,9 @@
 
 exports[`the SkeletonImage component should render a loading state 1`] = `
 <View
+  animate={null}
+  customAnimate={null}
+  onReady={false}
   style={
     Object {
       "aspectRatio": 1,

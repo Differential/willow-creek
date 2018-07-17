@@ -8,9 +8,10 @@ import { BodyText } from 'ui/typography';
 
 const enhance = compose(setDisplayName('BulletListItem'), pure);
 
-const Wrapper = styled({
+const Wrapper = styled(({ theme }) => ({
   flexDirection: 'row',
-})(View);
+  paddingBottom: theme.helpers.verticalRhythm(0.375),
+}))(View);
 
 const Bullet = styled(({ theme }) => ({
   // Set in a typographic unit to reflect changes in the default type size.

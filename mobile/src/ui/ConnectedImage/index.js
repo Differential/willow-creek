@@ -116,6 +116,9 @@ class ConnectedImage extends PureComponent {
         style.aspectRatio = firstSource.width / firstSource.height;
       }
     }
+    if (this.props.isLoading && !style.aspectRatio) {
+      style.aspectRatio = 1;
+    }
     return style;
   }
 
@@ -194,7 +197,6 @@ class ConnectedImage extends PureComponent {
       maintainAspectRatio,
       ...otherProps
     } = this.props;
-
     return (
       <SkeletonImage onReady={!this.isLoading}>
         <ImageComponent

@@ -4,7 +4,6 @@ exports[`the GradientOverlayImage component should render 1`] = `
 <View
   style={
     Object {
-      "aspectRatio": 1,
       "backgroundColor": "#A5A5A5",
       "width": "100%",
     }
@@ -23,8 +22,8 @@ exports[`the GradientOverlayImage component should render 1`] = `
     }
     style={
       Object {
+        "aspectRatio": 1.5,
         "backgroundColor": "#A5A5A5",
-        "height": "100%",
         "opacity": 0,
         "resizeMode": "cover",
         "width": "100%",
@@ -38,7 +37,6 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
 <View
   style={
     Object {
-      "aspectRatio": 1,
       "backgroundColor": "#A5A5A5",
       "width": "100%",
     }
@@ -57,8 +55,8 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
     }
     style={
       Object {
+        "aspectRatio": 1.5,
         "backgroundColor": "#A5A5A5",
-        "height": "100%",
         "opacity": 0,
         "resizeMode": "cover",
         "width": "100%",

@@ -12,7 +12,7 @@ const ParagraphLine = styled(
   ({ theme }) => ({
     height: theme.helpers.rem(1),
     marginVertical:
-      (theme.helpers.rem(1) - theme.helpers.verticalRhythm(1, 0.5)) / 2,
+      (theme.helpers.verticalRhythm(1, 1.625) - theme.helpers.rem(1)) / 2,
   }),
   'Placeholder.Paragraph.line'
 )(Line);

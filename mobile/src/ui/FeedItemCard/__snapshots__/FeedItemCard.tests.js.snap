@@ -30,7 +30,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
     <View
       style={
         Object {
-          "aspectRatio": 1,
           "backgroundColor": "#A5A5A5",
           "width": "100%",
         }
@@ -49,8 +48,8 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
         }
         style={
           Object {
+            "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
             "width": "100%",
@@ -96,7 +95,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
     <View
       style={
         Object {
-          "paddingBottom": 0,
           "paddingHorizontal": 20,
           "paddingVertical": 15,
         }
@@ -203,7 +201,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
     <View
       style={
         Object {
-          "aspectRatio": 1,
           "backgroundColor": "#A5A5A5",
           "width": "100%",
         }
@@ -222,8 +219,8 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         }
         style={
           Object {
+            "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
             "width": "100%",
@@ -234,7 +231,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
     <View
       style={
         Object {
-          "paddingBottom": 0,
           "paddingHorizontal": 20,
           "paddingVertical": 15,
         }
@@ -339,7 +335,6 @@ exports[`the FeedItemCard component should render 1`] = `
     <View
       style={
         Object {
-          "aspectRatio": 1,
           "backgroundColor": "#A5A5A5",
           "width": "100%",
         }
@@ -358,8 +353,8 @@ exports[`the FeedItemCard component should render 1`] = `
         }
         style={
           Object {
+            "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
             "width": "100%",
@@ -370,7 +365,6 @@ exports[`the FeedItemCard component should render 1`] = `
     <View
       style={
         Object {
-          "paddingBottom": 0,
           "paddingHorizontal": 20,
           "paddingVertical": 15,
         }
@@ -475,7 +469,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
     <View
       style={
         Object {
-          "aspectRatio": 1,
           "backgroundColor": "#A5A5A5",
           "width": "100%",
         }
@@ -494,8 +487,8 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
         }
         style={
           Object {
+            "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
             "width": "100%",
@@ -506,7 +499,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
     <View
       style={
         Object {
-          "paddingBottom": 0,
           "paddingHorizontal": 20,
           "paddingVertical": 15,
         }
@@ -611,7 +603,6 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
     <View
       style={
         Object {
-          "aspectRatio": 1,
           "backgroundColor": "#A5A5A5",
           "width": "100%",
         }
@@ -630,8 +621,8 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
         }
         style={
           Object {
+            "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
             "width": "100%",
@@ -642,7 +633,6 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
     <View
       style={
         Object {
-          "paddingBottom": 0,
           "paddingHorizontal": 20,
           "paddingVertical": 15,
         }
@@ -819,7 +809,6 @@ exports[`the FeedItemCard component should render with inverted (light) font col
     <View
       style={
         Object {
-          "aspectRatio": 1,
           "backgroundColor": "#A5A5A5",
           "width": "100%",
         }
@@ -838,8 +827,8 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         }
         style={
           Object {
+            "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "height": "100%",
             "opacity": 0,
             "resizeMode": "cover",
             "width": "100%",
@@ -850,7 +839,6 @@ exports[`the FeedItemCard component should render with inverted (light) font col
     <View
       style={
         Object {
-          "paddingBottom": 0,
           "paddingHorizontal": 20,
           "paddingVertical": 15,
         }
