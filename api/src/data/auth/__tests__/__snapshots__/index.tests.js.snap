@@ -60,7 +60,6 @@ Object {
   "headers": Object {
     "Authorization-Token": "some-rock-token",
     "Content-Type": "application/json",
-    "cookie": "some-cookie",
     "user-agent": "Apollos",
   },
 }

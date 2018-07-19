@@ -18,15 +18,19 @@ export default class AuthModel extends RockModel {
     try {
       const { cookie } = this.parseToken(token);
       this.userToken = token;
-      this.context.connectors.Rock.defaultRequestOptions.headers.cookie = cookie;
+      this.rockCookie = cookie;
     } catch (e) {
       throw new AuthenticationError('Invalid token');
     }
   };
 
-  getCurrentPerson = () => {
-    if (this.userToken) {
-      return this.request('People/GetCurrentPerson').get();
+  getCurrentPerson = async () => {
+    if (this.rockCookie) {
+      this.context.connectors.Rock.defaultRequestOptions.headers.cookie = this.rockCookie;
+      const request = this.request('People/GetCurrentPerson').get();
+      await request;
+      delete this.context.connectors.Rock.defaultRequestOptions.headers.cookie;
+      return request;
     }
     throw new AuthenticationError('Must be logged in');
   };

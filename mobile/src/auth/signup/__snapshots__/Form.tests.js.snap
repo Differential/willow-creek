@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The LoginForm component should render 1`] = `
+exports[`The SignupForm component should render 1`] = `
 <View
   style={
     Object {
@@ -361,19 +361,6 @@ exports[`The LoginForm component should render 1`] = `
               </View>
             </View>
           </View>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            onPress={[Function]}
-            style={
-              Object {
-                "color": "#17B582",
-              }
-            }
-          >
-            Forgot your password?
-          </Text>
         </View>
       </View>
     </View>
@@ -431,7 +418,7 @@ exports[`The LoginForm component should render 1`] = `
             }
           }
         >
-          Sign in
+          Register
         </Text>
       </View>
     </View>

@@ -5,6 +5,7 @@ export { default as ArrowUp } from './ArrowUp';
 export { default as Audio } from './Audio';
 export { default as Bank } from './Bank';
 export { default as Building } from './Building';
+export { default as BrandIcon } from './BrandIcon';
 export { default as Calendar } from './Calendar';
 export { default as Camera } from './Camera';
 export { default as Check } from './Check';

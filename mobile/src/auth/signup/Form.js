@@ -3,11 +3,10 @@ import { View, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { WebBrowserConsumer } from 'ui/WebBrowser';
 import FlexedView from 'ui/FlexedView';
 import PaddedView from 'ui/PaddedView';
 import { Text as TextInput } from 'ui/inputs';
-import Button, { ButtonLink } from 'ui/Button';
+import Button from 'ui/Button';
 import styled from 'ui/styled';
 
 const BottomSafeAreaView = styled({
@@ -68,17 +67,6 @@ class Form extends PureComponent {
                   this.passwordInput = r;
                 }}
               />
-              <WebBrowserConsumer>
-                {(openUrl) => (
-                  <ButtonLink
-                    onPress={() =>
-                      openUrl('https://apollosrock.newspring.cc/page/56/')
-                    }
-                  >
-                    Forgot your password?
-                  </ButtonLink>
-                )}
-              </WebBrowserConsumer>
             </View>
           </PaddedView>
         </KeyboardAwareScrollView>
@@ -86,7 +74,7 @@ class Form extends PureComponent {
           <PaddedView vertical={false}>
             <Button
               onPress={handleSubmit}
-              title="Sign in"
+              title="Register"
               disabled={!isValid}
               loading={isSubmitting}
             />

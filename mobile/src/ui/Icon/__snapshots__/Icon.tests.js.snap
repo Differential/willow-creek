@@ -450,6 +450,81 @@ exports[`The Bank icon renders correctly 1`] = `
 </RNSVGSvgView>
 `;
 
+exports[`The BrandIcon icon renders correctly 1`] = `
+<RNSVGSvgView
+  align="xMidYMid"
+  bbHeight="32"
+  bbWidth="32"
+  meetOrSlice={0}
+  minX={0}
+  minY={0}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      undefined,
+      false,
+      Object {
+        "flex": 0,
+        "height": 32,
+        "width": 32,
+      },
+    ]
+  }
+  vbHeight={24}
+  vbWidth={24}
+>
+  <RNSVGPath
+    d="M8.84799129,0 L13.7577354,0 L22.6057267,24 L0,24 L8.84799129,0 Z M6.52559608,19.4398694 L16.0921502,19.4398694 L11.4494502,5.83629831 L11.1682961,5.83629831 L6.52559608,19.4398694 Z"
+    fill={
+      Array [
+        0,
+        0.18823529411764706,
+        0.18823529411764706,
+        0.18823529411764706,
+        1,
+      ]
+    }
+    fillOpacity={1}
+    fillRule={1}
+    matrix={
+      Array [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+      ]
+    }
+    opacity={1}
+    originX={0}
+    originY={0}
+    propList={
+      Array [
+        "fill",
+      ]
+    }
+    rotation={0}
+    scaleX={1}
+    scaleY={1}
+    skewX={0}
+    skewY={0}
+    stroke={null}
+    strokeDasharray={null}
+    strokeDashoffset={null}
+    strokeLinecap={0}
+    strokeLinejoin={0}
+    strokeMiterlimit={4}
+    strokeOpacity={1}
+    strokeWidth="1"
+    x={0}
+    y={0}
+  />
+</RNSVGSvgView>
+`;
+
 exports[`The Building icon renders correctly 1`] = `
 <RNSVGSvgView
   align="xMidYMid"

@@ -13,9 +13,7 @@ import InputWrapper from '../InputWrapper';
 import ErrorText from '../ErrorText';
 import withFocusAnimation from '../withFocusAnimation';
 import InputAddon, { AddonRow } from '../InputAddon';
-import withInputControlStyles from '../withInputControlStyles';
-
-const StyledTextInput = withInputControlStyles(TextInput);
+import { textStyle } from '../withInputControlStyles';
 
 const propsForInputType = {
   password: {
@@ -69,8 +67,8 @@ const Text = enhance(
     wrapperStyle,
     error,
     disabled = false,
-    Component = StyledTextInput,
     theme,
+    inputRef,
     focusAnimation: focusAnimationInput, // from withFocusAnimation
     ...textInputProps
   }) => {
@@ -85,7 +83,9 @@ const Text = enhance(
           <AddonRow>
             <InputAddon>{prefix}</InputAddon>
             <Animated.View style={animatedStyle}>
-              <Component
+              <TextInput
+                style={textStyle({ theme })}
+                ref={inputRef}
                 placeholderTextColor={Color(theme.colors.text.primary)
                   .fade(theme.alpha.low)
                   .string()}
@@ -127,6 +127,7 @@ Text.propTypes = {
   returnKeyType: PropTypes.string,
   error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   underlineColorAndroid: PropTypes.string,
+  inputRef: PropTypes.func,
 };
 
 export default Text;

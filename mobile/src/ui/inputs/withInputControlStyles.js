@@ -1,11 +1,11 @@
 import styled from 'ui/styled';
 
-const baseStyle = ({ theme }) => ({
+export const baseStyle = ({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 4,
   height: 30 + theme.sizing.baseUnit / 2,
 });
 
-const textStyle = ({ theme }) => ({
+export const textStyle = ({ theme }) => ({
   ...baseStyle({ theme }),
   paddingVertical: 0,
   fontSize: theme.helpers.rem(0.875),

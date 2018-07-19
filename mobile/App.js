@@ -12,21 +12,32 @@ Sentry.config(
   'https://5908fa19ed37447f86b2717423cadec5:45dd3b58792b413cb67109c5e63a0bb7@sentry.io/1241658'
 ).install();
 
-const AppNavigator = createStackNavigator(
+const AppStackNavigator = createStackNavigator(
   {
     Tabs,
     ContentFeed,
     ContentSingle,
-    Auth,
   },
   {
     initialRouteName: 'Tabs',
   }
 );
 
+const AppModalNavigator = createStackNavigator(
+  {
+    AppStackNavigator,
+    Auth,
+  },
+  {
+    initialRouteName: 'AppStackNavigator',
+    mode: 'modal',
+    headerMode: 'none',
+  }
+);
+
 const App = () => (
   <Providers>
-    <AppNavigator />
+    <AppModalNavigator />
   </Providers>
 );
 

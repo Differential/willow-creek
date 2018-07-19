@@ -6,16 +6,16 @@ import PropTypes from 'prop-types';
 
 import getAuthToken from '../getAuthToken.graphql';
 
-import authenticateMutation from './authenticate.graphql';
-import LoginForm from './Form';
+import registerPersonMutation from './registerPerson.graphql';
+import SignupForm from './Form';
 
-const Login = ({ onLogin }) => (
+const Signup = ({ onSignup }) => (
   <Mutation
-    mutation={authenticateMutation}
-    update={(cache, { data: { authenticate } }) => {
+    mutation={registerPersonMutation}
+    update={(cache, { data: { registerPerson } }) => {
       cache.writeQuery({
         query: getAuthToken,
-        data: { authToken: authenticate.token },
+        data: { authToken: registerPerson.token },
       });
     }}
   >
@@ -30,16 +30,15 @@ const Login = ({ onLogin }) => (
         onSubmit={async (variables, { setSubmitting, setFieldError }) => {
           try {
             await authenticate({ variables });
-            if (onLogin) onLogin();
+            if (onSignup) onSignup();
           } catch ({ graphQLErrors = [], ...e }) {
             if (
               graphQLErrors.length &&
-              graphQLErrors.find(
-                ({ extensions }) => extensions.code === 'UNAUTHENTICATED'
+              graphQLErrors.find(({ message }) =>
+                message.includes('User already exists')
               )
             ) {
-              setFieldError('email', true);
-              setFieldError('password', 'Your email or password is incorrect.');
+              setFieldError('email', 'There is already a user with this email');
             } else {
               setFieldError(
                 'password',
@@ -50,14 +49,14 @@ const Login = ({ onLogin }) => (
           setSubmitting(false);
         }}
       >
-        {(formikBag) => <LoginForm {...formikBag} />}
+        {(formikBag) => <SignupForm {...formikBag} />}
       </Formik>
     )}
   </Mutation>
 );
 
-Login.propTypes = {
-  onLogin: PropTypes.func,
+Signup.propTypes = {
+  onSignup: PropTypes.func,
 };
 
-export default Login;
+export default Signup;

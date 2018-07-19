@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import LoginForm from './Form';
 
-storiesOf('Auth/LoginForm', module).add('Example', () => (
+storiesOf('Auth/SignupForm', module).add('Example', () => (
   <LoginForm
     values={{ email: '', password: '' }}
     touched={{ email: false, password: false }}
