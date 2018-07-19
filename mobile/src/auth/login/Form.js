@@ -3,7 +3,8 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { Text as TextInput } from 'ui/inputs';
-import Button from 'ui/Button';
+import Button, { ButtonLink } from 'ui/Button';
+import { WebBrowserConsumer } from 'ui/WebBrowser';
 
 const Form = ({
   values,
@@ -29,6 +30,15 @@ const Form = ({
       error={touched.password && errors.password}
       onChangeText={(text) => setFieldValue('password', text)}
     />
+    <WebBrowserConsumer>
+      {(openUrl) => (
+        <ButtonLink
+          onPress={() => openUrl('https://apollosrock.newspring.cc/page/56/')}
+        >
+          Forgot your password?
+        </ButtonLink>
+      )}
+    </WebBrowserConsumer>
     <Button
       onPress={handleSubmit}
       title="Submit"
