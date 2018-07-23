@@ -1,0 +1,13 @@
+query {
+  currentUser {
+    id
+    profile {
+      firstName
+      lastName
+      email
+      photo {
+        uri
+      }
+    }
+  }
+}
