@@ -11,7 +11,7 @@
     "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
   },
   "engines": {
-    "node": "8.11.2"
+    "node": "^8.11.x"
   },
   "jest": {
     "collectCoverage": true,
