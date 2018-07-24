@@ -16,9 +16,6 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#303030",
@@ -31,9 +28,6 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       Hi there!
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#505050",
@@ -46,10 +40,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       Lorem ipsum dolor sit amet.
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
       bold={false}
-      ellipsizeMode="tail"
       italic={false}
       style={
         Object {
@@ -71,9 +62,6 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#F8F7F4",
@@ -86,9 +74,6 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       Hi there!
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#DBDBD9",
@@ -101,10 +86,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       Lorem ipsum dolor sit amet.
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
       bold={false}
-      ellipsizeMode="tail"
       italic={false}
       style={
         Object {
@@ -126,9 +108,6 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#303030",
@@ -141,9 +120,6 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       Hi there!
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#505050",
@@ -156,10 +132,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       Lorem ipsum dolor sit amet.
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
       bold={false}
-      ellipsizeMode="tail"
       italic={false}
       style={
         Object {
@@ -192,9 +165,6 @@ exports[`withThemeMixin works with dynamic props 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#303030",
@@ -207,9 +177,6 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       Hi there!
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#505050",
@@ -222,10 +189,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       Lorem ipsum dolor sit amet.
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
       bold={false}
-      ellipsizeMode="tail"
       italic={false}
       style={
         Object {
@@ -247,9 +211,6 @@ exports[`withThemeMixin works with dynamic props 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#F8F7F4",
@@ -262,9 +223,6 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       Hi there!
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#DBDBD9",
@@ -277,10 +235,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       Lorem ipsum dolor sit amet.
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
       bold={false}
-      ellipsizeMode="tail"
       italic={false}
       style={
         Object {

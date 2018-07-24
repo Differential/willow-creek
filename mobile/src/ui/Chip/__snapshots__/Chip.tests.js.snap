@@ -26,9 +26,6 @@ exports[`The Chip component should be selected 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "alignItems": "center",
@@ -73,9 +70,6 @@ exports[`The Chip component should render an icon 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "alignItems": "center",
@@ -215,9 +209,6 @@ exports[`The Chip component should render correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "alignItems": "center",

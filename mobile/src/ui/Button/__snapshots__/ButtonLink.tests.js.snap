@@ -2,9 +2,6 @@
 
 exports[`The Button component should render 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   onPress={[Function]}
   style={
     Object {
@@ -18,10 +15,7 @@ exports[`The Button component should render 1`] = `
 
 exports[`The Button component should render inherit typographic styles 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
   bold={false}
-  ellipsizeMode="tail"
   italic={false}
   style={
     Object {
@@ -33,9 +27,6 @@ exports[`The Button component should render inherit typographic styles 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     onPress={[Function]}
     style={
       Object {

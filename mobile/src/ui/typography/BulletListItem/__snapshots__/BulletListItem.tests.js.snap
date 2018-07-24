@@ -69,10 +69,7 @@ exports[`the BulletListItem component should render a string 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
       bold={false}
-      ellipsizeMode="tail"
       italic={false}
       style={
         Object {
@@ -94,10 +91,7 @@ exports[`the BulletListItem component should render a string 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
       bold={false}
-      ellipsizeMode="tail"
       italic={false}
       style={
         Object {
@@ -131,10 +125,7 @@ exports[`the BulletListItem component should render render child components 1`] 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
       bold={false}
-      ellipsizeMode="tail"
       italic={false}
       style={
         Object {
@@ -156,9 +147,6 @@ exports[`the BulletListItem component should render render child components 1`] 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#303030",

@@ -55,11 +55,7 @@ exports[`the UIText component should render correctly 1`] = `
     }
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-  >
+  <Text>
     But I, brothers, could not address you as spiritual people, but as
               people of the flesh, as infants in Christ. I fed you with milk, not
               solid food, for you were not ready for it. And even now you are not

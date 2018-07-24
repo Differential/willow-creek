@@ -3,8 +3,6 @@
 exports[`the UIText component should accept additional props 1`] = `
 <Text
   accessible={false}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   style={
     Object {
       "color": "#303030",
@@ -22,9 +20,6 @@ exports[`the UIText component should accept additional props 1`] = `
 
 exports[`the UIText component should accept and render passed in styles 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   style={
     Object {
       "color": "salmon",
@@ -57,10 +52,7 @@ exports[`the UIText component should render a loading state 1`] = `
 
 exports[`the UIText component should render as bold 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
   bold={true}
-  ellipsizeMode="tail"
   style={
     Object {
       "color": "#303030",
@@ -78,10 +70,7 @@ exports[`the UIText component should render as bold 1`] = `
 
 exports[`the UIText component should render as bold italic 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
   bold={true}
-  ellipsizeMode="tail"
   italic={true}
   style={
     Object {
@@ -100,9 +89,6 @@ exports[`the UIText component should render as bold italic 1`] = `
 
 exports[`the UIText component should render as italic 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   italic={true}
   style={
     Object {
@@ -121,9 +107,6 @@ exports[`the UIText component should render as italic 1`] = `
 
 exports[`the UIText component should render correctly 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   style={
     Object {
       "color": "#303030",

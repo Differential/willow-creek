@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { FlatList, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import { pure, compose, branch, withProps, defaultProps } from 'recompose';
@@ -15,7 +15,7 @@ const StyledFlatList = compose(
   }))
 )(FlatList);
 
-export class FeedView extends React.Component {
+class FeedView extends Component {
   static propTypes = {
     content: PropTypes.array, // eslint-disable-line
     error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),

@@ -45,7 +45,7 @@ class Connect extends PureComponent {
                           )}
                         </Query>
                       );
-                    return '';
+                    return null;
                   }}
                 </Query>
                 <TableView>

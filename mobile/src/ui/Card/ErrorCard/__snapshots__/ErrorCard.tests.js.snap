@@ -35,9 +35,6 @@ exports[`the Card component should render 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -51,9 +48,6 @@ exports[`the Card component should render 1`] = `
         Boom!
       </Text>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#505050",
@@ -106,9 +100,6 @@ exports[`the Card component should render with an error inside an object 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -122,9 +113,6 @@ exports[`the Card component should render with an error inside an object 1`] = `
         Uh oh!
       </Text>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#505050",
@@ -177,9 +165,6 @@ exports[`the Card component should render with an error message inside an object
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -193,9 +178,6 @@ exports[`the Card component should render with an error message inside an object
         Uh oh!
       </Text>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#505050",

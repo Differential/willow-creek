@@ -61,6 +61,15 @@ exports[`The DateInput component should render 1`] = `
     hideModalContentWhileAnimating={false}
     onModalHide={[Function]}
     onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
     swipeThreshold={100}
     transparent={true}
     visible={false}
@@ -91,6 +100,9 @@ exports[`The DateInput component should render 1`] = `
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
       style={
         Object {
           "flex": 1,
@@ -102,6 +114,12 @@ exports[`The DateInput component should render 1`] = `
             },
           ],
         }
+      }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
       }
       swipeThreshold={100}
     >
@@ -129,9 +147,6 @@ exports[`The DateInput component should render 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -185,9 +200,6 @@ exports[`The DateInput component should render 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -225,9 +237,6 @@ exports[`The DateInput component should render 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -305,9 +314,6 @@ exports[`The DateInput component should render with a displayValue 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "alignItems": "center",
@@ -331,6 +337,15 @@ exports[`The DateInput component should render with a displayValue 1`] = `
     hideModalContentWhileAnimating={false}
     onModalHide={[Function]}
     onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
     swipeThreshold={100}
     transparent={true}
     visible={false}
@@ -361,6 +376,9 @@ exports[`The DateInput component should render with a displayValue 1`] = `
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
       style={
         Object {
           "flex": 1,
@@ -372,6 +390,12 @@ exports[`The DateInput component should render with a displayValue 1`] = `
             },
           ],
         }
+      }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
       }
       swipeThreshold={100}
     >
@@ -399,9 +423,6 @@ exports[`The DateInput component should render with a displayValue 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -455,9 +476,6 @@ exports[`The DateInput component should render with a displayValue 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -495,9 +513,6 @@ exports[`The DateInput component should render with a displayValue 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -542,9 +557,6 @@ exports[`The DateInput component should render with a displayValue 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "backgroundColor": "transparent",
@@ -615,9 +627,6 @@ exports[`The DateInput component should render with a label 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "alignItems": "center",
@@ -641,6 +650,15 @@ exports[`The DateInput component should render with a label 1`] = `
     hideModalContentWhileAnimating={false}
     onModalHide={[Function]}
     onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
     swipeThreshold={100}
     transparent={true}
     visible={false}
@@ -671,6 +689,9 @@ exports[`The DateInput component should render with a label 1`] = `
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
       style={
         Object {
           "flex": 1,
@@ -682,6 +703,12 @@ exports[`The DateInput component should render with a label 1`] = `
             },
           ],
         }
+      }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
       }
       swipeThreshold={100}
     >
@@ -709,9 +736,6 @@ exports[`The DateInput component should render with a label 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -765,9 +789,6 @@ exports[`The DateInput component should render with a label 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -805,9 +826,6 @@ exports[`The DateInput component should render with a label 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -852,9 +870,6 @@ exports[`The DateInput component should render with a label 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "backgroundColor": "transparent",
@@ -927,9 +942,6 @@ exports[`The DateInput component should render with a placeholder 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "alignItems": "center",
@@ -953,6 +965,15 @@ exports[`The DateInput component should render with a placeholder 1`] = `
     hideModalContentWhileAnimating={false}
     onModalHide={[Function]}
     onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
     swipeThreshold={100}
     transparent={true}
     visible={false}
@@ -983,6 +1004,9 @@ exports[`The DateInput component should render with a placeholder 1`] = `
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
       style={
         Object {
           "flex": 1,
@@ -994,6 +1018,12 @@ exports[`The DateInput component should render with a placeholder 1`] = `
             },
           ],
         }
+      }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
       }
       swipeThreshold={100}
     >
@@ -1021,9 +1051,6 @@ exports[`The DateInput component should render with a placeholder 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -1077,9 +1104,6 @@ exports[`The DateInput component should render with a placeholder 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -1117,9 +1141,6 @@ exports[`The DateInput component should render with a placeholder 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1164,9 +1185,6 @@ exports[`The DateInput component should render with a placeholder 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "backgroundColor": "transparent",

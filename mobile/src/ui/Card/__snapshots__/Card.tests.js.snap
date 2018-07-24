@@ -35,9 +35,6 @@ exports[`the Card component it should render a placeholder 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -48,9 +45,6 @@ exports[`the Card component it should render a placeholder 1`] = `
         }
       />
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         padded={true}
         style={
           Object {
@@ -70,10 +64,7 @@ exports[`the Card component it should render a placeholder 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           bold={false}
-          ellipsizeMode="tail"
           italic={false}
           style={
             Object {
@@ -121,9 +112,6 @@ exports[`the Card component it should render a placeholder 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#FFFFFF",
@@ -137,9 +125,6 @@ exports[`the Card component it should render a placeholder 1`] = `
         </Text>
       </View>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#17B582",
@@ -229,9 +214,6 @@ exports[`the Card component should render 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -244,9 +226,6 @@ exports[`the Card component should render 1`] = `
         Coffee
       </Text>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         padded={true}
         style={
           Object {
@@ -268,10 +247,7 @@ exports[`the Card component should render 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           bold={false}
-          ellipsizeMode="tail"
           italic={false}
           style={
             Object {
@@ -321,9 +297,6 @@ exports[`the Card component should render 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#FFFFFF",
@@ -337,9 +310,6 @@ exports[`the Card component should render 1`] = `
         </Text>
       </View>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#17B582",

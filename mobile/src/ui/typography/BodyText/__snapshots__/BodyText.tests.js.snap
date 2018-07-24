@@ -3,9 +3,7 @@
 exports[`the BodyText component should accept additional props 1`] = `
 <Text
   accessible={false}
-  allowFontScaling={true}
   bold={false}
-  ellipsizeMode="tail"
   italic={false}
   style={
     Object {
@@ -22,10 +20,7 @@ exports[`the BodyText component should accept additional props 1`] = `
 
 exports[`the BodyText component should accept and render passed in styles 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
   bold={false}
-  ellipsizeMode="tail"
   italic={false}
   style={
     Object {
@@ -57,10 +52,7 @@ exports[`the BodyText component should render a loading state 1`] = `
 
 exports[`the BodyText component should render as bold 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
   bold={true}
-  ellipsizeMode="tail"
   italic={false}
   style={
     Object {
@@ -77,10 +69,7 @@ exports[`the BodyText component should render as bold 1`] = `
 
 exports[`the BodyText component should render as bold italic 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
   bold={true}
-  ellipsizeMode="tail"
   italic={true}
   style={
     Object {
@@ -97,10 +86,7 @@ exports[`the BodyText component should render as bold italic 1`] = `
 
 exports[`the BodyText component should render as italic 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
   bold={false}
-  ellipsizeMode="tail"
   italic={true}
   style={
     Object {
@@ -117,10 +103,7 @@ exports[`the BodyText component should render as italic 1`] = `
 
 exports[`the BodyText component should render correctly 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
   bold={false}
-  ellipsizeMode="tail"
   italic={false}
   style={
     Object {

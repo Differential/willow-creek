@@ -52,9 +52,6 @@ exports[`the CardTile component number box should grow elegantly with larger num
       >
         <View>
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#303030",
@@ -77,9 +74,6 @@ exports[`the CardTile component number box should grow elegantly with larger num
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -139,9 +133,6 @@ exports[`the CardTile component should render 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -427,9 +418,6 @@ exports[`the CardTile component should render a number box 1`] = `
       >
         <View>
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#303030",
@@ -452,9 +440,6 @@ exports[`the CardTile component should render a number box 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -525,9 +510,6 @@ exports[`the CardTile component should render card details 1`] = `
       >
         <View>
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#303030",
@@ -550,9 +532,6 @@ exports[`the CardTile component should render card details 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -670,9 +649,6 @@ exports[`the CardTile component should render card details 1`] = `
             withIcon="video"
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#505050",
@@ -745,9 +721,6 @@ exports[`the CardTile component should render card details with date 1`] = `
       >
         <View>
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#303030",
@@ -770,9 +743,6 @@ exports[`the CardTile component should render card details with date 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -890,9 +860,6 @@ exports[`the CardTile component should render card details with date 1`] = `
             withIcon="video"
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#505050",
@@ -907,9 +874,6 @@ exports[`the CardTile component should render card details with date 1`] = `
           </View>
         </View>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#505050",
@@ -960,11 +924,7 @@ exports[`the CardTile component should render children 1`] = `
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
+      <Text>
         Biff Tannen was here
       </Text>
     </View>

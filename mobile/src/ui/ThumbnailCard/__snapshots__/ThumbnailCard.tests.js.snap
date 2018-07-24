@@ -54,9 +54,6 @@ exports[`the ThumbnailCard component should render 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -128,9 +125,6 @@ exports[`the ThumbnailCard component should render a loading state 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -295,9 +289,6 @@ exports[`the ThumbnailCard component should render with a category 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -328,9 +319,6 @@ exports[`the ThumbnailCard component should render with a category 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#505050",
@@ -404,9 +392,6 @@ exports[`the ThumbnailCard component should render with a category and images 1`
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -437,9 +422,6 @@ exports[`the ThumbnailCard component should render with a category and images 1`
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#505050",
@@ -574,9 +556,6 @@ exports[`the ThumbnailCard component should render with a description 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -596,10 +575,7 @@ exports[`the ThumbnailCard component should render with a description 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             bold={false}
-            ellipsizeMode="tail"
             italic={false}
             style={
               Object {
@@ -673,9 +649,6 @@ exports[`the ThumbnailCard component should render with an images 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",

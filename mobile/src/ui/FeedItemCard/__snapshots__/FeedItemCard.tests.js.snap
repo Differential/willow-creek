@@ -101,9 +101,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -149,9 +146,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
           withIcon={null}
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#505050",
@@ -237,9 +231,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -285,9 +276,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
           withIcon={null}
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#505050",
@@ -371,9 +359,6 @@ exports[`the FeedItemCard component should render 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -419,9 +404,6 @@ exports[`the FeedItemCard component should render 1`] = `
           withIcon={null}
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#505050",
@@ -505,9 +487,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -553,9 +532,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
           withIcon={null}
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#505050",
@@ -639,9 +615,6 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -759,9 +732,6 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
           withIcon="play"
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#505050",
@@ -845,9 +815,6 @@ exports[`the FeedItemCard component should render with inverted (light) font col
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#F8F7F4",
@@ -893,9 +860,6 @@ exports[`the FeedItemCard component should render with inverted (light) font col
           withIcon={null}
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#DBDBD9",

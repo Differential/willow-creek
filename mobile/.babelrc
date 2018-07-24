@@ -1,9 +1,8 @@
 {
-  "presets": [
-    "babel-preset-react-native-stage-0/decorator-support",
-    "react-native-dotenv"
-  ],
+  "presets": ["react-native", "module:react-native-dotenv"],
   "plugins": [
+    ["@babel/plugin-proposal-decorators", {"legacy": true}],
+    ["@babel/plugin-proposal-export-default-from"],
     [
       "module-resolver",
       {
@@ -11,11 +10,11 @@
         "extensions": [".android.js", ".ios.js", ".js", ".graphql"]
       }
     ],
-    "import-graphql"
+    ["import-graphql"]
   ],
   "env": {
     "development": {
-      "plugins": ["transform-react-jsx-source"]
+      "plugins": ["@babel/plugin-transform-react-jsx-source"]
     }
   }
 }

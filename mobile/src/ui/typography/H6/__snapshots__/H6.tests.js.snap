@@ -3,8 +3,6 @@
 exports[`the H6 component should accept additional props 1`] = `
 <Text
   accessible={false}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   style={
     Object {
       "color": "#505050",
@@ -20,9 +18,6 @@ exports[`the H6 component should accept additional props 1`] = `
 
 exports[`the H6 component should accept and render passed in styles 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   style={
     Object {
       "color": "salmon",
@@ -69,9 +64,6 @@ exports[`the H6 component should render a loading state with correct positioning
 
 exports[`the H6 component should render correctly 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   style={
     Object {
       "color": "#505050",
@@ -87,9 +79,6 @@ exports[`the H6 component should render correctly 1`] = `
 
 exports[`the H6 component should render with correct padding 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   padded={true}
   style={
     Object {

@@ -109,9 +109,6 @@ exports[`the TableView Component should render 1`] = `
         />
       </RNSVGSvgView>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -226,9 +223,6 @@ exports[`the TableView Component should render 1`] = `
         />
       </RNSVGSvgView>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -299,9 +293,6 @@ exports[`the TableView Component should render 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -332,13 +323,10 @@ exports[`the TableView Component should render 1`] = `
                 onStartShouldSetResponder={[Function]}
                 onTintColor="#17B582"
                 style={
-                  Array [
-                    Object {
-                      "height": 31,
-                      "width": 51,
-                    },
-                    undefined,
-                  ]
+                  Object {
+                    "height": 31,
+                    "width": 51,
+                  }
                 }
                 tintColor="#A5A5A5"
                 trackColor="#A5A5A5"
@@ -373,9 +361,6 @@ exports[`the TableView Component should render 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",
@@ -416,9 +401,6 @@ exports[`the TableView Component should render 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#303030",

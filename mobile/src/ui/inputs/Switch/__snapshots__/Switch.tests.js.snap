@@ -56,9 +56,6 @@ exports[`The Picker Input component should render correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -91,13 +88,10 @@ exports[`The Picker Input component should render correctly 1`] = `
           onStartShouldSetResponder={[Function]}
           onTintColor="#17B582"
           style={
-            Array [
-              Object {
-                "height": 31,
-                "width": 51,
-              },
-              undefined,
-            ]
+            Object {
+              "height": 31,
+              "width": 51,
+            }
           }
           tintColor="#A5A5A5"
           trackColor="#A5A5A5"

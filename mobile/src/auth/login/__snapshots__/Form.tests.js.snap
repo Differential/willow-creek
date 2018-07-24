@@ -141,9 +141,6 @@ exports[`The LoginForm component should render 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -298,9 +295,6 @@ exports[`The LoginForm component should render 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -362,9 +356,6 @@ exports[`The LoginForm component should render 1`] = `
             </View>
           </View>
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             onPress={[Function]}
             style={
               Object {
@@ -419,9 +410,6 @@ exports[`The LoginForm component should render 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#FFFFFF",

@@ -124,9 +124,6 @@ exports[`The FeedView component handles a renderItem prop 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#303030",
@@ -244,9 +241,6 @@ exports[`The FeedView component handles a renderItem prop 1`] = `
                 withIcon="like"
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "color": "#505050",
@@ -2069,9 +2063,6 @@ exports[`The FeedView component renders correctly 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#303030",
@@ -2117,9 +2108,6 @@ exports[`The FeedView component renders correctly 1`] = `
                 withIcon={null}
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "color": "#505050",
@@ -2200,9 +2188,6 @@ exports[`The FeedView component renders correctly 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#303030",
@@ -2248,9 +2233,6 @@ exports[`The FeedView component renders correctly 1`] = `
                 withIcon={null}
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "color": "#505050",

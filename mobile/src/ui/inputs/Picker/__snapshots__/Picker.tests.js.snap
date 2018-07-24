@@ -40,9 +40,6 @@ exports[`The Picker Input component focuses and blurs 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -55,9 +52,6 @@ exports[`The Picker Input component focuses and blurs 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#A5A5A5",
@@ -194,9 +188,6 @@ exports[`The Picker Input component focuses and blurs 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           onPress={[Function]}
           style={
             Object {
@@ -258,9 +249,6 @@ exports[`The Picker Input component focuses and blurs 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "backgroundColor": "transparent",
@@ -360,9 +348,6 @@ exports[`The Picker Input component focuses and blurs 2`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -375,9 +360,6 @@ exports[`The Picker Input component focuses and blurs 2`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#A5A5A5",
@@ -514,9 +496,6 @@ exports[`The Picker Input component focuses and blurs 2`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           onPress={[Function]}
           style={
             Object {
@@ -578,9 +557,6 @@ exports[`The Picker Input component focuses and blurs 2`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "backgroundColor": "transparent",
@@ -680,9 +656,6 @@ exports[`The Picker Input component focuses and blurs 3`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -695,9 +668,6 @@ exports[`The Picker Input component focuses and blurs 3`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#A5A5A5",
@@ -834,9 +804,6 @@ exports[`The Picker Input component focuses and blurs 3`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           onPress={[Function]}
           style={
             Object {
@@ -898,9 +865,6 @@ exports[`The Picker Input component focuses and blurs 3`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "backgroundColor": "transparent",
@@ -1000,9 +964,6 @@ exports[`The Picker Input component should render correctly 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#303030",
@@ -1142,9 +1103,6 @@ exports[`The Picker Input component should render correctly 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           onPress={[Function]}
           style={
             Object {
@@ -1219,9 +1177,6 @@ exports[`The Picker Input component should render correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "backgroundColor": "transparent",

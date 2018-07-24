@@ -124,9 +124,6 @@ exports[`The TileFeed component renders correctly 1`] = `
             >
               <View>
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "color": "#303030",
@@ -206,9 +203,6 @@ exports[`The TileFeed component renders correctly 1`] = `
             >
               <View>
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "color": "#303030",

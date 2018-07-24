@@ -141,9 +141,6 @@ exports[`The SignupForm component should render 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -298,9 +295,6 @@ exports[`The SignupForm component should render 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -406,9 +400,6 @@ exports[`The SignupForm component should render 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#FFFFFF",

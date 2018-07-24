@@ -62,9 +62,6 @@ exports[`the TileImage component passes an onPressItem prop 1`] = `
     </View>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "backgroundColor": "transparent",
@@ -181,9 +178,6 @@ exports[`the TileImage component should render 1`] = `
     />
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "backgroundColor": "transparent",
@@ -341,9 +335,6 @@ exports[`the TileImage component should render without text 1`] = `
     </View>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "backgroundColor": "transparent",

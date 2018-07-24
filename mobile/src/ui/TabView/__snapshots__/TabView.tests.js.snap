@@ -138,9 +138,6 @@ exports[`TabView Component renders 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   padded={true}
                   style={
                     Object {
@@ -197,9 +194,6 @@ exports[`TabView Component renders 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
                   padded={true}
                   style={
                     Object {

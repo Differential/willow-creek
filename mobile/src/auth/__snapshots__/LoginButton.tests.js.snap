@@ -2,9 +2,6 @@
 
 exports[`LoginButton component renders a LoginButton when logged out 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   onPress={[Function]}
   style={
     Object {
@@ -19,9 +16,6 @@ exports[`LoginButton component renders a LoginButton when logged out 1`] = `
 
 exports[`LoginButton component renders a LogoutButton when logged in 1`] = `
 <Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
   onPress={[Function]}
   style={
     Object {
