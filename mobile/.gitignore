@@ -16,6 +16,8 @@ build/
 .idea
 .gradle
 keystore.properties
+# TODO: rename apolloskeystoreupload
+apolloskeystoreupload.keystore
 local.properties
 *.iml
 
