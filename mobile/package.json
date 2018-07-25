@@ -43,6 +43,9 @@
     "waait": "^1.0.2",
     "yup": "^0.25.1"
   },
+  "engines": {
+    "node": "^8.11.x"
+  },
   "scripts": {
     "android": "react-native run-android",
     "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov",
