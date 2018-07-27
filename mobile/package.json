@@ -100,6 +100,7 @@
     "react-native-modal-datetime-picker": "^6.0.0",
     "react-native-safari-view": "^2.1.0",
     "react-native-sentry": "^0.38.1",
+    "react-native-splash-screen": "3.0.6",
     "react-native-svg": "^6.3.1",
     "react-native-tab-view": "^1.0.2",
     "react-navigation": "^2.7.0",

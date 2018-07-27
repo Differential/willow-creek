@@ -6,9 +6,13 @@
         <item name="android:statusBarColor">@color/growth</item>
     </style>
 
-    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="LaunchTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/background_splash</item>
-        <item name="android:statusBarColor">@color/deepWater</item>
+        <item name="android:statusBarColor">@color/deep_water</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="SplashScreen_SplashTheme">
+        <item name="android:statusBarColor">@color/deep_water</item>
     </style>
 
 </resources>

@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.apolloschurchapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -9,10 +10,11 @@
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:allowBackup="false"
-      android:theme="@style/AppTheme">
+      android:theme="@style/AppTheme"
+      tools:replace="android:allowBackup">
       <activity
-        android:name=".SplashActivity"
-        android:theme="@style/SplashTheme"
+        android:name=".LaunchActivity"
+        android:theme="@style/LaunchTheme"
         android:label="Apollos Church">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
