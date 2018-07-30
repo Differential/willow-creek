@@ -1,8 +1,8 @@
 import { graphql } from 'graphql';
 import fetch from 'isomorphic-fetch';
-import { makeExecutableSchema, gql } from 'apollo-server';
+import { makeExecutableSchema } from 'apollo-server';
 
-import { getContext } from '../../../';
+import getContext from '../../../getContext';
 // we import the root-level schema and resolver so we test the entire integration:
 import { schema as typeDefs, resolvers } from '../../';
 
@@ -17,7 +17,7 @@ describe('Auth', () => {
   });
 
   it('logs in a user', async () => {
-    const query = gql`
+    const query = `
       mutation {
         authenticate(identity: "some-identity", password: "good") {
           user {
@@ -36,7 +36,7 @@ describe('Auth', () => {
   });
 
   it('throws invalid credentials error on bad password', async () => {
-    const query = gql`
+    const query = `
       mutation {
         authenticate(identity: "some-identity", password: "bad") {
           user {
@@ -52,7 +52,7 @@ describe('Auth', () => {
   });
 
   describe('currentUser query', () => {
-    const query = gql`
+    const query = `
       query {
         currentUser {
           id
@@ -96,7 +96,7 @@ describe('Auth', () => {
         headers: { authorization: token },
       },
     });
-    const query = gql`
+    const query = `
       query {
         currentUser {
           id
@@ -166,7 +166,7 @@ describe('Auth', () => {
     });
 
     it('creates new registration', async () => {
-      const query = gql`
+      const query = `
         mutation {
           registerPerson(email: "hello.world@earth.org", password: "good") {
             user {

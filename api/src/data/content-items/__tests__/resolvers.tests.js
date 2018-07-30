@@ -1,13 +1,13 @@
 import { graphql } from 'graphql';
 import fetch from 'isomorphic-fetch';
-import { makeExecutableSchema, gql } from 'apollo-server';
+import { makeExecutableSchema } from 'apollo-server';
 
 import { createGlobalId } from '../../node/model';
-import { getContext } from '../../../';
+import getContext from '../../../getContext';
 // we import the root-level schema and resolver so we test the entire integration:
 import { schema as typeDefs, resolvers } from '../../';
 
-const contentItemFragment = gql`
+const contentItemFragment = `
   fragment ContentItemFragment on UniversalContentItem {
     id
     __typename
@@ -73,7 +73,7 @@ describe('UniversalContentItem', () => {
   });
 
   it('gets a user feed', async () => {
-    const query = gql`
+    const query = `
       query {
         userFeed {
           edges {
@@ -91,7 +91,7 @@ describe('UniversalContentItem', () => {
   });
 
   it('gets a content item', async () => {
-    const query = gql`
+    const query = `
       query {
         node(id: "${createGlobalId(1, 'UniversalContentItem')}") {
           ...ContentItemFragment
@@ -105,7 +105,7 @@ describe('UniversalContentItem', () => {
   });
 
   it('properly handles empty attribute values', async () => {
-    const query = gql`
+    const query = `
       query {
         node(id: "${createGlobalId(
           'test-case-no-attributes',
@@ -122,7 +122,7 @@ describe('UniversalContentItem', () => {
   });
 
   it('filters terms by a match string', async () => {
-    const query = gql`
+    const query = `
     query {
       node(id: "${createGlobalId(1, 'UniversalContentItem')}") {
         ...on UniversalContentItem {

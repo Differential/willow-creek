@@ -22,7 +22,7 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "apollo-server": "^2.0.0-beta.2",
+    "apollo-server": "^2.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
@@ -52,6 +52,7 @@
     "with-query": "^1.0.2"
   },
   "devDependencies": {
+    "apollo-datasource-rest": "^0.1.0",
     "babel-cli": "^6.26.0",
     "codecov": "^3.0.2",
     "coveralls": "^3.0.1",

@@ -1,13 +1,13 @@
 import { graphql } from 'graphql';
 import fetch from 'isomorphic-fetch';
-import { makeExecutableSchema, gql } from 'apollo-server';
+import { makeExecutableSchema } from 'apollo-server';
 
 import { createGlobalId } from '../../node/model';
-import { getContext } from '../../../';
+import getContext from '../../../getContext';
 // we import the root-level schema and resolver so we test the entire integration:
 import { schema as typeDefs, resolvers } from '../../';
 
-const contentChannelFragment = gql`
+const contentChannelFragment = `
   fragment ContentChannelFragment on ContentChannel {
     id
     __typename
@@ -42,7 +42,7 @@ describe('ContentChannel', () => {
   });
 
   it('gets a list of content channels', async () => {
-    const query = gql`
+    const query = `
       query {
         contentChannels {
           ...ContentChannelFragment
@@ -56,7 +56,7 @@ describe('ContentChannel', () => {
   });
 
   it('gets a single content channel when querying by root node', async () => {
-    const query = gql`
+    const query = `
       query {
         node(
           id: "${createGlobalId(1, 'ContentChannel')}"

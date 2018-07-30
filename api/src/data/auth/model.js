@@ -48,7 +48,7 @@ export default class AuthModel extends RockModel {
       const cookie = response.headers.get('set-cookie');
       return cookie;
     } catch (err) {
-      throw AuthenticationError('Invalid Credentials');
+      throw new AuthenticationError('Invalid Credentials');
     }
   };
 

@@ -1,9 +1,9 @@
 import { graphql } from 'graphql';
 import fetch from 'isomorphic-fetch';
-import { makeExecutableSchema, gql } from 'apollo-server';
+import { makeExecutableSchema } from 'apollo-server';
 
 import { createGlobalId } from '../../node/model';
-import { getContext } from '../../../';
+import getContext from '../../../getContext';
 // we import the root-level schema and resolver so we test the entire integration:
 import { schema as typeDefs, resolvers } from '../../';
 
@@ -18,7 +18,7 @@ describe('Person', () => {
   });
 
   it('gets people by an email', async () => {
-    const query = gql`
+    const query = `
       query {
         people(email: "isaac.hardy@newspring.cc") {
           id
@@ -39,7 +39,7 @@ describe('Person', () => {
   });
 
   it('gets a single person when querying by root node', async () => {
-    const query = gql`
+    const query = `
       query {
         node(
           id: "${createGlobalId(51, 'Person')}"
