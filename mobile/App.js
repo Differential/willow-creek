@@ -1,7 +1,6 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { Sentry } from 'react-native-sentry';
-import SplashScreen from 'react-native-splash-screen';
 
 import Providers from 'Providers';
 import ContentSingle from 'content-single';
@@ -34,18 +33,10 @@ const AppModalNavigator = createStackNavigator(
   }
 );
 
-class App extends PureComponent {
-  componentDidMount() {
-    SplashScreen.hide();
-  }
-
-  render() {
-    return (
-      <Providers>
-        <AppModalNavigator />
-      </Providers>
-    );
-  }
-}
+const App = () => (
+  <Providers>
+    <AppModalNavigator />
+  </Providers>
+);
 
 export default App;

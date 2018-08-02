@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
+import SplashScreen from 'react-native-splash-screen';
 
 import httpLink from './httpLink';
 import clientStateLink from './clientStateLink';
@@ -29,7 +30,13 @@ class ClientProvider extends PureComponent {
   };
 
   async componentDidMount() {
-    await ensureCacheHydration;
+    try {
+      await ensureCacheHydration;
+    } catch (e) {
+      throw e;
+    } finally {
+      if (SplashScreen && SplashScreen.hide) SplashScreen.hide();
+    }
   }
 
   render() {
