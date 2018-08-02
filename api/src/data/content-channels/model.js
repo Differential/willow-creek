@@ -10,9 +10,11 @@ export default class ContentChannel extends RockModel {
 
   getRootChannels = () =>
     this.request()
+      .filter('Id eq 2')
       .filter('Id eq 3')
       .filter('Id eq 4')
       .filter('Id eq 6')
+      .filter('Id eq 8')
       .get();
 
   getFromId = (id) =>

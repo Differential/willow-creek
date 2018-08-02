@@ -3,7 +3,7 @@
 exports[`ContentItemsModel filters by content channel id 1`] = `
 Array [
   Array [
-    "https://apollosrock.newspring.cc/api/ContentChannelItems?loadAttributes=expanded&%24filter=ContentChannelId%20eq%201",
+    "https://apollosrock.newspring.cc/api/ContentChannelItems?loadAttributes=expanded&%24filter=ContentChannelId%20eq%201&%24orderby=StartDateTime%20desc",
     Object {
       "headers": Object {
         "Authorization-Token": "some-rock-token",

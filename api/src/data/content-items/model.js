@@ -53,7 +53,9 @@ export default class ContentItem extends RockModel {
       .orderBy('StartDateTime', 'desc');
 
   byContentChannelId = (id) =>
-    this.request().filter(`ContentChannelId eq ${id}`);
+    this.request()
+      .filter(`ContentChannelId eq ${id}`)
+      .orderBy('StartDateTime', 'desc');
 
   getFromId = (id) =>
     this.request()
