@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 
-import styled from 'ui/styled';
+import styled from '/mobile/ui/styled';
 
 const ButtonLink = styled(
   ({ theme }) => ({

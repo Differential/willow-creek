@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { createStackNavigator } from 'react-navigation';
 
-import Providers from 'Providers';
+import Providers from '/mobile/Providers';
 
 import Discover from './Discover';
 import getContentChannels from './getContentChannels.graphql';

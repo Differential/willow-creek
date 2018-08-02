@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import FlexedView from 'ui/FlexedView';
+import FlexedView from '/mobile/ui/FlexedView';
 
 import Avatar from '.';
 

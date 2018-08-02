@@ -3,9 +3,9 @@ import { compose, setDisplayName, pure } from 'recompose';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
 
-import styled from 'ui/styled';
-import { withThemeMixin } from 'ui/theme';
-import { BodyText } from 'ui/typography';
+import styled from '/mobile/ui/styled';
+import { withThemeMixin } from '/mobile/ui/theme';
+import { BodyText } from '/mobile/ui/typography';
 
 const Block = compose(
   setDisplayName('BlockQuote'),

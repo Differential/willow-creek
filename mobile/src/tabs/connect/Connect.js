@@ -2,12 +2,17 @@ import React, { PureComponent } from 'react';
 import { ScrollView } from 'react-native';
 import { Query } from 'react-apollo';
 
-import { LoginButton } from 'auth';
-import BackgroundView from 'ui/BackgroundView';
-import TableView, { Cell, CellIcon, CellText, Divider } from 'ui/TableView';
-import { WebBrowserConsumer } from 'ui/WebBrowser';
-import Touchable from 'ui/Touchable';
-import UserAvatarView from 'ui/UserAvatarView';
+import { LoginButton } from '/mobile/auth';
+import BackgroundView from '/mobile/ui/BackgroundView';
+import TableView, {
+  Cell,
+  CellIcon,
+  CellText,
+  Divider,
+} from '/mobile/ui/TableView';
+import { WebBrowserConsumer } from '/mobile/ui/WebBrowser';
+import Touchable from '/mobile/ui/Touchable';
+import UserAvatarView from '/mobile/ui/UserAvatarView';
 
 import getLoginState from './getLoginState.graphql';
 import getUserProfile from './getUserProfile.graphql';

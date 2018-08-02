@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
+import Providers from '/mobile/Providers';
 
 import LiveNowButton from './LiveButton';
 import getLiveStream from './getLiveStream.graphql';

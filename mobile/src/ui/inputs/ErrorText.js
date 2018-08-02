@@ -1,5 +1,5 @@
-import { H6 } from 'ui/typography';
-import styled from 'ui/styled';
+import { H6 } from '/mobile/ui/typography';
+import styled from '/mobile/ui/styled';
 
 const ErrorText = styled(({ theme }) => ({
   color: theme.colors.alert,

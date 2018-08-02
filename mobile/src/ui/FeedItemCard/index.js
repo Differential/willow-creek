@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
-import { withThemeMixin, withTheme } from 'ui/theme';
-// import Icon from 'ui/Icon';
-import ChannelLabel from 'ui/ChannelLabel';
-import GradientOverlayImage from 'ui/GradientOverlayImage';
-import Card, { CardContent, CardActions } from 'ui/Card';
-import { H3 } from 'ui/typography';
-// import ConnectedImage from 'ui/ConnectedImage';
-// import ProgressiveImage from 'ui/ProgressiveImage';
+import { withThemeMixin, withTheme } from '/mobile/ui/theme';
+// import Icon from '/mobile/ui/Icon';
+import ChannelLabel from '/mobile/ui/ChannelLabel';
+import GradientOverlayImage from '/mobile/ui/GradientOverlayImage';
+import Card, { CardContent, CardActions } from '/mobile/ui/Card';
+import { H3 } from '/mobile/ui/typography';
+// import ConnectedImage from '/mobile/ui/ConnectedImage';
+// import ProgressiveImage from '/mobile/ui/ProgressiveImage';
 
 // import LikeButton from './LikeButton';
 

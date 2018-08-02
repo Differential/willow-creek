@@ -2,9 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import styled from 'ui/styled';
-import CardTile from 'ui/CardTile';
-import TileImage from 'ui/TileImage';
+import styled from '/mobile/ui/styled';
+import CardTile from '/mobile/ui/CardTile';
+import TileImage from '/mobile/ui/TileImage';
 
 import HorizontalTileFeed from '.';
 

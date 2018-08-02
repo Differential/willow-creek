@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View } from 'react-native';
 
-import styled from 'ui/styled';
+import styled from '/mobile/ui/styled';
 
 import TileImage from '.';
 

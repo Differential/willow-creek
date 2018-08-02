@@ -2,11 +2,11 @@ import React from 'react';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 
-import PaddedView from 'ui/PaddedView';
-import { H4 } from 'ui/typography';
-import HorizontalTileFeed from 'ui/HorizontalTileFeed';
-import styled from 'ui/styled';
-import { ButtonLink } from 'ui/Button';
+import PaddedView from '/mobile/ui/PaddedView';
+import { H4 } from '/mobile/ui/typography';
+import HorizontalTileFeed from '/mobile/ui/HorizontalTileFeed';
+import styled from '/mobile/ui/styled';
+import { ButtonLink } from '/mobile/ui/Button';
 
 import TileImageItem from './TileImageItem';
 

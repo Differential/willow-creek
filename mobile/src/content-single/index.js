@@ -4,15 +4,15 @@ import { ScrollView, TouchableWithoutFeedback } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { ErrorCard } from 'ui/Card';
-import CardTile from 'ui/CardTile';
-import GradientOverlayImage from 'ui/GradientOverlayImage';
-import HorizontalTileFeed from 'ui/HorizontalTileFeed';
-import HTMLView from 'ui/HTMLView';
-import PaddedView from 'ui/PaddedView';
-import { H2 } from 'ui/typography';
-import BackgroundView from 'ui/BackgroundView';
-import styled from 'ui/styled';
+import { ErrorCard } from '/mobile/ui/Card';
+import CardTile from '/mobile/ui/CardTile';
+import GradientOverlayImage from '/mobile/ui/GradientOverlayImage';
+import HorizontalTileFeed from '/mobile/ui/HorizontalTileFeed';
+import HTMLView from '/mobile/ui/HTMLView';
+import PaddedView from '/mobile/ui/PaddedView';
+import { H2 } from '/mobile/ui/typography';
+import BackgroundView from '/mobile/ui/BackgroundView';
+import styled from '/mobile/ui/styled';
 
 import getContentItem from './getContentItem.graphql';
 import getContentItemMinimalState from './getContentItemMinimalState.graphql';

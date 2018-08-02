@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, StyleSheet, View, Picker as NativePicker } from 'react-native';
 
-import styled from 'ui/styled';
-import { ButtonLink } from 'ui/Button';
+import styled from '/mobile/ui/styled';
+import { ButtonLink } from '/mobile/ui/Button';
 
 const StyledPicker = styled(
   ({ theme }) => ({

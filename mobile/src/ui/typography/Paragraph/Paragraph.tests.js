@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
+import Providers from '/mobile/Providers';
 
 import Paragraph from '.';
 

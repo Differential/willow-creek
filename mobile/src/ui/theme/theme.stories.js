@@ -2,8 +2,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import FlexedView from 'ui/FlexedView';
-import { H3, H6, BodyText } from 'ui/typography';
+import FlexedView from '/mobile/ui/FlexedView';
+import { H3, H6, BodyText } from '/mobile/ui/typography';
 
 import { ThemeProvider, ThemeMixin, withThemeMixin } from './';
 

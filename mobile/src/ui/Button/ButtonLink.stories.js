@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import { BodyText } from 'ui/typography';
+import { BodyText } from '/mobile/ui/typography';
 
 import ButtonLink from './ButtonLink';
 

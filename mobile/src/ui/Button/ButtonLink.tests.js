@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
-import { BodyText } from 'ui/typography';
+import Providers from '/mobile/Providers';
+import { BodyText } from '/mobile/ui/typography';
 
 import ButtonLink from './ButtonLink';
 

@@ -4,10 +4,10 @@ import { View } from 'react-native';
 import { get } from 'lodash';
 import { compose, pure } from 'recompose';
 
-import ConnectedImage from 'ui/ConnectedImage';
-import styled from 'ui/styled';
-import { withTheme } from 'ui/theme';
-import ActivityIndicator from 'ui/ActivityIndicator';
+import ConnectedImage from '/mobile/ui/ConnectedImage';
+import styled from '/mobile/ui/styled';
+import { withTheme } from '/mobile/ui/theme';
+import ActivityIndicator from '/mobile/ui/ActivityIndicator';
 
 export { default as AvatarList } from './List';
 

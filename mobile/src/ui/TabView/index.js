@@ -4,7 +4,7 @@ import { TabView as RNTabView, SceneMap } from 'react-native-tab-view';
 import { branch, compose, withProps, withState } from 'recompose';
 import isFunction from 'lodash/isFunction';
 
-import styled from 'ui/styled';
+import styled from '/mobile/ui/styled';
 
 import TabBar from './TabBar';
 

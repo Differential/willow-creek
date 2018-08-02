@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
-import Icon from 'ui/Icon';
+import Providers from '/mobile/Providers';
+import Icon from '/mobile/ui/Icon';
 
 import Text from '.';
 

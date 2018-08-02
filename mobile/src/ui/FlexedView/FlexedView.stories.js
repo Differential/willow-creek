@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import { H1 } from 'ui/typography';
-import styled from 'ui/styled';
+import { H1 } from '/mobile/ui/typography';
+import styled from '/mobile/ui/styled';
 
 import FlexedView from '.';
 

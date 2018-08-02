@@ -40,6 +40,7 @@ module.exports = {
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 2,
     'import/prefer-default-export': 2,
+    'import/no-absolute-path': 0,
     'import/order': [
       'error',
       {
@@ -51,7 +52,7 @@ module.exports = {
           'sibling',
           'index',
         ],
-        'newlines-between': 'always',
+        'newlines-between': 'ignore', // off until https://github.com/benmosher/eslint-plugin-import/issues/512 is fixed
       },
     ],
     'jsx-a11y/anchor-is-valid': 0,

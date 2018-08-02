@@ -1,6 +1,6 @@
 import { View, StyleSheet } from 'react-native';
 
-import styled from 'ui/styled';
+import styled from '/mobile/ui/styled';
 
 const Divider = styled(({ theme }) => ({
   height: StyleSheet.hairlineWidth,

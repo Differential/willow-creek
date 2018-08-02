@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
 import moment from 'moment';
 
-import Placeholder from 'ui/Placeholder';
-import { withIsLoading } from 'ui/isLoading';
-import { withTheme, withThemeMixin } from 'ui/theme';
-import styled from 'ui/styled';
-import { H3, H5, H6 } from 'ui/typography';
-import { CardContent, CardActions } from 'ui/Card';
-import ChannelLabel from 'ui/ChannelLabel';
+import Placeholder from '/mobile/ui/Placeholder';
+import { withIsLoading } from '/mobile/ui/isLoading';
+import { withTheme, withThemeMixin } from '/mobile/ui/theme';
+import styled from '/mobile/ui/styled';
+import { H3, H5, H6 } from '/mobile/ui/typography';
+import { CardContent, CardActions } from '/mobile/ui/Card';
+import ChannelLabel from '/mobile/ui/ChannelLabel';
 
 const enhance = compose(
   withIsLoading,

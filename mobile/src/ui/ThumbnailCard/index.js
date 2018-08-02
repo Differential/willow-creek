@@ -4,14 +4,14 @@ import { TouchableWithoutFeedback } from 'react-native';
 import { compose, pure } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
-import { withIsLoading } from 'ui/isLoading';
-import styled from 'ui/styled';
-import Card, { CardContent } from 'ui/Card';
-import SideBySideView from 'ui/SideBySideView';
-import FlexedView from 'ui/FlexedView';
-import { H5, BodyText, Paragraph } from 'ui/typography';
-import { enhancer as mediaQuery } from 'ui/MediaQuery';
-import ChannelLabel from 'ui/ChannelLabel';
+import { withIsLoading } from '/mobile/ui/isLoading';
+import styled from '/mobile/ui/styled';
+import Card, { CardContent } from '/mobile/ui/Card';
+import SideBySideView from '/mobile/ui/SideBySideView';
+import FlexedView from '/mobile/ui/FlexedView';
+import { H5, BodyText, Paragraph } from '/mobile/ui/typography';
+import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
+import ChannelLabel from '/mobile/ui/ChannelLabel';
 
 import Thumbnail from './Thumbnail';
 

@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import styled from 'ui/styled';
-import { H6 } from 'ui/typography';
-import Icon from 'ui/Icon';
+import styled from '/mobile/ui/styled';
+import { H6 } from '/mobile/ui/typography';
+import Icon from '/mobile/ui/Icon';
 
 import FloatingLabel from '../FloatingLabel';
 import InputUnderline from '../InputUnderline';

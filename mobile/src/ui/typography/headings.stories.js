@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import { withIsLoading } from 'ui/isLoading';
+import { withIsLoading } from '/mobile/ui/isLoading';
 
 import { H1, H2, H3, H4, H5, H6 } from '.';
 

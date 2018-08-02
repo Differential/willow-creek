@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import Placeholder from 'rn-placeholder';
 
-import styled from 'ui/styled';
+import styled from '/mobile/ui/styled';
 
 const SkeletonImage = styled(({ theme }) => ({
   width: '100%',

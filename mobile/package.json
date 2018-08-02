@@ -70,6 +70,9 @@
     "testMatch": ["<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"],
     "modulePaths": ["<rootDir>/src/"],
     "setupFiles": ["./jest.setup.js"],
+    "moduleNameMapper": {
+        "^\/api(.*)": "<rootDir>/../api/src$1"
+    },
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
     }

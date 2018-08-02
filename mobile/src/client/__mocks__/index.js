@@ -4,7 +4,10 @@ import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 import { SchemaLink } from 'apollo-link-schema';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import { schema as typeDefs } from '../../../../api/src/data';
+// App refers to '../../../../api/src'
+// See config in .babelrc
+// eslint-disable-next-line import/no-absolute-path
+import { schema as typeDefs } from '/api/data';
 
 export default MockedProvider;
 

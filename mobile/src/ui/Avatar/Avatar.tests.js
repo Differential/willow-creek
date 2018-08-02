@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ThemeProvider } from 'ui/theme';
+import { ThemeProvider } from '/mobile/ui/theme';
 
 import Avatar from '.';
 

@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 
-import styled from 'ui/styled';
-import ConnectedImage from 'ui/ConnectedImage';
+import styled from '/mobile/ui/styled';
+import ConnectedImage from '/mobile/ui/ConnectedImage';
 
 const Wrapper = styled(({ theme }) => ({
   width: '100%',

@@ -1,5 +1,5 @@
-import { H5 } from 'ui/typography';
-import styled from 'ui/styled';
+import { H5 } from '/mobile/ui/typography';
+import styled from '/mobile/ui/styled';
 
 const CellText = styled(({ theme }) => ({
   flexGrow: 1,

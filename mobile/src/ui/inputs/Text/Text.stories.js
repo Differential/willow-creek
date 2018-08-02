@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import Icon from 'ui/Icon';
-import FlexedView from 'ui/FlexedView';
+import Icon from '/mobile/ui/Icon';
+import FlexedView from '/mobile/ui/FlexedView';
 
 import Text from '.';
 

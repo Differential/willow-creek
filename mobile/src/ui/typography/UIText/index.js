@@ -2,8 +2,8 @@ import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, setDisplayName, pure } from 'recompose';
 
-import styled from 'ui/styled';
-import { withPlaceholder, Typography } from 'ui/Placeholder';
+import styled from '/mobile/ui/styled';
+import { withPlaceholder, Typography } from '/mobile/ui/Placeholder';
 
 const UIText = compose(
   setDisplayName('UIText'),

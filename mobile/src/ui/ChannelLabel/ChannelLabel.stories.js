@@ -2,8 +2,8 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import CenteredView from 'ui/CenteredView';
-import styled from 'ui/styled';
+import CenteredView from '/mobile/ui/CenteredView';
+import styled from '/mobile/ui/styled';
 
 import ChannelLabel from '.';
 

@@ -2,8 +2,8 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import TileImage from 'ui/TileImage';
-import styled from 'ui/styled';
+import TileImage from '/mobile/ui/TileImage';
+import styled from '/mobile/ui/styled';
 
 const Container = styled(({ theme }) => ({
   flex: 1,

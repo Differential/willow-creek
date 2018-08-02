@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { ScrollView } from 'react-native';
 
-import { BodyText } from 'ui/typography';
-import PaddedView from 'ui/PaddedView';
+import { BodyText } from '/mobile/ui/typography';
+import PaddedView from '/mobile/ui/PaddedView';
 
 import Paragraph from '.';
 

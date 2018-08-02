@@ -3,7 +3,7 @@ import React from 'react';
 import { compose, pure } from 'recompose';
 import { flow, camelCase, upperFirst, kebabCase } from 'lodash';
 
-import Placeholder from 'ui/Placeholder';
+import Placeholder from '/mobile/ui/Placeholder';
 
 import * as Icons from './icons';
 

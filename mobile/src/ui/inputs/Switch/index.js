@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
 import { Platform, Switch, View } from 'react-native';
 
-import { withTheme } from 'ui/theme';
-import FlexedView from 'ui/FlexedView';
-import styled from 'ui/styled';
-import Touchable from 'ui/Touchable';
+import { withTheme } from '/mobile/ui/theme';
+import FlexedView from '/mobile/ui/FlexedView';
+import styled from '/mobile/ui/styled';
+import Touchable from '/mobile/ui/Touchable';
 
 import InputAddon, { AddonRow } from '../InputAddon';
 import { LabelText } from '../FloatingLabel';

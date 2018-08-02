@@ -5,8 +5,8 @@ import { View } from 'react-native';
 import {
   withPlaceholder,
   Paragraph as ParagraphPlaceholder,
-} from 'ui/Placeholder';
-import styled from 'ui/styled';
+} from '/mobile/ui/Placeholder';
+import styled from '/mobile/ui/styled';
 
 const Paragraph = compose(
   setDisplayName('Paragraph'),

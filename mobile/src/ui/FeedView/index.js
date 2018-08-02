@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { pure, compose, branch, withProps, defaultProps } from 'recompose';
 import { get } from 'lodash';
 
-import FeedItemCard from 'ui/FeedItemCard';
-import { enhancer as mediaQuery } from 'ui/MediaQuery';
-import { withTheme } from 'ui/theme';
-import { ErrorCard } from 'ui/Card';
+import FeedItemCard from '/mobile/ui/FeedItemCard';
+import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
+import { withTheme } from '/mobile/ui/theme';
+import { ErrorCard } from '/mobile/ui/Card';
 
 const StyledFlatList = compose(
   withTheme(({ theme: { helpers: { verticalRhythm } } } = {}) => ({

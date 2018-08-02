@@ -3,9 +3,9 @@ import React from 'react';
 import { Platform, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { withIsLoading } from 'ui/isLoading';
-import styled from 'ui/styled';
-import { enhancer as mediaQuery } from 'ui/MediaQuery';
+import { withIsLoading } from '/mobile/ui/isLoading';
+import styled from '/mobile/ui/styled';
+import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
 
 const StyledCard = compose(
   withIsLoading,

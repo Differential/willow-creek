@@ -2,12 +2,12 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 
-import { UIText } from 'ui/typography';
-import Card, { CardContent } from 'ui/Card';
-import Touchable from 'ui/Touchable';
-import styled from 'ui/styled';
-import ChannelLabel from 'ui/ChannelLabel';
-import { WebBrowserConsumer } from 'ui/WebBrowser';
+import { UIText } from '/mobile/ui/typography';
+import Card, { CardContent } from '/mobile/ui/Card';
+import Touchable from '/mobile/ui/Touchable';
+import styled from '/mobile/ui/styled';
+import ChannelLabel from '/mobile/ui/ChannelLabel';
+import { WebBrowserConsumer } from '/mobile/ui/WebBrowser';
 
 import getLiveStream from './getLiveStream.graphql';
 

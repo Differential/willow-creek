@@ -13,9 +13,9 @@ import {
   Paragraph,
   BlockQuote,
   BulletListItem,
-} from 'ui/typography';
-import { ButtonLink } from 'ui/Button';
-import ConnectedImage from 'ui/ConnectedImage';
+} from '/mobile/ui/typography';
+import { ButtonLink } from '/mobile/ui/Button';
+import ConnectedImage from '/mobile/ui/ConnectedImage';
 
 const LINE_BREAK = '\n';
 const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyText, ButtonLink];

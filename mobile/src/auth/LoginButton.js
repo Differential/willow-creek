@@ -4,9 +4,9 @@ import gql from 'graphql-tag';
 import { Query, Mutation } from 'react-apollo';
 import PropTypes from 'prop-types';
 
-import { ButtonLink } from 'ui/Button';
-import styled from 'ui/styled';
-import ActivityIndicator from 'ui/ActivityIndicator';
+import { ButtonLink } from '/mobile/ui/Button';
+import styled from '/mobile/ui/styled';
+import ActivityIndicator from '/mobile/ui/ActivityIndicator';
 
 import logout from './logout.graphql';
 

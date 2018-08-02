@@ -1,4 +1,4 @@
-import styled from 'ui/styled';
+import styled from '/mobile/ui/styled';
 
 export const baseStyle = ({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 4,

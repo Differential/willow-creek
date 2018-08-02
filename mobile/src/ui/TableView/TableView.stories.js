@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import FlexedView from 'ui/FlexedView';
-import Icon from 'ui/Icon';
-import { Switch } from 'ui/inputs';
+import FlexedView from '/mobile/ui/FlexedView';
+import Icon from '/mobile/ui/Icon';
+import { Switch } from '/mobile/ui/inputs';
 
 import TableView, { Cell, CellText, Divider } from '.';
 

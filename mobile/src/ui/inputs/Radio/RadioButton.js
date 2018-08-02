@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { compose, getContext } from 'recompose';
 import isString from 'lodash/isString';
 
-import { H6 } from 'ui/typography';
-import styled from 'ui/styled';
+import { H6 } from '/mobile/ui/typography';
+import styled from '/mobile/ui/styled';
 
 import RadioButtonIndicator from './RadioButtonIndicator';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'ui/styled';
-import { H4, H6 } from 'ui/typography';
-import Card, { CardContent } from 'ui/Card';
+import styled from '/mobile/ui/styled';
+import { H4, H6 } from '/mobile/ui/typography';
+import Card, { CardContent } from '/mobile/ui/Card';
 
 const Header = styled({ textAlign: 'center' }, 'Error.Header')(H4);
 const ErrorText = styled({ textAlign: 'center' }, 'Error.Text')(H6);

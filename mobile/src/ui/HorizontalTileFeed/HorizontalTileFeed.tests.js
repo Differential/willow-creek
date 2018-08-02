@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
-import CardTile from 'ui/CardTile';
+import Providers from '/mobile/Providers';
+import CardTile from '/mobile/ui/CardTile';
 
 import HorizontalTileFeed from '.';
 

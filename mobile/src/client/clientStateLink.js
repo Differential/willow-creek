@@ -1,6 +1,6 @@
 import { withClientState } from 'apollo-link-state';
 
-import { resolvers, defaults, schema } from 'store';
+import { resolvers, defaults, schema } from '/mobile/store';
 
 import cache from './cache';
 

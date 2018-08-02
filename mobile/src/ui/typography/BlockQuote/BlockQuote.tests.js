@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
-import { H5 } from 'ui/typography';
-import { withIsLoading } from 'ui/isLoading';
+import Providers from '/mobile/Providers';
+import { H5 } from '/mobile/ui/typography';
+import { withIsLoading } from '/mobile/ui/isLoading';
 
 import BlockQuote from '.';
 

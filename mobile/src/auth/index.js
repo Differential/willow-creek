@@ -2,13 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { View, SafeAreaView } from 'react-native';
 
-import { withTheme } from 'ui/theme';
-import FlexedView from 'ui/FlexedView';
-import TabView, { SceneMap } from 'ui/TabView';
-import { H1, H5 } from 'ui/typography';
-import styled from 'ui/styled';
-import Icon from 'ui/Icon';
-import { ButtonLink } from 'ui/Button';
+import { withTheme } from '/mobile/ui/theme';
+import FlexedView from '/mobile/ui/FlexedView';
+import TabView, { SceneMap } from '/mobile/ui/TabView';
+import { H1, H5 } from '/mobile/ui/typography';
+import styled from '/mobile/ui/styled';
+import Icon from '/mobile/ui/Icon';
+import { ButtonLink } from '/mobile/ui/Button';
 
 import LoginForm from './login';
 import SignUpForm from './signup';

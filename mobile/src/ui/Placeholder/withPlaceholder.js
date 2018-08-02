@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getIsLoading } from 'ui/isLoading';
+import { getIsLoading } from '/mobile/ui/isLoading';
 
 import { Line } from '.';
 

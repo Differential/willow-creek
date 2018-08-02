@@ -2,7 +2,7 @@ import React from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import styled from 'ui/styled';
+import styled from '/mobile/ui/styled';
 
 const FocusedUnderline = styled(
   ({ theme, hasError }) => ({

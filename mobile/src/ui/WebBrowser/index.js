@@ -2,7 +2,7 @@
 import { Platform } from 'react-native';
 import { createContext } from 'react';
 
-import { withTheme } from 'ui/theme';
+import { withTheme } from '/mobile/ui/theme';
 
 import Browser from './Browser';
 

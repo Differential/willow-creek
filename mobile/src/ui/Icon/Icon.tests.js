@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { kebabCase } from 'lodash';
 
-import Providers from 'Providers';
+import Providers from '/mobile/Providers';
 
 import * as icons from './icons';
 

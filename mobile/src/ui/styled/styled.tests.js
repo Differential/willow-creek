@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { compose } from 'recompose';
 import { View } from 'react-native';
 
-import Providers from 'Providers';
+import Providers from '/mobile/Providers';
 
 import styled from '.';
 

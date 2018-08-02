@@ -1,7 +1,7 @@
 import 'isomorphic-fetch';
 import fetch from 'jest-fetch-mock';
 
-import { Constants } from '../src/connectors/rock';
+import { Constants } from '/api/connectors/rock';
 
 import * as rockMocks from './rock-api-mocks';
 

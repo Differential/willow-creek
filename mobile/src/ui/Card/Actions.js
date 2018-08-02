@@ -1,5 +1,5 @@
-import PaddedView from 'ui/PaddedView';
-import styled from 'ui/styled';
+import PaddedView from '/mobile/ui/PaddedView';
+import styled from '/mobile/ui/styled';
 
 const Actions = styled(
   ({ theme }) => ({

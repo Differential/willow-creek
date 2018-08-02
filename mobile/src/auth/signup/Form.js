@@ -3,11 +3,11 @@ import { View, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import FlexedView from 'ui/FlexedView';
-import PaddedView from 'ui/PaddedView';
-import { Text as TextInput } from 'ui/inputs';
-import Button from 'ui/Button';
-import styled from 'ui/styled';
+import FlexedView from '/mobile/ui/FlexedView';
+import PaddedView from '/mobile/ui/PaddedView';
+import { Text as TextInput } from '/mobile/ui/inputs';
+import Button from '/mobile/ui/Button';
+import styled from '/mobile/ui/styled';
 
 const BottomSafeAreaView = styled({
   position: 'absolute',

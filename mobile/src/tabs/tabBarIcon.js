@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from 'ui/Icon';
+import Icon from '/mobile/ui/Icon';
 
 const tabBarIcon = (name) => {
   function TabBarIcon({ tintColor }) {

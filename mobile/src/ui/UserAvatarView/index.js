@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
-import Avatar from 'ui/Avatar';
-import { withTheme } from 'ui/theme';
-import { H4, BodyText } from 'ui/typography';
-import PaddedView from 'ui/PaddedView';
-import ConnectedImage from 'ui/ConnectedImage';
-import Touchable from 'ui/Touchable';
-import styled from 'ui/styled';
+import Avatar from '/mobile/ui/Avatar';
+import { withTheme } from '/mobile/ui/theme';
+import { H4, BodyText } from '/mobile/ui/typography';
+import PaddedView from '/mobile/ui/PaddedView';
+import ConnectedImage from '/mobile/ui/ConnectedImage';
+import Touchable from '/mobile/ui/Touchable';
+import styled from '/mobile/ui/styled';
 
 const Container = styled({
   alignItems: 'center',

@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet } from 'react-native';
 
-import { H6 } from 'ui/typography';
-import styled from 'ui/styled';
+import { H6 } from '/mobile/ui/typography';
+import styled from '/mobile/ui/styled';
 
 export const LabelText = styled(
   ({ theme }) => ({

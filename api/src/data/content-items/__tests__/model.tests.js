@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
+import RockConnector from '/api/connectors/rock';
 import ContentItemsModel from '../model';
-import RockConnector from '../../../connectors/rock';
 
 describe('ContentItemsModel', () => {
   let context;

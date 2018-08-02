@@ -1,8 +1,8 @@
 import { View } from 'react-native';
 import { compose, renderComponent } from 'recompose';
 
-import styled from 'ui/styled';
-import { enhancer as mediaQuery } from 'ui/MediaQuery';
+import styled from '/mobile/ui/styled';
+import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
 
 export { default as Right } from './Right';
 export { default as Left } from './Left';

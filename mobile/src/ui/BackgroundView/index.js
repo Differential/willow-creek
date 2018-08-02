@@ -1,8 +1,8 @@
 import LinearGradient from 'react-native-linear-gradient';
 import { compose } from 'recompose';
 
-import styled from 'ui/styled';
-import { withTheme } from 'ui/theme';
+import styled from '/mobile/ui/styled';
+import { withTheme } from '/mobile/ui/theme';
 
 const BackgroundView = compose(
   withTheme(({ theme }) => ({

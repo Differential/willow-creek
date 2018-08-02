@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 
-import { withTheme } from 'ui/theme';
+import { withTheme } from '/mobile/ui/theme';
 
 import TileFeed from './TileFeed';
 

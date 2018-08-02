@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
-import { withIsLoading } from 'ui/isLoading';
-import { H5 } from 'ui/typography';
+import Providers from '/mobile/Providers';
+import { withIsLoading } from '/mobile/ui/isLoading';
+import { H5 } from '/mobile/ui/typography';
 
 import BulletListItem from '.';
 

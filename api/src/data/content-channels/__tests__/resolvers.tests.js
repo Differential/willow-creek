@@ -1,11 +1,11 @@
 import { graphql } from 'graphql';
 import fetch from 'isomorphic-fetch';
 import { makeExecutableSchema } from 'apollo-server';
-
-import { createGlobalId } from '../../node/model';
-import getContext from '../../../getContext';
+import getContext from '/api/getContext';
 // we import the root-level schema and resolver so we test the entire integration:
-import { schema as typeDefs, resolvers } from '../../';
+import { schema as typeDefs, resolvers } from '/api/data';
+
+import { createGlobalId } from '/api/data/node/model';
 
 const contentChannelFragment = `
   fragment ContentChannelFragment on ContentChannel {

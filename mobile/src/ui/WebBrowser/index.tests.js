@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 // TODO: how to include test for Android?
 
-import Providers from 'Providers';
+import Providers from '/mobile/Providers';
 
 import { WebBrowserConsumer } from '.';
 

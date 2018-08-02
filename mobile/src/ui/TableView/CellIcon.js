@@ -1,6 +1,6 @@
 import { defaultProps } from 'recompose';
 
-import Icon from 'ui/Icon';
+import Icon from '/mobile/ui/Icon';
 
 const CellIcon = defaultProps({
   size: 20,

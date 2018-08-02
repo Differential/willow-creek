@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
 import { kebabCase } from 'lodash';
 
-import { withIsLoading } from 'ui/isLoading';
-import { withTheme } from 'ui/theme';
-import styled from 'ui/styled';
-import { H6 } from 'ui/typography';
-import Icon from 'ui/Icon';
-import * as Icons from 'ui/Icon/icons';
+import { withIsLoading } from '/mobile/ui/isLoading';
+import { withTheme } from '/mobile/ui/theme';
+import styled from '/mobile/ui/styled';
+import { H6 } from '/mobile/ui/typography';
+import Icon from '/mobile/ui/Icon';
+import * as Icons from '/mobile/ui/Icon/icons';
 
 const enhance = compose(withIsLoading, pure, withTheme());
 

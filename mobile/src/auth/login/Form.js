@@ -3,12 +3,12 @@ import { View, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { WebBrowserConsumer } from 'ui/WebBrowser';
-import FlexedView from 'ui/FlexedView';
-import PaddedView from 'ui/PaddedView';
-import { Text as TextInput } from 'ui/inputs';
-import Button, { ButtonLink } from 'ui/Button';
-import styled from 'ui/styled';
+import { WebBrowserConsumer } from '/mobile/ui/WebBrowser';
+import FlexedView from '/mobile/ui/FlexedView';
+import PaddedView from '/mobile/ui/PaddedView';
+import { Text as TextInput } from '/mobile/ui/inputs';
+import Button, { ButtonLink } from '/mobile/ui/Button';
+import styled from '/mobile/ui/styled';
 
 const BottomSafeAreaView = styled({
   position: 'absolute',

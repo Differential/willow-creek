@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
-import { H3, H6, BodyText, Paragraph } from 'ui/typography';
-import Button, { ButtonLink } from 'ui/Button';
+import Providers from '/mobile/Providers';
+import { H3, H6, BodyText, Paragraph } from '/mobile/ui/typography';
+import Button, { ButtonLink } from '/mobile/ui/Button';
 
 import Card, { CardImage, CardContent, CardActions } from '.';
 

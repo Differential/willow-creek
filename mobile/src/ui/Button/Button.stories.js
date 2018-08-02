@@ -3,10 +3,10 @@ import { View } from 'react-native';
 import { nest } from 'recompose';
 import { storiesOf } from '@storybook/react-native';
 
-import FlexedView from 'ui/FlexedView';
-import { H4 } from 'ui/typography';
-import Icon from 'ui/Icon';
-import styled from 'ui/styled';
+import FlexedView from '/mobile/ui/FlexedView';
+import { H4 } from '/mobile/ui/typography';
+import Icon from '/mobile/ui/Icon';
+import styled from '/mobile/ui/styled';
 
 import Button from '.';
 

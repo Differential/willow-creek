@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
  */
 import { TouchableOpacity } from 'react-native';
 
-import { H6 } from 'ui/typography';
-import Button from 'ui/Button';
-import Icon from 'ui/Icon';
-import { withTheme } from 'ui/theme';
-import styled from 'ui/styled';
+import { H6 } from '/mobile/ui/typography';
+import Button from '/mobile/ui/Button';
+import Icon from '/mobile/ui/Icon';
+import { withTheme } from '/mobile/ui/theme';
+import styled from '/mobile/ui/styled';
 
 export { default as ChipList } from './List';
 

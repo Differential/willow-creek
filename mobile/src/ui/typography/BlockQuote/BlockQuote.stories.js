@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import { withIsLoading } from 'ui/isLoading';
-import PaddedView from 'ui/PaddedView';
+import { withIsLoading } from '/mobile/ui/isLoading';
+import PaddedView from '/mobile/ui/PaddedView';
 
 import BlockQuote from '.';
 

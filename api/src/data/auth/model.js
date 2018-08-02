@@ -2,7 +2,7 @@ import { AuthenticationError } from 'apollo-server';
 import moment from 'moment';
 import jwt from 'jsonwebtoken';
 
-import { RockModel } from '../../connectors/rock';
+import { RockModel } from '/api/connectors/rock';
 
 const secret = process.env.SECRET || 'ASea$2gadj#asd0';
 

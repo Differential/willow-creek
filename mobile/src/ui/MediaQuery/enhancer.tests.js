@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { View, Dimensions } from 'react-native';
 
-import Providers from 'Providers';
-import { breakpoints as defaultBreakPoints } from 'ui/theme/defaultTheme';
+import Providers from '/mobile/Providers';
+import { breakpoints as defaultBreakPoints } from '/mobile/ui/theme/defaultTheme';
 
 import enhancer from './enhancer';
 

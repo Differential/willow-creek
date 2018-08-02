@@ -3,10 +3,10 @@ import { TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { pure, compose } from 'recompose';
 
-import { H4 } from 'ui/typography';
-import styled from 'ui/styled';
-import { withTheme } from 'ui/theme';
-import GradientOverlayImage from 'ui/GradientOverlayImage';
+import { H4 } from '/mobile/ui/typography';
+import styled from '/mobile/ui/styled';
+import { withTheme } from '/mobile/ui/theme';
+import GradientOverlayImage from '/mobile/ui/GradientOverlayImage';
 
 const CardView = styled(
   ({ theme }) => ({

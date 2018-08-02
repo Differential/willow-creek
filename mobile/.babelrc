@@ -7,7 +7,12 @@
       "module-resolver",
       {
         "root": ["./src"],
-        "extensions": [".android.js", ".ios.js", ".js", ".graphql"]
+        "cwd": "babelrc",
+        "extensions": [".android.js", ".ios.js", ".js", ".graphql"],
+        "alias": {
+          "/api": "../api/src",
+          "/mobile": "./src"
+        }
       }
     ],
     ["import-graphql"]

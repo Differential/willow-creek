@@ -6,7 +6,7 @@ import {
   addDecorator,
 } from '@storybook/react-native';
 
-import Providers from 'Providers';
+import Providers from '/mobile/Providers';
 
 // storyLoader.js is generated on storybook start. next line disabled for CI test.
 import { loadStories } from './storyLoader'; // eslint-disable-line

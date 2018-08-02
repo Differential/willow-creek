@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from 'Providers';
+import Providers from '/mobile/Providers';
 
 import Home from './Home';
 import getUserFeed from './getUserFeed.graphql';

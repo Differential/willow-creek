@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { get } from 'lodash';
 
-import { withTheme, withThemeMixin } from 'ui/theme';
-import styled from 'ui/styled';
-import Touchable from 'ui/Touchable';
-import { H4 } from 'ui/typography';
-import { InlineActivityIndicator } from 'ui/ActivityIndicator';
-import { withPlaceholder, Line } from 'ui/Placeholder';
+import { withTheme, withThemeMixin } from '/mobile/ui/theme';
+import styled from '/mobile/ui/styled';
+import Touchable from '/mobile/ui/Touchable';
+import { H4 } from '/mobile/ui/typography';
+import { InlineActivityIndicator } from '/mobile/ui/ActivityIndicator';
+import { withPlaceholder, Line } from '/mobile/ui/Placeholder';
 
 const ButtonStyles = styled(
   ({ theme, disabled, bordered, pill }) => ({

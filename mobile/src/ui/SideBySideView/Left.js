@@ -1,8 +1,8 @@
 import { View } from 'react-native';
 import { compose } from 'recompose';
 
-import { enhancer as mediaQuery } from 'ui/MediaQuery';
-import styled from 'ui/styled';
+import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
+import styled from '/mobile/ui/styled';
 
 export default compose(
   mediaQuery(
