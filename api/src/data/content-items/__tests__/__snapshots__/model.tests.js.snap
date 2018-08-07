@@ -93,6 +93,52 @@ Array [
 ]
 `;
 
+exports[`ContentItemsModel gets a cursor finding sibling content items of a provided item 1`] = `
+Array [
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItemAssociations?%24filter=ChildContentChannelItemId%20eq%201",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItemAssociations?%24filter=%28ContentChannelItemId%20eq%20101%29%20and%20%28ChildContentChannelItemId%20ne%201%29",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+  Array [
+    "https://apollosrock.newspring.cc/api/ContentChannelItems?loadAttributes=expanded&%24filter=%28Id%20eq%201%29%20or%20%28Id%20eq%202%29&%24orderby=Order%20asc",
+    Object {
+      "headers": Object {
+        "Authorization-Token": "some-rock-token",
+        "Content-Type": "application/json",
+        "user-agent": "Apollos",
+      },
+    },
+  ],
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding sibling content items of a provided item 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
 exports[`ContentItemsModel gets by id 1`] = `
 Array [
   Object {

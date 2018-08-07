@@ -67,6 +67,21 @@ describe('ContentItemsModel', () => {
     expect(fetch.mock.calls).toMatchSnapshot();
   });
 
+  it('gets a cursor finding sibling content items of a provided item', async () => {
+    fetch.mockResponseOnce(JSON.stringify([{ ContentChannelItemId: 101 }]));
+    fetch.mockResponseOnce(
+      JSON.stringify([
+        { ContentChannelId: 201, ChildContentChannelItemId: 1 },
+        { ContentChannelId: 202, ChildContentChannelItemId: 2 },
+      ])
+    );
+    fetch.mockResponseOnce(JSON.stringify([{ Id: 1 }, { Id: 2 }]));
+    const model = new ContentItemsModel(context);
+    const cursor = await model.getCursorBySiblingContentItemId(1);
+    expect(cursor.get()).resolves.toMatchSnapshot();
+    expect(fetch.mock.calls).toMatchSnapshot();
+  });
+
   it('returns null when there are no parent content items', async () => {
     fetch.mockResponseOnce(JSON.stringify([]));
     const model = new ContentItemsModel(context);

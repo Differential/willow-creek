@@ -104,6 +104,35 @@ describe('UniversalContentItem', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it("gets a content item and it's siblings", async () => {
+    const query = `
+      query {
+        userFeed {
+          edges {
+            node {
+              ...ContentItemFragment
+              ... on UniversalContentItem {
+                siblingContentItemsConnection {
+                        edges {
+                    node {
+                      id
+                      __typename
+                    }
+                    cursor
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      ${contentItemFragment}
+    `;
+    const rootValue = {};
+    const result = await graphql(schema, query, rootValue, context);
+    expect(result).toMatchSnapshot();
+  });
+
   it('properly handles empty attribute values', async () => {
     const query = `
       query {

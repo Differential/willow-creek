@@ -26,6 +26,10 @@ export const schema = gql`
       first: Int
       after: String
     ): ContentItemsConnection
+    siblingContentItemsConnection(
+      first: Int
+      after: String
+    ): ContentItemsConnection
     parentChannel: ContentChannel
     # TODO theme: Theme
   }
@@ -39,6 +43,10 @@ export const schema = gql`
     audios: [AudioMedia]
     htmlContent: String
     childContentItemsConnection(
+      first: Int
+      after: String
+    ): ContentItemsConnection
+    siblingContentItemsConnection(
       first: Int
       after: String
     ): ContentItemsConnection
@@ -95,6 +103,12 @@ export const defaultContentItemResolvers = {
   childContentItemsConnection: async ({ id }, args, { models }) =>
     models.ContentItem.paginate({
       cursor: await models.ContentItem.getCursorByParentContentItemId(id),
+      args,
+    }),
+
+  siblingContentItemsConnection: async ({ id }, args, { models }) =>
+    models.ContentItem.paginate({
+      cursor: await models.ContentItem.getCursorBySiblingContentItemId(id),
       args,
     }),
 

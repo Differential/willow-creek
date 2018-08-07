@@ -43,6 +43,36 @@ export default class ContentItem extends RockModel {
     return request.orderBy('Order');
   };
 
+  getCursorBySiblingContentItemId = async (id) => {
+    // Get all parents for the current item.
+    const parentAssociations = await this.context.connectors.Rock.request(
+      'ContentChannelItemAssociations'
+    )
+      .filter(`ChildContentChannelItemId eq ${id}`)
+      .get();
+
+    if (!parentAssociations || !parentAssociations.length) return null;
+
+    // Now, fetch all children relations for those parents (excluding the original item)
+    const siblingAssociationsRequest = await this.context.connectors.Rock.request(
+      'ContentChannelItemAssociations'
+    );
+    parentAssociations.forEach(({ contentChannelItemId }) => {
+      siblingAssociationsRequest.filter(
+        `(ContentChannelItemId eq ${contentChannelItemId}) and (ChildContentChannelItemId ne ${id})`
+      );
+    });
+    const siblingAssociations = await siblingAssociationsRequest.get();
+    if (!siblingAssociations || !siblingAssociations.length) return null;
+
+    const request = this.request();
+    siblingAssociations.forEach(({ childContentChannelItemId }) => {
+      request.filter(`Id eq ${childContentChannelItemId}`);
+    });
+
+    return request.orderBy('Order');
+  };
+
   byUserFeed = () =>
     this.request() // TODO: load these IDs dynamically
       .filter(`ContentChannelId eq 1`)
