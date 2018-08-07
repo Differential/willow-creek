@@ -1,6 +1,6 @@
 {
   "name": "apollos-church-api",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "test": "bash ../scripts/test-script.sh",
     "lint": "./node_modules/.bin/eslint ./src --ext .js",
     "fixlint": "./node_modules/.bin/eslint ./src --ext .js --fix",
-    "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
+    "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov",
+    "release": "standard-version --release-as minor"
   },
   "engines": {
     "node": "^8.11.x"

@@ -1,6 +1,6 @@
 {
   "name": "apollos-church-app",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "devDependencies": {
     "@babel/core": "7.0.0-beta.47",
@@ -59,7 +59,8 @@
       "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
     "test": "bash ../scripts/test-script.sh",
     "watch-graphql":
-      "./node_modules/.bin/nodemon --exec \"rm -rf\" ./node_modules/.cache/babel-loader --watch src -e .graphql -q"
+      "./node_modules/.bin/nodemon --exec \"rm -rf\" ./node_modules/.cache/babel-loader --watch src -e .graphql -q",
+    "release": "standard-version --release-as minor"
   },
   "jest": {
     "preset": "react-native",
@@ -71,7 +72,7 @@
     "modulePaths": ["<rootDir>/src/"],
     "setupFiles": ["./jest.setup.js"],
     "moduleNameMapper": {
-        "^\/api(.*)": "<rootDir>/../api/src$1"
+      "^/api(.*)": "<rootDir>/../api/src$1"
     },
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
