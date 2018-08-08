@@ -22,7 +22,7 @@
         "cwd": "packagejson",
         "extensions": [".android.js", ".ios.js", ".js", ".graphql"],
         "alias": {
-          "/api": "../api/src"
+          "/api": "./src"
         }
       }
     ]
