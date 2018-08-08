@@ -16,7 +16,11 @@ const LiveCard = styled(({ theme }) => ({
 }))(Card);
 
 const LiveNowButton = () => (
-  <Query query={getLiveStream}>
+  <Query
+    query={getLiveStream}
+    fetchPolicy="cache-and-network"
+    pollInterval={60000}
+  >
     {({ loading, data }) => {
       const isLive = get(data, 'liveStream.isLiveNow', false);
 

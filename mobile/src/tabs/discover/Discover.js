@@ -34,7 +34,7 @@ class Discover extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        <Query query={getContentChannels}>
+        <Query query={getContentChannels} fetchPolicy="cache-and-network">
           {({
             error,
             loading,

@@ -97,14 +97,19 @@ class ContentSingle extends PureComponent {
         fetchPolicy="cache-only"
       >
         {({ data: cachedData }) => (
-          <Query query={getContentItem} variables={this.itemId}>
+          <Query
+            query={getContentItem}
+            variables={this.itemId}
+            fetchPolicy="cache-and-network"
+          >
             {({ loading, error, data }) => {
+              if (error) return <ErrorCard error={error} />;
+
               const content = {
-                ...(cachedData.node || {}),
-                ...(data.node || {}),
+                ...((cachedData && cachedData.node) || {}),
+                ...((data && data.node) || {}),
               };
 
-              if (error) return <ErrorCard error={error} />;
               const childContent = get(
                 data,
                 'node.childContentItemsConnection.edges',

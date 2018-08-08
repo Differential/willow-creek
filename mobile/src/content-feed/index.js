@@ -34,7 +34,11 @@ class ContentFeed extends PureComponent {
     const itemId = navigation.getParam('itemId', []);
     return (
       <BackgroundView>
-        <Query query={getContentFeed} variables={{ itemId }}>
+        <Query
+          query={getContentFeed}
+          variables={{ itemId }}
+          fetchPolicy="cache-and-network"
+        >
           {({ loading, error, data, refetch }) => (
             <FeedView
               content={get(

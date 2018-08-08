@@ -34,7 +34,10 @@ class Connect extends PureComponent {
                   {({ data: { isLoggedIn = null } }) => {
                     if (isLoggedIn)
                       return (
-                        <Query query={getUserProfile}>
+                        <Query
+                          query={getUserProfile}
+                          fetchPolicy="cache-and-network"
+                        >
                           {({
                             data: {
                               currentUser: {

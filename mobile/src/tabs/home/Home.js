@@ -54,7 +54,7 @@ class Home extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        <Query query={getUserFeed}>
+        <Query query={getUserFeed} fetchPolicy="cache-and-network">
           {({ loading, error, data, refetch }) => (
             <FeedView
               content={get(data, 'userFeed.edges', []).map((edge) => edge.node)}
