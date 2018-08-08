@@ -29,6 +29,25 @@ query getContentItem($itemId: ID!) {
           }
         }
       }
+      siblingContentItemsConnection {
+        edges {
+          node {
+            id
+            coverImage {
+              name
+              sources {
+                uri
+              }
+            }
+            parentChannel {
+              id
+              name
+              iconName
+            }
+            title
+          }
+        }
+      }
     }
   }
 }
