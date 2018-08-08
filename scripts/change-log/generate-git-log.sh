@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-commits=$(git log v0.3.0..master --pretty=", %s (%h)")
+currentVersion=$(cd mobile && node -p "require('./package.json').version")
+commits=$(git log v$currentVersion..master --pretty=", %s (%h)")
 
 pwd=$(pwd)
 

@@ -44,3 +44,34 @@ ESLint and all required packages are built-in so once you `yarn`, you'll have th
 
 - You will need to install the [sublime-prettier](https://github.com/danreeves/sublime-prettier) plugins
 - Make sure you go through the above links instructions to correctly install this plugin.
+
+
+## Creating a new release
+
+Creating a release within the Apollos Church application is pretty simple! After you have pulled down the master branch and made sure every PR has been merged, there are three main steps:
+
+####  1. Generate Change Log
+  - Change directory to scripts folder:
+   ``` bash
+   cd scripts
+   ```
+  - Run the **update-change-log** script:
+   ``` bash
+   sh update-change-log.sh
+   ```
+####  2. Update Mobile Versions
+  - Run the **update-mobile-versions** script:
+  ``` bash
+  sh update-mobile-versions.sh (version) # EXAMPLE: sh generate-git-log.sh 0.4.0
+  ```
+####  3. Create/Push Git Tag
+  - Create new git tag:
+  ``` bash
+  git tag <tagName> # EXAMPLE: git tag v0.4.0
+  ```
+  - Push new git tag:
+  ``` bash
+  git push --tags
+  ```
+
+...And that is it! Create your new PR and set it for review.
