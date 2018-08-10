@@ -18,6 +18,7 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-react-native": "^5.0.2",
     "codecov": "^3.0.2",
+    "concurrently": "^3.6.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -52,14 +53,11 @@
     "fixlint": "./node_modules/.bin/eslint . --fix",
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "postversion":
-      "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
-    "start": "node ./scripts/get-introspection-data.js && react-native start",
-    "storybook":
-      "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
+    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
+    "start": "concurrently \"npm run watch-graphql\" \"node ./scripts/get-introspection-data.js\" \"react-native start\"",
+    "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
     "test": "bash ../scripts/test-script.sh",
-    "watch-graphql":
-      "./node_modules/.bin/nodemon --exec \"rm -rf\" ./node_modules/.cache/babel-loader --watch src -e .graphql -q",
+    "watch-graphql": "rm -rf ./node_modules/.cache/babel-loader & ./node_modules/.bin/nodemon --exec \"rm -rf\" ./node_modules/.cache/babel-loader --watch src -e .graphql -q",
     "release": "standard-version --release-as minor"
   },
   "jest": {
@@ -68,9 +66,15 @@
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|react-navigation))"
     ],
-    "testMatch": ["<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"],
-    "modulePaths": ["<rootDir>/src/"],
-    "setupFiles": ["./jest.setup.js"],
+    "testMatch": [
+      "<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
     "moduleNameMapper": {
       "^/api(.*)": "<rootDir>/../api/src$1"
     },
@@ -113,6 +117,8 @@
     "stream": "^0.0.2"
   },
   "rnpm": {
-    "assets": ["assets/fonts"]
+    "assets": [
+      "assets/fonts"
+    ]
   }
 }

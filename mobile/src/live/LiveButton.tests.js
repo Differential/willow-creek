@@ -11,12 +11,12 @@ const mocks = [
     request: {
       query: getLiveStream,
       variables: {
-        isLiveNow: true,
+        isLive: true,
       },
     },
     result: {
       data: {
-        liveStream: { isLiveNow: true },
+        liveStream: { isLive: true },
       },
     },
   },
@@ -25,7 +25,7 @@ const mocks = [
 it('renders without error', () => {
   const tree = renderer.create(
     <Providers mocks={mocks} addTypename={false}>
-      <LiveNowButton isLiveNow />
+      <LiveNowButton isLive />
     </Providers>
   );
   expect(tree).toMatchSnapshot();

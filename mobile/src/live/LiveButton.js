@@ -22,7 +22,7 @@ const LiveNowButton = () => (
     pollInterval={60000}
   >
     {({ loading, data }) => {
-      const isLive = get(data, 'liveStream.isLiveNow', false);
+      const isLive = get(data, 'liveStream.isLive', false);
 
       return isLive ? (
         <WebBrowserConsumer>
@@ -36,7 +36,7 @@ const LiveNowButton = () => (
                     icon="video"
                     label={
                       <UIText>
-                        <UIText bold>{`We're live. `}</UIText>
+                        <UIText bold>{`We're live.`} </UIText>
                         Watch now!
                       </UIText>
                     }
