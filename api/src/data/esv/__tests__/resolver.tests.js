@@ -1,10 +1,9 @@
-import { fetch } from 'apollo-server-env';
-
 import { graphql } from 'graphql';
+import fetch from 'isomorphic-fetch';
 import { makeExecutableSchema } from 'apollo-server';
 import { getTestContext } from '/api/utils/testUtils';
-// we import the root-level schema and resolver so we test the entire integration:
-import { schema as typeDefs, resolvers } from '/api/data';
+
+import { schema as typeDefs, resolvers } from '../../';
 
 describe('LiveStream', () => {
   let schema;
@@ -20,9 +19,8 @@ describe('LiveStream', () => {
   it('returns', async () => {
     const query = `
       query {
-        liveStream {
-          isLive
-          eventStartTime
+        scripture (query: "John1.1") {
+          html
         }
       }
     `;

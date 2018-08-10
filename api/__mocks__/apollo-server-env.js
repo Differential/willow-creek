@@ -21,6 +21,9 @@ fetch.mockDataSourceApis = () => {
     if (request.url.match('/api/v1/events/current')) {
       return resolveWith(apolloDatasourceMocks.liveStreamLive(), request.url);
     }
+    if (request.url.match('/passage/html')) {
+      return resolveWith(apolloDatasourceMocks.ESVScripture(), request.url);
+    }
     return Promise.reject();
   });
 };
