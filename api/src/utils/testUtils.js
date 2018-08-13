@@ -2,8 +2,8 @@ import getContext from '/api/getContext';
 import getDataSources from '/api/getDataSources';
 import { KeyValueCache } from 'apollo-server-caching';
 
-export function getTestContext() {
-  const context = getContext();
+export function getTestContext(req) {
+  const context = getContext(req);
 
   const dataSources = getDataSources();
   // Apollo Server does this internally.
@@ -15,3 +15,18 @@ export function getTestContext() {
   context.dataSources = dataSources;
   return context;
 }
+
+export const buildGetMock = (response, dataSource) => {
+  const get = jest.fn();
+  if (Array.isArray(response) && Array.isArray(response[0])) {
+    response.forEach((responseVal) => {
+      get.mockReturnValueOnce(
+        new Promise((resolve) => resolve(dataSource.normalize(responseVal)))
+      );
+    });
+  }
+  get.mockReturnValue(
+    new Promise((resolve) => resolve(dataSource.normalize(response)))
+  );
+  return get;
+};

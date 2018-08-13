@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import Crypto from 'crypto';
 
 const secret = process.env.SECRET || 'LZEVhlgzFZKClu1r';
@@ -30,23 +31,17 @@ export function parseGlobalId(encodedId) {
 }
 
 export default class Node {
-  constructor(context) {
-    this.models = context.models;
-  }
-
-  // TODO: what do we want to do about errors here?
-  async get(encodedId) {
+  async get(encodedId, dataSources) {
     const { __type, id } = parseGlobalId(encodedId);
-
     if (
-      !this.models ||
-      !this.models[__type] ||
-      !this.models[__type].getFromId
+      !dataSources ||
+      !dataSources[__type] ||
+      !dataSources[__type].getFromId
     ) {
-      throw new Error(`No model found using ${__type}`);
+      throw new Error(`No dataSource found using ${__type}`);
     }
 
-    const data = await this.models[__type].getFromId(id, encodedId);
+    const data = await dataSources[__type].getFromId(id, encodedId);
     if (data) data.__type = __type;
     return data;
   }

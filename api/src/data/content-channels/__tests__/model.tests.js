@@ -1,33 +1,23 @@
-import fetch from 'isomorphic-fetch';
-import RockConnector from '/api/connectors/rock';
-import ContentChannelModel from '../model';
+import { buildGetMock } from '/api/utils/testUtils';
+import ContentChannelDataSource from '../data-source';
 
 describe('ContentChannelModel', () => {
-  let context;
-  beforeEach(() => {
-    fetch.resetMocks();
-    context = {
-      connectors: {
-        Rock: new RockConnector(),
-      },
-    };
-  });
   it('constructs', () => {
-    expect(new ContentChannelModel()).toBeTruthy();
+    expect(new ContentChannelDataSource()).toBeTruthy();
   });
   it('gets all', () => {
-    fetch.mockResponse(JSON.stringify([{ Id: 1 }, { Id: 2 }]));
-    const model = new ContentChannelModel(context);
-    const result = model.all();
+    const dataSource = new ContentChannelDataSource();
+    dataSource.get = buildGetMock([{ Id: 1 }, { Id: 2 }], dataSource);
+    const result = dataSource.all();
     expect(result).resolves.toMatchSnapshot();
-    expect(fetch.mock.calls).toMatchSnapshot();
+    expect(dataSource.get.mock.calls).toMatchSnapshot();
   });
 
   it('gets by id', () => {
-    fetch.mockResponse(JSON.stringify([{ Id: 1 }]));
-    const model = new ContentChannelModel(context);
-    const result = model.getFromId(1);
+    const dataSource = new ContentChannelDataSource();
+    dataSource.get = buildGetMock([{ Id: 1 }], dataSource);
+    const result = dataSource.getFromId(1);
     expect(result).resolves.toMatchSnapshot();
-    expect(fetch.mock.calls).toMatchSnapshot();
+    expect(dataSource.get.mock.calls).toMatchSnapshot();
   });
 });

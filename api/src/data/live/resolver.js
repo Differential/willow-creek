@@ -1,7 +1,7 @@
 export default {
   Query: {
     liveStream: (root, args, { dataSources }) =>
-      dataSources.liveStream.getLiveStream(),
+      dataSources.LiveStream.getLiveStream(),
   },
   LiveStream: {
     isLive: ({ response: { item: { isLive } = {} } = {} }) => isLive,

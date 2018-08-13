@@ -1,7 +1,8 @@
 import { gql } from 'apollo-server';
 import { createGlobalId } from '../node';
 
-export { default as model } from './model';
+// export { default as model } from './model';
+export { default as dataSource } from './data-source';
 
 export const schema = gql`
   type AuthenticatedUser {
@@ -17,7 +18,8 @@ export const schema = gql`
 
 export const resolver = {
   Query: {
-    currentUser: (root, args, { models }) => models.Auth.getCurrentPerson(),
+    currentUser: (root, args, { dataSources }) =>
+      dataSources.Auth.getCurrentPerson(),
   },
   AuthenticatedUser: {
     id: ({ id }, args, context, { parentType }) =>
@@ -25,12 +27,12 @@ export const resolver = {
     profile: (authUser) => authUser,
   },
   Authentication: {
-    user: (root, args, { models }) => models.Auth.getCurrentPerson(),
+    user: (root, args, { dataSources }) => dataSources.Auth.getCurrentPerson(),
   },
   Mutation: {
-    authenticate: (root, { identity, password }, { models }) =>
-      models.Auth.authenticate({ identity, password }),
-    registerPerson: (root, args, { models }) =>
-      models.Auth.registerPerson(args),
+    authenticate: (root, { identity, password }, { dataSources }) =>
+      dataSources.Auth.authenticate({ identity, password }),
+    registerPerson: (root, args, { dataSources }) =>
+      dataSources.Auth.registerPerson(args),
   },
 };

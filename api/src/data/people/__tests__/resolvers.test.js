@@ -1,9 +1,9 @@
 import { graphql } from 'graphql';
-import fetch from 'isomorphic-fetch';
+import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
 import { createGlobalId } from '/api/data/node/model';
-import getContext from '/api/getContext';
+import { getTestContext } from '/api/utils/testUtils';
 // we import the root-level schema and resolver so we test the entire integration:
 import { schema as typeDefs, resolvers } from '/api/data';
 
@@ -12,9 +12,9 @@ describe('Person', () => {
   let context;
   beforeEach(() => {
     fetch.resetMocks();
-    fetch.mockRockAPI();
+    fetch.mockRockDataSourceAPI();
     schema = makeExecutableSchema({ typeDefs, resolvers });
-    context = getContext();
+    context = getTestContext();
   });
 
   it('gets people by an email', async () => {

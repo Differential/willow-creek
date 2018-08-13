@@ -1,6 +1,6 @@
-import { RockModel } from '/api/connectors/rock';
+import RockApolloDataSource from '/api/connectors/rock/data-source';
 
-export default class ContentChannel extends RockModel {
+export default class ContentChannel extends RockApolloDataSource {
   resource = 'ContentChannels';
 
   all = () =>
@@ -18,8 +18,6 @@ export default class ContentChannel extends RockModel {
       .get();
 
   getFromId = (id) =>
-    // TODO: Rock doesn't seem to support expand on single resource requests
-    // so we have to send a query request
     this.request()
       .filter(`Id eq ${id}`)
       .expand('ChildContentChannels')

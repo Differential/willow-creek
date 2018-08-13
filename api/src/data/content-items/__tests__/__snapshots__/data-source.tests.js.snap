@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentItemsModel filters by content channel id 1`] = `
+Array [
+  Array [
+    "ContentChannelItems?loadAttributes=expanded&%24filter=ContentChannelId%20eq%201&%24orderby=StartDateTime%20desc",
+    Object {},
+    Object {},
+  ],
+]
+`;
+
+exports[`ContentItemsModel filters by content channel id 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding child content items of a provided parent 1`] = `
+Array [
+  Array [
+    "ContentChannelItemAssociations?loadAttributes=expanded&%24filter=ContentChannelItemId%20eq%201",
+    Object {},
+    Object {},
+  ],
+  Array [
+    "ContentChannelItems?loadAttributes=expanded&%24filter=%28Id%20eq%20101%29%20or%20%28Id%20eq%20201%29&%24orderby=Order%20asc",
+    Object {},
+    Object {},
+  ],
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding child content items of a provided parent 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding parent content items of a provided child 1`] = `
+Array [
+  Array [
+    "ContentChannelItemAssociations?loadAttributes=expanded&%24filter=ChildContentChannelItemId%20eq%201",
+    Object {},
+    Object {},
+  ],
+  Array [
+    "ContentChannelItems?loadAttributes=expanded&%24filter=%28Id%20eq%20101%29%20or%20%28Id%20eq%20201%29&%24orderby=Order%20asc",
+    Object {},
+    Object {},
+  ],
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding parent content items of a provided child 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding sibling content items of a provided item 1`] = `
+Array [
+  Array [
+    "ContentChannelItemAssociations?loadAttributes=expanded&%24filter=ChildContentChannelItemId%20eq%201",
+    Object {},
+    Object {},
+  ],
+  Array [
+    "ContentChannelItemAssociations?loadAttributes=expanded&%24filter=%28ContentChannelItemId%20eq%20101%29%20and%20%28ChildContentChannelItemId%20ne%201%29",
+    Object {},
+    Object {},
+  ],
+  Array [
+    "ContentChannelItems?loadAttributes=expanded&%24filter=%28Id%20eq%201%29%20or%20%28Id%20eq%202%29&%24orderby=Order%20asc",
+    Object {},
+    Object {},
+  ],
+]
+`;
+
+exports[`ContentItemsModel gets a cursor finding sibling content items of a provided item 2`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`ContentItemsModel gets by id 1`] = `
+Array [
+  Array [
+    "ContentChannelItems/1?loadAttributes=expanded",
+    Object {},
+    Object {},
+  ],
+]
+`;
+
+exports[`ContentItemsModel gets by id 2`] = `
+Object {
+  "id": 1,
+}
+`;
+
+exports[`ContentItemsModel returns null when there are no child content items 1`] = `
+Array [
+  Array [
+    "ContentChannelItemAssociations?loadAttributes=expanded&%24filter=ContentChannelItemId%20eq%201",
+    Object {},
+    Object {},
+  ],
+]
+`;
+
+exports[`ContentItemsModel returns null when there are no parent content items 1`] = `
+Array [
+  Array [
+    "ContentChannelItemAssociations?loadAttributes=expanded&%24filter=ChildContentChannelItemId%20eq%201",
+    Object {},
+    Object {},
+  ],
+]
+`;

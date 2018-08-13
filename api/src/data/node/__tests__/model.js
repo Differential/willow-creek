@@ -40,19 +40,17 @@ describe('Node', () => {
     const __type = 'Test';
     const globalId = createGlobalId(id, __type);
 
-    const context = {
-      models: {
-        Test: {
-          getFromId(_id) {
-            expect(_id).toEqual(id);
-            return {};
-          },
+    const dataSources = {
+      Test: {
+        getFromId(_id) {
+          expect(_id).toEqual(id);
+          return {};
         },
       },
     };
 
-    const node = new Node(context);
-    node.get(globalId);
+    const node = new Node();
+    node.get(globalId, dataSources);
   });
 
   it("Node class should throw error if it can't find a matching model", async () => {
@@ -69,17 +67,15 @@ describe('Node', () => {
     const __type = 'Test';
     const globalId = createGlobalId(id, __type);
 
-    const context = {
-      models: {
-        Test: {
-          getFromId() {
-            return '';
-          },
+    const dataSources = {
+      Test: {
+        getFromId() {
+          return '';
         },
       },
     };
 
-    const node = new Node(context);
+    const node = new Node(dataSources);
     const record = node.get(globalId);
     expect(record).not.toHaveProperty('__type');
   });
@@ -92,18 +88,16 @@ describe('Node', () => {
       test: casual.word,
     };
 
-    const context = {
-      models: {
-        Test: {
-          getFromId() {
-            return Promise.resolve(data);
-          },
+    const dataSources = {
+      Test: {
+        getFromId() {
+          return Promise.resolve(data);
         },
       },
     };
 
-    const node = new Node(context);
-    const result = await node.get(globalId);
+    const node = new Node();
+    const result = await node.get(globalId, dataSources);
 
     expect(result.test).toEqual(data.test);
   });
@@ -116,18 +110,16 @@ describe('Node', () => {
       test: casual.word,
     };
 
-    const context = {
-      models: {
-        Test: {
-          getFromId() {
-            return Promise.resolve(data);
-          },
+    const dataSources = {
+      Test: {
+        getFromId() {
+          return Promise.resolve(data);
         },
       },
     };
 
-    const node = new Node(context);
-    const result = await node.get(globalId);
+    const node = new Node();
+    const result = await node.get(globalId, dataSources);
 
     expect(result.__type).toEqual(__type);
   });

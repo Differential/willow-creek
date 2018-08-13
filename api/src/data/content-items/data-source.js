@@ -1,23 +1,15 @@
-import { RockModel } from '/api/connectors/rock';
+import RockApolloDataSource from '/api/connectors/rock/data-source';
 
-export default class ContentItem extends RockModel {
+export default class ContentItem extends RockApolloDataSource {
   resource = 'ContentChannelItems';
-
-  request = () => {
-    const request = RockModel.prototype.request.call(this);
-    request.query.loadAttributes = 'expanded';
-    return request;
-  };
+  expanded = true;
 
   getCursorByParentContentItemId = async (id) => {
-    const associations = await this.context.connectors.Rock.request(
-      'ContentChannelItemAssociations'
-    )
+    const associations = await this.request('ContentChannelItemAssociations')
       .filter(`ContentChannelItemId eq ${id}`)
       .get();
 
     if (!associations || !associations.length) return null;
-
     const request = this.request();
     associations.forEach(({ childContentChannelItemId }) => {
       request.filter(`Id eq ${childContentChannelItemId}`);
@@ -27,14 +19,11 @@ export default class ContentItem extends RockModel {
   };
 
   getCursorByChildContentItemId = async (id) => {
-    const associations = await this.context.connectors.Rock.request(
-      'ContentChannelItemAssociations'
-    )
+    const associations = await this.request('ContentChannelItemAssociations')
       .filter(`ChildContentChannelItemId eq ${id}`)
       .get();
 
     if (!associations || !associations.length) return null;
-
     const request = this.request();
     associations.forEach(({ contentChannelItemId }) => {
       request.filter(`Id eq ${contentChannelItemId}`);
@@ -45,7 +34,7 @@ export default class ContentItem extends RockModel {
 
   getCursorBySiblingContentItemId = async (id) => {
     // Get all parents for the current item.
-    const parentAssociations = await this.context.connectors.Rock.request(
+    const parentAssociations = await this.request(
       'ContentChannelItemAssociations'
     )
       .filter(`ChildContentChannelItemId eq ${id}`)
@@ -54,7 +43,7 @@ export default class ContentItem extends RockModel {
     if (!parentAssociations || !parentAssociations.length) return null;
 
     // Now, fetch all children relations for those parents (excluding the original item)
-    const siblingAssociationsRequest = await this.context.connectors.Rock.request(
+    const siblingAssociationsRequest = await this.request(
       'ContentChannelItemAssociations'
     );
     parentAssociations.forEach(({ contentChannelItemId }) => {

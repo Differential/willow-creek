@@ -1,35 +1,21 @@
 import { AuthenticationError } from 'apollo-server';
+import { fetch } from 'apollo-server-env';
 import moment from 'moment';
-import jwt from 'jsonwebtoken';
 
-import { RockModel } from '/api/connectors/rock';
+import RockApolloDataSource from '/api/connectors/rock/data-source';
+import { generateToken, registerToken } from './token';
 
-const secret = process.env.SECRET || 'ASea$2gadj#asd0';
-
-export default class AuthModel extends RockModel {
+export default class AuthDataSource extends RockApolloDataSource {
   resource = 'Auth';
-
-  generateToken = (params) =>
-    jwt.sign({ ...params }, secret, { expiresIn: '60d' });
-
-  parseToken = (token) => jwt.verify(token, secret);
-
-  registerToken = (token) => {
-    try {
-      const { cookie } = this.parseToken(token);
-      this.userToken = token;
-      this.rockCookie = cookie;
-    } catch (e) {
-      throw new AuthenticationError('Invalid token');
-    }
-  };
+  rockCookie = null;
+  userToken = null;
 
   getCurrentPerson = async () => {
-    if (this.rockCookie) {
-      this.context.connectors.Rock.defaultRequestOptions.headers.cookie = this.rockCookie;
-      const request = this.request('People/GetCurrentPerson').get();
-      await request;
-      delete this.context.connectors.Rock.defaultRequestOptions.headers.cookie;
+    const { rockCookie } = this.context;
+    if (rockCookie) {
+      const request = await this.request('People/GetCurrentPerson').get({
+        options: { headers: { cookie: rockCookie } },
+      });
       return request;
     }
     throw new AuthenticationError('Must be logged in');
@@ -37,13 +23,20 @@ export default class AuthModel extends RockModel {
 
   fetchUserCookie = async (Username, Password) => {
     try {
-      const response = await this.context.connectors.Rock.fetch('Auth/Login', {
-        method: 'POST',
-        body: JSON.stringify({
-          Username,
-          Password,
-        }),
-      });
+      // We use `new Response` rather than string/options b/c if conforms more closely with ApolloRESTDataSource
+      // (makes mocking in tests WAY easier to use `new Request` as an input in both places)
+      const response = await fetch(
+        new Request(`${this.baseURL}/Auth/Login`, {
+          method: 'POST',
+          body: JSON.stringify({
+            Username,
+            Password,
+          }),
+          headers: {
+            'Content-Type': 'Application/Json',
+          },
+        })
+      );
       if (response.status >= 400) throw new AuthenticationError();
       const cookie = response.headers.get('set-cookie');
       return cookie;
@@ -55,8 +48,10 @@ export default class AuthModel extends RockModel {
   authenticate = async ({ identity, password }) => {
     try {
       const cookie = await this.fetchUserCookie(identity, password);
-      const token = this.generateToken({ cookie });
-      this.registerToken(token);
+      const token = generateToken({ cookie });
+      const { userToken, rockCookie } = registerToken(token);
+      this.context.userToken = userToken;
+      this.context.rockCookie = rockCookie;
       return { token };
     } catch (e) {
       throw e;
@@ -78,7 +73,7 @@ export default class AuthModel extends RockModel {
     try {
       const { email } = props;
 
-      return await this.context.connectors.Rock.post('/People', {
+      return await this.post('/People', {
         Email: email,
         IsSystem: false, // Required by Rock
         Gender: 0, // Required by Rock
@@ -92,7 +87,7 @@ export default class AuthModel extends RockModel {
     try {
       const { email, password, personId } = props;
 
-      return await this.context.connectors.Rock.post('/UserLogins', {
+      return await this.post('/UserLogins', {
         PersonId: personId,
         EntityTypeId: 27, // A default setting we use in Rock-person-creation-flow
         UserName: email,
@@ -108,7 +103,7 @@ export default class AuthModel extends RockModel {
     const personExists = await this.personExists({ identity: email });
     if (personExists) throw new Error('User already exists!');
 
-    const personId = await this.createUserProfile({ email });
+    const { personId } = await this.createUserProfile({ email });
 
     await this.createUserLogin({
       email,

@@ -56,11 +56,20 @@ Object {
 `;
 
 exports[`Auth registers an auth token and passes the cookie on requests to rock 1`] = `
-Object {
-  "headers": Object {
-    "Authorization-Token": "some-rock-token",
-    "Content-Type": "application/json",
-    "user-agent": "Apollos",
+Headers {
+  Symbol(map): Object {
+    "Authorization-Token": Array [
+      "some-rock-token",
+    ],
+    "Content-Type": Array [
+      "application/json",
+    ],
+    "cookie": Array [
+      "some-cookie",
+    ],
+    "user-agent": Array [
+      "Apollos",
+    ],
   },
 }
 `;

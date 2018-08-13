@@ -14,7 +14,7 @@ describe('LiveStream', () => {
     context = getTestContext();
 
     fetch.resetMocks();
-    fetch.mockDataSourceApis();
+    fetch.mockLiveDataSourceApis();
   });
 
   it('returns', async () => {

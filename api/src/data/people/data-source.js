@@ -1,6 +1,6 @@
-import { RockModel } from '/api/connectors/rock';
+import RockApolloDataSource from '/api/connectors/rock/data-source';
 
-export default class Person extends RockModel {
+export default class Person extends RockApolloDataSource {
   resource = 'People';
 
   getFromId = (id) =>

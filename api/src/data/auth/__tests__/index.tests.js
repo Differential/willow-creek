@@ -1,9 +1,11 @@
 import { graphql } from 'graphql';
-import fetch from 'isomorphic-fetch';
+import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
 import { schema as typeDefs, resolvers } from '/api/data';
-import getContext from '/api/getContext';
+import { getTestContext } from '/api/utils/testUtils';
+import { generateToken, registerToken } from '../token';
+
 // we import the root-level schema and resolver so we test the entire integration:
 
 describe('Auth', () => {
@@ -11,9 +13,9 @@ describe('Auth', () => {
   let context;
   beforeEach(() => {
     fetch.resetMocks();
-    fetch.mockRockAPI();
+    fetch.mockRockDataSourceAPI();
     schema = makeExecutableSchema({ typeDefs, resolvers });
-    context = getContext();
+    context = getTestContext();
   });
 
   it('logs in a user', async () => {
@@ -71,9 +73,12 @@ describe('Auth', () => {
 
     it('queries current user when logged in', async () => {
       const rootValue = {};
-      context.models.Auth.registerToken(
-        context.models.Auth.generateToken({ cookie: 'some-cookie' })
+      const { userToken, rockCookie } = registerToken(
+        generateToken({ cookie: 'some-cookie' })
       );
+      context.userToken = userToken;
+      context.rockCookie = rockCookie;
+
       const result = await graphql(schema, query, rootValue, context);
       expect(result).toMatchSnapshot();
     });
@@ -81,7 +86,10 @@ describe('Auth', () => {
     it('queries current user when logged in', async () => {
       const rootValue = {};
       try {
-        context.models.Auth.registerToken('asdfasdfasdf');
+        const { userToken, rockCookie } = registerToken('asdfasdfasdf');
+        context.userToken = userToken;
+        context.rockCookie = rockCookie;
+
         await graphql(schema, query, rootValue, context);
       } catch (e) {
         expect(e.message).toEqual('Invalid token');
@@ -90,8 +98,8 @@ describe('Auth', () => {
   });
 
   it('registers an auth token and passes the cookie on requests to rock', async () => {
-    const token = context.models.Auth.generateToken({ cookie: 'some-cookie' });
-    const secondContext = getContext({
+    const token = generateToken({ cookie: 'some-cookie' });
+    const secondContext = getTestContext({
       req: {
         headers: { authorization: token },
       },
@@ -105,12 +113,12 @@ describe('Auth', () => {
     `;
     const rootValue = {};
     await graphql(schema, query, rootValue, secondContext);
-    expect(fetch.mock.calls[0][1]).toMatchSnapshot();
+    expect(fetch.mock.calls[0][0].headers).toMatchSnapshot();
   });
 
   describe('User Registration', () => {
     it('checks if user is already registered', async () => {
-      const result = await context.models.Auth.personExists({
+      const result = await context.dataSources.Auth.personExists({
         identity: 'isaac.hardy@newspring.cc',
       });
 
@@ -118,7 +126,7 @@ describe('Auth', () => {
     });
 
     it('throws error in personExists', async () => {
-      const result = await context.models.Auth.personExists({
+      const result = await context.dataSources.Auth.personExists({
         identity: 'fake',
       });
 
@@ -126,7 +134,7 @@ describe('Auth', () => {
     });
 
     it('creates user profile', async () => {
-      const result = await context.models.Auth.createUserProfile({
+      const result = await context.dataSources.Auth.createUserProfile({
         email: 'isaac.hardy@newspring.cc',
       });
 
@@ -135,7 +143,7 @@ describe('Auth', () => {
 
     it('throws error in createUserProfile', async () => {
       try {
-        await context.models.Auth.createUserProfile({
+        await context.dataSources.Auth.createUserProfile({
           email: '',
         });
       } catch (e) {
@@ -144,7 +152,7 @@ describe('Auth', () => {
     });
 
     it('creates user login', async () => {
-      const result = await context.models.Auth.createUserLogin({
+      const result = await context.dataSources.Auth.createUserLogin({
         email: 'isaac.hardy@newspring.cc',
         password: 'password',
         personId: 35,
@@ -155,7 +163,7 @@ describe('Auth', () => {
 
     it('throws error in createUserLogin', async () => {
       try {
-        await context.models.Auth.createUserLogin({
+        await context.dataSources.Auth.createUserLogin({
           email: '',
           password: 'password',
           personId: 35,

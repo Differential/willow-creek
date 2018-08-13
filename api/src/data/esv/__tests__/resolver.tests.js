@@ -1,5 +1,5 @@
 import { graphql } from 'graphql';
-import fetch from 'isomorphic-fetch';
+import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 import { getTestContext } from '/api/utils/testUtils';
 
@@ -13,7 +13,7 @@ describe('LiveStream', () => {
     context = getTestContext();
 
     fetch.resetMocks();
-    fetch.mockDataSourceApis();
+    fetch.mockLiveDataSourceApis();
   });
 
   it('returns', async () => {
