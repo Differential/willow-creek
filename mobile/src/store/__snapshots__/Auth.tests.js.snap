@@ -5,14 +5,57 @@ InMemoryCache {
   "addTypename": true,
   "config": Object {
     "addTypename": true,
+    "cacheRedirects": Object {
+      "Query": Object {
+        "node": [Function],
+      },
+    },
     "dataIdFromObject": [Function],
-    "fragmentMatcher": HeuristicFragmentMatcher {},
+    "fragmentMatcher": IntrospectionFragmentMatcher {
+      "isReady": true,
+      "match": [Function],
+      "possibleTypesMap": Object {
+        "ContentItem": Array [
+          "UniversalContentItem",
+        ],
+        "Media": Array [
+          "ImageMedia",
+          "VideoMedia",
+          "AudioMedia",
+        ],
+        "MediaSource": Array [
+          "ImageMediaSource",
+          "VideoMediaSource",
+          "AudioMediaSource",
+        ],
+        "Node": Array [
+          "Person",
+          "ContentChannel",
+          "UniversalContentItem",
+        ],
+      },
+    },
     "storeFactory": [Function],
   },
   "data": ObjectCache {
     "data": Object {
+      "$ROOT_QUERY.mediaPlayer": Object {
+        "__typename": "MediaPlayerState",
+        "isPlaying": false,
+        "nowPlayingIndex": 0,
+        "queue": Object {
+          "json": Array [],
+          "type": "json",
+        },
+      },
       "ROOT_QUERY": Object {
         "authToken": null,
+        "mediaPlayer": Object {
+          "generated": true,
+          "id": "$ROOT_QUERY.mediaPlayer",
+          "type": "id",
+          "typename": "MediaPlayerState",
+        },
       },
     },
   },
@@ -20,5 +63,6 @@ InMemoryCache {
   "silenceBroadcast": false,
   "typenameDocumentCache": WeakMap {},
   "watches": Array [],
+  "write": [Function],
 }
 `;
