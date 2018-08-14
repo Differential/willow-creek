@@ -111,6 +111,8 @@
     "react-native-splash-screen": "3.0.6",
     "react-native-svg": "^6.3.1",
     "react-native-tab-view": "^1.0.2",
+    "react-native-video": "^3.1.0",
+    "react-native-video-controls": "^2.2.3",
     "react-navigation": "^2.7.0",
     "recompose": "^0.27.1",
     "rn-placeholder": "^1.2.0",

@@ -3,6 +3,7 @@ package com.apolloschurchapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.brentvatne.react.ReactVideoPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.github.droibit.android.reactnative.customtabs.CustomTabsPackage;
 import io.sentry.RNSentryPackage;
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactVideoPackage(),
             new SplashScreenReactPackage(),
             new CustomTabsPackage(),
             new RNSentryPackage(),

@@ -46,6 +46,7 @@
 		6F0E81CA54EF40CA99112EDE /* Inter-UI-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59DE39F3C72047CD86C60CD7 /* Inter-UI-Italic.otf */; };
 		7612D5AA5CCD4D22A445CB18 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF5927ABB634B12BE925DAB /* Inter-UI-Regular.otf */; };
 		78EC54FCEB57433AAC19DA0F /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69416A0FCE0D4B6FA7395C6A /* libSplashScreen.a */; };
+		824F7B812113AFA900BCD695 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 824F7B622113AE0000BCD695 /* libRCTVideo.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9593986FB5A14E20848412A5 /* libDBCustomTabs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC74B95FA44CF5B8170452 /* libDBCustomTabs.a */; };
 		964B930226BC46138853E5FC /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99B08DBB4D174991B3C333C9 /* Inter-UI-BlackItalic.otf */; };
@@ -339,6 +340,20 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = SafariViewManager;
 		};
+		824F7B612113AE0000BCD695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 824F7B492113AE0000BCD695 /* RCTVideo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTVideo;
+		};
+		824F7B632113AE0000BCD695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 824F7B492113AE0000BCD695 /* RCTVideo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 641E28441F0EEC8500443AF6;
+			remoteInfo = "RCTVideo-tvOS";
+		};
 		82728AD620C6F665005B499E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 942C307963364AF29453FE63 /* RNSVG.xcodeproj */;
@@ -431,6 +446,7 @@
 		671138B1198C48EE9932E26F /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Regular.ttf"; path = "../assets/fonts/DroidSerif-Regular.ttf"; sourceTree = "<group>"; };
 		69416A0FCE0D4B6FA7395C6A /* libSplashScreen.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSplashScreen.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		824F7B492113AE0000BCD695 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8E5303EACBC24ACD8B862DCD /* Inter-UI-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Black.otf"; path = "../assets/fonts/Inter-UI-Black.otf"; sourceTree = "<group>"; };
 		942C307963364AF29453FE63 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
@@ -457,6 +473,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824F7B812113AFA900BCD695 /* libRCTVideo.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -673,6 +690,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		824F7B4A2113AE0000BCD695 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				824F7B622113AE0000BCD695 /* libRCTVideo.a */,
+				824F7B642113AE0000BCD695 /* libRCTVideo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		82728AAC20C6F663005B499E /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +732,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				824F7B492113AE0000BCD695 /* RCTVideo.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -801,14 +828,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		97132FA7BC7E42CB9B97A738 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			path = Application;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -900,6 +919,11 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 7TM8C6252Z;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -967,6 +991,10 @@
 				{
 					ProductGroup = 00C302E01ABCB9EE00DB3ED1 /* Products */;
 					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
+				},
+				{
+					ProductGroup = 824F7B4A2113AE0000BCD695 /* Products */;
+					ProjectRef = 824F7B492113AE0000BCD695 /* RCTVideo.xcodeproj */;
 				},
 				{
 					ProductGroup = 139FDEE71B06529A00C62182 /* Products */;
@@ -1272,6 +1300,20 @@
 			fileType = archive.ar;
 			path = libSafariViewManager.a;
 			remoteRef = 793D311520F8F79E00C1A19D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		824F7B622113AE0000BCD695 /* libRCTVideo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTVideo.a;
+			remoteRef = 824F7B612113AE0000BCD695 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		824F7B642113AE0000BCD695 /* libRCTVideo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTVideo.a;
+			remoteRef = 824F7B632113AE0000BCD695 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		82728AD720C6F665005B499E /* libRNSVG.a */ = {

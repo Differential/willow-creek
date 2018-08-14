@@ -8,7 +8,7 @@ import { ErrorCard } from '/mobile/ui/Card';
 
 import CardTile from '/mobile/ui/CardTile';
 
-import GradientOverlayImage from '/mobile/ui/GradientOverlayImage';
+import VideoPlayer from '/mobile/ui/VideoPlayer';
 
 import HorizontalTileFeed from '/mobile/ui/HorizontalTileFeed';
 
@@ -128,8 +128,9 @@ class ContentSingle extends PureComponent {
 
               return (
                 <ScrollView>
-                  <GradientOverlayImage
-                    source={get(content, 'coverImage.sources', [])}
+                  <VideoPlayer
+                    source={get(content, 'videos[0].sources[0]', null)}
+                    thumbnail={get(content, 'coverImage.sources', [])}
                   />
                   <BackgroundView>
                     <ContentContainer>
