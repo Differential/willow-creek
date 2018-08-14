@@ -45,33 +45,93 @@ ESLint and all required packages are built-in so once you `yarn`, you'll have th
 - You will need to install the [sublime-prettier](https://github.com/danreeves/sublime-prettier) plugins
 - Make sure you go through the above links instructions to correctly install this plugin.
 
-
 ## Creating a new release
 
 Creating a release within the Apollos Church application is pretty simple! After you have pulled down the master branch and made sure every PR has been merged, there are three main steps:
 
-####  1. Generate Change Log
-  - Change directory to scripts folder:
-   ``` bash
-   cd scripts
-   ```
-  - Run the **update-change-log** script:
-   ``` bash
-   sh update-change-log.sh
-   ```
-####  2. Update Mobile Versions
-  - Run the **update-mobile-versions** script:
-  ``` bash
-  sh update-mobile-versions.sh (version) # EXAMPLE: sh generate-git-log.sh 0.4.0
-  ```
-####  3. Create/Push Git Tag
-  - Create new git tag:
-  ``` bash
-  git tag <tagName> # EXAMPLE: git tag v0.4.0
-  ```
-  - Push new git tag:
-  ``` bash
-  git push --tags
-  ```
+#### 1. Generate Change Log
+
+- Change directory to scripts folder:
+
+
+```bash
+cd scripts
+```
+
+- Run the **update-change-log** script:
+
+
+```bash
+sh update-change-log.sh
+```
+
+#### 2. Update Mobile Versions
+
+- Run the **update-mobile-versions** script:
+
+
+```bash
+sh update-mobile-versions.sh (version) # EXAMPLE: sh generate-git-log.sh 0.4.0
+```
+
+#### 3. Create/Push Git Tag
+
+- Create new git tag:
+
+
+```bash
+git tag <tagName> # EXAMPLE: git tag v0.4.0
+```
+
+- Push new git tag:
+
+
+```bash
+git push --tags
+```
 
 ...And that is it! Create your new PR and set it for review.
+
+## Inline Documentation
+
+We're using the [JSDoc](http://usejsdoc.org/index.html) standard for comments in our code. Generally speaking, we just want to make
+sure that anyone coming into the code can understand what is happening in any particular component or function.
+
+#### A Few Standards
+
+- Add a comment just above your class/component definition describing what the component does:
+
+```javascript
+/**
+ * This is where the component description lives
+ * A FeedView wrapped in a query to pull content data.
+ */
+class ContentFeed extends PureComponent {
+```
+
+- Add a comment just ahead of any functions:
+
+```javascript
+/** Function that is called when a card in the feed is pressed.
+ * Takes the user to the ContentSingle
+ */
+handleOnPress = item =>
+  this.props.navigation.navigate("ContentSingle", {
+    itemId: item.id,
+    itemTitle: item.title,
+  })
+```
+
+- Add comments around your prop types:
+
+```javascript
+static propTypes = {
+  /** Functions passed down from React Navigation to use in navigating to/from
+   * items in the feed.
+   */
+  navigation: PropTypes.shape({
+    getParam: PropTypes.func,
+    navigate: PropTypes.func,
+  }),
+};
+```

@@ -8,7 +8,12 @@ import FeedView from '/mobile/ui/FeedView';
 
 import getContentFeed from './getContentFeed.graphql';
 
+/**
+ * This is where the component description lives
+ * A FeedView wrapped in a query to pull content data.
+ */
 class ContentFeed extends PureComponent {
+  /** Function for React Navigation to set information in the header. */
   static navigationOptions = ({ navigation }) => {
     const itemTitle = navigation.getParam('itemTitle', 'Content Channel');
     return {
@@ -17,12 +22,18 @@ class ContentFeed extends PureComponent {
   };
 
   static propTypes = {
+    /** Functions passed down from React Navigation to use in navigating to/from
+     * items in the feed.
+     */
     navigation: PropTypes.shape({
       getParam: PropTypes.func,
       navigate: PropTypes.func,
     }),
   };
 
+  /** Function that is called when a card in the feed is pressed.
+   * Takes the user to the ContentSingle
+   */
   handleOnPress = (item) =>
     this.props.navigation.navigate('ContentSingle', {
       itemId: item.id,
