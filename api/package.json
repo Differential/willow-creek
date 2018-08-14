@@ -34,6 +34,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "casual": "^1.5.19",
+    "color": "^3.0.0",
     "crypto": "^1.0.1",
     "dataloader": "^1.4.0",
     "dotenv": "^6.0.0",
@@ -52,6 +53,7 @@
     "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.10",
     "prettier": "1.12.1",
+    "randomcolor": "^0.5.3",
     "sanitize-html": "^1.18.2",
     "url-join": "^4.0.0",
     "with-query": "^1.0.2"

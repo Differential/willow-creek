@@ -29,8 +29,8 @@ exports[`The Button component should render 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#17B582",
-        "borderColor": "#17B582",
+        "backgroundColor": "#00676D",
+        "borderColor": "#00676D",
         "borderRadius": 60,
         "borderWidth": 2,
         "elevation": 2,
@@ -148,7 +148,7 @@ exports[`The Button component should render a bordered button 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "transparent",
-        "borderColor": "#17B582",
+        "borderColor": "#00676D",
         "borderRadius": 60,
         "borderWidth": 2,
         "flexDirection": "row",
@@ -163,7 +163,7 @@ exports[`The Button component should render a bordered button 1`] = `
     <Text
       style={
         Object {
-          "color": "#17B582",
+          "color": "#00676D",
           "fontFamily": "InterUI-Bold",
           "fontSize": 16,
           "lineHeight": 23.04,
@@ -206,8 +206,8 @@ exports[`The Button component should render a disabled button 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#17B582",
-        "borderColor": "#17B582",
+        "backgroundColor": "#00676D",
+        "borderColor": "#00676D",
         "borderRadius": 60,
         "borderWidth": 2,
         "elevation": 2,
@@ -382,8 +382,8 @@ exports[`The Button component should render a loading state 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#17B582",
-        "borderColor": "#17B582",
+        "backgroundColor": "#00676D",
+        "borderColor": "#00676D",
         "borderRadius": 60,
         "borderWidth": 2,
         "elevation": 2,
@@ -435,8 +435,8 @@ exports[`The Button component should render a pill button 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#17B582",
-        "borderColor": "#17B582",
+        "backgroundColor": "#00676D",
+        "borderColor": "#00676D",
         "borderRadius": 60,
         "borderWidth": 2,
         "elevation": 2,
@@ -494,8 +494,8 @@ exports[`The Button component should render a primary button 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#17B582",
-        "borderColor": "#17B582",
+        "backgroundColor": "#00676D",
+        "borderColor": "#00676D",
         "borderRadius": 60,
         "borderWidth": 2,
         "elevation": 2,
@@ -553,8 +553,8 @@ exports[`The Button component should render a secondary button 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#00676D",
-        "borderColor": "#00676D",
+        "backgroundColor": "#17B582",
+        "borderColor": "#17B582",
         "borderRadius": 60,
         "borderWidth": 2,
         "elevation": 2,
@@ -650,8 +650,8 @@ exports[`The Button component should render with children 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#17B582",
-      "borderColor": "#17B582",
+      "backgroundColor": "#00676D",
+      "borderColor": "#00676D",
       "borderRadius": 60,
       "borderWidth": 2,
       "elevation": 2,

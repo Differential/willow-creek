@@ -15,13 +15,13 @@ import SignUpForm from './signup';
 
 export LoginButton from './LoginButton';
 
-const Title = styled(({ theme }) => ({ color: theme.colors.secondary }))(H1);
+const Title = styled(({ theme }) => ({ color: theme.colors.primary }))(H1);
 
 const BrandIcon = withTheme(({ theme }) => ({
   name: 'brand-icon',
   size: theme.sizing.baseUnit * 2.25,
   marginVertical: theme.sizing.baseUnit,
-  fill: theme.colors.secondary,
+  fill: theme.colors.primary,
 }))(Icon);
 
 const HeaderContainer = styled(({ theme }) => ({

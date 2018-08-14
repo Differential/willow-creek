@@ -97,8 +97,8 @@ exports[`the Card component it should render a placeholder 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#17B582",
-            "borderColor": "#17B582",
+            "backgroundColor": "#00676D",
+            "borderColor": "#00676D",
             "borderRadius": 6,
             "borderWidth": 2,
             "elevation": 2,
@@ -282,8 +282,8 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#17B582",
-            "borderColor": "#17B582",
+            "backgroundColor": "#00676D",
+            "borderColor": "#00676D",
             "borderRadius": 6,
             "borderWidth": 2,
             "elevation": 2,

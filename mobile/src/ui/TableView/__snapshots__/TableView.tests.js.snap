@@ -316,12 +316,12 @@ exports[`the TableView Component should render 1`] = `
             >
               <RCTSwitch
                 activeThumbColor="#FFFFFF"
-                activeTrackColor="#17B582"
+                activeTrackColor="#00676D"
                 disabled={false}
                 onChange={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
-                onTintColor="#17B582"
+                onTintColor="#00676D"
                 style={
                   Object {
                     "height": 31,

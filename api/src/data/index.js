@@ -8,6 +8,7 @@ import * as Person from './people';
 import * as Media from './media';
 import * as Auth from './auth';
 import * as LiveStream from './live';
+import * as Theme from './theme';
 import * as ESVScripture from './esv';
 
 const data = {
@@ -18,6 +19,7 @@ const data = {
   Media,
   Auth,
   LiveStream,
+  Theme,
   ESVScripture,
 };
 

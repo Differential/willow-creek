@@ -10,7 +10,7 @@ const enhance = compose(pure, withTheme());
 
 const Share = enhance(({ content, theme }) => (
   <Touchable onPress={() => share(content)}>
-    <Icon name={'share'} fill={theme.colors.background.primary} />
+    <Icon name={'share'} fill={theme.colors.secondary} />
   </Touchable>
 ));
 

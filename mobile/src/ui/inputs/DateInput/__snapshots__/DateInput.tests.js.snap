@@ -317,7 +317,7 @@ exports[`The DateInput component should render with a displayValue 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "color": "#505050",
+            "color": "#303030",
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "justifyContent": "center",
@@ -630,7 +630,7 @@ exports[`The DateInput component should render with a label 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "color": "#505050",
+            "color": "#303030",
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "justifyContent": "center",
@@ -945,7 +945,7 @@ exports[`The DateInput component should render with a placeholder 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "color": "#505050",
+            "color": "#303030",
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "justifyContent": "center",

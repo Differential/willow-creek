@@ -297,7 +297,7 @@ exports[`The Picker Input component focuses and blurs 1`] = `
         hasError={false}
         style={
           Object {
-            "backgroundColor": "#17B582",
+            "backgroundColor": "#00676D",
             "bottom": 0,
             "height": 0.5,
           }
@@ -605,7 +605,7 @@ exports[`The Picker Input component focuses and blurs 2`] = `
         hasError={false}
         style={
           Object {
-            "backgroundColor": "#17B582",
+            "backgroundColor": "#00676D",
             "bottom": 0,
             "height": 0.5,
           }
@@ -913,7 +913,7 @@ exports[`The Picker Input component focuses and blurs 3`] = `
         hasError={false}
         style={
           Object {
-            "backgroundColor": "#17B582",
+            "backgroundColor": "#00676D",
             "bottom": 0,
             "height": 0.5,
           }
@@ -1227,7 +1227,7 @@ exports[`The Picker Input component should render correctly 1`] = `
         hasError={false}
         style={
           Object {
-            "backgroundColor": "#17B582",
+            "backgroundColor": "#00676D",
             "bottom": 0,
             "height": 0.5,
           }

@@ -25,24 +25,27 @@ import * as types from './types';
 // elements are colored, go there. The next level of control comes
 // on a per-component basis with "overrides"
 export const colors = {
-  // Brand colors
-  primary: '#17B582',
-  secondary: '#00676D',
+  primary: '#00676D',
+  secondary: '#17B582',
   tertiary: '#6EC5B8',
+  screen: '#F8F7F4',
+  paper: '#FFFFFF',
+  alert: '#c64f55',
+
   // Dark shades
   darkPrimary: '#303030',
   darkSecondary: '#505050',
   darkTertiary: '#A5A5A5',
+
   // Light shades
   lightPrimary: '#F8F7F4',
   lightSecondary: '#DBDBD9',
   lightTertiary: '#A5A5A5',
+
   // Statics
   black: '#000000',
   white: '#FFFFFF',
   transparent: 'transparent',
-
-  alert: '#c64f55',
 };
 
 /* Base Typography sizing and fonts.

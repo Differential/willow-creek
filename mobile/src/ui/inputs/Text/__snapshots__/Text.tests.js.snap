@@ -141,7 +141,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#17B582",
+              "backgroundColor": "#00676D",
               "bottom": 0,
               "height": 0.5,
             }
@@ -369,7 +369,7 @@ exports[`The Text Input component should render as a password field with an icon
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#17B582",
+              "backgroundColor": "#00676D",
               "bottom": 0,
               "height": 0.5,
             }
@@ -522,7 +522,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#17B582",
+              "backgroundColor": "#00676D",
               "bottom": 0,
               "height": 0.5,
             }
@@ -677,7 +677,7 @@ exports[`The Text Input component should render as an email field 1`] = `
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#17B582",
+              "backgroundColor": "#00676D",
               "bottom": 0,
               "height": 0.5,
             }
@@ -828,7 +828,7 @@ exports[`The Text Input component should render correctly 1`] = `
           hasError={false}
           style={
             Object {
-              "backgroundColor": "#17B582",
+              "backgroundColor": "#00676D",
               "bottom": 0,
               "height": 0.5,
             }

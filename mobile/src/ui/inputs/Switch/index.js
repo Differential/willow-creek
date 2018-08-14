@@ -19,8 +19,8 @@ const ControlWrapper = withInputControlViewStyles(View);
 const enhance = compose(
   pure,
   withTheme(({ theme }) => ({
-    onTintColor: theme.colors.background.primary,
-    activeTrackColor: theme.colors.background.primary,
+    onTintColor: theme.colors.primary,
+    activeTrackColor: theme.colors.primary,
     trackColor: theme.colors.background.inactive,
     tintColor: theme.colors.background.inactive,
     activeThumbColor: theme.colors.background.paper,

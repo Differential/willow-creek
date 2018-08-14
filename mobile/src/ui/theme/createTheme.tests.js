@@ -10,7 +10,7 @@ describe('createTheme', () => {
   it('has a custom colors', () => {
     const customColors = { primary: 'red', otherColor: 'green' };
     const theme = createTheme({ colors: customColors });
-    expect(theme.colors).toEqual(expect.objectContaining(customColors));
+    expect(theme.colors).toMatchSnapshot();
   });
 
   it('has typography', () => {
@@ -21,7 +21,7 @@ describe('createTheme', () => {
   it('has custom typography', () => {
     const custom = { baseFontSize: '24', otherProp: true };
     const theme = createTheme({ typography: custom });
-    expect(theme.typography).toEqual(expect.objectContaining(custom));
+    expect(theme.typography).toMatchSnapshot();
   });
 
   it('has helper functions and allows for custom helper functions', () => {
@@ -39,20 +39,12 @@ describe('createTheme', () => {
       overrides: { MyComponent: { some: 'style' } },
     };
     const theme = createTheme(custom);
-    expect(theme).toEqual(expect.objectContaining(custom));
+    expect(theme).toMatchSnapshot();
   });
 
   it('switches to a dark theme', () => {
     const theme = createTheme({ type: 'dark' });
-    expect(theme).toEqual(
-      expect.objectContaining({
-        colors: expect.objectContaining({
-          background: expect.objectContaining({
-            default: defaultTheme.colors.darkPrimary,
-          }),
-        }),
-      })
-    );
+    expect(theme).toMatchSnapshot();
   });
   it('throws an error for an unsupported theme type', () => {
     const theme = () => createTheme({ type: 'Boom' });

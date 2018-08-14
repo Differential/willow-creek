@@ -7,9 +7,7 @@ import styled from '/mobile/ui/styled';
 const FocusedUnderline = styled(
   ({ theme, hasError }) => ({
     height: StyleSheet.hairlineWidth,
-    backgroundColor: hasError
-      ? theme.colors.alert
-      : theme.colors.background.primary,
+    backgroundColor: hasError ? theme.colors.alert : theme.colors.primary,
     bottom: 0,
   }),
   'InputUnderline.focused'

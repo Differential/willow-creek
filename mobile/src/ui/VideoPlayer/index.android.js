@@ -28,7 +28,7 @@ class VideoPlayer extends PureComponent {
     source: PropTypes.shape({
       uri: PropTypes.string.isRequired,
     }),
-    gradientColor: PropTypes.string,
+    overlayColor: PropTypes.string,
   };
 
   constructor() {
@@ -44,12 +44,12 @@ class VideoPlayer extends PureComponent {
   handleOnRequestClose = () => this.setState({ modalVisible: false });
 
   render() {
-    const { source, thumbnail, gradientColor, ...otherProps } = this.props;
+    const { source, thumbnail, overlayColor, ...otherProps } = this.props;
     return (
       <VideoWrapper>
         <GradientOverlayImage
           source={thumbnail}
-          colors={gradientColor}
+          overlayColor={overlayColor}
           isLoading={!thumbnail}
         />
         {source && source.uri

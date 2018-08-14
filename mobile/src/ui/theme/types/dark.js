@@ -6,32 +6,20 @@ const dark = ({ colors, alpha }) => ({
       primary: colors.lightPrimary,
       secondary: colors.lightSecondary,
       tertiary: colors.lightTertiary,
-      link: colors.primary,
+      link: colors.secondary,
     },
     background: {
-      default: colors.darkPrimary,
-      paper: colors.darkSecondary,
-      primary: colors.primary,
-      secondary: colors.secondary,
+      screen: colors.screen,
+      paper: colors.paper,
       accent: Color(colors.darkTertiary)
         .fade(alpha.high)
         .string(),
       inactive: colors.darkTertiary,
-      overlay: Color(colors.darkTertiary)
-        .fade(alpha.high)
-        .string(),
-      darkOverlay: Color(colors.darkTertiary)
-        .fade(alpha.low)
-        .string(),
     },
     shadows: {
       default: Color(colors.darkTertiary)
         .fade(alpha.medium)
         .string(),
-    },
-    input: {
-      // todo
-      placeholder: colors.lightTertiary,
     },
     action: {
       default: colors.darkTertiary,

@@ -191,7 +191,7 @@ exports[`The LoginForm component should render 1`] = `
                     hasError={false}
                     style={
                       Object {
-                        "backgroundColor": "#17B582",
+                        "backgroundColor": "#00676D",
                         "bottom": 0,
                         "height": 0.5,
                       }
@@ -345,7 +345,7 @@ exports[`The LoginForm component should render 1`] = `
                     hasError={false}
                     style={
                       Object {
-                        "backgroundColor": "#17B582",
+                        "backgroundColor": "#00676D",
                         "bottom": 0,
                         "height": 0.5,
                       }
@@ -395,8 +395,8 @@ exports[`The LoginForm component should render 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#17B582",
-            "borderColor": "#17B582",
+            "backgroundColor": "#00676D",
+            "borderColor": "#00676D",
             "borderRadius": 60,
             "borderWidth": 2,
             "elevation": 2,

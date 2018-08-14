@@ -5,22 +5,15 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { ErrorCard } from '/mobile/ui/Card';
-
 import CardTile from '/mobile/ui/CardTile';
-
 import VideoPlayer from '/mobile/ui/VideoPlayer';
-
 import HorizontalTileFeed from '/mobile/ui/HorizontalTileFeed';
-
 import HTMLView from '/mobile/ui/HTMLView';
-
 import PaddedView from '/mobile/ui/PaddedView';
-
 import { H2 } from '/mobile/ui/typography';
-
 import BackgroundView from '/mobile/ui/BackgroundView';
-
 import styled from '/mobile/ui/styled';
+import { ThemeMixin } from '/mobile/ui/theme';
 import Share from '/mobile/ui/Share';
 
 import getContentItem from './getContentItem.graphql';
@@ -127,33 +120,41 @@ class ContentSingle extends PureComponent {
                 : childContent;
 
               return (
-                <ScrollView>
-                  <VideoPlayer
-                    source={get(content, 'videos[0].sources[0]', null)}
-                    thumbnail={get(content, 'coverImage.sources', [])}
-                  />
-                  <BackgroundView>
-                    <ContentContainer>
-                      <H2 padded isLoading={!content.title && loading}>
-                        {content.title}
-                      </H2>
-                      <HTMLView isLoading={!content.htmlContent && loading}>
-                        {content.htmlContent}
-                      </HTMLView>
-                    </ContentContainer>
-                  </BackgroundView>
-                  {(horizontalContent && horizontalContent.length) ||
-                  loading ? (
-                    <FeedContainer>
-                      <HorizontalTileFeed
-                        content={horizontalContent}
-                        isLoading={loading}
-                        loadingStateObject={this.loadingStateObject}
-                        renderItem={this.renderItem}
-                      />
-                    </FeedContainer>
-                  ) : null}
-                </ScrollView>
+                <ThemeMixin
+                  mixin={{
+                    type: get(content, 'theme.type', 'light').toLowerCase(),
+                    colors: get(content, 'theme.colors'),
+                  }}
+                >
+                  <ScrollView>
+                    <VideoPlayer
+                      source={get(content, 'videos[0].sources[0]', null)}
+                      thumbnail={get(content, 'coverImage.sources', [])}
+                      overlayColor={get(content, 'theme.colors.paper')}
+                    />
+                    <BackgroundView>
+                      <ContentContainer>
+                        <H2 padded isLoading={!content.title && loading}>
+                          {content.title}
+                        </H2>
+                        <HTMLView isLoading={!content.htmlContent && loading}>
+                          {content.htmlContent}
+                        </HTMLView>
+                      </ContentContainer>
+                    </BackgroundView>
+                    {(horizontalContent && horizontalContent.length) ||
+                    loading ? (
+                      <FeedContainer>
+                        <HorizontalTileFeed
+                          content={horizontalContent}
+                          isLoading={loading}
+                          loadingStateObject={this.loadingStateObject}
+                          renderItem={this.renderItem}
+                        />
+                      </FeedContainer>
+                    ) : null}
+                  </ScrollView>
+                </ThemeMixin>
               );
             }}
           </Query>

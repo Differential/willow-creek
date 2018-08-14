@@ -22,7 +22,7 @@ import PickerList from './PickerList';
 const StyledH6 = withInputControlStyles(H6);
 const Placeholder = styled(
   ({ theme }) => ({
-    color: theme.colors.input.placeholder,
+    color: theme.colors.text.tertiary,
   }),
   'Inputs.Picker.Placeholder'
 )(H6);
