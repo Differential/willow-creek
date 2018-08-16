@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:statusBarColor">@color/growth</item>
+        <item name="android:statusBarColor">@color/deep_water</item>
     </style>
 
     <style name="LaunchTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -13,6 +13,7 @@
 
     <style name="SplashScreenTheme" parent="SplashScreen_SplashTheme">
         <item name="android:statusBarColor">@color/deep_water</item>
+        <item name="colorPrimaryDark">@color/deep_water</item>
     </style>
 
 </resources>

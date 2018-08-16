@@ -77,7 +77,6 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
-apply from: "../../node_modules/react-native-sentry/sentry.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -99,7 +98,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.apolloschurch.app"
+        applicationId "com.apolloschurchapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -139,11 +138,10 @@ android {
 
 dependencies {
     compile project(':react-native-video')
-    compile project(':react-native-splash-screen')
-    compile project(':react-native-custom-tabs')
-    compile project(':react-native-sentry')
-    compile project(':react-native-linear-gradient')
     compile project(':react-native-svg')
+    compile project(':react-native-splash-screen')
+    compile project(':react-native-linear-gradient')
+    compile project(':react-native-custom-tabs')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     compile "com.facebook.react:react-native:+"  // From node_modules

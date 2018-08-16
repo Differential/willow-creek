@@ -4,11 +4,10 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.brentvatne.react.ReactVideoPackage;
-import org.devio.rn.splashscreen.SplashScreenReactPackage;
-import com.github.droibit.android.reactnative.customtabs.CustomTabsPackage;
-import io.sentry.RNSentryPackage;
-import com.BV.LinearGradient.LinearGradientPackage;
 import com.horcrux.svg.SvgPackage;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.github.droibit.android.reactnative.customtabs.CustomTabsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -30,11 +29,10 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new ReactVideoPackage(),
+            new SvgPackage(),
             new SplashScreenReactPackage(),
-            new CustomTabsPackage(),
-            new RNSentryPackage(),
             new LinearGradientPackage(),
-            new SvgPackage()
+            new CustomTabsPackage()
       );
     }
 
