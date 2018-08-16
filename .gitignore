@@ -68,3 +68,4 @@ build/
 
 # storybook
 storyLoader.js
+*.xcworkspacedata

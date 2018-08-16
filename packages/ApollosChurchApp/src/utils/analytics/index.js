@@ -1,6 +1,6 @@
 // import Settings from '@utils/Settings';
 
-import { Sentry } from 'react-native-sentry';
+// import { Sentry } from 'react-native-sentry';
 
 // import instance from './instance';
 
@@ -69,11 +69,11 @@ export const trackScreen = (screenName) => {
   //   screen: screenName,
   //   ...screenProperties,
   // });
-  Sentry.captureBreadcrumb({
-    message: 'ScreenView',
-    data: { screenName },
-    level: 'info',
-  });
+  // Sentry.captureBreadcrumb({
+  //   message: 'ScreenView',
+  //   data: { screenName },
+  //   level: 'info',
+  // });
 };
 
 const Analytics = {
