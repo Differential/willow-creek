@@ -1,0 +1,17 @@
+{
+  "name": "apollos",
+  "version": "0.4.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/lerna run start --parallel",
+    "test": "./node_modules/.bin/lerna run test --stream"
+  },
+  "devDependencies": {
+    "lerna": "^3.0.6"
+  }
+}

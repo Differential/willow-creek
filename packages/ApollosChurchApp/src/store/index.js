@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
 import gql from 'graphql-tag';
-import { client } from 'client'; // eslint-disable-line
+import { client } from '../client'; // eslint-disable-line
 // TODO: this will require more organization...ie...not keeping everything in one file.
 // But this is simple while our needs our small.
 

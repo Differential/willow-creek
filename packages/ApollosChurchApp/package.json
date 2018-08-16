@@ -2,11 +2,17 @@
   "name": "apolloschurchapp",
   "version": "0.4.0",
   "private": true,
+  "workspaces": {
+    "nohoist": [
+      "*"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.47",
     "@babel/parser": "^7.0.0-beta.54",
     "@babel/plugin-proposal-decorators": "7.0.0-beta.47",
     "@babel/plugin-proposal-export-default-from": "7.0.0-beta.47",
+    "@babel/runtime": "^7.0.0-rc.1",
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-links": "^3.4.8",
     "@storybook/addons": "^3.4.8",
@@ -31,6 +37,7 @@
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-react-native": "^3.2.1",
     "formik": "^0.11.11",
+    "get-yarn-workspaces": "^1.0.2",
     "jest": "^23.4.1",
     "jest-react-native": "^18.0.0",
     "nodemon": "^1.17.5",
@@ -41,8 +48,7 @@
     "react-native-storybook-loader": "^1.8.0",
     "react-native-version": "^2.6.2",
     "react-test-renderer": "^16.4.1",
-    "waait": "^1.0.2",
-    "yup": "^0.25.1"
+    "waait": "^1.0.2"
   },
   "engines": {
     "node": "^8.11.x"
@@ -54,7 +60,8 @@
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
-    "start": "concurrently \"npm run watch-graphql\" \"node ./scripts/get-introspection-data.js\" \"react-native start\"",
+    "prestart": "node ./scripts/get-introspection-data.js",
+    "start": "react-native start",
     "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
     "test": "bash ../scripts/test-script.sh",
     "watch-graphql": "rm -rf ./node_modules/.cache/babel-loader & ./node_modules/.bin/nodemon --exec \"rm -rf\" ./node_modules/.cache/babel-loader --watch src -e .graphql -q",
@@ -115,7 +122,8 @@
     "react-navigation": "^2.7.0",
     "recompose": "^0.27.1",
     "rn-placeholder": "^1.2.0",
-    "stream": "^0.0.2"
+    "stream": "^0.0.2",
+    "yup": "^0.26.2"
   },
   "rnpm": {
     "assets": [
