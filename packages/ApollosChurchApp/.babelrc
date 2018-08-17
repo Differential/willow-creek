@@ -1,18 +1,13 @@
 {
-  "presets": ["react-native", "module:react-native-dotenv"],
+  "presets": ["apollos", "react-native", "module:react-native-dotenv"],
   "plugins": [
-    ["@babel/plugin-proposal-decorators", {
-      "legacy": true
-    }],
-    ["@babel/plugin-proposal-export-default-from"],
     [
       "module-resolver",
       {
         "cwd": "babelrc",
         "extensions": [".android.js", ".ios.js", ".js", ".graphql"],
         "alias": {
-          "apollos-church-api": "../apollos-church-api/src",
-          "apolloschurchapp": "../apolloschurchapp/src"
+          "app": "./src"
         }
       }
     ],
