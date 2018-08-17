@@ -1,5 +1,5 @@
 const getChangeLogContent = () => {
-  const version = require('../../mobile/package.json').version;
+  const version = require('../../package.json').version;
 
   let commit = '';
   let commits = [];
@@ -43,8 +43,8 @@ ${refinedCommits.map(commit => commit + '\n').join('')}
   const fs = require('fs');
 
   try {
-    const fileContent = await fs.readFileSync('../CHANGELOG.md');
-    const openedFile = await fs.openSync('../CHANGELOG.md', 'w+');
+    const fileContent = await fs.readFileSync('./CHANGELOG.md');
+    const openedFile = await fs.openSync('./CHANGELOG.md', 'w+');
     const buffer = new Buffer(getChangeLogContent());
 
     await fs.writeSync(openedFile, buffer, 0, buffer.length, 0);
