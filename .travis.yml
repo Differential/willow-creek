@@ -20,7 +20,8 @@ jobs:
       script:
         - yarn lint
     - script:
-        - travis_wait yarn test && travis_wait yarn codecov
+        - travis_wait yarn test --maxWorkers=2
+        - travis_wait yarn codecov
     - stage: Deploy Api
       script: skip
       before_deploy: npm install -g now
