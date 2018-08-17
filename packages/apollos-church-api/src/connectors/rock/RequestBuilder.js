@@ -13,6 +13,7 @@ export default class RockRequestBuilder {
   }
 
   query = {};
+
   transforms = [];
 
   get path() {

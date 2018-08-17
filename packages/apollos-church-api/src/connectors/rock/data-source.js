@@ -4,7 +4,7 @@ import { mapKeys, mapValues, camelCase } from 'lodash';
 
 import { createCursor, parseCursor } from 'apollos-church-api/src/utils/cursor';
 
-import { ROCK_API, ROCK_TOKEN } from './constants';
+import { ROCK_API, ROCK_TOKEN } from './constants'; // eslint-disable-line import/named
 import RequestBuilder from './RequestBuilder';
 
 export default class RockApolloDataSource extends RESTDataSource {

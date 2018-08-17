@@ -2,6 +2,7 @@ import RockApolloDataSource from 'apollos-church-api/src/connectors/rock/data-so
 
 export default class ContentItem extends RockApolloDataSource {
   resource = 'ContentChannelItems';
+
   expanded = true;
 
   getCursorByParentContentItemId = async (id) => {

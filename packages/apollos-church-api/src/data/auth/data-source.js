@@ -7,7 +7,9 @@ import { generateToken, registerToken } from './token';
 
 export default class AuthDataSource extends RockApolloDataSource {
   resource = 'Auth';
+
   rockCookie = null;
+
   userToken = null;
 
   getCurrentPerson = async () => {

@@ -10,7 +10,7 @@
   "scripts": {
     "start": "./node_modules/.bin/lerna run start --parallel",
     "lint": "./node_modules/.bin/lerna run lint",
-    "test": "./node_modules/.bin/lerna run test --stream"
+    "test": "./node_modules/.bin/lerna run test"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-rc.1",
