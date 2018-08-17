@@ -16,6 +16,7 @@ exports[`The LoginForm component should render 1`] = `
       }
     }
     enableAutomaticScroll={true}
+    enableOnAndroid={false}
     enableResetScrollToCoords={true}
     extraHeight={75}
     extraScrollHeight={0}

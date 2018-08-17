@@ -1,4 +1,4 @@
-jest.mock('client');
+jest.mock('./src/client/index');
 jest.mock('react-native-custom-tabs', () => ({
   CustomTabs: {
     openURL: jest.fn(),
