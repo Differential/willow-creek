@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from '/mobile/Providers';
-import { H5 } from '/mobile/ui/typography';
-import { withIsLoading } from '/mobile/ui/isLoading';
+import Providers from 'apollos-church-app/src/Providers';
+import { H5 } from 'apollos-church-app/src/ui/typography';
+import { withIsLoading } from 'apollos-church-app/src/ui/isLoading';
 
 import BlockQuote from '.';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { H4 } from '/mobile/ui/typography';
+import { H4 } from 'apollos-church-app/src/ui/typography';
 
 const Label = ({ route }) => {
   const labelText = route.title;

@@ -1,4 +1,4 @@
-import { client } from '/mobile/client';
+import { client } from 'apollos-church-app/src/client';
 import gql from 'graphql-tag';
 
 import { resolvers, defaults } from '.';

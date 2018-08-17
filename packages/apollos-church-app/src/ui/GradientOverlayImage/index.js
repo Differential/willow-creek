@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { pure } from 'recompose';
 import Color from 'color';
 
-import styled from '/mobile/ui/styled';
-import ConnectedImage from '/mobile/ui/ConnectedImage';
+import styled from 'apollos-church-app/src/ui/styled';
+import ConnectedImage from 'apollos-church-app/src/ui/ConnectedImage';
 
 const Overlay = styled(StyleSheet.absoluteFillObject)(LinearGradient);
 

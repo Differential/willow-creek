@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
 import { Platform, Switch, View } from 'react-native';
 
-import { withTheme } from '/mobile/ui/theme';
-import FlexedView from '/mobile/ui/FlexedView';
-import styled from '/mobile/ui/styled';
-import Touchable from '/mobile/ui/Touchable';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import FlexedView from 'apollos-church-app/src/ui/FlexedView';
+import styled from 'apollos-church-app/src/ui/styled';
+import Touchable from 'apollos-church-app/src/ui/Touchable';
 
 import InputAddon, { AddonRow } from '../InputAddon';
 import { LabelText } from '../FloatingLabel';

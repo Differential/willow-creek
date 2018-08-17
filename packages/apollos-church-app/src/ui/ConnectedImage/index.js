@@ -3,7 +3,7 @@ import { Animated, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { every } from 'lodash';
 
-import styled from '/mobile/ui/styled';
+import styled from 'apollos-church-app/src/ui/styled';
 
 import SkeletonImage from './SkeletonImage';
 

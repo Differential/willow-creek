@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
-import Icon from '/mobile/ui/Icon';
-import Touchable from '/mobile/ui/Touchable';
-import share from '/mobile/utils/content/share';
-import { withTheme } from '/mobile/ui/theme';
+import Icon from 'apollos-church-app/src/ui/Icon';
+import Touchable from 'apollos-church-app/src/ui/Touchable';
+import share from 'apollos-church-app/src/utils/content/share';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
 
 const enhance = compose(pure, withTheme());
 

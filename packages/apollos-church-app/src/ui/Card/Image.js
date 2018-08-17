@@ -1,9 +1,9 @@
 import { Platform } from 'react-native';
 import { compose } from 'recompose';
 
-import styled from '/mobile/ui/styled';
-import ProgressiveImage from '/mobile/ui/ProgressiveImage';
-import { getIsLoading } from '/mobile/ui/isLoading';
+import styled from 'apollos-church-app/src/ui/styled';
+import ProgressiveImage from 'apollos-church-app/src/ui/ProgressiveImage';
+import { getIsLoading } from 'apollos-church-app/src/ui/isLoading';
 
 const Image = compose(
   getIsLoading,

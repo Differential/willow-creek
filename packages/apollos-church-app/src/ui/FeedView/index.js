@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { pure, compose, branch, withProps, defaultProps } from 'recompose';
 import { get } from 'lodash';
 
-import FeedItemCard from '/mobile/ui/FeedItemCard';
-import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
-import { withTheme } from '/mobile/ui/theme';
-import { ErrorCard } from '/mobile/ui/Card';
+import FeedItemCard from 'apollos-church-app/src/ui/FeedItemCard';
+import { enhancer as mediaQuery } from 'apollos-church-app/src/ui/MediaQuery';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import { ErrorCard } from 'apollos-church-app/src/ui/Card';
 
 const StyledFlatList = compose(
   withTheme(({ theme: { helpers: { verticalRhythm } } } = {}) => ({

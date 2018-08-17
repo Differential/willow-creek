@@ -3,7 +3,7 @@ import { Modal } from 'react-native';
 import PropTypes from 'prop-types';
 import Video from 'react-native-video-controls';
 
-import GradientOverlayImage from '/mobile/ui/GradientOverlayImage';
+import GradientOverlayImage from 'apollos-church-app/src/ui/GradientOverlayImage';
 
 import {
   VideoWrapper,

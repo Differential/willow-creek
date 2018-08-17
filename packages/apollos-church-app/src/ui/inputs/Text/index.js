@@ -5,7 +5,7 @@ import { compose, withProps, pure } from 'recompose';
 import { View, Platform, TextInput, Animated } from 'react-native';
 import Color from 'color';
 
-import { withTheme } from '/mobile/ui/theme';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
 
 import FloatingLabel from '../FloatingLabel';
 import InputUnderline from '../InputUnderline';

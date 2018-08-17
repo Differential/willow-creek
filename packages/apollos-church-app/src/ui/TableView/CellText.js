@@ -1,5 +1,5 @@
-import { H5 } from '/mobile/ui/typography';
-import styled from '/mobile/ui/styled';
+import { H5 } from 'apollos-church-app/src/ui/typography';
+import styled from 'apollos-church-app/src/ui/styled';
 
 const CellText = styled(({ theme }) => ({
   flexGrow: 1,

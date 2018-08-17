@@ -2,7 +2,7 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import { mapKeys, mapValues, camelCase } from 'lodash';
 
-import { createCursor, parseCursor } from '/api/utils/cursor';
+import { createCursor, parseCursor } from 'apollos-church-api/src/utils/cursor';
 
 import { ROCK_API, ROCK_TOKEN } from './constants';
 import RequestBuilder from './RequestBuilder';

@@ -5,8 +5,8 @@ import { View } from 'react-native';
 import {
   withPlaceholder,
   Paragraph as ParagraphPlaceholder,
-} from '/mobile/ui/Placeholder';
-import styled from '/mobile/ui/styled';
+} from 'apollos-church-app/src/ui/Placeholder';
+import styled from 'apollos-church-app/src/ui/styled';
 
 const Paragraph = compose(
   setDisplayName('Paragraph'),

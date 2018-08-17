@@ -2,8 +2,8 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import { Paragraph, H2, BodyText } from '/mobile/ui/typography';
-import PaddedView from '/mobile/ui/PaddedView';
+import { Paragraph, H2, BodyText } from 'apollos-church-app/src/ui/typography';
+import PaddedView from 'apollos-church-app/src/ui/PaddedView';
 
 import H1 from '.';
 

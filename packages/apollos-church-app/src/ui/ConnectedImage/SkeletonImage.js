@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import Placeholder from 'rn-placeholder';
 
-import styled from '/mobile/ui/styled';
+import styled from 'apollos-church-app/src/ui/styled';
 
 const SkeletonImage = styled(({ theme }) => ({
   width: '100%',

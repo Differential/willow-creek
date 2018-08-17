@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ThemeProvider } from '/mobile/ui/theme';
+import { ThemeProvider } from 'apollos-church-app/src/ui/theme';
 
 import SkeletonImage from './SkeletonImage';
 

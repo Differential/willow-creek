@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
-import { withThemeMixin, withTheme } from '/mobile/ui/theme';
-// import Icon from '/mobile/ui/Icon';
-import ChannelLabel from '/mobile/ui/ChannelLabel';
-import GradientOverlayImage from '/mobile/ui/GradientOverlayImage';
-import Card, { CardContent, CardActions } from '/mobile/ui/Card';
-import { H3 } from '/mobile/ui/typography';
-// import ConnectedImage from '/mobile/ui/ConnectedImage';
-// import ProgressiveImage from '/mobile/ui/ProgressiveImage';
+import { withThemeMixin, withTheme } from 'apollos-church-app/src/ui/theme';
+// import Icon from 'apollos-church-app/src/ui/Icon';
+import ChannelLabel from 'apollos-church-app/src/ui/ChannelLabel';
+import GradientOverlayImage from 'apollos-church-app/src/ui/GradientOverlayImage';
+import Card, { CardContent, CardActions } from 'apollos-church-app/src/ui/Card';
+import { H3 } from 'apollos-church-app/src/ui/typography';
+// import ConnectedImage from 'apollos-church-app/src/ui/ConnectedImage';
+// import ProgressiveImage from 'apollos-church-app/src/ui/ProgressiveImage';
 
 // import LikeButton from './LikeButton';
 

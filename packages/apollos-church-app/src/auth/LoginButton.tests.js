@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import wait from 'waait';
 
-import Providers from '/mobile/Providers';
+import Providers from 'apollos-church-app/src/Providers';
 
 import LoginButton, { getLoginState } from './LoginButton';
 

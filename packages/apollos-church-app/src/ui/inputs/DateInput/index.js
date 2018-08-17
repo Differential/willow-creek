@@ -4,7 +4,7 @@ import moment from 'moment';
 import { Animated } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 
-import Chip from '/mobile/ui/Chip';
+import Chip from 'apollos-church-app/src/ui/Chip';
 
 import InputWrapper from '../InputWrapper';
 import FloatingLabel from '../FloatingLabel';

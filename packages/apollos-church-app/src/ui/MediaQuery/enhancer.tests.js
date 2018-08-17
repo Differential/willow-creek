@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { View, Dimensions } from 'react-native';
 
-import Providers from '/mobile/Providers';
-import { breakpoints as defaultBreakPoints } from '/mobile/ui/theme/defaultTheme';
+import Providers from 'apollos-church-app/src/Providers';
+import { breakpoints as defaultBreakPoints } from 'apollos-church-app/src/ui/theme/defaultTheme';
 
 import enhancer from './enhancer';
 

@@ -1,4 +1,4 @@
-import { buildGetMock } from '/api/utils/testUtils';
+import { buildGetMock } from 'apollos-church-api/src/utils/testUtils';
 import Person from '../data-source';
 
 describe('Person', () => {

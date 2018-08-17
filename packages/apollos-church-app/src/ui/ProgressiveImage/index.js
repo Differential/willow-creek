@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 
-import styled from '/mobile/ui/styled';
-import ConnectedImage from '/mobile/ui/ConnectedImage';
+import styled from 'apollos-church-app/src/ui/styled';
+import ConnectedImage from 'apollos-church-app/src/ui/ConnectedImage';
 
 const Wrapper = styled(({ theme }) => ({
   width: '100%',

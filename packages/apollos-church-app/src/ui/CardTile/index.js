@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
 import moment from 'moment';
 
-import Placeholder from '/mobile/ui/Placeholder';
-import { withIsLoading } from '/mobile/ui/isLoading';
-import { withTheme, withThemeMixin } from '/mobile/ui/theme';
-import styled from '/mobile/ui/styled';
-import { H3, H5, H6 } from '/mobile/ui/typography';
-import { CardContent, CardActions } from '/mobile/ui/Card';
-import ChannelLabel from '/mobile/ui/ChannelLabel';
+import Placeholder from 'apollos-church-app/src/ui/Placeholder';
+import { withIsLoading } from 'apollos-church-app/src/ui/isLoading';
+import { withTheme, withThemeMixin } from 'apollos-church-app/src/ui/theme';
+import styled from 'apollos-church-app/src/ui/styled';
+import { H3, H5, H6 } from 'apollos-church-app/src/ui/typography';
+import { CardContent, CardActions } from 'apollos-church-app/src/ui/Card';
+import ChannelLabel from 'apollos-church-app/src/ui/ChannelLabel';
 
 const enhance = compose(
   withIsLoading,

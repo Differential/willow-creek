@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import { H1 } from '/mobile/ui/typography';
-import styled from '/mobile/ui/styled';
+import { H1 } from 'apollos-church-app/src/ui/typography';
+import styled from 'apollos-church-app/src/ui/styled';
 
 import FlexedView from '.';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import FlexedView from '/mobile/ui/FlexedView';
+import FlexedView from 'apollos-church-app/src/ui/FlexedView';
 
 import Picker, { Item } from '.';
 

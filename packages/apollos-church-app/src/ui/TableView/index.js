@@ -2,9 +2,9 @@ import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, renderComponent } from 'recompose';
 
-import styled from '/mobile/ui/styled';
-import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
-import Card from '/mobile/ui/Card';
+import styled from 'apollos-church-app/src/ui/styled';
+import { enhancer as mediaQuery } from 'apollos-church-app/src/ui/MediaQuery';
+import Card from 'apollos-church-app/src/ui/Card';
 
 export { default as Cell } from './Cell';
 export { default as CellText } from './CellText';

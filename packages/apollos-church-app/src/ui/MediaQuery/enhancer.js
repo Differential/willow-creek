@@ -1,7 +1,7 @@
 import { branch, compose, mapProps } from 'recompose';
 import { every } from 'lodash';
 
-import { withTheme } from '/mobile/ui/theme';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
 
 import withWindow from './withWindow';
 import queryMatcher from './queryMatcher';

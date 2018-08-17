@@ -1,4 +1,4 @@
-import { client } from '/mobile/client';
+import { client } from 'apollos-church-app/src/client';
 
 import { resolvers } from '.';
 

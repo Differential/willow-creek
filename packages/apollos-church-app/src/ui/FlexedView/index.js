@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 
-import styled from '/mobile/ui/styled';
+import styled from 'apollos-church-app/src/ui/styled';
 
 const FlexedView = styled(
   {

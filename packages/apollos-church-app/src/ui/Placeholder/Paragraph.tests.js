@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from '/mobile/Providers';
+import Providers from 'apollos-church-app/src/Providers';
 
 import { Paragraph } from './Paragraph';
 

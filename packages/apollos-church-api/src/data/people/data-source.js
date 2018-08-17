@@ -1,4 +1,4 @@
-import RockApolloDataSource from '/api/connectors/rock/data-source';
+import RockApolloDataSource from 'apollos-church-api/src/connectors/rock/data-source';
 
 export default class Person extends RockApolloDataSource {
   resource = 'People';

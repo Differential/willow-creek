@@ -6,7 +6,7 @@ import {
   addDecorator,
 } from '@storybook/react-native';
 
-import Providers from '/mobile/Providers';
+import Providers from 'apollos-church-app/src/Providers';
 
 // storyLoader.js is generated on storybook start. next line disabled for CI test.
 import { loadStories } from './storyLoader'; // eslint-disable-line

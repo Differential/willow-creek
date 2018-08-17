@@ -2,17 +2,17 @@ import React, { PureComponent } from 'react';
 import { ScrollView } from 'react-native';
 import { Query } from 'react-apollo';
 
-import { LoginButton } from '/mobile/auth';
-import BackgroundView from '/mobile/ui/BackgroundView';
+import { LoginButton } from 'apollos-church-app/src/auth';
+import BackgroundView from 'apollos-church-app/src/ui/BackgroundView';
 import TableView, {
   Cell,
   CellIcon,
   CellText,
   Divider,
-} from '/mobile/ui/TableView';
-import { WebBrowserConsumer } from '/mobile/ui/WebBrowser';
-import Touchable from '/mobile/ui/Touchable';
-import UserAvatarView from '/mobile/ui/UserAvatarView';
+} from 'apollos-church-app/src/ui/TableView';
+import { WebBrowserConsumer } from 'apollos-church-app/src/ui/WebBrowser';
+import Touchable from 'apollos-church-app/src/ui/Touchable';
+import UserAvatarView from 'apollos-church-app/src/ui/UserAvatarView';
 
 import getLoginState from './getLoginState.graphql';
 import getUserProfile from './getUserProfile.graphql';

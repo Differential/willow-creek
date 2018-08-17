@@ -4,10 +4,10 @@ import { View } from 'react-native';
 import { get } from 'lodash';
 import { compose, pure } from 'recompose';
 
-import ConnectedImage from '/mobile/ui/ConnectedImage';
-import styled from '/mobile/ui/styled';
-import { withTheme } from '/mobile/ui/theme';
-import ActivityIndicator from '/mobile/ui/ActivityIndicator';
+import ConnectedImage from 'apollos-church-app/src/ui/ConnectedImage';
+import styled from 'apollos-church-app/src/ui/styled';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import ActivityIndicator from 'apollos-church-app/src/ui/ActivityIndicator';
 
 export { default as AvatarList } from './List';
 

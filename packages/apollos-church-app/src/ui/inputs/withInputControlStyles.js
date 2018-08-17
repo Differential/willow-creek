@@ -1,4 +1,4 @@
-import styled from '/mobile/ui/styled';
+import styled from 'apollos-church-app/src/ui/styled';
 
 export const baseStyle = ({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 4,

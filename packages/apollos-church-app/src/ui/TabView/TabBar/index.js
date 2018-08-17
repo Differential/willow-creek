@@ -1,8 +1,8 @@
 import { TabBar } from 'react-native-tab-view';
 import { compose, withProps } from 'recompose';
 
-import styled from '/mobile/ui/styled';
-import { withTheme } from '/mobile/ui/theme';
+import styled from 'apollos-church-app/src/ui/styled';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
 
 import Label from './Label';
 import Indicator from './Indicator';

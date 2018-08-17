@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import { H1 } from '/mobile/ui/typography';
+import { H1 } from 'apollos-church-app/src/ui/typography';
 
 import PaddedView from '.';
 

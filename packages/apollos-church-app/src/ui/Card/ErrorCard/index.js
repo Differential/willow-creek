@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '/mobile/ui/styled';
-import { H4, H6 } from '/mobile/ui/typography';
-import Card, { CardContent } from '/mobile/ui/Card';
+import styled from 'apollos-church-app/src/ui/styled';
+import { H4, H6 } from 'apollos-church-app/src/ui/typography';
+import Card, { CardContent } from 'apollos-church-app/src/ui/Card';
 
 const Header = styled({ textAlign: 'center' }, 'Error.Header')(H4);
 const ErrorText = styled({ textAlign: 'center' }, 'Error.Text')(H6);

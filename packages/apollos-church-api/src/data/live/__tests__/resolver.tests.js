@@ -2,9 +2,9 @@ import { fetch } from 'apollo-server-env';
 
 import { graphql } from 'graphql';
 import { makeExecutableSchema } from 'apollo-server';
-import { getTestContext } from '/api/utils/testUtils';
+import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
 // we import the root-level schema and resolver so we test the entire integration:
-import { schema as typeDefs, resolvers } from '/api/data';
+import { schema as typeDefs, resolvers } from 'apollos-church-api/src/data';
 
 describe('LiveStream', () => {
   let schema;

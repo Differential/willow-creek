@@ -3,9 +3,9 @@ import React from 'react';
 import { Platform, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { withIsLoading } from '/mobile/ui/isLoading';
-import styled from '/mobile/ui/styled';
-import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
+import { withIsLoading } from 'apollos-church-app/src/ui/isLoading';
+import styled from 'apollos-church-app/src/ui/styled';
+import { enhancer as mediaQuery } from 'apollos-church-app/src/ui/MediaQuery';
 
 const StyledCard = compose(
   withIsLoading,

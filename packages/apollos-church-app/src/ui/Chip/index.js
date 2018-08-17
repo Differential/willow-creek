@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
  */
 import { TouchableOpacity } from 'react-native';
 
-import { H6 } from '/mobile/ui/typography';
-import Button from '/mobile/ui/Button';
-import Icon from '/mobile/ui/Icon';
-import { withTheme } from '/mobile/ui/theme';
-import styled from '/mobile/ui/styled';
+import { H6 } from 'apollos-church-app/src/ui/typography';
+import Button from 'apollos-church-app/src/ui/Button';
+import Icon from 'apollos-church-app/src/ui/Icon';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import styled from 'apollos-church-app/src/ui/styled';
 
 export { default as ChipList } from './List';
 

@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
 import { kebabCase } from 'lodash';
 
-import { withIsLoading } from '/mobile/ui/isLoading';
-import { withTheme } from '/mobile/ui/theme';
-import styled from '/mobile/ui/styled';
-import { H6 } from '/mobile/ui/typography';
-import Icon from '/mobile/ui/Icon';
-import * as Icons from '/mobile/ui/Icon/icons';
+import { withIsLoading } from 'apollos-church-app/src/ui/isLoading';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import styled from 'apollos-church-app/src/ui/styled';
+import { H6 } from 'apollos-church-app/src/ui/typography';
+import Icon from 'apollos-church-app/src/ui/Icon';
+import * as Icons from 'apollos-church-app/src/ui/Icon/icons';
 
 const enhance = compose(withIsLoading, pure, withTheme());
 

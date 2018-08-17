@@ -3,10 +3,10 @@ import { TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { pure, compose } from 'recompose';
 
-import { H4 } from '/mobile/ui/typography';
-import styled from '/mobile/ui/styled';
-import { withTheme } from '/mobile/ui/theme';
-import GradientOverlayImage from '/mobile/ui/GradientOverlayImage';
+import { H4 } from 'apollos-church-app/src/ui/typography';
+import styled from 'apollos-church-app/src/ui/styled';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import GradientOverlayImage from 'apollos-church-app/src/ui/GradientOverlayImage';
 
 const CardView = styled(
   ({ theme }) => ({

@@ -1,7 +1,7 @@
 import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
-import { getTestContext } from '/api/utils/testUtils';
+import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
 
 import { schema as typeDefs, resolvers } from '../../';
 

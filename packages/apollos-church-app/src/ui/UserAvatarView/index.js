@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
-import Avatar from '/mobile/ui/Avatar';
-import { withTheme } from '/mobile/ui/theme';
-import { H4, BodyText } from '/mobile/ui/typography';
-import PaddedView from '/mobile/ui/PaddedView';
-import ConnectedImage from '/mobile/ui/ConnectedImage';
-import Touchable from '/mobile/ui/Touchable';
-import styled from '/mobile/ui/styled';
+import Avatar from 'apollos-church-app/src/ui/Avatar';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import { H4, BodyText } from 'apollos-church-app/src/ui/typography';
+import PaddedView from 'apollos-church-app/src/ui/PaddedView';
+import ConnectedImage from 'apollos-church-app/src/ui/ConnectedImage';
+import Touchable from 'apollos-church-app/src/ui/Touchable';
+import styled from 'apollos-church-app/src/ui/styled';
 
 const Container = styled({
   alignItems: 'center',

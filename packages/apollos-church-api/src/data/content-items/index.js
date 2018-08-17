@@ -5,8 +5,8 @@ import omitBy from 'lodash/fp/omitBy';
 import pickBy from 'lodash/fp/pickBy';
 import mapValues from 'lodash/fp/mapValues';
 import values from 'lodash/fp/values';
-import sanitizeHtml from '/api/utils/sanitize-html';
-import { Constants } from '/api/connectors/rock';
+import sanitizeHtml from 'apollos-church-api/src/utils/sanitize-html';
+import { Constants } from 'apollos-church-api/src/connectors/rock';
 import { createGlobalId } from '../node';
 
 const mapValuesWithKey = mapValues.convert({ cap: false });

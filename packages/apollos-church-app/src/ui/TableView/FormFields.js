@@ -1,5 +1,5 @@
-import PaddedView from '/mobile/ui/PaddedView';
-import styled from '/mobile/ui/styled';
+import PaddedView from 'apollos-church-app/src/ui/PaddedView';
+import styled from 'apollos-church-app/src/ui/styled';
 
 const FormFields = styled(({ theme }) => ({
   paddingTop: theme.sizing.baseUnit * 0.6,

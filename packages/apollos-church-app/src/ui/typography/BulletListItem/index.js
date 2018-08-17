@@ -3,8 +3,8 @@ import { compose, setDisplayName, pure } from 'recompose';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
-import styled from '/mobile/ui/styled';
-import { BodyText } from '/mobile/ui/typography';
+import styled from 'apollos-church-app/src/ui/styled';
+import { BodyText } from 'apollos-church-app/src/ui/typography';
 
 const enhance = compose(setDisplayName('BulletListItem'), pure);
 

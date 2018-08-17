@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Text, Animated } from 'react-native';
 
-import Providers from '/mobile/Providers';
+import Providers from 'apollos-church-app/src/Providers';
 
 import Picker, { Item, Picker as UnwrappedPicker } from '.';
 

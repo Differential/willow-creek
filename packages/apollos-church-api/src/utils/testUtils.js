@@ -1,5 +1,5 @@
-import getContext from '/api/getContext';
-import getDataSources from '/api/getDataSources';
+import getContext from 'apollos-church-api/src/getContext';
+import getDataSources from 'apollos-church-api/src/getDataSources';
 import { KeyValueCache } from 'apollo-server-caching';
 
 export function getTestContext(req) {

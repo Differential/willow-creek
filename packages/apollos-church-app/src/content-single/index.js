@@ -4,17 +4,17 @@ import { ScrollView, TouchableWithoutFeedback } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { ErrorCard } from '/mobile/ui/Card';
-import CardTile from '/mobile/ui/CardTile';
-import VideoPlayer from '/mobile/ui/VideoPlayer';
-import HorizontalTileFeed from '/mobile/ui/HorizontalTileFeed';
-import HTMLView from '/mobile/ui/HTMLView';
-import PaddedView from '/mobile/ui/PaddedView';
-import { H2 } from '/mobile/ui/typography';
-import BackgroundView from '/mobile/ui/BackgroundView';
-import styled from '/mobile/ui/styled';
-import { ThemeMixin } from '/mobile/ui/theme';
-import Share from '/mobile/ui/Share';
+import { ErrorCard } from 'apollos-church-app/src/ui/Card';
+import CardTile from 'apollos-church-app/src/ui/CardTile';
+import VideoPlayer from 'apollos-church-app/src/ui/VideoPlayer';
+import HorizontalTileFeed from 'apollos-church-app/src/ui/HorizontalTileFeed';
+import HTMLView from 'apollos-church-app/src/ui/HTMLView';
+import PaddedView from 'apollos-church-app/src/ui/PaddedView';
+import { H2 } from 'apollos-church-app/src/ui/typography';
+import BackgroundView from 'apollos-church-app/src/ui/BackgroundView';
+import styled from 'apollos-church-app/src/ui/styled';
+import { ThemeMixin } from 'apollos-church-app/src/ui/theme';
+import Share from 'apollos-church-app/src/ui/Share';
 
 import getContentItem from './getContentItem.graphql';
 import getContentItemMinimalState from './getContentItemMinimalState.graphql';

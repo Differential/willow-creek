@@ -4,14 +4,14 @@ import { TouchableWithoutFeedback } from 'react-native';
 import { compose, pure } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
-import { withIsLoading } from '/mobile/ui/isLoading';
-import styled from '/mobile/ui/styled';
-import Card, { CardContent } from '/mobile/ui/Card';
-import SideBySideView from '/mobile/ui/SideBySideView';
-import FlexedView from '/mobile/ui/FlexedView';
-import { H5, BodyText, Paragraph } from '/mobile/ui/typography';
-import { enhancer as mediaQuery } from '/mobile/ui/MediaQuery';
-import ChannelLabel from '/mobile/ui/ChannelLabel';
+import { withIsLoading } from 'apollos-church-app/src/ui/isLoading';
+import styled from 'apollos-church-app/src/ui/styled';
+import Card, { CardContent } from 'apollos-church-app/src/ui/Card';
+import SideBySideView from 'apollos-church-app/src/ui/SideBySideView';
+import FlexedView from 'apollos-church-app/src/ui/FlexedView';
+import { H5, BodyText, Paragraph } from 'apollos-church-app/src/ui/typography';
+import { enhancer as mediaQuery } from 'apollos-church-app/src/ui/MediaQuery';
+import ChannelLabel from 'apollos-church-app/src/ui/ChannelLabel';
 
 import Thumbnail from './Thumbnail';
 

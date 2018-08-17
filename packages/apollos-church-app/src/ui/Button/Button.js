@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { get } from 'lodash';
 
-import { withTheme, withThemeMixin } from '/mobile/ui/theme';
-import styled from '/mobile/ui/styled';
-import Touchable from '/mobile/ui/Touchable';
-import { H4 } from '/mobile/ui/typography';
-import { InlineActivityIndicator } from '/mobile/ui/ActivityIndicator';
-import { withPlaceholder, Line } from '/mobile/ui/Placeholder';
+import { withTheme, withThemeMixin } from 'apollos-church-app/src/ui/theme';
+import styled from 'apollos-church-app/src/ui/styled';
+import Touchable from 'apollos-church-app/src/ui/Touchable';
+import { H4 } from 'apollos-church-app/src/ui/typography';
+import { InlineActivityIndicator } from 'apollos-church-app/src/ui/ActivityIndicator';
+import { withPlaceholder, Line } from 'apollos-church-app/src/ui/Placeholder';
 
 const ButtonStyles = styled(
   ({ theme, disabled, bordered, pill }) => ({

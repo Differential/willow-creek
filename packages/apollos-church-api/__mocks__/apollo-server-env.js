@@ -1,6 +1,6 @@
 import fetch from 'jest-fetch-mock';
 
-import { Constants } from '/api/connectors/rock';
+import { Constants } from 'apollos-church-api/src/connectors/rock';
 import * as apolloDatasourceMocks from './apollo-datasource-mocks';
 import * as rockMocks from './rock-api-mocks';
 

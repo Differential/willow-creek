@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from '/mobile/ui/Icon';
+import Icon from 'apollos-church-app/src/ui/Icon';
 
 const tabBarIcon = (name) => {
   function TabBarIcon({ tintColor }) {

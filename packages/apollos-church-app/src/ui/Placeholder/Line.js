@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import Placeholder from 'rn-placeholder';
 
-import styled from '/mobile/ui/styled';
+import styled from 'apollos-church-app/src/ui/styled';
 
 export const Line = styled(
   ({ theme, width = '100%' }) => ({

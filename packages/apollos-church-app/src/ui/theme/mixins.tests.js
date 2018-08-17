@@ -2,8 +2,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import FlexedView from '/mobile/ui/FlexedView';
-import { H3, H6, BodyText } from '/mobile/ui/typography';
+import FlexedView from 'apollos-church-app/src/ui/FlexedView';
+import { H3, H6, BodyText } from 'apollos-church-app/src/ui/typography';
 
 import { ThemeProvider } from './';
 import { withThemeMixin } from './mixins';

@@ -2,7 +2,7 @@ import React from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import styled from '/mobile/ui/styled';
+import styled from 'apollos-church-app/src/ui/styled';
 
 const FocusedUnderline = styled(
   ({ theme, hasError }) => ({

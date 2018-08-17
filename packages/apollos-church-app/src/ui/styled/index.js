@@ -1,7 +1,7 @@
 import { withPropsOnChange, compose, mapProps } from 'recompose';
 import { isEqual, get } from 'lodash';
 
-import { withTheme } from '/mobile/ui/theme';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
 
 import mergeStyles from './mergeStyles';
 import createStyleSheet from './createStyleSheet';

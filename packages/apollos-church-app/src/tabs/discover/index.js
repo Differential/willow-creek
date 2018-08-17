@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
 
-import ContentFeed from '/mobile/content-feed';
+import ContentFeed from 'apollos-church-app/src/content-feed';
 
 import tabBarIcon from '../tabBarIcon';
 

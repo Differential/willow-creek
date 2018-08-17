@@ -1,5 +1,5 @@
 import { fetch } from 'apollo-server-env';
-import { buildGetMock } from '/api/utils/testUtils';
+import { buildGetMock } from 'apollos-church-api/src/utils/testUtils';
 
 import ContentItemsDataSource from '../data-source';
 

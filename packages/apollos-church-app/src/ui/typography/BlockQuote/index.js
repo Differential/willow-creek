@@ -3,9 +3,9 @@ import { compose, setDisplayName, pure } from 'recompose';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
 
-import styled from '/mobile/ui/styled';
-import { withThemeMixin } from '/mobile/ui/theme';
-import { BodyText } from '/mobile/ui/typography';
+import styled from 'apollos-church-app/src/ui/styled';
+import { withThemeMixin } from 'apollos-church-app/src/ui/theme';
+import { BodyText } from 'apollos-church-app/src/ui/typography';
 
 const Block = compose(
   setDisplayName('BlockQuote'),

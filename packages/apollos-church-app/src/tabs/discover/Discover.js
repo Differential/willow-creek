@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 
-import FeedView from '/mobile/ui/FeedView';
-import BackgroundView from '/mobile/ui/BackgroundView';
+import FeedView from 'apollos-church-app/src/ui/FeedView';
+import BackgroundView from 'apollos-church-app/src/ui/BackgroundView';
 
 import TileContentFeed from './TileContentFeed';
 import getContentChannels from './getContentChannels.graphql';

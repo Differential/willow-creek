@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 
-import Providers from '/mobile/Providers';
+import Providers from 'apollos-church-app/src/Providers';
 
 import TabView, { SceneMap } from '.';
 

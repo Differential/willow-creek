@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from '/mobile/Providers';
-import { withIsLoading } from '/mobile/ui/isLoading';
-import { H5 } from '/mobile/ui/typography';
+import Providers from 'apollos-church-app/src/Providers';
+import { withIsLoading } from 'apollos-church-app/src/ui/isLoading';
+import { H5 } from 'apollos-church-app/src/ui/typography';
 
 import BulletListItem from '.';
 

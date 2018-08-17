@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import Placeholder from 'rn-placeholder';
 import { times } from 'lodash';
 
-import styled from '/mobile/ui/styled';
+import styled from 'apollos-church-app/src/ui/styled';
 
 import { Line } from './Line';
 

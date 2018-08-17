@@ -1,4 +1,4 @@
-import { withTheme } from '/mobile/ui/theme';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
 
 // Currently used to inject default fill color to icons.
 // Eventually can be used for other shared functionality between icons

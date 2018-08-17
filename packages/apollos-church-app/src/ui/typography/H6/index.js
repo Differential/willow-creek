@@ -2,8 +2,8 @@ import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, setDisplayName, pure } from 'recompose';
 
-import styled from '/mobile/ui/styled';
-import { withPlaceholder, Typography } from '/mobile/ui/Placeholder';
+import styled from 'apollos-church-app/src/ui/styled';
+import { withPlaceholder, Typography } from 'apollos-church-app/src/ui/Placeholder';
 
 const styles = styled(
   ({ theme, padded }) => ({

@@ -1,9 +1,9 @@
 import { View, StyleSheet, Platform } from 'react-native';
 
-import styled from '/mobile/ui/styled';
-import Touchable from '/mobile/ui/Touchable';
-import { withTheme } from '/mobile/ui/theme';
-import Icon from '/mobile/ui/Icon';
+import styled from 'apollos-church-app/src/ui/styled';
+import Touchable from 'apollos-church-app/src/ui/Touchable';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import Icon from 'apollos-church-app/src/ui/Icon';
 
 const VideoWrapper = styled({
   position: 'relative',

@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import styled from '/mobile/ui/styled';
-import { H6 } from '/mobile/ui/typography';
-import Icon from '/mobile/ui/Icon';
+import styled from 'apollos-church-app/src/ui/styled';
+import { H6 } from 'apollos-church-app/src/ui/typography';
+import Icon from 'apollos-church-app/src/ui/Icon';
 
 import FloatingLabel from '../FloatingLabel';
 import InputUnderline from '../InputUnderline';

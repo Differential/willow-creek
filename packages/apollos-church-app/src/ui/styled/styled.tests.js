@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { compose } from 'recompose';
 import { View } from 'react-native';
 
-import Providers from '/mobile/Providers';
+import Providers from 'apollos-church-app/src/Providers';
 
 import styled from '.';
 

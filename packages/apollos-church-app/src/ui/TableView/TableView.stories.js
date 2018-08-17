@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import FlexedView from '/mobile/ui/FlexedView';
-import Icon from '/mobile/ui/Icon';
-import { Switch } from '/mobile/ui/inputs';
+import FlexedView from 'apollos-church-app/src/ui/FlexedView';
+import Icon from 'apollos-church-app/src/ui/Icon';
+import { Switch } from 'apollos-church-app/src/ui/inputs';
 
 import TableView, { Cell, CellText, Divider } from '.';
 

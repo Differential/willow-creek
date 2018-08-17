@@ -2,12 +2,12 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 
-import { UIText } from '/mobile/ui/typography';
-import Card, { CardContent } from '/mobile/ui/Card';
-import Touchable from '/mobile/ui/Touchable';
-import styled from '/mobile/ui/styled';
-import ChannelLabel from '/mobile/ui/ChannelLabel';
-import { WebBrowserConsumer } from '/mobile/ui/WebBrowser';
+import { UIText } from 'apollos-church-app/src/ui/typography';
+import Card, { CardContent } from 'apollos-church-app/src/ui/Card';
+import Touchable from 'apollos-church-app/src/ui/Touchable';
+import styled from 'apollos-church-app/src/ui/styled';
+import ChannelLabel from 'apollos-church-app/src/ui/ChannelLabel';
+import { WebBrowserConsumer } from 'apollos-church-app/src/ui/WebBrowser';
 
 import getLiveStream from './getLiveStream.graphql';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getIsLoading } from '/mobile/ui/isLoading';
+import { getIsLoading } from 'apollos-church-app/src/ui/isLoading';
 
 import { Line } from '.';
 

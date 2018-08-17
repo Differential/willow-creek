@@ -2,8 +2,8 @@ import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
-import { schema as typeDefs, resolvers } from '/api/data';
-import { getTestContext } from '/api/utils/testUtils';
+import { schema as typeDefs, resolvers } from 'apollos-church-api/src/data';
+import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
 import { generateToken, registerToken } from '../token';
 
 // we import the root-level schema and resolver so we test the entire integration:

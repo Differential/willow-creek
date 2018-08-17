@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from '/mobile/Providers';
-import CardTile from '/mobile/ui/CardTile';
+import Providers from 'apollos-church-app/src/Providers';
+import CardTile from 'apollos-church-app/src/ui/CardTile';
 
 import HorizontalTileFeed from '.';
 

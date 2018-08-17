@@ -3,9 +3,9 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { withTheme } from '/mobile/ui/theme';
-import FeedView from '/mobile/ui/FeedView';
-import BackgroundView from '/mobile/ui/BackgroundView';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
+import FeedView from 'apollos-church-app/src/ui/FeedView';
+import BackgroundView from 'apollos-church-app/src/ui/BackgroundView';
 
 import { LiveButton } from '../../live';
 

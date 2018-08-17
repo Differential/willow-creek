@@ -1,7 +1,7 @@
 import dotenv from 'dotenv/config'; // eslint-disable-line
 import { get } from 'lodash';
 
-import { registerToken } from '/api/data/auth/token';
+import { registerToken } from 'apollos-church-api/src/data/auth/token';
 
 import { models } from './data';
 

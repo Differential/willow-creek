@@ -2,7 +2,7 @@
 import { Platform } from 'react-native';
 import { createContext } from 'react';
 
-import { withTheme } from '/mobile/ui/theme';
+import { withTheme } from 'apollos-church-app/src/ui/theme';
 
 import Browser from './Browser';
 

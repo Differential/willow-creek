@@ -1,16 +1,6 @@
 {
   "presets": ["apollos", "react-native", "module:react-native-dotenv"],
   "plugins": [
-    [
-      "module-resolver",
-      {
-        "cwd": "babelrc",
-        "extensions": [".android.js", ".ios.js", ".js", ".graphql"],
-        "alias": {
-          "app": "./src"
-        }
-      }
-    ],
-    ["import-graphql"]
+    "import-graphql"
   ]
 }

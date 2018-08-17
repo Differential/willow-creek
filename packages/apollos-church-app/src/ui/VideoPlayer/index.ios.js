@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Video from 'react-native-video';
 
-import GradientOverlayImage from '/mobile/ui/GradientOverlayImage';
+import GradientOverlayImage from 'apollos-church-app/src/ui/GradientOverlayImage';
 
 import { VideoWrapper, PlayButton, PlayIcon } from './styles';
 

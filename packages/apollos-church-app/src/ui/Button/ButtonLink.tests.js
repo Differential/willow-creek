@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from '/mobile/Providers';
-import { BodyText } from '/mobile/ui/typography';
+import Providers from 'apollos-church-app/src/Providers';
+import { BodyText } from 'apollos-church-app/src/ui/typography';
 
 import ButtonLink from './ButtonLink';
 

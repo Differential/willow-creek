@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Providers from '/mobile/Providers';
-import { H3, H6, BodyText, Paragraph } from '/mobile/ui/typography';
-import Button, { ButtonLink } from '/mobile/ui/Button';
+import Providers from 'apollos-church-app/src/Providers';
+import { H3, H6, BodyText, Paragraph } from 'apollos-church-app/src/ui/typography';
+import Button, { ButtonLink } from 'apollos-church-app/src/ui/Button';
 
 import Card, { CardImage, CardContent, CardActions } from '.';
 

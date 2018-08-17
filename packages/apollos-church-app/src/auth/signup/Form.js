@@ -3,11 +3,11 @@ import { View, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import FlexedView from '/mobile/ui/FlexedView';
-import PaddedView from '/mobile/ui/PaddedView';
-import { Text as TextInput } from '/mobile/ui/inputs';
-import Button from '/mobile/ui/Button';
-import styled from '/mobile/ui/styled';
+import FlexedView from 'apollos-church-app/src/ui/FlexedView';
+import PaddedView from 'apollos-church-app/src/ui/PaddedView';
+import { Text as TextInput } from 'apollos-church-app/src/ui/inputs';
+import Button from 'apollos-church-app/src/ui/Button';
+import styled from 'apollos-church-app/src/ui/styled';
 
 const BottomSafeAreaView = styled({
   position: 'absolute',

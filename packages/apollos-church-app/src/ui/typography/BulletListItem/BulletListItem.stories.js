@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import { withIsLoading } from '/mobile/ui/isLoading';
-import PaddedView from '/mobile/ui/PaddedView';
+import { withIsLoading } from 'apollos-church-app/src/ui/isLoading';
+import PaddedView from 'apollos-church-app/src/ui/PaddedView';
 
 import BulletListItem from '.';
 

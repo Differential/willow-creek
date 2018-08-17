@@ -3,8 +3,8 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import BackgroundView from '/mobile/ui/BackgroundView';
-import FeedView from '/mobile/ui/FeedView';
+import BackgroundView from 'apollos-church-app/src/ui/BackgroundView';
+import FeedView from 'apollos-church-app/src/ui/FeedView';
 
 import getContentFeed from './getContentFeed.graphql';
 

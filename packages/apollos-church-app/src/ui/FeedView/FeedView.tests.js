@@ -3,8 +3,8 @@ import renderer from 'react-test-renderer';
 import { TouchableWithoutFeedback } from 'react-native';
 import { get } from 'lodash';
 
-import Providers from '/mobile/Providers';
-import FeedItemCard from '/mobile/ui/FeedItemCard';
+import Providers from 'apollos-church-app/src/Providers';
+import FeedItemCard from 'apollos-church-app/src/ui/FeedItemCard';
 
 import FeedView from '.';
 
