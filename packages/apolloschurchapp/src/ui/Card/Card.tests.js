@@ -2,7 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import Providers from 'apolloschurchapp/src/Providers';
-import { H3, H6, BodyText, Paragraph } from 'apolloschurchapp/src/ui/typography';
+import {
+  H3,
+  H6,
+  BodyText,
+  Paragraph,
+} from 'apolloschurchapp/src/ui/typography';
 import Button, { ButtonLink } from 'apolloschurchapp/src/ui/Button';
 
 import Card, { CardImage, CardContent, CardActions } from '.';

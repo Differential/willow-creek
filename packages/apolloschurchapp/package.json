@@ -12,9 +12,10 @@
     "@storybook/addon-links": "^3.4.8",
     "@storybook/addons": "^3.4.8",
     "@storybook/react-native": "^3.4.8",
-    "babel-preset-apollos": "0.4.0",
+    "apollos-church-api": "link:../apollos-church-api",
     "babel-plugin-import-graphql": "^2.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
+    "babel-preset-apollos": "0.4.0",
     "babel-preset-react-native": "^5.0.2",
     "codecov": "^3.0.2",
     "get-yarn-workspaces": "^1.0.2",
@@ -28,8 +29,7 @@
     "react-native-storybook-loader": "^1.8.0",
     "react-native-version": "^2.6.2",
     "react-test-renderer": "^16.4.1",
-    "waait": "^1.0.2",
-    "apollos-church-api": "link:../apollos-church-api"
+    "waait": "^1.0.2"
   },
   "engines": {
     "node": "^8.11.x"
@@ -40,9 +40,9 @@
   "scripts": {
     "android": "react-native run-android",
     "codecov": "cat ./coverage/lcov.info | codecov",
-    "fixlint": "eslint . --fix",
+    "fixlint": "eslint ./src --fix",
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
-    "lint": "eslint . --ext .js",
+    "lint": "eslint ./src --ext .js",
     "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
     "prestart": "node ./scripts/get-introspection-data.js",
     "start": "react-native start",

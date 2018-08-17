@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { compose, setDisplayName, pure } from 'recompose';
 
 import styled from 'apolloschurchapp/src/ui/styled';
-import { withPlaceholder, Typography } from 'apolloschurchapp/src/ui/Placeholder';
+import {
+  withPlaceholder,
+  Typography,
+} from 'apolloschurchapp/src/ui/Placeholder';
 
 const UIText = compose(
   setDisplayName('UIText'),

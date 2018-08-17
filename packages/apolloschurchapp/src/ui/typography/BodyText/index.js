@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { compose, pure, setDisplayName } from 'recompose';
 
 import styled from 'apolloschurchapp/src/ui/styled';
-import { withPlaceholder, Typography } from 'apolloschurchapp/src/ui/Placeholder';
+import {
+  withPlaceholder,
+  Typography,
+} from 'apolloschurchapp/src/ui/Placeholder';
 
 const styles = styled(({ theme, bold, italic }) => {
   let fontStack = theme.typography.sans.regular.default;

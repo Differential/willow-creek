@@ -1,7 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import { H3, H6, BodyText, Paragraph } from 'apolloschurchapp/src/ui/typography';
+import {
+  H3,
+  H6,
+  BodyText,
+  Paragraph,
+} from 'apolloschurchapp/src/ui/typography';
 import Button, { ButtonLink } from 'apolloschurchapp/src/ui/Button';
 
 import Card, { CardActions, CardContent, CardImage } from '.';

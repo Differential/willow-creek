@@ -64,7 +64,8 @@ export const events = {
 // };
 
 // export const trackScreen = (screenName, screenProperties) => {
-export const trackScreen = (screenName) => {
+export const trackScreen = () => {
+  // (screenName) => {
   // track(events.ScreenView, {
   //   screen: screenName,
   //   ...screenProperties,
