@@ -1,5 +1,3 @@
 import * as Constants from './constants';
-import DataSource from './data-source';
 
-export { Constants };
-export default DataSource;
+export { Constants }; // eslint-disable-line import/prefer-default-export
