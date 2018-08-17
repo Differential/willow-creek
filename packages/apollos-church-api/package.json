@@ -42,7 +42,7 @@
     "with-query": "^1.0.2"
   },
   "devDependencies": {
-    "babel-preset-apollos": "0.4.0",
+    "babel-preset-apollos": "link:../babel-preset-apollos",
     "codecov": "^3.0.2",
     "coveralls": "^3.0.1",
     "jest": "^23.0.0",

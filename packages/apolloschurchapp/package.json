@@ -15,7 +15,7 @@
     "apollos-church-api": "link:../apollos-church-api",
     "babel-plugin-import-graphql": "^2.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
-    "babel-preset-apollos": "0.4.0",
+    "babel-preset-apollos": "link:../babel-preset-apollos",
     "babel-preset-react-native": "^5.0.2",
     "codecov": "^3.0.2",
     "get-yarn-workspaces": "^1.0.2",
