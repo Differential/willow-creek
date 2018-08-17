@@ -5,6 +5,8 @@ import { resolvers, schema } from './data';
 import getContext from './getContext';
 import getDataSources from './getDataSources';
 
+export { resolvers, schema }
+
 export default new ApolloServer({
   typeDefs: schema,
   resolvers,

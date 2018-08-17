@@ -11,7 +11,8 @@
         "cwd": "babelrc",
         "extensions": [".android.js", ".ios.js", ".js", ".graphql"],
         "alias": {
-          "/mobile": "./src"
+          "apollos-church-api": "../apollos-church-api/src",
+          "apolloschurchapp": "../apolloschurchapp/src"
         }
       }
     ],

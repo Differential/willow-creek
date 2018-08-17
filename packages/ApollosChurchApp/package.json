@@ -8,34 +8,12 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.47",
-    "@babel/parser": "^7.0.0-beta.54",
-    "@babel/plugin-proposal-decorators": "7.0.0-beta.47",
-    "@babel/plugin-proposal-export-default-from": "7.0.0-beta.47",
-    "@babel/runtime": "^7.0.0-rc.1",
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-links": "^3.4.8",
     "@storybook/addons": "^3.4.8",
     "@storybook/react-native": "^3.4.8",
-    "babel-core": "^7.0.0-0",
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "^23.4.0",
-    "babel-plugin-import-graphql": "^2.6.0",
-    "babel-plugin-module-resolver": "^3.1.1",
-    "babel-preset-react-native": "^5.0.2",
     "codecov": "^3.0.2",
     "concurrently": "^3.6.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-import-resolver-babel-module": "^5.0.0-beta.0",
-    "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jest": "^21.15.2",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-react-native": "^3.2.1",
     "formik": "^0.11.11",
     "get-yarn-workspaces": "^1.0.2",
     "jest": "^23.4.1",
@@ -48,23 +26,26 @@
     "react-native-storybook-loader": "^1.8.0",
     "react-native-version": "^2.6.2",
     "react-test-renderer": "^16.4.1",
-    "waait": "^1.0.2"
+    "waait": "^1.0.2",
+    "apollos-church-api": "link:../apollos-church-api"
   },
   "engines": {
     "node": "^8.11.x"
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "android": "react-native run-android",
-    "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov",
-    "fixlint": "./node_modules/.bin/eslint . --fix",
+    "codecov": "cat ./coverage/lcov.info | codecov",
+    "fixlint": "eslint . --fix",
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
-    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "lint": "eslint . --ext .js",
     "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
     "prestart": "node ./scripts/get-introspection-data.js",
     "start": "react-native start",
     "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
-    "test": "bash ../scripts/test-script.sh",
-    "watch-graphql": "rm -rf ./node_modules/.cache/babel-loader & ./node_modules/.bin/nodemon --exec \"rm -rf\" ./node_modules/.cache/babel-loader --watch src -e .graphql -q",
+    "test": "jest",
     "release": "standard-version --release-as minor"
   },
   "jest": {
@@ -82,9 +63,6 @@
     "setupFiles": [
       "./jest.setup.js"
     ],
-    "moduleNameMapper": {
-      "^/api(.*)": "<rootDir>/../api/src$1"
-    },
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
     }

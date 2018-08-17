@@ -1,6 +1,6 @@
 import { AppRegistry, YellowBox } from 'react-native';
 
-import App from './App';
+import App from './src';
 
 YellowBox.ignoreWarnings([
   'Warning: isMounted(...) is deprecated',
