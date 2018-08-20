@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import wait from 'waait';
-import { createStackNavigator } from 'react-navigation';
 
 import Providers from 'apolloschurchapp/src/Providers';
 
