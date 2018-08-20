@@ -28,6 +28,17 @@ describe('the VideoPlayer component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('should render an overlay color', () => {
+    const tree = renderer.create(
+      <Providers>
+        <VideoPlayer
+          thumbnail={'https://picsum.photos/600/400/'}
+          overlayColor={'salmon'}
+        />
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
   it('should render a loading state', () => {
     const tree = renderer.create(
       <Providers>

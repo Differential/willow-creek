@@ -13,6 +13,12 @@ storiesOf('VideoPlayer', module)
       thumbnail={'https://picsum.photos/600/400/'}
     />
   ))
+  .add('With overlayColor', () => (
+    <VideoPlayer
+      thumbnail={'https://picsum.photos/600/400/'}
+      overlayColor={'salmon'}
+    />
+  ))
   .add('Thumbnail Only', () => (
     <VideoPlayer thumbnail={'https://picsum.photos/600/400/'} />
   ))

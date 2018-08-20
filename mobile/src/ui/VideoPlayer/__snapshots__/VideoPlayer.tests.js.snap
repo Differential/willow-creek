@@ -53,6 +53,93 @@ exports[`the VideoPlayer component should render a loading state 1`] = `
 </View>
 `;
 
+exports[`the VideoPlayer component should render an overlay color 1`] = `
+<View
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#A5A5A5",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      animate={null}
+      customAnimate={null}
+      onReady={false}
+      style={
+        Object {
+          "aspectRatio": 1,
+          "backgroundColor": "#A5A5A5",
+          "width": "100%",
+        }
+      }
+    >
+      <Image
+        onLoad={[Function]}
+        source={
+          Array [
+            Object {
+              "uri": "https://picsum.photos/600/400/",
+              "url": "https://picsum.photos/600/400/",
+            },
+          ]
+        }
+        style={
+          Object {
+            "backgroundColor": "#A5A5A5",
+            "opacity": 0,
+            "resizeMode": "cover",
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+    <BVLinearGradient
+      colors={
+        Array [
+          16416882,
+          4294606962,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0,
+          "y": 1,
+        }
+      }
+      locations={
+        Array [
+          0.3,
+          1,
+        ]
+      }
+      startPoint={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
 exports[`the VideoPlayer component should render just a thumbnail 1`] = `
 <View
   style={
