@@ -4,7 +4,6 @@
   "main": "./index.js",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.0.0-rc.1",
-    "@babel/plugin-proposal-decorators": "^7.0.0-rc.1",
     "@babel/plugin-proposal-do-expressions": "^7.0.0-rc.1",
     "@babel/plugin-proposal-export-default-from": "^7.0.0-rc.1",
     "@babel/plugin-proposal-export-namespace-from": "^7.0.0-rc.1",

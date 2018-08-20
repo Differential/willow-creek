@@ -20,7 +20,6 @@ export const getLoginState = gql`
   }
 `;
 
-@withNavigation
 class LoginButton extends PureComponent {
   static propTypes = {
     navigation: PropTypes.shape({
@@ -49,4 +48,4 @@ class LoginButton extends PureComponent {
   }
 }
 
-export default LoginButton;
+export default withNavigation(LoginButton);

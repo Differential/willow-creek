@@ -13,7 +13,7 @@
     "@storybook/addons": "^3.4.8",
     "@storybook/react-native": "^3.4.8",
     "apollos-church-api": "link:../apollos-church-api",
-    "babel-plugin-import-graphql": "^2.6.0",
+    "babel-plugin-import-graphql": "^2.6.2",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-apollos": "link:../babel-preset-apollos",
     "babel-preset-react-native": "^5.0.2",
