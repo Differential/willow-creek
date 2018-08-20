@@ -3,10 +3,10 @@ coverage:
     project:
       api:
         paths:
-          - api/*
+          - packages/apollos-church-api/*
       mobile:
         paths:
-          - mobile/*
+          - packages/apolloschurchapp/*
 comment:
   layout: "reach, diff, files"
   behavior: once

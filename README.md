@@ -47,44 +47,21 @@ ESLint and all required packages are built-in so once you `yarn`, you'll have th
 
 ## Creating a new release
 
-Creating a release within the Apollos Church application is pretty simple! After you have pulled down the master branch and made sure every PR has been merged, there are three main steps:
+Creating a release within the Apollos Church application is pretty simple! After you have pulled down the master branch and made sure every PR has been merged, the process is short:
 
-#### 1. Generate Change Log
-
-- Change directory to scripts folder:
-
+#### Create the release
 
 ```bash
-cd scripts
+yarn release
 ```
 
-- Run the **update-change-log** script:
-
+After creating a release, changelog files will be updated. Make sure to read over the changelog messages, and make any edits necessary. If you make any edits, you'll want to amend the commit created by `yarn release`:
 
 ```bash
-sh update-change-log.sh
+git commit --amend
 ```
 
-#### 2. Update Mobile Versions
-
-- Run the **update-mobile-versions** script:
-
-
-```bash
-sh update-mobile-versions.sh (version) # EXAMPLE: sh generate-git-log.sh 0.4.0
-```
-
-#### 3. Create/Push Git Tag
-
-- Create new git tag:
-
-
-```bash
-git tag <tagName> # EXAMPLE: git tag v0.4.0
-```
-
-- Push new git tag:
-
+Lastly, push up the new tag:
 
 ```bash
 git push --tags

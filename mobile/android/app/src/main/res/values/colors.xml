@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="deep_water">#00676D</color>
-    <color name="growth">#17B582</color>
-    <color name="primary_dark">#00676D</color> // react-native-splash-screen requires this naming
-</resources>

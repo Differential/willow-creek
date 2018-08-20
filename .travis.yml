@@ -5,9 +5,10 @@ cache:
   directories:
     - node_modules
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.4
+  - export PATH="$HOME/.yarn/bin:$PATH"
 install:
-  - bash ./scripts/install-yarn-dependencies.sh
+  - yarn
 stages:
   - name: Test
     if: (type IN (pull_request)) OR (type IN (push) AND branch = master)
@@ -17,14 +18,15 @@ jobs:
   include:
     - stage: Test
       script:
-        - bash ./scripts/global-npm-script.sh lint
+        - yarn lint
     - script:
-        - travis_wait bash ./scripts/global-npm-script.sh test "travis" && bash ./scripts/global-npm-script.sh codecov
+        - travis_wait yarn ci-test
+        - travis_wait yarn codecov
     - stage: Deploy Api
       script: skip
       before_deploy: npm install -g now
       deploy:
         - provider: script
-          script: cd api && now --public --team apolloschurch --token $NOW_TOKEN && now alias --team apolloschurch --token $NOW_TOKEN && now rm apollos-church-api --team apolloschurch --safe --yes --token $NOW_TOKEN
+          script: cd packages/apollos-church-api && now --public --team apolloschurch --token $NOW_TOKEN && now alias --team apolloschurch --token $NOW_TOKEN && now rm apollos-church-api --team apolloschurch --safe --yes --token $NOW_TOKEN
           skip_cleanup: true
           master: true

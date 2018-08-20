@@ -1,0 +1,60 @@
+{
+  "name": "apollos-church-api",
+  "version": "0.4.0",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon ./index.js --exec babel-node",
+    "test": "jest",
+    "test:watch": "jest --maxWorkers=2 --watch",
+    "lint": "eslint ./src --ext .js",
+    "fixlint": "eslint ./src --ext .js --fix",
+    "codecov": "cat ./coverage/lcov.info | codecov",
+    "release": "standard-version --release-as minor"
+  },
+  "engines": {
+    "node": ">=8.11.x"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "testMatch": [
+      "<rootDir>/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>/**/?(*.)(spec|test|tests).{js,jsx,mjs}"
+    ],
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.1.1",
+    "apollo-server": "^2.0.0",
+    "casual": "^1.5.19",
+    "color": "^3.0.0",
+    "crypto": "^1.0.1",
+    "dataloader": "^1.4.0",
+    "dotenv": "^6.0.0",
+    "graphql": "^0.13.2",
+    "isomorphic-fetch": "^2.2.1",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "prettier": "1.12.1",
+    "randomcolor": "^0.5.3",
+    "sanitize-html": "^1.18.2",
+    "url-join": "^4.0.0",
+    "with-query": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-preset-apollos": "link:../babel-preset-apollos",
+    "codecov": "^3.0.2",
+    "coveralls": "^3.0.1",
+    "jest": "^23.0.0",
+    "jest-fetch-mock": "^1.6.2",
+    "nodemon": "^1.17.5"
+  },
+  "now": {
+    "name": "apollos-church-api",
+    "alias": "apollos-church-api.now.sh",
+    "env": {
+      "ROCK_API": "@rock_api",
+      "ROCK_TOKEN": "@rock_token"
+    }
+  }
+}
