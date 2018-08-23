@@ -15,6 +15,11 @@ export default gql`
                 uri
               }
             }
+            sharing {
+              title
+              message
+              url
+            }
           }
         }
       }

@@ -3,12 +3,11 @@ import { Share } from 'react-native';
 // import { track, events } from '@utils/analytics';
 // import getSiteLink from './getSiteLink';
 
-const share = (content) => {
+const share = ({ title, message, url }) => {
   Share.share({
-    title: content.title || content.name,
-    message: content.message || content.name,
-    // url: getSiteLink(content),
-    url: content.url,
+    title,
+    message,
+    url,
   });
 
   // track(events.Shared, {

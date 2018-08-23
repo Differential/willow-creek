@@ -21,10 +21,12 @@ Object {
       "__typename": "UniversalContentItem",
       "audios": Array [
         Object {
+          "__typename": "AudioMedia",
           "key": "audioLink",
           "name": "Audio Link",
           "sources": Array [
             Object {
+              "__typename": "AudioMediaSource",
               "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/sample.mp3",
             },
           ],
@@ -60,46 +62,56 @@ Object {
       "id": "UniversalContentItem:559b23fd0aa90e81b1c023e72e230fa1",
       "images": Array [
         Object {
+          "__typename": "ImageMedia",
           "key": "image",
           "name": "Image",
           "sources": Array [
             Object {
+              "__typename": "ImageMediaSource",
               "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=0241ED2F-B527-424C-917C-1142A398711F",
             },
           ],
         },
         Object {
+          "__typename": "ImageMedia",
           "key": "detailImage",
           "name": "Detail Image",
           "sources": Array [
             Object {
+              "__typename": "ImageMediaSource",
               "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=3DA90982-118A-4BFE-9A32-58D9F610090A",
             },
           ],
         },
         Object {
+          "__typename": "ImageMedia",
           "key": "imageByUrlTest",
           "name": "Image By Url Test",
           "sources": Array [
             Object {
+              "__typename": "ImageMediaSource",
               "uri": "https://some-domain.com/some/path/to/image.jpg",
             },
           ],
         },
         Object {
+          "__typename": "ImageMedia",
           "key": "imageBySchemalessUrlTest",
           "name": "Image By Schemaless Url Test",
           "sources": Array [
             Object {
+              "__typename": "ImageMediaSource",
               "uri": "https://some-domain.com/some/path/to/image.jpg",
             },
           ],
         },
         Object {
+          "__typename": "ImageMedia",
           "key": "imageUnknownFormat",
           "name": "Image Of Unknown format",
           "sources": Array [
             Object {
+              "__typename": "ImageMediaSource",
               "uri": "ftp://some-domain.com/some/path/to/image.jpg",
             },
           ],
@@ -108,6 +120,12 @@ Object {
       "parentChannel": Object {
         "__typename": "ContentChannel",
         "id": "ContentChannel:744e1011cfa6a90bb2fbfeb3ecdc1451",
+      },
+      "sharing": Object {
+        "__typename": "SharableContentItem",
+        "message": "",
+        "title": "SAMPLE: Easter",
+        "url": "https://apollosrock.newspring.cc/",
       },
       "terms": Array [
         Object {
@@ -134,11 +152,13 @@ Object {
       "title": "SAMPLE: Easter",
       "videos": Array [
         Object {
+          "__typename": "VideoMedia",
           "embedHtml": "<script src=\\"//fast.wistia.com/embed/medias/kqykx8xbzq.jsonp\\" async></script><script src=\\"//fast.wistia.com/assets/external/E-v1.js\\" async></script><div class=\\"wistia_responsive_padding\\" style=\\"padding:56.25% 0 0 0;position:relative;\\"><div class=\\"wistia_responsive_wrapper\\" style=\\"height:100%;left:0;position:absolute;top:0;width:100%;\\"><div class=\\"wistia_embed wistia_async_kqykx8xbzq videoFoam=true\\" style=\\"height:100%;width:100%\\">&nbsp;</div></div></div>",
           "key": "videoLink",
           "name": "Video Link",
           "sources": Array [
             Object {
+              "__typename": "VideoMediaSource",
               "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/money-wise.mp4",
             },
           ],
@@ -159,10 +179,12 @@ Object {
             "__typename": "UniversalContentItem",
             "audios": Array [
               Object {
+                "__typename": "AudioMedia",
                 "key": "audioLink",
                 "name": "Audio Link",
                 "sources": Array [
                   Object {
+                    "__typename": "AudioMediaSource",
                     "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/sample.mp3",
                   },
                 ],
@@ -198,46 +220,56 @@ Object {
             "id": "UniversalContentItem:559b23fd0aa90e81b1c023e72e230fa1",
             "images": Array [
               Object {
+                "__typename": "ImageMedia",
                 "key": "image",
                 "name": "Image",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=0241ED2F-B527-424C-917C-1142A398711F",
                   },
                 ],
               },
               Object {
+                "__typename": "ImageMedia",
                 "key": "detailImage",
                 "name": "Detail Image",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=3DA90982-118A-4BFE-9A32-58D9F610090A",
                   },
                 ],
               },
               Object {
+                "__typename": "ImageMedia",
                 "key": "imageByUrlTest",
                 "name": "Image By Url Test",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "https://some-domain.com/some/path/to/image.jpg",
                   },
                 ],
               },
               Object {
+                "__typename": "ImageMedia",
                 "key": "imageBySchemalessUrlTest",
                 "name": "Image By Schemaless Url Test",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "https://some-domain.com/some/path/to/image.jpg",
                   },
                 ],
               },
               Object {
+                "__typename": "ImageMedia",
                 "key": "imageUnknownFormat",
                 "name": "Image Of Unknown format",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "ftp://some-domain.com/some/path/to/image.jpg",
                   },
                 ],
@@ -246,6 +278,12 @@ Object {
             "parentChannel": Object {
               "__typename": "ContentChannel",
               "id": "ContentChannel:744e1011cfa6a90bb2fbfeb3ecdc1451",
+            },
+            "sharing": Object {
+              "__typename": "SharableContentItem",
+              "message": "",
+              "title": "SAMPLE: Easter",
+              "url": "https://apollosrock.newspring.cc/",
             },
             "siblingContentItemsConnection": Object {
               "edges": Array [
@@ -283,11 +321,13 @@ Object {
             "title": "SAMPLE: Easter",
             "videos": Array [
               Object {
+                "__typename": "VideoMedia",
                 "embedHtml": "<script src=\\"//fast.wistia.com/embed/medias/kqykx8xbzq.jsonp\\" async></script><script src=\\"//fast.wistia.com/assets/external/E-v1.js\\" async></script><div class=\\"wistia_responsive_padding\\" style=\\"padding:56.25% 0 0 0;position:relative;\\"><div class=\\"wistia_responsive_wrapper\\" style=\\"height:100%;left:0;position:absolute;top:0;width:100%;\\"><div class=\\"wistia_embed wistia_async_kqykx8xbzq videoFoam=true\\" style=\\"height:100%;width:100%\\">&nbsp;</div></div></div>",
                 "key": "videoLink",
                 "name": "Video Link",
                 "sources": Array [
                   Object {
+                    "__typename": "VideoMediaSource",
                     "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/money-wise.mp4",
                   },
                 ],
@@ -311,10 +351,12 @@ Object {
             "__typename": "UniversalContentItem",
             "audios": Array [
               Object {
+                "__typename": "AudioMedia",
                 "key": "audioLink",
                 "name": "Audio Link",
                 "sources": Array [
                   Object {
+                    "__typename": "AudioMediaSource",
                     "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/sample.mp3",
                   },
                 ],
@@ -350,46 +392,56 @@ Object {
             "id": "UniversalContentItem:559b23fd0aa90e81b1c023e72e230fa1",
             "images": Array [
               Object {
+                "__typename": "ImageMedia",
                 "key": "image",
                 "name": "Image",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=0241ED2F-B527-424C-917C-1142A398711F",
                   },
                 ],
               },
               Object {
+                "__typename": "ImageMedia",
                 "key": "detailImage",
                 "name": "Detail Image",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=3DA90982-118A-4BFE-9A32-58D9F610090A",
                   },
                 ],
               },
               Object {
+                "__typename": "ImageMedia",
                 "key": "imageByUrlTest",
                 "name": "Image By Url Test",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "https://some-domain.com/some/path/to/image.jpg",
                   },
                 ],
               },
               Object {
+                "__typename": "ImageMedia",
                 "key": "imageBySchemalessUrlTest",
                 "name": "Image By Schemaless Url Test",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "https://some-domain.com/some/path/to/image.jpg",
                   },
                 ],
               },
               Object {
+                "__typename": "ImageMedia",
                 "key": "imageUnknownFormat",
                 "name": "Image Of Unknown format",
                 "sources": Array [
                   Object {
+                    "__typename": "ImageMediaSource",
                     "uri": "ftp://some-domain.com/some/path/to/image.jpg",
                   },
                 ],
@@ -398,6 +450,12 @@ Object {
             "parentChannel": Object {
               "__typename": "ContentChannel",
               "id": "ContentChannel:744e1011cfa6a90bb2fbfeb3ecdc1451",
+            },
+            "sharing": Object {
+              "__typename": "SharableContentItem",
+              "message": "",
+              "title": "SAMPLE: Easter",
+              "url": "https://apollosrock.newspring.cc/",
             },
             "terms": Array [
               Object {
@@ -424,11 +482,13 @@ Object {
             "title": "SAMPLE: Easter",
             "videos": Array [
               Object {
+                "__typename": "VideoMedia",
                 "embedHtml": "<script src=\\"//fast.wistia.com/embed/medias/kqykx8xbzq.jsonp\\" async></script><script src=\\"//fast.wistia.com/assets/external/E-v1.js\\" async></script><div class=\\"wistia_responsive_padding\\" style=\\"padding:56.25% 0 0 0;position:relative;\\"><div class=\\"wistia_responsive_wrapper\\" style=\\"height:100%;left:0;position:absolute;top:0;width:100%;\\"><div class=\\"wistia_embed wistia_async_kqykx8xbzq videoFoam=true\\" style=\\"height:100%;width:100%\\">&nbsp;</div></div></div>",
                 "key": "videoLink",
                 "name": "Video Link",
                 "sources": Array [
                   Object {
+                    "__typename": "VideoMediaSource",
                     "uri": "https://rockrms.blob.core.windows.net/sampledata/podcasting/money-wise.mp4",
                   },
                 ],
@@ -480,6 +540,12 @@ Object {
       "parentChannel": Object {
         "__typename": "ContentChannel",
         "id": "ContentChannel:744e1011cfa6a90bb2fbfeb3ecdc1451",
+      },
+      "sharing": Object {
+        "__typename": "SharableContentItem",
+        "message": "",
+        "title": "SAMPLE: Easter",
+        "url": "https://apollosrock.newspring.cc/",
       },
       "terms": Array [],
       "title": "SAMPLE: Easter",

@@ -37,7 +37,7 @@ class ContentFeed extends PureComponent {
   handleOnPress = (item) =>
     this.props.navigation.navigate('ContentSingle', {
       itemId: item.id,
-      itemTitle: item.title,
+      sharing: item.sharing,
     });
 
   render() {

@@ -20,24 +20,30 @@ const contentItemFragment = `
       }
     }
     images {
+      __typename # Typenames here to increase test coverage
       name
       key
       sources {
+        __typename
         uri
       }
     }
     videos {
+      __typename
       name
       key
       sources {
+        __typename
         uri
       }
       embedHtml
     }
     audios {
+      __typename
       name
       key
       sources {
+        __typename
         uri
       }
     }
@@ -58,6 +64,12 @@ const contentItemFragment = `
     terms {
       key
       value
+    }
+    sharing {
+      __typename
+      url
+      title
+      message
     }
   }
 `;

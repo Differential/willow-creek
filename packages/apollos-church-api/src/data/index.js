@@ -10,6 +10,7 @@ import * as Auth from './auth';
 import * as LiveStream from './live';
 import * as Theme from './theme';
 import * as ESVScripture from './esv';
+import * as Sharable from './sharable';
 
 const data = {
   Node,
@@ -21,6 +22,7 @@ const data = {
   LiveStream,
   Theme,
   ESVScripture,
+  Sharable,
 };
 
 export const schema = [
