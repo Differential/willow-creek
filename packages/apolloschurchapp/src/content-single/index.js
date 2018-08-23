@@ -16,8 +16,8 @@ import styled from 'apolloschurchapp/src/ui/styled';
 import { ThemeMixin } from 'apolloschurchapp/src/ui/theme';
 import Share from 'apolloschurchapp/src/ui/Share';
 
-import getContentItem from './getContentItem.graphql';
-import getContentItemMinimalState from './getContentItemMinimalState.graphql';
+import getContentItem from './getContentItem';
+import getContentItemMinimalState from './getContentItemMinimalState';
 
 const FeedContainer = styled({
   paddingHorizontal: 0,

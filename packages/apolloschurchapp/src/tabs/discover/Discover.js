@@ -6,7 +6,7 @@ import FeedView from 'apolloschurchapp/src/ui/FeedView';
 import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
 
 import TileContentFeed from './TileContentFeed';
-import getContentChannels from './getContentChannels.graphql';
+import getContentChannels from './getContentChannels';
 
 const childContentItemLoadingState = {
   title: '',

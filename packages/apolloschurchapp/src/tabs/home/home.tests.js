@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import Providers from 'apolloschurchapp/src/Providers';
 
 import Home from './Home';
-import getUserFeed from './getUserFeed.graphql';
+import getUserFeed from './getUserFeed';
 
 describe('User Home Feed Query', () => {
   it('should return correct query results', () => {

@@ -1,5 +1,0 @@
-query getLiveStream {
-  liveStream {
-    isLive
-  }
-}

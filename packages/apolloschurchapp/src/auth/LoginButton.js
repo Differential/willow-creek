@@ -8,7 +8,7 @@ import { ButtonLink } from 'apolloschurchapp/src/ui/Button';
 import styled from 'apolloschurchapp/src/ui/styled';
 import ActivityIndicator from 'apolloschurchapp/src/ui/ActivityIndicator';
 
-import logout from './logout.graphql';
+import logout from './logout';
 
 const Button = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit,

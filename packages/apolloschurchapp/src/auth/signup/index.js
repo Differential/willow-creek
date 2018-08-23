@@ -4,9 +4,9 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 
-import getAuthToken from '../getAuthToken.graphql';
+import getAuthToken from '../getAuthToken';
 
-import registerPersonMutation from './registerPerson.graphql';
+import registerPersonMutation from './registerPerson';
 import SignupForm from './Form';
 
 const Signup = ({ onSignup }) => (

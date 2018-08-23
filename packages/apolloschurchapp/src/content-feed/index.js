@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
 import FeedView from 'apolloschurchapp/src/ui/FeedView';
 
-import getContentFeed from './getContentFeed.graphql';
+import getContentFeed from './getContentFeed';
 
 /**
  * This is where the component description lives

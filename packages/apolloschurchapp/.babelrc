@@ -1,6 +1,9 @@
 {
-  "presets": ["react-native", "module:react-native-dotenv", "apollos"],
+  "presets": ["react-native", "module:react-native-dotenv"],
   "plugins": [
-    "import-graphql"
+    ["@babel/plugin-proposal-decorators", {
+      "legacy": true
+    }],
+    ["@babel/plugin-proposal-export-default-from"]
   ]
 }

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'apolloschurchapp/src/Providers';
 
-import getContentFeed from './getContentFeed.graphql';
+import getContentFeed from './getContentFeed';
 
 import ContentFeed from './index';
 

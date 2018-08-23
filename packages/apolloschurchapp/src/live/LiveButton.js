@@ -9,7 +9,7 @@ import styled from 'apolloschurchapp/src/ui/styled';
 import ChannelLabel from 'apolloschurchapp/src/ui/ChannelLabel';
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
 
-import getLiveStream from './getLiveStream.graphql';
+import getLiveStream from './getLiveStream';
 
 const LiveCard = styled(({ theme }) => ({
   backgroundColor: theme.colors.lightSecondary,

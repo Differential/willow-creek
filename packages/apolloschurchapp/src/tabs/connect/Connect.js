@@ -14,8 +14,8 @@ import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
 import Touchable from 'apolloschurchapp/src/ui/Touchable';
 import UserAvatarView from 'apolloschurchapp/src/ui/UserAvatarView';
 
-import getLoginState from './getLoginState.graphql';
-import getUserProfile from './getUserProfile.graphql';
+import getLoginState from './getLoginState';
+import getUserProfile from './getUserProfile';
 
 class Connect extends PureComponent {
   static navigationOptions = () => ({

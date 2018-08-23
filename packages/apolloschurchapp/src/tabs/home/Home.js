@@ -9,7 +9,7 @@ import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
 
 import { LiveButton } from '../../live';
 
-import getUserFeed from './getUserFeed.graphql';
+import getUserFeed from './getUserFeed';
 
 class Home extends PureComponent {
   static navigationOptions = ({ navigation }) => ({

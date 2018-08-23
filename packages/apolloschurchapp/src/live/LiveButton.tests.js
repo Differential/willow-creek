@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import Providers from 'apolloschurchapp/src/Providers';
 
 import LiveNowButton from './LiveButton';
-import getLiveStream from './getLiveStream.graphql';
+import getLiveStream from './getLiveStream';
 
 const mocks = [
   {
