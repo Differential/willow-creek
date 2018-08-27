@@ -8,7 +8,7 @@ export default class ESVScripture extends RESTDataSource {
   token = process.env.ESV_KEY;
 
   willSendRequest(request) {
-    request.headers.set('Authorization', `token ${this.token}`);
+    request.headers.set('Authorization', `Token ${this.token}`);
   }
 
   async getScripture(query) {
