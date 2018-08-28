@@ -8,10 +8,10 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.4.8",
-    "@storybook/addon-links": "3.4.8",
-    "@storybook/addons": "3.4.8",
-    "@storybook/react-native": "3.4.8",
+    "@storybook/addon-actions": "4.0.0-alpha.2",
+    "@storybook/addon-links": "4.0.0-alpha.2",
+    "@storybook/addons": "4.0.0-alpha.2",
+    "@storybook/react-native": "4.0.0-alpha.2",
     "apollos-church-api": "link:../apollos-church-api",
     "babel-preset-apollos": "link:../babel-preset-apollos",
     "babel-preset-react-native": "5",
@@ -43,7 +43,7 @@
     "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
     "prestart": "node ./scripts/get-introspection-data.js",
     "start": "react-native start",
-    "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007",
+    "storybook": "rnstl --searchDir ./storybook ./src --pattern \"**/*.stories.js\" && storybook start -p 7007 --root ../../",
     "test": "jest",
     "release": "standard-version --release-as minor"
   },

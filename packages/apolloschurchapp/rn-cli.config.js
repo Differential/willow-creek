@@ -1,14 +1,13 @@
-
 /**
  * This file is mainly copy-pasta scattered throughout the interwebs.
  * I'll try and leave comments to make it easier to understand what's going on,
  * but essentially this file is currently required to get react-native to play nice
  * with yarn workspaces.
  */
-const blacklist = require('metro/src/blacklist');
-const getWorkspaces = require('get-yarn-workspaces');
 const path = require('path');
 const fs = require('fs');
+const blacklist = require('metro/src/blacklist');
+const getWorkspaces = require('get-yarn-workspaces');
 
 /**
  * used to resolve node_modules that might be symlinked by yarn
@@ -47,8 +46,7 @@ function maybeResolveSymlink(maybeSymlinkPath) {
   return maybeSymlinkPath;
 }
 
-
-const workspaces = getWorkspaces(path.resolve('.'))
+const workspaces = getWorkspaces(path.resolve('.'));
 
 /**
  * Options used by Metro builder
@@ -58,13 +56,13 @@ module.exports = {
   getBlacklistRE() {
     return blacklist(
       workspaces.map(
-        workspacePath =>
+        (workspacePath) =>
           `/${workspacePath.replace(
             /\//g,
             '[/\\\\]'
           )}[/\\\\]node_modules[/\\\\]react-native[/\\\\].*/`
       )
-    )
+    );
   },
   // I think this is the most important bit here - without this, a lot of modules aren't resolving
   getProjectRoots() {
@@ -74,6 +72,6 @@ module.exports = {
 
       // Include your forked package as a new root.
       path.resolve('..', '..', 'node_modules'),
-    ].concat(workspaces)
+    ].concat(workspaces);
   },
-}
+};
