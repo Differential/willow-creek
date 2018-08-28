@@ -4,7 +4,9 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon ./index.js --exec babel-node",
+    "start": "if test \"$NOW_ENV\" = \"true\" ; then yarn start:now ; else yarn start:dev ; fi",
+    "start:dev": "nodemon ./index.js --exec babel-node",
+    "start:now": "babel-node ./index.js",
     "test": "jest",
     "test:watch": "jest --maxWorkers=2 --watch",
     "lint": "eslint ./src --ext .js",
@@ -48,13 +50,5 @@
     "jest": "23.0.0",
     "jest-fetch-mock": "1.6.2",
     "nodemon": "1.17.5"
-  },
-  "now": {
-    "name": "apollos-church-api",
-    "alias": "apollos-church-api.now.sh",
-    "env": {
-      "ROCK_API": "@rock_api",
-      "ROCK_TOKEN": "@rock_token"
-    }
   }
 }

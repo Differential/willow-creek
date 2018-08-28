@@ -8,7 +8,9 @@
     ]
   },
   "scripts": {
-    "start": "./node_modules/.bin/lerna run start --parallel",
+    "start": "if test \"$NOW_ENV\" = \"true\" ; then yarn start:now ; else yarn start:dev ; fi",
+    "start:now": "./node_modules/.bin/lerna run start --scope apollos-church-api",
+    "start:dev": "./node_modules/.bin/lerna run start --parallel",
     "lint": "./node_modules/.bin/lerna run lint",
     "test": "./node_modules/.bin/lerna run test",
     "ci-test": "./node_modules/.bin/lerna run test -- --maxWorkers=2",
@@ -37,5 +39,14 @@
     "eslint-plugin-react-native": "^3.2.1",
     "jest": "23.5.0",
     "lerna": "^3.0.6"
+  },
+  "now": {
+    "name": "apollos-church-api",
+    "alias": "apollos-church-api.now.sh",
+    "env": {
+      "ROCK_API": "@rock_api",
+      "ROCK_TOKEN": "@rock_token",
+      "NOW_ENV": "true"
+    }
   }
 }
