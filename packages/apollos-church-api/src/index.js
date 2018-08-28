@@ -16,4 +16,9 @@ export default new ApolloServer({
     console.error(error.extensions.exception.stacktrace.join('\n'));
     return error;
   },
+  playground: {
+    settings: {
+      'editor.cursorShape': 'line',
+    },
+  },
 });

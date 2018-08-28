@@ -16,6 +16,8 @@ export default class RockRequestBuilder {
 
   transforms = [];
 
+  options = {};
+
   get path() {
     let path = [this.resource];
     if (this.resourceId) path.push(this.resourceId);
@@ -29,14 +31,16 @@ export default class RockRequestBuilder {
    * @returns promise
    */
   get = ({ options = {}, body = {} } = {}) =>
-    this.connector.get(this.path, body, options).then((results) => {
-      if (this.transforms.length)
-        return this.transforms.reduce(
-          (current, transformer) => transformer(current),
-          results
-        );
-      return results;
-    });
+    this.connector
+      .get(this.path, body, { ...options, ...this.options })
+      .then((results) => {
+        if (this.transforms.length)
+          return this.transforms.reduce(
+            (current, transformer) => transformer(current),
+            results
+          );
+        return results;
+      });
 
   /**
    * Find a single resource by ID
@@ -56,6 +60,11 @@ export default class RockRequestBuilder {
     } else {
       this.query[key] = filter;
     }
+    return this;
+  };
+
+  cache = ({ ttl }) => {
+    this.options.ttl = ttl;
     return this;
   };
 

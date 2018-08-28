@@ -1,6 +1,7 @@
 import { gql } from 'apollo-server';
-import { mapValues, values, merge } from 'lodash';
+import { mapValues, values, merge, compact } from 'lodash';
 
+import RockConstants from 'apollos-church-api/src/connectors/rock/rock-constants';
 import * as Node from './node';
 import * as ContentChannel from './content-channels';
 import * as ContentItem from './content-items';
@@ -9,7 +10,8 @@ import * as Media from './media';
 import * as Auth from './auth';
 import * as LiveStream from './live';
 import * as Theme from './theme';
-import * as ESVScripture from './esv';
+import * as Scripture from './esv';
+import * as Interactions from './interactions';
 import * as Sharable from './sharable';
 
 const data = {
@@ -21,12 +23,13 @@ const data = {
   Auth,
   LiveStream,
   Theme,
-  ESVScripture,
+  Scripture,
+  Interactions,
+  RockConstants: { dataSource: RockConstants },
   Sharable,
 };
 
 export const schema = [
-  ...values(data).map((datum) => datum.schema),
   gql`
     type Query {
       node(id: ID!): Node
@@ -43,9 +46,12 @@ export const schema = [
       registerPerson(email: String!, password: String!): Authentication
     }
   `,
+  ...compact(values(data).map((datum) => datum.schema)),
 ];
 
-export const resolvers = merge(...values(data).map((datum) => datum.resolver));
+export const resolvers = merge(
+  ...compact(values(data).map((datum) => datum.resolver))
+);
 
 export const dataSources = mapValues(data, (datum) => datum.dataSource);
 

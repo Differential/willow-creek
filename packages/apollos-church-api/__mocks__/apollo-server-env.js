@@ -39,6 +39,39 @@ fetch.mockRockDataSourceAPI = () => {
     url = decodeURI(url);
     if (!url.match(Constants.ROCK_API)) return Promise.reject();
 
+    if (url.match('api/EntityTypes')) {
+      return resolveWith(
+        [
+          {
+            Id: 201,
+          },
+        ],
+        url
+      );
+    }
+
+    if (url.match('api/InteractionChannels')) {
+      return resolveWith(
+        [
+          {
+            Id: 10,
+          },
+        ],
+        url
+      );
+    }
+
+    if (url.match('api/InteractionComponents')) {
+      return resolveWith(
+        [
+          {
+            Id: 101,
+          },
+        ],
+        url
+      );
+    }
+
     if (url.match('api/ContentChannels/\\d')) {
       return resolveWith(rockMocks.contentChannel());
     }
@@ -98,6 +131,42 @@ fetch.mockRockDataSourceAPI = () => {
       return resolveWith([rockMocks.people()]);
     }
 
+    if (url.match('api/Interactions/\\d')) {
+      return resolveWith(rockMocks.interaction());
+    }
+
+    if (url.match('api/Interactions')) {
+      if (request.method === 'GET') {
+        return resolveWith([rockMocks.interaction()]);
+      }
+      if (request.method === 'POST') {
+        const response = new Response('456', {
+          status: 200,
+          statusText: 'OK',
+          headers: new apolloServerEnv.Headers({
+            'Content-Type': 'application/json',
+          }),
+        });
+        return Promise.resolve(response);
+      }
+    }
+
+    if (url.match('api/InteractionSessions')) {
+      if (request.method === 'GET') {
+        return resolveWith(rockMocks.session());
+      }
+      if (request.method === 'POST') {
+        const response = new Response('123', {
+          status: 200,
+          statusText: 'OK',
+          headers: new apolloServerEnv.Headers({
+            'Content-Type': 'application/json',
+          }),
+        });
+        return Promise.resolve(response);
+      }
+    }
+
     if (url.match('api/UserLogins')) {
       if (request.method === 'POST') {
         const { UserName } = JSON.parse(request.body);
@@ -123,8 +192,8 @@ fetch.mockRockDataSourceAPI = () => {
 
       return resolveWith([]);
     }
-
-    return Promise.reject();
+    console.log(`No route matching ${url}`);
+    return Promise.reject(`No route matching ${url}`);
   });
 };
 

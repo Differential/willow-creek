@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Interactions creates a session 1`] = `
+Object {
+  "data": Object {
+    "createSession": Object {
+      "id": "InteractionSession:2cc8f539e345e8f479a55e2fdc9743c0",
+    },
+  },
+}
+`;
+
+exports[`Interactions creates an interaction 1`] = `
+Object {
+  "data": Object {
+    "createInteraction": Object {
+      "id": "Interaction:fb344cb78f7b3f41416ffcbdc457e30c",
+      "interactionDateTime": "2018-08-21T14:55:01.000Z",
+      "operation": "Like",
+    },
+  },
+}
+`;
+
+exports[`Interactions uses interactions to track if a user liked content 1`] = `
+Object {
+  "data": Object {
+    "node": Object {
+      "id": "UniversalContentItem:559b23fd0aa90e81b1c023e72e230fa1",
+      "isLiked": true,
+    },
+  },
+}
+`;

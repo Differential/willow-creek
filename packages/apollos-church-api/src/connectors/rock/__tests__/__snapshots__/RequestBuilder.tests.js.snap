@@ -8,6 +8,16 @@ Array [
 ]
 `;
 
+exports[`RequestBuilder caches 1`] = `
+Array [
+  "SomeResource",
+  Object {},
+  Object {
+    "ttl": 20,
+  },
+]
+`;
+
 exports[`RequestBuilder chains mixed-format expands 1`] = `
 Array [
   "SomeResource?%24expand=Dogs%2FPuppies%2CCats%2CKittens",

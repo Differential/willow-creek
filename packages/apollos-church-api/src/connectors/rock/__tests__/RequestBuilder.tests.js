@@ -72,6 +72,10 @@ describe('RequestBuilder', () => {
     ).resolves.toMatchSnapshot();
   });
 
+  it('caches', () => {
+    expect(request.cache({ ttl: 20 }).get()).resolves.toMatchSnapshot();
+  });
+
   it('orders', () => {
     expect(request.orderBy('MyField').get()).resolves.toMatchSnapshot();
   });
