@@ -43,7 +43,32 @@ export default class Interactions extends RockApolloDataSource {
       return this.request('Interactions')
         .filter(
           // eslint-disable-next-line prettier/prettier
-`(RelatedEntityId eq ${contentItemId}) and (RelatedEntityTypeId eq ${contentItemType.id}) and (PersonAliasId eq ${currentUser.primaryAliasId})`
+          `(RelatedEntityId eq ${contentItemId}) and (RelatedEntityTypeId eq ${
+            contentItemType.id
+          }) and (PersonAliasId eq ${currentUser.primaryAliasId})`
+        )
+        .get();
+    } catch (e) {
+      if (e instanceof AuthenticationError) {
+        return [];
+      }
+      throw e;
+    }
+  }
+
+  async getForContentItems() {
+    const { dataSources } = this.context;
+    const contentItemType = await dataSources.RockConstants.modelTypeId(
+      'ContentItem'
+    );
+    try {
+      const currentUser = await dataSources.Auth.getCurrentPerson();
+      return this.request('Interactions')
+        .filter(
+          // eslint-disable-next-line prettier/prettier
+          `(RelatedEntityTypeId eq ${
+            contentItemType.id
+          }) and (PersonAliasId eq ${currentUser.primaryAliasId})`
         )
         .get();
     } catch (e) {

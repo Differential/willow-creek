@@ -224,10 +224,13 @@ export const defaultContentItemResolvers = {
     if (![6, 5, 4].includes(root.contentChannelId)) return null; // todo: don't generate a theme for these content channel ids
     return root.guid; // todo: this `guid` is just being used as a seed to generate colors for now
   },
-  isLiked: async ({ id }, args, { dataSources }) => {
+  isLiked: async ({ id, isLiked }, args, { dataSources }) => {
+    if (isLiked != null) return isLiked;
+
     const interactions = await dataSources.Interactions.getForContentItem({
       contentItemId: id,
     });
+
     const likes = interactions.filter((i) => i.operation === 'Like').length;
     const unlike = interactions.filter((i) => i.operation === 'Unlike').length;
     // If likes / unlikes equal we have either unliked the content or haven't liked it yet (both are 0)
@@ -243,6 +246,50 @@ export const resolver = {
         cursor: dataSources.ContentItem.byUserFeed(),
         args,
       }),
+    getAllLikedContent: async (root, args, { dataSources }) => {
+      // Get All Interactions from current user
+      const interactions = await dataSources.Interactions.getForContentItems();
+
+      const likeCounts = {};
+
+      // Iterate over the interactions and determine which pieces of content
+      // has more likes than unlikes
+      interactions.forEach(({ operation, relatedEntityId }) => {
+        if (!likeCounts[relatedEntityId]) {
+          likeCounts[relatedEntityId] = 0;
+        }
+        if (operation === 'Like') {
+          likeCounts[relatedEntityId] += 1;
+        }
+        if (operation === 'Unlike') {
+          likeCounts[relatedEntityId] -= 1;
+        }
+      });
+
+      const itemIds = [];
+      Object.keys(likeCounts).forEach((relatedEntityId) => {
+        if (likeCounts[relatedEntityId] > 0) {
+          itemIds.push(relatedEntityId);
+        }
+      });
+
+      // Grab content related to user's interactions
+      const getUserContentFromInteractions = itemIds.map((id) =>
+        dataSources.ContentItem.getFromId(id)
+      );
+
+      const resolveUserContentFromInteractions = await Promise.all(
+        getUserContentFromInteractions
+      );
+
+      // Determine the isLiked value on contentitems and create an obj that we
+      // can merge with our main set of data later
+      const calculateIsLikedOnContentItems = resolveUserContentFromInteractions.map(
+        (item) => ({ ...item, isLiked: true })
+      );
+
+      return calculateIsLikedOnContentItems;
+    },
   },
   UniversalContentItem: {
     ...defaultContentItemResolvers,
