@@ -5,7 +5,7 @@ import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
 
 import { schema as typeDefs, resolvers } from '../..';
 
-describe('LiveStream', () => {
+describe('Scripture', () => {
   let schema;
   let context;
   beforeEach(() => {
@@ -19,8 +19,8 @@ describe('LiveStream', () => {
   it('returns', async () => {
     const query = `
       query {
-        scripture (query: "John1.1") {
-          html
+        scripture (query: "SNG.1.1") {
+          content
         }
       }
     `;

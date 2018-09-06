@@ -76,6 +76,7 @@ Object {
     },
     "transparent": "transparent",
     "white": "#FFFFFF",
+    "wordOfChrist": "#8b0000",
   },
   "helpers": Object {
     "rem": [Function],
@@ -241,6 +242,7 @@ Object {
   },
   "transparent": "transparent",
   "white": "#FFFFFF",
+  "wordOfChrist": "#8b0000",
 }
 `;
 
@@ -359,6 +361,7 @@ Object {
     },
     "transparent": "transparent",
     "white": "#FFFFFF",
+    "wordOfChrist": "#8b0000",
   },
   "helpers": Object {
     "rem": [Function],

@@ -20,7 +20,7 @@ import ConnectedImage from 'apolloschurchapp/src/ui/ConnectedImage';
 const LINE_BREAK = '\n';
 const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyText, ButtonLink];
 
-const wrapTextChildren = (children, Component = BodyText) => {
+export const wrapTextChildren = (children, Component = BodyText) => {
   const newChildren = [];
   let currentTextChildren = [];
   Children.toArray(children).forEach((child, i) => {

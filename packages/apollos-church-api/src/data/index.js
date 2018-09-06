@@ -10,7 +10,7 @@ import * as Media from './media';
 import * as Auth from './auth';
 import * as LiveStream from './live';
 import * as Theme from './theme';
-import * as Scripture from './esv';
+import * as Scripture from './bible';
 import * as Interactions from './interactions';
 import * as Sharable from './sharable';
 
@@ -38,7 +38,7 @@ export const schema = [
       contentChannels: [ContentChannel]
       currentUser: AuthenticatedUser
       liveStream: LiveStream
-      scripture(query: String!): ESVScripture
+      scripture(query: String!): Scripture
       getAllLikedContent: [ContentItem]
     }
 

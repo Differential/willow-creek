@@ -46,6 +46,7 @@ export const colors = {
   black: '#000000',
   white: '#FFFFFF',
   transparent: 'transparent',
+  wordOfChrist: '#8b0000', // only used in Scripture.
 };
 
 /* Base Typography sizing and fonts.
