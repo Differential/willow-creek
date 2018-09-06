@@ -5,4 +5,8 @@ export default gql`
     isLive: Boolean
     eventStartTime: String
   }
+
+  extend type Query {
+    liveStream: LiveStream
+  }
 `;

@@ -5,4 +5,8 @@ export default gql`
     reference: String
     content: String
   }
+
+  extend type Query {
+    scripture(query: String!): Scripture
+  }
 `;

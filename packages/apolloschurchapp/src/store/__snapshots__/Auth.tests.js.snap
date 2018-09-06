@@ -31,7 +31,12 @@ InMemoryCache {
         "Node": Array [
           "Person",
           "ContentChannel",
+          "Interaction",
+          "Session",
           "UniversalContentItem",
+        ],
+        "Sharable": Array [
+          "SharableContentItem",
         ],
       },
     },

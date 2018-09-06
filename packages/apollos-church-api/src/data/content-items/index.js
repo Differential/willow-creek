@@ -88,6 +88,11 @@ export const schema = gql`
     node: ContentItem
     cursor: String
   }
+
+  extend type Query {
+    userFeed(first: Int, after: String): ContentItemsConnection
+    getAllLikedContent: [ContentItem]
+  }
 `;
 
 const isImage = ({ key, attributeValues, attributes }) =>

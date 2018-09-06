@@ -9,4 +9,8 @@ export default gql`
     email: String
     photo: ImageMediaSource
   }
+
+  extend type Query {
+    people(email: String!): [Person]
+  }
 `;

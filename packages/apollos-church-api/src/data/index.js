@@ -32,14 +32,8 @@ const data = {
 export const schema = [
   gql`
     type Query {
-      node(id: ID!): Node
-      people(email: String!): [Person]
-      userFeed(first: Int, after: String): ContentItemsConnection
-      contentChannels: [ContentChannel]
+      _placeholder: Boolean # needed, empty schema defs aren't supported
       currentUser: AuthenticatedUser
-      liveStream: LiveStream
-      scripture(query: String!): Scripture
-      getAllLikedContent: [ContentItem]
     }
 
     type Mutation {

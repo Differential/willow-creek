@@ -18,6 +18,10 @@ export const schema = gql`
 
     iconName: String
   }
+
+  extend type Query {
+    contentChannels: [ContentChannel]
+  }
 `;
 
 export const resolver = {
