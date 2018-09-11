@@ -11,5 +11,6 @@ export default () => {
   return {
     ...sources,
     UniversalContentItem: sources.ContentItem, // alias
+    DevotionalContentItem: sources.ContentItem, // alias
   };
 };

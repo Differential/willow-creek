@@ -7,7 +7,7 @@ import { H4, H6 } from 'apolloschurchapp/src/ui/typography';
 
 import ScriptureHTMLView from './ScriptureHTMLView';
 
-const Item = ({ reference, content, isLoading }) => (
+const Item = ({ reference, html, isLoading }) => (
   <View>
     <H4>
       <H4>{reference}</H4> <H6>WEB</H6>
@@ -18,14 +18,14 @@ const Item = ({ reference, content, isLoading }) => (
       lastLineWidth="60%"
       firstLineWidth="40%"
     >
-      <ScriptureHTMLView>{content}</ScriptureHTMLView>
+      <ScriptureHTMLView>{html}</ScriptureHTMLView>
     </Placeholder.Paragraph>
   </View>
 );
 
 Item.propTypes = {
   reference: PropTypes.string,
-  content: PropTypes.string,
+  html: PropTypes.string,
   isLoading: PropTypes.bool,
 };
 

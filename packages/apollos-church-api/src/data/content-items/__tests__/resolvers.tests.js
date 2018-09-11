@@ -116,6 +116,26 @@ describe('UniversalContentItem', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('gets a devotional item', async () => {
+    const query = `
+      query {
+        node(id: "${createGlobalId(123, 'DevotionalContentItem')}") {
+          id
+          ... on DevotionalContentItem {
+            id
+            title
+            scriptures {
+              html
+            }
+          }
+        }
+      }
+    `;
+    const rootValue = {};
+    const result = await graphql(schema, query, rootValue, context);
+    expect(result).toMatchSnapshot();
+  });
+
   it("gets a content item and it's siblings", async () => {
     const query = `
       query {

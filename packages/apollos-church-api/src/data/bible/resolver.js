@@ -1,3 +1,5 @@
+import { get } from 'lodash';
+
 export default {
   Query: {
     scripture: (root, { query }, { dataSources }) =>
@@ -5,6 +7,6 @@ export default {
   },
   Scripture: {
     reference: ({ data: { reference } = {} }) => reference,
-    content: ({ data: { content } = {} }) => content,
+    html: ({ data: { passages } = {} }) => get(passages, '[0].content'),
   },
 };

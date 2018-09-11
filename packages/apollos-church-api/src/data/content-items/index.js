@@ -68,6 +68,30 @@ export const schema = gql`
     isLiked: Boolean
   }
 
+  type DevotionalContentItem implements ContentItem & Node {
+    id: ID!
+    title: String
+    coverImage: ImageMedia
+    images: [ImageMedia]
+    videos: [VideoMedia]
+    audios: [AudioMedia]
+    htmlContent: String
+    childContentItemsConnection(
+      first: Int
+      after: String
+    ): ContentItemsConnection
+    siblingContentItemsConnection(
+      first: Int
+      after: String
+    ): ContentItemsConnection
+    parentChannel: ContentChannel
+
+    sharing: SharableContentItem
+    theme: Theme
+    isLiked: Boolean
+    scriptures: Scripture
+  }
+
   type Term {
     key: String
     value: String
@@ -94,6 +118,9 @@ export const schema = gql`
     getAllLikedContent: [ContentItem]
   }
 `;
+
+const hasScripture = ({ attributeValues }) =>
+  get(attributeValues, 'scriptures.value') != null;
 
 const isImage = ({ key, attributeValues, attributes }) =>
   attributes[key].fieldTypeId === Constants.FIELD_TYPES.IMAGE ||
@@ -296,6 +323,16 @@ export const resolver = {
       return calculateIsLikedOnContentItems;
     },
   },
+  DevotionalContentItem: {
+    ...defaultContentItemResolvers,
+    scriptures: ({ attributeValues }, args, { dataSources }) => {
+      const reference = get(attributeValues, 'scriptures.value');
+      if (reference && reference != null) {
+        return dataSources.Scripture.getScripture(reference);
+      }
+      return null;
+    },
+  },
   UniversalContentItem: {
     ...defaultContentItemResolvers,
     terms: ({ attributeValues, attributes }, { match }) =>
@@ -314,7 +351,12 @@ export const resolver = {
   },
   ContentItem: {
     ...defaultContentItemResolvers,
-    __resolveType: () => 'UniversalContentItem', // todo: for now, everything is of the same type
+    __resolveType: ({ attributeValues }) => {
+      if (hasScripture({ attributeValues })) {
+        return 'DevotionalContentItem';
+      }
+      return 'UniversalContentItem';
+    },
   },
   SharableContentItem: {
     url: () => 'https://apollosrock.newspring.cc/', // todo: return a dynamic url that links to the content item

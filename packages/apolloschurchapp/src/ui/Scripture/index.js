@@ -20,7 +20,7 @@ const Scripture = ({ references = [] }) => (
         {({ loading, data }) => (
           <Item
             reference={get(data, 'scripture.reference', '')}
-            content={get(data, 'scripture.content', '')}
+            html={get(data, 'scripture.html', '')}
             isLoading={loading}
           />
         )}

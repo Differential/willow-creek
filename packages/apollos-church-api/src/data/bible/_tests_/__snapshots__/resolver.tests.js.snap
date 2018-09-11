@@ -4,7 +4,7 @@ exports[`Scripture returns 1`] = `
 Object {
   "data": Object {
     "scripture": Object {
-      "content": "<p class=\\"p\\"><span data-number=\\"1\\" class=\\"v\\">1</span>The Song of songs, which is Solomon’s.</p>",
+      "html": "<p class=\\"p\\"><span data-number=\\"1\\" class=\\"v\\">1</span>The Song of songs, which is Solomon’s.</p>",
     },
   },
 }

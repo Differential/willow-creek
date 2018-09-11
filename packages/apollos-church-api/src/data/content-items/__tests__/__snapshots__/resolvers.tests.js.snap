@@ -341,6 +341,20 @@ Object {
 }
 `;
 
+exports[`UniversalContentItem gets a devotional item 1`] = `
+Object {
+  "data": Object {
+    "node": Object {
+      "id": "DevotionalContentItem:559b23fd0aa90e81b1c023e72e230fa1",
+      "scriptures": Object {
+        "html": "<p class=\\"p\\"><span data-number=\\"1\\" class=\\"v\\">1</span>The Song of songs, which is Solomon’s.</p>",
+      },
+      "title": "SAMPLE: Easter",
+    },
+  },
+}
+`;
+
 exports[`UniversalContentItem gets a user feed 1`] = `
 Object {
   "data": Object {
