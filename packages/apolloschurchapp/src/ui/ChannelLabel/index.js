@@ -11,7 +11,11 @@ import { H6 } from 'apolloschurchapp/src/ui/typography';
 import Icon from 'apolloschurchapp/src/ui/Icon';
 import * as Icons from 'apolloschurchapp/src/ui/Icon/icons';
 
-const enhance = compose(withIsLoading, pure, withTheme());
+const enhance = compose(
+  withIsLoading,
+  pure,
+  withTheme()
+);
 
 const Wrapper = styled(({ flexed }) => ({
   flex: flexed ? 1 : null,

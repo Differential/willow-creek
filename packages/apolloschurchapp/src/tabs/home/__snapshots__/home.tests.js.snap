@@ -392,6 +392,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -534,6 +544,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -676,6 +696,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -818,6 +848,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -960,6 +1000,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1102,6 +1152,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1244,6 +1304,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1386,6 +1456,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1528,6 +1608,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1670,6 +1760,16 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>

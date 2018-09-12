@@ -15,6 +15,7 @@ export default gql`
                   uri
                 }
               }
+              isLiked
               parentChannel {
                 id
                 name

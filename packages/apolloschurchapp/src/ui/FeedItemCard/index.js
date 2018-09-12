@@ -4,7 +4,7 @@ import { compose, pure } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
 import { withThemeMixin, withTheme } from 'apolloschurchapp/src/ui/theme';
-// import Icon from 'apolloschurchapp/src/ui/Icon';
+import Icon from 'apolloschurchapp/src/ui/Icon';
 import ChannelLabel from 'apolloschurchapp/src/ui/ChannelLabel';
 import GradientOverlayImage from 'apolloschurchapp/src/ui/GradientOverlayImage';
 import Card, { CardContent, CardActions } from 'apolloschurchapp/src/ui/Card';
@@ -52,14 +52,12 @@ const FeedItemCard = enhance(
           isLoading={isLoading}
           withFlex
         />
-        {/* <LikeButton id={id}>
-          <Icon
-            name={isLiked ? 'like-solid' : 'like'}
-            size={theme.helpers.rem(1.2)}
-            fill={theme.colors.text.primary}
-            isLoading={isLoading}
-          />
-        </LikeButton> */}
+        <Icon
+          name={isLiked ? 'like-solid' : 'like'}
+          size={theme.helpers.rem(1.2)}
+          fill={theme.colors.text.primary}
+          isLoading={isLoading}
+        />
       </CardActions>
     </Card>
   )

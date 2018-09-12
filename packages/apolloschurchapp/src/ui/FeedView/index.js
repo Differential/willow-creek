@@ -64,6 +64,7 @@ class FeedView extends Component {
         <FeedItemCard
           id={get(item, 'id')}
           title={get(item, 'title') || get(item, 'name') || ' '}
+          isLiked={get(item, 'isLiked')}
           channelType={get(item, 'parentChannel.name')}
           channelTypeIcon={get(item, 'parentChannel.iconName')}
           images={get(item, 'coverImage.sources')}

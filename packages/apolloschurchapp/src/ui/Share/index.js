@@ -6,7 +6,10 @@ import Touchable from 'apolloschurchapp/src/ui/Touchable';
 import share from 'apolloschurchapp/src/utils/content/share';
 import { withTheme } from 'apolloschurchapp/src/ui/theme';
 
-const enhance = compose(pure, withTheme());
+const enhance = compose(
+  pure,
+  withTheme()
+);
 
 const Share = enhance(({ content, theme }) => (
   <Touchable onPress={() => share(content)}>

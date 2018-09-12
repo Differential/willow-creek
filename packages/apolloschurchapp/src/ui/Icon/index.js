@@ -7,7 +7,11 @@ import Placeholder from 'apolloschurchapp/src/ui/Placeholder';
 
 import * as Icons from './icons';
 
-const pascalCase = (string) => flow(camelCase, upperFirst)(string);
+const pascalCase = (string) =>
+  flow(
+    camelCase,
+    upperFirst
+  )(string);
 
 // Convenience component to render icons based on the icon's string name, like:
 // <Icon name="skip-next" {...allOtherPropsPassedToComponent} />

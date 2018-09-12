@@ -387,6 +387,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -529,6 +539,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -671,6 +691,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -813,6 +843,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -955,6 +995,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1097,6 +1147,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1239,6 +1299,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1381,6 +1451,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1523,6 +1603,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>
@@ -1665,6 +1755,16 @@ exports[`content feed query component renders a feedview after successful query 
                   />
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#A5A5A5",
+                    "borderRadius": 6,
+                    "height": 19.2,
+                    "width": 19.2,
+                  }
+                }
+              />
             </View>
           </View>
         </View>

@@ -23,6 +23,7 @@ export default gql`
             message
             url
           }
+          isLiked
           title
         }
       }

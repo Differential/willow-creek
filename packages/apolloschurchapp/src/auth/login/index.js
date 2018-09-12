@@ -4,8 +4,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 
-import getAuthToken from '../getAuthToken';
-
+import handleLogin from '../handleLogin';
+import { client } from '../../client'; //eslint-disable-line
 import authenticateMutation from './authenticate';
 import LoginForm from './Form';
 
@@ -13,9 +13,11 @@ const Login = ({ onLogin }) => (
   <Mutation
     mutation={authenticateMutation}
     update={(cache, { data: { authenticate } }) => {
-      cache.writeQuery({
-        query: getAuthToken,
-        data: { authToken: authenticate.token },
+      client.mutate({
+        mutation: handleLogin,
+        variables: {
+          authToken: authenticate.token,
+        },
       });
     }}
   >

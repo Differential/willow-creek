@@ -14,10 +14,10 @@ import { H2 } from 'apolloschurchapp/src/ui/typography';
 import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
 import styled from 'apolloschurchapp/src/ui/styled';
 import { ThemeMixin } from 'apolloschurchapp/src/ui/theme';
-import Share from 'apolloschurchapp/src/ui/Share';
 
 import getContentItem from './getContentItem';
 import getContentItemMinimalState from './getContentItemMinimalState';
+import ActionContainer from './ActionContainer';
 
 const FeedContainer = styled({
   paddingHorizontal: 0,
@@ -28,9 +28,10 @@ const ContentContainer = styled({ paddingVertical: 0 })(PaddedView);
 class ContentSingle extends PureComponent {
   static navigationOptions = ({ navigation }) => {
     const shareObject = navigation.getParam('sharing', 'Content');
+    const itemId = navigation.getParam('itemId', []);
     return {
       title: shareObject.title,
-      headerRight: <Share content={shareObject} />,
+      headerRight: <ActionContainer itemId={itemId} content={shareObject} />,
     };
   };
 

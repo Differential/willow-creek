@@ -6,7 +6,10 @@ import { View } from 'react-native';
 import styled from 'apolloschurchapp/src/ui/styled';
 import { BodyText } from 'apolloschurchapp/src/ui/typography';
 
-const enhance = compose(setDisplayName('BulletListItem'), pure);
+const enhance = compose(
+  setDisplayName('BulletListItem'),
+  pure
+);
 
 const Wrapper = styled(({ theme }) => ({
   flexDirection: 'row',
