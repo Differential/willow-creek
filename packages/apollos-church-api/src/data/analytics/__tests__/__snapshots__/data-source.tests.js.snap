@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Analytics Data Source identify must identify a user with device info 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source identify must identify a user with device info 2`] = `
+Array [
+  Array [
+    Object {
+      "anonymousId": "deviceId5",
+      "context": Object {
+        "appVersion": "72.0.1",
+        "deviceId": "gibberish",
+        "deviceMode": "Latest iPhone",
+        "platform": "iOS",
+      },
+      "traits": Object {
+        "email": "test@test.com",
+        "firstName": "Rick",
+        "lastName": "Hampton",
+      },
+      "userId": 5,
+    },
+  ],
+]
+`;
+
+exports[`Analytics Data Source identify must identify a user with traits 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source identify must identify a user with traits 2`] = `
+Array [
+  Array [
+    Object {
+      "anonymousId": "deviceId5",
+      "context": undefined,
+      "traits": Object {
+        "ChurchRole": "Pastor",
+        "email": "test@test.com",
+        "firstName": "Rick",
+        "lastName": "Hampton",
+      },
+      "userId": 5,
+    },
+  ],
+]
+`;
+
+exports[`Analytics Data Source identify must identify a user without traits 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source identify must identify a user without traits 2`] = `
+Array [
+  Array [
+    Object {
+      "anonymousId": "deviceId5",
+      "context": undefined,
+      "traits": Object {
+        "email": "test@test.com",
+        "firstName": "Rick",
+        "lastName": "Hampton",
+      },
+      "userId": 5,
+    },
+  ],
+]
+`;
+
+exports[`Analytics Data Source must accept arbitrary interfaces 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source must accept arbitrary interfaces 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "anonymousId": "deviceId5",
+        "context": undefined,
+        "event": "View Content",
+        "properties": Object {},
+        "userId": 5,
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Analytics Data Source must accept arbitrary interfaces 3`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source must accept arbitrary interfaces 4`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "anonymousId": "deviceId5",
+        "context": undefined,
+        "traits": Object {
+          "email": "test@test.com",
+          "firstName": "Rick",
+          "lastName": "Hampton",
+        },
+        "userId": 5,
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Analytics Data Source track must not track google analytics without a key 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source track must not track segment without a key 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source track must not track segment without a key 2`] = `
+Array [
+  Array [
+    Array [
+      "something-else",
+      undefined,
+      Object {
+        "strictCidFormat": false,
+      },
+    ],
+  ],
+]
+`;
+
+exports[`Analytics Data Source track must track an event with a name and no properties 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source track must track an event with a name and no properties 2`] = `
+Array [
+  Array [
+    Object {
+      "anonymousId": "deviceId5",
+      "context": undefined,
+      "event": "View Content",
+      "properties": Object {},
+      "userId": 5,
+    },
+  ],
+]
+`;
+
+exports[`Analytics Data Source track must track an event with a name and no properties 3`] = `
+Array [
+  Array [
+    Array [
+      "something-else",
+      "deviceId5",
+      Object {
+        "strictCidFormat": false,
+      },
+    ],
+  ],
+]
+`;
+
+exports[`Analytics Data Source track must track an event with a name and properties 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source track must track an event with a name and properties 2`] = `
+Array [
+  Array [
+    Object {
+      "anonymousId": "deviceId5",
+      "context": undefined,
+      "event": "View Content",
+      "properties": Object {
+        "ContentId": 7,
+      },
+      "userId": 5,
+    },
+  ],
+]
+`;
+
+exports[`Analytics Data Source track must track an event with a name and properties 3`] = `
+Array [
+  Array [
+    Array [
+      "something-else",
+      "deviceId5",
+      Object {
+        "strictCidFormat": false,
+      },
+    ],
+  ],
+]
+`;
+
+exports[`Analytics Data Source track must track without a user 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source track must track without a user 2`] = `
+Array [
+  Array [
+    Object {
+      "anonymousId": undefined,
+      "context": undefined,
+      "event": "View Content",
+      "properties": Object {},
+      "userId": undefined,
+    },
+  ],
+]
+`;
+
+exports[`Analytics Data Source track must track without a user 3`] = `
+Array [
+  Array [
+    Array [
+      "something-else",
+      undefined,
+      Object {
+        "strictCidFormat": false,
+      },
+    ],
+  ],
+]
+`;

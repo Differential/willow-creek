@@ -33,7 +33,9 @@ const Login = ({ onLogin }) => (
           try {
             await authenticate({ variables });
             if (onLogin) onLogin();
-          } catch ({ graphQLErrors = [], ...e }) {
+          } catch (e) {
+            console.log(e);
+            const graphQLErrors = [];
             if (
               graphQLErrors.length &&
               graphQLErrors.find(

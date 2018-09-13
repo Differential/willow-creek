@@ -88,6 +88,7 @@
     "react-apollo": "2.1.4",
     "react-native": "0.56.0",
     "react-native-custom-tabs": "0.1.7",
+    "react-native-device-info": "^0.22.5",
     "react-native-keyboard-aware-scroll-view": "0.7.0",
     "react-native-linear-gradient": "2.4.0",
     "react-native-modal-datetime-picker": "6.0.0",

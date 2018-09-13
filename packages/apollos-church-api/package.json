@@ -26,6 +26,7 @@
     "testEnvironment": "node"
   },
   "dependencies": {
+    "analytics-node": "^3.3.0",
     "apollo-datasource-rest": "0.1.1",
     "apollo-server": "2.0.0",
     "casual": "1.5.19",
@@ -40,6 +41,7 @@
     "prettier": "1.12.1",
     "randomcolor": "0.5.3",
     "sanitize-html": "1.18.2",
+    "universal-analytics": "^0.4.17",
     "url-join": "4.0.0",
     "with-query": "1.0.2"
   },

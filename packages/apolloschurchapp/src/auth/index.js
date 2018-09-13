@@ -9,6 +9,7 @@ import { H1, H5 } from 'apolloschurchapp/src/ui/typography';
 import styled from 'apolloschurchapp/src/ui/styled';
 import Icon from 'apolloschurchapp/src/ui/Icon';
 import { ButtonLink } from 'apolloschurchapp/src/ui/Button';
+import { track } from 'apolloschurchapp/src/analytics';
 
 import LoginForm from './login';
 import SignUpForm from './signup';
@@ -57,6 +58,7 @@ class Auth extends PureComponent {
 
   handleFinish = () => {
     // trigger the auth modal to close
+    track({ eventName: 'UserLogin' });
     this.props.navigation.goBack();
   };
 
