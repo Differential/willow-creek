@@ -10,7 +10,7 @@ import clientStateLink from './clientStateLink';
 import authLink from './authLink'; // eslint-disable-line
 import cache, { ensureCacheHydration } from './cache';
 
-const link = ApolloLink.from([clientStateLink, authLink, httpLink]);
+const link = clientStateLink.concat(ApolloLink.from([authLink, httpLink]));
 
 export const client = new ApolloClient({
   link,

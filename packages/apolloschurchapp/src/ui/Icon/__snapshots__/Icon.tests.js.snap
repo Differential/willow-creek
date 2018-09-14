@@ -1594,6 +1594,34 @@ exports[`The Dropdown icon renders correctly 1`] = `
 </RNSVGSvgView>
 `;
 
+exports[`The Empty icon renders correctly 1`] = `
+<RNSVGSvgView
+  align="xMidYMid"
+  bbHeight="32"
+  bbWidth="32"
+  fill="#303030"
+  meetOrSlice={0}
+  minX={0}
+  minY={0}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      undefined,
+      false,
+      Object {
+        "flex": 0,
+        "height": 32,
+        "width": 32,
+      },
+    ]
+  }
+  vbHeight={24}
+  vbWidth={24}
+/>
+`;
+
 exports[`The Failed icon renders correctly 1`] = `
 <RNSVGSvgView
   align="xMidYMid"

@@ -28,6 +28,15 @@ export default gql`
             uri
           }
         }
+        audios {
+          sources {
+            uri
+          }
+        }
+        parentChannel {
+          id
+          name
+        }
         sharing {
           url
           message

@@ -1,117 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MediaPlayer Store enqueues a track 1`] = `
+exports[`MediaPlayer Store plays a track 1`] = `
 Object {
   "data": Object {
     "mediaPlayer": Object {
       "__typename": "MediaPlayerState",
-      "isPlaying": false,
-      "nowPlayingIndex": 0,
-      "queue": Array [
-        Object {
-          "name": "some cool track!",
-        },
-      ],
-      Symbol(id): "$ROOT_QUERY.mediaPlayer",
-    },
-    Symbol(id): "ROOT_QUERY",
-  },
-  "loading": false,
-  "networkStatus": 7,
-  "stale": false,
-}
-`;
-
-exports[`MediaPlayer Store switches between tracks 1`] = `
-Object {
-  "data": Object {
-    "mediaPlayer": Object {
-      "__typename": "MediaPlayerState",
-      "isPlaying": false,
-      "nowPlayingIndex": 0,
-      "queue": Array [
-        Object {
-          "name": "some cool track!",
-        },
-        Object {
-          "name": "another cool track!",
-        },
-      ],
-      Symbol(id): "$ROOT_QUERY.mediaPlayer",
-    },
-    Symbol(id): "ROOT_QUERY",
-  },
-  "loading": false,
-  "networkStatus": 7,
-  "stale": false,
-}
-`;
-
-exports[`MediaPlayer Store switches between tracks 2`] = `
-Object {
-  "data": Object {
-    "mediaPlayer": Object {
-      "__typename": "MediaPlayerState",
-      "isPlaying": false,
-      "nowPlayingIndex": 1,
-      "queue": Array [
-        Object {
-          "name": "some cool track!",
-        },
-        Object {
-          "name": "another cool track!",
-        },
-      ],
-      Symbol(id): "$ROOT_QUERY.mediaPlayer",
-    },
-    Symbol(id): "ROOT_QUERY",
-  },
-  "loading": false,
-  "networkStatus": 7,
-  "stale": false,
-}
-`;
-
-exports[`MediaPlayer Store switches between tracks 3`] = `
-Object {
-  "data": Object {
-    "mediaPlayer": Object {
-      "__typename": "MediaPlayerState",
-      "isPlaying": false,
-      "nowPlayingIndex": 0,
-      "queue": Array [
-        Object {
-          "name": "some cool track!",
-        },
-        Object {
-          "name": "another cool track!",
-        },
-      ],
-      Symbol(id): "$ROOT_QUERY.mediaPlayer",
-    },
-    Symbol(id): "ROOT_QUERY",
-  },
-  "loading": false,
-  "networkStatus": 7,
-  "stale": false,
-}
-`;
-
-exports[`MediaPlayer Store switches between tracks 4`] = `
-Object {
-  "data": Object {
-    "mediaPlayer": Object {
-      "__typename": "MediaPlayerState",
-      "isPlaying": false,
-      "nowPlayingIndex": 1,
-      "queue": Array [
-        Object {
-          "name": "some cool track!",
-        },
-        Object {
-          "name": "another cool track!",
-        },
-      ],
+      "currentTrack": Object {
+        "__typename": "MediaPlayerTrack",
+        "artist": "artist",
+        "mediaSourceUri": "mediaSourceUri",
+        "posterSourceUri": "posterSourceUri",
+        "title": "title",
+        Symbol(id): "MediaPlayerTrack:0",
+      },
+      "isFullscreen": false,
+      "isPlaying": true,
+      "isVisible": true,
       Symbol(id): "$ROOT_QUERY.mediaPlayer",
     },
     Symbol(id): "ROOT_QUERY",
@@ -127,13 +31,17 @@ Object {
   "data": Object {
     "mediaPlayer": Object {
       "__typename": "MediaPlayerState",
-      "isPlaying": false,
-      "nowPlayingIndex": 0,
-      "queue": Array [
-        Object {
-          "name": "some cool track!",
-        },
-      ],
+      "currentTrack": Object {
+        "__typename": "MediaPlayerTrack",
+        "artist": "artist",
+        "mediaSourceUri": "mediaSourceUri",
+        "posterSourceUri": "posterSourceUri",
+        "title": "title",
+        Symbol(id): "MediaPlayerTrack:1",
+      },
+      "isFullscreen": false,
+      "isPlaying": true,
+      "isVisible": true,
       Symbol(id): "$ROOT_QUERY.mediaPlayer",
     },
     Symbol(id): "ROOT_QUERY",
@@ -149,13 +57,17 @@ Object {
   "data": Object {
     "mediaPlayer": Object {
       "__typename": "MediaPlayerState",
-      "isPlaying": true,
-      "nowPlayingIndex": 0,
-      "queue": Array [
-        Object {
-          "name": "some cool track!",
-        },
-      ],
+      "currentTrack": Object {
+        "__typename": "MediaPlayerTrack",
+        "artist": "artist",
+        "mediaSourceUri": "mediaSourceUri",
+        "posterSourceUri": "posterSourceUri",
+        "title": "title",
+        Symbol(id): "MediaPlayerTrack:1",
+      },
+      "isFullscreen": false,
+      "isPlaying": false,
+      "isVisible": true,
       Symbol(id): "$ROOT_QUERY.mediaPlayer",
     },
     Symbol(id): "ROOT_QUERY",

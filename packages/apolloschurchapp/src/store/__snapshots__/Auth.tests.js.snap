@@ -17,6 +17,7 @@ InMemoryCache {
       "possibleTypesMap": Object {
         "ContentItem": Array [
           "UniversalContentItem",
+          "DevotionalContentItem",
         ],
         "Media": Array [
           "ImageMedia",
@@ -34,6 +35,7 @@ InMemoryCache {
           "Interaction",
           "Session",
           "UniversalContentItem",
+          "DevotionalContentItem",
         ],
         "Sharable": Array [
           "SharableContentItem",
@@ -46,12 +48,11 @@ InMemoryCache {
     "data": Object {
       "$ROOT_QUERY.mediaPlayer": Object {
         "__typename": "MediaPlayerState",
+        "currentTime": 0,
+        "currentTrack": null,
+        "isFullscreen": false,
         "isPlaying": false,
-        "nowPlayingIndex": 0,
-        "queue": Object {
-          "json": Array [],
-          "type": "json",
-        },
+        "isVisible": false,
       },
       "ROOT_QUERY": Object {
         "authToken": null,
