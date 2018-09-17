@@ -16,5 +16,4 @@ Fixes [issue-number]
 - [ ] Review new stories if any apply
 - [ ] Review test coverage: Are all new or changed states tested?
 - [ ] Review new test logic
-- [ ] Review the change-log entry
 - [ ] Review that the PR title adheres to our patch-notes/change-log style
