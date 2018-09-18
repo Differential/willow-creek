@@ -8,7 +8,7 @@ import Like from 'apolloschurchapp/src/ui/Like';
 import getSessionId from 'apolloschurchapp/src/store/getSessionId';
 import SideBySideView from 'apolloschurchapp/src/ui/SideBySideView';
 
-import createInteraction from './createInteraction';
+import updateLikeEntity from './updateLikeEntity';
 import getLikedContentItem from './getLikedContentItem';
 
 const ActionContainer = ({ content, itemId }) => (
@@ -19,23 +19,36 @@ const ActionContainer = ({ content, itemId }) => (
           <Query query={getLikedContentItem} variables={{ itemId }}>
             {({
               data: {
-                node: { isLiked },
+                node: { isLiked, ...node },
               },
               refetch,
             }) => (
               <Mutation
-                mutation={createInteraction}
+                mutation={updateLikeEntity}
+                optimisticResponse={{
+                  updateLikeEntity: {
+                    operation: isLiked ? 'Unlike' : 'Like',
+                    id: null, // unknown at this time
+                    interactionDateTime: new Date().toJSON(),
+                    __typename: 'Interaction',
+                  },
+                }}
                 update={(
                   cache,
                   {
                     data: {
-                      createInteraction: { operation },
+                      updateLikeEntity: { operation },
                     },
                   }
                 ) => {
                   cache.writeQuery({
                     query: getLikedContentItem,
-                    data: { isLiked: operation === 'Like' },
+                    data: {
+                      node: {
+                        ...node,
+                        isLiked: operation === 'Like',
+                      },
+                    },
                   });
                 }}
               >

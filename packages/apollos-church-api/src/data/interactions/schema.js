@@ -7,23 +7,23 @@ export default gql`
 
   type Interaction implements Node {
     id: ID!
-    operation: INTERACTION_OPERATION!
+    operation: LIKE_OPERATION!
     interactionDateTime: String!
   }
 
-  enum INTERACTION_OPERATION {
+  enum LIKE_OPERATION {
     Like
     Unlike
   }
 
-  input CreateInteractionInput {
+  input LikeEntityInput {
     nodeId: ID!
     sessionId: ID!
-    operation: INTERACTION_OPERATION!
+    operation: LIKE_OPERATION!
   }
 
   extend type Mutation {
-    createInteraction(input: CreateInteractionInput!): Interaction
+    updateLikeEntity(input: LikeEntityInput!): Interaction
     createSession: Session
   }
 `;

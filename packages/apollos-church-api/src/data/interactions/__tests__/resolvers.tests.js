@@ -34,10 +34,10 @@ describe('Interactions', () => {
     const result = await graphql(schema, query, rootValue, context);
     expect(result).toMatchSnapshot();
   });
-  it('creates an interaction', async () => {
+  it('likes an entity', async () => {
     const query = `
-      mutation createInteraction {
-        createInteraction(
+      mutation likeEntity {
+        updateLikeEntity(
           input: {
             nodeId: "${createGlobalId(1, 'UniversalContentItem')}"
             sessionId: "${createGlobalId(123, 'Session')}"

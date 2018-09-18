@@ -37,6 +37,9 @@ export default class Analytics extends DataSource {
   // Called automatically b/c extends DataSource.
   initialize({ context }) {
     this.context = context;
+    this.interfaces.forEach((iface) => {
+      iface.initialize({ context });
+    });
   }
 
   get identifyInterfaces() {
@@ -90,14 +93,19 @@ export default class Analytics extends DataSource {
   async track({ anonymousId, deviceInfo, eventName, properties }) {
     const currentUser = await this.getCurrentPerson();
     this.trackInterfaces.forEach(async (iface) => {
-      const parsedProps = mapArrayToObject(properties);
-      iface.track({
-        userId: currentUser && currentUser.id,
-        anonymousId,
-        properties: parsedProps,
-        event: eventName,
-        context: deviceInfo,
-      });
+      if (
+        iface.eventWhitelist === null ||
+        iface.eventWhitelist.includes(eventName)
+      ) {
+        const parsedProps = mapArrayToObject(properties);
+        iface.track({
+          userId: currentUser && currentUser.id,
+          anonymousId,
+          properties: parsedProps,
+          event: eventName,
+          context: deviceInfo,
+        });
+      }
     });
     return { success: true };
   }

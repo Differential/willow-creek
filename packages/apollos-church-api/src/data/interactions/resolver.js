@@ -4,7 +4,7 @@ export default {
   Mutation: {
     createSession: (root, args, { dataSources }) =>
       dataSources.Interactions.createSession(),
-    createInteraction: async (
+    updateLikeEntity: async (
       root,
       { input: { nodeId, sessionId, operation } },
       { dataSources }

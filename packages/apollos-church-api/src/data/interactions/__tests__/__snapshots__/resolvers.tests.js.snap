@@ -10,18 +10,6 @@ Object {
 }
 `;
 
-exports[`Interactions creates an interaction 1`] = `
-Object {
-  "data": Object {
-    "createInteraction": Object {
-      "id": "Interaction:fb344cb78f7b3f41416ffcbdc457e30c",
-      "interactionDateTime": "2018-08-21T14:55:01.000Z",
-      "operation": "Like",
-    },
-  },
-}
-`;
-
 exports[`Interactions gets all user liked content 1`] = `
 Object {
   "data": Object {
@@ -32,6 +20,18 @@ Object {
         "title": "SAMPLE: Easter",
       },
     ],
+  },
+}
+`;
+
+exports[`Interactions likes an entity 1`] = `
+Object {
+  "data": Object {
+    "updateLikeEntity": Object {
+      "id": "Interaction:fb344cb78f7b3f41416ffcbdc457e30c",
+      "interactionDateTime": "2018-08-21T14:55:01.000Z",
+      "operation": "Like",
+    },
   },
 }
 `;

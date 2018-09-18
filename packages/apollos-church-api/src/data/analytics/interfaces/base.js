@@ -6,6 +6,13 @@ export default class BaseAnalytics {
   // override this property if you want `identify` to be called.
   shouldTrack = true; // override this property if `track` shouldn't be called.
 
+  // override this property to only track specific events
+  eventWhitelist = null;
+
+  initialize({ context }) {
+    this.context = context;
+  }
+
   // called when a user is identified.
   identify({ anonymousId, userId, traits, context }) {
     /* istanbul ignore next */

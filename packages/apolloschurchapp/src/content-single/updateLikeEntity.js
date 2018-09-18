@@ -1,12 +1,12 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  mutation createInteraction(
+  mutation updateLikeEntity(
     $itemId: ID!
     $sessionId: ID!
-    $operation: INTERACTION_OPERATION!
+    $operation: LIKE_OPERATION!
   ) {
-    createInteraction(
+    updateLikeEntity(
       input: { nodeId: $itemId, sessionId: $sessionId, operation: $operation }
     ) {
       id

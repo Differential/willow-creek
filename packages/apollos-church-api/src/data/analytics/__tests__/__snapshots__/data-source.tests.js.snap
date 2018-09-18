@@ -230,6 +230,24 @@ Array [
 ]
 `;
 
+exports[`Analytics Data Source track must track specific events using the Rock adapter 1`] = `
+Object {
+  "success": true,
+}
+`;
+
+exports[`Analytics Data Source track must track specific events using the Rock adapter 2`] = `
+Array [
+  Array [
+    Object {
+      "nodeId": "Content:123",
+      "operationName": "View Content",
+      "sessionId": "Session:123",
+    },
+  ],
+]
+`;
+
 exports[`Analytics Data Source track must track without a user 1`] = `
 Object {
   "success": true,
