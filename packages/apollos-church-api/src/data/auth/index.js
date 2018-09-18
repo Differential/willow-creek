@@ -14,6 +14,15 @@ export const schema = gql`
     user: AuthenticatedUser
     token: String
   }
+
+  extend type Mutation {
+    authenticate(identity: String!, password: String!): Authentication
+    registerPerson(email: String!, password: String!): Authentication
+  }
+
+  extend type Query {
+    currentUser: AuthenticatedUser
+  }
 `;
 
 export const resolver = {

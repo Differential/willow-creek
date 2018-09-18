@@ -35,12 +35,10 @@ export const schema = [
   gql`
     type Query {
       _placeholder: Boolean # needed, empty schema defs aren't supported
-      currentUser: AuthenticatedUser
     }
 
     type Mutation {
-      authenticate(identity: String!, password: String!): Authentication
-      registerPerson(email: String!, password: String!): Authentication
+      _placeholder: Boolean # needed, empty schema defs aren't supported
     }
   `,
   ...compact(values(data).map((datum) => datum.schema)),
@@ -56,3 +54,11 @@ export const models = {
   ...mapValues(data, (datum) => datum.model),
   UniversalContentItem: ContentItem.model, // alias
 };
+
+// the upload Scalar is added
+export const testSchema = [
+  gql`
+    scalar Upload
+  `,
+  ...schema,
+];

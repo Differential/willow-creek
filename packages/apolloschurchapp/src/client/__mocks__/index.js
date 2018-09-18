@@ -3,7 +3,7 @@ import ApolloClient from 'apollo-client';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 import { SchemaLink } from 'apollo-link-schema';
 import { ApolloLink } from 'apollo-link';
-import { schema as typeDefs } from 'apollos-church-api';
+import { testSchema as typeDefs } from 'apollos-church-api';
 
 import cache from '../cache';
 import clientStateLink from '../clientStateLink';

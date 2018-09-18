@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
-import Avatar from 'apolloschurchapp/src/ui/Avatar';
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
 import { H4, BodyText } from 'apolloschurchapp/src/ui/typography';
 import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
 import ConnectedImage from 'apolloschurchapp/src/ui/ConnectedImage';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
 import styled from 'apolloschurchapp/src/ui/styled';
+import AvatarForm from './AvatarForm';
 
 const Container = styled({
   alignItems: 'center',
@@ -23,13 +21,6 @@ const Content = styled({ alignItems: 'center', justifyContent: 'center' })(
 const Name = H4;
 const City = BodyText;
 
-const StyledAvatar = withTheme(({ theme }) => ({
-  containerStyle: {
-    marginRight: 0,
-    marginBottom: theme.sizing.baseUnit / 2,
-  },
-}))(Avatar);
-
 const UserAvatarView = ({
   photo,
   firstName,
@@ -41,27 +32,18 @@ const UserAvatarView = ({
   setIsUploadingFile,
   isUploadingFile,
   ...viewProps
-}) => {
-  const ImageContainer = Touchable;
+}) => (
   // todo: handle file select stuff
-  return (
-    <Container {...viewProps}>
-      <Content>
-        <ImageContainer>
-          <StyledAvatar
-            source={photo}
-            size="large"
-            isLoading={isUploadingFile}
-          />
-        </ImageContainer>
-        <Name>
-          {firstName} {lastName}
-        </Name>
-        {home ? <City>{home.city}</City> : null}
-      </Content>
-    </Container>
-  );
-};
+  <Container {...viewProps}>
+    <Content>
+      <AvatarForm photo={photo} refetch={refetch} />
+      <Name>
+        {firstName} {lastName}
+      </Name>
+      {home ? <City>{home.city}</City> : null}
+    </Content>
+  </Container>
+);
 
 UserAvatarView.propTypes = {
   photo: ConnectedImage.propTypes.source,

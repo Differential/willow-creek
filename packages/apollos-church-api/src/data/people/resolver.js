@@ -5,6 +5,12 @@ export default {
     people: (root, { email }, { dataSources }) =>
       dataSources.Person.getFromEmail(email),
   },
+  Mutation: {
+    updateProfile: (root, { input: { field, value } }, { dataSources }) =>
+      dataSources.Person.updateProfile({ field, value }),
+    uploadProfileImage: async (root, { file, size }, { dataSources }) =>
+      dataSources.Person.uploadProfileImage(file, size),
+  },
   Person: {
     id: ({ id }, args, context, { parentType }) =>
       createGlobalId(id, parentType.name),

@@ -4,8 +4,12 @@ import { makeExecutableSchema } from 'apollo-server';
 
 import { createGlobalId } from 'apollos-church-api/src/data/node/model';
 import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
+import {
+  generateToken,
+  registerToken,
+} from 'apollos-church-api/src/data/auth/token';
 // we import the root-level schema and resolver so we test the entire integration:
-import { schema as typeDefs, resolvers } from 'apollos-church-api/src/data';
+import { testSchema as typeDefs, resolvers } from 'apollos-church-api/src/data';
 
 describe('Person', () => {
   let schema;
@@ -15,6 +19,39 @@ describe('Person', () => {
     fetch.mockRockDataSourceAPI();
     schema = makeExecutableSchema({ typeDefs, resolvers });
     context = getTestContext();
+  });
+
+  it("updates a user's attributes, if there is a current user", async () => {
+    const query = `
+      mutation {
+        updateProfile(input: { field: FirstName, value: "Richard" }) {
+          firstName
+          id
+        }
+      }
+    `;
+    const { userToken, rockCookie } = registerToken(
+      generateToken({ cookie: 'some-cookie' })
+    );
+    context.userToken = userToken;
+    context.rockCookie = rockCookie;
+    const rootValue = {};
+    const result = await graphql(schema, query, rootValue, context);
+    expect(result).toMatchSnapshot();
+  });
+
+  it("fails to update a user's attributes, without a current user", async () => {
+    const query = `
+      mutation {
+        updateProfile(input: { field: FirstName, value: "Richard" }) {
+          firstName
+          id
+        }
+      }
+    `;
+    const rootValue = {};
+    const result = await graphql(schema, query, rootValue, context);
+    expect(result).toMatchSnapshot();
   });
 
   it('gets people by an email', async () => {

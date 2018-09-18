@@ -3,7 +3,7 @@ import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
 
-import { schema as typeDefs, resolvers } from '../..';
+import { testSchema as typeDefs, resolvers } from 'apollos-church-api/src/data';
 
 describe('Scripture', () => {
   let schema;

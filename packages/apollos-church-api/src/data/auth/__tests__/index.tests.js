@@ -2,7 +2,7 @@ import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
-import { schema as typeDefs, resolvers } from 'apollos-church-api/src/data';
+import { testSchema as typeDefs, resolvers } from 'apollos-church-api/src/data';
 import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
 import { generateToken, registerToken } from '../token';
 

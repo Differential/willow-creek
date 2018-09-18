@@ -44,11 +44,13 @@ class Connect extends PureComponent {
                                 profile: { photo, firstName, lastName } = {},
                               } = {},
                             } = {},
+                            refetch,
                           }) => (
                             <UserAvatarView
                               firstName={firstName}
                               lastName={lastName}
                               photo={photo}
+                              refetch={refetch}
                             />
                           )}
                         </Query>

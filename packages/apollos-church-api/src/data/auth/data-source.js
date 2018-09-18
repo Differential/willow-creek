@@ -54,7 +54,7 @@ export default class AuthDataSource extends RockApolloDataSource {
       const { userToken, rockCookie } = registerToken(token);
       this.context.userToken = userToken;
       this.context.rockCookie = rockCookie;
-      return { token };
+      return { token, rockCookie };
     } catch (e) {
       throw e;
     }
