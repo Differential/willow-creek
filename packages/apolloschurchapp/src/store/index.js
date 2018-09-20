@@ -56,8 +56,8 @@ export const schema = `
 `;
 
 export const defaults = {
-  authToken: 'adf',
-  sessionId: 'asdf',
+  authToken: null,
+  sessionId: null,
   mediaPlayer: {
     __typename: 'MediaPlayerState',
     currentTrack: null,
