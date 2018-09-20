@@ -30,8 +30,8 @@ InMemoryCache {
           "AudioMediaSource",
         ],
         "Node": Array [
-          "Person",
           "ContentChannel",
+          "Person",
           "Interaction",
           "Session",
           "UniversalContentItem",
