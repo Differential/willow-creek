@@ -83,10 +83,12 @@ Content-Disposition: form-data; name=\\"file\\"
 exports[`Person uploads a user's profile picture 3`] = `
 Object {
   "0": Array [
-    Object {
-      "field": "PhotoId",
-      "value": "245",
-    },
+    Array [
+      Object {
+        "field": "PhotoId",
+        "value": "245",
+      },
+    ],
   ],
 }
 `;

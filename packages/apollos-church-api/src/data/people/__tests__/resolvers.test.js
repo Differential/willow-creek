@@ -24,8 +24,31 @@ describe('Person', () => {
   it("updates a user's attributes, if there is a current user", async () => {
     const query = `
       mutation {
-        updateProfile(input: { field: FirstName, value: "Richard" }) {
+        updateProfileField(input: { field: FirstName, value: "Richard" }) {
           firstName
+          id
+        }
+      }
+    `;
+    const { userToken, rockCookie } = registerToken(
+      generateToken({ cookie: 'some-cookie' })
+    );
+    context.userToken = userToken;
+    context.rockCookie = rockCookie;
+    const rootValue = {};
+    const result = await graphql(schema, query, rootValue, context);
+    expect(result).toMatchSnapshot();
+  });
+
+  it('updates multiple fields', async () => {
+    const query = `
+      mutation {
+        updateProfileFields(input: [
+          { field: FirstName, value: "Richard" },
+          { field: LastName, value: "Walkerton" }
+        ]) {
+          firstName
+          lastName
           id
         }
       }
@@ -43,7 +66,7 @@ describe('Person', () => {
   it("fails to update a user's attributes, without a current user", async () => {
     const query = `
       mutation {
-        updateProfile(input: { field: FirstName, value: "Richard" }) {
+        updateProfileField(input: { field: FirstName, value: "Richard" }) {
           firstName
           id
         }

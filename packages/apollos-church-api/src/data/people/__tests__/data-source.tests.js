@@ -38,10 +38,12 @@ describe('Person', () => {
       dataSource: { Auth },
     };
     dataSource.patch = buildGetMock({}, dataSource);
-    const result = dataSource.updateProfile({
-      field: 'FirstName',
-      value: 'Nick',
-    });
+    const result = dataSource.updateProfile([
+      {
+        field: 'FirstName',
+        value: 'Nick',
+      },
+    ]);
     expect(result).resolves.toMatchSnapshot();
     expect(Auth.getCurrentPerson.mock.calls).toMatchSnapshot();
     expect(dataSource.patch.mock.calls).toMatchSnapshot();

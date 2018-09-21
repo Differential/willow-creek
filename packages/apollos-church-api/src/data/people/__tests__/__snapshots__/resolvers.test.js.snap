@@ -3,7 +3,7 @@
 exports[`Person fails to update a user's attributes, without a current user 1`] = `
 Object {
   "data": Object {
-    "updateProfile": null,
+    "updateProfileField": null,
   },
   "errors": Array [
     [GraphQLError: Must be logged in],
@@ -50,9 +50,21 @@ Object {
 exports[`Person updates a user's attributes, if there is a current user 1`] = `
 Object {
   "data": Object {
-    "updateProfile": Object {
+    "updateProfileField": Object {
       "firstName": "Richard",
       "id": "Person:057b0758543270d1cb21784cac4d3f5c",
+    },
+  },
+}
+`;
+
+exports[`Person updates multiple fields 1`] = `
+Object {
+  "data": Object {
+    "updateProfileFields": Object {
+      "firstName": "Richard",
+      "id": "Person:057b0758543270d1cb21784cac4d3f5c",
+      "lastName": "Walkerton",
     },
   },
 }

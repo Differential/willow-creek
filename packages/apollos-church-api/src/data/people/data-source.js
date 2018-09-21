@@ -1,6 +1,6 @@
 import { AuthenticationError } from 'apollo-server';
 import FormData from 'form-data';
-import { camelCase } from 'lodash';
+import { camelCase, mapKeys } from 'lodash';
 import RockApolloDataSource from 'apollos-church-api/src/connectors/rock/data-source';
 
 export default class Person extends RockApolloDataSource {
@@ -16,17 +16,26 @@ export default class Person extends RockApolloDataSource {
       .filter(`Email eq '${email}'`)
       .get();
 
-  updateProfile = async ({ field, value }) => {
+  // fields is an array of objects matching the pattern
+  // [{ field: String, value: String }]
+  updateProfile = async (fields) => {
     const currentPerson = await this.context.dataSources.Auth.getCurrentPerson();
 
     if (!currentPerson) throw new AuthenticationError('Invalid Credentials');
 
-    await this.patch(`/People/${currentPerson.id}`, {
-      [field]: value,
-    });
+    const fieldsAsObject = fields.reduce(
+      (accum, { field, value }) => ({
+        ...accum,
+        [field]: value,
+      }),
+      {}
+    );
+
+    await this.patch(`/People/${currentPerson.id}`, fieldsAsObject);
+
     return {
       ...currentPerson,
-      [camelCase(field)]: value,
+      ...mapKeys(fieldsAsObject, (_, key) => camelCase(key)),
     };
   };
 
@@ -49,6 +58,6 @@ export default class Person extends RockApolloDataSource {
       }
     );
     const photoId = await response.text();
-    return this.updateProfile({ field: 'PhotoId', value: photoId });
+    return this.updateProfile([{ field: 'PhotoId', value: photoId }]);
   };
 }

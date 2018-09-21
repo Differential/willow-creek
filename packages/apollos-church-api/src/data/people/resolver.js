@@ -6,8 +6,10 @@ export default {
       dataSources.Person.getFromEmail(email),
   },
   Mutation: {
-    updateProfile: (root, { input: { field, value } }, { dataSources }) =>
-      dataSources.Person.updateProfile({ field, value }),
+    updateProfileField: (root, { input: { field, value } }, { dataSources }) =>
+      dataSources.Person.updateProfile([{ field, value }]),
+    updateProfileFields: (root, { input }, { dataSources }) =>
+      dataSources.Person.updateProfile(input),
     uploadProfileImage: async (root, { file, size }, { dataSources }) =>
       dataSources.Person.uploadProfileImage(file, size),
   },
