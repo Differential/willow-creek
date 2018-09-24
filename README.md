@@ -51,6 +51,13 @@ Creating a release within the Apollos Church application is pretty simple! After
 
 #### Create the release
 
+Checkout to a release branch first
+```bash
+# For example, version 2.7.1
+git checkout -b release-v2.7.1
+```
+
+Then, run the release script
 ```bash
 yarn release
 ```
