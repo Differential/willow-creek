@@ -10,7 +10,12 @@ import clientStateLink from '../clientStateLink';
 
 export default MockedProvider;
 
-const schema = makeExecutableSchema({ typeDefs });
+const schema = makeExecutableSchema({
+  typeDefs,
+  resolverValidationOptions: {
+    requireResolversForResolveType: false,
+  },
+});
 addMockFunctionsToSchema({ schema });
 
 let link = new SchemaLink({ schema });

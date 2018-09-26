@@ -2452,7 +2452,7 @@ apollo-utilities@^1.0.0, apollo-utilities@^1.0.1, apollo-utilities@^1.0.13, apol
     fast-json-stable-stringify "^2.0.0"
 
 "apollos-church-api@link:packages/apollos-church-api":
-  version "0.4.0"
+  version "0.5.0"
   dependencies:
     analytics-node "^3.3.0"
     apollo-datasource-rest "0.1.1"
@@ -3408,7 +3408,7 @@ babel-plugin-transform-undefined-to-void@^6.9.4:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-undefined-to-void/-/babel-plugin-transform-undefined-to-void-6.9.4.tgz#be241ca81404030678b748717322b89d0c8fe280"
 
 "babel-preset-apollos@link:packages/babel-preset-apollos":
-  version "0.1.0"
+  version "0.5.0"
   dependencies:
     "@babel/plugin-proposal-class-properties" "7.0.0-beta.47"
     "@babel/plugin-proposal-decorators" "7.0.0-beta.47"
@@ -10515,6 +10515,12 @@ react-native-modal@^6.2.0:
 react-native-music-control@^0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/react-native-music-control/-/react-native-music-control-0.7.3.tgz#6ba41e7339ea4e7afedb8ec4659bebfd66d556d9"
+
+react-native-onesignal@^3.2.7:
+  version "3.2.7"
+  resolved "https://registry.yarnpkg.com/react-native-onesignal/-/react-native-onesignal-3.2.7.tgz#8e3245b720af68af7d01ff572c56cbb3521b88f5"
+  dependencies:
+    invariant "^2.2.2"
 
 react-native-safari-view@2.1.0:
   version "2.1.0"

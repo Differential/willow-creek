@@ -1,4 +1,7 @@
 jest.mock('./src/client/index');
+jest.mock('./src/config', () => ({
+  ONE_SIGNAL_KEY: 'doesntmatter',
+}));
 jest.mock('react-native-custom-tabs', () => ({
   CustomTabs: {
     openURL: jest.fn(),
@@ -10,6 +13,7 @@ jest.mock('react-native-safari-view', () => ({
   show: jest.fn(),
 }));
 
+jest.mock('react-native-onesignal');
 jest.mock('react-native-music-control', () => ({
   enableBackgroundMode: jest.fn(),
   enableControl: jest.fn(),
