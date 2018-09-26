@@ -7,3 +7,7 @@ sudo installer -store -pkg "$HOME/Downloads/node-installer.pkg" -target "/"
 
 # Appcenter needs a yarn.lock file to exist next to the package.json to detect yarn:
 cp $(pwd)/../../yarn.lock $(pwd)/yarn.lock
+
+# Swaps out all placeholder env variables w/ their real values
+# Placeholders look like "$ONE_SIGNAL_KEY"
+grep -o '\$.*' .env.production | sed 's/\$\(.*\)/\1/' | xargs -I {} sh -c "sed -i -e 's/\$"{}"/'$"{}"'/' .env.production"
