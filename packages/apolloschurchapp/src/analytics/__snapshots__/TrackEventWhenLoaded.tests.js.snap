@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The TrackEventWhenLoaded component should track an event if mounted with loaded=false and then switching to true 1`] = `Array []`;
+
+exports[`The TrackEventWhenLoaded component should track an event if mounted with loaded=false and then switching to true 2`] = `
+Array [
+  Array [
+    Object {
+      "eventName": "Track Something",
+      "properties": Object {
+        "ThingId": "1234",
+      },
+    },
+  ],
+]
+`;
+
+exports[`The TrackEventWhenLoaded component should track an event if mounted with loaded=true 1`] = `
+Array [
+  Array [
+    Object {
+      "eventName": "Track Something",
+      "properties": Object {
+        "ThingId": "1234",
+      },
+    },
+  ],
+]
+`;

@@ -1,5 +1,6 @@
 import { merge, get } from 'lodash';
 import gql from 'graphql-tag';
+import { track, events } from 'apolloschurchapp/src/analytics';
 import { client } from '../client'; // eslint-disable-line
 import getAuthToken from './getAuthToken';
 import getSessionId from './getSessionId';
@@ -75,6 +76,7 @@ export const resolvers = {
     logout: (root, variables, { cache }) => {
       client.resetStore();
       cache.writeData({ data: { authToken: null, sessionId: null } });
+      track({ eventName: events.UserLogout });
       return null;
     },
 
@@ -103,6 +105,8 @@ export const resolvers = {
           query: getSessionId,
           data: { sessionId: createSession.id },
         });
+
+        track({ eventName: events.UserLogin });
       } catch (e) {
         console.log(e);
       }
@@ -115,7 +119,7 @@ export const resolvers = {
           }
         }
       `;
-      const track = merge(
+      const mediaTrack = merge(
         {
           __typename: 'MediaPlayerTrack',
           parentId: null,
@@ -134,10 +138,10 @@ export const resolvers = {
         __typename: 'MediaPlayerState',
         isPlaying: true,
         isVisible: true,
-        isFullscreen: track.isVideo
+        isFullscreen: mediaTrack.isVideo
           ? true
           : (mediaPlayer && mediaPlayer.isFullscreen) || false,
-        currentTrack: track,
+        currentTrack: mediaTrack,
         currentTime: 0,
       };
 
@@ -145,7 +149,7 @@ export const resolvers = {
         // if same track
         mediaPlayer &&
         mediaPlayer.currentTrack &&
-        mediaPlayer.currentTrack.mediaSource.uri === track.mediaSource.uri
+        mediaPlayer.currentTrack.mediaSource.uri === mediaTrack.mediaSource.uri
       ) {
         // use the same Id
         newMediaPlayerState.currentTrack.id = mediaPlayer.currentTrack.id;
@@ -160,6 +164,15 @@ export const resolvers = {
         query,
         data: {
           mediaPlayer: newMediaPlayerState,
+        },
+      });
+
+      track({
+        eventName: events.UserPlayedMedia,
+        properties: {
+          uri: mediaTrack.uri,
+          title: mediaTrack.title,
+          type: mediaTrack.isVideo ? 'Video' : 'Audio',
         },
       });
       return null;

@@ -4,6 +4,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 
+import { track, events } from 'apolloschurchapp/src/analytics';
+
 import handleLogin from '../handleLogin';
 import { client } from '../../client'; //eslint-disable-line
 import registerPersonMutation from './registerPerson';
@@ -32,6 +34,7 @@ const Signup = ({ onSignup }) => (
         onSubmit={async (variables, { setSubmitting, setFieldError }) => {
           try {
             await authenticate({ variables });
+            track({ eventName: events.UserSignup }); // TODO: Move signup logic to store/index and move tracking logic there also.
             if (onSignup) onSignup();
           } catch ({ graphQLErrors = [], ...e }) {
             if (

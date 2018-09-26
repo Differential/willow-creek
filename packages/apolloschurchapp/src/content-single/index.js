@@ -23,6 +23,8 @@ import Icon from 'apolloschurchapp/src/ui/Icon';
 import Touchable from 'apolloschurchapp/src/ui/Touchable';
 
 import { playVideoMutation } from 'apolloschurchapp/src/ui/MediaPlayer/mutations';
+import { events } from 'apolloschurchapp/src/analytics';
+import TrackEventWhenLoaded from 'apolloschurchapp/src/analytics/TrackEventWhenLoaded';
 
 import getContentItem from './getContentItem';
 import getContentItemMinimalState from './getContentItemMinimalState';
@@ -151,6 +153,14 @@ class ContentSingle extends PureComponent {
                     colors: get(content, 'theme.colors'),
                   }}
                 >
+                  <TrackEventWhenLoaded
+                    loaded={!!(!loading && content.title)}
+                    eventName={events.ViewContent}
+                    properties={{
+                      title: content.title,
+                      itemId: this.itemId.itemId,
+                    }}
+                  />
                   <ScrollView>
                     <MediaHeader>
                       <GradientOverlayImage

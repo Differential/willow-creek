@@ -3,6 +3,7 @@ import { View, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
+import { track, events } from 'apolloschurchapp/src/analytics';
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
 import FlexedView from 'apolloschurchapp/src/ui/FlexedView';
 import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
@@ -71,9 +72,12 @@ class Form extends PureComponent {
               <WebBrowserConsumer>
                 {(openUrl) => (
                   <ButtonLink
-                    onPress={() =>
-                      openUrl('https://apollosrock.newspring.cc/page/56/')
-                    }
+                    onPress={() => {
+                      track({ eventName: events.UserForgotPassword });
+                      return openUrl(
+                        'https://apollosrock.newspring.cc/page/56/'
+                      );
+                    }}
                   >
                     Forgot your password?
                   </ButtonLink>

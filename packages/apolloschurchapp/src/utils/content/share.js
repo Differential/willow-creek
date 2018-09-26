@@ -1,22 +1,19 @@
 import { Share } from 'react-native';
 // import { get } from 'lodash';
-// import { track, events } from '@utils/analytics';
+import { track, events } from 'apolloschurchapp/src/analytics';
 // import getSiteLink from './getSiteLink';
 
-const share = ({ title, message, url }) => {
+const share = ({ title, message, url, id = '' }) => {
   Share.share({
     title,
     message,
     url,
   });
 
-  // track(events.Shared, {
-  //   channel: get(content, 'channelName'),
-  //   isLiked: get(content, 'content.isLiked'),
-  //   contentId: get(content, 'id'),
-  //   meta: get(content, 'meta'),
-  //   title: content.title || content.name,
-  // });
+  track({
+    eventName: events.ShareContent,
+    properties: { title, id },
+  });
 };
 
 export default share;

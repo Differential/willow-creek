@@ -59,3 +59,21 @@ export const identify = () =>
       },
     },
   });
+
+export const events = {
+  LikeContent: 'Like Content',
+  UnlikeContent: 'Unlike Content',
+  ViewContent: 'View Content',
+  ShareContent: 'Share Content',
+  UserLogin: 'User Login',
+  UserSignup: 'User Signup',
+  UserLogout: 'UserLogout',
+  UserForgotPassword: 'User Forgot Password',
+  UserPlayedMedia: 'User Played Media',
+};
+
+export default {
+  track,
+  identify,
+  events,
+};
