@@ -5,10 +5,8 @@ import PropTypes from 'prop-types';
 import { H6 } from 'apolloschurchapp/src/ui/typography';
 import styled from 'apolloschurchapp/src/ui/styled';
 
-const TIME_TEXT_WIDTH = 50;
-
 const TimeText = styled({
-  width: TIME_TEXT_WIDTH,
+  width: 50,
   textAlign: 'center',
   alignItems: 'center',
 })(H6);
@@ -95,4 +93,4 @@ class Timestamp extends PureComponent {
   }
 }
 
-export { Timestamp as default, TIME_TEXT_WIDTH };
+export default Timestamp;

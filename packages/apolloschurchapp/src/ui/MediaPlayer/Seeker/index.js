@@ -3,9 +3,10 @@ import { PanResponder, Animated, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styled from 'apolloschurchapp/src/ui/styled';
+import { withTheme } from 'apolloschurchapp/src/ui/theme';
 
 import { PlayheadConsumer, ControlsConsumer } from '../PlayheadState';
-import Timestamp, { TIME_TEXT_WIDTH } from './Timestamp';
+import Timestamp from './Timestamp';
 
 const Container = styled({
   width: '100%',
@@ -14,43 +15,36 @@ const Container = styled({
   alignItems: 'center',
 })(View);
 
-const Track = styled(({ theme, minimal }) => ({
+const TrackContainer = styled(({ minimal, knobSize }) => ({
+  height: knobSize / 2,
+  flexGrow: 1,
+  justifyContent: 'center',
+  paddingTop: minimal ? 20 : knobSize / 2,
+  paddingBottom: minimal ? 0 : knobSize / 2,
+}))(View);
+
+const Track = styled(({ theme, minimal, knobSize }) => ({
+  height: knobSize / 2,
+  overflow: 'hidden',
+  borderRadius: minimal ? 0 : knobSize / 2,
   backgroundColor: minimal
     ? theme.colors.transparent
     : theme.colors.darkSecondary,
-  borderRadius: minimal ? 0 : theme.sizing.borderRadius,
-  overflow: 'hidden',
-  position: 'absolute',
-  left: 0,
-  right: 0,
-  top: 0,
-  bottom: 0,
 }))(View);
-
-const TrackContainer = styled(({ theme, minimal }) => ({
-  position: 'absolute',
-  left: minimal ? 0 : TIME_TEXT_WIDTH,
-  right: minimal ? 0 : TIME_TEXT_WIDTH,
-  height: theme.sizing.borderRadius,
-}))(View);
-
-const Knob = styled(({ theme, minimal }) => {
-  const size = minimal ? 0 : theme.sizing.borderRadius * 2;
-  return {
-    backgroundColor: theme.colors.text.primary,
-    borderRadius: size,
-    position: 'absolute',
-    top: -(size / 2) + theme.sizing.borderRadius / 2,
-    right: -(size / 2),
-    height: size,
-    width: size,
-    elevation: 2,
-  };
-})(View);
 
 const ProgressBar = styled(({ theme }) => ({
+  height: theme.sizing.borderRadius,
   backgroundColor: theme.colors.secondary,
-  ...StyleSheet.absoluteFillObject,
+}))(View);
+
+const Knob = styled(({ theme, knobSize }) => ({
+  height: knobSize,
+  width: knobSize,
+  position: 'absolute',
+  right: 0,
+  elevation: 2,
+  borderRadius: knobSize,
+  backgroundColor: theme.colors.text.primary,
 }))(View);
 
 /**
@@ -65,12 +59,15 @@ class Seeker extends PureComponent {
     duration: PropTypes.any, // eslint-disable-line
     style: PropTypes.any, // eslint-disable-line
     onScrubbing: PropTypes.func,
+    knobSize: PropTypes.number, // defaults to theme.sizing.borderRadius * 2
   };
+
+  isSeeking = false;
+
+  timeAtSeekingStart = 0;
 
   state = {
     width: 0, // the width of the seeker bar
-    isSeeking: false,
-    timeAtSeekingStart: 0,
   };
 
   offsetDriver = new Animated.Value(0); // Used to track pixel offset when seeking
@@ -82,17 +79,14 @@ class Seeker extends PureComponent {
     onPanResponderGrant: () => {
       // Using `stopAnimation` only to get the currentTime value
       this.props.currentTime.stopAnimation((value) => {
-        this.setState({
-          isSeeking: true,
-          timeAtSeekingStart: value,
-        });
+        this.isSeeking = true;
+        this.timeAtSeekingStart = value;
       });
     },
     onPanResponderMove: (e, { dx }) => {
       // Calculate the pixel offset and apply it to the offsetDriver
       let offset = dx;
-      const progressAtStart =
-        this.state.timeAtSeekingStart / this.props.duration;
+      const progressAtStart = this.timeAtSeekingStart / this.props.duration;
       const positionAtStart = progressAtStart * this.state.width;
       offset = Math.min(this.state.width - positionAtStart, offset);
       offset = Math.max(-positionAtStart, offset);
@@ -114,10 +108,8 @@ class Seeker extends PureComponent {
       // Reset state
       this.offsetDriver.setValue(0);
       this.offsetTimeDriver.setValue(0);
-      this.setState({
-        isSeeking: false,
-        timeAtSeekingStart: 0,
-      });
+      this.isSeeking = false;
+      this.timeAtSeekingStart = 0;
 
       if (this.props.onScrubbing)
         this.props.onScrubbing({ isScrubbing: false });
@@ -128,9 +120,7 @@ class Seeker extends PureComponent {
   // To be able to useNativeDriver, the trackbar is always the full-width, and we animate its X position
   get trackBarOffset() {
     const progress = Animated.divide(
-      this.state.isSeeking
-        ? this.state.timeAtSeekingStart
-        : this.props.currentTime,
+      this.isSeeking ? this.timeAtSeekingStart : this.props.currentTime,
       this.props.duration
     );
 
@@ -145,16 +135,6 @@ class Seeker extends PureComponent {
     return [
       StyleSheet.absoluteFill,
       {
-        overflow: 'visible',
-        transform: [{ translateX: this.trackBarOffset }],
-      },
-    ];
-  }
-
-  get progressBarStyles() {
-    return [
-      StyleSheet.absoluteFill,
-      {
         transform: [{ translateX: this.trackBarOffset }],
       },
     ];
@@ -164,9 +144,14 @@ class Seeker extends PureComponent {
     nativeEvent: {
       layout: { width },
     },
-  }) => {
-    this.setState({ width });
-  };
+  }) =>
+    this.setState({
+      /*
+       * Adjust offset width to adjust for knobSize so Knob always appears on the track. Knob is
+       * hidden when in a minimal state (miniplayer) we only make this adjustment when necessary.
+       */
+      width: this.props.minimal ? width : width - this.props.knobSize,
+    });
 
   renderProgress = () => (
     <Animated.View
@@ -190,15 +175,24 @@ class Seeker extends PureComponent {
             offset={this.offsetTimeDriver}
           />
         ) : null}
-        <TrackContainer minimal={this.props.minimal}>
-          <Track onLayout={this.handleOnLayout} minimal={this.props.minimal}>
+        <TrackContainer
+          minimal={this.props.minimal}
+          knobSize={this.props.knobSize}
+        >
+          <Track
+            onLayout={this.handleOnLayout}
+            minimal={this.props.minimal}
+            knobSize={this.props.knobSize}
+          >
             {this.renderProgress()}
           </Track>
           <Animated.View style={this.knobStyles}>
-            <Knob
-              minimal={this.props.minimal}
-              {...this.panResponder.panHandlers}
-            />
+            {!this.props.minimal ? (
+              <Knob
+                knobSize={this.props.knobSize}
+                {...this.panResponder.panHandlers}
+              />
+            ) : null}
           </Animated.View>
         </TrackContainer>
         {!this.props.minimal ? <Timestamp time={this.props.duration} /> : null}
@@ -207,7 +201,13 @@ class Seeker extends PureComponent {
   }
 }
 
-const SeekerWithState = (props) => (
+const SeekerWithState = withTheme(
+  ({
+    theme: {
+      sizing: { borderRadius },
+    },
+  }) => ({ knobSize: borderRadius * 2 })
+)((props) => (
   <ControlsConsumer>
     {(controls) => (
       <PlayheadConsumer>
@@ -215,6 +215,6 @@ const SeekerWithState = (props) => (
       </PlayheadConsumer>
     )}
   </ControlsConsumer>
-);
+));
 
 export default SeekerWithState;

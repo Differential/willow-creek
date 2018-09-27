@@ -175,13 +175,13 @@ class FullscreenControls extends PureComponent {
 
   renderSkipForward = ({ skip }) => (
     <Touchable onPress={() => skip(30)}>
-      <IconMd name="skip-next" />
+      <IconMd name="skip-forward-thirty" />
     </Touchable>
   );
 
   renderSkipBack = ({ skip }) => (
     <Touchable onPress={() => skip(-30)}>
-      <IconMd name="skip-previous" />
+      <IconMd name="skip-back-thirty" />
     </Touchable>
   );
 
@@ -216,7 +216,15 @@ class FullscreenControls extends PureComponent {
                     <Title>{get(mediaPlayer, 'currentTrack.title')}</Title>
                     <Artist>{get(mediaPlayer, 'currentTrack.artist')}</Artist>
                   </Titles>
-                  <IconSm name="empty" />
+                  {mediaPlayer.isMuted ? (
+                    <Touchable>
+                      <IconSm name="mute" />
+                    </Touchable>
+                  ) : (
+                    <Touchable>
+                      <IconSm name="volume" />
+                    </Touchable>
+                  )}
                 </UpperControl>
               </Touchable>
               <LowerControl>
@@ -224,7 +232,7 @@ class FullscreenControls extends PureComponent {
                   <Seeker onScrubbing={this.handleOnScrubbing} />
                 </PlayHead>
                 <PlayControls>
-                  <IconSm disabled name="shuffle" />
+                  <IconSm disabled name="empty" />
                   <ControlsConsumer>{this.renderSkipBack}</ControlsConsumer>
                   {mediaPlayer.isPlaying ? (
                     <Touchable onPress={this.handlePause}>
@@ -236,7 +244,7 @@ class FullscreenControls extends PureComponent {
                     </Touchable>
                   )}
                   <ControlsConsumer>{this.renderSkipForward}</ControlsConsumer>
-                  <IconSm disabled name="repeat" />
+                  <IconSm name="empty" />
                 </PlayControls>
               </LowerControl>
             </SafeAreaView>
