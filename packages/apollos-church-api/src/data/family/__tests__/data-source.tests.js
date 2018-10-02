@@ -1,0 +1,56 @@
+import { buildGetMock } from 'apollos-church-api/src/utils/testUtils';
+import DataSource from '../data-source';
+
+describe('Family Data Source', () => {
+  it('must fetch a users location w/ family location', async () => {
+    const dataSource = new DataSource();
+    dataSource.get = buildGetMock(
+      [
+        {
+          GroupLocations: [{ Location: { City: 'Chicago', State: 'IL' } }],
+          Campus: { Name: 'Main Campus' },
+        },
+      ],
+      dataSource
+    );
+
+    const location = await dataSource.getFamilyLocation({
+      userId: 'something',
+    });
+    expect(location).toEqual('Chicago, IL');
+  });
+  it('must fetch a users location w/ campus', async () => {
+    const dataSource = new DataSource();
+    dataSource.get = buildGetMock(
+      [
+        {
+          GroupLocations: [],
+          Campus: { Name: 'Main Campus' },
+        },
+      ],
+      dataSource
+    );
+
+    const location = await dataSource.getFamilyLocation({
+      userId: 'something',
+    });
+    expect(location).toEqual('Main Campus');
+  });
+  it('must return null without data', async () => {
+    const dataSource = new DataSource();
+    dataSource.get = buildGetMock([{ GroupLocations: [] }], dataSource);
+
+    const location = await dataSource.getFamilyLocation({
+      userId: 'something',
+    });
+    expect(location).toEqual(null);
+  });
+  it('raise an error without a userId', async () => {
+    const dataSource = new DataSource();
+    await expect(
+      dataSource.getFamilyLocation({
+        userId: null,
+      })
+    ).rejects.toThrow();
+  });
+});

@@ -81,6 +81,10 @@ fetch.mockRockDataSourceAPI = () => {
       return resolveWith(rockMocks.contentChannel());
     }
 
+    if (url.match('api/Groups/GetFamilies/\\d')) {
+      return resolveWith(rockMocks.families());
+    }
+
     if (url.match('api/ContentChannels')) {
       return resolveWith([rockMocks.contentChannel()]);
     }

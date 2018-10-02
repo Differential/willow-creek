@@ -14,6 +14,7 @@ import * as Scripture from './bible';
 import * as Interactions from './interactions';
 import * as Sharable from './sharable';
 import * as Analytics from './analytics';
+import * as Family from './family';
 
 const data = {
   Node,
@@ -29,6 +30,7 @@ const data = {
   RockConstants: { dataSource: RockConstants },
   Sharable,
   Analytics,
+  Family,
 };
 
 export const schema = [
