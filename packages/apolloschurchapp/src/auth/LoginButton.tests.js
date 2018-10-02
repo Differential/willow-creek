@@ -34,7 +34,7 @@ describe('LoginButton component', () => {
         query: getLoginState,
       },
       result: {
-        data: { isLoggedIn: 'some-auth-token' },
+        data: { isLoggedIn: true },
       },
     };
     const navigation = { navigate: jest.fn() };

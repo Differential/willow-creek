@@ -104,6 +104,7 @@ export default class Analytics extends DataSource {
           properties: parsedProps,
           event: eventName,
           context: deviceInfo,
+          sessionId: this.context.sessionId, // used for the rock interface
         });
       }
     });

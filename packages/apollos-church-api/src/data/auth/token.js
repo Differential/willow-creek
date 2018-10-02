@@ -7,11 +7,12 @@ export const parseToken = (token) => jwt.verify(token, secret);
 
 export const registerToken = (token) => {
   try {
-    const { cookie } = parseToken(token);
+    const { cookie, sessionId } = parseToken(token);
 
     return {
       userToken: token,
       rockCookie: cookie,
+      sessionId,
     };
   } catch (e) {
     throw new AuthenticationError('Invalid token');

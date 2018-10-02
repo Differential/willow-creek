@@ -25,9 +25,14 @@ export default ({ req = {} } = {}) => {
   });
 
   if (get(req, 'headers.authorization')) {
-    const { userToken, rockCookie } = registerToken(req.headers.authorization);
-    context.userToken = userToken;
-    context.rockCookie = rockCookie;
+    const { userToken, rockCookie, sessionId } = registerToken(
+      req.headers.authorization
+    );
+    if (sessionId) {
+      context.userToken = userToken;
+      context.rockCookie = rockCookie;
+      context.sessionId = sessionId;
+    }
   }
 
   return context;

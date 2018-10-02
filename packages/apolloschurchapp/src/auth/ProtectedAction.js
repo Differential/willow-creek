@@ -15,6 +15,7 @@ class ProtectedAction extends PureComponent {
     }),
     loading: PropTypes.bool,
     isLoggedIn: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    action: PropTypes.func.isRequired,
   };
 
   componentDidUpdate(oldProps) {
@@ -50,7 +51,7 @@ class ProtectedAction extends PureComponent {
 
   render() {
     return typeof this.props.children === 'function'
-      ? this.props.children(this.protectedActionHandler)
+      ? this.props.children(this.protectedActionHandler(this.props.action))
       : this.props.children;
   }
 }

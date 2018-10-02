@@ -7,16 +7,9 @@ import Share from 'apolloschurchapp/src/ui/Share';
 import SideBySideView from 'apolloschurchapp/src/ui/SideBySideView';
 import LikeButton from 'apolloschurchapp/src/ui/LikeButton';
 
-import updateLikeEntity from './updateLikeEntity';
-import getLikedContentItem from './getLikedContentItem';
-
 const ActionContainer = ({ content, itemId }) => (
   <SideBySideView>
-    <LikeButton
-      itemId={itemId}
-      updateLikeEntity={updateLikeEntity}
-      getLikedContentItem={getLikedContentItem}
-    />
+    <LikeButton itemId={itemId} />
     <Share content={content} />
   </SideBySideView>
 );

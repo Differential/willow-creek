@@ -3,19 +3,13 @@ import renderer from 'react-test-renderer';
 
 import Providers from 'apolloschurchapp/src/Providers';
 
-import Like from '.';
+import { LikeIcon } from '.';
 
-describe('the Share component', () => {
+describe('the Like component', () => {
   it('should render a Like', () => {
     const tree = renderer.create(
       <Providers>
-        <Like
-          itemId={'abc'}
-          sessionId={'123'}
-          isLiked={false}
-          operation={'Like'}
-          toggleLike={(data) => data}
-        />
+        <LikeIcon itemId={'abc'} isLiked={false} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();
@@ -24,13 +18,7 @@ describe('the Share component', () => {
   it('should render a UnLike', () => {
     const tree = renderer.create(
       <Providers>
-        <Like
-          itemId={'abc'}
-          sessionId={'123'}
-          isLiked
-          operation={'Unlike'}
-          toggleLike={(data) => data}
-        />
+        <LikeIcon itemId={'abc'} isLiked />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

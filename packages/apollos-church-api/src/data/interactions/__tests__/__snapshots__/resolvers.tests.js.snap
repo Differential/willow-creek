@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Interactions creates a session 1`] = `
-Object {
-  "data": Object {
-    "createSession": Object {
-      "id": "InteractionSession:2cc8f539e345e8f479a55e2fdc9743c0",
-    },
-  },
-}
-`;
-
 exports[`Interactions gets all user liked content 1`] = `
 Object {
   "data": Object {

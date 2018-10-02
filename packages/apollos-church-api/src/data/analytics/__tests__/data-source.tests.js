@@ -93,6 +93,7 @@ describe('Analytics Data Source', () => {
       const mockCreateInteraction = jest.fn();
       dataSource.initialize({
         context: {
+          sessionId: 'Session:123',
           dataSources: {
             Auth: AuthWithUser,
             Interactions: {

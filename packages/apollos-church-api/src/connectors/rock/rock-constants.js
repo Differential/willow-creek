@@ -5,6 +5,7 @@ const mapApollosNameToRockName = (name) => {
   switch (name) {
     case 'ContentItem':
     case 'UniversalContentItem':
+    case 'DevotionalContentItem':
       return 'ContentChannelItem';
     default:
       throw new Error(`${name} has not been mapped into a Rock type!`);

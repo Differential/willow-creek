@@ -14,7 +14,7 @@ describe('Interactions', () => {
     fetch.resetMocks();
     fetch.mockRockDataSourceAPI();
     schema = makeExecutableSchema({ typeDefs, resolvers });
-    const token = generateToken({ cookie: 'some-cookie' });
+    const token = generateToken({ cookie: 'some-cookie', sessionId: 123 });
     context = getTestContext({
       req: {
         headers: { authorization: token },
@@ -22,25 +22,12 @@ describe('Interactions', () => {
     });
   });
 
-  it('creates a session', async () => {
-    const query = `
-      mutation createSession {
-        createSession {
-          id
-        }
-      }
-    `;
-    const rootValue = {};
-    const result = await graphql(schema, query, rootValue, context);
-    expect(result).toMatchSnapshot();
-  });
   it('likes an entity', async () => {
     const query = `
       mutation likeEntity {
         updateLikeEntity(
           input: {
             nodeId: "${createGlobalId(1, 'UniversalContentItem')}"
-            sessionId: "${createGlobalId(123, 'Session')}"
             operation: Like
           }
         ) {

@@ -16,6 +16,17 @@ Object {
 }
 `;
 
+exports[`Auth currentUser query logs a user out without a sessionId 1`] = `
+Object {
+  "data": Object {
+    "currentUser": null,
+  },
+  "errors": Array [
+    [GraphQLError: Must be logged in],
+  ],
+}
+`;
+
 exports[`Auth currentUser query queries current user when logged in 1`] = `
 Object {
   "data": Object {

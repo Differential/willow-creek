@@ -5,18 +5,9 @@ import { AuthenticationError } from 'apollo-server';
 export default class Interactions extends RockApolloDataSource {
   resource = 'Interactions';
 
-  async createSession() {
-    const currentUser = await this.context.dataSources.Auth.getCurrentPerson();
-    const interactionId = await this.post('/InteractionSessions', {
-      PersonAliasId: currentUser.primaryAliasId,
-    });
-    return this.get(`/InteractionSessions/${interactionId}`);
-  }
-
-  async createInteraction({ nodeId, operationName, sessionId }) {
+  async createInteraction({ nodeId, operationName }) {
     const { dataSources } = this.context;
     const { id, __type } = parseGlobalId(nodeId);
-    const parsedSessionId = parseGlobalId(sessionId).id;
     const contentItemType = await dataSources.RockConstants.modelTypeId(__type);
     const interactionComponent = await this.context.dataSources.RockConstants.interactionComponent();
     const currentUser = await dataSources.Auth.getCurrentPerson();
@@ -26,7 +17,7 @@ export default class Interactions extends RockApolloDataSource {
       RelatedEntityTypeId: contentItemType.id,
       PersonAliasId: currentUser.primaryAliasId,
       InteractionComponentId: interactionComponent.id,
-      InteractionSessionId: parsedSessionId,
+      InteractionSessionId: this.context.sessionId,
       Operation: operationName,
       InteractionDateTime: new Date().toJSON(),
     });

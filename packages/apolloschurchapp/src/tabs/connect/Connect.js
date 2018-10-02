@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { ScrollView } from 'react-native';
 import { Query } from 'react-apollo';
+import { get } from 'lodash';
 
 import { LoginButton } from 'apolloschurchapp/src/auth';
 import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
@@ -31,28 +32,28 @@ class Connect extends PureComponent {
             <BackgroundView>
               <ScrollView>
                 <Query query={getLoginState}>
-                  {({ data: { isLoggedIn = null } }) => {
-                    if (isLoggedIn)
+                  {({ data }) => {
+                    if (get(data, 'isLoggedIn', false))
                       return (
                         <Query
                           query={getUserProfile}
                           fetchPolicy="cache-and-network"
                         >
                           {({
-                            data: {
-                              currentUser: {
-                                profile: { photo, firstName, lastName } = {},
-                              } = {},
-                            } = {},
+                            data: { currentUser } = { currentUser: {} },
                             refetch,
-                          }) => (
-                            <UserAvatarView
-                              firstName={firstName}
-                              lastName={lastName}
-                              photo={photo}
-                              refetch={refetch}
-                            />
-                          )}
+                          }) => {
+                            const profile = get(currentUser, 'profile', {});
+                            const { photo, firstName, lastName } = profile;
+                            return (
+                              <UserAvatarView
+                                firstName={firstName}
+                                lastName={lastName}
+                                photo={photo}
+                                refetch={refetch}
+                              />
+                            );
+                          }}
                         </Query>
                       );
                     return null;

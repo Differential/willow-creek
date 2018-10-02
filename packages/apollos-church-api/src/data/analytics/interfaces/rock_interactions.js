@@ -3,7 +3,7 @@ import BaseAnalytics from './base';
 export default class RockInteractionAnalytics extends BaseAnalytics {
   eventWhitelist = ['View Content'];
 
-  track({ event, userId, properties }) {
+  track({ event, userId, sessionId, properties }) {
     if (!userId) {
       return null;
     }
@@ -11,7 +11,7 @@ export default class RockInteractionAnalytics extends BaseAnalytics {
       case 'View Content': {
         return this.trackViewContent({
           contentId: properties.ContentId,
-          sessionId: properties.SessionId,
+          sessionId,
         });
       }
       default:

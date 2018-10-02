@@ -1,17 +1,17 @@
 import { merge, get } from 'lodash';
 import gql from 'graphql-tag';
+import getLoginState from 'apolloschurchapp/src/auth/getLoginState';
 import { track, events } from 'apolloschurchapp/src/analytics';
 import { client } from '../client'; // eslint-disable-line
 import getAuthToken from './getAuthToken';
-import getSessionId from './getSessionId';
 // TODO: this will require more organization...ie...not keeping everything in one file.
 // But this is simple while our needs our small.
 
 export const schema = `
   type Query {
     authToken: String
-    sessionId: String
     mediaPlayer: MediaPlayerState
+    isLoggedIn: Boolean
   }
 
   type Mutation {
@@ -57,8 +57,8 @@ export const schema = `
 `;
 
 export const defaults = {
+  __typename: 'ClientState',
   authToken: null,
-  sessionId: null,
   mediaPlayer: {
     __typename: 'MediaPlayerState',
     currentTrack: null,
@@ -72,45 +72,50 @@ export const defaults = {
 let trackId = 0;
 
 export const resolvers = {
+  Query: {
+    isLoggedIn: () => {
+      // When logging out, this query returns an error.
+      // Rescue the error, and return false.
+      try {
+        const { authToken } = client.readQuery({ query: getAuthToken });
+        return !!authToken;
+      } catch (e) {
+        return false;
+      }
+    },
+  },
   Mutation: {
     logout: (root, variables, { cache }) => {
       client.resetStore();
-      cache.writeData({ data: { authToken: null, sessionId: null } });
+      cache.writeData({
+        data: defaults,
+      });
       track({ eventName: events.UserLogout });
       return null;
     },
 
     handleLogin: async (root, { authToken }, { cache }) => {
-      const createSessionMutation = gql`
-        mutation {
-          createSession {
-            id
-          }
-        }
-      `;
-
       try {
         await cache.writeQuery({
           query: getAuthToken,
           data: { authToken },
         });
-
-        const {
-          data: { createSession },
-        } = await client.mutate({
-          mutation: createSessionMutation,
-        });
-
         await cache.writeQuery({
-          query: getSessionId,
-          data: { sessionId: createSession.id },
+          query: getLoginState,
+          data: { isLoggedIn: true },
+        });
+        await cache.writeData({
+          data: { authToken },
         });
 
         track({ eventName: events.UserLogin });
       } catch (e) {
-        console.log(e);
+        throw e.message;
       }
+
+      return null;
     },
+
     mediaPlayerPlayNow: (root, trackInfo, { cache }) => {
       const query = gql`
         query {

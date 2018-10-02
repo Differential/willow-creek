@@ -55,6 +55,7 @@ InMemoryCache {
         "isVisible": false,
       },
       "ROOT_QUERY": Object {
+        "__typename": "ClientState",
         "authToken": null,
         "mediaPlayer": Object {
           "generated": true,
@@ -62,7 +63,6 @@ InMemoryCache {
           "type": "id",
           "typename": "MediaPlayerState",
         },
-        "sessionId": null,
       },
     },
   },

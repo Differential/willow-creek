@@ -90,6 +90,7 @@ exports[`Analytics Data Source must accept arbitrary interfaces 2`] = `
         "context": undefined,
         "event": "View Content",
         "properties": Object {},
+        "sessionId": undefined,
         "userId": 5,
       },
     ],
