@@ -1,9 +1,9 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
-import { storiesOf } from '@storybook/react-native';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
+import renderer from 'react-test-renderer';
 
-import Item from './Item';
+import Providers from 'apolloschurchapp/src/Providers';
+
+import ScriptureItem from './ScriptureItem';
 
 const genesis1 = {
   scripture: {
@@ -42,12 +42,13 @@ const songOfSolomon1 = {
     reference: 'Song of Solomon 1:1-4',
     html:
       '<p class="p"><span data-number="1" class="v">1</span>The Song of songs, which is Solomon’s.</p><p class="sp">Beloved</p><p class="q1"><span data-number="2" class="v">2</span>Let him kiss me with the kisses of his mouth;</p><p class="q2">for your love is better than wine.</p><p class="q1"><span data-number="3" class="v">3</span>Your oils have a pleasing fragrance.</p><p class="q2">Your name is oil poured out,</p><p class="q2">therefore the virgins love you.</p><p class="q1"><span data-number="4" class="v">4</span>Take me away with you.</p><p class="q2">Let’s hurry.</p><p class="q2">The king has brought me into his rooms.</p><p class="sp">Friends</p><p class="q1">We will be glad and rejoice in you.</p><p class="q2">We will praise your love more than wine!</p><p class="sp">Beloved</p><p class="q1">They are right to love you.</p>',
+    isLoading: false,
   },
 };
 
 const mark1 = {
   scripture: {
-    reference: 'Mark 1: 1-4',
+    reference: 'Mark 1:1-4',
     html:
       '<p class="p"><span data-number="1" class="v">1</span>The beginning of the Good News of Jesus Christ, the Son of God.</p><p class="p"><span data-number="2" class="v">2</span>As it is written in the prophets,</p><p class="q1">“Behold, I send my messenger before your face,</p><p class="q2">who will prepare your way before you:</p><p class="q1"><span data-number="3" class="v">3</span>the voice of one crying in the wilderness,</p><p class="q2">‘Make ready the way of the Lord!</p><p class="q2">Make his paths straight!’”</p><p class="p"><span data-number="4" class="v">4</span>John came baptizing in the wilderness and preaching the baptism of repentance for forgiveness of sins.',
   },
@@ -58,6 +59,7 @@ const john3 = {
     reference: 'John 3:16-17',
     html:
       '<p class="p"><span data-number="16" class="v">16</span><span class="wj">For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life. </span><span data-number="17" class="v">17</span><span class="wj">For God didn’t send his Son into the world to judge the world, but that the world should be saved through him. </span></p>',
+    isLoading: false,
   },
 };
 
@@ -69,92 +71,122 @@ const revelation22 = {
   },
 };
 
-storiesOf('Scripture', module)
-  .add('Genesis 1:1-5', () => (
-    <ScrollView>
-      <PaddedView>
-        <Item
+const john3Loading = {
+  scripture: {
+    reference: 'John 3:16-17',
+    html:
+      '<p class="p"><span data-number="16" class="v">16</span><span class="wj">For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life. </span><span data-number="17" class="v">17</span><span class="wj">For God didn’t send his Son into the world to judge the world, but that the world should be saved through him. </span></p>',
+    isLoading: true,
+  },
+};
+
+describe('the ScriptureItem component', () => {
+  it('renders Genesis 1:1-5', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
           reference={genesis1.scripture.reference}
           html={genesis1.scripture.html}
           isLoading={false}
         />
-      </PaddedView>
-    </ScrollView>
-  ))
-  .add('Psalm 23', () => (
-    <ScrollView>
-      <PaddedView>
-        <Item
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders Psalm 23', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
           reference={psalm23.scripture.reference}
           html={psalm23.scripture.html}
           isLoading={false}
         />
-      </PaddedView>
-    </ScrollView>
-  ))
-  .add('Psalm 32', () => (
-    <ScrollView>
-      <PaddedView>
-        <Item
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders Psalm 32', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
           reference={psalm32.scripture.reference}
           html={psalm32.scripture.html}
           isLoading={false}
         />
-      </PaddedView>
-    </ScrollView>
-  ))
-  .add('Psalm 119', () => (
-    <ScrollView>
-      <PaddedView>
-        <Item
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders Psalm 119:129 - 144', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
           reference={psalm119.scripture.reference}
           html={psalm119.scripture.html}
           isLoading={false}
         />
-      </PaddedView>
-    </ScrollView>
-  ))
-  .add('Song of Solomon 1:1-4', () => (
-    <ScrollView>
-      <PaddedView>
-        <Item
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders Song of Solomon 1:1-4', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
           reference={songOfSolomon1.scripture.reference}
           html={songOfSolomon1.scripture.html}
-          isLoading={false}
+          isLoading={songOfSolomon1.scripture.isLoading}
         />
-      </PaddedView>
-    </ScrollView>
-  ))
-  .add('Mark 1:1-4', () => (
-    <ScrollView>
-      <PaddedView>
-        <Item
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders Mark 1:1-4', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
           reference={mark1.scripture.reference}
           html={mark1.scripture.html}
           isLoading={false}
         />
-      </PaddedView>
-    </ScrollView>
-  ))
-  .add('John 3:16-17', () => (
-    <ScrollView>
-      <PaddedView>
-        <Item
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders John 3:16-17', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
           reference={john3.scripture.reference}
           html={john3.scripture.html}
-          isLoading={false}
+          isLoading={john3.scripture.isLoading}
         />
-      </PaddedView>
-    </ScrollView>
-  ))
-  .add('Revelation 22:20-21', () => (
-    <ScrollView>
-      <PaddedView>
-        <Item
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders Revelation 22:20-21', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
           reference={revelation22.scripture.reference}
           html={revelation22.scripture.html}
           isLoading={false}
         />
-      </PaddedView>
-    </ScrollView>
-  ));
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders a loading state', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ScriptureItem
+          reference={john3Loading.scripture.reference}
+          html={john3Loading.scripture.html}
+          isLoading={john3Loading.scripture.isLoading}
+        />
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+});
