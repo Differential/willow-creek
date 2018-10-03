@@ -131,6 +131,34 @@ describe('Auth', () => {
     expect(fetch.mock.calls[0][0].headers).toMatchSnapshot();
   });
 
+  describe('Change Password', () => {
+    it('throws error without a current user', async () => {
+      try {
+        await context.dataSources.Auth.changePassword({
+          password: 'newPassword',
+        });
+      } catch (e) {
+        expect(e.message).toEqual('Must be logged in');
+      }
+    });
+
+    it('generates a new token', async () => {
+      const { userToken, rockCookie } = registerToken(
+        generateToken({ cookie: 'some-cookie' })
+      );
+      context.userToken = userToken;
+      context.rockCookie = rockCookie;
+      const {
+        rockCookie: newCookie,
+        token: newToken,
+      } = await context.dataSources.Auth.changePassword({
+        password: 'good',
+      });
+      expect(newCookie).toEqual('some cookie');
+      expect(typeof newToken).toEqual('string');
+    });
+  });
+
   describe('User Registration', () => {
     it('checks if user is already registered', async () => {
       const result = await context.dataSources.Auth.personExists({

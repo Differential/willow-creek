@@ -111,6 +111,27 @@ export default class AuthDataSource extends RockApolloDataSource {
     }
   };
 
+  changePassword = async ({ password }) => {
+    const currentUser = await this.getCurrentPerson();
+    const { email, id } = currentUser;
+    const logins = await this.request('/UserLogins')
+      .filter(`UserName eq '${email}'`)
+      .get();
+
+    if (logins.length > 0) {
+      await this.delete(`/UserLogins/${logins[0].id}`);
+    }
+    await this.createUserLogin({
+      personId: id,
+      email,
+      password,
+    });
+    return this.authenticate({
+      identity: email,
+      password,
+    });
+  };
+
   registerPerson = async ({ email, password }) => {
     const personExists = await this.personExists({ identity: email });
     if (personExists) throw new Error('User already exists!');

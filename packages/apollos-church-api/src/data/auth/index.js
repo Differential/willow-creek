@@ -17,6 +17,7 @@ export const schema = gql`
 
   extend type Mutation {
     authenticate(identity: String!, password: String!): Authentication
+    changePassword(password: String!): Authentication
     registerPerson(email: String!, password: String!): Authentication
   }
 
@@ -41,6 +42,8 @@ export const resolver = {
   Mutation: {
     authenticate: (root, { identity, password }, { dataSources }) =>
       dataSources.Auth.authenticate({ identity, password }),
+    changePassword: (root, { password }, { dataSources }) =>
+      dataSources.Auth.changePassword({ password }),
     registerPerson: (root, args, { dataSources }) =>
       dataSources.Auth.registerPerson(args),
   },
