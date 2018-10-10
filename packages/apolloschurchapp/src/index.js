@@ -7,6 +7,7 @@ import MediaPlayer from 'apolloschurchapp/src/ui/MediaPlayer';
 
 import Providers from './Providers';
 import NotificationsInit from './Notifications';
+import NavigationService from './NavigationService';
 import ContentSingle from './content-single';
 import Tabs from './tabs';
 import Auth from './auth';
@@ -40,7 +41,11 @@ const AppModalNavigator = createStackNavigator(
 const App = () => (
   <Providers>
     <BackgroundView>
-      <AppModalNavigator />
+      <AppModalNavigator
+        ref={(navigatorRef) => {
+          NavigationService.setTopLevelNavigator(navigatorRef);
+        }}
+      />
       <NotificationsInit />
       <MediaPlayer />
     </BackgroundView>

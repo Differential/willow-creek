@@ -33,7 +33,6 @@ InMemoryCache {
           "ContentChannel",
           "Person",
           "Interaction",
-          "Session",
           "UniversalContentItem",
           "DevotionalContentItem",
         ],

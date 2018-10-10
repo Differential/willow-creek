@@ -32,6 +32,7 @@ module.exports = {
     'react/jsx-curly-brace-presence': 0,
     'react/prefer-stateless-function': [2, { ignorePureComponents: true }],
     'react/require-default-props': 0,
+    'react/prop-types': ['error', { ignore: ['navigation'] }],
     'react-native/split-platform-components': 2,
     'react-native/no-unused-styles': 2,
     'react-native/no-inline-styles': 2,
@@ -62,7 +63,7 @@ module.exports = {
     'global-require': 0,
     'import/no-cycle': 0,
     'function-paren-newline': 0,
-    'no-underscore-dangle': 0
+    'no-underscore-dangle': 0,
   },
   parserOptions: {
     ecmaVersion: 7,
@@ -73,12 +74,8 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      'node': {
-        extensions: [
-          '.js',
-          '.android.js',
-          '.ios.js'
-        ]
+      node: {
+        extensions: ['.js', '.android.js', '.ios.js'],
       },
       'babel-module': {},
     },
