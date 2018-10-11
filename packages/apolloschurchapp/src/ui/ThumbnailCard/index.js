@@ -55,7 +55,7 @@ const ThumbnailCard = enhance(
     ...otherProps
   }) => (
     <TouchableWithoutFeedback onPress={() => onPressItem()}>
-      <Card isLoading={isLoading} {...otherProps}>
+      <Card isLoading={isLoading} inHorizontalList {...otherProps}>
         <HorizontalLayout>
           <LeftColumn>
             <H5>{title}</H5>

@@ -6,7 +6,7 @@ import styled from 'apolloschurchapp/src/ui/styled';
 
 export const Line = styled(
   ({ theme, width = '100%' }) => ({
-    borderRadius: theme.sizing.borderRadius,
+    borderRadius: theme.sizing.baseUnit,
     backgroundColor: theme.colors.background.inactive,
     height: theme.helpers.rem(1),
     width,

@@ -41,8 +41,8 @@ exports[`The SignupForm component should render 1`] = `
       <View
         style={
           Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 20,
+            "paddingHorizontal": 16,
+            "paddingVertical": 16,
           }
         }
       >
@@ -51,7 +51,7 @@ exports[`The SignupForm component should render 1`] = `
             disabled={false}
             style={
               Object {
-                "marginVertical": 20,
+                "marginVertical": 16,
               }
             }
           >
@@ -98,7 +98,7 @@ exports[`The SignupForm component should render 1`] = `
                         "color": "#303030",
                         "fontFamily": "InterUI-Bold",
                         "fontSize": 14,
-                        "height": 40,
+                        "height": 38,
                         "paddingVertical": 0,
                       }
                     }
@@ -149,7 +149,7 @@ exports[`The SignupForm component should render 1`] = `
                       "fontFamily": "InterUI-Bold",
                       "fontSize": 12,
                       "lineHeight": 17.28,
-                      "paddingVertical": 5,
+                      "paddingVertical": 4,
                     }
                   }
                 >
@@ -206,7 +206,7 @@ exports[`The SignupForm component should render 1`] = `
             disabled={false}
             style={
               Object {
-                "marginVertical": 20,
+                "marginVertical": 16,
               }
             }
           >
@@ -252,7 +252,7 @@ exports[`The SignupForm component should render 1`] = `
                         "color": "#303030",
                         "fontFamily": "InterUI-Bold",
                         "fontSize": 14,
-                        "height": 40,
+                        "height": 38,
                         "paddingVertical": 0,
                       }
                     }
@@ -303,7 +303,7 @@ exports[`The SignupForm component should render 1`] = `
                       "fontFamily": "InterUI-Bold",
                       "fontSize": 12,
                       "lineHeight": 17.28,
-                      "paddingVertical": 5,
+                      "paddingVertical": 4,
                     }
                   }
                 >
@@ -373,7 +373,7 @@ exports[`The SignupForm component should render 1`] = `
     <View
       style={
         Object {
-          "paddingHorizontal": 20,
+          "paddingHorizontal": 16,
           "paddingVertical": 0,
         }
       }
@@ -388,15 +388,15 @@ exports[`The SignupForm component should render 1`] = `
             "alignItems": "center",
             "backgroundColor": "#00676D",
             "borderColor": "#00676D",
-            "borderRadius": 60,
+            "borderRadius": 48,
             "borderWidth": 2,
             "elevation": 2,
             "flexDirection": "row",
-            "height": 60,
+            "height": 48,
             "justifyContent": "center",
             "opacity": 0.5,
             "overflow": "hidden",
-            "paddingHorizontal": 20,
+            "paddingHorizontal": 16,
           }
         }
       >

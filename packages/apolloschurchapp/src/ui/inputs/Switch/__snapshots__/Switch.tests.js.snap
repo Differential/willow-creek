@@ -4,15 +4,15 @@ exports[`The Picker Input component should render correctly 1`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
   <View
     style={
       Object {
-        "height": 40,
-        "paddingVertical": 5,
+        "height": 38,
+        "paddingVertical": 4,
       }
     }
   >
@@ -63,7 +63,7 @@ exports[`The Picker Input component should render correctly 1`] = `
                 "fontFamily": "InterUI-Bold",
                 "fontSize": 12,
                 "lineHeight": 17.28,
-                "paddingVertical": 5,
+                "paddingVertical": 4,
               }
             }
           >

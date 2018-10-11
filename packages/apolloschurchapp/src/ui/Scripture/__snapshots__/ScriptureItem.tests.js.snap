@@ -3464,7 +3464,7 @@ exports[`the ScriptureItem component renders a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "40%",
@@ -3476,7 +3476,7 @@ exports[`the ScriptureItem component renders a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -3488,7 +3488,7 @@ exports[`the ScriptureItem component renders a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -3500,7 +3500,7 @@ exports[`the ScriptureItem component renders a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -3512,7 +3512,7 @@ exports[`the ScriptureItem component renders a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "60%",

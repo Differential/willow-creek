@@ -4,7 +4,7 @@ import { get } from 'lodash';
 
 import { UIText } from 'apolloschurchapp/src/ui/typography';
 import Card, { CardContent } from 'apolloschurchapp/src/ui/Card';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
+import TouchableScale from 'apolloschurchapp/src/ui/TouchableScale';
 import styled from 'apolloschurchapp/src/ui/styled';
 import ChannelLabel from 'apolloschurchapp/src/ui/ChannelLabel';
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
@@ -27,7 +27,7 @@ const LiveNowButton = () => (
       return isLive ? (
         <WebBrowserConsumer>
           {(openUrl) => (
-            <Touchable
+            <TouchableScale
               onPress={() => openUrl('https://apollos.churchonline.org/')}
             >
               <LiveCard isLoading={loading}>
@@ -43,7 +43,7 @@ const LiveNowButton = () => (
                   />
                 </CardContent>
               </LiveCard>
-            </Touchable>
+            </TouchableScale>
           )}
         </WebBrowserConsumer>
       ) : null;

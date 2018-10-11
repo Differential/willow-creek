@@ -4,7 +4,6 @@ import styled from 'apolloschurchapp/src/ui/styled';
 
 const TileFeed = styled(({ theme, tileHeight }) => ({
   height: tileHeight,
-  paddingHorizontal: theme.sizing.baseUnit / 2,
   paddingBottom: theme.sizing.baseUnit / 2,
 }))(FlatList);
 

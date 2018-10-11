@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, TouchableWithoutFeedback } from 'react-native';
+import { FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { pure, compose, branch, withProps, defaultProps } from 'recompose';
 import { get } from 'lodash';
@@ -8,10 +8,13 @@ import FeedItemCard from 'apolloschurchapp/src/ui/FeedItemCard';
 import { enhancer as mediaQuery } from 'apolloschurchapp/src/ui/MediaQuery';
 import { withTheme } from 'apolloschurchapp/src/ui/theme';
 import { ErrorCard } from 'apolloschurchapp/src/ui/Card';
+import TouchableScale from 'apolloschurchapp/src/ui/TouchableScale';
 
 const StyledFlatList = compose(
   withTheme(({ theme: { helpers: { verticalRhythm } } } = {}) => ({
-    contentContainerStyle: { paddingVertical: verticalRhythm(0.3125) }, // Android padding fix 😩
+    contentContainerStyle: {
+      paddingVertical: verticalRhythm(0.3125),
+    }, // Android padding fix 😩
   }))
 )(FlatList);
 
@@ -59,12 +62,7 @@ class FeedView extends Component {
       // These are all props of FeedItemCard but they do not have data coming
       // back yet. So I moved them here for safe keeping.
       // TODO: Move them back when the data is ready.
-      // backgroundColor={item.theme.colors.background.paper}
-      // isLight={item.theme.isLight}
-      // isLiked={item.isLiked}
-      <TouchableWithoutFeedback
-        onPress={() => this.props.onPressItem({ ...item })}
-      >
+      <TouchableScale onPress={() => this.props.onPressItem({ ...item })}>
         <FeedItemCard
           id={get(item, 'id')}
           title={get(item, 'title') || get(item, 'name') || ' '}
@@ -73,8 +71,10 @@ class FeedView extends Component {
           channelTypeIcon={get(item, 'parentChannel.iconName')}
           images={get(item, 'coverImage.sources')}
           isLoading={get(item, 'isLoading')}
+          isLight={get(item, 'theme.type', '').toLowerCase() !== 'dark'}
+          backgroundColor={get(item, 'theme.colors.paper')}
         />
-      </TouchableWithoutFeedback>
+      </TouchableScale>
     );
   };
 

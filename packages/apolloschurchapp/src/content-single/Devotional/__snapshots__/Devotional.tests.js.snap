@@ -282,7 +282,7 @@ exports[`the Devotional component renders a devotional 1`] = `
                 <View
                   style={
                     Object {
-                      "paddingHorizontal": 20,
+                      "paddingHorizontal": 16,
                       "paddingVertical": 0,
                     }
                   }
@@ -310,7 +310,7 @@ exports[`the Devotional component renders a devotional 1`] = `
                           "fontFamily": "InterUI-Bold",
                           "fontSize": 16,
                           "lineHeight": 23.04,
-                          "paddingBottom": 30,
+                          "paddingBottom": 24,
                           "textAlign": "center",
                           "textDecorationLine": "underline",
                         }
@@ -445,7 +445,7 @@ exports[`the Devotional component renders a devotional 1`] = `
                             "borderColor": "#A5A5A5",
                             "borderTopWidth": 0.5,
                             "marginVertical": 46.08,
-                            "paddingHorizontal": 20,
+                            "paddingHorizontal": 16,
                             "paddingVertical": 34.56,
                           }
                         }
@@ -687,8 +687,8 @@ exports[`the Devotional component renders a devotional 1`] = `
                 <View
                   style={
                     Object {
-                      "paddingHorizontal": 20,
-                      "paddingVertical": 20,
+                      "paddingHorizontal": 16,
+                      "paddingVertical": 16,
                     }
                   }
                 >
@@ -1437,7 +1437,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                 <View
                   style={
                     Object {
-                      "paddingHorizontal": 20,
+                      "paddingHorizontal": 16,
                       "paddingVertical": 0,
                     }
                   }
@@ -1448,7 +1448,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "40%",
@@ -1460,7 +1460,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1472,7 +1472,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1484,7 +1484,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1496,7 +1496,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1508,7 +1508,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1520,7 +1520,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1532,7 +1532,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1544,7 +1544,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1556,7 +1556,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1568,7 +1568,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1580,7 +1580,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1592,7 +1592,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1604,7 +1604,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1616,7 +1616,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "60%",
@@ -1643,8 +1643,8 @@ exports[`the Devotional component renders a loading state 1`] = `
                 <View
                   style={
                     Object {
-                      "paddingHorizontal": 20,
-                      "paddingVertical": 20,
+                      "paddingHorizontal": 16,
+                      "paddingVertical": 16,
                     }
                   }
                 >
@@ -1654,7 +1654,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "40%",
@@ -1666,7 +1666,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1678,7 +1678,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1690,7 +1690,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1702,7 +1702,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "60%",
@@ -1716,7 +1716,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "40%",
@@ -1728,7 +1728,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1740,7 +1740,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1752,7 +1752,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "100%",
@@ -1764,7 +1764,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                         Object {
                           "alignSelf": "stretch",
                           "backgroundColor": "#A5A5A5",
-                          "borderRadius": 6,
+                          "borderRadius": 16,
                           "height": 16,
                           "marginVertical": 5,
                           "width": "60%",

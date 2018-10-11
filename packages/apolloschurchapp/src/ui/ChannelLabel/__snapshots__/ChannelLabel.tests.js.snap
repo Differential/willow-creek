@@ -15,7 +15,7 @@ exports[`the ChannelLabel component should render 1`] = `
     style={
       Object {
         "flex": 1,
-        "paddingRight": 10,
+        "paddingRight": 8,
       }
     }
   >
@@ -50,7 +50,7 @@ exports[`the ChannelLabel component should render a skeleton view 1`] = `
     style={
       Object {
         "flex": 1,
-        "paddingRight": 10,
+        "paddingRight": 8,
       }
     }
   >
@@ -59,7 +59,7 @@ exports[`the ChannelLabel component should render a skeleton view 1`] = `
         Object {
           "alignSelf": "stretch",
           "backgroundColor": "#A5A5A5",
-          "borderRadius": 6,
+          "borderRadius": 16,
           "height": 12,
           "marginVertical": 2.6400000000000006,
           "width": "50%",
@@ -85,7 +85,7 @@ exports[`the ChannelLabel component should render a skeleton view that supports 
     style={
       Object {
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 19.2,
         "width": 19.2,
       }
@@ -95,7 +95,7 @@ exports[`the ChannelLabel component should render a skeleton view that supports 
     style={
       Object {
         "flex": 1,
-        "paddingHorizontal": 10,
+        "paddingHorizontal": 8,
       }
     }
     withIcon="like"
@@ -105,7 +105,7 @@ exports[`the ChannelLabel component should render a skeleton view that supports 
         Object {
           "alignSelf": "stretch",
           "backgroundColor": "#A5A5A5",
-          "borderRadius": 6,
+          "borderRadius": 16,
           "height": 12,
           "marginVertical": 2.6400000000000006,
           "width": "50%",
@@ -131,7 +131,7 @@ exports[`the ChannelLabel component should render flexed 1`] = `
     style={
       Object {
         "flex": 1,
-        "paddingRight": 10,
+        "paddingRight": 8,
       }
     }
   >
@@ -238,7 +238,7 @@ exports[`the ChannelLabel component should render with an icon 1`] = `
     style={
       Object {
         "flex": 1,
-        "paddingHorizontal": 10,
+        "paddingHorizontal": 8,
       }
     }
     withIcon="like"

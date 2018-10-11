@@ -33,7 +33,7 @@ const Track = styled(({ theme, minimal, knobSize }) => ({
 }))(View);
 
 const ProgressBar = styled(({ theme }) => ({
-  height: theme.sizing.borderRadius,
+  height: theme.sizing.baseUnit,
   backgroundColor: theme.colors.secondary,
 }))(View);
 
@@ -59,7 +59,7 @@ class Seeker extends PureComponent {
     duration: PropTypes.any, // eslint-disable-line
     style: PropTypes.any, // eslint-disable-line
     onScrubbing: PropTypes.func,
-    knobSize: PropTypes.number, // defaults to theme.sizing.borderRadius * 2
+    knobSize: PropTypes.number, // defaults to theme.sizing.baseUnit / 1.5  (12px)
   };
 
   isSeeking = false;
@@ -201,13 +201,9 @@ class Seeker extends PureComponent {
   }
 }
 
-const SeekerWithState = withTheme(
-  ({
-    theme: {
-      sizing: { borderRadius },
-    },
-  }) => ({ knobSize: borderRadius * 2 })
-)((props) => (
+const SeekerWithState = withTheme(({ theme: { sizing: { baseUnit } } }) => ({
+  knobSize: Math.floor(baseUnit / 1.33),
+}))((props) => (
   <ControlsConsumer>
     {(controls) => (
       <PlayheadConsumer>

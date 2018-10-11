@@ -6,7 +6,7 @@ exports[`LoginButton component renders a LoginButton when logged out 1`] = `
   style={
     Object {
       "color": "#17B582",
-      "paddingHorizontal": 20,
+      "paddingHorizontal": 16,
     }
   }
 >
@@ -20,7 +20,7 @@ exports[`LoginButton component renders a LogoutButton when logged in 1`] = `
   style={
     Object {
       "color": "#17B582",
-      "paddingHorizontal": 20,
+      "paddingHorizontal": 16,
     }
   }
 >

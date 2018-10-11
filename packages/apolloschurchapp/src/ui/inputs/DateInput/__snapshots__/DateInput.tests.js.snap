@@ -4,7 +4,7 @@ exports[`The DateInput component should render 1`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -38,19 +38,19 @@ exports[`The DateInput component should render 1`] = `
           "alignItems": "center",
           "backgroundColor": "#A5A5A5",
           "borderColor": "#A5A5A5",
-          "borderRadius": 6,
+          "borderRadius": 8,
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
-          "height": 40,
+          "height": 32,
           "justifyContent": "center",
-          "marginBottom": 10,
-          "marginRight": 10,
+          "marginBottom": 8,
+          "marginRight": 8,
           "marginTop": 5,
           "opacity": 1,
           "overflow": "hidden",
-          "paddingHorizontal": 5,
-          "paddingVertical": 5,
+          "paddingHorizontal": 4,
+          "paddingVertical": 4,
         }
       }
     />
@@ -263,7 +263,7 @@ exports[`The DateInput component should render with a displayValue 1`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -297,19 +297,19 @@ exports[`The DateInput component should render with a displayValue 1`] = `
           "alignItems": "center",
           "backgroundColor": "#A5A5A5",
           "borderColor": "#A5A5A5",
-          "borderRadius": 6,
+          "borderRadius": 8,
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
-          "height": 40,
+          "height": 32,
           "justifyContent": "center",
-          "marginBottom": 10,
-          "marginRight": 10,
+          "marginBottom": 8,
+          "marginRight": 8,
           "marginTop": 5,
           "opacity": 1,
           "overflow": "hidden",
-          "paddingHorizontal": 5,
-          "paddingVertical": 5,
+          "paddingHorizontal": 4,
+          "paddingVertical": 4,
         }
       }
     >
@@ -564,7 +564,7 @@ exports[`The DateInput component should render with a displayValue 1`] = `
           "fontFamily": "InterUI-Bold",
           "fontSize": 12,
           "lineHeight": 17.28,
-          "paddingVertical": 5,
+          "paddingVertical": 4,
         }
       }
     />
@@ -576,7 +576,7 @@ exports[`The DateInput component should render with a label 1`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -610,19 +610,19 @@ exports[`The DateInput component should render with a label 1`] = `
           "alignItems": "center",
           "backgroundColor": "#A5A5A5",
           "borderColor": "#A5A5A5",
-          "borderRadius": 6,
+          "borderRadius": 8,
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
-          "height": 40,
+          "height": 32,
           "justifyContent": "center",
-          "marginBottom": 10,
-          "marginRight": 10,
+          "marginBottom": 8,
+          "marginRight": 8,
           "marginTop": 5,
           "opacity": 1,
           "overflow": "hidden",
-          "paddingHorizontal": 5,
-          "paddingVertical": 5,
+          "paddingHorizontal": 4,
+          "paddingVertical": 4,
         }
       }
     >
@@ -877,7 +877,7 @@ exports[`The DateInput component should render with a label 1`] = `
           "fontFamily": "InterUI-Bold",
           "fontSize": 12,
           "lineHeight": 17.28,
-          "paddingVertical": 5,
+          "paddingVertical": 4,
         }
       }
     >
@@ -891,7 +891,7 @@ exports[`The DateInput component should render with a placeholder 1`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -925,19 +925,19 @@ exports[`The DateInput component should render with a placeholder 1`] = `
           "alignItems": "center",
           "backgroundColor": "#A5A5A5",
           "borderColor": "#A5A5A5",
-          "borderRadius": 6,
+          "borderRadius": 8,
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
-          "height": 40,
+          "height": 32,
           "justifyContent": "center",
-          "marginBottom": 10,
-          "marginRight": 10,
+          "marginBottom": 8,
+          "marginRight": 8,
           "marginTop": 5,
           "opacity": 1,
           "overflow": "hidden",
-          "paddingHorizontal": 5,
-          "paddingVertical": 5,
+          "paddingHorizontal": 4,
+          "paddingVertical": 4,
         }
       }
     >
@@ -1192,7 +1192,7 @@ exports[`The DateInput component should render with a placeholder 1`] = `
           "fontFamily": "InterUI-Bold",
           "fontSize": 12,
           "lineHeight": 17.28,
-          "paddingVertical": 5,
+          "paddingVertical": 4,
         }
       }
     />

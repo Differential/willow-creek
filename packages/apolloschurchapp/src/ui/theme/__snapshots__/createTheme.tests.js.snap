@@ -90,7 +90,7 @@ Object {
   "shadows": Object {
     "default": Object {
       "android": Object {
-        "elevation": 3,
+        "elevation": 5,
       },
       "ios": Object {
         "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
@@ -99,7 +99,7 @@ Object {
           "width": 0,
         },
         "shadowOpacity": 1,
-        "shadowRadius": 3,
+        "shadowRadius": 6,
       },
     },
   },
@@ -109,8 +109,7 @@ Object {
       "medium": 80,
       "small": 40,
     },
-    "baseUnit": 20,
-    "borderRadius": 6,
+    "baseUnit": 16,
   },
   "type": "light",
   "types": Object {
@@ -371,7 +370,7 @@ Object {
   "shadows": Object {
     "default": Object {
       "android": Object {
-        "elevation": 3,
+        "elevation": 5,
       },
       "ios": Object {
         "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
@@ -380,7 +379,7 @@ Object {
           "width": 0,
         },
         "shadowOpacity": 1,
-        "shadowRadius": 3,
+        "shadowRadius": 6,
       },
     },
   },
@@ -390,8 +389,7 @@ Object {
       "medium": 80,
       "small": 40,
     },
-    "baseUnit": 20,
-    "borderRadius": 6,
+    "baseUnit": 16,
   },
   "type": "dark",
   "types": Object {

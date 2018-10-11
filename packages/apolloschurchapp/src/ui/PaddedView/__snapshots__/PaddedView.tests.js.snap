@@ -4,8 +4,8 @@ exports[`the PaddedView component should render 1`] = `
 <View
   style={
     Object {
-      "paddingHorizontal": 20,
-      "paddingVertical": 20,
+      "paddingHorizontal": 16,
+      "paddingVertical": 16,
     }
   }
 />

@@ -38,6 +38,7 @@ const getCachedSources = (_sources = []) => {
 
   return sources.map((source) => ({
     uri: (source.url || '').replace(/^http:\/\/|^\/\//i, 'https://'),
+    cache: 'force-cache',
     ...source,
     ...(sizeCache[getCacheKey(source)] || {}),
   }));
@@ -93,7 +94,7 @@ class ConnectedImage extends PureComponent {
       source: getCachedSources(this.props.source),
     };
 
-    this.imageOpacity = new Animated.Value(0);
+    this.imageOpacity = new Animated.Value(this.isLoading ? 0 : 1);
   }
 
   componentWillMount() {

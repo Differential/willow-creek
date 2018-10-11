@@ -8,6 +8,8 @@ import styled from 'apolloschurchapp/src/ui/styled';
 const Container = styled(({ theme }) => ({
   flex: 1,
   padding: theme.sizing.baseUnit / 2,
+  paddingLeft: theme.sizing.baseUnit,
+  paddingRight: 0,
 }))(View);
 
 const TileImageItem = ({

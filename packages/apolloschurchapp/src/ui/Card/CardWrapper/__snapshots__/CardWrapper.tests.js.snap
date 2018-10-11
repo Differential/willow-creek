@@ -6,23 +6,23 @@ exports[`the CardWrapper component should accept a backgroundColor 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -40,23 +40,23 @@ exports[`the CardWrapper component should accept additional props 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -69,17 +69,17 @@ exports[`the CardWrapper component should accept and render passed in styles 1`]
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
+      "borderRadius": 16,
       "height": 400,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
       "width": "92%",
     }
   }
@@ -87,7 +87,7 @@ exports[`the CardWrapper component should accept and render passed in styles 1`]
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -100,23 +100,23 @@ exports[`the CardWrapper component should render 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -129,23 +129,23 @@ exports[`the CardWrapper component should render children 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }

@@ -34,7 +34,7 @@ exports[`the HTMLView component should render a block quote 1`] = `
         "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
         "marginVertical": 46.08,
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
         "paddingVertical": 34.56,
       }
     }
@@ -263,7 +263,7 @@ exports[`the HTMLView component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "85%",
@@ -275,7 +275,7 @@ exports[`the HTMLView component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -287,7 +287,7 @@ exports[`the HTMLView component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -299,7 +299,7 @@ exports[`the HTMLView component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -311,7 +311,7 @@ exports[`the HTMLView component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -323,7 +323,7 @@ exports[`the HTMLView component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -335,7 +335,7 @@ exports[`the HTMLView component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -347,7 +347,7 @@ exports[`the HTMLView component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "75%",
@@ -547,6 +547,7 @@ exports[`the HTMLView component should render an image 1`] = `
       source={
         Array [
           Object {
+            "cache": "force-cache",
             "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
             "url": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
           },
@@ -728,7 +729,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
         "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
         "marginVertical": 46.08,
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
         "paddingVertical": 34.56,
       }
     }
@@ -897,7 +898,7 @@ exports[`the HTMLView component should render example HTML 1`] = `
         "borderColor": "#A5A5A5",
         "borderTopWidth": 0.5,
         "marginVertical": 46.08,
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
         "paddingVertical": 34.56,
       }
     }

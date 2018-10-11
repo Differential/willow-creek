@@ -5,7 +5,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
   disabled={false}
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -48,7 +48,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "paddingVertical": 0,
             }
           }
@@ -98,7 +98,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "lineHeight": 17.28,
-            "paddingVertical": 5,
+            "paddingVertical": 4,
           }
         }
       >
@@ -158,7 +158,7 @@ exports[`The Text Input component should render as a password field with an icon
   disabled={false}
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -203,7 +203,7 @@ exports[`The Text Input component should render as a password field with an icon
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "paddingVertical": 0,
             }
           }
@@ -326,7 +326,7 @@ exports[`The Text Input component should render as a password field with an icon
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "lineHeight": 17.28,
-            "paddingVertical": 5,
+            "paddingVertical": 4,
           }
         }
       >
@@ -386,7 +386,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
   disabled={false}
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -429,7 +429,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "paddingVertical": 0,
             }
           }
@@ -479,7 +479,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "lineHeight": 17.28,
-            "paddingVertical": 5,
+            "paddingVertical": 4,
           }
         }
       >
@@ -539,7 +539,7 @@ exports[`The Text Input component should render as an email field 1`] = `
   disabled={false}
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -584,7 +584,7 @@ exports[`The Text Input component should render as an email field 1`] = `
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "paddingVertical": 0,
             }
           }
@@ -634,7 +634,7 @@ exports[`The Text Input component should render as an email field 1`] = `
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "lineHeight": 17.28,
-            "paddingVertical": 5,
+            "paddingVertical": 4,
           }
         }
       >
@@ -694,7 +694,7 @@ exports[`The Text Input component should render correctly 1`] = `
   disabled={false}
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -736,7 +736,7 @@ exports[`The Text Input component should render correctly 1`] = `
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "paddingVertical": 0,
             }
           }
@@ -785,7 +785,7 @@ exports[`The Text Input component should render correctly 1`] = `
             "fontFamily": "InterUI-Bold",
             "fontSize": 12,
             "lineHeight": 17.28,
-            "paddingVertical": 5,
+            "paddingVertical": 4,
           }
         }
       >

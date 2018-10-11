@@ -13,7 +13,7 @@ exports[`the UIText component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "85%",
@@ -25,7 +25,7 @@ exports[`the UIText component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -37,7 +37,7 @@ exports[`the UIText component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "75%",

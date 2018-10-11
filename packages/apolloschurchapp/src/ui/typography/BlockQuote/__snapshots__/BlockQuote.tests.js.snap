@@ -9,7 +9,7 @@ exports[`the BlockQuote component should render a loading state 1`] = `
       "borderColor": "#A5A5A5",
       "borderTopWidth": 0.5,
       "marginVertical": 46.08,
-      "paddingHorizontal": 20,
+      "paddingHorizontal": 16,
       "paddingVertical": 34.56,
     }
   }
@@ -19,7 +19,7 @@ exports[`the BlockQuote component should render a loading state 1`] = `
       Object {
         "alignSelf": "stretch",
         "backgroundColor": "#A5A5A5",
-        "borderRadius": 6,
+        "borderRadius": 16,
         "height": 16,
         "marginVertical": 5,
         "width": "100%",
@@ -38,7 +38,7 @@ exports[`the BlockQuote component should render a string 1`] = `
       "borderColor": "#A5A5A5",
       "borderTopWidth": 0.5,
       "marginVertical": 46.08,
-      "paddingHorizontal": 20,
+      "paddingHorizontal": 16,
       "paddingVertical": 34.56,
     }
   }
@@ -70,7 +70,7 @@ exports[`the BlockQuote component should render child components 1`] = `
       "borderColor": "#A5A5A5",
       "borderTopWidth": 0.5,
       "marginVertical": 46.08,
-      "paddingHorizontal": 20,
+      "paddingHorizontal": 16,
       "paddingVertical": 34.56,
     }
   }

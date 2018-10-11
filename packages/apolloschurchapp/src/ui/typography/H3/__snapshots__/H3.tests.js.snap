@@ -37,7 +37,7 @@ exports[`the H3 component should render a loading state 1`] = `
     Object {
       "alignSelf": "stretch",
       "backgroundColor": "#A5A5A5",
-      "borderRadius": 6,
+      "borderRadius": 16,
       "height": 24,
       "marginVertical": 1.8000000000000007,
       "width": "100%",
@@ -52,7 +52,7 @@ exports[`the H3 component should render a loading state with correct positioning
     Object {
       "alignSelf": "stretch",
       "backgroundColor": "#A5A5A5",
-      "borderRadius": 6,
+      "borderRadius": 16,
       "height": 24,
       "marginBottom": 17.28,
       "marginTop": 25.92,

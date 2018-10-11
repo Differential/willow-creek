@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
+import { Image } from 'react-native';
+import SafeAreaView from 'react-native-safe-area-view';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
+import styled from 'apolloschurchapp/src/ui/styled';
 import FeedView from 'apolloschurchapp/src/ui/FeedView';
 import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
 
@@ -11,13 +13,16 @@ import { LiveButton } from '../../live';
 
 import getUserFeed from './getUserFeed';
 
+const LogoTitle = styled(({ theme }) => ({
+  height: theme.sizing.baseUnit,
+  margin: theme.sizing.baseUnit,
+  alignSelf: 'center',
+  resizeMode: 'contain',
+}))(Image);
+
 class Home extends PureComponent {
-  static navigationOptions = ({ navigation }) => ({
-    title: 'Apollos Church',
-    headerStyle: {
-      backgroundColor: navigation.getParam('backgroundColor'),
-    },
-    headerTintColor: navigation.getParam('tintColor'),
+  static navigationOptions = () => ({
+    header: null,
   });
 
   static propTypes = {
@@ -26,18 +31,7 @@ class Home extends PureComponent {
       setParams: PropTypes.func,
       navigate: PropTypes.func,
     }),
-    headerBackgroundColor: PropTypes.string,
-    headerTintColor: PropTypes.string,
   };
-
-  constructor(props) {
-    super(props);
-
-    props.navigation.setParams({
-      backgroundColor: props.headerBackgroundColor,
-      tintColor: props.headerTintColor,
-    });
-  }
 
   handleOnPress = (item) =>
     this.props.navigation.navigate('ContentSingle', {
@@ -48,25 +42,30 @@ class Home extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        <Query query={getUserFeed} fetchPolicy="cache-and-network">
-          {({ loading, error, data, refetch }) => (
-            <FeedView
-              content={get(data, 'userFeed.edges', []).map((edge) => edge.node)}
-              isLoading={loading}
-              error={error}
-              refetch={refetch}
-              ListHeaderComponent={LiveButton}
-              onPressItem={this.handleOnPress}
-            />
-          )}
-        </Query>
+        <SafeAreaView>
+          <Query query={getUserFeed} fetchPolicy="cache-and-network">
+            {({ loading, error, data, refetch }) => (
+              <FeedView
+                content={get(data, 'userFeed.edges', []).map(
+                  (edge) => edge.node
+                )}
+                isLoading={loading}
+                error={error}
+                refetch={refetch}
+                ListHeaderComponent={
+                  <>
+                    <LogoTitle source={require('./wordmark.png')} />
+                    <LiveButton />
+                  </>
+                }
+                onPressItem={this.handleOnPress}
+              />
+            )}
+          </Query>
+        </SafeAreaView>
       </BackgroundView>
     );
   }
 }
 
-export default withTheme(({ theme, ...otherProps }) => ({
-  headerBackgroundColor: theme.colors.primary,
-  headerTintColor: theme.colors.background.paper,
-  ...otherProps,
-}))(Home);
+export default Home;

@@ -70,8 +70,7 @@ export const breakpoints = {
 // Base sizing units. These are used to scale
 // space, and size components relatively to one another.
 export const sizing = {
-  baseUnit: 20,
-  borderRadius: 6,
+  baseUnit: 16,
   avatar: {
     small: 40,
     medium: 80,
@@ -111,10 +110,10 @@ export const shadows = ({ colors: themeColors }) => ({
         height: 1,
       },
       shadowOpacity: 1,
-      shadowRadius: 3,
+      shadowRadius: 6,
     },
     android: {
-      elevation: 3,
+      elevation: 5,
     },
   },
 });

@@ -14,6 +14,7 @@ exports[`the GradientOverlayImage component should render 1`] = `
     source={
       Array [
         Object {
+          "cache": "force-cache",
           "height": 400,
           "uri": "https://picsum.photos/600/400/?random",
           "width": 600,
@@ -24,7 +25,7 @@ exports[`the GradientOverlayImage component should render 1`] = `
       Object {
         "aspectRatio": 1.5,
         "backgroundColor": "#A5A5A5",
-        "opacity": 0,
+        "opacity": 1,
         "resizeMode": "cover",
         "width": "100%",
       }
@@ -47,6 +48,7 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
     source={
       Array [
         Object {
+          "cache": "force-cache",
           "height": 400,
           "uri": "https://picsum.photos/600/400/?random",
           "width": 600,
@@ -57,7 +59,7 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
       Object {
         "aspectRatio": 1.5,
         "backgroundColor": "#A5A5A5",
-        "opacity": 0,
+        "opacity": 1,
         "resizeMode": "cover",
         "width": "100%",
       }

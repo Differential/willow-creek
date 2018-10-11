@@ -4,7 +4,7 @@ exports[`The Picker Input component focuses and blurs 1`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -45,7 +45,7 @@ exports[`The Picker Input component focuses and blurs 1`] = `
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "lineHeight": 17.28,
               "paddingVertical": 0,
             }
@@ -183,7 +183,7 @@ exports[`The Picker Input component focuses and blurs 1`] = `
           Object {
             "alignItems": "flex-end",
             "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -256,7 +256,7 @@ exports[`The Picker Input component focuses and blurs 1`] = `
           "fontFamily": "InterUI-Bold",
           "fontSize": 12,
           "lineHeight": 17.28,
-          "paddingVertical": 5,
+          "paddingVertical": 4,
         }
       }
     />
@@ -312,7 +312,7 @@ exports[`The Picker Input component focuses and blurs 2`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -353,7 +353,7 @@ exports[`The Picker Input component focuses and blurs 2`] = `
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "lineHeight": 17.28,
               "paddingVertical": 0,
             }
@@ -491,7 +491,7 @@ exports[`The Picker Input component focuses and blurs 2`] = `
           Object {
             "alignItems": "flex-end",
             "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -564,7 +564,7 @@ exports[`The Picker Input component focuses and blurs 2`] = `
           "fontFamily": "InterUI-Bold",
           "fontSize": 12,
           "lineHeight": 17.28,
-          "paddingVertical": 5,
+          "paddingVertical": 4,
         }
       }
     />
@@ -620,7 +620,7 @@ exports[`The Picker Input component focuses and blurs 3`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -661,7 +661,7 @@ exports[`The Picker Input component focuses and blurs 3`] = `
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "lineHeight": 17.28,
               "paddingVertical": 0,
             }
@@ -799,7 +799,7 @@ exports[`The Picker Input component focuses and blurs 3`] = `
           Object {
             "alignItems": "flex-end",
             "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -872,7 +872,7 @@ exports[`The Picker Input component focuses and blurs 3`] = `
           "fontFamily": "InterUI-Bold",
           "fontSize": 12,
           "lineHeight": 17.28,
-          "paddingVertical": 5,
+          "paddingVertical": 4,
         }
       }
     />
@@ -928,7 +928,7 @@ exports[`The Picker Input component should render correctly 1`] = `
 <View
   style={
     Object {
-      "marginVertical": 20,
+      "marginVertical": 16,
     }
   }
 >
@@ -969,7 +969,7 @@ exports[`The Picker Input component should render correctly 1`] = `
               "color": "#303030",
               "fontFamily": "InterUI-Bold",
               "fontSize": 14,
-              "height": 40,
+              "height": 38,
               "lineHeight": 17.28,
               "paddingVertical": 0,
             }
@@ -1098,7 +1098,7 @@ exports[`The Picker Input component should render correctly 1`] = `
           Object {
             "alignItems": "flex-end",
             "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -1184,7 +1184,7 @@ exports[`The Picker Input component should render correctly 1`] = `
           "fontFamily": "InterUI-Bold",
           "fontSize": 12,
           "lineHeight": 17.28,
-          "paddingVertical": 5,
+          "paddingVertical": 4,
         }
       }
     >

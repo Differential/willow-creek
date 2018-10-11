@@ -31,15 +31,15 @@ exports[`The Button component should render 1`] = `
         "alignItems": "center",
         "backgroundColor": "#00676D",
         "borderColor": "#00676D",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -90,15 +90,15 @@ exports[`The Button component should render a Tertiary button 1`] = `
         "alignItems": "center",
         "backgroundColor": "#6EC5B8",
         "borderColor": "#6EC5B8",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -149,14 +149,14 @@ exports[`The Button component should render a bordered button 1`] = `
         "alignItems": "center",
         "backgroundColor": "transparent",
         "borderColor": "#00676D",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -208,15 +208,15 @@ exports[`The Button component should render a disabled button 1`] = `
         "alignItems": "center",
         "backgroundColor": "#00676D",
         "borderColor": "#00676D",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 0.5,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -267,14 +267,14 @@ exports[`The Button component should render a ghost button 1`] = `
         "alignItems": "center",
         "backgroundColor": "transparent",
         "borderColor": "#303030",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -325,14 +325,14 @@ exports[`The Button component should render a ghost pill button 1`] = `
         "alignItems": "center",
         "backgroundColor": "transparent",
         "borderColor": "#303030",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -384,15 +384,15 @@ exports[`The Button component should render a loading state 1`] = `
         "alignItems": "center",
         "backgroundColor": "#00676D",
         "borderColor": "#00676D",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -437,15 +437,15 @@ exports[`The Button component should render a pill button 1`] = `
         "alignItems": "center",
         "backgroundColor": "#00676D",
         "borderColor": "#00676D",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -496,15 +496,15 @@ exports[`The Button component should render a primary button 1`] = `
         "alignItems": "center",
         "backgroundColor": "#00676D",
         "borderColor": "#00676D",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -555,15 +555,15 @@ exports[`The Button component should render a secondary button 1`] = `
         "alignItems": "center",
         "backgroundColor": "#17B582",
         "borderColor": "#17B582",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -614,15 +614,15 @@ exports[`The Button component should render as default type 1`] = `
         "alignItems": "center",
         "backgroundColor": "#A5A5A5",
         "borderColor": "#A5A5A5",
-        "borderRadius": 60,
+        "borderRadius": 48,
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
-        "height": 60,
+        "height": 48,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "paddingHorizontal": 20,
+        "paddingHorizontal": 16,
       }
     }
   >
@@ -652,15 +652,15 @@ exports[`The Button component should render with children 1`] = `
       "alignItems": "center",
       "backgroundColor": "#00676D",
       "borderColor": "#00676D",
-      "borderRadius": 60,
+      "borderRadius": 48,
       "borderWidth": 2,
       "elevation": 2,
       "flexDirection": "row",
-      "height": 60,
+      "height": 48,
       "justifyContent": "center",
       "opacity": 1,
       "overflow": "hidden",
-      "paddingHorizontal": 20,
+      "paddingHorizontal": 16,
     }
   }
 >

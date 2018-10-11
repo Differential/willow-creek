@@ -6,7 +6,7 @@ exports[`The Typography placeholder renders correctly 1`] = `
     Object {
       "alignSelf": "stretch",
       "backgroundColor": "#A5A5A5",
-      "borderRadius": 6,
+      "borderRadius": 16,
       "height": 16,
       "width": "100%",
     }
@@ -20,7 +20,7 @@ exports[`The Typography placeholder translates type styles 1`] = `
     Object {
       "alignSelf": "stretch",
       "backgroundColor": "#A5A5A5",
-      "borderRadius": 6,
+      "borderRadius": 16,
       "height": 24,
       "marginVertical": 4,
       "width": "100%",

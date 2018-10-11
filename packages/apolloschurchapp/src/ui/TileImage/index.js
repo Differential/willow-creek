@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { pure, compose } from 'recompose';
 
@@ -7,10 +7,11 @@ import { H4 } from 'apolloschurchapp/src/ui/typography';
 import styled from 'apolloschurchapp/src/ui/styled';
 import { withTheme } from 'apolloschurchapp/src/ui/theme';
 import GradientOverlayImage from 'apolloschurchapp/src/ui/GradientOverlayImage';
+import TouchableScale from 'apolloschurchapp/src/ui/TouchableScale';
 
 const CardView = styled(
   ({ theme }) => ({
-    borderRadius: theme.sizing.borderRadius,
+    borderRadius: theme.sizing.baseUnit,
     overflow: 'hidden',
     width: '100%',
     height: '100%',
@@ -42,9 +43,7 @@ const enhance = compose(
 
 const TileImage = enhance(
   ({ image, link, onPressItem, text, theme, isLoading }) => (
-    <TouchableWithoutFeedback
-      onPress={() => !isLoading && onPressItem({ ...link })}
-    >
+    <TouchableScale onPress={() => !isLoading && onPressItem({ ...link })}>
       <CardView>
         <SquareGradientOverlayImage
           source={image}
@@ -54,7 +53,7 @@ const TileImage = enhance(
         />
         <Title isLoading={isLoading}>{text}</Title>
       </CardView>
-    </TouchableWithoutFeedback>
+    </TouchableScale>
   )
 );
 

@@ -33,14 +33,14 @@ const TileSpacer = styled(({ theme }) => ({
 const Tile = styled(({ theme }) => ({
   height: '100%',
   aspectRatio: 1,
-  borderRadius: theme.sizing.borderRadius,
+  borderRadius: theme.sizing.baseUnit,
   backgroundColor: theme.colors.lightTertiary,
 }))(View);
 
 const PlaceholderOverflowFix = styled(({ theme }) => ({
   ...StyleSheet.absoluteFillObject,
   justifyContent: 'center',
-  borderRadius: theme.sizing.borderRadius,
+  borderRadius: theme.sizing.baseUnit,
   overflow: 'hidden',
 }))(View);
 
@@ -52,8 +52,8 @@ const TileNumber = styled(({ theme, size }) => ({
   height: theme.helpers.rem(1 * (size < 2 ? 2 : size)),
   justifyContent: 'center',
   alignItems: 'center',
-  borderTopLeftRadius: theme.sizing.borderRadius,
-  borderBottomRightRadius: theme.sizing.borderRadius,
+  borderTopLeftRadius: theme.sizing.baseUnit,
+  borderBottomRightRadius: theme.sizing.baseUnit,
   backgroundColor: theme.colors.white,
 }))(View);
 

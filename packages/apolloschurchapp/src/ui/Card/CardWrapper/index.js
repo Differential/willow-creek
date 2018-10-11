@@ -5,30 +5,24 @@ import PropTypes from 'prop-types';
 
 import { withIsLoading } from 'apolloschurchapp/src/ui/isLoading';
 import styled from 'apolloschurchapp/src/ui/styled';
-import { enhancer as mediaQuery } from 'apolloschurchapp/src/ui/MediaQuery';
 
 const StyledCard = compose(
   withIsLoading,
-  styled(({ theme, cardColor }) => ({
+  styled(({ theme, cardColor, inHorizontalList = false }) => ({
     // card styles
     backgroundColor: cardColor || theme.colors.background.paper,
-    borderRadius: theme.sizing.borderRadius,
+    borderRadius: theme.sizing.baseUnit,
+    ...(inHorizontalList
+      ? {
+          marginLeft: theme.sizing.baseUnit * 0.5,
+          marginRight: 0,
+        }
+      : {
+          marginHorizontal: theme.sizing.baseUnit,
+          marginVertical: theme.sizing.baseUnit * 0.75,
+        }),
     ...Platform.select(theme.shadows.default),
-  })),
-  mediaQuery(
-    // responsive styles
-    ({ md }) => ({ maxWidth: md }),
-    styled(({ theme }) => ({
-      // mobile
-      marginHorizontal: theme.sizing.baseUnit / 2,
-      marginVertical: theme.sizing.baseUnit / 4,
-    })),
-    styled(({ theme }) => ({
-      // tablet
-      marginHorizontal: theme.sizing.baseUnit,
-      marginVertical: theme.sizing.baseUnit / 4,
-    }))
-  )
+  }))
 )(View);
 
 /*
@@ -36,7 +30,7 @@ const StyledCard = compose(
  * live on a child wrapper. https://github.com/facebook/react-native/issues/449
  */
 const OverflowFix = styled(({ theme }) => ({
-  borderRadius: theme.sizing.borderRadius,
+  borderRadius: theme.sizing.baseUnit,
   overflow: 'hidden',
 }))(View);
 

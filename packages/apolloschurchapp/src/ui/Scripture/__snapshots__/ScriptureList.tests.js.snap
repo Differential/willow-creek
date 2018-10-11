@@ -8,7 +8,7 @@ exports[`the ScriptureList component renders a scripture List 1`] = `
       "fontFamily": "InterUI-Bold",
       "fontSize": 16,
       "lineHeight": 23.04,
-      "paddingBottom": 30,
+      "paddingBottom": 24,
       "textAlign": "center",
       "textDecorationLine": "underline",
     }

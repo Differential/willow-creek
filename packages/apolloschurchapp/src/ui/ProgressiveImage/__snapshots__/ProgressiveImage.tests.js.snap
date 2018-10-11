@@ -16,6 +16,7 @@ exports[`the ProgressiveImage component should render 1`] = `
     source={
       Array [
         Object {
+          "cache": "force-cache",
           "height": 50,
           "uri": "https://placeholdit.co/i/50x50",
           "width": 50,
@@ -26,7 +27,7 @@ exports[`the ProgressiveImage component should render 1`] = `
       Object {
         "backgroundColor": "#A5A5A5",
         "height": "100%",
-        "opacity": 0,
+        "opacity": 1,
         "resizeMode": "cover",
         "width": "100%",
       }
@@ -37,6 +38,7 @@ exports[`the ProgressiveImage component should render 1`] = `
     source={
       Array [
         Object {
+          "cache": "force-cache",
           "height": 1500,
           "uri": "https://placeholdit.co/i/1500x1500",
           "width": 1500,
@@ -47,7 +49,7 @@ exports[`the ProgressiveImage component should render 1`] = `
       Object {
         "backgroundColor": "#A5A5A5",
         "height": "100%",
-        "opacity": 0,
+        "opacity": 1,
         "resizeMode": "cover",
         "width": "100%",
       }

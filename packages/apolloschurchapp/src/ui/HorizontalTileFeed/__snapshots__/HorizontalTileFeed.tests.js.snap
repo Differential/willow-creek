@@ -49,13 +49,12 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
   scrollEventThrottle={50}
   showsHorizontalScrollIndicator={false}
   snapToAlignment="start"
-  snapToInterval={590}
+  snapToInterval={592}
   stickyHeaderIndices={Array []}
   style={
     Object {
       "height": 600,
-      "paddingBottom": 10,
-      "paddingHorizontal": 10,
+      "paddingBottom": 8,
     }
   }
   tileHeight={600}
@@ -79,7 +78,7 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
         collapsable={false}
         style={
           Object {
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -88,7 +87,7 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
             Object {
               "aspectRatio": 1,
               "backgroundColor": "#A5A5A5",
-              "borderRadius": 6,
+              "borderRadius": 16,
               "height": "100%",
             }
           }
@@ -96,7 +95,7 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
           <View
             style={
               Object {
-                "borderRadius": 6,
+                "borderRadius": 16,
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
@@ -113,8 +112,8 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#FFFFFF",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
+                  "borderBottomRightRadius": 16,
+                  "borderTopLeftRadius": 16,
                   "height": 32,
                   "justifyContent": "center",
                   "left": 0,
@@ -142,8 +141,8 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 12,
                 }
               }
             >
@@ -179,7 +178,7 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
         collapsable={false}
         style={
           Object {
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -188,7 +187,7 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
             Object {
               "aspectRatio": 1,
               "backgroundColor": "#A5A5A5",
-              "borderRadius": 6,
+              "borderRadius": 16,
               "height": "100%",
             }
           }
@@ -196,7 +195,7 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
           <View
             style={
               Object {
-                "borderRadius": 6,
+                "borderRadius": 16,
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
@@ -213,8 +212,8 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#FFFFFF",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
+                  "borderBottomRightRadius": 16,
+                  "borderTopLeftRadius": 16,
                   "height": 32,
                   "justifyContent": "center",
                   "left": 0,
@@ -242,8 +241,8 @@ exports[`The HorizontalTileFeed component renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 12,
                 }
               }
             >
@@ -346,13 +345,12 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
   scrollEventThrottle={50}
   showsHorizontalScrollIndicator={false}
   snapToAlignment="start"
-  snapToInterval={590}
+  snapToInterval={592}
   stickyHeaderIndices={Array []}
   style={
     Object {
       "height": 600,
-      "paddingBottom": 10,
-      "paddingHorizontal": 10,
+      "paddingBottom": 8,
     }
   }
   tileHeight={600}
@@ -376,7 +374,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
         collapsable={false}
         style={
           Object {
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -385,7 +383,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             Object {
               "aspectRatio": 1,
               "backgroundColor": "#A5A5A5",
-              "borderRadius": 6,
+              "borderRadius": 16,
               "height": "100%",
             }
           }
@@ -393,7 +391,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
           <View
             style={
               Object {
-                "borderRadius": 6,
+                "borderRadius": 16,
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
@@ -410,8 +408,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#FFFFFF",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
+                  "borderBottomRightRadius": 16,
+                  "borderTopLeftRadius": 16,
                   "height": 32,
                   "justifyContent": "center",
                   "left": 0,
@@ -425,7 +423,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 40,
                     "width": 40,
                   }
@@ -435,8 +433,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 12,
                 }
               }
             >
@@ -445,7 +443,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                   Object {
                     "alignSelf": "stretch",
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 24,
                     "marginVertical": 1.8000000000000007,
                     "width": "100%",
@@ -472,7 +470,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
         collapsable={false}
         style={
           Object {
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -481,7 +479,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             Object {
               "aspectRatio": 1,
               "backgroundColor": "#A5A5A5",
-              "borderRadius": 6,
+              "borderRadius": 16,
               "height": "100%",
             }
           }
@@ -489,7 +487,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
           <View
             style={
               Object {
-                "borderRadius": 6,
+                "borderRadius": 16,
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
@@ -506,8 +504,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#FFFFFF",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
+                  "borderBottomRightRadius": 16,
+                  "borderTopLeftRadius": 16,
                   "height": 32,
                   "justifyContent": "center",
                   "left": 0,
@@ -521,7 +519,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 40,
                     "width": 40,
                   }
@@ -531,8 +529,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 12,
                 }
               }
             >
@@ -541,7 +539,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                   Object {
                     "alignSelf": "stretch",
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 24,
                     "marginVertical": 1.8000000000000007,
                     "width": "100%",
@@ -568,7 +566,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
         collapsable={false}
         style={
           Object {
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -577,7 +575,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             Object {
               "aspectRatio": 1,
               "backgroundColor": "#A5A5A5",
-              "borderRadius": 6,
+              "borderRadius": 16,
               "height": "100%",
             }
           }
@@ -585,7 +583,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
           <View
             style={
               Object {
-                "borderRadius": 6,
+                "borderRadius": 16,
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
@@ -602,8 +600,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#FFFFFF",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
+                  "borderBottomRightRadius": 16,
+                  "borderTopLeftRadius": 16,
                   "height": 32,
                   "justifyContent": "center",
                   "left": 0,
@@ -617,7 +615,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 40,
                     "width": 40,
                   }
@@ -627,8 +625,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 12,
                 }
               }
             >
@@ -637,7 +635,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                   Object {
                     "alignSelf": "stretch",
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 24,
                     "marginVertical": 1.8000000000000007,
                     "width": "100%",
@@ -664,7 +662,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
         collapsable={false}
         style={
           Object {
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -673,7 +671,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             Object {
               "aspectRatio": 1,
               "backgroundColor": "#A5A5A5",
-              "borderRadius": 6,
+              "borderRadius": 16,
               "height": "100%",
             }
           }
@@ -681,7 +679,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
           <View
             style={
               Object {
-                "borderRadius": 6,
+                "borderRadius": 16,
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
@@ -698,8 +696,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#FFFFFF",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
+                  "borderBottomRightRadius": 16,
+                  "borderTopLeftRadius": 16,
                   "height": 32,
                   "justifyContent": "center",
                   "left": 0,
@@ -713,7 +711,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 40,
                     "width": 40,
                   }
@@ -723,8 +721,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 12,
                 }
               }
             >
@@ -733,7 +731,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                   Object {
                     "alignSelf": "stretch",
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 24,
                     "marginVertical": 1.8000000000000007,
                     "width": "100%",
@@ -760,7 +758,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
         collapsable={false}
         style={
           Object {
-            "padding": 10,
+            "padding": 8,
           }
         }
       >
@@ -769,7 +767,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             Object {
               "aspectRatio": 1,
               "backgroundColor": "#A5A5A5",
-              "borderRadius": 6,
+              "borderRadius": 16,
               "height": "100%",
             }
           }
@@ -777,7 +775,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
           <View
             style={
               Object {
-                "borderRadius": 6,
+                "borderRadius": 16,
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
@@ -794,8 +792,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#FFFFFF",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
+                  "borderBottomRightRadius": 16,
+                  "borderTopLeftRadius": 16,
                   "height": 32,
                   "justifyContent": "center",
                   "left": 0,
@@ -809,7 +807,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 40,
                     "width": 40,
                   }
@@ -819,8 +817,8 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 12,
                 }
               }
             >
@@ -829,7 +827,7 @@ exports[`The HorizontalTileFeed component renders empty state 1`] = `
                   Object {
                     "alignSelf": "stretch",
                     "backgroundColor": "#DBDBD9",
-                    "borderRadius": 6,
+                    "borderRadius": 16,
                     "height": 24,
                     "marginVertical": 1.8000000000000007,
                     "width": "100%",

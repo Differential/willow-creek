@@ -6,6 +6,7 @@ exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
   source={
     Array [
       Object {
+        "cache": "force-cache",
         "height": 150,
         "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
         "width": 150,
@@ -16,7 +17,7 @@ exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
     Object {
       "aspectRatio": 1,
       "backgroundColor": "#A5A5A5",
-      "opacity": 0,
+      "opacity": 1,
     }
   }
 />
@@ -28,6 +29,7 @@ exports[`the ConnectedImage component should render immediately with a network i
   source={
     Array [
       Object {
+        "cache": "force-cache",
         "height": 150,
         "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
         "width": 150,
@@ -37,7 +39,7 @@ exports[`the ConnectedImage component should render immediately with a network i
   style={
     Object {
       "backgroundColor": "#A5A5A5",
-      "opacity": 0,
+      "opacity": 1,
     }
   }
 />

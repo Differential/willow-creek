@@ -6,23 +6,23 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
   style={
     Object {
       "backgroundColor": "salmon",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -40,6 +40,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
         source={
           Array [
             Object {
+              "cache": "force-cache",
               "height": 400,
               "uri": "https://picsum.photos/600/400/?random",
               "width": 600,
@@ -50,7 +51,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
           Object {
             "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "opacity": 0,
+            "opacity": 1,
             "resizeMode": "cover",
             "width": "100%",
           }
@@ -95,8 +96,8 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
     <View
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 15,
+          "paddingHorizontal": 16,
+          "paddingVertical": 12,
         }
       }
     >
@@ -120,9 +121,9 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
           "flexDirection": "row",
           "flexWrap": "wrap",
           "justifyContent": "space-between",
-          "paddingHorizontal": 20,
-          "paddingTop": 5,
-          "paddingVertical": 20,
+          "paddingHorizontal": 16,
+          "paddingTop": 4,
+          "paddingVertical": 16,
         }
       }
     >
@@ -140,7 +141,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
           style={
             Object {
               "flex": 1,
-              "paddingRight": 10,
+              "paddingRight": 8,
             }
           }
           withIcon={null}
@@ -241,17 +242,17 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
+      "borderRadius": 16,
       "height": 400,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
       "width": "92%",
     }
   }
@@ -259,7 +260,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -277,6 +278,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         source={
           Array [
             Object {
+              "cache": "force-cache",
               "height": 400,
               "uri": "https://picsum.photos/600/400/?random",
               "width": 600,
@@ -287,7 +289,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
           Object {
             "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "opacity": 0,
+            "opacity": 1,
             "resizeMode": "cover",
             "width": "100%",
           }
@@ -297,8 +299,8 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
     <View
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 15,
+          "paddingHorizontal": 16,
+          "paddingVertical": 12,
         }
       }
     >
@@ -322,9 +324,9 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
           "flexDirection": "row",
           "flexWrap": "wrap",
           "justifyContent": "space-between",
-          "paddingHorizontal": 20,
-          "paddingTop": 5,
-          "paddingVertical": 20,
+          "paddingHorizontal": 16,
+          "paddingTop": 4,
+          "paddingVertical": 16,
         }
       }
     >
@@ -342,7 +344,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
           style={
             Object {
               "flex": 1,
-              "paddingRight": 10,
+              "paddingRight": 8,
             }
           }
           withIcon={null}
@@ -443,23 +445,23 @@ exports[`the FeedItemCard component should render 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -477,6 +479,7 @@ exports[`the FeedItemCard component should render 1`] = `
         source={
           Array [
             Object {
+              "cache": "force-cache",
               "height": 400,
               "uri": "https://picsum.photos/600/400/?random",
               "width": 600,
@@ -487,7 +490,7 @@ exports[`the FeedItemCard component should render 1`] = `
           Object {
             "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "opacity": 0,
+            "opacity": 1,
             "resizeMode": "cover",
             "width": "100%",
           }
@@ -497,8 +500,8 @@ exports[`the FeedItemCard component should render 1`] = `
     <View
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 15,
+          "paddingHorizontal": 16,
+          "paddingVertical": 12,
         }
       }
     >
@@ -522,9 +525,9 @@ exports[`the FeedItemCard component should render 1`] = `
           "flexDirection": "row",
           "flexWrap": "wrap",
           "justifyContent": "space-between",
-          "paddingHorizontal": 20,
-          "paddingTop": 5,
-          "paddingVertical": 20,
+          "paddingHorizontal": 16,
+          "paddingTop": 4,
+          "paddingVertical": 16,
         }
       }
     >
@@ -542,7 +545,7 @@ exports[`the FeedItemCard component should render 1`] = `
           style={
             Object {
               "flex": 1,
-              "paddingRight": 10,
+              "paddingRight": 8,
             }
           }
           withIcon={null}
@@ -643,23 +646,23 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -677,6 +680,7 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
         source={
           Array [
             Object {
+              "cache": "force-cache",
               "height": 400,
               "uri": "https://picsum.photos/600/400/?random",
               "width": 600,
@@ -687,7 +691,7 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
           Object {
             "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "opacity": 0,
+            "opacity": 1,
             "resizeMode": "cover",
             "width": "100%",
           }
@@ -697,8 +701,8 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
     <View
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 15,
+          "paddingHorizontal": 16,
+          "paddingVertical": 12,
         }
       }
     >
@@ -722,9 +726,9 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
           "flexDirection": "row",
           "flexWrap": "wrap",
           "justifyContent": "space-between",
-          "paddingHorizontal": 20,
-          "paddingTop": 5,
-          "paddingVertical": 20,
+          "paddingHorizontal": 16,
+          "paddingTop": 4,
+          "paddingVertical": 16,
         }
       }
     >
@@ -742,7 +746,7 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
           style={
             Object {
               "flex": 1,
-              "paddingRight": 10,
+              "paddingRight": 8,
             }
           }
           withIcon={null}
@@ -843,23 +847,23 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -877,6 +881,7 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
         source={
           Array [
             Object {
+              "cache": "force-cache",
               "height": 400,
               "uri": "https://picsum.photos/600/400/?random",
               "width": 600,
@@ -887,7 +892,7 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
           Object {
             "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "opacity": 0,
+            "opacity": 1,
             "resizeMode": "cover",
             "width": "100%",
           }
@@ -897,8 +902,8 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
     <View
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 15,
+          "paddingHorizontal": 16,
+          "paddingVertical": 12,
         }
       }
     >
@@ -922,9 +927,9 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
           "flexDirection": "row",
           "flexWrap": "wrap",
           "justifyContent": "space-between",
-          "paddingHorizontal": 20,
-          "paddingTop": 5,
-          "paddingVertical": 20,
+          "paddingHorizontal": 16,
+          "paddingTop": 4,
+          "paddingVertical": 16,
         }
       }
     >
@@ -1014,7 +1019,7 @@ exports[`the FeedItemCard component should render with an icon 1`] = `
           style={
             Object {
               "flex": 1,
-              "paddingHorizontal": 10,
+              "paddingHorizontal": 8,
             }
           }
           withIcon="play"
@@ -1115,23 +1120,23 @@ exports[`the FeedItemCard component should render with inverted (light) font col
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderRadius": 6,
-      "marginHorizontal": 10,
-      "marginVertical": 5,
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
       "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 3,
+      "shadowRadius": 6,
     }
   }
 >
   <View
     style={
       Object {
-        "borderRadius": 6,
+        "borderRadius": 16,
         "overflow": "hidden",
       }
     }
@@ -1149,6 +1154,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         source={
           Array [
             Object {
+              "cache": "force-cache",
               "height": 400,
               "uri": "https://picsum.photos/600/400/?random",
               "width": 600,
@@ -1159,7 +1165,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
           Object {
             "aspectRatio": 1.5,
             "backgroundColor": "#A5A5A5",
-            "opacity": 0,
+            "opacity": 1,
             "resizeMode": "cover",
             "width": "100%",
           }
@@ -1169,8 +1175,8 @@ exports[`the FeedItemCard component should render with inverted (light) font col
     <View
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 15,
+          "paddingHorizontal": 16,
+          "paddingVertical": 12,
         }
       }
     >
@@ -1194,9 +1200,9 @@ exports[`the FeedItemCard component should render with inverted (light) font col
           "flexDirection": "row",
           "flexWrap": "wrap",
           "justifyContent": "space-between",
-          "paddingHorizontal": 20,
-          "paddingTop": 5,
-          "paddingVertical": 20,
+          "paddingHorizontal": 16,
+          "paddingTop": 4,
+          "paddingVertical": 16,
         }
       }
     >
@@ -1214,7 +1220,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
           style={
             Object {
               "flex": 1,
-              "paddingRight": 10,
+              "paddingRight": 8,
             }
           }
           withIcon={null}

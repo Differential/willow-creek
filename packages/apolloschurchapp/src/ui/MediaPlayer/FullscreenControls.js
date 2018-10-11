@@ -67,16 +67,16 @@ const Artist = styled({ textAlign: 'center' })(H6);
 
 const IconSm = withTheme(({ theme, disabled }) => ({
   size: theme.sizing.baseUnit,
-  opacity: disabled ? 0.5 : 1,
+  opacity: disabled ? 0.5 : 1.25,
 }))(Icon);
 
 const IconMd = withTheme(({ theme, disabled }) => ({
-  size: theme.sizing.baseUnit * 1.5,
+  size: theme.sizing.baseUnit * 1.875,
   opacity: disabled ? 0.5 : 1,
 }))(Icon);
 
 const IconLg = withTheme(({ theme, disabled }) => ({
-  size: theme.sizing.baseUnit * 2.5,
+  size: theme.sizing.baseUnit * 3.125,
   opacity: disabled ? 0.5 : 1,
 }))(Icon);
 

@@ -8,7 +8,7 @@ export const Media = styled(
   ({ borderRadius, theme, size = '100%' }) => ({
     height: size,
     width: size,
-    borderRadius: borderRadius || theme.sizing.borderRadius,
+    borderRadius: borderRadius || theme.sizing.baseUnit,
     backgroundColor: theme.colors.background.inactive,
   }),
   'Placeholder.Media'

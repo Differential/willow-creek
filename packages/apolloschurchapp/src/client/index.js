@@ -16,6 +16,7 @@ export const client = new ApolloClient({
   link,
   cache,
   queryDeduplication: true,
+  shouldBatch: true,
 });
 
 class ClientProvider extends PureComponent {
