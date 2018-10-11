@@ -17,4 +17,11 @@ const PoeticPause = styled({
   textAlign: 'right',
 })(ScriptureText);
 
-export { ScriptureText, VerseNumber, RedLetters, PoeticPause };
+const LegalText = styled(({ theme }) => ({
+  fontSize: theme.helpers.rem(0.6),
+  lineHeight: theme.helpers.verticalRhythm(0.45),
+  fontFamily: theme.typography.sans.regular.default,
+  color: theme.colors.text.secondary,
+}))(ScriptureText);
+
+export { ScriptureText, VerseNumber, RedLetters, PoeticPause, LegalText };

@@ -4,7 +4,9 @@ exports[`Scripture returns 1`] = `
 Object {
   "data": Object {
     "scripture": Object {
+      "copyright": "PUBLIC DOMAIN",
       "html": "<p class=\\"p\\"><span data-number=\\"1\\" class=\\"v\\">1</span>The Song of songs, which is Solomon’s.</p>",
+      "reference": "Song of Solomon 1:1",
     },
   },
 }

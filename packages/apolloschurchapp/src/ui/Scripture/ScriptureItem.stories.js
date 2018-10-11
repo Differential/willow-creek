@@ -11,6 +11,18 @@ const genesis1 = {
     html:
       '<p class="p"><span data-number="1" class="v">1</span>In the beginning, God created the heavens and the earth. <span data-number="2" class="v">2</span>The earth was formless and empty. Darkness was on the surface of the deep and God’s Spirit was hovering over the surface of the waters.</p><p class="p"><span data-number="3" class="v">3</span>God said, “Let there be light,” and there was light. <span data-number="4" class="v">4</span>God saw the light, and saw that it was good. God divided the light from the darkness. <span data-number="5" class="v">5</span>God called the light “day”, and the darkness he called “night”. There was evening and there was morning, the first day.</p>',
     isLoading: false,
+    copyright: 'PUBLIC DOMAIN',
+  },
+};
+
+const john1 = {
+  scripture: {
+    reference: 'John 1:1',
+    html:
+      '<p class="p"><span data-number="1" class="v">1</span>In the beginning was the Word, and the Word was with God, and the Word was God. </p>',
+    isLoading: false,
+    copyright:
+      'PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent',
   },
 };
 
@@ -91,6 +103,19 @@ storiesOf('Scripture', module)
           reference={genesis1.scripture.reference}
           html={genesis1.scripture.html}
           isLoading={genesis1.scripture.isLoading}
+          copyright={genesis1.scripture.copyright}
+        />
+      </PaddedView>
+    </ScrollView>
+  ))
+  .add('John 1:1', () => (
+    <ScrollView>
+      <PaddedView>
+        <ScriptureItem
+          reference={john1.scripture.reference}
+          html={john1.scripture.html}
+          isLoading={john1.scripture.isLoading}
+          copyright={john1.scripture.copyright}
         />
       </PaddedView>
     </ScrollView>

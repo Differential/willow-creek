@@ -5,6 +5,7 @@ export default gql`
     scripture(query: $query) {
       reference
       html
+      copyright
     }
   }
 `;

@@ -5,9 +5,10 @@ import { View } from 'react-native';
 import Placeholder from 'apolloschurchapp/src/ui/Placeholder';
 import { H4, H6 } from 'apolloschurchapp/src/ui/typography';
 
+import { LegalText } from './typography';
 import ScriptureHTMLView from './ScriptureHTMLView';
 
-const ScriptureItem = ({ reference, html, isLoading }) => (
+const ScriptureItem = ({ reference, html, copyright, isLoading }) => (
   <Placeholder.Paragraph
     lineNumber={5}
     onReady={!isLoading}
@@ -19,6 +20,7 @@ const ScriptureItem = ({ reference, html, isLoading }) => (
         <H4>{reference}</H4> <H6>WEB</H6>
       </H4>
       <ScriptureHTMLView>{html}</ScriptureHTMLView>
+      <LegalText>{copyright === 'PUBLIC DOMAIN' ? '' : copyright}</LegalText>
     </View>
   </Placeholder.Paragraph>
 );
@@ -26,6 +28,7 @@ const ScriptureItem = ({ reference, html, isLoading }) => (
 ScriptureItem.propTypes = {
   reference: PropTypes.string,
   html: PropTypes.string,
+  copyright: PropTypes.string,
   isLoading: PropTypes.bool,
 };
 

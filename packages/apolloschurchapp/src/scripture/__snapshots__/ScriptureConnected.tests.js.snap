@@ -95,5 +95,19 @@ exports[`ScriptureConnected component renders without errors 1`] = `
       </Text>
     </View>
   </View>
+  <Text
+    bold={false}
+    italic={false}
+    style={
+      Object {
+        "color": "#505050",
+        "fontFamily": "InterUI-Regular",
+        "fontSize": 9.6,
+        "lineHeight": 10.37,
+      }
+    }
+  >
+    
+  </Text>
 </View>
 `;

@@ -10,6 +10,7 @@ const genesis1 = {
     reference: 'Genesis 1:1-5',
     html:
       '<p class="p"><span data-number="1" class="v">1</span>In the beginning, God created the heavens and the earth. <span data-number="2" class="v">2</span>The earth was formless and empty. Darkness was on the surface of the deep and God’s Spirit was hovering over the surface of the waters.</p><p class="p"><span data-number="3" class="v">3</span>God said, “Let there be light,” and there was light. <span data-number="4" class="v">4</span>God saw the light, and saw that it was good. God divided the light from the darkness. <span data-number="5" class="v">5</span>God called the light “day”, and the darkness he called “night”. There was evening and there was morning, the first day.</p>',
+    copyright: 'PUBLIC DOMAIN',
   },
 };
 
@@ -18,6 +19,9 @@ const psalm23 = {
     reference: 'Psalm 23',
     html:
       '<p class="d">A Psalm by David.</p><p class="q1"><span data-number="1" class="v">1</span>Yahweh is my shepherd:</p><p class="q2">I shall lack nothing.</p><p class="q1"><span data-number="2" class="v">2</span>He makes me lie down in green pastures.</p><p class="q2">He leads me beside still waters.</p><p class="q1"><span data-number="3" class="v">3</span>He restores my soul.</p><p class="q2">He guides me in the paths of righteousness for his name’s sake.</p><p class="q1"><span data-number="4" class="v">4</span>Even though I walk through the valley of the shadow of death,</p><p class="q2">I will fear no evil, for you are with me.</p><p class="q1">Your rod and your staff,</p><p class="q2">they comfort me.</p><p class="q1"><span data-number="5" class="v">5</span>You prepare a table before me</p><p class="q2">in the presence of my enemies.</p><p class="q1">You anoint my head with oil.</p><p class="q2">My cup runs over.</p><p class="q1"><span data-number="6" class="v">6</span>Surely goodness and loving kindness shall follow me all the days of my life,</p><p class="q2">and I will dwell in Yahweh’s house forever.</p>',
+
+    copyright:
+      'PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent',
   },
 };
 
@@ -87,6 +91,7 @@ describe('the ScriptureItem component', () => {
         <ScriptureItem
           reference={genesis1.scripture.reference}
           html={genesis1.scripture.html}
+          copyright={genesis1.scripture.copyright}
           isLoading={false}
         />
       </Providers>
@@ -99,6 +104,7 @@ describe('the ScriptureItem component', () => {
         <ScriptureItem
           reference={psalm23.scripture.reference}
           html={psalm23.scripture.html}
+          copyright={psalm23.scripture.copyright}
           isLoading={false}
         />
       </Providers>

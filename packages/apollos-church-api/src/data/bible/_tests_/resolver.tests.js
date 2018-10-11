@@ -21,6 +21,8 @@ describe('Scripture', () => {
       query {
         scripture (query: "SNG.1.1") {
           html
+          reference
+          copyright
         }
       }
     `;

@@ -4,6 +4,7 @@ export default gql`
   type Scripture {
     reference: String
     html: String
+    copyright: String
   }
 
   extend type Query {

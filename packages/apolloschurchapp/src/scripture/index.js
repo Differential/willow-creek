@@ -20,6 +20,7 @@ const ScriptureConnected = ({
         <ScriptureComponent
           reference={get(data, 'scripture.reference', '')}
           html={get(data, 'scripture.html', '')}
+          copyright={get(data, 'scripture.copyright', '')}
           isLoading={loading}
         />
       )}
