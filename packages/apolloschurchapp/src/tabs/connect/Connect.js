@@ -14,6 +14,7 @@ import TableView, {
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
 import Touchable from 'apolloschurchapp/src/ui/Touchable';
 import UserAvatarView from 'apolloschurchapp/src/ui/UserAvatarView';
+import NavigationActions from 'apolloschurchapp/src/NavigationService';
 
 import getLoginState from './getLoginState';
 import getUserProfile from './getUserProfile';
@@ -101,6 +102,16 @@ class Connect extends PureComponent {
                     <Cell>
                       <CellIcon name="download" />
                       <CellText>I would like to give</CellText>
+                    </Cell>
+                  </Touchable>
+                  <Touchable
+                    onPress={() =>
+                      NavigationActions.navigate('TestingControlPanel')
+                    }
+                  >
+                    <Cell>
+                      <CellIcon name="download" />
+                      <CellText>I would like to test the app</CellText>
                     </Cell>
                   </Touchable>
                 </TableView>
