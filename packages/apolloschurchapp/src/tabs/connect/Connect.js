@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, SafeAreaView, Platform } from 'react-native';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
+import PropTypes from 'prop-types';
 
 import { LoginButton } from 'apolloschurchapp/src/auth';
 import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
@@ -13,51 +14,95 @@ import TableView, {
 } from 'apolloschurchapp/src/ui/TableView';
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
 import Touchable from 'apolloschurchapp/src/ui/Touchable';
-import UserAvatarView from 'apolloschurchapp/src/ui/UserAvatarView';
+import { withTheme } from 'apolloschurchapp/src/ui/theme';
+import { H1, BodyText, Paragraph } from 'apolloschurchapp/src/ui/typography';
+import styled from 'apolloschurchapp/src/ui/styled';
+import Icon from 'apolloschurchapp/src/ui/Icon';
+import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
 import NavigationActions from 'apolloschurchapp/src/NavigationService';
 
+import { UserAvatarHeaderConnected } from './UserAvatarHeader';
+import { RecentlyLikedTileFeedConnected } from './RecentlyLikedTileFeed';
 import getLoginState from './getLoginState';
-import getUserProfile from './getUserProfile';
+
+const Title = styled(({ theme }) => ({
+  color: theme.colors.primary,
+  paddingBottom: theme.helpers.verticalRhythm(1.5),
+}))(H1);
+
+const BrandIcon = withTheme(({ theme }) => ({
+  name: 'brand-icon',
+  size: theme.sizing.baseUnit * 2.25,
+  marginBottom: theme.sizing.baseUnit,
+  fill: theme.colors.primary,
+}))(Icon);
+
+const Header = styled(({ theme }) => ({
+  paddingBottom: theme.sizing.baseUnit * 1.5,
+  backgroundColor: theme.colors.background.paper,
+  // These conditional paddings are due to inconsistencies with SafeAreaView.
+  // TODO: revisit and update/remove these values after next RN upgrade.
+  ...Platform.select({
+    ios: {
+      paddingTop: theme.sizing.baseUnit * 5,
+    },
+    android: {
+      paddingTop: theme.sizing.baseUnit * 4,
+    },
+  }),
+}))(PaddedView);
+
+const StyledLoginButton = styled(({ theme }) => ({
+  marginVertical: theme.sizing.baseUnit,
+}))(LoginButton);
 
 class Connect extends PureComponent {
   static navigationOptions = () => ({
     title: 'Connect',
-    headerRight: <LoginButton />,
+    header: null,
   });
+
+  static propTypes = {
+    navigation: PropTypes.shape({
+      getParam: PropTypes.func,
+      navigate: PropTypes.func,
+    }),
+  };
 
   render() {
     return (
       <BackgroundView>
         <WebBrowserConsumer>
           {(openUrl) => (
-            <BackgroundView>
-              <ScrollView>
+            <ScrollView>
+              <SafeAreaView>
                 <Query query={getLoginState}>
                   {({ data }) => {
                     if (get(data, 'isLoggedIn', false))
-                      return (
-                        <Query
-                          query={getUserProfile}
-                          fetchPolicy="cache-and-network"
-                        >
-                          {({
-                            data: { currentUser } = { currentUser: {} },
-                            refetch,
-                          }) => {
-                            const profile = get(currentUser, 'profile', {});
-                            const { photo, firstName, lastName } = profile;
-                            return (
-                              <UserAvatarView
-                                firstName={firstName}
-                                lastName={lastName}
-                                photo={photo}
-                                refetch={refetch}
-                              />
-                            );
-                          }}
-                        </Query>
-                      );
-                    return null;
+                      return [
+                        <UserAvatarHeaderConnected key="UserAvatarHeaderConnected" />,
+                        <RecentlyLikedTileFeedConnected key="RecentlyLikedTileFeedConnected" />,
+                      ];
+                    return (
+                      <Header>
+                        <BrandIcon />
+                        <Title>Connect!</Title>
+                        <Paragraph>
+                          <BodyText>
+                            Our mission is to help you connect to others as well
+                            as help you in your walk with Christ.
+                          </BodyText>
+                        </Paragraph>
+                        <Paragraph>
+                          <BodyText>
+                            By joining this community, you will unlock amazing
+                            features like; curated content and devotionals,
+                            simple event registration, and easy online giving!
+                          </BodyText>
+                        </Paragraph>
+                        <StyledLoginButton />
+                      </Header>
+                    );
                   }}
                 </Query>
                 <TableView>
@@ -115,8 +160,8 @@ class Connect extends PureComponent {
                     </Cell>
                   </Touchable>
                 </TableView>
-              </ScrollView>
-            </BackgroundView>
+              </SafeAreaView>
+            </ScrollView>
           )}
         </WebBrowserConsumer>
       </BackgroundView>

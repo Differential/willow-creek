@@ -35,6 +35,7 @@ const UpdateLikeStatus = ({ itemId, item, isLiked, children }) => (
         __typename: 'Interaction',
       },
     }}
+    refetchQueries={['getAllLikedContent']}
     update={(
       cache,
       {
@@ -57,6 +58,7 @@ const UpdateLikeStatus = ({ itemId, item, isLiked, children }) => (
     {(createNewInteraction) =>
       children({
         itemId,
+        isLiked,
         toggleLike: async (variables) => {
           try {
             await createNewInteraction({ variables });
@@ -90,8 +92,12 @@ const LikeButton = ({ itemId }) => (
   <GetLikeData itemId={itemId}>
     {({ isLiked, item }) => (
       <UpdateLikeStatus itemId={itemId} item={item} isLiked={isLiked}>
-        {({ toggleLike }) => (
-          <Like itemId={itemId} isLiked={isLiked} toggleLike={toggleLike} />
+        {({ toggleLike, isLiked: newLikeValue }) => (
+          <Like
+            itemId={itemId}
+            isLiked={newLikeValue}
+            toggleLike={toggleLike}
+          />
         )}
       </UpdateLikeStatus>
     )}

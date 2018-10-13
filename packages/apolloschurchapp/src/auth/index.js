@@ -31,14 +31,14 @@ const HeaderContainer = styled(({ theme }) => ({
 }))(SafeAreaView);
 
 const Header = styled(({ theme }) => ({
-  paddingHorizontal: theme.sizing.baseUnit,
+  padding: theme.sizing.baseUnit,
   paddingBottom: theme.sizing.baseUnit * 1.5,
 }))(View);
 
 const CancelButton = styled(({ theme }) => ({
   alignSelf: 'flex-end',
-  marginTop: theme.sizing.baseUnit * 0.75,
-  marginRight: theme.sizing.baseUnit,
+  paddingTop: theme.sizing.baseUnit * 0.75,
+  paddingRight: theme.sizing.baseUnit,
 }))(ButtonLink);
 
 class Auth extends PureComponent {

@@ -4,6 +4,8 @@ export default gql`
   enum UPDATEABLE_PROFILE_FIELDS {
     FirstName
     LastName
+    Email
+    NickName
   }
 
   input UpdateProfileInput {
