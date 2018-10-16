@@ -1,4 +1,4 @@
-import { buildGetMock } from 'apollos-church-api/src/utils/testUtils';
+import { buildGetMock } from '../../../utils/testUtils';
 import Person from '../data-source';
 
 const auth = (dataSource) => ({

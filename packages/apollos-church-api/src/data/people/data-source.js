@@ -1,7 +1,7 @@
 import { AuthenticationError } from 'apollo-server';
 import FormData from 'form-data';
 import { camelCase, mapKeys } from 'lodash';
-import RockApolloDataSource from 'apollos-church-api/src/connectors/rock/data-source';
+import RockApolloDataSource from '../../connectors/rock/data-source';
 
 export default class Person extends RockApolloDataSource {
   resource = 'People';

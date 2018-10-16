@@ -1,4 +1,4 @@
-import { buildGetMock } from 'apollos-church-api/src/utils/testUtils';
+import { buildGetMock } from '../../../utils/testUtils';
 import DataSource from '../data-source';
 
 describe('Family Data Source', () => {

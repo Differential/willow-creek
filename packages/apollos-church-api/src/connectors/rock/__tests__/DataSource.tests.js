@@ -1,4 +1,4 @@
-import { createCursor } from 'apollos-church-api/src/utils/cursor';
+import { createCursor } from '../../../utils/cursor';
 import RestDataSource from '../data-source';
 import RequestBuilder from '../RequestBuilder';
 

@@ -2,10 +2,10 @@ import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
-import { testSchema as typeDefs, resolvers } from 'apollos-church-api/src/data';
-import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
-import { createGlobalId } from 'apollos-church-api/src/data/node/model';
-import { generateToken } from 'apollos-church-api/src/data/auth/token';
+import { getTestContext } from '../../../utils/testUtils';
+import { createGlobalId } from '../../node/model';
+import { generateToken } from '../../auth/token';
+import { testSchema as typeDefs, resolvers } from '../..';
 
 describe('Interactions', () => {
   let schema;

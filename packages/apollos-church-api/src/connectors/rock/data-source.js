@@ -3,7 +3,7 @@ import { RESTDataSource } from 'apollo-datasource-rest';
 import { mapKeys, mapValues, camelCase } from 'lodash';
 import { fetch } from 'apollo-server-env';
 
-import { createCursor, parseCursor } from 'apollos-church-api/src/utils/cursor';
+import { createCursor, parseCursor } from '../../utils/cursor';
 
 import { ROCK_API, ROCK_TOKEN } from './constants'; // eslint-disable-line import/named
 import RequestBuilder from './RequestBuilder';

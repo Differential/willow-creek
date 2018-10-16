@@ -5,8 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "if test \"$NOW_ENV\" = \"true\" ; then yarn start:now ; else yarn start:dev ; fi",
-    "start:dev": "nodemon ./index.js --exec babel-node",
-    "start:now": "babel-node ./index.js",
+    "start:dev": "nodemon ./src/index.js --exec babel-node",
+    "start:now": "babel-node ./src/index.js",
+    "start:prod": "NODE_ENV=production node ./lib/index.js",
+    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
     "test": "jest",
     "test:watch": "jest --maxWorkers=2 --watch",
     "lint": "eslint ./src --ext .js",
@@ -47,6 +49,8 @@
     "with-query": "1.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "7.0.0-beta.47",
+    "@babel/core": "7.0.0-beta.47",
     "babel-preset-apollos": "link:../babel-preset-apollos",
     "codecov": "3.0.2",
     "coveralls": "3.0.1",

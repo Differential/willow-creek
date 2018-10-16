@@ -1,24 +1,11 @@
-import dotenv from 'dotenv/config'; // eslint-disable-line
-import { ApolloServer } from 'apollo-server';
-import { resolvers, schema, testSchema } from './data';
+import server from './server';
 
-import getContext from './getContext';
-import getDataSources from './getDataSources';
+export { testSchema } from './server'; // eslint-disable-line import/prefer-default-export
 
-export { resolvers, schema, testSchema };
+// Use the port, if provided.
+const { PORT } = process.env;
+const options = PORT ? { port: PORT } : {};
 
-export default new ApolloServer({
-  typeDefs: schema,
-  resolvers,
-  dataSources: getDataSources,
-  context: getContext,
-  formatError: (error) => {
-    console.error(error.extensions.exception.stacktrace.join('\n'));
-    return error;
-  },
-  playground: {
-    settings: {
-      'editor.cursorShape': 'line',
-    },
-  },
+server.listen(options).then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
 });

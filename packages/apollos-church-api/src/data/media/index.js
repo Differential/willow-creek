@@ -1,5 +1,5 @@
 import { gql } from 'apollo-server';
-import { Constants } from 'apollos-church-api/src/connectors/rock';
+import { Constants } from '../../connectors/rock';
 
 export { default as model } from './model';
 

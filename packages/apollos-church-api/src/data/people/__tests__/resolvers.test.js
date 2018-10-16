@@ -2,14 +2,11 @@ import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
-import { createGlobalId } from 'apollos-church-api/src/data/node/model';
-import { getTestContext } from 'apollos-church-api/src/utils/testUtils';
-import {
-  generateToken,
-  registerToken,
-} from 'apollos-church-api/src/data/auth/token';
+import { generateToken, registerToken } from '../../auth/token';
 // we import the root-level schema and resolver so we test the entire integration:
-import { testSchema as typeDefs, resolvers } from 'apollos-church-api/src/data';
+import { testSchema as typeDefs, resolvers } from '../..';
+import { getTestContext } from '../../../utils/testUtils';
+import { createGlobalId } from '../../node/model';
 
 describe('Person', () => {
   let schema;

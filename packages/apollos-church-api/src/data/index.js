@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server';
 import { mapValues, values, merge, compact } from 'lodash';
 
-import RockConstants from 'apollos-church-api/src/connectors/rock/rock-constants';
+import RockConstants from '../connectors/rock/rock-constants';
 import * as Node from './node';
 import * as ContentChannel from './content-channels';
 import * as ContentItem from './content-items';
