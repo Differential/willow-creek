@@ -1,13 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the styled HOC allows a theme to supply overrides 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "green",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
-/>
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "green",
+        }
+      }
+    />
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the styled HOC passes style literal to the base component 1`] = `
@@ -21,13 +54,46 @@ exports[`the styled HOC passes style literal to the base component 1`] = `
 `;
 
 exports[`the styled HOC provides a theme 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#00676D",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
-/>
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#00676D",
+        }
+      }
+    />
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the styled HOC should accept a function, works with props 1`] = `

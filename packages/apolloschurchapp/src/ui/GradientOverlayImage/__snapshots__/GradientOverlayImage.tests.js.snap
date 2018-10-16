@@ -1,95 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the GradientOverlayImage component should render 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#A5A5A5",
-      "width": "100%",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  <Image
-    onLoad={[Function]}
-    source={
-      Array [
-        Object {
-          "cache": "force-cache",
-          "height": 400,
-          "uri": "https://picsum.photos/600/400/?random",
-          "width": 600,
-        },
-      ]
-    }
+  <View
+    onLayout={[Function]}
     style={
       Object {
-        "aspectRatio": 1.5,
-        "backgroundColor": "#A5A5A5",
-        "opacity": 1,
-        "resizeMode": "cover",
-        "width": "100%",
+        "flex": 1,
       }
     }
   />
-</View>
-`;
-
-exports[`the GradientOverlayImage component should render with an overlayColor 1`] = `
-<View
-  style={
-    Object {
-      "backgroundColor": "#A5A5A5",
-      "width": "100%",
-    }
-  }
->
-  <Image
-    onLoad={[Function]}
-    source={
-      Array [
-        Object {
-          "cache": "force-cache",
-          "height": 400,
-          "uri": "https://picsum.photos/600/400/?random",
-          "width": 600,
-        },
-      ]
-    }
-    style={
-      Object {
-        "aspectRatio": 1.5,
-        "backgroundColor": "#A5A5A5",
-        "opacity": 1,
-        "resizeMode": "cover",
-        "width": "100%",
-      }
-    }
-  />
-  <BVLinearGradient
-    colors={
-      Array [
-        16416882,
-        4294606962,
-      ]
-    }
-    endPoint={
-      Object {
-        "x": 0,
-        "y": 1,
-      }
-    }
-    locations={
-      Array [
-        0.3,
-        1,
-      ]
-    }
-    startPoint={
-      Object {
-        "x": 0,
-        "y": 0,
-      }
-    }
+  <View
     style={
       Object {
         "bottom": 0,
@@ -99,6 +31,140 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
         "top": 0,
       }
     }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#A5A5A5",
+          "width": "100%",
+        }
+      }
+    >
+      <Image
+        onLoad={[Function]}
+        source={
+          Array [
+            Object {
+              "cache": "force-cache",
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
+            },
+          ]
+        }
+        style={
+          Object {
+            "aspectRatio": 1.5,
+            "backgroundColor": "#A5A5A5",
+            "opacity": 1,
+            "resizeMode": "cover",
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`the GradientOverlayImage component should render with an overlayColor 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
   />
-</View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#A5A5A5",
+          "width": "100%",
+        }
+      }
+    >
+      <Image
+        onLoad={[Function]}
+        source={
+          Array [
+            Object {
+              "cache": "force-cache",
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
+            },
+          ]
+        }
+        style={
+          Object {
+            "aspectRatio": 1.5,
+            "backgroundColor": "#A5A5A5",
+            "opacity": 1,
+            "resizeMode": "cover",
+            "width": "100%",
+          }
+        }
+      />
+      <BVLinearGradient
+        colors={
+          Array [
+            16416882,
+            4294606962,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 0,
+            "y": 1,
+          }
+        }
+        locations={
+          Array [
+            0.3,
+            1,
+          ]
+        }
+        startPoint={
+          Object {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+</RCTSafeAreaView>
 `;

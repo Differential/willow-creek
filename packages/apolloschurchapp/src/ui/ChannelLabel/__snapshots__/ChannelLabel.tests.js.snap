@@ -1,260 +1,425 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the ChannelLabel component should render 1`] = `
-<View
-  flexed={false}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignItems": "center",
-      "flex": null,
-      "flexDirection": "row",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
         "flex": 1,
-        "paddingRight": 8,
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "#505050",
-          "fontFamily": "InterUI-Bold",
-          "fontSize": 12,
-          "lineHeight": 17.28,
-        }
-      }
-    >
-      Default
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`the ChannelLabel component should render a skeleton view 1`] = `
-<View
-  flexed={false}
-  style={
-    Object {
-      "alignItems": "center",
-      "flex": null,
-      "flexDirection": "row",
-    }
-  }
->
-  <View
-    style={
-      Object {
-        "flex": 1,
-        "paddingRight": 8,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#A5A5A5",
-          "borderRadius": 16,
-          "height": 12,
-          "marginVertical": 2.6400000000000006,
-          "width": "50%",
-        }
-      }
-    />
-  </View>
-</View>
-`;
-
-exports[`the ChannelLabel component should render a skeleton view that supports an icon 1`] = `
-<View
-  flexed={false}
-  style={
-    Object {
-      "alignItems": "center",
-      "flex": null,
-      "flexDirection": "row",
-    }
-  }
->
-  <View
-    style={
-      Object {
-        "backgroundColor": "#A5A5A5",
-        "borderRadius": 16,
-        "height": 19.2,
-        "width": 19.2,
       }
     }
   />
   <View
     style={
       Object {
-        "flex": 1,
-        "paddingHorizontal": 8,
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
-    withIcon="like"
   >
     <View
+      flexed={false}
       style={
         Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#A5A5A5",
-          "borderRadius": 16,
-          "height": 12,
-          "marginVertical": 2.6400000000000006,
-          "width": "50%",
+          "alignItems": "center",
+          "flex": null,
+          "flexDirection": "row",
         }
       }
-    />
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#505050",
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
+            }
+          }
+        >
+          Default
+        </Text>
+      </View>
+    </View>
   </View>
-</View>
+</RCTSafeAreaView>
+`;
+
+exports[`the ChannelLabel component should render a skeleton view 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      flexed={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": null,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#A5A5A5",
+              "borderRadius": 16,
+              "height": 12,
+              "marginVertical": 2.6400000000000006,
+              "width": "50%",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`the ChannelLabel component should render a skeleton view that supports an icon 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      flexed={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": null,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#A5A5A5",
+            "borderRadius": 16,
+            "height": 19.2,
+            "width": 19.2,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingHorizontal": 8,
+          }
+        }
+        withIcon="like"
+      >
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#A5A5A5",
+              "borderRadius": 16,
+              "height": 12,
+              "marginVertical": 2.6400000000000006,
+              "width": "50%",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the ChannelLabel component should render flexed 1`] = `
-<View
-  flexed={true}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignItems": "center",
-      "flex": 1,
-      "flexDirection": "row",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
         "flex": 1,
-        "paddingRight": 8,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
-    <Text
+    <View
+      flexed={true}
       style={
         Object {
-          "color": "#505050",
-          "fontFamily": "InterUI-Bold",
-          "fontSize": 12,
-          "lineHeight": 17.28,
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
         }
       }
     >
-      Default
-    </Text>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#505050",
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
+            }
+          }
+        >
+          Default
+        </Text>
+      </View>
+    </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`the ChannelLabel component should render with an icon 1`] = `
-<View
-  flexed={false}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignItems": "center",
-      "flex": null,
-      "flexDirection": "row",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  <RNSVGSvgView
-    align="xMidYMid"
-    bbHeight="19.2"
-    bbWidth="19.2"
-    meetOrSlice={0}
-    minX={0}
-    minY={0}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        undefined,
-        false,
-        Object {
-          "flex": 0,
-          "height": 19.2,
-          "width": 19.2,
-        },
-      ]
-    }
-    vbHeight={24}
-    vbWidth={24}
-  >
-    <RNSVGPath
-      d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-      fill={
-        Array [
-          0,
-          0.3137254901960784,
-          0.3137254901960784,
-          0.3137254901960784,
-          1,
-        ]
-      }
-      fillOpacity={1}
-      fillRule={1}
-      matrix={
-        Array [
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-        ]
-      }
-      opacity={1}
-      originX={0}
-      originY={0}
-      propList={
-        Array [
-          "fill",
-        ]
-      }
-      rotation={0}
-      scaleX={1}
-      scaleY={1}
-      skewX={0}
-      skewY={0}
-      stroke={null}
-      strokeDasharray={null}
-      strokeDashoffset={null}
-      strokeLinecap={0}
-      strokeLinejoin={0}
-      strokeMiterlimit={4}
-      strokeOpacity={1}
-      strokeWidth="1"
-      x={0}
-      y={0}
-    />
-  </RNSVGSvgView>
   <View
+    onLayout={[Function]}
     style={
       Object {
         "flex": 1,
-        "paddingHorizontal": 8,
       }
     }
-    withIcon="like"
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
   >
-    <Text
+    <View
+      flexed={false}
       style={
         Object {
-          "color": "#505050",
-          "fontFamily": "InterUI-Bold",
-          "fontSize": 12,
-          "lineHeight": 17.28,
+          "alignItems": "center",
+          "flex": null,
+          "flexDirection": "row",
         }
       }
     >
-      Default
-    </Text>
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="19.2"
+        bbWidth="19.2"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+            false,
+            Object {
+              "flex": 0,
+              "height": 19.2,
+              "width": 19.2,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+      >
+        <RNSVGPath
+          d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+          fill={
+            Array [
+              0,
+              0.3137254901960784,
+              0.3137254901960784,
+              0.3137254901960784,
+              1,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+      </RNSVGSvgView>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingHorizontal": 8,
+          }
+        }
+        withIcon="like"
+      >
+        <Text
+          style={
+            Object {
+              "color": "#505050",
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
+            }
+          }
+        >
+          Default
+        </Text>
+      </View>
+    </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;

@@ -1,29 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the ScriptureList component renders a scripture List 1`] = `
-<Text
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "color": "#00676D",
-      "fontFamily": "InterUI-Bold",
-      "fontSize": 16,
-      "lineHeight": 23.04,
-      "paddingBottom": 24,
-      "textAlign": "center",
-      "textDecorationLine": "underline",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  <Text
-    onPress={[Function]}
-    padded={true}
+  <View
+    onLayout={[Function]}
     style={
       Object {
-        "color": "#17B582",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
-    1 Corinthians 15:57, Exodus 17:8-15
-  </Text>
-</Text>
+    <Text
+      style={
+        Object {
+          "color": "#00676D",
+          "fontFamily": "InterUI-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
+          "paddingBottom": 24,
+          "textAlign": "center",
+          "textDecorationLine": "underline",
+        }
+      }
+    >
+      <Text
+        onPress={[Function]}
+        padded={true}
+        style={
+          Object {
+            "color": "#17B582",
+          }
+        }
+      >
+        1 Corinthians 15:57, Exodus 17:8-15
+      </Text>
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;

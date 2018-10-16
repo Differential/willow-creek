@@ -1,123 +1,354 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the UIText component should accept additional props 1`] = `
-<Text
-  accessible={false}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "color": "#303030",
-      "fontFamily": "System",
-      "fontSize": 14,
-      "fontStyle": null,
-      "fontWeight": null,
-      "lineHeight": 20.16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  "You are the only Bible some unbelievers will ever read." – John MacArthur
-</Text>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      accessible={false}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "System",
+          "fontSize": 14,
+          "fontStyle": null,
+          "fontWeight": null,
+          "lineHeight": 20.16,
+        }
+      }
+    >
+      "You are the only Bible some unbelievers will ever read." – John MacArthur
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the UIText component should accept and render passed in styles 1`] = `
-<Text
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "color": "salmon",
-      "fontFamily": "System",
-      "fontSize": 14,
-      "fontStyle": null,
-      "fontWeight": null,
-      "lineHeight": 20.16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  Salmon text
-</Text>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "salmon",
+          "fontFamily": "System",
+          "fontSize": 14,
+          "fontStyle": null,
+          "fontWeight": null,
+          "lineHeight": 20.16,
+        }
+      }
+    >
+      Salmon text
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the UIText component should render a loading state 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignSelf": "stretch",
-      "backgroundColor": "#A5A5A5",
-      "borderRadius": 16,
-      "height": 14,
-      "marginVertical": 3.08,
-      "width": "40%",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
-/>
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#A5A5A5",
+          "borderRadius": 16,
+          "height": 14,
+          "marginVertical": 3.08,
+          "width": "40%",
+        }
+      }
+    />
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the UIText component should render as bold 1`] = `
-<Text
-  bold={true}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "color": "#303030",
-      "fontFamily": "System",
-      "fontSize": 14,
-      "fontStyle": null,
-      "fontWeight": "700",
-      "lineHeight": 20.16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  Bold UIText text
-</Text>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      bold={true}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "System",
+          "fontSize": 14,
+          "fontStyle": null,
+          "fontWeight": "700",
+          "lineHeight": 20.16,
+        }
+      }
+    >
+      Bold UIText text
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the UIText component should render as bold italic 1`] = `
-<Text
-  bold={true}
-  italic={true}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "color": "#303030",
-      "fontFamily": "System",
-      "fontSize": 14,
-      "fontStyle": "italic",
-      "fontWeight": "700",
-      "lineHeight": 20.16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  Bold italic UIText text
-</Text>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      bold={true}
+      italic={true}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "System",
+          "fontSize": 14,
+          "fontStyle": "italic",
+          "fontWeight": "700",
+          "lineHeight": 20.16,
+        }
+      }
+    >
+      Bold italic UIText text
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the UIText component should render as italic 1`] = `
-<Text
-  italic={true}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "color": "#303030",
-      "fontFamily": "System",
-      "fontSize": 14,
-      "fontStyle": "italic",
-      "fontWeight": null,
-      "lineHeight": 20.16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  Italic UIText text
-</Text>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      italic={true}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "System",
+          "fontSize": 14,
+          "fontStyle": "italic",
+          "fontWeight": null,
+          "lineHeight": 20.16,
+        }
+      }
+    >
+      Italic UIText text
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the UIText component should render correctly 1`] = `
-<Text
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "color": "#303030",
-      "fontFamily": "System",
-      "fontSize": 14,
-      "fontStyle": null,
-      "fontWeight": null,
-      "lineHeight": 20.16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  Default UIText text
-</Text>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "System",
+          "fontSize": 14,
+          "fontStyle": null,
+          "fontWeight": null,
+          "lineHeight": 20.16,
+        }
+      }
+    >
+      Default UIText text
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;

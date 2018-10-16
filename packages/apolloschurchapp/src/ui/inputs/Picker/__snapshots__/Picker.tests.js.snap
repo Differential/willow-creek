@@ -1,1239 +1,1371 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The Picker Input component focuses and blurs 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "marginVertical": 16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    onLayout={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
       style={
         Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
+          "marginVertical": 16,
         }
       }
     >
       <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "flex": 1,
-            "opacity": 0,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Bold",
-              "fontSize": 14,
-              "height": 38,
-              "lineHeight": 17.28,
-              "paddingVertical": 0,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#A5A5A5",
-                "fontFamily": "InterUI-Bold",
-                "fontSize": 12,
-                "lineHeight": 17.28,
-              }
-            }
-          />
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
+            "opacity": 1,
           }
         }
       >
         <View
           style={
             Object {
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Bold",
+                  "fontSize": 14,
+                  "height": 38,
+                  "lineHeight": 17.28,
+                  "paddingVertical": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#A5A5A5",
+                    "fontFamily": "InterUI-Bold",
+                    "fontSize": 12,
+                    "lineHeight": 17.28,
+                  }
+                }
+              />
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "transform": Array [
+                    Object {
+                      "rotate": "0deg",
+                    },
+                  ],
+                }
+              }
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight="18"
+                bbWidth="18"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "flex": 0,
+                      "height": 18,
+                      "width": 18,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+              >
+                <RNSVGPath
+                  d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                  fill={
+                    Array [
+                      0,
+                      0.18823529411764706,
+                      0.18823529411764706,
+                      0.18823529411764706,
+                      1,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={
+                    Array [
+                      "fill",
+                    ]
+                  }
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth="1"
+                  x={0}
+                  y={0}
+                />
+              </RNSVGSvgView>
+            </View>
+          </View>
+        </View>
+      </View>
+      <Modal
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
+              "borderTopWidth": 0.5,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "flex-end",
+                "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
+                "padding": 8,
+              }
+            }
+          >
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#17B582",
+                }
+              }
+            >
+              Done
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "borderTopColor": "#A5A5A5",
+                "borderTopWidth": 0.5,
+              }
+            }
+          >
+            <RCTPicker
+              items={Array []}
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </Modal>
+      <View
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "bottom": 0,
+            "justifyContent": "center",
+            "opacity": 1,
+            "position": "absolute",
+            "top": 0,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#505050",
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
+              "paddingVertical": 4,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#A5A5A5",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
               "transform": Array [
                 Object {
-                  "rotate": "0deg",
+                  "scaleX": 0.0001,
                 },
               ],
             }
           }
         >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight="18"
-            bbWidth="18"
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
+          <View
+            hasError={false}
             style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                undefined,
-                false,
-                Object {
-                  "flex": 0,
-                  "height": 18,
-                  "width": 18,
-                },
-              ]
+              Object {
+                "backgroundColor": "#00676D",
+                "bottom": 0,
+                "height": 0.5,
+              }
             }
-            vbHeight={24}
-            vbWidth={24}
-          >
-            <RNSVGPath
-              d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-              fill={
-                Array [
-                  0,
-                  0.18823529411764706,
-                  0.18823529411764706,
-                  0.18823529411764706,
-                  1,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth="1"
-              x={0}
-              y={0}
-            />
-          </RNSVGSvgView>
+          />
         </View>
       </View>
     </View>
   </View>
-  <Modal
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
-          "borderTopWidth": 0.5,
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "flex-end",
-            "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
-            "padding": 8,
-          }
-        }
-      >
-        <Text
-          onPress={[Function]}
-          style={
-            Object {
-              "color": "#17B582",
-            }
-          }
-        >
-          Done
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "borderTopColor": "#A5A5A5",
-            "borderTopWidth": 0.5,
-          }
-        }
-      >
-        <RCTPicker
-          items={Array []}
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          selectedIndex={0}
-          style={
-            Array [
-              Object {
-                "height": 216,
-              },
-              undefined,
-            ]
-          }
-        />
-      </View>
-    </View>
-  </Modal>
-  <View
-    onLayout={[Function]}
-    pointerEvents="none"
-    style={
-      Object {
-        "bottom": 0,
-        "justifyContent": "center",
-        "opacity": 1,
-        "position": "absolute",
-        "top": 0,
-        "transform": Array [
-          Object {
-            "scale": 1,
-          },
-          Object {
-            "translateX": 0,
-          },
-          Object {
-            "translateY": 0,
-          },
-        ],
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#505050",
-          "fontFamily": "InterUI-Bold",
-          "fontSize": 12,
-          "lineHeight": 17.28,
-          "paddingVertical": 4,
-        }
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "right": 0,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#A5A5A5",
-          "bottom": -0.5,
-          "height": 0.5,
-        }
-      }
-    />
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-          "transform": Array [
-            Object {
-              "scaleX": 0.0001,
-            },
-          ],
-        }
-      }
-    >
-      <View
-        hasError={false}
-        style={
-          Object {
-            "backgroundColor": "#00676D",
-            "bottom": 0,
-            "height": 0.5,
-          }
-        }
-      />
-    </View>
-  </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`The Picker Input component focuses and blurs 2`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "marginVertical": 16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    onLayout={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
       style={
         Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
+          "marginVertical": 16,
         }
       }
     >
       <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "flex": 1,
-            "opacity": 0,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Bold",
-              "fontSize": 14,
-              "height": 38,
-              "lineHeight": 17.28,
-              "paddingVertical": 0,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#A5A5A5",
-                "fontFamily": "InterUI-Bold",
-                "fontSize": 12,
-                "lineHeight": 17.28,
-              }
-            }
-          />
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
+            "opacity": 1,
           }
         }
       >
         <View
           style={
             Object {
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Bold",
+                  "fontSize": 14,
+                  "height": 38,
+                  "lineHeight": 17.28,
+                  "paddingVertical": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#A5A5A5",
+                    "fontFamily": "InterUI-Bold",
+                    "fontSize": 12,
+                    "lineHeight": 17.28,
+                  }
+                }
+              />
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "transform": Array [
+                    Object {
+                      "rotate": "0deg",
+                    },
+                  ],
+                }
+              }
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight="18"
+                bbWidth="18"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "flex": 0,
+                      "height": 18,
+                      "width": 18,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+              >
+                <RNSVGPath
+                  d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                  fill={
+                    Array [
+                      0,
+                      0.18823529411764706,
+                      0.18823529411764706,
+                      0.18823529411764706,
+                      1,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={
+                    Array [
+                      "fill",
+                    ]
+                  }
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth="1"
+                  x={0}
+                  y={0}
+                />
+              </RNSVGSvgView>
+            </View>
+          </View>
+        </View>
+      </View>
+      <Modal
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={true}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
+              "borderTopWidth": 0.5,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "flex-end",
+                "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
+                "padding": 8,
+              }
+            }
+          >
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#17B582",
+                }
+              }
+            >
+              Done
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "borderTopColor": "#A5A5A5",
+                "borderTopWidth": 0.5,
+              }
+            }
+          >
+            <RCTPicker
+              items={Array []}
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </Modal>
+      <View
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "bottom": 0,
+            "justifyContent": "center",
+            "opacity": 1,
+            "position": "absolute",
+            "top": 0,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#505050",
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
+              "paddingVertical": 4,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#A5A5A5",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
               "transform": Array [
                 Object {
-                  "rotate": "0deg",
+                  "scaleX": 0.0001,
                 },
               ],
             }
           }
         >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight="18"
-            bbWidth="18"
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
+          <View
+            hasError={false}
             style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                undefined,
-                false,
-                Object {
-                  "flex": 0,
-                  "height": 18,
-                  "width": 18,
-                },
-              ]
+              Object {
+                "backgroundColor": "#00676D",
+                "bottom": 0,
+                "height": 0.5,
+              }
             }
-            vbHeight={24}
-            vbWidth={24}
-          >
-            <RNSVGPath
-              d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-              fill={
-                Array [
-                  0,
-                  0.18823529411764706,
-                  0.18823529411764706,
-                  0.18823529411764706,
-                  1,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth="1"
-              x={0}
-              y={0}
-            />
-          </RNSVGSvgView>
+          />
         </View>
       </View>
     </View>
   </View>
-  <Modal
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={true}
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
-          "borderTopWidth": 0.5,
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "flex-end",
-            "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
-            "padding": 8,
-          }
-        }
-      >
-        <Text
-          onPress={[Function]}
-          style={
-            Object {
-              "color": "#17B582",
-            }
-          }
-        >
-          Done
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "borderTopColor": "#A5A5A5",
-            "borderTopWidth": 0.5,
-          }
-        }
-      >
-        <RCTPicker
-          items={Array []}
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          selectedIndex={0}
-          style={
-            Array [
-              Object {
-                "height": 216,
-              },
-              undefined,
-            ]
-          }
-        />
-      </View>
-    </View>
-  </Modal>
-  <View
-    onLayout={[Function]}
-    pointerEvents="none"
-    style={
-      Object {
-        "bottom": 0,
-        "justifyContent": "center",
-        "opacity": 1,
-        "position": "absolute",
-        "top": 0,
-        "transform": Array [
-          Object {
-            "scale": 1,
-          },
-          Object {
-            "translateX": 0,
-          },
-          Object {
-            "translateY": 0,
-          },
-        ],
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#505050",
-          "fontFamily": "InterUI-Bold",
-          "fontSize": 12,
-          "lineHeight": 17.28,
-          "paddingVertical": 4,
-        }
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "right": 0,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#A5A5A5",
-          "bottom": -0.5,
-          "height": 0.5,
-        }
-      }
-    />
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-          "transform": Array [
-            Object {
-              "scaleX": 0.0001,
-            },
-          ],
-        }
-      }
-    >
-      <View
-        hasError={false}
-        style={
-          Object {
-            "backgroundColor": "#00676D",
-            "bottom": 0,
-            "height": 0.5,
-          }
-        }
-      />
-    </View>
-  </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`The Picker Input component focuses and blurs 3`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "marginVertical": 16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    onLayout={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
       style={
         Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
+          "marginVertical": 16,
         }
       }
     >
       <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "flex": 1,
-            "opacity": 0,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Bold",
+                  "fontSize": 14,
+                  "height": 38,
+                  "lineHeight": 17.28,
+                  "paddingVertical": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#A5A5A5",
+                    "fontFamily": "InterUI-Bold",
+                    "fontSize": 12,
+                    "lineHeight": 17.28,
+                  }
+                }
+              />
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "transform": Array [
+                    Object {
+                      "rotate": "0deg",
+                    },
+                  ],
+                }
+              }
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight="18"
+                bbWidth="18"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "flex": 0,
+                      "height": 18,
+                      "width": 18,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+              >
+                <RNSVGPath
+                  d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                  fill={
+                    Array [
+                      0,
+                      0.18823529411764706,
+                      0.18823529411764706,
+                      0.18823529411764706,
+                      1,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={
+                    Array [
+                      "fill",
+                    ]
+                  }
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth="1"
+                  x={0}
+                  y={0}
+                />
+              </RNSVGSvgView>
+            </View>
+          </View>
+        </View>
+      </View>
+      <Modal
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
+              "borderTopWidth": 0.5,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "flex-end",
+                "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
+                "padding": 8,
+              }
+            }
+          >
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#17B582",
+                }
+              }
+            >
+              Done
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "borderTopColor": "#A5A5A5",
+                "borderTopWidth": 0.5,
+              }
+            }
+          >
+            <RCTPicker
+              items={Array []}
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </Modal>
+      <View
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "bottom": 0,
+            "justifyContent": "center",
+            "opacity": 1,
+            "position": "absolute",
+            "top": 0,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
           }
         }
       >
         <Text
           style={
             Object {
-              "color": "#303030",
+              "backgroundColor": "transparent",
+              "color": "#505050",
               "fontFamily": "InterUI-Bold",
-              "fontSize": 14,
-              "height": 38,
+              "fontSize": 12,
               "lineHeight": 17.28,
-              "paddingVertical": 0,
+              "paddingVertical": 4,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#A5A5A5",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 0.0001,
+                },
+              ],
             }
           }
         >
-          <Text
+          <View
+            hasError={false}
             style={
               Object {
-                "color": "#A5A5A5",
-                "fontFamily": "InterUI-Bold",
-                "fontSize": 12,
-                "lineHeight": 17.28,
+                "backgroundColor": "#00676D",
+                "bottom": 0,
+                "height": 0.5,
               }
             }
           />
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "transform": Array [
-                Object {
-                  "rotate": "0deg",
-                },
-              ],
-            }
-          }
-        >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight="18"
-            bbWidth="18"
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                undefined,
-                false,
-                Object {
-                  "flex": 0,
-                  "height": 18,
-                  "width": 18,
-                },
-              ]
-            }
-            vbHeight={24}
-            vbWidth={24}
-          >
-            <RNSVGPath
-              d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-              fill={
-                Array [
-                  0,
-                  0.18823529411764706,
-                  0.18823529411764706,
-                  0.18823529411764706,
-                  1,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth="1"
-              x={0}
-              y={0}
-            />
-          </RNSVGSvgView>
         </View>
       </View>
     </View>
   </View>
-  <Modal
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
-          "borderTopWidth": 0.5,
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "flex-end",
-            "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
-            "padding": 8,
-          }
-        }
-      >
-        <Text
-          onPress={[Function]}
-          style={
-            Object {
-              "color": "#17B582",
-            }
-          }
-        >
-          Done
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "borderTopColor": "#A5A5A5",
-            "borderTopWidth": 0.5,
-          }
-        }
-      >
-        <RCTPicker
-          items={Array []}
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          selectedIndex={0}
-          style={
-            Array [
-              Object {
-                "height": 216,
-              },
-              undefined,
-            ]
-          }
-        />
-      </View>
-    </View>
-  </Modal>
-  <View
-    onLayout={[Function]}
-    pointerEvents="none"
-    style={
-      Object {
-        "bottom": 0,
-        "justifyContent": "center",
-        "opacity": 1,
-        "position": "absolute",
-        "top": 0,
-        "transform": Array [
-          Object {
-            "scale": 1,
-          },
-          Object {
-            "translateX": 0,
-          },
-          Object {
-            "translateY": 0,
-          },
-        ],
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#505050",
-          "fontFamily": "InterUI-Bold",
-          "fontSize": 12,
-          "lineHeight": 17.28,
-          "paddingVertical": 4,
-        }
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "right": 0,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#A5A5A5",
-          "bottom": -0.5,
-          "height": 0.5,
-        }
-      }
-    />
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-          "transform": Array [
-            Object {
-              "scaleX": 0.0001,
-            },
-          ],
-        }
-      }
-    >
-      <View
-        hasError={false}
-        style={
-          Object {
-            "backgroundColor": "#00676D",
-            "bottom": 0,
-            "height": 0.5,
-          }
-        }
-      />
-    </View>
-  </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`The Picker Input component should render correctly 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "marginVertical": 16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    onLayout={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
       style={
         Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
+          "marginVertical": 16,
         }
       }
     >
       <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "flex": 1,
-            "opacity": 0,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Bold",
-              "fontSize": 14,
-              "height": 38,
-              "lineHeight": 17.28,
-              "paddingVertical": 0,
-            }
-          }
-        >
-          Display Value
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
+            "opacity": 1,
           }
         }
       >
         <View
           style={
             Object {
-              "transform": Array [
-                Object {
-                  "rotate": "0deg",
-                },
-              ],
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
         >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight="18"
-            bbWidth="18"
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
+          <View
             style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                undefined,
-                false,
-                Object {
-                  "flex": 0,
-                  "height": 18,
-                  "width": 18,
-                },
-              ]
+              Object {
+                "flex": 1,
+                "opacity": 0,
+              }
             }
-            vbHeight={24}
-            vbWidth={24}
           >
-            <RNSVGPath
-              d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-              fill={
-                Array [
-                  0,
-                  0.18823529411764706,
-                  0.18823529411764706,
-                  0.18823529411764706,
-                  1,
-                ]
+            <Text
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Bold",
+                  "fontSize": 14,
+                  "height": 38,
+                  "lineHeight": 17.28,
+                  "paddingVertical": 0,
+                }
               }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
+            >
+              Display Value
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
               }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "transform": Array [
+                    Object {
+                      "rotate": "0deg",
+                    },
+                  ],
+                }
               }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth="1"
-              x={0}
-              y={0}
-            />
-          </RNSVGSvgView>
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight="18"
+                bbWidth="18"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "flex": 0,
+                      "height": 18,
+                      "width": 18,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+              >
+                <RNSVGPath
+                  d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                  fill={
+                    Array [
+                      0,
+                      0.18823529411764706,
+                      0.18823529411764706,
+                      0.18823529411764706,
+                      1,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={
+                    Array [
+                      "fill",
+                    ]
+                  }
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth="1"
+                  x={0}
+                  y={0}
+                />
+              </RNSVGSvgView>
+            </View>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
-  <Modal
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
-          "borderTopWidth": 0.5,
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-        }
-      }
-    >
+      <Modal
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderTopColor": "rgba(165, 165, 165, 0.30000000000000004)",
+              "borderTopWidth": 0.5,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "flex-end",
+                "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
+                "padding": 8,
+              }
+            }
+          >
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#17B582",
+                }
+              }
+            >
+              Done
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "borderTopColor": "#A5A5A5",
+                "borderTopWidth": 0.5,
+              }
+            }
+          >
+            <RCTPicker
+              items={
+                Array [
+                  Object {
+                    "label": "Java",
+                    "textColor": undefined,
+                    "value": "java",
+                  },
+                  Object {
+                    "label": "JavaScript",
+                    "textColor": undefined,
+                    "value": "js",
+                  },
+                ]
+              }
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </Modal>
       <View
+        onLayout={[Function]}
+        pointerEvents="none"
         style={
           Object {
-            "alignItems": "flex-end",
-            "backgroundColor": "rgba(165, 165, 165, 0.09999999999999998)",
-            "padding": 8,
+            "bottom": 0,
+            "justifyContent": "center",
+            "opacity": 1,
+            "position": "absolute",
+            "top": 0,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
           }
         }
       >
         <Text
-          onPress={[Function]}
           style={
             Object {
-              "color": "#17B582",
+              "backgroundColor": "transparent",
+              "color": "#505050",
+              "fontFamily": "InterUI-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
+              "paddingVertical": 4,
             }
           }
         >
-          Done
+          Languages
         </Text>
       </View>
       <View
         style={
           Object {
-            "borderTopColor": "#A5A5A5",
-            "borderTopWidth": 0.5,
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
           }
         }
       >
-        <RCTPicker
-          items={
-            Array [
-              Object {
-                "label": "Java",
-                "textColor": undefined,
-                "value": "java",
-              },
-              Object {
-                "label": "JavaScript",
-                "textColor": undefined,
-                "value": "js",
-              },
-            ]
-          }
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          selectedIndex={0}
+        <View
           style={
-            Array [
-              Object {
-                "height": 216,
-              },
-              undefined,
-            ]
+            Object {
+              "backgroundColor": "#A5A5A5",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
           }
         />
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 0.0001,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#00676D",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
       </View>
     </View>
-  </Modal>
-  <View
-    onLayout={[Function]}
-    pointerEvents="none"
-    style={
-      Object {
-        "bottom": 0,
-        "justifyContent": "center",
-        "opacity": 1,
-        "position": "absolute",
-        "top": 0,
-        "transform": Array [
-          Object {
-            "scale": 1,
-          },
-          Object {
-            "translateX": 0,
-          },
-          Object {
-            "translateY": 0,
-          },
-        ],
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#505050",
-          "fontFamily": "InterUI-Bold",
-          "fontSize": 12,
-          "lineHeight": 17.28,
-          "paddingVertical": 4,
-        }
-      }
-    >
-      Languages
-    </Text>
   </View>
-  <View
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "right": 0,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#A5A5A5",
-          "bottom": -0.5,
-          "height": 0.5,
-        }
-      }
-    />
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-          "transform": Array [
-            Object {
-              "scaleX": 0.0001,
-            },
-          ],
-        }
-      }
-    >
-      <View
-        hasError={false}
-        style={
-          Object {
-            "backgroundColor": "#00676D",
-            "bottom": 0,
-            "height": 0.5,
-          }
-        }
-      />
-    </View>
-  </View>
-</View>
+</RCTSafeAreaView>
 `;

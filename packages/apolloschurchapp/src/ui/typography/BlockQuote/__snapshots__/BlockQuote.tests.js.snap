@@ -1,91 +1,190 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the BlockQuote component should render a loading state 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignSelf": "stretch",
-      "borderBottomWidth": 0.5,
-      "borderColor": "#A5A5A5",
-      "borderTopWidth": 0.5,
-      "marginVertical": 46.08,
-      "paddingHorizontal": 16,
-      "paddingVertical": 34.56,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "alignSelf": "stretch",
-        "backgroundColor": "#A5A5A5",
-        "borderRadius": 16,
-        "height": 16,
-        "marginVertical": 5,
-        "width": "100%",
+        "flex": 1,
       }
     }
   />
-</View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "borderBottomWidth": 0.5,
+          "borderColor": "#A5A5A5",
+          "borderTopWidth": 0.5,
+          "marginVertical": 46.08,
+          "paddingHorizontal": 16,
+          "paddingVertical": 34.56,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#A5A5A5",
+            "borderRadius": 16,
+            "height": 16,
+            "marginVertical": 5,
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the BlockQuote component should render a string 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignSelf": "stretch",
-      "borderBottomWidth": 0.5,
-      "borderColor": "#A5A5A5",
-      "borderTopWidth": 0.5,
-      "marginVertical": 46.08,
-      "paddingHorizontal": 16,
-      "paddingVertical": 34.56,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  <Text
-    bold={false}
-    italic={false}
+  <View
+    onLayout={[Function]}
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "InterUI-Italic",
-        "fontSize": 16,
-        "lineHeight": 26,
-        "textAlign": "center",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
-    "You are the only Bible some unbelievers will ever read." – John MacArthur
-  </Text>
-</View>
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "borderBottomWidth": 0.5,
+          "borderColor": "#A5A5A5",
+          "borderTopWidth": 0.5,
+          "marginVertical": 46.08,
+          "paddingHorizontal": 16,
+          "paddingVertical": 34.56,
+        }
+      }
+    >
+      <Text
+        bold={false}
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "InterUI-Italic",
+            "fontSize": 16,
+            "lineHeight": 26,
+            "textAlign": "center",
+          }
+        }
+      >
+        "You are the only Bible some unbelievers will ever read." – John MacArthur
+      </Text>
+    </View>
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the BlockQuote component should render child components 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignSelf": "stretch",
-      "borderBottomWidth": 0.5,
-      "borderColor": "#A5A5A5",
-      "borderTopWidth": 0.5,
-      "marginVertical": 46.08,
-      "paddingHorizontal": 16,
-      "paddingVertical": 34.56,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  <Text
+  <View
+    onLayout={[Function]}
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "InterUI-Medium",
-        "fontSize": 14,
-        "lineHeight": 20.16,
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
-    "You are the only Bible some unbelievers will ever read." – John MacArthur
-  </Text>
-</View>
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "borderBottomWidth": 0.5,
+          "borderColor": "#A5A5A5",
+          "borderTopWidth": 0.5,
+          "marginVertical": 46.08,
+          "paddingHorizontal": 16,
+          "paddingVertical": 34.56,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "InterUI-Medium",
+            "fontSize": 14,
+            "lineHeight": 20.16,
+          }
+        }
+      >
+        "You are the only Bible some unbelievers will ever read." – John MacArthur
+      </Text>
+    </View>
+  </View>
+</RCTSafeAreaView>
 `;

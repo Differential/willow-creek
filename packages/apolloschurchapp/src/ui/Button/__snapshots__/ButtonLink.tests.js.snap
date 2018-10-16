@@ -1,40 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The Button component should render 1`] = `
-<Text
-  onPress={[Function]}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "color": "#17B582",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
-  Boom
-</Text>
-`;
-
-exports[`The Button component should render inherit typographic styles 1`] = `
-<Text
-  bold={false}
-  italic={false}
-  style={
-    Object {
-      "color": "#303030",
-      "fontFamily": "InterUI-Regular",
-      "fontSize": 16,
-      "lineHeight": 26,
-    }
-  }
->
-  <Text
-    onPress={[Function]}
+  <View
+    onLayout={[Function]}
     style={
       Object {
-        "color": "#17B582",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
-    Boom
-  </Text>
-</Text>
+    <Text
+      onPress={[Function]}
+      style={
+        Object {
+          "color": "#17B582",
+        }
+      }
+    >
+      Boom
+    </Text>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`The Button component should render inherit typographic styles 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      bold={false}
+      italic={false}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "InterUI-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
+        }
+      }
+    >
+      <Text
+        onPress={[Function]}
+        style={
+          Object {
+            "color": "#17B582",
+          }
+        }
+      >
+        Boom
+      </Text>
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;

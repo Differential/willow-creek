@@ -1,196 +1,295 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the Card component should render 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginHorizontal": 16,
-      "marginVertical": 12,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
       style={
         Object {
-          "paddingHorizontal": 16,
-          "paddingVertical": 12,
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginHorizontal": 16,
+          "marginVertical": 12,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
         }
       }
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Bold",
-            "fontSize": 16,
-            "lineHeight": 23.04,
-            "textAlign": "center",
+            "borderRadius": 16,
+            "overflow": "hidden",
           }
         }
       >
-        Boom!
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#505050",
-            "fontFamily": "InterUI-Bold",
-            "fontSize": 12,
-            "lineHeight": 17.28,
-            "textAlign": "center",
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 16,
+              "paddingVertical": 12,
+            }
           }
-        }
-      >
-        What?
-      </Text>
+        >
+          <Text
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 16,
+                "lineHeight": 23.04,
+                "textAlign": "center",
+              }
+            }
+          >
+            Boom!
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
+                "textAlign": "center",
+              }
+            }
+          >
+            What?
+          </Text>
+        </View>
+      </View>
     </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`the Card component should render with an error inside an object 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginHorizontal": 16,
-      "marginVertical": 12,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
       style={
         Object {
-          "paddingHorizontal": 16,
-          "paddingVertical": 12,
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginHorizontal": 16,
+          "marginVertical": 12,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
         }
       }
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Bold",
-            "fontSize": 16,
-            "lineHeight": 23.04,
-            "textAlign": "center",
+            "borderRadius": 16,
+            "overflow": "hidden",
           }
         }
       >
-        Uh oh!
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#505050",
-            "fontFamily": "InterUI-Bold",
-            "fontSize": 12,
-            "lineHeight": 17.28,
-            "textAlign": "center",
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 16,
+              "paddingVertical": 12,
+            }
           }
-        }
-      >
-        Errors, errors, and more errors
-      </Text>
+        >
+          <Text
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 16,
+                "lineHeight": 23.04,
+                "textAlign": "center",
+              }
+            }
+          >
+            Uh oh!
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
+                "textAlign": "center",
+              }
+            }
+          >
+            Errors, errors, and more errors
+          </Text>
+        </View>
+      </View>
     </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`the Card component should render with an error message inside an object 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginHorizontal": 16,
-      "marginVertical": 12,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
       style={
         Object {
-          "paddingHorizontal": 16,
-          "paddingVertical": 12,
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginHorizontal": 16,
+          "marginVertical": 12,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
         }
       }
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Bold",
-            "fontSize": 16,
-            "lineHeight": 23.04,
-            "textAlign": "center",
+            "borderRadius": 16,
+            "overflow": "hidden",
           }
         }
       >
-        Uh oh!
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#505050",
-            "fontFamily": "InterUI-Bold",
-            "fontSize": 12,
-            "lineHeight": 17.28,
-            "textAlign": "center",
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 16,
+              "paddingVertical": 12,
+            }
           }
-        }
-      >
-        You have discovered an error message. Do you open it?
-      </Text>
+        >
+          <Text
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 16,
+                "lineHeight": 23.04,
+                "textAlign": "center",
+              }
+            }
+          >
+            Uh oh!
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
+                "textAlign": "center",
+              }
+            }
+          >
+            You have discovered an error message. Do you open it?
+          </Text>
+        </View>
+      </View>
     </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;

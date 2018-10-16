@@ -1,636 +1,702 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected 1`] = `
-<View
-  horizontal={false}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "paddingHorizontal": 0,
-      "paddingVertical": 16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingHorizontal": 16,
-        "paddingVertical": 16,
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
+      horizontal={false}
       style={
         Object {
-          "flexGrow": 1,
+          "paddingHorizontal": 0,
+          "paddingVertical": 16,
         }
       }
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "InterUI-Bold",
-            "fontSize": 16,
-            "lineHeight": 23.04,
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingHorizontal": 16,
+            "paddingVertical": 16,
           }
         }
       >
-        Recently Like
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "flexDirection": "row-reverse",
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "System",
-            "fontSize": 14,
-            "fontStyle": null,
-            "fontWeight": null,
-            "lineHeight": 20.16,
-          }
-        }
-      >
-        <Text
-          onPress={[Function]}
+        <View
           style={
             Object {
-              "color": "#17B582",
+              "flexGrow": 1,
             }
           }
         >
-          View All
-        </Text>
-      </Text>
+          <Text
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "InterUI-Bold",
+                "fontSize": 16,
+                "lineHeight": 23.04,
+              }
+            }
+          >
+            Recently Like
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row-reverse",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "System",
+                "fontSize": 14,
+                "fontStyle": null,
+                "fontWeight": null,
+                "lineHeight": 20.16,
+              }
+            }
+          >
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#17B582",
+                }
+              }
+            >
+              View All
+            </Text>
+          </Text>
+        </View>
+      </View>
+      <RCTScrollView
+        data={
+          Array [
+            Object {
+              "coverImage": Object {
+                "sources": Array [
+                  Object {
+                    "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=58c037fa-cc7f-4d72-9571-a0cc0558e346",
+                    Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage.sources.0",
+                  },
+                ],
+                Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage",
+              },
+              "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
+              "sharing": Object {
+                "message": "",
+                "title": "Guys Night!",
+                "url": "https://apollosrock.newspring.cc/",
+                Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.sharing",
+              },
+              "title": "Guys Night!",
+              Symbol(id): "ROOT_QUERY.getAllLikedContent.0",
+            },
+            Object {
+              "coverImage": Object {
+                "sources": Array [
+                  Object {
+                    "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=f54b0db0-95f5-44ad-b8f2-8bcd1b23cfdb",
+                    Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage.sources.0",
+                  },
+                ],
+                Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage",
+              },
+              "id": "UniversalContentItem:39193b5ad28717ebfeab4d226664d8e7",
+              "sharing": Object {
+                "message": "",
+                "title": "This August at NewSpring",
+                "url": "https://apollosrock.newspring.cc/",
+                Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.sharing",
+              },
+              "title": "This August at NewSpring",
+              Symbol(id): "ROOT_QUERY.getAllLikedContent.1",
+            },
+            Object {
+              "coverImage": Object {
+                "sources": Array [
+                  Object {
+                    "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=a65bc45d-f961-4b7e-a899-63eb1f9b8da9",
+                    Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage.sources.0",
+                  },
+                ],
+                Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage",
+              },
+              "id": "UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db",
+              "sharing": Object {
+                "message": "",
+                "title": "A Place to Worship Free of Fear",
+                "url": "https://apollosrock.newspring.cc/",
+                Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.sharing",
+              },
+              "title": "A Place to Worship Free of Fear",
+              Symbol(id): "ROOT_QUERY.getAllLikedContent.2",
+            },
+          ]
+        }
+        decelerationRate="fast"
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={true}
+        initialNumToRender={5}
+        initialScrollIndex={0}
+        keyExtractor={[Function]}
+        loadingStateObject={
+          Object {
+            "coverImage": Array [],
+            "id": "fake_id",
+            "title": "",
+          }
+        }
+        maxToRenderPerBatch={10}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        refreshing={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        showsHorizontalScrollIndicator={false}
+        snapToAlignment="start"
+        snapToInterval={592}
+        stickyHeaderIndices={Array []}
+        style={
+          Object {
+            "height": 600,
+            "paddingBottom": 8,
+          }
+        }
+        tileHeight={600}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "padding": 8,
+                  "paddingLeft": 16,
+                  "paddingRight": 0,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "transform": Array [
+                      Object {
+                        "scale": 1,
+                      },
+                    ],
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "aspectRatio": 1,
+                      "borderRadius": 16,
+                      "height": "100%",
+                      "overflow": "hidden",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#A5A5A5",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <View
+                      animate={null}
+                      customAnimate={null}
+                      onReady={false}
+                      style={
+                        Object {
+                          "aspectRatio": 1,
+                          "backgroundColor": "#A5A5A5",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <Image
+                        onLoad={[Function]}
+                        source={
+                          Array [
+                            Object {
+                              "cache": "force-cache",
+                              "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=58c037fa-cc7f-4d72-9571-a0cc0558e346",
+                              Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage.sources.0",
+                            },
+                          ]
+                        }
+                        style={
+                          Object {
+                            "aspectRatio": 1,
+                            "backgroundColor": "#A5A5A5",
+                            "opacity": 0,
+                            "resizeMode": "cover",
+                            "width": "100%",
+                          }
+                        }
+                      />
+                    </View>
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0,
+                          "y": 1,
+                        }
+                      }
+                      locations={
+                        Array [
+                          0.3,
+                          1,
+                        ]
+                      }
+                      startPoint={
+                        Object {
+                          "x": 0,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
+                      }
+                    />
+                  </View>
+                  <Text
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 16,
+                        "color": "#F8F7F4",
+                        "fontFamily": "InterUI-Bold",
+                        "fontSize": 16,
+                        "left": 16,
+                        "lineHeight": 23.04,
+                        "position": "absolute",
+                        "right": 16,
+                      }
+                    }
+                  >
+                    Guys Night!
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "padding": 8,
+                  "paddingLeft": 16,
+                  "paddingRight": 0,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "transform": Array [
+                      Object {
+                        "scale": 1,
+                      },
+                    ],
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "aspectRatio": 1,
+                      "borderRadius": 16,
+                      "height": "100%",
+                      "overflow": "hidden",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#A5A5A5",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <View
+                      animate={null}
+                      customAnimate={null}
+                      onReady={false}
+                      style={
+                        Object {
+                          "aspectRatio": 1,
+                          "backgroundColor": "#A5A5A5",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <Image
+                        onLoad={[Function]}
+                        source={
+                          Array [
+                            Object {
+                              "cache": "force-cache",
+                              "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=f54b0db0-95f5-44ad-b8f2-8bcd1b23cfdb",
+                              Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage.sources.0",
+                            },
+                          ]
+                        }
+                        style={
+                          Object {
+                            "aspectRatio": 1,
+                            "backgroundColor": "#A5A5A5",
+                            "opacity": 0,
+                            "resizeMode": "cover",
+                            "width": "100%",
+                          }
+                        }
+                      />
+                    </View>
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0,
+                          "y": 1,
+                        }
+                      }
+                      locations={
+                        Array [
+                          0.3,
+                          1,
+                        ]
+                      }
+                      startPoint={
+                        Object {
+                          "x": 0,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
+                      }
+                    />
+                  </View>
+                  <Text
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 16,
+                        "color": "#F8F7F4",
+                        "fontFamily": "InterUI-Bold",
+                        "fontSize": 16,
+                        "left": 16,
+                        "lineHeight": 23.04,
+                        "position": "absolute",
+                        "right": 16,
+                      }
+                    }
+                  >
+                    This August at NewSpring
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "padding": 8,
+                  "paddingLeft": 16,
+                  "paddingRight": 0,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "transform": Array [
+                      Object {
+                        "scale": 1,
+                      },
+                    ],
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "aspectRatio": 1,
+                      "borderRadius": 16,
+                      "height": "100%",
+                      "overflow": "hidden",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#A5A5A5",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <View
+                      animate={null}
+                      customAnimate={null}
+                      onReady={false}
+                      style={
+                        Object {
+                          "aspectRatio": 1,
+                          "backgroundColor": "#A5A5A5",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <Image
+                        onLoad={[Function]}
+                        source={
+                          Array [
+                            Object {
+                              "cache": "force-cache",
+                              "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=a65bc45d-f961-4b7e-a899-63eb1f9b8da9",
+                              Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage.sources.0",
+                            },
+                          ]
+                        }
+                        style={
+                          Object {
+                            "aspectRatio": 1,
+                            "backgroundColor": "#A5A5A5",
+                            "opacity": 0,
+                            "resizeMode": "cover",
+                            "width": "100%",
+                          }
+                        }
+                      />
+                    </View>
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0,
+                          "y": 1,
+                        }
+                      }
+                      locations={
+                        Array [
+                          0.3,
+                          1,
+                        ]
+                      }
+                      startPoint={
+                        Object {
+                          "x": 0,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
+                      }
+                    />
+                  </View>
+                  <Text
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 16,
+                        "color": "#F8F7F4",
+                        "fontFamily": "InterUI-Bold",
+                        "fontSize": 16,
+                        "left": 16,
+                        "lineHeight": 23.04,
+                        "position": "absolute",
+                        "right": 16,
+                      }
+                    }
+                  >
+                    A Place to Worship Free of Fear
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
     </View>
   </View>
-  <RCTScrollView
-    data={
-      Array [
-        Object {
-          "coverImage": Object {
-            "sources": Array [
-              Object {
-                "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=58c037fa-cc7f-4d72-9571-a0cc0558e346",
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage.sources.0",
-              },
-            ],
-            Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage",
-          },
-          "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
-          "sharing": Object {
-            "message": "",
-            "title": "Guys Night!",
-            "url": "https://apollosrock.newspring.cc/",
-            Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.sharing",
-          },
-          "title": "Guys Night!",
-          Symbol(id): "ROOT_QUERY.getAllLikedContent.0",
-        },
-        Object {
-          "coverImage": Object {
-            "sources": Array [
-              Object {
-                "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=f54b0db0-95f5-44ad-b8f2-8bcd1b23cfdb",
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage.sources.0",
-              },
-            ],
-            Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage",
-          },
-          "id": "UniversalContentItem:39193b5ad28717ebfeab4d226664d8e7",
-          "sharing": Object {
-            "message": "",
-            "title": "This August at NewSpring",
-            "url": "https://apollosrock.newspring.cc/",
-            Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.sharing",
-          },
-          "title": "This August at NewSpring",
-          Symbol(id): "ROOT_QUERY.getAllLikedContent.1",
-        },
-        Object {
-          "coverImage": Object {
-            "sources": Array [
-              Object {
-                "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=a65bc45d-f961-4b7e-a899-63eb1f9b8da9",
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage.sources.0",
-              },
-            ],
-            Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage",
-          },
-          "id": "UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db",
-          "sharing": Object {
-            "message": "",
-            "title": "A Place to Worship Free of Fear",
-            "url": "https://apollosrock.newspring.cc/",
-            Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.sharing",
-          },
-          "title": "A Place to Worship Free of Fear",
-          Symbol(id): "ROOT_QUERY.getAllLikedContent.2",
-        },
-      ]
-    }
-    decelerationRate="fast"
-    disableVirtualization={false}
-    getItem={[Function]}
-    getItemCount={[Function]}
-    horizontal={true}
-    initialNumToRender={5}
-    initialScrollIndex={0}
-    keyExtractor={[Function]}
-    loadingStateObject={
-      Object {
-        "coverImage": Array [],
-        "id": "fake_id",
-        "title": "",
-      }
-    }
-    maxToRenderPerBatch={10}
-    numColumns={1}
-    onContentSizeChange={[Function]}
-    onEndReachedThreshold={2}
-    onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    refreshing={false}
-    renderItem={[Function]}
-    scrollEventThrottle={50}
-    showsHorizontalScrollIndicator={false}
-    snapToAlignment="start"
-    snapToInterval={592}
-    stickyHeaderIndices={Array []}
-    style={
-      Object {
-        "height": 600,
-        "paddingBottom": 8,
-      }
-    }
-    tileHeight={600}
-    updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
-    windowSize={21}
-  >
-    <View>
-      <View
-        onLayout={[Function]}
-        style={
-          Array [
-            Object {
-              "flexDirection": "row",
-            },
-            null,
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "flex": 1,
-              "padding": 8,
-              "paddingLeft": 16,
-              "paddingRight": 0,
-            }
-          }
-        >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "scale": 1,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "aspectRatio": 1,
-                  "borderRadius": 16,
-                  "height": "100%",
-                  "overflow": "hidden",
-                  "width": "100%",
-                }
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "backgroundColor": "#A5A5A5",
-                    "width": "100%",
-                  }
-                }
-              >
-                <View
-                  animate={null}
-                  customAnimate={null}
-                  onReady={false}
-                  style={
-                    Object {
-                      "aspectRatio": 1,
-                      "backgroundColor": "#A5A5A5",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <Image
-                    onLoad={[Function]}
-                    source={
-                      Array [
-                        Object {
-                          "cache": "force-cache",
-                          "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=58c037fa-cc7f-4d72-9571-a0cc0558e346",
-                          Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage.sources.0",
-                        },
-                      ]
-                    }
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#A5A5A5",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      0,
-                      4278190080,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0,
-                      "y": 1,
-                    }
-                  }
-                  locations={
-                    Array [
-                      0.3,
-                      1,
-                    ]
-                  }
-                  startPoint={
-                    Object {
-                      "x": 0,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                />
-              </View>
-              <Text
-                style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "bottom": 16,
-                    "color": "#F8F7F4",
-                    "fontFamily": "InterUI-Bold",
-                    "fontSize": 16,
-                    "left": 16,
-                    "lineHeight": 23.04,
-                    "position": "absolute",
-                    "right": 16,
-                  }
-                }
-              >
-                Guys Night!
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-      <View
-        onLayout={[Function]}
-        style={
-          Array [
-            Object {
-              "flexDirection": "row",
-            },
-            null,
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "flex": 1,
-              "padding": 8,
-              "paddingLeft": 16,
-              "paddingRight": 0,
-            }
-          }
-        >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "scale": 1,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "aspectRatio": 1,
-                  "borderRadius": 16,
-                  "height": "100%",
-                  "overflow": "hidden",
-                  "width": "100%",
-                }
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "backgroundColor": "#A5A5A5",
-                    "width": "100%",
-                  }
-                }
-              >
-                <View
-                  animate={null}
-                  customAnimate={null}
-                  onReady={false}
-                  style={
-                    Object {
-                      "aspectRatio": 1,
-                      "backgroundColor": "#A5A5A5",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <Image
-                    onLoad={[Function]}
-                    source={
-                      Array [
-                        Object {
-                          "cache": "force-cache",
-                          "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=f54b0db0-95f5-44ad-b8f2-8bcd1b23cfdb",
-                          Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage.sources.0",
-                        },
-                      ]
-                    }
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#A5A5A5",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      0,
-                      4278190080,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0,
-                      "y": 1,
-                    }
-                  }
-                  locations={
-                    Array [
-                      0.3,
-                      1,
-                    ]
-                  }
-                  startPoint={
-                    Object {
-                      "x": 0,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                />
-              </View>
-              <Text
-                style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "bottom": 16,
-                    "color": "#F8F7F4",
-                    "fontFamily": "InterUI-Bold",
-                    "fontSize": 16,
-                    "left": 16,
-                    "lineHeight": 23.04,
-                    "position": "absolute",
-                    "right": 16,
-                  }
-                }
-              >
-                This August at NewSpring
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-      <View
-        onLayout={[Function]}
-        style={
-          Array [
-            Object {
-              "flexDirection": "row",
-            },
-            null,
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "flex": 1,
-              "padding": 8,
-              "paddingLeft": 16,
-              "paddingRight": 0,
-            }
-          }
-        >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "scale": 1,
-                  },
-                ],
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "aspectRatio": 1,
-                  "borderRadius": 16,
-                  "height": "100%",
-                  "overflow": "hidden",
-                  "width": "100%",
-                }
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "backgroundColor": "#A5A5A5",
-                    "width": "100%",
-                  }
-                }
-              >
-                <View
-                  animate={null}
-                  customAnimate={null}
-                  onReady={false}
-                  style={
-                    Object {
-                      "aspectRatio": 1,
-                      "backgroundColor": "#A5A5A5",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <Image
-                    onLoad={[Function]}
-                    source={
-                      Array [
-                        Object {
-                          "cache": "force-cache",
-                          "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=a65bc45d-f961-4b7e-a899-63eb1f9b8da9",
-                          Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage.sources.0",
-                        },
-                      ]
-                    }
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#A5A5A5",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      0,
-                      4278190080,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0,
-                      "y": 1,
-                    }
-                  }
-                  locations={
-                    Array [
-                      0.3,
-                      1,
-                    ]
-                  }
-                  startPoint={
-                    Object {
-                      "x": 0,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                />
-              </View>
-              <Text
-                style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "bottom": 16,
-                    "color": "#F8F7F4",
-                    "fontFamily": "InterUI-Bold",
-                    "fontSize": 16,
-                    "left": 16,
-                    "lineHeight": 23.04,
-                    "position": "absolute",
-                    "right": 16,
-                  }
-                }
-              >
-                A Place to Worship Free of Fear
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-  </RCTScrollView>
-</View>
+</RCTSafeAreaView>
 `;
 
-exports[`RecentlyLikedTileFeedConnected renders nothing if no liked content 1`] = `null`;
+exports[`RecentlyLikedTileFeedConnected renders nothing if no liked content 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+</RCTSafeAreaView>
+`;

@@ -1,679 +1,707 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the ThumbnailCard component should render 1`] = `
-<View
-  accessible={true}
-  inHorizontalList={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginLeft": 8,
-      "marginRight": 0,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
+      accessible={true}
+      inHorizontalList={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "flexWrap": "nowrap",
-          "justifyContent": "space-between",
-          "minHeight": 110,
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginLeft": 8,
+          "marginRight": 0,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
         }
       }
     >
       <View
         style={
           Object {
-            "flex": 1.66,
-            "paddingHorizontal": 16,
-            "paddingVertical": 12,
+            "borderRadius": 16,
+            "overflow": "hidden",
           }
         }
       >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Medium",
-              "fontSize": 14,
-              "lineHeight": 20.16,
-            }
-          }
-        >
-          Why Jesus is Timeless
-        </Text>
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`the ThumbnailCard component should render a loading state 1`] = `
-<View
-  accessible={true}
-  inHorizontalList={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginLeft": 8,
-      "marginRight": 0,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
-    }
-  }
->
-  <View
-    style={
-      Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "flexWrap": "nowrap",
-          "justifyContent": "space-between",
-          "minHeight": 110,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "flex": 1.66,
-            "paddingHorizontal": 16,
-            "paddingVertical": 12,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Medium",
-              "fontSize": 14,
-              "lineHeight": 20.16,
-            }
-          }
-        >
-          Why Jesus is Timeless
-        </Text>
         <View
-          flexed={false}
           style={
             Object {
               "alignItems": "center",
-              "flex": null,
               "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "space-between",
+              "minHeight": 110,
             }
           }
         >
           <View
             style={
               Object {
+                "flex": 1.66,
+                "paddingHorizontal": 16,
+                "paddingVertical": 12,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Medium",
+                  "fontSize": 14,
+                  "lineHeight": 20.16,
+                }
+              }
+            >
+              Why Jesus is Timeless
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`the ThumbnailCard component should render a loading state 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      inHorizontalList={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginLeft": 8,
+          "marginRight": 0,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "borderRadius": 16,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "space-between",
+              "minHeight": 110,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1.66,
+                "paddingHorizontal": 16,
+                "paddingVertical": 12,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Medium",
+                  "fontSize": 14,
+                  "lineHeight": 20.16,
+                }
+              }
+            >
+              Why Jesus is Timeless
+            </Text>
+            <View
+              flexed={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": null,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "paddingRight": 8,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#A5A5A5",
+                      "borderRadius": 16,
+                      "height": 12,
+                      "marginVertical": 2.6400000000000006,
+                      "width": "50%",
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignSelf": "stretch",
                 "flex": 1,
-                "paddingRight": 8,
               }
             }
           >
             <View
               style={
                 Object {
-                  "alignSelf": "stretch",
+                  "alignItems": "center",
+                  "aspectRatio": 1,
                   "backgroundColor": "#A5A5A5",
-                  "borderRadius": 16,
-                  "height": 12,
-                  "marginVertical": 2.6400000000000006,
-                  "width": "50%",
-                }
-              }
-            />
-          </View>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "flex": 1,
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "aspectRatio": 1,
-              "backgroundColor": "#A5A5A5",
-              "bottom": 0,
-              "height": "100%",
-              "justifyContent": "center",
-              "left": 0,
-              "paddingTop": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": "100%",
-            }
-          }
-        >
-          <View
-            animate={null}
-            customAnimate={null}
-            onReady={false}
-            style={
-              Object {
-                "aspectRatio": 1,
-                "backgroundColor": "#A5A5A5",
-                "width": "100%",
-              }
-            }
-          >
-            <Image
-              onLoad={[Function]}
-              source={
-                Array [
-                  Object {
-                    "cache": "force-cache",
-                    "uri": "https://picsum.photos/100/100/?random",
-                    "url": "https://picsum.photos/100/100/?random",
-                  },
-                ]
-              }
-              style={
-                Object {
-                  "backgroundColor": "#A5A5A5",
+                  "bottom": 0,
                   "height": "100%",
-                  "opacity": 0,
-                  "resizeMode": "cover",
+                  "justifyContent": "center",
+                  "left": 0,
+                  "paddingTop": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
                   "width": "100%",
                 }
               }
-            />
+            >
+              <View
+                animate={null}
+                customAnimate={null}
+                onReady={false}
+                style={
+                  Object {
+                    "aspectRatio": 1,
+                    "backgroundColor": "#A5A5A5",
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  onLoad={[Function]}
+                  source={
+                    Array [
+                      Object {
+                        "cache": "force-cache",
+                        "uri": "https://picsum.photos/100/100/?random",
+                        "url": "https://picsum.photos/100/100/?random",
+                      },
+                    ]
+                  }
+                  style={
+                    Object {
+                      "backgroundColor": "#A5A5A5",
+                      "height": "100%",
+                      "opacity": 0,
+                      "resizeMode": "cover",
+                      "width": "100%",
+                    }
+                  }
+                />
+              </View>
+            </View>
           </View>
         </View>
       </View>
     </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`the ThumbnailCard component should render with a category 1`] = `
-<View
-  accessible={true}
-  inHorizontalList={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginLeft": 8,
-      "marginRight": 0,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
+      accessible={true}
+      inHorizontalList={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "flexWrap": "nowrap",
-          "justifyContent": "space-between",
-          "minHeight": 110,
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginLeft": 8,
+          "marginRight": 0,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
         }
       }
     >
       <View
         style={
           Object {
-            "flex": 1.66,
-            "paddingHorizontal": 16,
-            "paddingVertical": 12,
+            "borderRadius": 16,
+            "overflow": "hidden",
           }
         }
       >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Medium",
-              "fontSize": 14,
-              "lineHeight": 20.16,
-            }
-          }
-        >
-          Why Jesus is Timeless
-        </Text>
         <View
-          flexed={false}
           style={
             Object {
               "alignItems": "center",
-              "flex": null,
               "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "space-between",
+              "minHeight": 110,
             }
           }
         >
           <View
             style={
               Object {
-                "flex": 1,
-                "paddingRight": 8,
+                "flex": 1.66,
+                "paddingHorizontal": 16,
+                "paddingVertical": 12,
               }
             }
           >
             <Text
               style={
                 Object {
-                  "color": "#505050",
-                  "fontFamily": "InterUI-Bold",
-                  "fontSize": 12,
-                  "lineHeight": 17.28,
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Medium",
+                  "fontSize": 14,
+                  "lineHeight": 20.16,
                 }
               }
             >
-              Time Travel
+              Why Jesus is Timeless
             </Text>
+            <View
+              flexed={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": null,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "paddingRight": 8,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#505050",
+                      "fontFamily": "InterUI-Bold",
+                      "fontSize": 12,
+                      "lineHeight": 17.28,
+                    }
+                  }
+                >
+                  Time Travel
+                </Text>
+              </View>
+            </View>
           </View>
         </View>
       </View>
     </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`the ThumbnailCard component should render with a category and images 1`] = `
-<View
-  accessible={true}
-  inHorizontalList={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginLeft": 8,
-      "marginRight": 0,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
+      accessible={true}
+      inHorizontalList={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "flexWrap": "nowrap",
-          "justifyContent": "space-between",
-          "minHeight": 110,
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginLeft": 8,
+          "marginRight": 0,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
         }
       }
     >
       <View
         style={
           Object {
-            "flex": 1.66,
-            "paddingHorizontal": 16,
-            "paddingVertical": 12,
+            "borderRadius": 16,
+            "overflow": "hidden",
           }
         }
       >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Medium",
-              "fontSize": 14,
-              "lineHeight": 20.16,
-            }
-          }
-        >
-          Why Jesus is Timeless
-        </Text>
         <View
-          flexed={false}
           style={
             Object {
               "alignItems": "center",
-              "flex": null,
               "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "space-between",
+              "minHeight": 110,
             }
           }
         >
           <View
             style={
               Object {
-                "flex": 1,
-                "paddingRight": 8,
+                "flex": 1.66,
+                "paddingHorizontal": 16,
+                "paddingVertical": 12,
               }
             }
           >
             <Text
               style={
                 Object {
-                  "color": "#505050",
-                  "fontFamily": "InterUI-Bold",
-                  "fontSize": 12,
-                  "lineHeight": 17.28,
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Medium",
+                  "fontSize": 14,
+                  "lineHeight": 20.16,
                 }
               }
             >
-              Time Travel
+              Why Jesus is Timeless
             </Text>
+            <View
+              flexed={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": null,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "paddingRight": 8,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#505050",
+                      "fontFamily": "InterUI-Bold",
+                      "fontSize": 12,
+                      "lineHeight": 17.28,
+                    }
+                  }
+                >
+                  Time Travel
+                </Text>
+              </View>
+            </View>
           </View>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "flex": 1,
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "aspectRatio": 1,
-              "backgroundColor": "#A5A5A5",
-              "bottom": 0,
-              "height": "100%",
-              "justifyContent": "center",
-              "left": 0,
-              "paddingTop": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": "100%",
-            }
-          }
-        >
           <View
-            animate={null}
-            customAnimate={null}
-            onReady={false}
             style={
               Object {
-                "aspectRatio": 1,
-                "backgroundColor": "#A5A5A5",
-                "width": "100%",
+                "alignSelf": "stretch",
+                "flex": 1,
               }
             }
           >
-            <Image
-              onLoad={[Function]}
-              source={
-                Array [
-                  Object {
-                    "cache": "force-cache",
-                    "uri": "https://picsum.photos/100/100/?random",
-                    "url": "https://picsum.photos/100/100/?random",
-                  },
-                ]
-              }
+            <View
               style={
                 Object {
+                  "alignItems": "center",
+                  "aspectRatio": 1,
                   "backgroundColor": "#A5A5A5",
+                  "bottom": 0,
                   "height": "100%",
-                  "opacity": 0,
-                  "resizeMode": "cover",
+                  "justifyContent": "center",
+                  "left": 0,
+                  "paddingTop": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
                   "width": "100%",
                 }
               }
-            />
+            >
+              <View
+                animate={null}
+                customAnimate={null}
+                onReady={false}
+                style={
+                  Object {
+                    "aspectRatio": 1,
+                    "backgroundColor": "#A5A5A5",
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  onLoad={[Function]}
+                  source={
+                    Array [
+                      Object {
+                        "cache": "force-cache",
+                        "uri": "https://picsum.photos/100/100/?random",
+                        "url": "https://picsum.photos/100/100/?random",
+                      },
+                    ]
+                  }
+                  style={
+                    Object {
+                      "backgroundColor": "#A5A5A5",
+                      "height": "100%",
+                      "opacity": 0,
+                      "resizeMode": "cover",
+                      "width": "100%",
+                    }
+                  }
+                />
+              </View>
+            </View>
           </View>
         </View>
       </View>
     </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`the ThumbnailCard component should render with a description 1`] = `
-<View
-  accessible={true}
-  inHorizontalList={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginLeft": 8,
-      "marginRight": 0,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
+      accessible={true}
+      inHorizontalList={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "flexWrap": "nowrap",
-          "justifyContent": "space-between",
-          "minHeight": 110,
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginLeft": 8,
+          "marginRight": 0,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
         }
       }
     >
       <View
         style={
           Object {
-            "flex": 1.66,
-            "paddingHorizontal": 16,
-            "paddingVertical": 12,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Medium",
-              "fontSize": 14,
-              "lineHeight": 20.16,
-            }
-          }
-        >
-          Why Jesus is Timeless
-        </Text>
-        <View
-          style={
-            Object {
-              "paddingBottom": 17.28,
-            }
-          }
-        >
-          <Text
-            bold={false}
-            italic={false}
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": "InterUI-Regular",
-                "fontSize": 16,
-                "lineHeight": 26,
-              }
-            }
-          >
-            This is the story of a God, who made a flood and drowned the whole world. He gave up His son for everybody, and we absolutely love Him, all the time.
-          </Text>
-        </View>
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`the ThumbnailCard component should render with an images 1`] = `
-<View
-  accessible={true}
-  inHorizontalList={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 16,
-      "marginLeft": 8,
-      "marginRight": 0,
-      "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 0,
-      },
-      "shadowOpacity": 1,
-      "shadowRadius": 6,
-    }
-  }
->
-  <View
-    style={
-      Object {
-        "borderRadius": 16,
-        "overflow": "hidden",
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "flexWrap": "nowrap",
-          "justifyContent": "space-between",
-          "minHeight": 110,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "flex": 1.66,
-            "paddingHorizontal": 16,
-            "paddingVertical": 12,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "InterUI-Medium",
-              "fontSize": 14,
-              "lineHeight": 20.16,
-            }
-          }
-        >
-          Why Jesus is Timeless
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "flex": 1,
+            "borderRadius": 16,
+            "overflow": "hidden",
           }
         }
       >
@@ -681,57 +709,227 @@ exports[`the ThumbnailCard component should render with an images 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "aspectRatio": 1,
-              "backgroundColor": "#A5A5A5",
-              "bottom": 0,
-              "height": "100%",
-              "justifyContent": "center",
-              "left": 0,
-              "paddingTop": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": "100%",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "space-between",
+              "minHeight": 110,
             }
           }
         >
           <View
-            animate={null}
-            customAnimate={null}
-            onReady={false}
             style={
               Object {
-                "aspectRatio": 1,
-                "backgroundColor": "#A5A5A5",
-                "width": "100%",
+                "flex": 1.66,
+                "paddingHorizontal": 16,
+                "paddingVertical": 12,
               }
             }
           >
-            <Image
-              onLoad={[Function]}
-              source={
-                Array [
-                  Object {
-                    "cache": "force-cache",
-                    "uri": "https://picsum.photos/100/100/?random",
-                    "url": "https://picsum.photos/100/100/?random",
-                  },
-                ]
-              }
+            <Text
               style={
                 Object {
-                  "backgroundColor": "#A5A5A5",
-                  "height": "100%",
-                  "opacity": 0,
-                  "resizeMode": "cover",
-                  "width": "100%",
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Medium",
+                  "fontSize": 14,
+                  "lineHeight": 20.16,
                 }
               }
-            />
+            >
+              Why Jesus is Timeless
+            </Text>
+            <View
+              style={
+                Object {
+                  "paddingBottom": 17.28,
+                }
+              }
+            >
+              <Text
+                bold={false}
+                italic={false}
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "InterUI-Regular",
+                    "fontSize": 16,
+                    "lineHeight": 26,
+                  }
+                }
+              >
+                This is the story of a God, who made a flood and drowned the whole world. He gave up His son for everybody, and we absolutely love Him, all the time.
+              </Text>
+            </View>
           </View>
         </View>
       </View>
     </View>
   </View>
-</View>
+</RCTSafeAreaView>
+`;
+
+exports[`the ThumbnailCard component should render with an images 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      inHorizontalList={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 16,
+          "marginLeft": 8,
+          "marginRight": 0,
+          "shadowColor": "rgba(165, 165, 165, 0.30000000000000004)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 6,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "borderRadius": 16,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "space-between",
+              "minHeight": 110,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1.66,
+                "paddingHorizontal": 16,
+                "paddingVertical": 12,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "InterUI-Medium",
+                  "fontSize": 14,
+                  "lineHeight": 20.16,
+                }
+              }
+            >
+              Why Jesus is Timeless
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignSelf": "stretch",
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "aspectRatio": 1,
+                  "backgroundColor": "#A5A5A5",
+                  "bottom": 0,
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "left": 0,
+                  "paddingTop": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                animate={null}
+                customAnimate={null}
+                onReady={false}
+                style={
+                  Object {
+                    "aspectRatio": 1,
+                    "backgroundColor": "#A5A5A5",
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  onLoad={[Function]}
+                  source={
+                    Array [
+                      Object {
+                        "cache": "force-cache",
+                        "uri": "https://picsum.photos/100/100/?random",
+                        "url": "https://picsum.photos/100/100/?random",
+                      },
+                    ]
+                  }
+                  style={
+                    Object {
+                      "backgroundColor": "#A5A5A5",
+                      "height": "100%",
+                      "opacity": 0,
+                      "resizeMode": "cover",
+                      "width": "100%",
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
 `;

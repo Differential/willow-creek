@@ -1,104 +1,137 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The Picker Input component should render correctly 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "marginVertical": 16,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >
   <View
+    onLayout={[Function]}
     style={
       Object {
-        "height": 38,
-        "paddingVertical": 4,
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >
     <View
       style={
         Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
+          "marginVertical": 16,
         }
       }
     >
       <View
         style={
           Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-      <View
-        style={
-          Object {
-            "flex": 1,
-            "justifyContent": "center",
+            "height": 38,
+            "paddingVertical": 4,
           }
         }
       >
         <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
         >
-          <Text
+          <View
             style={
               Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "InterUI-Bold",
-                "fontSize": 12,
-                "lineHeight": 17.28,
-                "paddingVertical": 4,
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "justifyContent": "center",
               }
             }
           >
-            Some label text
-          </Text>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      >
-        <RCTSwitch
-          activeThumbColor="#FFFFFF"
-          activeTrackColor="#00676D"
-          disabled={false}
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onTintColor="#00676D"
-          style={
-            Object {
-              "height": 31,
-              "width": 51,
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#505050",
+                    "fontFamily": "InterUI-Bold",
+                    "fontSize": 12,
+                    "lineHeight": 17.28,
+                    "paddingVertical": 4,
+                  }
+                }
+              >
+                Some label text
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
             }
-          }
-          tintColor="#A5A5A5"
-          trackColor="#A5A5A5"
-          value={false}
-        />
+          >
+            <RCTSwitch
+              activeThumbColor="#FFFFFF"
+              activeTrackColor="#00676D"
+              disabled={false}
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onTintColor="#00676D"
+              style={
+                Object {
+                  "height": 31,
+                  "width": 51,
+                }
+              }
+              tintColor="#A5A5A5"
+              trackColor="#A5A5A5"
+              value={false}
+            />
+          </View>
+        </View>
       </View>
     </View>
   </View>
-</View>
+</RCTSafeAreaView>
 `;

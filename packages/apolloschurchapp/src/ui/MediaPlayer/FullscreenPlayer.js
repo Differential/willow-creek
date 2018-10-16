@@ -14,6 +14,7 @@ import DeviceInfo from 'react-native-device-info';
 
 import styled from 'apolloschurchapp/src/ui/styled';
 
+import { LayoutConsumer } from '../LayoutContext';
 import MiniControls, { MINI_PLAYER_HEIGHT } from './MiniControls';
 import FullscreenControls from './FullscreenControls';
 import VideoWindow from './VideoWindow';
@@ -34,6 +35,14 @@ const VideoSizer = styled(
           aspectRatio: isVideo ? 16 / 9 : 1,
         }
 )(View);
+
+const SafeAreaLayout = styled(({ safeAreaInsets, isFullscreen, theme }) => ({
+  ...StyleSheet.absoluteFillObject,
+  margin: isFullscreen ? 0 : theme.sizing.baseUnit,
+  marginBottom: isFullscreen
+    ? 0
+    : Math.max(theme.sizing.baseUnit, safeAreaInsets.bottom * 0.75),
+}))(View);
 
 const isPhoneX = DeviceInfo.getModel() === 'iPhone X';
 const BOTTOM_OFFSET = isPhoneX ? 25 : 10; // Some devices need more "spacing" at the bottom of the screen. This helps account for that
@@ -168,11 +177,6 @@ class FullscreenPlayer extends PureComponent {
   renderCover = ({ data: { mediaPlayer = {} } = {} }) => {
     const { isFullscreen = false } = mediaPlayer;
 
-    const fullscreenStyles = {
-      margin: isFullscreen ? 0 : 10,
-      marginBottom: isFullscreen ? 0 : BOTTOM_OFFSET,
-    };
-
     Animated.spring(this.fullscreen, {
       toValue: isFullscreen ? 1 : 0,
       useNativeDriver: true,
@@ -216,9 +220,16 @@ class FullscreenPlayer extends PureComponent {
     }
 
     return (
-      <Animated.View style={[this.coverStyle, fullscreenStyles]}>
-        {coverFlow}
-      </Animated.View>
+      <LayoutConsumer>
+        {({ safeAreaInsets }) => (
+          <SafeAreaLayout
+            safeAreaInsets={safeAreaInsets}
+            isFullscreen={isFullscreen}
+          >
+            <Animated.View style={this.coverStyle}>{coverFlow}</Animated.View>
+          </SafeAreaLayout>
+        )}
+      </LayoutConsumer>
     );
   };
 

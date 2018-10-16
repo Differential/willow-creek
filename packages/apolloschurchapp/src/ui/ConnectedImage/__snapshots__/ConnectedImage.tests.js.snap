@@ -1,46 +1,112 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
-<Image
-  onLoad={[Function]}
-  source={
-    Array [
-      Object {
-        "cache": "force-cache",
-        "height": 150,
-        "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
-        "width": 150,
-      },
-    ]
-  }
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "aspectRatio": 1,
-      "backgroundColor": "#A5A5A5",
-      "opacity": 1,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
-/>
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Image
+      onLoad={[Function]}
+      source={
+        Array [
+          Object {
+            "cache": "force-cache",
+            "height": 150,
+            "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+            "width": 150,
+          },
+        ]
+      }
+      style={
+        Object {
+          "aspectRatio": 1,
+          "backgroundColor": "#A5A5A5",
+          "opacity": 1,
+        }
+      }
+    />
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`the ConnectedImage component should render immediately with a network image with a known width and height 1`] = `
-<Image
-  onLoad={[Function]}
-  source={
-    Array [
-      Object {
-        "cache": "force-cache",
-        "height": 150,
-        "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
-        "width": 150,
-      },
-    ]
-  }
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#A5A5A5",
-      "opacity": 1,
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
-/>
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Image
+      onLoad={[Function]}
+      source={
+        Array [
+          Object {
+            "cache": "force-cache",
+            "height": 150,
+            "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+            "width": 150,
+          },
+        ]
+      }
+      style={
+        Object {
+          "backgroundColor": "#A5A5A5",
+          "opacity": 1,
+        }
+      }
+    />
+  </View>
+</RCTSafeAreaView>
 `;

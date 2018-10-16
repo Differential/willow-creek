@@ -1,15 +1,260 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The mediaQuery enhancer passes in breakpoints to the test function 1`] = `<View />`;
+exports[`The mediaQuery enhancer passes in breakpoints to the test function 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View />
+  </View>
+</RCTSafeAreaView>
+`;
 
-exports[`The mediaQuery enhancer passes in window width and height to the test function 1`] = `<View />`;
+exports[`The mediaQuery enhancer passes in window width and height to the test function 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View />
+  </View>
+</RCTSafeAreaView>
+`;
 
-exports[`The mediaQuery enhancer uses second HOC when provided with a complex media query that doesnt match 1`] = `<View />`;
+exports[`The mediaQuery enhancer uses second HOC when provided with a complex media query that doesnt match 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View />
+  </View>
+</RCTSafeAreaView>
+`;
 
-exports[`The mediaQuery enhancer uses the first HOC (and renders the root View) with a passing media query 1`] = `<View />`;
+exports[`The mediaQuery enhancer uses the first HOC (and renders the root View) with a passing media query 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View />
+  </View>
+</RCTSafeAreaView>
+`;
 
-exports[`The mediaQuery enhancer uses the second HOC (and renders the root View) with a failing media query 1`] = `<View />`;
+exports[`The mediaQuery enhancer uses the second HOC (and renders the root View) with a failing media query 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View />
+  </View>
+</RCTSafeAreaView>
+`;
 
-exports[`The mediaQuery enhancer works with a complex media query 1`] = `<View />`;
+exports[`The mediaQuery enhancer works with a complex media query 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View />
+  </View>
+</RCTSafeAreaView>
+`;
 
-exports[`The mediaQuery enhancer works with a simple media query 1`] = `<View />`;
+exports[`The mediaQuery enhancer works with a simple media query 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View />
+  </View>
+</RCTSafeAreaView>
+`;

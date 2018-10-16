@@ -1,30 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The Typography placeholder renders correctly 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignSelf": "stretch",
-      "backgroundColor": "#A5A5A5",
-      "borderRadius": 16,
-      "height": 16,
-      "width": "100%",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
-/>
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#A5A5A5",
+          "borderRadius": 16,
+          "height": 16,
+          "width": "100%",
+        }
+      }
+    />
+  </View>
+</RCTSafeAreaView>
 `;
 
 exports[`The Typography placeholder translates type styles 1`] = `
-<View
+<RCTSafeAreaView
+  onLayout={[Function]}
   style={
     Object {
-      "alignSelf": "stretch",
-      "backgroundColor": "#A5A5A5",
-      "borderRadius": 16,
-      "height": 24,
-      "marginVertical": 4,
-      "width": "100%",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
-/>
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#A5A5A5",
+          "borderRadius": 16,
+          "height": 24,
+          "marginVertical": 4,
+          "width": "100%",
+        }
+      }
+    />
+  </View>
+</RCTSafeAreaView>
 `;
