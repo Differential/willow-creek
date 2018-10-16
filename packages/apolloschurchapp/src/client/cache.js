@@ -21,7 +21,7 @@ const cache = new InMemoryCache({
   cacheRedirects: {
     Query: {
       node: (_, { id }, { getCacheKey }) =>
-        getCacheKey({ __typename: id.split(':')[0], id }),
+        id ? getCacheKey({ __typename: id.split(':')[0], id }) : null,
     },
   },
 });

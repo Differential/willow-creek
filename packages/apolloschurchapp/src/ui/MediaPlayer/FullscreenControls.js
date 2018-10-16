@@ -21,7 +21,15 @@ import Touchable from 'apolloschurchapp/src/ui/Touchable';
 
 import Seeker from './Seeker';
 import { getControlState } from './queries';
-import { play, pause, exitFullscreen } from './mutations';
+import {
+  play,
+  pause,
+  exitFullscreen,
+  showVideo,
+  hideVideo,
+  mute,
+  unmute,
+} from './mutations';
 
 import { ControlsConsumer } from './PlayheadState';
 
@@ -146,6 +154,22 @@ class FullscreenControls extends PureComponent {
     this.props.client.mutate({ mutation: pause });
   };
 
+  handleShowVideo = () => {
+    this.props.client.mutate({ mutation: showVideo });
+  };
+
+  handleHideVideo = () => {
+    this.props.client.mutate({ mutation: hideVideo });
+  };
+
+  handleMute = () => {
+    this.props.client.mutate({ mutation: mute });
+  };
+
+  handleUnMute = () => {
+    this.props.client.mutate({ mutation: unmute });
+  };
+
   handleControlVisibility = () => {
     if (this.closeTimeout) clearTimeout(this.closeTimeout);
     this.open.stop();
@@ -186,7 +210,7 @@ class FullscreenControls extends PureComponent {
   );
 
   renderFullscreenControls = ({ data: { mediaPlayer = {} } = {} }) => {
-    this.isVideo = get(mediaPlayer, 'currentTrack.isVideo');
+    this.isVideo = get(mediaPlayer, 'showVideo');
     this.isPlaying = mediaPlayer.isPlaying;
 
     if (
@@ -216,15 +240,7 @@ class FullscreenControls extends PureComponent {
                     <Title>{get(mediaPlayer, 'currentTrack.title')}</Title>
                     <Artist>{get(mediaPlayer, 'currentTrack.artist')}</Artist>
                   </Titles>
-                  {mediaPlayer.isMuted ? (
-                    <Touchable>
-                      <IconSm name="mute" />
-                    </Touchable>
-                  ) : (
-                    <Touchable>
-                      <IconSm name="volume" />
-                    </Touchable>
-                  )}
+                  <IconSm name="empty" />
                 </UpperControl>
               </Touchable>
               <LowerControl>
@@ -232,7 +248,15 @@ class FullscreenControls extends PureComponent {
                   <Seeker onScrubbing={this.handleOnScrubbing} />
                 </PlayHead>
                 <PlayControls>
-                  <IconSm disabled name="empty" />
+                  {get(mediaPlayer, 'muted') ? (
+                    <Touchable onPress={this.handleUnMute}>
+                      <IconSm name="mute" />
+                    </Touchable>
+                  ) : (
+                    <Touchable onPress={this.handleMute}>
+                      <IconSm name="volume" />
+                    </Touchable>
+                  )}
                   <ControlsConsumer>{this.renderSkipBack}</ControlsConsumer>
                   {mediaPlayer.isPlaying ? (
                     <Touchable onPress={this.handlePause}>
@@ -244,7 +268,15 @@ class FullscreenControls extends PureComponent {
                     </Touchable>
                   )}
                   <ControlsConsumer>{this.renderSkipForward}</ControlsConsumer>
-                  <IconSm name="empty" />
+                  {mediaPlayer.showVideo ? (
+                    <Touchable onPress={this.handleHideVideo}>
+                      <IconSm name="video" />
+                    </Touchable>
+                  ) : (
+                    <Touchable onPress={this.handleShowVideo}>
+                      <IconSm name="video-off" />
+                    </Touchable>
+                  )}
                 </PlayControls>
               </LowerControl>
             </SafeAreaView>

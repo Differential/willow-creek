@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-
+import { get } from 'lodash';
 import { Query, Mutation } from 'react-apollo';
 
 import Like from 'apolloschurchapp/src/ui/Like';
@@ -12,15 +12,15 @@ import getLikedContentItem from './getLikedContentItem';
 
 const GetLikeData = ({ itemId, children }) => (
   <Query query={getLikedContentItem} variables={{ itemId }}>
-    {({ data, loading }) => {
-      const isLiked = loading ? false : data.node.isLiked;
-      return children({ isLiked, item: data.node });
+    {({ data: { node = {} } = {}, loading }) => {
+      const isLiked = loading ? false : get(node, 'isLiked') || false;
+      return children({ isLiked, item: node });
     }}
   </Query>
 );
 
 GetLikeData.propTypes = {
-  itemId: PropTypes.string.isRequired,
+  itemId: PropTypes.string,
   children: PropTypes.func.isRequired,
 };
 
@@ -56,29 +56,33 @@ const UpdateLikeStatus = ({ itemId, item, isLiked, children }) => (
     }}
   >
     {(createNewInteraction) =>
-      children({
-        itemId,
-        isLiked,
-        toggleLike: async (variables) => {
-          try {
-            await createNewInteraction({ variables });
-            track({
-              eventName: isLiked ? events.UnlikeContent : events.LikeContent,
-              properties: {
-                id: itemId,
-              },
-            });
-          } catch (e) {
-            throw e.message;
-          }
-        },
-      })
+      itemId
+        ? children({
+            itemId,
+            isLiked,
+            toggleLike: async (variables) => {
+              try {
+                await createNewInteraction({ variables });
+                track({
+                  eventName: isLiked
+                    ? events.UnlikeContent
+                    : events.LikeContent,
+                  properties: {
+                    id: itemId,
+                  },
+                });
+              } catch (e) {
+                throw e.message;
+              }
+            },
+          })
+        : null
     }
   </Mutation>
 );
 
 UpdateLikeStatus.propTypes = {
-  itemId: PropTypes.string.isRequired,
+  itemId: PropTypes.string,
   children: PropTypes.func.isRequired,
   isLiked: PropTypes.bool.isRequired,
   item: PropTypes.shape({

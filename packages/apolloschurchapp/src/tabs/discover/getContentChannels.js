@@ -1,5 +1,7 @@
 import gql from 'graphql-tag';
 
+import { contentItemFragment } from 'apolloschurchapp/src/content-single/getContentItem';
+
 export default gql`
   query getContentChannels {
     contentChannels {
@@ -9,6 +11,7 @@ export default gql`
         edges {
           node {
             id
+            ...contentItemFragment
             title
             coverImage {
               sources {
@@ -25,4 +28,5 @@ export default gql`
       }
     }
   }
+  ${contentItemFragment}
 `;

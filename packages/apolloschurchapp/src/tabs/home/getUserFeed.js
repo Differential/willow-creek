@@ -1,10 +1,13 @@
 import gql from 'graphql-tag';
 
+import { contentItemFragment } from 'apolloschurchapp/src/content-single/getContentItem';
+
 export default gql`
   query getUserFeed {
     userFeed {
       edges {
         node {
+          ...contentItemFragment
           __typename
           id
           coverImage {
@@ -18,10 +21,14 @@ export default gql`
             name
             iconName
           }
-          sharing {
-            title
-            message
-            url
+          theme {
+            type
+            colors {
+              primary
+              secondary
+              screen
+              paper
+            }
           }
           isLiked
           title
@@ -29,4 +36,5 @@ export default gql`
       }
     }
   }
+  ${contentItemFragment}
 `;

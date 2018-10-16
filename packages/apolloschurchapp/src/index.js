@@ -1,6 +1,6 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
 import { StatusBar } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 // import { Sentry } from 'react-native-sentry';
 
 import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
@@ -27,27 +27,18 @@ const AppStatusBar = withTheme(({ theme }) => ({
   backgroundColor: theme.colors.paper,
 }))(StatusBar);
 
-const AppStackNavigator = createStackNavigator(
+const AppNavigator = createStackNavigator(
   {
     Tabs,
     ContentSingle,
+    Auth,
     UserSettings,
     LikedContentList,
-  },
-  {
-    initialRouteName: 'Tabs',
-  }
-);
-
-const AppModalNavigator = createStackNavigator(
-  {
-    AppStackNavigator,
-    Auth,
     PersonalDetails,
     ChangePassword,
   },
   {
-    initialRouteName: 'AppStackNavigator',
+    initialRouteName: 'Tabs',
     mode: 'modal',
     headerMode: 'none',
   }
@@ -56,8 +47,8 @@ const AppModalNavigator = createStackNavigator(
 const App = () => (
   <Providers>
     <BackgroundView>
-      <AppStatusBar />
-      <AppModalNavigator
+      <AppStatusBar barStyle="dark-content" />
+      <AppNavigator
         ref={(navigatorRef) => {
           NavigationService.setTopLevelNavigator(navigatorRef);
         }}

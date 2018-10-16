@@ -14,6 +14,8 @@ const TabNavigator = createBottomTabNavigator(
   },
   {
     tabBarComponent: TabBar,
+    lazy: true,
+    removeClippedSubviews: true,
   }
 );
 

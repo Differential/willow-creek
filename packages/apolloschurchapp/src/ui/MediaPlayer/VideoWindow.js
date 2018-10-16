@@ -91,7 +91,7 @@ class VideoWindow extends PureComponent {
         ref={this.setVideoRef}
         source={mediaPlayer.currentTrack.mediaSource}
         paused={!mediaPlayer.isPlaying}
-        audioOnly={!mediaPlayer.currentTrack.isVideo}
+        audioOnly={!mediaPlayer.showVideo}
         ignoreSilentSwitch={'ignore'}
         allowsExternalPlayback
         playInBackground
@@ -104,6 +104,7 @@ class VideoWindow extends PureComponent {
         onLoad={this.handleOnLoad}
         onProgress={this.handleOnProgress}
         style={StyleSheet.absoluteFill}
+        volume={mediaPlayer.muted ? 0 : 1}
         repeat
         key="video"
       />,
@@ -113,7 +114,7 @@ class VideoWindow extends PureComponent {
         key="poster"
         style={[
           styles.animatedPosterImage,
-          mediaPlayer.currentTrack.isVideo ? this.loadingStyle : {},
+          mediaPlayer.showVideo ? this.loadingStyle : {},
         ]}
         source={mediaPlayer.currentTrack.posterSources}
       />,

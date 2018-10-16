@@ -52,6 +52,8 @@ InMemoryCache {
         "isFullscreen": false,
         "isPlaying": false,
         "isVisible": false,
+        "muted": false,
+        "showVideo": true,
       },
       "ROOT_QUERY": Object {
         "__typename": "ClientState",

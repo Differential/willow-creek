@@ -5991,6 +5991,161 @@ exports[`The Video icon renders correctly 1`] = `
 </RCTSafeAreaView>
 `;
 
+exports[`The VideoOff icon renders correctly 1`] = `
+<RCTSafeAreaView
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="32"
+      bbWidth="32"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+          false,
+          Object {
+            "flex": 0,
+            "height": 32,
+            "width": 32,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+    >
+      <RNSVGPath
+        d="M3.8182 5.7778v12.4444H14.2V5.7778H3.8182zM16 6v12c0 1.1046-.8954 2-2 2H4c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h10c1.1046 0 2 .8954 2 2zm4.1818 2.6952L16 11.8084v.3832l4.1818 3.251V8.695zM16 14.4957V9.4253l6-4.2178v13.585l-6-4.2968z"
+        fill={
+          Array [
+            0,
+            0.18823529411764706,
+            0.18823529411764706,
+            0.18823529411764706,
+            1,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth="1"
+        x={0}
+        y={0}
+      />
+      <RNSVGPath
+        d="M0.219669914,1.28033009 C-0.0732233047,0.987436867 -0.0732233047,0.512563133 0.219669914,0.219669914 C0.512563133,-0.0732233047 0.987436867,-0.0732233047 1.28033009,0.219669914 L23.7803301,22.7196699 C24.0732233,23.0125631 24.0732233,23.4874369 23.7803301,23.7803301 C23.4874369,24.0732233 23.0125631,24.0732233 22.7196699,23.7803301 L0.219669914,1.28033009 Z"
+        fill={
+          Array [
+            0,
+            0.18823529411764706,
+            0.18823529411764706,
+            0.18823529411764706,
+            1,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        matrix={
+          Array [
+            -1,
+            0,
+            0,
+            1,
+            24,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth="1"
+        x={0}
+        y={0}
+      />
+    </RNSVGSvgView>
+  </View>
+</RCTSafeAreaView>
+`;
+
 exports[`The Volume icon renders correctly 1`] = `
 <RCTSafeAreaView
   onLayout={[Function]}

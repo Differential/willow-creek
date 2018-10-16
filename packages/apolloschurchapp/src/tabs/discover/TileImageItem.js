@@ -13,7 +13,7 @@ const Container = styled(({ theme }) => ({
 }))(View);
 
 const TileImageItem = ({
-  item: { id, title, coverImage = {}, sharing } = {},
+  item: { id, title, coverImage = {} } = {},
   isLoading,
   navigation,
 }) => (
@@ -22,7 +22,6 @@ const TileImageItem = ({
       onPressItem={() =>
         navigation.navigate('ContentSingle', {
           itemId: id,
-          sharing,
         })
       }
       isLoading={isLoading}

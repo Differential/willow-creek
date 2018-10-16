@@ -55,6 +55,30 @@ const exitFullscreen = gql`
   }
 `;
 
+const mute = gql`
+  mutation {
+    mediaPlayerUpdateState(muted: true) @client
+  }
+`;
+
+const unmute = gql`
+  mutation {
+    mediaPlayerUpdateState(muted: false) @client
+  }
+`;
+
+const showVideo = gql`
+  mutation {
+    mediaPlayerUpdateState(showVideo: true) @client
+  }
+`;
+
+const hideVideo = gql`
+  mutation {
+    mediaPlayerUpdateState(showVideo: false) @client
+  }
+`;
+
 const updatePlayhead = gql`
   mutation mediaPlayerSetPlayhead($currentTime: Float) {
     mediaPlayerSetPlayhead(currentTime: $currentTime) @client
@@ -70,4 +94,8 @@ export {
   dismiss,
   exitFullscreen,
   updatePlayhead,
+  mute,
+  unmute,
+  showVideo,
+  hideVideo,
 };

@@ -39,6 +39,8 @@ const getControlState = gql`
         artist
         isVideo
       }
+      showVideo
+      muted
     }
   }
 `;
@@ -58,6 +60,8 @@ const getVideoState = gql`
       }
       currentTime
       isPlaying
+      showVideo
+      muted
     }
   }
 `;

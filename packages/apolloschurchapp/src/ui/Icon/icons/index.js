@@ -53,5 +53,6 @@ export { default as Text } from './Text';
 export { default as Time } from './Time';
 export { default as Umbrella } from './Umbrella';
 export { default as Video } from './Video';
+export { default as VideoOff } from './VideoOff';
 export { default as Volume } from './Volume';
 export { default as Warning } from './Warning';

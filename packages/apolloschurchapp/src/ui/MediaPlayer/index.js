@@ -6,6 +6,7 @@ import FullscreenPlayer from './FullscreenPlayer';
 import { getMediaPlayerVisibility } from './queries';
 
 export { MINI_PLAYER_HEIGHT } from './MiniControls';
+export MediaPlayerSpacer from './MediaPlayerSpacer';
 
 /**
  * Selectively renders FullscreenPlayer component is MediaPlayer is visible

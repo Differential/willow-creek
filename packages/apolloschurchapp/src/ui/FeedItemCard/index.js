@@ -33,6 +33,7 @@ const FeedItemCard = enhance(
     isLiked,
     backgroundColor,
     theme,
+    transitionKey,
     id,
     ...otherProps
   }) => (
