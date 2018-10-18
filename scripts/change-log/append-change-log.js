@@ -1,8 +1,8 @@
 const getChangeLogContent = () => {
-  const version = require('../../package.json').version;
+  const version = require('../../lerna.json').version;
 
   let commit = '';
-  let commits = [];
+  const commits = [];
   let newItem = false;
 
   process.argv.forEach((arg, index) => {
@@ -15,31 +15,27 @@ const getChangeLogContent = () => {
         newItem = true;
       }
       if (newItem && arg !== ',') {
-        commit += ' ' + arg;
+        commit += ` ${arg}`;
       }
     }
   });
 
-  const refinedCommits = commits.map(item => `- ${item}`);
+  const refinedCommits = commits.map((item) => `- ${item}`);
   const date = new Date();
   const template = `
-${'v' +
-    version +
-    ': ' +
-    date.toLocaleString('en-us', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-    })}
+${`v${version}: ${date.toLocaleString('en-us', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  })}`}
 
-${refinedCommits.map(commit => commit + '\n').join('')}
+${refinedCommits.map((commit) => `${commit}\n`).join('')}
 `;
 
   return template;
 };
 
 (async () => {
-  'use strict';
   const fs = require('fs');
 
   try {

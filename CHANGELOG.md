@@ -1,4 +1,36 @@
 
+v0.6.0: October 18, 2018
+
+- Adds Apollo engine setup (#333) (ede2801)
+- Adds Storybook and Nuke lerna scripts (#332) (93747cc)
+- Adds Initial Testing control panel (#326) (da105a8)
+- Adds polish of home screen and content-single transitions (#313) (31cdb06)
+- Adds copyright info to scripture (#328) (74979a1)
+- Adds Push Notification Deep Linking (#321) (5b94891)
+- Adds Devotional Component (#296) (d507881)
+- Adds Change Password Mutation (#320) (cdb9a4e)
+- Adds login flow when trying to like a piece of content while logged out (#305) (fa3c3e2)
+- Adds tests over Family/Location API (#319) (6e6cea0)
+- Adds One Signal push icon (#315) (d1771c8)
+- Adds tracking for common events (#300) (396bcca)
+- Adds round android app icon (#307) (1b0e1e2)
+- Adds script to populate .env file variables from environment (#311) (a5f42af)
+- Adds OneSignal support for Push Notifications (#291) (74bbe4a)
+- Adds mutation to update multiple people fields at once (#299) (6b61e2a)
+- Improves content single screens with design polish (#316) (1bb4fb9)
+- Improves the ability to adjust to devices with Safe Area insets, such as notches on the iPhone X (#334) (ffebbb2)
+- Improves scripture reading experience (#317) (1299440)
+- Improves Media Player UI/UX (#306) (7dfbbd9)
+- Improves the User Profile and Connect views (#318) (c88a859)
+- Changes deploys to docker (#335) (df67bae)
+- Changes Like component to make it reusable (#297) (7599513)
+- Fixes comment in dockerfile (#336) (71f25d5)
+- Fixes login form login button on Android devices from moving over input fields (#329) (856e136)
+- Fixes android builds by removing duplicate launchMode def. (#314) (7a1fb67)
+- Fixes release script so CHANGLOG.md users proper version (#303) (1846019)
+- Fixes test code left in store/index (#302) (085bed2)
+- Removes one signal extension (#312) (d3c7d46)
+
 v0.5.0: September 19, 2018
 
 - Adds Server Side Analytics Support (#263) (de7391e)

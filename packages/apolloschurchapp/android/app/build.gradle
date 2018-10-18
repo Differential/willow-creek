@@ -111,8 +111,8 @@ android {
         applicationId "com.apolloschurchapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 3
-        versionName "0.5.0"
+        versionCode 4
+        versionName "0.6.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }

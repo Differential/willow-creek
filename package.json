@@ -15,7 +15,7 @@
     "ci-test": "./node_modules/.bin/lerna run test  --stream -- --maxWorkers=2",
     "storybook": "./node_modules/.bin/lerna run storybook --stream --scope apolloschurchapp",
     "release": "./node_modules/.bin/lerna version --no-push && echo \"Release has been tagged!\nPlease look over the CHANGELOG.md file, and use 'git commit -amend' to amend any edits.\nWhen done, be sure to 'git push --tags' and create a release PR\"",
-    "postversion": "./scripts/update-change-log.sh && ./node_modules/.bin/lerna run postversion",
+    "preversion": "./scripts/update-change-log.sh",
     "publish-schema": "./node_modules/.bin/apollo schema:publish --endpoint=\"https://apollos-church-api.now.sh\" --key=$ENGINE_API_KEY",
     "deploy": "now --public --team apolloschurch --token $NOW_TOKEN --docker && now alias --team apolloschurch --token $NOW_TOKEN && now rm apollos-church-api --team apolloschurch --safe --yes --token $NOW_TOKEN && npm run publish-schema",
     "nuke": "yarn nuke:node && yarn cache clean && yarn && yarn nuke:cache",
