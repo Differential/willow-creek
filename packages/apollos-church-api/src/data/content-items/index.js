@@ -251,11 +251,8 @@ export const defaultContentItemResolvers = {
     return null;
   },
 
-  // This resolver function is temporary, and is just used to get a seed to generate a random theme from
-  theme: (root) => {
-    if (![6, 5, 4].includes(root.contentChannelId)) return null; // todo: don't generate a theme for these content channel ids
-    return root.guid; // todo: this `guid` is just being used as a seed to generate colors for now
-  },
+  theme: () => null, // todo: integrate themes from Rock
+
   isLiked: async ({ id, isLiked }, args, { dataSources }) => {
     if (isLiked != null) return isLiked;
 
