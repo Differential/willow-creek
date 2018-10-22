@@ -19,6 +19,7 @@ describe('Scripture', () => {
     const query = `
       query {
         scripture (query: "SNG.1.1") {
+          id
           html
           reference
           copyright

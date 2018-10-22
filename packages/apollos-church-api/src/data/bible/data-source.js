@@ -15,4 +15,11 @@ export default class Scripture extends RESTDataSource {
     const bibleId = process.env.BIBLE_ID;
     return this.get(`${bibleId}/search?query=${query}`);
   }
+
+  // In the future, we can use this field to handle content that returns multiple
+  // "scriptures". Like references across several different books of the bible.
+  async getScriptures(query) {
+    const scripture = await this.getScripture(query);
+    return [scripture];
+  }
 }

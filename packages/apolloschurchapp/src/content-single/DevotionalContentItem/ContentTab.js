@@ -1,12 +1,12 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
 import { H2 } from 'apolloschurchapp/src/ui/typography';
 import styled from 'apolloschurchapp/src/ui/styled';
-import HTMLView from 'apolloschurchapp/src/ui/HTMLView';
 import { ScriptureList } from 'apolloschurchapp/src/ui/Scripture';
-import Placeholder from 'apolloschurchapp/src/ui/Placeholder';
+import HorizontalContentFeed from '../HorizontalContentFeed';
+import HTMLContent from '../HTMLContent';
 
 const ContentContainer = styled({ paddingVertical: 0 })(PaddedView);
 
@@ -16,39 +16,34 @@ const ContentContainer = styled({ paddingVertical: 0 })(PaddedView);
  * and the body text of the devo.
  */
 const ContentTab = ({
+  id,
   title,
   references,
-  body,
   isLoading,
   navigationState,
+  navigation,
 }) => (
   <ScrollView>
     <ContentContainer>
-      <Placeholder.Paragraph
-        lineNumber={15}
-        onReady={!isLoading}
-        lastLineWidth="60%"
-        firstLineWidth="40%"
-      >
-        <View>
-          <H2 padded>{title}</H2>
-          {references && references.length ? (
-            <ScriptureList
-              references={references}
-              onPress={navigationState.route.jumpTo} // eslint-disable-line react/jsx-handler-names
-              tabDestination={'scripture'}
-            />
-          ) : null}
-          <HTMLView>{body}</HTMLView>
-        </View>
-      </Placeholder.Paragraph>
+      <H2 padded isLoading={!title && isLoading}>
+        {title}
+      </H2>
+      {references && references.length ? (
+        <ScriptureList
+          references={references}
+          onPress={navigationState.route.jumpTo} // eslint-disable-line react/jsx-handler-names
+          tabDestination={'scripture'}
+        />
+      ) : null}
+      <HTMLContent contentId={id} />
     </ContentContainer>
+    <HorizontalContentFeed contentId={id} navigation={navigation} />
   </ScrollView>
 );
 
 ContentTab.propTypes = {
-  /** The devotional text */
-  body: PropTypes.string,
+  /** The id of the devotional item */
+  id: PropTypes.string,
   /** Toggles placeholders */
   isLoading: PropTypes.bool,
   /**

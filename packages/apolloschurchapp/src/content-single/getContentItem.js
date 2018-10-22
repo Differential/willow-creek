@@ -40,6 +40,7 @@ export const contentItemFragment = gql`
 export default gql`
   query getContentItem($itemId: ID!) {
     node(id: $itemId) {
+      __typename
       ... on ContentItem {
         ...contentItemFragment
       }

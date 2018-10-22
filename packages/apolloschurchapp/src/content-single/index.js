@@ -1,15 +1,9 @@
 import React, { PureComponent } from 'react';
-import { ScrollView } from 'react-native';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
-import GradientOverlayImage from 'apolloschurchapp/src/ui/GradientOverlayImage';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import { H2 } from 'apolloschurchapp/src/ui/typography';
 import { ErrorCard } from 'apolloschurchapp/src/ui/Card';
-import styled from 'apolloschurchapp/src/ui/styled';
 import { ThemeMixin } from 'apolloschurchapp/src/ui/theme';
 
 import ModalView from 'apolloschurchapp/src/ui/ModalView';
@@ -17,13 +11,10 @@ import TrackEventWhenLoaded from 'apolloschurchapp/src/analytics/TrackEventWhenL
 
 import { events } from 'apolloschurchapp/src/analytics';
 import ActionContainer from './ActionContainer';
-import HTMLContent from './HTMLContent';
-import HorizontalContentFeed from './HorizontalContentFeed';
-import MediaControls from './MediaControls';
-
 import getContentItem from './getContentItem';
 
-const FlexedScrollView = styled({ flex: 1 })(ScrollView);
+import DevotionalContentItem from './DevotionalContentItem';
+import UniversalContentItem from './UniversalContentItem';
 
 class ContentSingle extends PureComponent {
   static propTypes = {
@@ -33,18 +24,48 @@ class ContentSingle extends PureComponent {
     }),
   };
 
-  get queryVariables() {
-    return { itemId: this.props.navigation.getParam('itemId', []) };
+  get itemId() {
+    return this.props.navigation.getParam('itemId', []);
   }
+
+  get queryVariables() {
+    return { itemId: this.itemId };
+  }
+
+  renderContent = ({ content, loading, error }) => {
+    let { __typename } = content;
+    if (!__typename && this.itemId) {
+      [__typename] = this.itemId.split(':');
+    }
+    switch (__typename) {
+      case 'DevotionalContentItem':
+        return (
+          <DevotionalContentItem
+            id={this.itemId}
+            content={content}
+            loading={loading}
+            error={error}
+          />
+        );
+      case 'UniversalContentItem':
+      default:
+        return (
+          <UniversalContentItem
+            id={this.itemId}
+            content={content}
+            loading={loading}
+            error={error}
+          />
+        );
+    }
+  };
 
   renderWithData = ({ loading, error, data }) => {
     if (error) return <ErrorCard error={error} />;
 
     const content = data.node || {};
 
-    const coverImageSources = get(content, 'coverImage.sources', []);
-
-    const { theme = {}, title, id } = content;
+    const { theme = {}, id } = content;
 
     return (
       <ThemeMixin
@@ -59,27 +80,10 @@ class ContentSingle extends PureComponent {
             eventName={events.ViewContent}
             properties={{
               title: content.title,
-              itemId: this.id,
+              itemId: this.itemId,
             }}
           />
-          <FlexedScrollView>
-            {coverImageSources.length || loading ? (
-              <GradientOverlayImage
-                isLoading={!coverImageSources.length && loading}
-                source={coverImageSources}
-              />
-            ) : null}
-            <BackgroundView>
-              <MediaControls contentId={id} />
-              <PaddedView>
-                <H2 padded isLoading={!title && loading}>
-                  {title}
-                </H2>
-                <HTMLContent contentId={id} />
-              </PaddedView>
-              <HorizontalContentFeed contentId={id} />
-            </BackgroundView>
-          </FlexedScrollView>
+          {this.renderContent({ content, loading, error })}
           <ActionContainer itemId={id} />
         </ModalView>
       </ThemeMixin>

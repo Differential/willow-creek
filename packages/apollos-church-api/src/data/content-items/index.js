@@ -89,7 +89,7 @@ export const schema = gql`
     sharing: SharableContentItem
     theme: Theme
     isLiked: Boolean
-    scriptures: Scripture
+    scriptures: [Scripture]
   }
 
   type Term {
@@ -119,8 +119,9 @@ export const schema = gql`
   }
 `;
 
+// Empty fields in rock default to `''`
 const hasScripture = ({ attributeValues }) =>
-  get(attributeValues, 'scriptures.value') != null;
+  get(attributeValues, 'scriptures.value', '') !== '';
 
 const isImage = ({ key, attributeValues, attributes }) =>
   attributes[key].fieldTypeId === Constants.FIELD_TYPES.IMAGE ||
@@ -325,7 +326,7 @@ export const resolver = {
     scriptures: ({ attributeValues }, args, { dataSources }) => {
       const reference = get(attributeValues, 'scriptures.value');
       if (reference && reference != null) {
-        return dataSources.Scripture.getScripture(reference);
+        return dataSources.Scripture.getScriptures(reference);
       }
       return null;
     },
@@ -348,8 +349,11 @@ export const resolver = {
   },
   ContentItem: {
     ...defaultContentItemResolvers,
-    __resolveType: ({ attributeValues }) => {
-      if (hasScripture({ attributeValues })) {
+    __resolveType: ({ attributeValues, contentChannelTypeId }) => {
+      if (
+        hasScripture({ attributeValues }) &&
+        contentChannelTypeId === Constants.DEVOTIONAL_TYPE_ID
+      ) {
         return 'DevotionalContentItem';
       }
       return 'UniversalContentItem';

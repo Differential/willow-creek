@@ -25,6 +25,16 @@ const content = {
   title: 'God is Our Banner',
 };
 
+const renderItem = () => {};
+
+const loadingStateObject = {
+  node: {
+    id: 'fakeId0',
+    title: '',
+    isLoading: true,
+  },
+};
+
 const stories = storiesOf('Devotional', module);
 
 stories.add('Example', () => (
@@ -33,6 +43,8 @@ stories.add('Example', () => (
     title={content.title}
     isLoading={false}
     scripture={scripture}
+    renderItem={renderItem}
+    loadingStateObject={loadingStateObject}
   />
 ));
 
@@ -42,5 +54,7 @@ stories.add('isLoading', () => (
     title={content.title}
     isLoading
     scripture={scripture}
+    renderItem={renderItem}
+    loadingStateObject={loadingStateObject}
   />
 ));
