@@ -18,6 +18,7 @@ describe('RecentlyLikedTileFeedConnected', () => {
           getAllLikedContent: [
             {
               id: 'UniversalContentItem:296373ecb53580855cadffa0375ebe18',
+              __typename: 'UniversalContentItem',
               title: 'Guys Night!',
               coverImage: {
                 sources: [
@@ -35,6 +36,7 @@ describe('RecentlyLikedTileFeedConnected', () => {
             },
             {
               id: 'UniversalContentItem:39193b5ad28717ebfeab4d226664d8e7',
+              __typename: 'UniversalContentItem',
               title: 'This August at NewSpring',
               coverImage: {
                 sources: [
@@ -52,6 +54,7 @@ describe('RecentlyLikedTileFeedConnected', () => {
             },
             {
               id: 'UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db',
+              __typename: 'UniversalContentItem',
               title: 'A Place to Worship Free of Fear',
               coverImage: {
                 sources: [

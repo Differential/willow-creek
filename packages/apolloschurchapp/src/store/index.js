@@ -57,7 +57,7 @@ export const schema = `
 `;
 
 export const defaults = {
-  __typename: 'ClientState',
+  __typename: 'Query',
   authToken: null,
   mediaPlayer: {
     __typename: 'MediaPlayerState',

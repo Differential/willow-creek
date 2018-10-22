@@ -14,14 +14,16 @@ import introspectionQueryResultData from './fragmentTypes.json';
 const SCHEMA_VERSION = `${DeviceInfo.getVersion()}${DeviceInfo.getBuildNumber()}`; // Must be a string.
 const SCHEMA_VERSION_KEY = 'apollo-schema-version';
 
+const nodeCacheRedirect = (_, { id }, { getCacheKey }) =>
+  id ? getCacheKey({ __typename: id.split(':')[0], id }) : null;
+
 const cache = new InMemoryCache({
   fragmentMatcher: new IntrospectionFragmentMatcher({
     introspectionQueryResultData,
   }),
   cacheRedirects: {
     Query: {
-      node: (_, { id }, { getCacheKey }) =>
-        id ? getCacheKey({ __typename: id.split(':')[0], id }) : null,
+      node: nodeCacheRedirect,
     },
   },
 });
@@ -37,7 +39,6 @@ export const ensureCacheHydration = (async () => {
     if (currentVersion === SCHEMA_VERSION) {
       // If the current version matches the latest version,
       // we're good to go and can restore the cache.
-      console.log('Restoring cache...');
       await persistor.restore();
     } else {
       // Otherwise, we'll want to purge the outdated persisted cache

@@ -108,6 +108,7 @@ exports[`RecentlyLikedTileFeed renders a RecentlyLikedTileFeed 1`] = `
         data={
           Array [
             Object {
+              "__typename": "UniversalContentItem",
               "coverImage": Object {
                 "sources": Array [
                   Object {
@@ -124,6 +125,7 @@ exports[`RecentlyLikedTileFeed renders a RecentlyLikedTileFeed 1`] = `
               "title": "Making Prayer a Spiritual Habit",
             },
             Object {
+              "__typename": "UniversalContentItem",
               "coverImage": Object {
                 "sources": Array [
                   Object {

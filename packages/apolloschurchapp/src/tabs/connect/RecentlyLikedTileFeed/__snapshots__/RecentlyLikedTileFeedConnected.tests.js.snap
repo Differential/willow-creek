@@ -108,64 +108,55 @@ exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected
         data={
           Array [
             Object {
+              "__typename": "UniversalContentItem",
               "coverImage": Object {
                 "sources": Array [
                   Object {
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=58c037fa-cc7f-4d72-9571-a0cc0558e346",
-                    Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage.sources.0",
                   },
                 ],
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage",
               },
               "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
               "sharing": Object {
                 "message": "",
                 "title": "Guys Night!",
                 "url": "https://apollosrock.newspring.cc/",
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.sharing",
               },
               "title": "Guys Night!",
-              Symbol(id): "ROOT_QUERY.getAllLikedContent.0",
             },
             Object {
+              "__typename": "UniversalContentItem",
               "coverImage": Object {
                 "sources": Array [
                   Object {
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=f54b0db0-95f5-44ad-b8f2-8bcd1b23cfdb",
-                    Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage.sources.0",
                   },
                 ],
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage",
               },
               "id": "UniversalContentItem:39193b5ad28717ebfeab4d226664d8e7",
               "sharing": Object {
                 "message": "",
                 "title": "This August at NewSpring",
                 "url": "https://apollosrock.newspring.cc/",
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.sharing",
               },
               "title": "This August at NewSpring",
-              Symbol(id): "ROOT_QUERY.getAllLikedContent.1",
             },
             Object {
+              "__typename": "UniversalContentItem",
               "coverImage": Object {
                 "sources": Array [
                   Object {
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=a65bc45d-f961-4b7e-a899-63eb1f9b8da9",
-                    Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage.sources.0",
                   },
                 ],
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage",
               },
               "id": "UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db",
               "sharing": Object {
                 "message": "",
                 "title": "A Place to Worship Free of Fear",
                 "url": "https://apollosrock.newspring.cc/",
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.sharing",
               },
               "title": "A Place to Worship Free of Fear",
-              Symbol(id): "ROOT_QUERY.getAllLikedContent.2",
             },
           ]
         }
@@ -289,7 +280,6 @@ exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected
                             Object {
                               "cache": "force-cache",
                               "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=58c037fa-cc7f-4d72-9571-a0cc0558e346",
-                              Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage.sources.0",
                             },
                           ]
                         }
@@ -438,7 +428,6 @@ exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected
                             Object {
                               "cache": "force-cache",
                               "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=f54b0db0-95f5-44ad-b8f2-8bcd1b23cfdb",
-                              Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage.sources.0",
                             },
                           ]
                         }
@@ -587,7 +576,6 @@ exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected
                             Object {
                               "cache": "force-cache",
                               "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=a65bc45d-f961-4b7e-a899-63eb1f9b8da9",
-                              Symbol(id): "$ROOT_QUERY.getAllLikedContent.2.coverImage.sources.0",
                             },
                           ]
                         }

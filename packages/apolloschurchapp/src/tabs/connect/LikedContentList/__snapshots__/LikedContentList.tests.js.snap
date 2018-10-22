@@ -55,44 +55,38 @@ exports[`LikedContentList component renders LikedContentList 1`] = `
         data={
           Array [
             Object {
+              "__typename": "UniversalContentItem",
               "coverImage": Object {
                 "sources": Array [
                   Object {
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=55be1fd5-d8eb-43a6-aa70-f8e27bb63d31",
-                    Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage.sources.0",
                   },
                 ],
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage",
               },
               "id": "UniversalContentItem:4148aeb9482181025e9cad42826e676a",
               "sharing": Object {
                 "message": "",
                 "title": "Making Prayer a Spiritual Habit",
                 "url": "https://apollosrock.newspring.cc/",
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.sharing",
               },
               "title": "Making Prayer a Spiritual Habit",
-              Symbol(id): "ROOT_QUERY.getAllLikedContent.0",
             },
             Object {
+              "__typename": "UniversalContentItem",
               "coverImage": Object {
                 "sources": Array [
                   Object {
                     "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=993efb47-47ec-4dec-a3d3-47bcacfbd58e",
-                    Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage.sources.0",
                   },
                 ],
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage",
               },
               "id": "UniversalContentItem:9dbdc4e565dcaa3c9b17eb5ae42de96e",
               "sharing": Object {
                 "message": "",
                 "title": "Vacations and Your Budget",
                 "url": "https://apollosrock.newspring.cc/",
-                Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.sharing",
               },
               "title": "Vacations and Your Budget",
-              Symbol(id): "ROOT_QUERY.getAllLikedContent.1",
             },
           ]
         }
@@ -203,7 +197,6 @@ exports[`LikedContentList component renders LikedContentList 1`] = `
                             Object {
                               "cache": "force-cache",
                               "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=55be1fd5-d8eb-43a6-aa70-f8e27bb63d31",
-                              Symbol(id): "$ROOT_QUERY.getAllLikedContent.0.coverImage.sources.0",
                             },
                           ]
                         }
@@ -436,7 +429,6 @@ exports[`LikedContentList component renders LikedContentList 1`] = `
                             Object {
                               "cache": "force-cache",
                               "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=993efb47-47ec-4dec-a3d3-47bcacfbd58e",
-                              Symbol(id): "$ROOT_QUERY.getAllLikedContent.1.coverImage.sources.0",
                             },
                           ]
                         }

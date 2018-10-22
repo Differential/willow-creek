@@ -17,6 +17,7 @@ describe('LikedContentList component', () => {
         data: {
           getAllLikedContent: [
             {
+              __typename: 'UniversalContentItem',
               id: 'UniversalContentItem:4148aeb9482181025e9cad42826e676a',
               title: 'Making Prayer a Spiritual Habit',
               coverImage: {
@@ -34,6 +35,7 @@ describe('LikedContentList component', () => {
               },
             },
             {
+              __typename: 'UniversalContentItem',
               id: 'UniversalContentItem:9dbdc4e565dcaa3c9b17eb5ae42de96e',
               title: 'Vacations and Your Budget',
               coverImage: {

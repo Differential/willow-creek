@@ -11,6 +11,7 @@ describe('RecentlyLikedTileFeed', () => {
         {
           id: 'UniversalContentItem:4148aeb9482181025e9cad42826e676a',
           title: 'Making Prayer a Spiritual Habit',
+          __typename: 'UniversalContentItem',
           coverImage: {
             sources: [
               {
@@ -28,6 +29,7 @@ describe('RecentlyLikedTileFeed', () => {
         {
           id: 'UniversalContentItem:9dbdc4e565dcaa3c9b17eb5ae42de96e',
           title: 'Vacations and Your Budget',
+          __typename: 'UniversalContentItem',
           coverImage: {
             sources: [
               {
