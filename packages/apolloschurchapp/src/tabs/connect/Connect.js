@@ -76,7 +76,7 @@ class Connect extends PureComponent {
           {(openUrl) => (
             <ScrollView>
               <SafeAreaView>
-                <Query query={getLoginState}>
+                <Query query={getLoginState} fetchPolicy="cache-and-network">
                   {({ data }) => {
                     if (get(data, 'isLoggedIn', false))
                       return [
