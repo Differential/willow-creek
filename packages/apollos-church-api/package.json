@@ -22,8 +22,8 @@
   "jest": {
     "collectCoverage": true,
     "testMatch": [
-      "<rootDir>/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/**/?(*.)(spec|test|tests).{js,jsx,mjs}"
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>/src/**/?(*.)(spec|test|tests).{js,jsx,mjs}"
     ],
     "testEnvironment": "node"
   },
@@ -32,6 +32,7 @@
     "apollo-datasource-rest": "0.1.1",
     "apollo-server": "^2.0.5",
     "casual": "1.5.19",
+    "cloudinary": "^1.11.0",
     "color": "3.0.0",
     "crypto": "1.0.1",
     "dataloader": "1.4.0",

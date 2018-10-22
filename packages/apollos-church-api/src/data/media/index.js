@@ -1,5 +1,6 @@
 import { gql } from 'apollo-server';
 import { Constants } from '../../connectors/rock';
+import withCloudinary from '../../connectors/cloudinary';
 
 export { default as model } from './model';
 
@@ -84,12 +85,12 @@ export const resolver = {
   ImageMediaSource: {
     uri: ({ uri = '' }) => {
       if (!uri || typeof uri !== 'string') return null;
-      if (uri.startsWith('http')) return uri;
-      if (uri.startsWith('//')) return `https:${uri}`;
+      if (uri.startsWith('http')) return withCloudinary(uri);
+      if (uri.startsWith('//')) return withCloudinary(`https:${uri}`);
 
       // Handle Rock GUID:
       if (uri.split('-').length === 5)
-        return `${Constants.GET_IMAGE}?guid=${uri}`;
+        return withCloudinary(`${Constants.GET_IMAGE}?guid=${uri}`);
 
       return uri;
     },

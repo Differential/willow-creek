@@ -56,6 +56,7 @@
       "BIBLE_ID": "@bible_id",
       "ENGINE_API_KEY": "@engine_api_key",
       "PORT": "443",
+      "CLOUDINARY_URL": "@cloudinary_url",
       "NOW_ENV": "true"
     }
   }
