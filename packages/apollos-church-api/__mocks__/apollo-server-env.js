@@ -140,7 +140,7 @@ fetch.mockRockDataSourceAPI = () => {
           response.status = 400;
           return Promise.reject(response);
         }
-        return resolveWith({ personId: 35 });
+        return resolveWith('35');
       }
 
       return resolveWith([rockMocks.people()]);

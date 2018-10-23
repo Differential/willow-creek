@@ -181,7 +181,7 @@ describe('Auth', () => {
         email: 'isaac.hardy@newspring.cc',
       });
 
-      expect(result).toEqual({ personId: 35 });
+      expect(result).toEqual('35');
     });
 
     it('throws error in createUserProfile', async () => {
@@ -235,6 +235,36 @@ describe('Auth', () => {
 
       const result = await graphql(schema, query, rootValue, context);
       expect(result).toMatchSnapshot();
+    });
+
+    it('passes the right args when creating a registration', async () => {
+      const query = `
+        mutation {
+          registerPerson(email: "hello.world@earth.org", password: "good") {
+            user {
+              id
+              profile {
+                id
+                email
+              }
+            }
+          }
+        }
+      `;
+
+      const createUserProfile = jest
+        .fn()
+        .mockImplementation(async () => Promise.resolve('123'));
+      const createUserLogin = jest.fn();
+      const rootValue = {};
+
+      context.dataSources.Auth.createUserLogin = createUserLogin;
+      context.dataSources.Auth.createUserProfile = createUserProfile;
+
+      await graphql(schema, query, rootValue, context);
+
+      expect(createUserProfile.mock.calls).toMatchSnapshot();
+      expect(createUserLogin.mock.calls).toMatchSnapshot();
     });
   });
 });

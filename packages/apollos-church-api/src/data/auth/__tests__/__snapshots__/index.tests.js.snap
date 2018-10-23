@@ -16,6 +16,28 @@ Object {
 }
 `;
 
+exports[`Auth User Registration passes the right args when creating a registration 1`] = `
+Array [
+  Array [
+    Object {
+      "email": "hello.world@earth.org",
+    },
+  ],
+]
+`;
+
+exports[`Auth User Registration passes the right args when creating a registration 2`] = `
+Array [
+  Array [
+    Object {
+      "email": "hello.world@earth.org",
+      "password": "good",
+      "personId": "123",
+    },
+  ],
+]
+`;
+
 exports[`Auth currentUser query logs a user out without a sessionId 1`] = `
 Object {
   "data": Object {
