@@ -5,7 +5,10 @@ cloudinary.config({
   secure: true,
 });
 
-export default function withCloudinary(url = '', options) {
+const cleanUrl = (url) => url.replace(/:(443|80)/, '');
+
+export default function withCloudinary(_url = '', options) {
+  const url = cleanUrl(_url);
   // If we call this function twice, only the first transform will be applied
   if (url.startsWith('https://res.cloudinary.com')) {
     return url;
