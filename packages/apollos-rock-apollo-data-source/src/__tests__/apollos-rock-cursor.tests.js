@@ -1,9 +1,8 @@
-import casual from 'casual';
-import { createCursor, parseCursor } from './cursor';
+import { createCursor, parseCursor } from '../cursor';
 
 describe('Node', () => {
   it('`createCursor` should take a valid json shape and return a string', () => {
-    const id = casual.word;
+    const id = 'some cursor';
 
     expect(typeof createCursor({ id })).toEqual('string');
   });

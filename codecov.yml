@@ -4,6 +4,7 @@ coverage:
       api:
         paths:
           - packages/apollos-church-api/*
+          - packages/apollos-rock-apollo-data-source/*
       mobile:
         paths:
           - packages/apolloschurchapp/*

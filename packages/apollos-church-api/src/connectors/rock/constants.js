@@ -1,3 +1,5 @@
+// TODO - eliminate this file through more robust configuration.
+
 import url from 'url';
 
 export const {

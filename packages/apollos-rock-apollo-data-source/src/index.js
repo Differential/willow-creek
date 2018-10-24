@@ -3,10 +3,10 @@ import { RESTDataSource } from 'apollo-datasource-rest';
 import { mapKeys, mapValues, camelCase } from 'lodash';
 import { fetch } from 'apollo-server-env';
 
-import { createCursor, parseCursor } from '../../utils/cursor';
+import { createCursor, parseCursor } from './cursor';
 
 import { ROCK_API, ROCK_TOKEN } from './constants'; // eslint-disable-line import/named
-import RequestBuilder from './RequestBuilder';
+import RequestBuilder from './request-builder';
 
 export default class RockApolloDataSource extends RESTDataSource {
   // Subclasses can set this to true to force all requests to turn extended responses.

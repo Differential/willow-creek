@@ -1,6 +1,6 @@
 import { AuthenticationError } from 'apollo-server';
+import RockApolloDataSource from 'apollos-rock-apollo-data-source';
 import { parseGlobalId } from '../node';
-import RockApolloDataSource from '../../connectors/rock/data-source';
 
 export default class Interactions extends RockApolloDataSource {
   resource = 'Interactions';

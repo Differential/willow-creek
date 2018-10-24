@@ -1,4 +1,4 @@
-import RockApolloDataSource from '../../connectors/rock/data-source';
+import RockApolloDataSource from 'apollos-rock-apollo-data-source';
 
 export default class Family extends RockApolloDataSource {
   resource = 'Family';

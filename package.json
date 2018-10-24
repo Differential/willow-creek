@@ -20,7 +20,8 @@
     "deploy": "now --public --team apolloschurch --token $NOW_TOKEN --docker && now alias --team apolloschurch --token $NOW_TOKEN && now rm apollos-church-api --team apolloschurch --safe --yes --token $NOW_TOKEN && npm run publish-schema",
     "nuke": "yarn nuke:node && yarn cache clean && yarn && yarn nuke:cache",
     "nuke:node": "./scripts/boom.sh && ./node_modules/.bin/lerna exec -- rm -rf ./node_modules",
-    "nuke:cache": "watchman watch-del-all && ./node_modules/.bin/lerna run start --scope apolloschurchapp --stream -- --reset-cache"
+    "nuke:cache": "watchman watch-del-all && ./node_modules/.bin/lerna run start --scope apolloschurchapp --stream -- --reset-cache",
+    "postinstall": "lerna run build"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.47",

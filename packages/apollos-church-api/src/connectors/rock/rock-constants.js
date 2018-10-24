@@ -1,5 +1,6 @@
-/* eslint-disable no-console */
-import RockApolloDataSource from './data-source';
+// TODO - eliminate this file through more robust configuration.
+
+import RockApolloDataSource from 'apollos-rock-apollo-data-source';
 
 const mapApollosNameToRockName = (name) => {
   switch (name) {
@@ -29,7 +30,6 @@ export default class RockConstants extends RockApolloDataSource {
       .cache({ ttl: 86400 })
       .get();
     if (objects.length) {
-      console.log('Found', objects[0]);
       return objects[0];
     }
     const objectId = await this.post(`/${model}`, objectAttributes);

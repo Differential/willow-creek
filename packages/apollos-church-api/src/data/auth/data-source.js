@@ -1,8 +1,8 @@
 import { AuthenticationError } from 'apollo-server';
 import { fetch, Request } from 'apollo-server-env';
 import moment from 'moment';
+import RockApolloDataSource from 'apollos-rock-apollo-data-source';
 
-import RockApolloDataSource from '../../connectors/rock/data-source';
 import { generateToken, registerToken } from './token';
 
 export default class AuthDataSource extends RockApolloDataSource {

@@ -1,6 +1,6 @@
-import { createCursor } from '../../../utils/cursor';
-import RestDataSource from '../data-source';
-import RequestBuilder from '../RequestBuilder';
+import { createCursor } from '../cursor';
+import RestDataSource from '../index';
+import RequestBuilder from '../request-builder';
 
 describe('RestDataSource', () => {
   it('constructs', () => {

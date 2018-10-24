@@ -2831,6 +2831,17 @@ apollo-datasource-rest@0.1.1:
     apollo-server-errors "2.0.0"
     http-cache-semantics "^4.0.0"
 
+apollo-datasource-rest@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.1.5.tgz#a2011637e3d23d9861f5da6764e3147bbb2b151e"
+  integrity sha512-sKDzsPCfDlLXxrgQtrxnvyMLbpRRfxcNiWJFeSdYR9in2zY37KUHgmyQOum7NylCikdkrhxzj51ny1YGWrOLrA==
+  dependencies:
+    apollo-datasource "0.1.3"
+    apollo-server-caching "0.1.2"
+    apollo-server-env "2.0.3"
+    apollo-server-errors "2.0.2"
+    http-cache-semantics "^4.0.0"
+
 apollo-datasource@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/apollo-datasource/-/apollo-datasource-0.1.0.tgz#32f72fc4676858c2b656f48413411f86a9814b38"
@@ -3119,7 +3130,9 @@ apollo@^1.9.2:
     analytics-node "^3.3.0"
     apollo-datasource-rest "0.1.1"
     apollo-server "^2.0.5"
+    apollos-rock-apollo-data-source "file:packages/apollos-rock-apollo-data-source"
     casual "1.5.19"
+    cloudinary "^1.11.0"
     color "3.0.0"
     crypto "1.0.1"
     dataloader "1.4.0"
@@ -3135,6 +3148,13 @@ apollo@^1.9.2:
     universal-analytics "^0.4.17"
     url-join "4.0.0"
     with-query "1.0.2"
+
+"apollos-rock-apollo-data-source@file:packages/apollos-rock-apollo-data-source":
+  version "0.5.0"
+  dependencies:
+    apollo-datasource-rest "^0.1.5"
+    lodash "^4.17.11"
+    with-query "^1.1.2"
 
 append-transform@^1.0.0:
   version "1.0.0"
@@ -3163,7 +3183,7 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
-argv@0.0.2:
+argv@0.0.2, argv@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/argv/-/argv-0.0.2.tgz#ecbd16f8949b157183711b1bda334f37840185ab"
   integrity sha1-7L0W+JSbFXGDcRsb2jNPN4QBhas=
@@ -4248,7 +4268,7 @@ babel-polyfill@6.26.0:
     core-js "^2.5.0"
     regenerator-runtime "^0.10.5"
 
-"babel-preset-apollos@link:packages/babel-preset-apollos":
+"babel-preset-apollos@file:packages/babel-preset-apollos", "babel-preset-apollos@link:packages/babel-preset-apollos":
   version "0.6.0"
   dependencies:
     "@babel/plugin-proposal-class-properties" "7.0.0-beta.47"
@@ -5391,6 +5411,17 @@ codecov@3.0.2:
     argv "0.0.2"
     request "^2.81.0"
     urlgrey "0.4.4"
+
+codecov@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/codecov/-/codecov-3.1.0.tgz#340bd968d361f256976b5af782dd8ba9f82bc849"
+  integrity sha512-aWQc/rtHbcWEQLka6WmBAOpV58J2TwyXqlpAQGhQaSiEUoigTTUk6lLd2vB3kXkhnDyzyH74RXfmV4dq2txmdA==
+  dependencies:
+    argv "^0.0.2"
+    ignore-walk "^3.0.1"
+    js-yaml "^3.12.0"
+    request "^2.87.0"
+    urlgrey "^0.4.4"
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -10026,7 +10057,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
-js-yaml@^3.6.1, js-yaml@^3.7.0, js-yaml@^3.9.0, js-yaml@^3.9.1:
+js-yaml@^3.12.0, js-yaml@^3.6.1, js-yaml@^3.7.0, js-yaml@^3.9.0, js-yaml@^3.9.1:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
   integrity sha512-PIt2cnwmPfL4hKNwqeiuz4bKfnzHTBv6HyVgjahA6mPLwPDzjDWrplJBMjHUFxku/N3FlmrbyPclad+I+4mJ3A==
@@ -12966,7 +12997,7 @@ qs@6.5.1:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
   integrity sha512-eRzhrN1WSINYCDCbrz796z37LOe3m5tmW7RQf6oBntukAG1nmovJvhnwHHRMAfeoItc1m2Hk02WER2aQ/iqs+A==
 
-qs@6.5.2, qs@^6.4.0, qs@^6.5.1, qs@~6.5.1, qs@~6.5.2:
+qs@6.5.2, qs@^6.4.0, qs@^6.5.1, qs@^6.5.2, qs@~6.5.1, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
@@ -15713,7 +15744,7 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-urlgrey@0.4.4:
+urlgrey@0.4.4, urlgrey@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/urlgrey/-/urlgrey-0.4.4.tgz#892fe95960805e85519f1cd4389f2cb4cbb7652f"
   integrity sha1-iS/pWWCAXoVRnxzUOJ8stMu3ZS8=
@@ -16054,6 +16085,14 @@ with-query@1.0.2:
   dependencies:
     object-assign "^4.1.1"
     qs "^6.4.0"
+
+with-query@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/with-query/-/with-query-1.1.2.tgz#e5e3854fbf607a24364f8da446dcf42b1da67d00"
+  integrity sha512-Ndq/xZwDeSsUWca+iWUrBJeHYqVlt2xux0k21DQpVE8l3RK8DbQskqYaL0bwPUUSEgNywQDjaYKwQkWGZU1RlQ==
+  dependencies:
+    object-assign "^4.1.1"
+    qs "^6.5.2"
 
 wordwrap@0.0.2:
   version "0.0.2"
