@@ -1,19 +1,36 @@
-Fixes [issue-number]
+## DESCRIPTION
 
-## Creator
+### What does this PR do, or why is it needed?
 
-- [ ] Build relevant tests if any apply
-- [ ] Ensure there are no new warnings (in app AND in storybook)
-- [ ] Upload an animated GIF showcasing the solution (if it applies)
+### What design trade-offs/decisions were made?
+
+### How do I test this PR?
+
+### What automated tests did you write?
+
+## TODO:
+
+- [ ] PR has a relevant title that will be understandable in a public changelog (ie...non developers)
+- [ ] Closes [tag-issues-here]
+- [ ] No new warnings in tests, in storybook, and in-app
+- [ ] Upload GIF(s) of iOS and Android
 - [ ] Set a relevant reviewer
-- [ ] PR has a relevant title that adheres to our patch-notes/change-log style
 
-## Reviewer
+## REVIEW:
 
-- [ ] Review CI build results
-- [ ] Review function and form on iOS
-- [ ] Review function and form on Android
-- [ ] Review new stories if any apply
-- [ ] Review test coverage: Are all new or changed states tested?
-- [ ] Review new test logic
-- [ ] Review that the PR title adheres to our patch-notes/change-log style
+**Manual QA**
+
+- [ ] Manual QA on iOS and ensure it looks/behaves as expected
+- [ ] Manual QA on Android and ensure it looks/behaves as expected
+
+**Code Review: Questions to consider**
+
+- [ ] Read through the "Files changed" tab _very carefully_
+- [ ] Edge cases: what assumptions are made about input?
+- [ ] What kind of tests could be written?
+- [ ] How might we make this easier for someone else to understand?
+- [ ] Could the code be simpler?
+- [ ] Will the code be easy to modify in the future?
+- [ ] What's one part of these changes that makes you excited to merge it?
+
+> The purpose of PR Review is to _improve the quality of the software._
