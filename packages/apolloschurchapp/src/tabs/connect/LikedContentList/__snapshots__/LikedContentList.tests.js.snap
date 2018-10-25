@@ -64,11 +64,6 @@ exports[`LikedContentList component renders LikedContentList 1`] = `
                 ],
               },
               "id": "UniversalContentItem:4148aeb9482181025e9cad42826e676a",
-              "sharing": Object {
-                "message": "",
-                "title": "Making Prayer a Spiritual Habit",
-                "url": "https://apollosrock.newspring.cc/",
-              },
               "title": "Making Prayer a Spiritual Habit",
             },
             Object {
@@ -81,11 +76,6 @@ exports[`LikedContentList component renders LikedContentList 1`] = `
                 ],
               },
               "id": "UniversalContentItem:9dbdc4e565dcaa3c9b17eb5ae42de96e",
-              "sharing": Object {
-                "message": "",
-                "title": "Vacations and Your Budget",
-                "url": "https://apollosrock.newspring.cc/",
-              },
               "title": "Vacations and Your Budget",
             },
           ]

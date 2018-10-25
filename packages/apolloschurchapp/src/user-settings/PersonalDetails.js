@@ -1,39 +1,29 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Query, Mutation } from 'react-apollo';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import { Text as TextInput } from 'apolloschurchapp/src/ui/inputs';
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
 import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import { ButtonLink } from 'apolloschurchapp/src/ui/Button';
-import { H4 } from 'apolloschurchapp/src/ui/typography';
-import styled from 'apolloschurchapp/src/ui/styled';
-import ActivityIndicator from 'apolloschurchapp/src/ui/ActivityIndicator';
+import FlexedView from 'apolloschurchapp/src/ui/FlexedView';
+import Button, { ButtonLink } from 'apolloschurchapp/src/ui/Button';
+import TableView from 'apolloschurchapp/src/ui/TableView';
 
 import getUserProfile from '../tabs/connect/getUserProfile';
 import updateCurrentUser from './updateCurrentUser';
 
-const Header = styled(({ theme }) => ({
-  paddingTop: theme.sizing.baseUnit * 1.75,
-  paddingRight: theme.sizing.baseUnit,
-  flexDirection: 'row',
-  alignItems: 'flex-end',
-  justifyContent: 'space-between',
-  backgroundColor: theme.colors.background.paper,
-}))(PaddedView);
-
-const SpaceHolder = styled(() => ({}))(PaddedView);
-
-const DoneButton = styled(() => ({
-  fontWeight: '800',
-}))(ButtonLink);
-
 class PersonalDetails extends PureComponent {
-  static navigationOptions = () => ({
+  static navigationOptions = ({ navigation }) => ({
     title: 'Personal Details',
+    headerLeft: null,
+    headerRight: (
+      <PaddedView vertical={false}>
+        <ButtonLink onPress={() => navigation.goBack()}>Cancel</ButtonLink>
+      </PaddedView>
+    ),
   });
 
   static propTypes = {
@@ -43,6 +33,59 @@ class PersonalDetails extends PureComponent {
       goBack: PropTypes.func,
     }),
   };
+
+  renderForm = (props) => (
+    <FlexedView>
+      <KeyboardAwareScrollView>
+        <TableView>
+          <PaddedView>
+            <TextInput
+              label="Nick Name"
+              type="text"
+              value={props.values.nickName}
+              error={props.touched.nickName && props.errors.nickName}
+              onChangeText={(text) => props.setFieldValue('nickName', text)}
+            />
+            <TextInput
+              label="First Name"
+              type="text"
+              value={props.values.firstName}
+              error={props.touched.firstName && props.errors.firstName}
+              onChangeText={(text) => props.setFieldValue('firstName', text)}
+            />
+            <TextInput
+              label="Last Name"
+              type="text"
+              value={props.values.lastName}
+              error={props.touched.lastName && props.errors.lastName}
+              onChangeText={(text) => props.setFieldValue('lastName', text)}
+            />
+          </PaddedView>
+        </TableView>
+        <TableView>
+          <PaddedView>
+            <TextInput
+              label="Email"
+              type="email"
+              value={props.values.email}
+              error={props.touched.email && props.errors.email}
+              onChangeText={(text) => props.setFieldValue('email', text)}
+            />
+          </PaddedView>
+        </TableView>
+      </KeyboardAwareScrollView>
+      <SafeAreaView>
+        <PaddedView>
+          <Button
+            disabled={!props.isValid || props.isSubmitting}
+            onPress={props.handleSubmit}
+            title="Save"
+            loading={props.isSubmitting}
+          />
+        </PaddedView>
+      </SafeAreaView>
+    </FlexedView>
+  );
 
   render() {
     return (
@@ -111,78 +154,7 @@ class PersonalDetails extends PureComponent {
                     setSubmitting(false);
                   }}
                 >
-                  {(props) => {
-                    if (props.isSubmitting) return <ActivityIndicator />;
-
-                    return (
-                      <ScrollView>
-                        <Header>
-                          <SpaceHolder />
-                          <H4>Personal Details</H4>
-                          {props.dirty ? (
-                            <DoneButton onPress={props.handleSubmit}>
-                              Done
-                            </DoneButton>
-                          ) : (
-                            <DoneButton
-                              onPress={() => this.props.navigation.goBack()}
-                            >
-                              Back
-                            </DoneButton>
-                          )}
-                        </Header>
-                        <BackgroundView>
-                          <PaddedView>
-                            <TextInput
-                              label="Nick Name"
-                              type="text"
-                              value={props.values.nickName}
-                              error={
-                                props.touched.nickName && props.errors.nickName
-                              }
-                              onChangeText={(text) =>
-                                props.setFieldValue('nickName', text)
-                              }
-                            />
-                            <TextInput
-                              label="First Name"
-                              type="text"
-                              value={props.values.firstName}
-                              error={
-                                props.touched.firstName &&
-                                props.errors.firstName
-                              }
-                              onChangeText={(text) =>
-                                props.setFieldValue('firstName', text)
-                              }
-                            />
-                            <TextInput
-                              label="Last Name"
-                              type="text"
-                              value={props.values.lastName}
-                              error={
-                                props.touched.lastName && props.errors.lastName
-                              }
-                              onChangeText={(text) =>
-                                props.setFieldValue('lastName', text)
-                              }
-                            />
-                          </PaddedView>
-                          <PaddedView>
-                            <TextInput
-                              label="Email"
-                              type="email"
-                              value={props.values.email}
-                              error={props.touched.email && props.errors.email}
-                              onChangeText={(text) =>
-                                props.setFieldValue('email', text)
-                              }
-                            />
-                          </PaddedView>
-                        </BackgroundView>
-                      </ScrollView>
-                    );
-                  }}
+                  {this.renderForm}
                 </Formik>
               )}
             </Mutation>

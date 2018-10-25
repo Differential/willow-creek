@@ -10,7 +10,7 @@ import getLikedContent from '../getLikedContent';
 class LikedContentList extends PureComponent {
   /** Function for React Navigation to set information in the header. */
   static navigationOptions = () => ({
-    title: 'Liked Content',
+    title: 'Your Likes',
   });
 
   static propTypes = {

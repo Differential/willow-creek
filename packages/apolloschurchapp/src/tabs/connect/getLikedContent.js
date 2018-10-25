@@ -1,22 +1,29 @@
 import gql from 'graphql-tag';
 
+import { contentItemFragment } from 'apolloschurchapp/src/content-single/getContentItem';
+
 export default gql`
   query getAllLikedContent {
     getAllLikedContent {
       ... on ContentItem {
+        ...contentItemFragment
+        __typename
         id
-        title
         coverImage {
+          name
           sources {
             uri
           }
         }
-        sharing {
-          title
-          message
-          url
+        isLiked
+        parentChannel {
+          id
+          name
+          iconName
         }
+        title
       }
     }
   }
+  ${contentItemFragment}
 `;

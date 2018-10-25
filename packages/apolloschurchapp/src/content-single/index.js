@@ -24,6 +24,10 @@ class ContentSingle extends PureComponent {
     }),
   };
 
+  static navigationOptions = {
+    header: null,
+  };
+
   get itemId() {
     return this.props.navigation.getParam('itemId', []);
   }

@@ -69,7 +69,7 @@ exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected
               }
             }
           >
-            Recently Like
+            Recently Liked
           </Text>
         </View>
         <View
@@ -117,11 +117,6 @@ exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected
                 ],
               },
               "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
-              "sharing": Object {
-                "message": "",
-                "title": "Guys Night!",
-                "url": "https://apollosrock.newspring.cc/",
-              },
               "title": "Guys Night!",
             },
             Object {
@@ -134,11 +129,6 @@ exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected
                 ],
               },
               "id": "UniversalContentItem:39193b5ad28717ebfeab4d226664d8e7",
-              "sharing": Object {
-                "message": "",
-                "title": "This August at NewSpring",
-                "url": "https://apollosrock.newspring.cc/",
-              },
               "title": "This August at NewSpring",
             },
             Object {
@@ -151,11 +141,6 @@ exports[`RecentlyLikedTileFeedConnected renders a RecentlyLikedTileFeedConnected
                 ],
               },
               "id": "UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db",
-              "sharing": Object {
-                "message": "",
-                "title": "A Place to Worship Free of Fear",
-                "url": "https://apollosrock.newspring.cc/",
-              },
               "title": "A Place to Worship Free of Fear",
             },
           ]
