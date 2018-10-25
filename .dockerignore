@@ -2,3 +2,4 @@ packages/apolloschurchapp
 packages/apollos-church-api/node_modules
 packages/apollos-church-api/.env
 packages/babel-preset-apollos/node_modules
+packages/apollos-rock-apollo-data-source/node_modules
