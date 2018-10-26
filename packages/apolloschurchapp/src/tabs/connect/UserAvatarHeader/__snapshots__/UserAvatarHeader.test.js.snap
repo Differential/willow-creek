@@ -37,8 +37,9 @@ exports[`user avatar header renders placeholder when loading 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "paddingBottom": 0,
           "paddingHorizontal": 16,
-          "paddingTop": 48,
+          "paddingTop": 32,
           "paddingVertical": 16,
         }
       }
@@ -336,8 +337,9 @@ exports[`user avatar header renders user avatar header if logged in 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "paddingBottom": 0,
           "paddingHorizontal": 16,
-          "paddingTop": 48,
+          "paddingTop": 32,
           "paddingVertical": 16,
         }
       }

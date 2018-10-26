@@ -43,6 +43,7 @@ exports[`UserSettings component renders UserSettings when logged in 1`] = `
       style={
         Object {
           "flex": 1,
+          "paddingTop": 28,
         }
       }
     >

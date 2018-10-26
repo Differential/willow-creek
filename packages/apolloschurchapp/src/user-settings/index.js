@@ -20,109 +20,14 @@ import ActivityIndicator from 'apolloschurchapp/src/ui/ActivityIndicator';
 import getLoginState from '../auth/getLoginState';
 import logout from '../auth/logout';
 
-import getUserProfile from '../tabs/connect/getUserProfile';
-
 const AvatarView = styled({
   alignItems: 'center',
   justifyContent: 'center',
 })(PaddedView);
 
-const UserAvatarWithData = ({ navigation }) => (
-  <Query query={getUserProfile} fetchPolicy="cache-and-network">
-    {({
-      data: { currentUser: { profile: { photo } = {} } = {} } = {},
-      refetch,
-    }) => (
-      <BackgroundView>
-        <AvatarView>
-          <AvatarForm text photo={photo} refetch={refetch} />
-        </AvatarView>
-        <WebBrowserConsumer>
-          {(openUrl) => (
-            <BackgroundView>
-              <TableView>
-                <Touchable
-                  onPress={async () => {
-                    await navigation.navigate('PersonalDetails');
-                  }}
-                >
-                  <Cell>
-                    <CellText>Personal Details</CellText>
-                    <CellIcon name="arrow-next" />
-                  </Cell>
-                </Touchable>
-                <Divider />
-                <Touchable
-                  onPress={async () => {
-                    await navigation.navigate('ChangePassword');
-                  }}
-                >
-                  <Cell>
-                    <CellText>Change Password</CellText>
-                    <CellIcon name="arrow-next" />
-                  </Cell>
-                </Touchable>
-              </TableView>
-              <TableView>
-                <Touchable
-                  onPress={() => openUrl('https://apollosrock.newspring.cc/')}
-                >
-                  <Cell>
-                    <CellText>Give Feedback</CellText>
-                    <CellIcon name="arrow-next" />
-                  </Cell>
-                </Touchable>
-              </TableView>
-              <TableView>
-                <Touchable
-                  onPress={() => openUrl('https://apollosrock.newspring.cc/')}
-                >
-                  <Cell>
-                    <CellText>Privacy Policy</CellText>
-                    <CellIcon name="arrow-next" />
-                  </Cell>
-                </Touchable>
-                <Divider />
-                <Touchable
-                  onPress={() => openUrl('https://apollosrock.newspring.cc/')}
-                >
-                  <Cell>
-                    <CellText>Terms of Use</CellText>
-                    <CellIcon name="arrow-next" />
-                  </Cell>
-                </Touchable>
-              </TableView>
-              <TableView>
-                <Mutation mutation={logout}>
-                  {(handleLogout) => (
-                    <Touchable
-                      onPress={async () => {
-                        await handleLogout();
-                        await navigation.navigate('Connect');
-                      }}
-                    >
-                      <Cell>
-                        <CellText>Logout</CellText>
-                        <CellIcon name="arrow-next" />
-                      </Cell>
-                    </Touchable>
-                  )}
-                </Mutation>
-              </TableView>
-            </BackgroundView>
-          )}
-        </WebBrowserConsumer>
-      </BackgroundView>
-    )}
-  </Query>
-);
-
-UserAvatarWithData.propTypes = {
-  navigation: PropTypes.shape({
-    getParam: PropTypes.func,
-    navigate: PropTypes.func,
-  }),
-};
+const BackgroundContainer = styled(({ theme }) => ({
+  paddingTop: theme.sizing.baseUnit * 1.75,
+}))(BackgroundView);
 
 class UserSettings extends PureComponent {
   static navigationOptions = () => ({
@@ -142,7 +47,102 @@ class UserSettings extends PureComponent {
         {({ data: { isLoggedIn = false, loading } }) => {
           if (loading) return <ActivityIndicator />;
           if (!isLoggedIn) return null;
-          return <UserAvatarWithData navigation={this.props.navigation} />;
+          return (
+            <BackgroundContainer>
+              <AvatarView>
+                <AvatarForm
+                  text
+                  photo={this.props.navigation.getParam('photo', '')}
+                  refetch={this.props.navigation.getParam('refetch', {})}
+                />
+              </AvatarView>
+              <WebBrowserConsumer>
+                {(openUrl) => (
+                  <BackgroundView>
+                    <TableView>
+                      <Touchable
+                        onPress={async () => {
+                          await this.props.navigation.navigate(
+                            'PersonalDetails'
+                          );
+                        }}
+                      >
+                        <Cell>
+                          <CellText>Personal Details</CellText>
+                          <CellIcon name="arrow-next" />
+                        </Cell>
+                      </Touchable>
+                      <Divider />
+                      <Touchable
+                        onPress={async () => {
+                          await this.props.navigation.navigate(
+                            'ChangePassword'
+                          );
+                        }}
+                      >
+                        <Cell>
+                          <CellText>Change Password</CellText>
+                          <CellIcon name="arrow-next" />
+                        </Cell>
+                      </Touchable>
+                    </TableView>
+                    <TableView>
+                      <Touchable
+                        onPress={() =>
+                          openUrl('https://apollosrock.newspring.cc/')
+                        }
+                      >
+                        <Cell>
+                          <CellText>Give Feedback</CellText>
+                          <CellIcon name="arrow-next" />
+                        </Cell>
+                      </Touchable>
+                    </TableView>
+                    <TableView>
+                      <Touchable
+                        onPress={() =>
+                          openUrl('https://apollosrock.newspring.cc/')
+                        }
+                      >
+                        <Cell>
+                          <CellText>Privacy Policy</CellText>
+                          <CellIcon name="arrow-next" />
+                        </Cell>
+                      </Touchable>
+                      <Divider />
+                      <Touchable
+                        onPress={() =>
+                          openUrl('https://apollosrock.newspring.cc/')
+                        }
+                      >
+                        <Cell>
+                          <CellText>Terms of Use</CellText>
+                          <CellIcon name="arrow-next" />
+                        </Cell>
+                      </Touchable>
+                    </TableView>
+                    <TableView>
+                      <Mutation mutation={logout}>
+                        {(handleLogout) => (
+                          <Touchable
+                            onPress={async () => {
+                              await handleLogout();
+                              await this.props.navigation.navigate('Connect');
+                            }}
+                          >
+                            <Cell>
+                              <CellText>Logout</CellText>
+                              <CellIcon name="arrow-next" />
+                            </Cell>
+                          </Touchable>
+                        )}
+                      </Mutation>
+                    </TableView>
+                  </BackgroundView>
+                )}
+              </WebBrowserConsumer>
+            </BackgroundContainer>
+          );
         }}
       </Query>
     );

@@ -16,10 +16,8 @@ import FlexedView from 'apolloschurchapp/src/ui/FlexedView';
 const Container = styled(({ theme }) => ({
   alignItems: 'center',
   flexDirection: 'row',
-  /* This padding shouldn't be needed or at least not at such a high value but SafeAreaView doesn't
-   * appear to work so here it is 🤷‍♂️
-   * TODO: revisit and update/remove these values after next RN upgrade. */
-  paddingTop: theme.sizing.baseUnit * 3,
+  paddingTop: theme.sizing.baseUnit * 2,
+  paddingBottom: 0,
 }))(PaddedView);
 
 const SettingsIcon = compose(
