@@ -1,4 +1,4 @@
-import RockApolloDataSource from 'apollos-rock-apollo-data-source';
+import RockApolloDataSource from '@apolloschurch/rock-apollo-data-source';
 
 export default class ContentChannel extends RockApolloDataSource {
   resource = 'ContentChannels';

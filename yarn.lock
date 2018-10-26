@@ -16,6 +16,13 @@
   resolved "https://registry.yarnpkg.com/@apollographql/graphql-playground-html/-/graphql-playground-html-1.6.0.tgz#15e1a042b97d6834e6d70b17cc73e1514fde9027"
   integrity sha512-QAZIFrfVRkjvMkUHIQKZXZ3La0V5t12w5PWrhihYEabHwzIZV/txQd/kSYHgYPXC4s5OURxsXZop9f0BzI2QIQ==
 
+"@apolloschurch/rock-apollo-data-source@file:packages/apollos-rock-apollo-data-source":
+  version "0.5.0"
+  dependencies:
+    apollo-datasource-rest "^0.1.5"
+    lodash "^4.17.11"
+    with-query "^1.1.2"
+
 "@babel/cli@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.0.0-beta.47.tgz#e00cc40ffd9084a5243c8fbded3f5049bc970e4c"
@@ -3124,13 +3131,13 @@ apollo@^1.9.2:
     react-dom "^16.4.0"
     rimraf "^2.6.2"
 
-"apollos-church-api@link:packages/apollos-church-api":
+"apollos-church-api@file:packages/apollos-church-api":
   version "0.6.0"
   dependencies:
+    "@apolloschurch/rock-apollo-data-source" "file:../../Library/Caches/Yarn/v2/apollos-rock-apollo-data-source"
     analytics-node "^3.3.0"
     apollo-datasource-rest "0.1.1"
     apollo-server "^2.0.5"
-    apollos-rock-apollo-data-source "file:packages/apollos-rock-apollo-data-source"
     casual "1.5.19"
     cloudinary "^1.11.0"
     color "3.0.0"
@@ -3148,13 +3155,6 @@ apollo@^1.9.2:
     universal-analytics "^0.4.17"
     url-join "4.0.0"
     with-query "1.0.2"
-
-"apollos-rock-apollo-data-source@file:packages/apollos-rock-apollo-data-source":
-  version "0.5.0"
-  dependencies:
-    apollo-datasource-rest "^0.1.5"
-    lodash "^4.17.11"
-    with-query "^1.1.2"
 
 append-transform@^1.0.0:
   version "1.0.0"
@@ -4268,7 +4268,7 @@ babel-polyfill@6.26.0:
     core-js "^2.5.0"
     regenerator-runtime "^0.10.5"
 
-"babel-preset-apollos@file:packages/babel-preset-apollos", "babel-preset-apollos@link:packages/babel-preset-apollos":
+"babel-preset-apollos@file:packages/babel-preset-apollos":
   version "0.6.0"
   dependencies:
     "@babel/plugin-proposal-class-properties" "7.0.0-beta.47"
