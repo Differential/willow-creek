@@ -15,6 +15,7 @@ import * as Interactions from './interactions';
 import * as Sharable from './sharable';
 import * as Analytics from './analytics';
 import * as Family from './family';
+import * as Pagination from './pagination';
 
 const data = {
   Node,
@@ -31,6 +32,7 @@ const data = {
   Sharable,
   Analytics,
   Family,
+  Pagination,
 };
 
 export const schema = [

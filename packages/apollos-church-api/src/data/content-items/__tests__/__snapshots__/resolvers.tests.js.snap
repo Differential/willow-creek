@@ -42,6 +42,10 @@ Object {
             },
           },
         ],
+        "pageInfo": Object {
+          "endCursor": "b487224762b030f470967f45d7205823",
+          "startCursor": "b487224762b030f470967f45d7205823",
+        },
       },
       "coverImage": Object {
         "key": "image",
@@ -200,6 +204,10 @@ Object {
                   },
                 },
               ],
+              "pageInfo": Object {
+                "endCursor": "b487224762b030f470967f45d7205823",
+                "startCursor": "b487224762b030f470967f45d7205823",
+              },
             },
             "coverImage": Object {
               "key": "image",
@@ -388,6 +396,10 @@ Object {
                   },
                 },
               ],
+              "pageInfo": Object {
+                "endCursor": "b487224762b030f470967f45d7205823",
+                "startCursor": "b487224762b030f470967f45d7205823",
+              },
             },
             "coverImage": Object {
               "key": "image",
@@ -534,6 +546,10 @@ Object {
             },
           },
         ],
+        "pageInfo": Object {
+          "endCursor": "b487224762b030f470967f45d7205823",
+          "startCursor": "b487224762b030f470967f45d7205823",
+        },
       },
       "coverImage": Object {
         "key": "image",

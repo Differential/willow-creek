@@ -8,6 +8,7 @@ import values from 'lodash/fp/values';
 import sanitizeHtml from '../../utils/sanitize-html';
 import { Constants } from '../../connectors/rock';
 import { createGlobalId } from '../node';
+import { withEdgePagination } from '../pagination/utils';
 
 const mapValuesWithKey = mapValues.convert({ cap: false });
 
@@ -105,7 +106,7 @@ export const schema = gql`
   type ContentItemsConnection {
     edges: [ContentItemsConnectionEdge]
     # TODO totalCount: Int
-    # TODO pageInfo: PaginationInfo
+    pageInfo: PaginationInfo
   }
 
   type ContentItemsConnectionEdge {
@@ -363,5 +364,8 @@ export const resolver = {
     url: () => 'https://apollosrock.newspring.cc/', // todo: return a dynamic url that links to the content item
     title: ({ title }) => title,
     message: () => '',
+  },
+  ContentItemsConnection: {
+    pageInfo: withEdgePagination,
   },
 };
