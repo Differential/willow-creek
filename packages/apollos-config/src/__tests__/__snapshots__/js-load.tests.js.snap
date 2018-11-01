@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the yaml loader must load variables from a js object 1`] = `
+Object {
+  "ANALYTICS": Object {},
+  "BIBLE_API": Object {
+    "API_TOKEN": "foobar",
+  },
+  "CLOUDINARY": Object {},
+  "ROCK": Object {
+    "API_URL": "https://some-url.com",
+  },
+  "ROCK_CONSTANTS": Object {},
+}
+`;

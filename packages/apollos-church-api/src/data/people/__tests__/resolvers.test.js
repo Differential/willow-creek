@@ -2,11 +2,20 @@ import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
+import ApollosConfig from '@apolloschurch/config';
 import { generateToken, registerToken } from '../../auth/token';
 // we import the root-level schema and resolver so we test the entire integration:
 import { testSchema as typeDefs, resolvers } from '../..';
 import { getTestContext } from '../../../utils/testUtils';
 import { createGlobalId } from '../../node/model';
+
+ApollosConfig.loadJs({
+  ROCK: {
+    API_URL: 'https://apollosrock.newspring.cc/api',
+    API_TOKEN: 'some-rock-token',
+    IMAGE_URL: 'https://apollosrock.newspring.cc/GetImage.ashx',
+  },
+});
 
 describe('Person', () => {
   let schema;

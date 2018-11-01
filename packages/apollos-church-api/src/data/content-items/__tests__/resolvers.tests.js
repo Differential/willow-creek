@@ -2,11 +2,25 @@ import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
+import ApollosConfig from '@apolloschurch/config';
 import { testSchema as typeDefs, resolvers } from '../..';
 import { resolver } from '..';
 import { getTestContext } from '../../../utils/testUtils';
 // we import the root-level schema and resolver so we test the entire integration:
 import { createGlobalId } from '../../node/model';
+
+ApollosConfig.loadJs({
+  ROCK: {
+    API_URL: 'https://apollosrock.newspring.cc/api',
+    API_TOKEN: 'some-rock-token',
+    IMAGE_URL: 'https://apollosrock.newspring.cc/GetImage.ashx',
+  },
+  ROCK_CONSTANTS: {
+    IMAGE: 10,
+    AUDIO_FILE: 77,
+    VIDEO_FILE: 79,
+  },
+});
 
 const contentItemFragment = `
   fragment ContentItemFragment on UniversalContentItem {

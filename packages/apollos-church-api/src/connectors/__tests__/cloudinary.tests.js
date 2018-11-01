@@ -1,25 +1,35 @@
-import withCloudinary, { cloudinary } from '../cloudinary';
+import ApollosConfig from '@apolloschurch/config';
+import withCloudinary, { config } from '../cloudinary';
 
 const originalUrl =
   'https://apollosrock.newspring.cc/GetImage.ashx?guid=f54b0db0-95f5-44ad-b8f2-8bcd1b23cfdb';
+
 describe('Cloudinary', () => {
   beforeEach(() => {
-    process.env.CLOUDINARY_URL =
-      'cloudinary://123456789012345:abcdeghijklmnopqrstuvwxyz12@n07t21i7';
-
-    // force cloudinary to use the env variable.
-    cloudinary.config(true);
-    cloudinary.config({
-      private_cdn: false,
-      secure: true,
+    // reset cloudinary config
+    ApollosConfig.loadJs({
+      CLOUDINARY: {
+        URL:
+          'cloudinary://123456789012345:abcdeghijklmnopqrstuvwxyz12@n07t21i7',
+      },
     });
+    config();
   });
   afterEach(() => {
-    delete process.env.CLOUDINARY_URL;
+    ApollosConfig.loadJs({
+      CLOUDINARY: {
+        URL: null,
+      },
+    });
+    config();
   });
   it('must return the URL if CLOUDINARY_URL is not specified', () => {
-    delete process.env.CLOUDINARY_URL;
-    cloudinary.config(true);
+    ApollosConfig.loadJs({
+      CLOUDINARY: {
+        URL: null,
+      },
+    });
+    config();
 
     const url = withCloudinary(originalUrl);
 

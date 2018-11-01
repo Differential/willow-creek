@@ -1,12 +1,19 @@
 import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
+import ApollosConfig from '@apolloschurch/config';
 
 import { getTestContext } from '../../../utils/testUtils';
 import { testSchema as typeDefs, resolvers } from '../..';
 import { generateToken, registerToken } from '../token';
 
 // we import the root-level schema and resolver so we test the entire integration:
+ApollosConfig.loadJs({
+  ROCK: {
+    API_URL: 'https://apollosrock.newspring.cc/api',
+    API_TOKEN: 'some-rock-token',
+  },
+});
 
 describe('Auth', () => {
   let schema;

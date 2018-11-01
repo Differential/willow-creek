@@ -1,8 +1,10 @@
 import { AuthenticationError } from 'apollo-server';
 import { DataSource } from 'apollo-datasource';
+import ApollosConfig from '@apolloschurch/config';
 import GAInterface from './interfaces/ga';
 import SegmentInterface from './interfaces/segment';
 
+const { ANALYTICS } = ApollosConfig;
 // Utility function to convert GQL array of key/values to Object.
 const mapArrayToObject = (array = []) =>
   array.reduce((accum, { field, value }) => {
@@ -14,11 +16,11 @@ const mapArrayToObject = (array = []) =>
 // Add interfaces to this function to get picked up automatically.
 export const getInterfaces = () => {
   const interfaces = [];
-  if (process.env.APOLLOS_SEGMENT_KEY) {
-    interfaces.push(new SegmentInterface(process.env.APOLLOS_SEGMENT_KEY));
+  if (ANALYTICS.SEGMENT_KEY) {
+    interfaces.push(new SegmentInterface(ANALYTICS.SEGMENT_KEY));
   }
-  if (process.env.APOLLOS_GA_KEY) {
-    interfaces.push(new GAInterface(process.env.APOLLOS_GA_KEY));
+  if (ANALYTICS.GA_ID) {
+    interfaces.push(new GAInterface(ANALYTICS.GA_ID));
   }
   return interfaces;
 };

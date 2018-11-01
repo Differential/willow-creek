@@ -1,7 +1,16 @@
 import { fetch } from 'apollo-server-env';
+import ApollosConfig from '@apolloschurch/config';
 import { buildGetMock } from '../../../utils/testUtils';
 
 import ContentItemsDataSource from '../data-source';
+
+ApollosConfig.loadJs({
+  ROCK: {
+    API_URL: 'https://apollosrock.newspring.cc/api',
+    API_TOKEN: 'some-rock-token',
+    IMAGE_URL: 'https://apollosrock.newspring.cc/GetImage.ashx',
+  },
+});
 
 describe('ContentItemsModel', () => {
   beforeEach(() => {

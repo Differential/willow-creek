@@ -1,6 +1,8 @@
 import { gql } from 'apollo-server';
-import { Constants } from '../../connectors/rock';
+import ApollosConfig from '@apolloschurch/config';
 import withCloudinary from '../../connectors/cloudinary';
+
+const { ROCK } = ApollosConfig;
 
 export { default as model } from './model';
 
@@ -90,7 +92,7 @@ export const resolver = {
 
       // Handle Rock GUID:
       if (uri.split('-').length === 5)
-        return withCloudinary(`${Constants.GET_IMAGE}?guid=${uri}`);
+        return withCloudinary(`${ROCK.IMAGE_URL}?guid=${uri}`);
 
       return uri;
     },

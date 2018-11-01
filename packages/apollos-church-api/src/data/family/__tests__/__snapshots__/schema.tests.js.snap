@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Person returns a user's location 1`] = `
+exports[`Family returns a user's location 1`] = `
 Object {
   "data": Object {
     "currentUser": Object {

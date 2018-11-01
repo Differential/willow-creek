@@ -1,5 +1,6 @@
 import dotenv from 'dotenv/config'; // eslint-disable-line
 import { ApolloServer } from 'apollo-server';
+
 import { resolvers, schema, testSchema } from './data';
 
 import getContext from './getContext';

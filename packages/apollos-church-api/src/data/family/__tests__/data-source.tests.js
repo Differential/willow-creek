@@ -1,5 +1,14 @@
+import ApollosConfig from '@apolloschurch/config';
 import { buildGetMock } from '../../../utils/testUtils';
 import DataSource from '../data-source';
+
+ApollosConfig.loadJs({
+  ROCK: {
+    API_URL: 'https://apollosrock.newspring.cc/api',
+    API_TOKEN: 'some-rock-token',
+    IMAGE_URL: 'https://apollosrock.newspring.cc/GetImage.ashx',
+  },
+});
 
 describe('Family Data Source', () => {
   it('must fetch a users location w/ family location', async () => {
