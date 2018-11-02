@@ -1,4 +1,7 @@
 import RockApolloDataSource from '@apolloschurch/rock-apollo-data-source';
+import ApollosConfig from '@apolloschurch/config';
+
+const { ROCK_MAPPINGS } = ApollosConfig;
 
 export default class ContentChannel extends RockApolloDataSource {
   resource = 'ContentChannels';
@@ -10,11 +13,11 @@ export default class ContentChannel extends RockApolloDataSource {
 
   getRootChannels = () =>
     this.request()
-      .filter('Id eq 2')
-      .filter('Id eq 3')
-      .filter('Id eq 4')
-      .filter('Id eq 6')
-      .filter('Id eq 8')
+      .filter(
+        ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS.map(
+          (channelId) => `(Id eq ${channelId})`
+        ).join(' or ')
+      )
       .get();
 
   getFromId = (id) =>

@@ -11,5 +11,6 @@ Object {
     "API_URL": "https://some-url.com",
   },
   "ROCK_CONSTANTS": Object {},
+  "ROCK_MAPPINGS": Object {},
 }
 `;

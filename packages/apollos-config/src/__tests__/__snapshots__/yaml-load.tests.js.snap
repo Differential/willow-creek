@@ -17,5 +17,6 @@ Object {
     "NULL_VALUE": null,
   },
   "ROCK_CONSTANTS": Object {},
+  "ROCK_MAPPINGS": Object {},
 }
 `;

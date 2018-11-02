@@ -20,6 +20,9 @@ ApollosConfig.loadJs({
     AUDIO_FILE: 77,
     VIDEO_FILE: 79,
   },
+  ROCK_MAPPINGS: {
+    FEED_CONTENT_CHANNEL_IDS: [1, 2, 3, 4, 6, 8],
+  },
 });
 
 const contentItemFragment = `

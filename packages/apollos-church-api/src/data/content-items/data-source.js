@@ -1,4 +1,7 @@
 import RockApolloDataSource from '@apolloschurch/rock-apollo-data-source';
+import ApollosConfig from '@apolloschurch/config';
+
+const { ROCK_MAPPINGS } = ApollosConfig;
 
 export default class ContentItem extends RockApolloDataSource {
   resource = 'ContentChannelItems';
@@ -64,14 +67,12 @@ export default class ContentItem extends RockApolloDataSource {
   };
 
   byUserFeed = () =>
-    this.request() // TODO: load these IDs dynamically
-      .filter(`ContentChannelId eq 1`)
-      .filter(`ContentChannelId eq 2`)
-      .filter(`ContentChannelId eq 3`)
-      .filter(`ContentChannelId eq 4`)
-      .filter(`ContentChannelId eq 5`)
-      .filter(`ContentChannelId eq 6`)
-      .filter(`ContentChannelId eq 8`)
+    this.request()
+      .filter(
+        ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS.map(
+          (id) => `(ContentChannelId eq ${id})`
+        ).join(' or ')
+      )
       .orderBy('StartDateTime', 'desc');
 
   byContentChannelId = (id) =>
