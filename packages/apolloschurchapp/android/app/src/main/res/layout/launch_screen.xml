@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     android:background="@color/deep_water"
     android:gravity="center">
-    <ImageView
 
+    <ImageView
         android:layout_width="95.28dp"
         android:layout_height="100dp"
-        android:layout_marginTop="-24dp"
-        android:src="@mipmap/splash_icon"
-    />
+        android:src="@mipmap/splash_icon" />
 </LinearLayout>
