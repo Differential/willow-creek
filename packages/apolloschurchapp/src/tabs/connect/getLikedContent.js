@@ -7,21 +7,6 @@ export default gql`
     getAllLikedContent {
       ... on ContentItem {
         ...contentItemFragment
-        __typename
-        id
-        coverImage {
-          name
-          sources {
-            uri
-          }
-        }
-        isLiked
-        parentChannel {
-          id
-          name
-          iconName
-        }
-        title
       }
     }
   }

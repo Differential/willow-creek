@@ -9,6 +9,7 @@ import { track, events } from 'apolloschurchapp/src/analytics';
 
 import updateLikeEntity from './updateLikeEntity';
 import getLikedContentItem from './getLikedContentItem';
+import updateLikedContent from './updateLikedContent';
 
 const GetLikeData = ({ itemId, children }) => (
   <Query query={getLikedContentItem} variables={{ itemId }}>
@@ -35,7 +36,6 @@ const UpdateLikeStatus = ({ itemId, item, isLiked, children }) => (
         __typename: 'Interaction',
       },
     }}
-    refetchQueries={['getAllLikedContent']}
     update={(
       cache,
       {
@@ -44,6 +44,7 @@ const UpdateLikeStatus = ({ itemId, item, isLiked, children }) => (
         },
       }
     ) => {
+      updateLikedContent({ liked: operation === 'Like', cache, item });
       cache.writeQuery({
         query: getLikedContentItem,
         data: {
