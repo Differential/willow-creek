@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@apolloschurch/rock-apollo-data-source": "file:../apollos-rock-apollo-data-source",
+    "apollo-server": "^2.1.0",
     "moment": "^2.22.2"
   },
   "devDependencies": {
