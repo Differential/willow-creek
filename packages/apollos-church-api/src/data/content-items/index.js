@@ -281,46 +281,67 @@ export const resolver = {
     getAllLikedContent: async (root, args, { dataSources }) => {
       // Get All Interactions from current user
       const interactions = await dataSources.Interactions.getForContentItems();
-
-      const likeCounts = {};
-
       // Iterate over the interactions and determine which pieces of content
       // has more likes than unlikes
-      interactions.forEach(({ operation, relatedEntityId }) => {
-        if (!likeCounts[relatedEntityId]) {
-          likeCounts[relatedEntityId] = 0;
-        }
-        if (operation === 'Like') {
-          likeCounts[relatedEntityId] += 1;
-        }
-        if (operation === 'Unlike') {
-          likeCounts[relatedEntityId] -= 1;
-        }
-      });
 
-      const itemIds = [];
-      Object.keys(likeCounts).forEach((relatedEntityId) => {
-        if (likeCounts[relatedEntityId] > 0) {
-          itemIds.push(relatedEntityId);
-        }
-      });
+      const mostRecentlyLiked = (interactionDateTime, itemInteractions) =>
+        new Date(interactionDateTime) > new Date(itemInteractions.lastLiked)
+          ? interactionDateTime
+          : itemInteractions.lastLiked;
+
+      const likeCounts = interactions.reduce(
+        (agg, { operation, relatedEntityId, interactionDateTime }) => {
+          if (!agg[relatedEntityId]) {
+            // eslint-disable-next-line no-param-reassign
+            agg[relatedEntityId] = { count: 0, lastLiked: null };
+          }
+
+          const itemInteractions = agg[relatedEntityId];
+          if (operation === 'Like') {
+            itemInteractions.count += 1;
+            // We need to keep track of the time it was most recently liked.
+            // we will use this when sorting.
+            itemInteractions.lastLiked = mostRecentlyLiked(
+              interactionDateTime,
+              itemInteractions
+            );
+          }
+          if (operation === 'Unlike') {
+            itemInteractions.count -= 1;
+          }
+          return agg;
+        },
+        {}
+      );
+
+      // Get items with more likes than unlikes
+      // Like counts can be undefined if you call [].reduce(func, {})
+      const itemIds = Object.keys(likeCounts || {})
+        .map((relatedEntityId) => {
+          if (likeCounts[relatedEntityId].count > 0) {
+            return relatedEntityId;
+          }
+          return null;
+        })
+        .filter((i) => i !== null);
 
       // Grab content related to user's interactions
-      const getUserContentFromInteractions = itemIds.map((id) =>
-        dataSources.ContentItem.getFromId(id)
-      );
-
       const resolveUserContentFromInteractions = await Promise.all(
-        getUserContentFromInteractions
+        itemIds.map((id) => dataSources.ContentItem.getFromId(id))
       );
 
-      // Determine the isLiked value on contentitems and create an obj that we
-      // can merge with our main set of data later
-      const calculateIsLikedOnContentItems = resolveUserContentFromInteractions.map(
+      // Doing this ensures we don't perform a seperate request
+      // for `isLiked` if requested through gql.
+      const itemsWithIsLiked = resolveUserContentFromInteractions.map(
         (item) => ({ ...item, isLiked: true })
       );
 
-      return calculateIsLikedOnContentItems;
+      // Sorts by most recently liked first.
+      const sortedIsLikedContentItems = itemsWithIsLiked.sort(
+        (a, b) => likeCounts[a.id].lastLiked < likeCounts[b.id].lastLiked
+      );
+
+      return sortedIsLikedContentItems;
     },
   },
   DevotionalContentItem: {
