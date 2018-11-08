@@ -28,8 +28,9 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "@apolloschurch/rock-apollo-data-source": "file:../apollos-rock-apollo-data-source",
     "@apolloschurch/config": "file:../apollos-config",
+    "@apolloschurch/rock-apollo-data-source": "file:../apollos-rock-apollo-data-source",
+    "@apollosproject/rock-auth-connector": "file:../apollos-rock-auth-connector",
     "analytics-node": "^3.3.0",
     "apollo-datasource-rest": "0.1.1",
     "apollo-server": "^2.0.5",

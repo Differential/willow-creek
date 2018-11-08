@@ -28,6 +28,13 @@
     lodash "^4.17.11"
     with-query "^1.1.2"
 
+"@apollosproject/rock-auth-connector@file:packages/apollos-rock-auth-connector":
+  version "0.6.0"
+  dependencies:
+    "@apolloschurch/rock-apollo-data-source" "file:../../Library/Caches/Yarn/v2/npm-@apollosproject/apollos-rock-apollo-data-source"
+    apollo-server "^2.1.0"
+    moment "^2.22.2"
+
 "@babel/cli@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.0.0-beta.47.tgz#e00cc40ffd9084a5243c8fbded3f5049bc970e4c"
@@ -3221,6 +3228,7 @@ apollo@^1.9.2:
   dependencies:
     "@apolloschurch/config" "file:../../Library/Caches/Yarn/v2/apollos-config"
     "@apolloschurch/rock-apollo-data-source" "file:../../Library/Caches/Yarn/v2/apollos-rock-apollo-data-source"
+    "@apollosproject/rock-auth-connector" "file:../../Library/Caches/Yarn/v2/apollos-rock-auth-connector"
     analytics-node "^3.3.0"
     apollo-datasource-rest "0.1.1"
     apollo-server "^2.0.5"
