@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import Crypto from 'crypto';
 
 const secret = process.env.SECRET || 'LZEVhlgzFZKClu1r';
@@ -31,6 +30,7 @@ export function parseGlobalId(encodedId) {
 }
 
 export default class Node {
+  // eslint-disable-next-line class-methods-use-this
   async get(encodedId, dataSources) {
     const { __type, id } = parseGlobalId(encodedId);
     if (

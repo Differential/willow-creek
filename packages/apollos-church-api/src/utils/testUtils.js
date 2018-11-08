@@ -1,10 +1,11 @@
 import { KeyValueCache } from 'apollo-server-caching';
-import getContext from '../getContext';
-import getDataSources from '../getDataSources';
+import {
+  context as getContext,
+  dataSources as getDataSources,
+} from '../data/index';
 
 export function getTestContext(req) {
   const context = getContext(req);
-
   const dataSources = getDataSources();
   // Apollo Server does this internally.
   Object.values(dataSources).forEach((dataSource) => {

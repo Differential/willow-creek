@@ -1,8 +1,9 @@
 import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
+import { createGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
-import { createGlobalId } from '../../node/model';
+
 import { getTestContext } from '../../../utils/testUtils';
 // we import the root-level schema and resolver so we test the entire integration:
 import { testSchema as typeDefs, resolvers } from '../..';
