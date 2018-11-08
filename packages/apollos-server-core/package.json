@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
-    "lint": "eslint ./src --ext .js",
-    "start": "rm -rf ./lib && mkdir -p lib && nodemon --exec \"babel ./src --watch -d ./lib\" --ignore lib/"
+    "lint": "eslint ./src --ext .js"
   },
   "jest": {
     "collectCoverage": true,
