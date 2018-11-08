@@ -1,6 +1,6 @@
 {
-  "name": "@apollosproject/rock-apollo-data-source",
-  "version": "0.5.0",
+  "name": "@apollosproject/data-schema",
+  "version": "0.6.0",
   "homepage": "https://github.com/ApollosProject/apollos-prototype#readme",
   "main": "lib/index.js",
   "scripts": {
@@ -17,9 +17,7 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "apollo-datasource-rest": "^0.1.5",
-    "lodash": "^4.17.11",
-    "with-query": "^1.1.2"
+    "graphql-tag": "^2.10.0"
   },
   "devDependencies": {
     "babel-preset-apollos": "file:../babel-preset-apollos"

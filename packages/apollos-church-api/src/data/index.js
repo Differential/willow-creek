@@ -1,8 +1,9 @@
 import { gql } from 'apollo-server';
-import { mapValues, values, merge, compact } from 'lodash';
+
+import { createApolloServerConfig } from '@apollosproject/server-core';
 
 import RockConstants from '../connectors/rock/rock-constants';
-import * as Node from './node';
+
 import * as ContentChannel from './content-channels';
 import * as ContentItem from './content-items';
 import * as Person from './people';
@@ -18,7 +19,6 @@ import * as Family from './family';
 import * as Pagination from './pagination';
 
 const data = {
-  Node,
   ContentChannel,
   ContentItem,
   Person,
@@ -33,31 +33,19 @@ const data = {
   Analytics,
   Family,
   Pagination,
+  UniversalContentItem: {
+    dataSource: ContentItem.dataSource,
+  }, // alias
+  DevotionalContentItem: {
+    dataSource: ContentItem.dataSource,
+  }, // alias
 };
 
-export const schema = [
-  gql`
-    type Query {
-      _placeholder: Boolean # needed, empty schema defs aren't supported
-    }
-
-    type Mutation {
-      _placeholder: Boolean # needed, empty schema defs aren't supported
-    }
-  `,
-  ...compact(values(data).map((datum) => datum.schema)),
-];
-
-export const resolvers = merge(
-  ...compact(values(data).map((datum) => datum.resolver))
+const { dataSources, resolvers, schema, context } = createApolloServerConfig(
+  data
 );
 
-export const dataSources = mapValues(data, (datum) => datum.dataSource);
-
-export const models = {
-  ...mapValues(data, (datum) => datum.model),
-  UniversalContentItem: ContentItem.model, // alias
-};
+export { dataSources, resolvers, schema, context };
 
 // the upload Scalar is added
 export const testSchema = [

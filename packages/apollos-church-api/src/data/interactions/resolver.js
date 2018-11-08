@@ -1,4 +1,4 @@
-import { createGlobalId } from '../node/model';
+import { createGlobalId } from '@apollosproject/server-core';
 
 export default {
   Mutation: {

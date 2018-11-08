@@ -1,6 +1,6 @@
 // TODO - eliminate this file through more robust configuration.
 
-import RockApolloDataSource from '@apolloschurch/rock-apollo-data-source';
+import RockApolloDataSource from '@apollosproject/rock-apollo-data-source';
 
 const mapApollosNameToRockName = (name) => {
   switch (name) {

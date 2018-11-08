@@ -1,4 +1,4 @@
-import { createGlobalId } from '../node';
+import { createGlobalId } from '@apollosproject/server-core';
 
 export default {
   Query: {

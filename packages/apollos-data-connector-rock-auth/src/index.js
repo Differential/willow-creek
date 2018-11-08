@@ -1,30 +1,27 @@
 import { gql } from 'apollo-server';
-import { createGlobalId } from '../node';
+import { createGlobalId } from '@apollosproject/server-core';
+import { get } from 'lodash';
+import { registerToken } from './token';
 
-// export { default as model } from './model';
+export { authSchema as schema } from '@apollosproject/data-schema';
 export { default as dataSource } from './data-source';
 
-export const schema = gql`
-  type AuthenticatedUser {
-    id: ID!
-    profile: Person
+export const contextMiddleware = ({ req, context: ctx }) => {
+  if (get(req, 'headers.authorization')) {
+    const { userToken, rockCookie, sessionId } = registerToken(
+      req.headers.authorization
+    );
+    if (sessionId) {
+      return {
+        ...ctx,
+        userToken,
+        rockCookie,
+        sessionId,
+      };
+    }
   }
-
-  type Authentication {
-    user: AuthenticatedUser
-    token: String
-  }
-
-  extend type Mutation {
-    authenticate(identity: String!, password: String!): Authentication
-    changePassword(password: String!): Authentication
-    registerPerson(email: String!, password: String!): Authentication
-  }
-
-  extend type Query {
-    currentUser: AuthenticatedUser
-  }
-`;
+  return ctx;
+};
 
 export const resolver = {
   Query: {

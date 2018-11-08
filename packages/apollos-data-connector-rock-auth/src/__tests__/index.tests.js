@@ -1,13 +1,18 @@
 import { graphql } from 'graphql';
+import { KeyValueCache } from 'apollo-server-caching';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
+import { createApolloServerConfig } from '@apollosproject/server-core';
+import {
+  peopleSchema,
+  mediaSchema,
+  testSchema,
+} from '@apollosproject/data-schema';
 
-import { getTestContext } from '../../../utils/testUtils';
-import { testSchema as typeDefs, resolvers } from '../..';
+import * as Auth from '../index';
 import { generateToken, registerToken } from '../token';
 
-// we import the root-level schema and resolver so we test the entire integration:
 ApollosConfig.loadJs({
   ROCK: {
     API_URL: 'https://apollosrock.newspring.cc/api',
@@ -15,13 +20,31 @@ ApollosConfig.loadJs({
   },
 });
 
+const serverConfig = createApolloServerConfig({ Auth });
+
+function getTestContext(req) {
+  const testContext = serverConfig.context(req);
+  const testDataSources = serverConfig.dataSources();
+  // Apollo Server does this internally.
+  Object.values(testDataSources).forEach((dataSource) => {
+    if (dataSource.initialize) {
+      dataSource.initialize({ context: testContext, cache: KeyValueCache });
+    }
+  });
+  testContext.dataSources = testDataSources;
+  return testContext;
+}
+
 describe('Auth', () => {
   let schema;
   let context;
   beforeEach(() => {
     fetch.resetMocks();
     fetch.mockRockDataSourceAPI();
-    schema = makeExecutableSchema({ typeDefs, resolvers });
+    schema = makeExecutableSchema({
+      typeDefs: [...serverConfig.schema, peopleSchema, mediaSchema, testSchema],
+      resolvers: serverConfig.resolvers,
+    });
     context = getTestContext();
   });
 

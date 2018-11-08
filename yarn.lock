@@ -16,24 +16,29 @@
   resolved "https://registry.yarnpkg.com/@apollographql/graphql-playground-html/-/graphql-playground-html-1.6.0.tgz#15e1a042b97d6834e6d70b17cc73e1514fde9027"
   integrity sha512-QAZIFrfVRkjvMkUHIQKZXZ3La0V5t12w5PWrhihYEabHwzIZV/txQd/kSYHgYPXC4s5OURxsXZop9f0BzI2QIQ==
 
-"@apolloschurch/config@file:packages/apollos-config":
+"@apollosproject/config@file:packages/apollos-config":
   version "0.6.0"
   dependencies:
     js-yaml "^3.12.0"
 
-"@apolloschurch/rock-apollo-data-source@file:packages/apollos-rock-apollo-data-source":
+"@apollosproject/data-schema@file:packages/apollos-data-schema":
+  version "0.6.0"
+  dependencies:
+    graphql-tag "^2.10.0"
+
+"@apollosproject/rock-apollo-data-source@file:packages/apollos-rock-apollo-data-source":
   version "0.5.0"
   dependencies:
     apollo-datasource-rest "^0.1.5"
     lodash "^4.17.11"
     with-query "^1.1.2"
 
-"@apollosproject/rock-auth-connector@file:packages/apollos-rock-auth-connector":
+"@apollosproject/server-core@file:packages/apollos-server-core":
   version "0.6.0"
   dependencies:
-    "@apolloschurch/rock-apollo-data-source" "file:../../Library/Caches/Yarn/v2/npm-@apollosproject/apollos-rock-apollo-data-source"
-    apollo-server "^2.1.0"
-    moment "^2.22.2"
+    crypto "^1.0.1"
+    graphql-tag "^2.10.0"
+    lodash "^4.17.11"
 
 "@babel/cli@7.0.0-beta.47":
   version "7.0.0-beta.47"
@@ -3070,6 +3075,14 @@ apollo-server-env@2.0.3, apollo-server-env@^2.0.3:
     node-fetch "^2.1.2"
     util.promisify "^1.0.0"
 
+apollo-server-env@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-env/-/apollo-server-env-2.2.0.tgz#5eec5dbf46581f663fd6692b2e05c7e8ae6d6034"
+  integrity sha512-wjJiI5nQWPBpNmpiLP389Ezpstp71szS6DHAeTgYLb/ulCw3CTuuA+0/E1bsThVWiQaDeHZE0sE3yI8q2zrYiA==
+  dependencies:
+    node-fetch "^2.1.2"
+    util.promisify "^1.0.0"
+
 apollo-server-errors@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.0.0.tgz#f39d1260293b70611bdd3923d47dcdeb32918ce5"
@@ -3226,9 +3239,9 @@ apollo@^1.9.2:
 "apollos-church-api@file:packages/apollos-church-api":
   version "0.6.0"
   dependencies:
-    "@apolloschurch/config" "file:../../Library/Caches/Yarn/v2/apollos-config"
-    "@apolloschurch/rock-apollo-data-source" "file:../../Library/Caches/Yarn/v2/apollos-rock-apollo-data-source"
-    "@apollosproject/rock-auth-connector" "file:../../Library/Caches/Yarn/v2/apollos-rock-auth-connector"
+    "@apollosproject/config" "file:../../Library/Caches/Yarn/v2/apollos-config"
+    "@apollosproject/rock-apollo-data-source" "file:../../Library/Caches/Yarn/v2/apollos-rock-apollo-data-source"
+    "@apollosproject/server-core" "file:../../Library/Caches/Yarn/v2/apollos-server-core"
     analytics-node "^3.3.0"
     apollo-datasource-rest "0.1.1"
     apollo-server "^2.0.5"
@@ -5194,7 +5207,7 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-casual@1.5.19:
+casual@1.5.19, casual@^1.5.19:
   version "1.5.19"
   resolved "https://registry.yarnpkg.com/casual/-/casual-1.5.19.tgz#66fac46f7ae463f468f5913eb139f9c41c58bbf2"
   integrity sha512-zMWzIs7y4grU0mkb6ZAWyHVJFHRZ2V/zi9GTrVv9v9PcS4Ur3AHaKocl4DLjhLR0J5LnMhMsMiAjGooqYo2t1Q==
@@ -6052,7 +6065,7 @@ crypto-random-string@^1.0.0:
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
   integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
 
-crypto@1.0.1:
+crypto@1.0.1, crypto@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/crypto/-/crypto-1.0.1.tgz#2af1b7cad8175d24c8a1b0778255794a21803037"
   integrity sha512-VxBKmeNcqQdiUQUW2Tzq0t377b54N2bMtXO/qiLa+6eRRmmC4qT3D4OnTGoT/U6O9aklQ/jTwbOtRMTTY8G0Ig==
@@ -8301,6 +8314,11 @@ graphql-tag@2.9.2, graphql-tag@^2.9.2:
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.9.2.tgz#2f60a5a981375f430bf1e6e95992427dc18af686"
   integrity sha512-qnNmof9pAqj/LUzs3lStP0Gw1qhdVCUS7Ab7+SUB6KD5aX1uqxWQRwMnOGTkhKuLvLNIs1TvNz+iS9kUGl1MhA==
 
+graphql-tag@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.0.tgz#87da024be863e357551b2b8700e496ee2d4353ae"
+  integrity sha512-9FD6cw976TLLf9WYIUPCaaTpniawIjHWZSwIRZSjrfufJamcXbVVYfN2TWvJYbw0Xf2JjYbl1/f2+wDnBVw3/w==
+
 graphql-tools@3.1.1, graphql-tools@^3.0.4:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-3.1.1.tgz#d593358f01e7c8b1671a17b70ddb034dea9dbc50"
@@ -10350,13 +10368,6 @@ jws@^3.1.5:
     jwa "^1.1.5"
     safe-buffer "^5.0.1"
 
-kexec@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/kexec/-/kexec-3.0.0.tgz#0ef4aa9d3caa26180c11a10075ac1fce2681e36c"
-  integrity sha1-DvSqnTyqJhgMEaEAdawfziaB42w=
-  dependencies:
-    nan "^2.4.0"
-
 keycode@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
@@ -11493,11 +11504,6 @@ mute-stream@0.0.7, mute-stream@~0.0.4:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
-
-nan@^2.4.0:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.11.1.tgz#90e22bccb8ca57ea4cd37cc83d3819b52eea6766"
-  integrity sha512-iji6k87OSXa0CcrLl9z+ZiYSuR2o+c0bGuNmXdrhTQTakxytAFsC56SArGYoiHlJlFoHSnvmhpceZJaXkVuOtA==
 
 nan@^2.9.2:
   version "2.10.0"

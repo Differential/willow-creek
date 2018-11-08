@@ -28,9 +28,9 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "@apolloschurch/config": "file:../apollos-config",
-    "@apolloschurch/rock-apollo-data-source": "file:../apollos-rock-apollo-data-source",
-    "@apollosproject/rock-auth-connector": "file:../apollos-rock-auth-connector",
+    "@apollosproject/server-core": "file:../apollos-server-core",
+    "@apollosproject/rock-apollo-data-source": "file:../apollos-rock-apollo-data-source",
+    "@apollosproject/config": "file:../apollos-config",
     "analytics-node": "^3.3.0",
     "apollo-datasource-rest": "0.1.1",
     "apollo-server": "^2.0.5",
@@ -60,7 +60,6 @@
     "coveralls": "3.0.1",
     "jest": "23.0.0",
     "jest-fetch-mock": "1.6.2",
-    "kexec": "^3.0.0",
     "nodemon": "1.17.5"
   }
 }

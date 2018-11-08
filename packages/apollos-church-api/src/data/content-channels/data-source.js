@@ -1,5 +1,5 @@
-import RockApolloDataSource from '@apolloschurch/rock-apollo-data-source';
-import ApollosConfig from '@apolloschurch/config';
+import RockApolloDataSource from '@apollosproject/rock-apollo-data-source';
+import ApollosConfig from '@apollosproject/config';
 
 const { ROCK_MAPPINGS } = ApollosConfig;
 

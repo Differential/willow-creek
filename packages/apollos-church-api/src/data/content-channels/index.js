@@ -1,5 +1,5 @@
 import { gql } from 'apollo-server';
-import { createGlobalId } from '../node';
+import { createGlobalId } from '@apollosproject/server-core';
 
 // export { default as model } from './model';
 export { default as dataSource } from './data-source';

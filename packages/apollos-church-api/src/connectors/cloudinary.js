@@ -1,5 +1,5 @@
 import cloudinary from 'cloudinary';
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 
 const { CLOUDINARY } = ApollosConfig;
 // Cloudinary picks up settings from `env`,

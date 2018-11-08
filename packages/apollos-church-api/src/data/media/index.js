@@ -1,10 +1,8 @@
 import { gql } from 'apollo-server';
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 import withCloudinary from '../../connectors/cloudinary';
 
 const { ROCK } = ApollosConfig;
-
-export { default as model } from './model';
 
 export const schema = gql`
   interface Media {
