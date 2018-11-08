@@ -1,6 +1,6 @@
 import { AuthenticationError } from 'apollo-server';
 import { DataSource } from 'apollo-datasource';
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 import GAInterface from './interfaces/ga';
 import SegmentInterface from './interfaces/segment';
 

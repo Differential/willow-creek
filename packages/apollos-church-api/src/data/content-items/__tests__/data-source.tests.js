@@ -1,5 +1,5 @@
 import { fetch } from 'apollo-server-env';
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 import { buildGetMock } from '../../../utils/testUtils';
 
 import ContentItemsDataSource from '../data-source';

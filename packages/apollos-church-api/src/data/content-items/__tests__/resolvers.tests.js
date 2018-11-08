@@ -2,7 +2,7 @@ import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
 
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 import { testSchema as typeDefs, resolvers } from '../..';
 import { resolver } from '..';
 import { getTestContext } from '../../../utils/testUtils';

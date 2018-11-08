@@ -1,7 +1,7 @@
 import { mockUA, mockSend, mockEvent } from 'universal-analytics';
 import Analytics, { mockTrack, mockIdentify } from 'analytics-node';
 import { AuthenticationError } from 'apollo-server';
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 import DataSource from '../data-source';
 import RockAnalytics from '../interfaces/rock_interactions';
 

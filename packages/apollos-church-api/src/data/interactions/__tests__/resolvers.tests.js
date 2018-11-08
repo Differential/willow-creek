@@ -1,7 +1,7 @@
 import { graphql } from 'graphql';
 import { fetch } from 'apollo-server-env';
 import { makeExecutableSchema } from 'apollo-server';
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 
 import { getTestContext } from '../../../utils/testUtils';
 import { createGlobalId } from '../../node/model';

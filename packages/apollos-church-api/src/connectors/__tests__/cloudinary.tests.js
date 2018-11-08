@@ -1,4 +1,4 @@
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 import withCloudinary, { config } from '../cloudinary';
 
 const originalUrl =

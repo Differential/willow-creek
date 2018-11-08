@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import { RESTDataSource } from 'apollo-datasource-rest';
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 
 import { mapKeys, mapValues, camelCase } from 'lodash';
 import { fetch } from 'apollo-server-env';

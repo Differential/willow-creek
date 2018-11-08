@@ -1,4 +1,4 @@
-import ApollosConfig from '@apolloschurch/config';
+import ApollosConfig from '@apollosproject/config';
 import { buildGetMock } from '../../../utils/testUtils';
 import Person from '../data-source';
 
