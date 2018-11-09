@@ -4,8 +4,8 @@ import { makeExecutableSchema } from 'apollo-server';
 import ApollosConfig from '@apollosproject/config';
 import { createGlobalId } from '@apollosproject/server-core';
 
+import { generateToken } from '@apollosproject/data-connector-rock-auth';
 import { getTestContext } from '../../../utils/testUtils';
-import { generateToken } from '../../auth/token';
 import { testSchema as typeDefs, resolvers } from '../..';
 
 ApollosConfig.loadJs({

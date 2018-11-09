@@ -4,7 +4,10 @@ import { makeExecutableSchema } from 'apollo-server';
 
 import ApollosConfig from '@apollosproject/config';
 import { createGlobalId } from '@apollosproject/server-core';
-import { generateToken, registerToken } from '../../auth/token';
+import {
+  generateToken,
+  registerToken,
+} from '@apollosproject/data-connector-rock-auth';
 // we import the root-level schema and resolver so we test the entire integration:
 import { testSchema as typeDefs, resolvers } from '../..';
 import { getTestContext } from '../../../utils/testUtils';

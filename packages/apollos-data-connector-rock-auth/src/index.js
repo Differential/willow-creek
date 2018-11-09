@@ -2,6 +2,7 @@ import { createGlobalId } from '@apollosproject/server-core';
 import { get } from 'lodash';
 import { registerToken } from './token';
 
+export { registerToken, generateToken } from './token';
 export { authSchema as schema } from '@apollosproject/data-schema';
 export { default as dataSource } from './data-source';
 
