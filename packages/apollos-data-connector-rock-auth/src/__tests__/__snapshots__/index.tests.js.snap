@@ -8,7 +8,6 @@ Object {
         "id": "AuthenticatedUser:057b0758543270d1cb21784cac4d3f5c",
         "profile": Object {
           "email": "isaac.hardy@newspring.cc",
-          "id": "51",
         },
       },
     },
@@ -55,7 +54,7 @@ Object {
     "currentUser": Object {
       "id": "AuthenticatedUser:057b0758543270d1cb21784cac4d3f5c",
       "profile": Object {
-        "id": "51",
+        "email": "isaac.hardy@newspring.cc",
       },
     },
   },
@@ -80,7 +79,7 @@ Object {
       "user": Object {
         "id": "AuthenticatedUser:057b0758543270d1cb21784cac4d3f5c",
         "profile": Object {
-          "id": "51",
+          "email": "isaac.hardy@newspring.cc",
         },
       },
     },

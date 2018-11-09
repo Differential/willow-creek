@@ -55,7 +55,7 @@ describe('Auth', () => {
           user {
             id
             profile {
-              id
+              email
             }
           }
         }
@@ -89,7 +89,7 @@ describe('Auth', () => {
         currentUser {
           id
           profile {
-            id
+            email
           }
         }
       }
@@ -253,7 +253,6 @@ describe('Auth', () => {
             user {
               id
               profile {
-                id
                 email
               }
             }
