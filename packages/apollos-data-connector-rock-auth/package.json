@@ -1,6 +1,6 @@
 {
   "name": "@apollosproject/data-connector-rock-auth",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "homepage": "https://github.com/ApollosProject/apollos-prototype#readme",
   "main": "lib/index.js",
   "scripts": {
