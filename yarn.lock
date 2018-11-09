@@ -21,6 +21,16 @@
   dependencies:
     js-yaml "^3.12.0"
 
+"@apollosproject/data-connector-rock-auth@file:packages/apollos-data-connector-rock-auth":
+  version "0.6.0"
+  dependencies:
+    "@apollosproject/data-schema" "file:../../Library/Caches/Yarn/v2/npm-@apollosproject/apollos-data-schema"
+    "@apollosproject/server-core" "file:../../Library/Caches/Yarn/v2/npm-@apollosproject/apollos-server-core"
+    apollo-server "^2.1.0"
+    apollo-server-env "^2.2.0"
+    lodash "^4.17.11"
+    moment "^2.22.2"
+
 "@apollosproject/data-schema@file:packages/apollos-data-schema":
   version "0.6.0"
   dependencies:
@@ -3240,6 +3250,7 @@ apollo@^1.9.2:
   version "0.6.0"
   dependencies:
     "@apollosproject/config" "file:../../Library/Caches/Yarn/v2/apollos-config"
+    "@apollosproject/data-connector-rock-auth" "file:../../Library/Caches/Yarn/v2/apollos-data-connector-rock-auth"
     "@apollosproject/rock-apollo-data-source" "file:../../Library/Caches/Yarn/v2/apollos-rock-apollo-data-source"
     "@apollosproject/server-core" "file:../../Library/Caches/Yarn/v2/apollos-server-core"
     analytics-node "^3.3.0"

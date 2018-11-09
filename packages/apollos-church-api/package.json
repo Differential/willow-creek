@@ -28,9 +28,8 @@
     "testEnvironment": "node"
   },
   "dependencies": {
+    "@apollosproject/data-connector-rock-auth": "file:../apollos-data-connector-rock-auth",
     "@apollosproject/server-core": "file:../apollos-server-core",
-    "@apollosproject/rock-apollo-data-source": "file:../apollos-rock-apollo-data-source",
-    "@apollosproject/config": "file:../apollos-config",
     "analytics-node": "^3.3.0",
     "apollo-datasource-rest": "0.1.1",
     "apollo-server": "^2.0.5",
@@ -50,7 +49,9 @@
     "sanitize-html": "1.18.2",
     "universal-analytics": "^0.4.17",
     "url-join": "4.0.0",
-    "with-query": "1.0.2"
+    "with-query": "1.0.2",
+    "@apollosproject/config": "file:../apollos-config",
+    "@apollosproject/rock-apollo-data-source": "file:../apollos-rock-apollo-data-source"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.47",
