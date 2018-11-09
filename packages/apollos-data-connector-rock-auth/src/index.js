@@ -1,4 +1,3 @@
-import { gql } from 'apollo-server';
 import { createGlobalId } from '@apollosproject/server-core';
 import { get } from 'lodash';
 import { registerToken } from './token';
