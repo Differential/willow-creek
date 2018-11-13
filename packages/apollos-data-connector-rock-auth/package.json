@@ -1,5 +1,5 @@
 {
-  "name": "@apollosproject/server-core",
+  "name": "@apollosproject/data-connector-rock-auth",
   "version": "0.6.0",
   "homepage": "https://github.com/ApollosProject/apollos-prototype#readme",
   "main": "lib/index.js",
@@ -17,12 +17,18 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "crypto": "^1.0.1",
-    "graphql-tag": "^2.10.0",
-    "lodash": "^4.17.11"
+    "@apollosproject/data-schema": "file:../apollos-data-schema",
+    "@apollosproject/server-core": "file:../apollos-server-core",
+    "apollo-server": "^2.1.0",
+    "apollo-server-env": "^2.2.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2"
+  },
+  "peerDependencies": {
+    "@apollosproject/config": "file:../apollos-config",
+    "@apollosproject/rock-apollo-data-source": "file:../apollos-rock-apollo-data-source"
   },
   "devDependencies": {
-    "babel-preset-apollos": "file:../babel-preset-apollos",
-    "casual": "^1.5.19"
+    "babel-preset-apollos": "file:../babel-preset-apollos"
   }
 }

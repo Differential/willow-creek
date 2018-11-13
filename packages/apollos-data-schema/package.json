@@ -1,10 +1,9 @@
 {
-  "name": "@apollosproject/server-core",
+  "name": "@apollosproject/data-schema",
   "version": "0.6.0",
   "homepage": "https://github.com/ApollosProject/apollos-prototype#readme",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
     "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
     "lint": "eslint ./src --ext .js"
   },
@@ -17,12 +16,9 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "crypto": "^1.0.1",
-    "graphql-tag": "^2.10.0",
-    "lodash": "^4.17.11"
+    "graphql-tag": "^2.10.0"
   },
   "devDependencies": {
-    "babel-preset-apollos": "file:../babel-preset-apollos",
-    "casual": "^1.5.19"
+    "babel-preset-apollos": "file:../babel-preset-apollos"
   }
 }

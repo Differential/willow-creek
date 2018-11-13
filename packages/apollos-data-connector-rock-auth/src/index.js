@@ -1,9 +1,9 @@
-import { gql } from 'apollo-server';
-import { get } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
+import { get } from 'lodash';
 import { registerToken } from './token';
 
-// export { default as model } from './model';
+export { registerToken, generateToken } from './token';
+export { authSchema as schema } from '@apollosproject/data-schema';
 export { default as dataSource } from './data-source';
 
 export const contextMiddleware = ({ req, context: ctx }) => {
@@ -22,28 +22,6 @@ export const contextMiddleware = ({ req, context: ctx }) => {
   }
   return ctx;
 };
-
-export const schema = gql`
-  type AuthenticatedUser {
-    id: ID!
-    profile: Person
-  }
-
-  type Authentication {
-    user: AuthenticatedUser
-    token: String
-  }
-
-  extend type Mutation {
-    authenticate(identity: String!, password: String!): Authentication
-    changePassword(password: String!): Authentication
-    registerPerson(email: String!, password: String!): Authentication
-  }
-
-  extend type Query {
-    currentUser: AuthenticatedUser
-  }
-`;
 
 export const resolver = {
   Query: {

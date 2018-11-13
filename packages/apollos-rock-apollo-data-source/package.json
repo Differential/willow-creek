@@ -2,13 +2,11 @@
   "name": "@apollosproject/rock-apollo-data-source",
   "version": "0.5.0",
   "homepage": "https://github.com/ApollosProject/apollos-prototype#readme",
-  "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
-    "lint": "eslint ./src --ext .js",
-    "start": "rm -rf ./lib && mkdir -p lib && nodemon --exec \"babel ./src --watch -d ./lib\" --ignore lib/"
+    "lint": "eslint ./src --ext .js"
   },
   "jest": {
     "collectCoverage": true,
