@@ -48,9 +48,10 @@ export const withButtonPlaceholder = withPlaceholder(ButtonPlaceholder);
 
 const enhance = compose(
   withButtonPlaceholder,
-  withTheme(({ theme, type = 'default' }) => ({
+  withTheme(({ theme, type = 'default', pill }) => ({
     fill: get(theme, `buttons.${type}.fill`, theme.colors.action.default),
     accent: get(theme, `buttons.${type}.accent`, theme.colors.text.primary),
+    borderRadius: pill ? theme.sizing.baseUnit * 3 : theme.sizing.baseUnit / 2,
   })),
   // makes non-text children inherit button styles by default :-D
   withThemeMixin(({ fill, accent, bordered }) => {
