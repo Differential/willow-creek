@@ -1,7 +1,4 @@
 packages/apolloschurchapp
-packages/apollos-church-api/node_modules
+packages/apollos-ui-kit
 packages/apollos-church-api/.env
-packages/babel-preset-apollos/node_modules
-packages/apollos-rock-apollo-data-source/node_modules
-packages/apollos-server-core/node_modules
-packages/apollos-config/node_modules
+packages/*/node_modules
