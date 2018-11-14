@@ -44,6 +44,9 @@ describe('Auth', () => {
     schema = makeExecutableSchema({
       typeDefs: [...serverConfig.schema, peopleSchema, mediaSchema, testSchema],
       resolvers: serverConfig.resolvers,
+      resolverValidationOptions: {
+        requireResolversForResolveType: false,
+      },
     });
     context = getTestContext();
   });

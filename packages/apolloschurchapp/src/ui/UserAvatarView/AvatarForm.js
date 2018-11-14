@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
 
 import {
   ConnectedImage,
@@ -19,6 +20,10 @@ const StyledAvatar = withTheme(({ theme }) => ({
     marginBottom: theme.sizing.baseUnit / 2,
   },
 }))(Avatar);
+
+const RoundTouchable = withTheme(({ theme, size }) => ({
+  borderRadius: get(theme.sizing.avatar, size, theme.sizing.avatar.small),
+}))(Touchable);
 
 const Wrapper = styled({
   justifyContent: 'center',
@@ -52,16 +57,19 @@ export default class AvatarForm extends PureComponent {
 
     return (
       <Wrapper>
-        <Touchable
+        <RoundTouchable
           disabled={this.props.disabled}
           onPress={this.handleUploadPhoto}
+          size="medium"
         >
-          <StyledAvatar
-            source={photo}
-            size="medium"
-            isLoading={isUploadingFile}
-          />
-        </Touchable>
+          <View>
+            <StyledAvatar
+              source={photo}
+              size="medium"
+              isLoading={isUploadingFile}
+            />
+          </View>
+        </RoundTouchable>
         {this.props.text ? (
           <H5>
             <ButtonLink onPress={this.handleUploadPhoto}>

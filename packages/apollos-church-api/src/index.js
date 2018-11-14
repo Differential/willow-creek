@@ -5,7 +5,7 @@ export { testSchema } from './server'; // eslint-disable-line import/prefer-defa
 
 // Use the port, if provided.
 const { PORT } = process.env;
-if (!PORT)
+if (!PORT && process.env.NODE_ENV !== 'test')
   console.warn(
     'Add `ENV=4000` if you are having trouble connecting to the server. By default, PORT is random.'
   );
