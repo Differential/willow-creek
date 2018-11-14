@@ -6,11 +6,14 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { Text as TextInput } from 'apolloschurchapp/src/ui/inputs';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import FlexedView from 'apolloschurchapp/src/ui/FlexedView';
-import Button, { ButtonLink } from 'apolloschurchapp/src/ui/Button';
-import TableView from 'apolloschurchapp/src/ui/TableView';
+import {
+  TextInput,
+  PaddedView,
+  FlexedView,
+  Button,
+  ButtonLink,
+  TableView,
+} from '@apollosproject/ui-kit';
 
 import getUserProfile from '../tabs/connect/getUserProfile';
 import updateCurrentUser from './updateCurrentUser';

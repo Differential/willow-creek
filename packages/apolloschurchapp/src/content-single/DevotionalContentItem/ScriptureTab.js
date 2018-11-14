@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
+import { PaddedView } from '@apollosproject/ui-kit';
 import ScriptureItem from 'apolloschurchapp/src/ui/Scripture';
 import HorizontalContentFeed from '../HorizontalContentFeed';
 

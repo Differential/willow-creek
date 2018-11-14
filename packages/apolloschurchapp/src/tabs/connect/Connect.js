@@ -5,13 +5,16 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { LoginButton } from 'apolloschurchapp/src/auth';
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
-import { H1, BodyText, Paragraph } from 'apolloschurchapp/src/ui/typography';
-import styled from 'apolloschurchapp/src/ui/styled';
-import Icon from 'apolloschurchapp/src/ui/Icon';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-
+import {
+  H1,
+  BodyText,
+  Paragraph,
+  BackgroundView,
+  withTheme,
+  styled,
+  Icon,
+  PaddedView,
+} from '@apollosproject/ui-kit';
 import ActionTable from './ActionTable';
 import { UserAvatarHeaderConnected } from './UserAvatarHeader';
 import { RecentlyLikedTileFeedConnected } from './RecentlyLikedTileFeed';

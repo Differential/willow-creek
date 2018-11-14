@@ -5,8 +5,7 @@ import { get } from 'lodash';
 import Video from 'react-native-video';
 import { Animated, View, StyleSheet } from 'react-native';
 
-import styled from 'apolloschurchapp/src/ui/styled';
-import ActivityIndicator from 'apolloschurchapp/src/ui/ActivityIndicator';
+import { styled, ActivityIndicator } from '@apollosproject/ui-kit';
 
 import { getVideoState } from './queries';
 import { pause as pauseMutation, pauseAndRestart } from './mutations';

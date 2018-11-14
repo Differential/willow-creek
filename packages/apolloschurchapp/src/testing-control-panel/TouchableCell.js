@@ -1,8 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
-
-import { Cell, CellIcon, CellText } from 'apolloschurchapp/src/ui/TableView';
+import { Touchable, Cell, CellIcon, CellText } from '@apollosproject/ui-kit';
 
 const TouchableCell = ({ iconName, cellText, handlePress }) => (
   <Touchable onPress={handlePress}>

@@ -3,9 +3,8 @@ import { StatusBar } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 // import { Sentry } from 'react-native-sentry';
 
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
+import { BackgroundView, withTheme } from '@apollosproject/ui-kit';
 import MediaPlayer from 'apolloschurchapp/src/ui/MediaPlayer';
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
 import Providers from './Providers';
 import NotificationsInit from './Notifications';
 import NavigationService from './NavigationService';

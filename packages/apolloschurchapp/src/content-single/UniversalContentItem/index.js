@@ -2,11 +2,13 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
-import styled from 'apolloschurchapp/src/ui/styled';
-import GradientOverlayImage from 'apolloschurchapp/src/ui/GradientOverlayImage';
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import { H2 } from 'apolloschurchapp/src/ui/typography';
+import {
+  styled,
+  GradientOverlayImage,
+  BackgroundView,
+  PaddedView,
+  H2,
+} from '@apollosproject/ui-kit';
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
 import HorizontalContentFeed from '../HorizontalContentFeed';

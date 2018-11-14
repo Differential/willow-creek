@@ -2,8 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import TileImage from 'apolloschurchapp/src/ui/TileImage';
-import styled from 'apolloschurchapp/src/ui/styled';
+import { TileImage, styled } from '@apollosproject/ui-kit';
 
 const Container = styled(({ theme }) => ({
   flex: 1,

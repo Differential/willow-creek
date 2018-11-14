@@ -147,6 +147,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-screens')
     compile project(':react-native-onesignal')
     compile project(':react-native-image-picker')
     compile project(':react-native-music-control')

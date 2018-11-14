@@ -1,18 +1,19 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import TableView, {
+import {
+  TableView,
   Cell,
   CellIcon,
   CellText,
   Divider,
-} from 'apolloschurchapp/src/ui/TableView';
+  Touchable,
+  styled,
+  PaddedView,
+  H4,
+} from '@apollosproject/ui-kit';
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
 import NavigationActions from 'apolloschurchapp/src/NavigationService';
-import styled from 'apolloschurchapp/src/ui/styled';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import { H4 } from 'apolloschurchapp/src/ui/typography';
 
 const RowHeader = styled(({ theme }) => ({
   flexDirection: 'row',

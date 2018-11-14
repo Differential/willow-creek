@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
-import Placeholder from 'apolloschurchapp/src/ui/Placeholder';
-import { H4, H6 } from 'apolloschurchapp/src/ui/typography';
+import { Placeholder, H4, H6 } from '@apollosproject/ui-kit';
 
 import { LegalText } from './typography';
 import ScriptureHTMLView from './ScriptureHTMLView';

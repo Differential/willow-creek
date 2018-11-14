@@ -69,44 +69,23 @@ exports[`ScriptureConnected component renders without errors 1`] = `
           WEB
         </Text>
       </Text>
-      <View>
-        <View
-          style={
-            Object {
-              "paddingBottom": 17.28,
-            }
+      <View
+        lineNumber={8}
+        onReady={true}
+        style={
+          Object {
+            "paddingBottom": 17.28,
           }
-        >
-          <Text
-            bold={false}
-            italic={false}
+        }
+      >
+        <View>
+          <View
             style={
               Object {
-                "color": "#303030",
-                "fontFamily": "DroidSerif",
-                "fontSize": 16,
-                "lineHeight": 26,
+                "paddingBottom": 17.28,
               }
             }
           >
-            <Text
-              bold={false}
-              italic={false}
-              style={
-                Object {
-                  "color": "#505050",
-                  "fontFamily": "DroidSerif",
-                  "fontSize": 9.6,
-                  "lineHeight": 26,
-                }
-              }
-            >
-               
-              <Text>
-                1
-              </Text>
-               
-            </Text>
             <Text
               bold={false}
               italic={false}
@@ -119,11 +98,42 @@ exports[`ScriptureConnected component renders without errors 1`] = `
                 }
               }
             >
-              <Text>
-                In the beginning, God created the heavens and the earth. 
+              <Text
+                bold={false}
+                italic={false}
+                style={
+                  Object {
+                    "color": "#505050",
+                    "fontFamily": "DroidSerif",
+                    "fontSize": 9.6,
+                    "lineHeight": 26,
+                  }
+                }
+              >
+                 
+                <Text>
+                  1
+                </Text>
+                 
+              </Text>
+              <Text
+                bold={false}
+                italic={false}
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "DroidSerif",
+                    "fontSize": 16,
+                    "lineHeight": 26,
+                  }
+                }
+              >
+                <Text>
+                  In the beginning, God created the heavens and the earth. 
+                </Text>
               </Text>
             </Text>
-          </Text>
+          </View>
         </View>
       </View>
       <Text

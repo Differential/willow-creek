@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { Query, withApollo } from 'react-apollo';
 import { get } from 'lodash';
 
-import styled from 'apolloschurchapp/src/ui/styled';
+import { styled } from '@apollosproject/ui-kit';
 
 import MiniControls, { MINI_PLAYER_HEIGHT } from './MiniControls';
 import FullscreenControls from './FullscreenControls';

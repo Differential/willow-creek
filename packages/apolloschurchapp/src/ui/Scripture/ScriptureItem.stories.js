@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
+import { PaddedView } from '@apollosproject/ui-kit';
 
 import ScriptureItem from './ScriptureItem';
 

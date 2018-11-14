@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 import { PanResponder, Animated, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import styled from 'apolloschurchapp/src/ui/styled';
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
+import { styled, withTheme } from '@apollosproject/ui-kit';
 
 import { PlayheadConsumer, ControlsConsumer } from '../PlayheadState';
 import Timestamp from './Timestamp';

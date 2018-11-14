@@ -2,11 +2,14 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 
-import { UIText } from 'apolloschurchapp/src/ui/typography';
-import Card, { CardContent } from 'apolloschurchapp/src/ui/Card';
-import TouchableScale from 'apolloschurchapp/src/ui/TouchableScale';
-import styled from 'apolloschurchapp/src/ui/styled';
-import ChannelLabel from 'apolloschurchapp/src/ui/ChannelLabel';
+import {
+  Card,
+  CardContent,
+  TouchableScale,
+  styled,
+  ChannelLabel,
+  UIText,
+} from '@apollosproject/ui-kit';
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
 
 import getLiveStream from './getLiveStream';

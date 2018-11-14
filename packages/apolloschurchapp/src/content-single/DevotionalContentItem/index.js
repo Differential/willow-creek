@@ -3,10 +3,13 @@ import { SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 
-import { ErrorCard } from 'apolloschurchapp/src/ui/Card';
-import TabView, { SceneMap } from 'apolloschurchapp/src/ui/TabView';
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
-import styled from 'apolloschurchapp/src/ui/styled';
+import {
+  ErrorCard,
+  TabView,
+  TabSceneMap as SceneMap,
+  BackgroundView,
+  styled,
+} from '@apollosproject/ui-kit';
 import ContentTab from './ContentTab';
 import ScriptureTab from './ScriptureTab';
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { Parser, DomHandler } from 'htmlparser2';
 
-import { Paragraph as ParagraphPlaceholder } from 'apolloschurchapp/src/ui/Placeholder';
+import { Paragraph as ParagraphPlaceholder } from '@apollosproject/ui-kit';
 
 import defaultRenderer from './defaultRenderer';
 

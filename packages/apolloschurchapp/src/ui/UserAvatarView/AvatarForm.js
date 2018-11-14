@@ -2,13 +2,15 @@ import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import ConnectedImage from 'apolloschurchapp/src/ui/ConnectedImage';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
-import { ButtonLink } from 'apolloschurchapp/src/ui/Button';
-import Avatar from 'apolloschurchapp/src/ui/Avatar';
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
-import { H5 } from 'apolloschurchapp/src/ui/typography';
-import styled from 'apolloschurchapp/src/ui/styled';
+import {
+  ConnectedImage,
+  Touchable,
+  ButtonLink,
+  Avatar,
+  withTheme,
+  H5,
+  styled,
+} from '@apollosproject/ui-kit';
 import uploadPhoto from './uploadPhoto';
 
 const StyledAvatar = withTheme(({ theme }) => ({

@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 import { Animated } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { H6 } from 'apolloschurchapp/src/ui/typography';
-import styled from 'apolloschurchapp/src/ui/styled';
+import { H6, styled } from '@apollosproject/ui-kit';
 
 const TimeText = styled({
   width: 50,

@@ -5,9 +5,7 @@ import { View } from 'react-native';
 import { get } from 'lodash';
 
 import { playVideoMutation } from 'apolloschurchapp/src/ui/MediaPlayer/mutations';
-import Icon from 'apolloschurchapp/src/ui/Icon';
-import styled from 'apolloschurchapp/src/ui/styled';
-import Button from 'apolloschurchapp/src/ui/Button';
+import { Icon, styled, Button } from '@apollosproject/ui-kit';
 import getContentMedia from './getContentMedia';
 
 const buttonSizeDifferential = 4;

@@ -5,11 +5,14 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 import { track, events } from 'apolloschurchapp/src/analytics';
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
-import FlexedView from 'apolloschurchapp/src/ui/FlexedView';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import { Text as TextInput } from 'apolloschurchapp/src/ui/inputs';
-import Button, { ButtonLink } from 'apolloschurchapp/src/ui/Button';
-import styled from 'apolloschurchapp/src/ui/styled';
+import {
+  FlexedView,
+  PaddedView,
+  TextInput,
+  Button,
+  ButtonLink,
+  styled,
+} from '@apollosproject/ui-kit';
 
 const BottomSafeAreaView = styled({
   position: 'absolute',

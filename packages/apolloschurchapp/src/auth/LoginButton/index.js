@@ -3,7 +3,7 @@ import { withNavigation } from 'react-navigation';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 
-import Button from 'apolloschurchapp/src/ui/Button';
+import { Button } from '@apollosproject/ui-kit';
 
 import getLoginState from '../getLoginState';
 

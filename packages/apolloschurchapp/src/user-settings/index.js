@@ -3,19 +3,20 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Query, Mutation } from 'react-apollo';
 
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import TableView, {
+import {
+  BackgroundView,
+  PaddedView,
+  TableView,
   Cell,
   CellIcon,
   CellText,
   Divider,
-} from 'apolloschurchapp/src/ui/TableView';
+  Touchable,
+  styled,
+  ActivityIndicator,
+} from '@apollosproject/ui-kit';
 import { WebBrowserConsumer } from 'apolloschurchapp/src/ui/WebBrowser';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
 import AvatarForm from 'apolloschurchapp/src/ui/UserAvatarView/AvatarForm';
-import styled from 'apolloschurchapp/src/ui/styled';
-import ActivityIndicator from 'apolloschurchapp/src/ui/ActivityIndicator';
 
 import getLoginState from '../auth/getLoginState';
 import logout from '../auth/logout';

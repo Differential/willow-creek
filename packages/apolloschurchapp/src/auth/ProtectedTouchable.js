@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
+import { Touchable } from '@apollosproject/ui-kit';
 import ProtectedAction from './ProtectedAction';
 
 const ProtectedTouchable = ({

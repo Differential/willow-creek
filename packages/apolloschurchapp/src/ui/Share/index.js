@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
-import Icon from 'apolloschurchapp/src/ui/Icon';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
 import share from 'apolloschurchapp/src/utils/content/share';
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
+import { Touchable, Icon, withTheme } from '@apollosproject/ui-kit';
 
 const enhance = compose(
   pure,

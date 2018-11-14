@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 
-import styled from 'apolloschurchapp/src/ui/styled';
+import { styled } from '@apollosproject/ui-kit';
 
 import ScriptureText from './ScriptureText';
 

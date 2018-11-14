@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { H4 } from 'apolloschurchapp/src/ui/typography';
-import styled from 'apolloschurchapp/src/ui/styled';
-import { ButtonLink } from 'apolloschurchapp/src/ui/Button';
+import { H4, styled, ButtonLink } from '@apollosproject/ui-kit';
 
 const StyledH4 = styled(({ theme }) => ({
   color: theme.colors.primary,

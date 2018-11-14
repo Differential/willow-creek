@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 
 import HTMLView from 'apolloschurchapp/src/ui/HTMLView';
-import { ErrorCard } from 'apolloschurchapp/src/ui/Card';
+import { ErrorCard } from '@apollosproject/ui-kit';
 
 import getContentItemContent from './getContentItemContent';
 

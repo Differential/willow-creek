@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import TableView, { Divider } from 'apolloschurchapp/src/ui/TableView';
+import { TableView, Divider } from '@apollosproject/ui-kit';
 import ChangeLivestream from './ChangeLivestream';
 
 export default class TestingControlPanel extends PureComponent {

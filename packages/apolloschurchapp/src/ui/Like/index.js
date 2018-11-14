@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from 'apolloschurchapp/src/ui/Icon';
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
+import { Icon, withTheme } from '@apollosproject/ui-kit';
 import ProtectedTouchable from '../../auth/ProtectedTouchable';
 
 const LikeIcon = withTheme(

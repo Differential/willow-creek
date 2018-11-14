@@ -2,13 +2,18 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { View, SafeAreaView } from 'react-native';
 
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
-import FlexedView from 'apolloschurchapp/src/ui/FlexedView';
-import TabView, { SceneMap } from 'apolloschurchapp/src/ui/TabView';
-import { H1, H5 } from 'apolloschurchapp/src/ui/typography';
-import styled from 'apolloschurchapp/src/ui/styled';
-import Icon from 'apolloschurchapp/src/ui/Icon';
-import { ButtonLink } from 'apolloschurchapp/src/ui/Button';
+import {
+  FlexedView,
+  TabView,
+  TabSceneMap as SceneMap,
+  H1,
+  H5,
+  styled,
+  Icon,
+  ButtonLink,
+  withTheme,
+} from '@apollosproject/ui-kit';
+
 import { track } from 'apolloschurchapp/src/analytics';
 
 import LoginForm from './login';

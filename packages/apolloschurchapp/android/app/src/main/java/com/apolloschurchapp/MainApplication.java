@@ -3,6 +3,7 @@ package com.apolloschurchapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.swmansion.rnscreens.RNScreenPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.tanguyantoine.react.MusicControl;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNScreenPackage(),
             new ReactNativeOneSignalPackage(),
             new ImagePickerPackage(),
             new MusicControl(),

@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
-import FeedView from 'apolloschurchapp/src/ui/FeedView';
+import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 
 import getLikedContent from '../getLikedContent';
 /** A FeedView wrapped in a query to pull content data. */

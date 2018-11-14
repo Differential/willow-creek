@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 
-import FeedView from 'apolloschurchapp/src/ui/FeedView';
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
+import { FeedView, BackgroundView } from '@apollosproject/ui-kit';
 
 import TileContentFeed from './TileContentFeed';
 import getContentChannels from './getContentChannels';

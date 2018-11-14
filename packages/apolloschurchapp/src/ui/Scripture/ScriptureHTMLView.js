@@ -2,8 +2,7 @@ import React from 'react';
 import { withProps } from 'recompose';
 import { Platform } from 'react-native';
 
-import Paragraph from 'apolloschurchapp/src/ui/typography/Paragraph';
-import { H4 } from 'apolloschurchapp/src/ui/typography';
+import { Paragraph, H4 } from '@apollosproject/ui-kit';
 import HTMLView from 'apolloschurchapp/src/ui/HTMLView';
 import defaultRenderer, {
   wrapTextChildren,

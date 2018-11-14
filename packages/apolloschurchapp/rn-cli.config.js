@@ -46,32 +46,36 @@ function maybeResolveSymlink(maybeSymlinkPath) {
   return maybeSymlinkPath;
 }
 
-const workspaces = getWorkspaces(path.resolve('.'));
+const pkgDir = path.resolve('.');
+const workspaces = getWorkspaces(pkgDir);
 
 /**
  * Options used by Metro builder
  */
 module.exports = {
   extraNodeModules: getNodeModulesForDirectory(path.resolve('.')),
+  // extraNodeModules: {
+  //   'react-native': path.resolve('.', 'node_modules/react-native'),
+  // },
   getBlacklistRE() {
-    return blacklist(
-      workspaces.map(
-        (workspacePath) =>
-          `/${workspacePath.replace(
-            /\//g,
-            '[/\\\\]'
-          )}[/\\\\]node_modules[/\\\\]react-native[/\\\\].*/`
-      )
-    );
+    return blacklist([
+      ...workspaces
+        .filter((p) => !p.includes(pkgDir))
+        .map(
+          (workspacePath) =>
+            new RegExp(`${workspacePath}/node_modules/react-native/.*`)
+        ),
+      /node_modules\/.*\/node_modules\/react-native\/.*/,
+    ]);
   },
   // I think this is the most important bit here - without this, a lot of modules aren't resolving
   getProjectRoots() {
     return [
       // Keep your project directory.
-      path.resolve(path.resolve('.')),
+      path.resolve(pkgDir),
 
       // Include your forked package as a new root.
       path.resolve('..', '..', 'node_modules'),
-    ].concat(workspaces);
+    ];
   },
 };

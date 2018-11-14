@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { withNavigation } from 'react-navigation';
 
-import { withIsLoading } from 'apolloschurchapp/src/ui/isLoading';
-import Touchable from 'apolloschurchapp/src/ui/Touchable';
 import UserAvatarView from 'apolloschurchapp/src/ui/UserAvatarView';
-import ConnectedImage from 'apolloschurchapp/src/ui/ConnectedImage';
-import Icon from 'apolloschurchapp/src/ui/Icon';
-import { withTheme } from 'apolloschurchapp/src/ui/theme';
-import styled from 'apolloschurchapp/src/ui/styled';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import FlexedView from 'apolloschurchapp/src/ui/FlexedView';
+
+import {
+  withIsLoading,
+  Touchable,
+  ConnectedImage,
+  Icon,
+  withTheme,
+  styled,
+  PaddedView,
+  FlexedView,
+} from '@apollosproject/ui-kit';
 
 const Container = styled(({ theme }) => ({
   alignItems: 'center',

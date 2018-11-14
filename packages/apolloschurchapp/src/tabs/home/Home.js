@@ -5,9 +5,7 @@ import SafeAreaView from 'react-native-safe-area-view';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import styled from 'apolloschurchapp/src/ui/styled';
-import FeedView from 'apolloschurchapp/src/ui/FeedView';
-import BackgroundView from 'apolloschurchapp/src/ui/BackgroundView';
+import { styled, FeedView, BackgroundView } from '@apollosproject/ui-kit';
 
 import { LiveButton } from '../../live';
 

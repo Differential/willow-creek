@@ -3,10 +3,7 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { ErrorCard } from 'apolloschurchapp/src/ui/Card';
-import { ThemeMixin } from 'apolloschurchapp/src/ui/theme';
-
-import ModalView from 'apolloschurchapp/src/ui/ModalView';
+import { ErrorCard, ThemeMixin, ModalView } from '@apollosproject/ui-kit';
 import TrackEventWhenLoaded from 'apolloschurchapp/src/analytics/TrackEventWhenLoaded';
 
 import { events } from 'apolloschurchapp/src/analytics';
@@ -78,7 +75,7 @@ class ContentSingle extends PureComponent {
           colors: get(theme, 'colors'),
         }}
       >
-        <ModalView>
+        <ModalView navigation={this.props.navigation}>
           <TrackEventWhenLoaded
             loaded={!!(!loading && content.title)}
             eventName={events.ViewContent}

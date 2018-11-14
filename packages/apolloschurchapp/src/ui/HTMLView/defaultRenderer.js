@@ -13,9 +13,9 @@ import {
   Paragraph,
   BlockQuote,
   BulletListItem,
-} from 'apolloschurchapp/src/ui/typography';
-import { ButtonLink } from 'apolloschurchapp/src/ui/Button';
-import ConnectedImage from 'apolloschurchapp/src/ui/ConnectedImage';
+  ButtonLink,
+  ConnectedImage,
+} from '@apollosproject/ui-kit';
 
 const LINE_BREAK = '\n';
 const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyText, ButtonLink];

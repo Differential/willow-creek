@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
-import { H3 } from 'apolloschurchapp/src/ui/typography';
-import PaddedView from 'apolloschurchapp/src/ui/PaddedView';
-import ConnectedImage from 'apolloschurchapp/src/ui/ConnectedImage';
-import styled from 'apolloschurchapp/src/ui/styled';
-import ChannelLabel from 'apolloschurchapp/src/ui/ChannelLabel';
-import { withIsLoading } from 'apolloschurchapp/src/ui/isLoading';
+import {
+  H3,
+  PaddedView,
+  ConnectedImage,
+  styled,
+  ChannelLabel,
+  withIsLoading,
+} from '@apollosproject/ui-kit';
 
 import AvatarForm from './AvatarForm';
 
