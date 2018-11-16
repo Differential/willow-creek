@@ -28,11 +28,12 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "@apollosproject/data-connector-rock-auth": "^0.6.0",
-    "@apollosproject/server-core": "^0.6.0",
     "@apollosproject/config": "^0.6.0",
-    "@apollosproject/rock-apollo-data-source": "^0.6.0",
     "@apollosproject/data-connector-analytics": "^0.6.0",
+    "@apollosproject/data-connector-people": "^0.6.0",
+    "@apollosproject/data-connector-rock-auth": "^0.6.0",
+    "@apollosproject/rock-apollo-data-source": "^0.6.0",
+    "@apollosproject/server-core": "^0.6.0",
     "apollo-datasource-rest": "0.1.1",
     "apollo-server": "^2.0.5",
     "casual": "1.5.19",
@@ -40,7 +41,6 @@
     "color": "3.0.0",
     "dataloader": "1.4.0",
     "dotenv": "6.0.0",
-    "form-data": "^2.3.2",
     "graphql": "0.13.2",
     "isomorphic-fetch": "2.2.1",
     "lodash": "4.17.10",

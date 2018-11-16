@@ -1,6 +1,20 @@
 import ApollosConfig from '@apollosproject/config';
-import { buildGetMock } from '../../../utils/testUtils';
 import DataSource from '../data-source';
+
+const buildGetMock = (response, dataSource) => {
+  const get = jest.fn();
+  if (Array.isArray(response) && Array.isArray(response[0])) {
+    response.forEach((responseVal) => {
+      get.mockReturnValueOnce(
+        new Promise((resolve) => resolve(dataSource.normalize(responseVal)))
+      );
+    });
+  }
+  get.mockReturnValue(
+    new Promise((resolve) => resolve(dataSource.normalize(response)))
+  );
+  return get;
+};
 
 ApollosConfig.loadJs({
   ROCK: {

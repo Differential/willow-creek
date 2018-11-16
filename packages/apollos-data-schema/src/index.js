@@ -161,3 +161,9 @@ export const analyticsSchema = gql`
     trackEvent(input: AnalyticsTrackInput!): AnalyticsResult
   }
 `;
+
+export const familySchema = gql`
+  extend type Person {
+    location: String
+  }
+`;
