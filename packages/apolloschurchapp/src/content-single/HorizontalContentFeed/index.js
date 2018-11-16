@@ -46,11 +46,11 @@ class HorizontalContentFeed extends Component {
         number={index + 1}
         title={get(item, 'title', '')}
         /*
-            * These are props that are not yet being passed in the data.
-            * We will need to make sure they get added back when that data is available.
-            * byLine={item.content.speaker}
-            * date={item.meta.date}
-            */
+         * These are props that are not yet being passed in the data.
+         * We will need to make sure they get added back when that data is available.
+         * byLine={item.content.speaker}
+         * date={item.meta.date}
+         */
       />
     </TouchableScale>
   );

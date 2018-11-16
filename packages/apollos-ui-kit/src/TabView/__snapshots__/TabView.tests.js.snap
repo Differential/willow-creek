@@ -126,14 +126,7 @@ exports[`TabView Component renders 1`] = `
           >
             <View>
               <View
-                accessibilityComponentType="button"
                 accessibilityLabel="FIRST"
-                accessibilityTraits={
-                  Array [
-                    "button",
-                    "selected",
-                  ]
-                }
                 accessible={true}
                 isTVSelectable={true}
                 onResponderGrant={[Function]}
@@ -187,9 +180,7 @@ exports[`TabView Component renders 1`] = `
                 </View>
               </View>
               <View
-                accessibilityComponentType="button"
                 accessibilityLabel="SECOND"
-                accessibilityTraits="button"
                 accessible={true}
                 isTVSelectable={true}
                 onResponderGrant={[Function]}

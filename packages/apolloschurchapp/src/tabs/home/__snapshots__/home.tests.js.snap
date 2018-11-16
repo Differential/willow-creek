@@ -61,7 +61,7 @@ exports[`User Home Feed Query should return correct query results 1`] = `
         <RCTScrollView
           ListHeaderComponent={
             <React.Fragment>
-              <mapProps(getContext(mapProps(withPropsOnChange(mapProps(Image)))))
+              <mapProps(getContext(mapProps(withPropsOnChange(mapProps(Component)))))
                 source={
                   Object {
                     "testUri": "../../../src/tabs/home/wordmark.png",
@@ -306,7 +306,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
           <View>
             <View
               onLayout={[Function]}
-              style={null}
             >
               <Image
                 source={

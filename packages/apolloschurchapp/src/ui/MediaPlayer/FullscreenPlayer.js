@@ -22,17 +22,16 @@ import { exitFullscreen, goFullscreen } from './mutations';
 import { Provider, ControlsConsumer } from './PlayheadState';
 import MediaPlayerSafeLayout from './MediaPlayerSafeLayout';
 
-const VideoSizer = styled(
-  ({ isFullscreen, isVideo, theme }) =>
-    isFullscreen
-      ? StyleSheet.absoluteFill
-      : {
-          height: MINI_PLAYER_HEIGHT,
-          borderTopLeftRadius: theme.sizing.baseUnit / 2,
-          borderBottomLeftRadius: theme.sizing.baseUnit / 2,
-          overflow: 'hidden',
-          aspectRatio: isVideo ? 16 / 9 : 1,
-        }
+const VideoSizer = styled(({ isFullscreen, isVideo, theme }) =>
+  isFullscreen
+    ? StyleSheet.absoluteFill
+    : {
+        height: MINI_PLAYER_HEIGHT,
+        borderTopLeftRadius: theme.sizing.baseUnit / 2,
+        borderBottomLeftRadius: theme.sizing.baseUnit / 2,
+        overflow: 'hidden',
+        aspectRatio: isVideo ? 16 / 9 : 1,
+      }
 )(View);
 
 const FullscreenMediaPlayerSafeLayout = styled(({ isFullscreen, theme }) => ({

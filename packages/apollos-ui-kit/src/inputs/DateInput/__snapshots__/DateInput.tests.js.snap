@@ -40,12 +40,6 @@ exports[`The DateInput component should render 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -332,12 +326,6 @@ exports[`The DateInput component should render with a displayValue 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -678,12 +666,6 @@ exports[`The DateInput component should render with a label 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}
@@ -1026,12 +1008,6 @@ exports[`The DateInput component should render with a placeholder 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
         isTVSelectable={true}
         onResponderGrant={[Function]}

@@ -76,14 +76,13 @@ const generateLoadingStateData = (loadingStateObject, numberOfItems) => {
 };
 
 const enhance = compose(
-  withProps(
-    ({ isLoading, content, loadingStateObject } = {}) =>
-      isLoading && (!content || !content.length)
-        ? {
-            content: generateLoadingStateData(loadingStateObject, 5),
-            fetchMore: () => {},
-          }
-        : {}
+  withProps(({ isLoading, content, loadingStateObject } = {}) =>
+    isLoading && (!content || !content.length)
+      ? {
+          content: generateLoadingStateData(loadingStateObject, 5),
+          fetchMore: () => {},
+        }
+      : {}
   ),
   withTheme(({ theme: { sizing: { baseUnit } = {} } = {} } = {}) => ({
     theme: { baseUnit },

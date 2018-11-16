@@ -147,14 +147,7 @@ exports[`the Devotional component renders a devotional 1`] = `
               >
                 <View>
                   <View
-                    accessibilityComponentType="button"
                     accessibilityLabel="DEVOTIONAL"
-                    accessibilityTraits={
-                      Array [
-                        "button",
-                        "selected",
-                      ]
-                    }
                     accessible={true}
                     isTVSelectable={true}
                     onResponderGrant={[Function]}
@@ -208,9 +201,7 @@ exports[`the Devotional component renders a devotional 1`] = `
                     </View>
                   </View>
                   <View
-                    accessibilityComponentType="button"
                     accessibilityLabel="SCRIPTURE"
-                    accessibilityTraits="button"
                     accessible={true}
                     isTVSelectable={true}
                     onResponderGrant={[Function]}
@@ -1037,14 +1028,7 @@ exports[`the Devotional component renders a loading state 1`] = `
               >
                 <View>
                   <View
-                    accessibilityComponentType="button"
                     accessibilityLabel="DEVOTIONAL"
-                    accessibilityTraits={
-                      Array [
-                        "button",
-                        "selected",
-                      ]
-                    }
                     accessible={true}
                     isTVSelectable={true}
                     onResponderGrant={[Function]}
@@ -1098,9 +1082,7 @@ exports[`the Devotional component renders a loading state 1`] = `
                     </View>
                   </View>
                   <View
-                    accessibilityComponentType="button"
                     accessibilityLabel="SCRIPTURE"
-                    accessibilityTraits="button"
                     accessible={true}
                     isTVSelectable={true}
                     onResponderGrant={[Function]}
@@ -1579,14 +1561,7 @@ exports[`the Devotional component renders even with empty scripture array 1`] = 
               >
                 <View>
                   <View
-                    accessibilityComponentType="button"
                     accessibilityLabel="DEVOTIONAL"
-                    accessibilityTraits={
-                      Array [
-                        "button",
-                        "selected",
-                      ]
-                    }
                     accessible={true}
                     isTVSelectable={true}
                     onResponderGrant={[Function]}
@@ -1640,9 +1615,7 @@ exports[`the Devotional component renders even with empty scripture array 1`] = 
                     </View>
                   </View>
                   <View
-                    accessibilityComponentType="button"
                     accessibilityLabel="SCRIPTURE"
-                    accessibilityTraits="button"
                     accessible={true}
                     isTVSelectable={true}
                     onResponderGrant={[Function]}

@@ -100,9 +100,8 @@ class MusicControls extends Component {
 
     // Remote (headphones) play/pause
     MusicControl.enableControl('togglePlayPause', true);
-    MusicControl.on(
-      'togglePlayPause',
-      () => (this.props.isPlaying ? this.handleOnPause() : this.handleOnPlay())
+    MusicControl.on('togglePlayPause', () =>
+      this.props.isPlaying ? this.handleOnPause() : this.handleOnPlay()
     );
 
     // Remote (headphones) fast forward/rewind (iOS only) (disabled)

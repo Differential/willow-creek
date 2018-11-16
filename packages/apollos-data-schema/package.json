@@ -19,6 +19,8 @@
     "graphql-tag": "^2.10.0"
   },
   "devDependencies": {
-    "babel-preset-apollos": "file:../babel-preset-apollos"
-  }
+    "babel-preset-apollos": "0.6.0",
+    "graphql": "0.13.2"
+  },
+  "license": "SEE LICENSE IN LICENSE.md"
 }

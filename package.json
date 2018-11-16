@@ -2,10 +2,13 @@
   "name": "apollos",
   "private": true,
   "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": ["**/react-native", "**/react-native/**"]
+    "packages": ["packages/*"],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-*",
+      "**/react-native-*/**"
+    ]
   },
   "scripts": {
     "start": "if test \"$NOW_ENV\" = \"true\" ; then yarn start:now ; else yarn start:dev ; fi",
@@ -24,19 +27,16 @@
     "nuke:cache": "watchman watch-del-all && ./node_modules/.bin/lerna run start --scope apolloschurchapp --stream -- --reset-cache",
     "postinstall": "lerna run build"
   },
-  "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
-  },
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.47",
-    "@babel/core": "7.0.0-beta.47",
-    "@babel/node": "7.0.0-beta.47",
-    "@babel/parser": "7.0.0-rc.2",
-    "@babel/runtime": "7.0.0-beta.47",
+    "@babel/cli": "7.1.5",
+    "@babel/core": "7.1.6",
+    "@babel/node": "7.0.0",
+    "@babel/parser": "7.1.6",
+    "@babel/runtime": "7.1.5",
     "apollo": "^1.9.2",
-    "babel-core": "^7.0.0-0",
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "23.4.2",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "23.6.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -48,8 +48,14 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-react-native": "^3.2.1",
+    "babel-plugin-module-resolver": "3.1.1",
     "lerna": "^3.0.6",
-    "prettier": "^1.14.2"
+    "prettier": "^1.14.2",
+    "prop-types": "15.6.1",
+    "react": "16.6.1",
+    "react-native": "0.57.5",
+    "react-native-linear-gradient": "2.4.0",
+    "react-native-svg": "6.5.2"
   },
   "now": {
     "name": "apollos-church-api",

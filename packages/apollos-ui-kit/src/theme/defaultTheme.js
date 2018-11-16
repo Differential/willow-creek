@@ -158,14 +158,14 @@ helpers.rem = (theme) => (units) => {
 };
 
 /*
-* Vertical rhythm method of spacing objects (typically typographic elements) based on a predefined
-* ratio. A popular ratio that is often used would be something like the Golden Ratio. With the
-* Golden Ratio as an example, all elment spacing on the page is a multiplied derivitive of that
-* ratio resulting in a rhthmic spacing. This is often used in typography to set line heights and
-* vertical paddings. The helper function below takes a `rem` unit (often a font size but not always)
-* and multiplies it by either a custom ratio or a derrived ratio from the themes `baseLineHeight`
-* devided by the `baseFontSize`.
-*/
+ * Vertical rhythm method of spacing objects (typically typographic elements) based on a predefined
+ * ratio. A popular ratio that is often used would be something like the Golden Ratio. With the
+ * Golden Ratio as an example, all elment spacing on the page is a multiplied derivitive of that
+ * ratio resulting in a rhthmic spacing. This is often used in typography to set line heights and
+ * vertical paddings. The helper function below takes a `rem` unit (often a font size but not always)
+ * and multiplies it by either a custom ratio or a derrived ratio from the themes `baseLineHeight`
+ * devided by the `baseFontSize`.
+ */
 helpers.verticalRhythm = (theme) => (units, customRatio) => {
   const verticalRatio =
     customRatio ||

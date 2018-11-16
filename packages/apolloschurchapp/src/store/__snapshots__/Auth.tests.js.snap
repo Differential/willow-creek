@@ -1162,20 +1162,6 @@ InMemoryCache {
       "kind": "Document",
       "loc": Object {
         "end": 106,
-        "source": Object {
-          "body": "
-  mutation track($input: AnalyticsTrackInput!) {
-    trackEvent(input: $input) {
-      success
-    }
-  }
-",
-          "locationOffset": Object {
-            "column": 1,
-            "line": 1,
-          },
-          "name": "GraphQL request",
-        },
         "start": 0,
       },
     },

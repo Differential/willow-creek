@@ -33,13 +33,6 @@ exports[`LoginButton component renders a LoginButton that is loading 1`] = `
     }
   >
     <View
-      accessibilityComponentType="button"
-      accessibilityTraits={
-        Array [
-          "button",
-          "disabled",
-        ]
-      }
       accessible={true}
       isTVSelectable={true}
       onResponderGrant={[Function]}
@@ -120,12 +113,6 @@ exports[`LoginButton component renders a LoginButton when logged out 1`] = `
     }
   >
     <View
-      accessibilityComponentType="button"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
       isTVSelectable={true}
       onResponderGrant={[Function]}

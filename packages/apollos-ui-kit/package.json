@@ -2,12 +2,10 @@
   "name": "@apollosproject/ui-kit",
   "version": "0.6.0",
   "homepage": "https://github.com/ApollosProject/apollos-prototype#readme",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
-    "lint": "eslint ./src --ext .js",
-    "start": "rm -rf ./lib && mkdir -p lib && nodemon --exec \"babel ./src --watch -d ./lib\" --ignore lib/"
+    "lint": "eslint ./src --ext .js"
   },
   "keywords": [
     "react-native-component",
@@ -45,17 +43,18 @@
     "rn-placeholder": "1.2.0"
   },
   "devDependencies": {
-    "@storybook/react-native": "^4.0.6",
-    "babel-preset-apollos": "file:../babel-preset-apollos",
-    "babel-preset-react-native": "5",
+    "@storybook/react-native": "^4.0.7",
+    "babel-preset-apollos": "0.6.0",
     "codecov": "3.1.0",
-    "get-yarn-workspaces": "^1.0.2",
-    "jest": "23.5.0",
+    "jest": "23.6.0",
     "jest-react-native": "18.0.0",
-    "react": "16.4.1",
-    "react-native": "0.56.0",
+    "prop-types": "15.6.1",
+    "react": "16.6.1",
+    "react-dom": "16.6.3",
+    "react-native": "0.57.5",
     "react-native-linear-gradient": "2.4.0",
     "react-native-svg": "6.5.2",
-    "react-test-renderer": "16.4.1"
-  }
+    "react-test-renderer": "16.6.1"
+  },
+  "license": "SEE LICENSE IN LICENSE.md"
 }
