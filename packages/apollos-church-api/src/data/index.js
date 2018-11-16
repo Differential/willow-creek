@@ -3,6 +3,8 @@ import { gql } from 'apollo-server';
 import { createApolloServerConfig } from '@apollosproject/server-core';
 
 import * as Auth from '@apollosproject/data-connector-rock-auth';
+import * as Analytics from '@apollosproject/data-connector-analytics';
+
 import RockConstants from '../connectors/rock/rock-constants';
 import * as ContentChannel from './content-channels';
 import * as ContentItem from './content-items';
@@ -13,7 +15,6 @@ import * as Theme from './theme';
 import * as Scripture from './bible';
 import * as Interactions from './interactions';
 import * as Sharable from './sharable';
-import * as Analytics from './analytics';
 import * as Family from './family';
 import * as Pagination from './pagination';
 
