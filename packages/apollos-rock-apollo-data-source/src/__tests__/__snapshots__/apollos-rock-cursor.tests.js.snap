@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Node \`createCursor\` should be decodeable by \`parseCursor\` 1`] = `
-Object {
-  "id": "molestiae",
-}
-`;
