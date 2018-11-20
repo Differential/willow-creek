@@ -5,7 +5,7 @@ Object {
   "data": Object {
     "getAllLikedContent": Array [
       Object {
-        "id": "UniversalContentItem:559b23fd0aa90e81b1c023e72e230fa1",
+        "id": "MediaContentItem:559b23fd0aa90e81b1c023e72e230fa1",
         "isLiked": true,
         "title": "SAMPLE: Easter",
       },

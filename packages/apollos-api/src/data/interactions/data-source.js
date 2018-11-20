@@ -24,7 +24,31 @@ export default class Interactions extends RockApolloDataSource {
     return this.get(`/Interactions/${interactionId}`);
   }
 
-  async getForContentItem({ contentItemId }) {
+  async getCountByOperationForContentItem({ contentItemId, operation }) {
+    const { dataSources } = this.context;
+    const contentItemType = await dataSources.RockConstants.modelTypeId(
+      'ContentItem'
+    );
+    try {
+      return (await this.request('Interactions')
+        .filter(
+          // eslint-disable-next-line prettier/prettier
+          `(RelatedEntityId eq ${contentItemId}) and (Operation eq '${operation}') and (RelatedEntityTypeId eq ${
+            contentItemType.id
+          })`
+        )
+        .select('Id') // $count not supported, next best thing to make efficient
+        .cache({ ttl: 1800 }) // TODO: whats the right way to do this?
+        .get()).length;
+    } catch (e) {
+      if (e instanceof AuthenticationError) {
+        return [];
+      }
+      throw e;
+    }
+  }
+
+  async getByCurrentUserForContentItem({ contentItemId }) {
     const { dataSources } = this.context;
     const contentItemType = await dataSources.RockConstants.modelTypeId(
       'ContentItem'
@@ -47,7 +71,7 @@ export default class Interactions extends RockApolloDataSource {
     }
   }
 
-  async getForContentItems() {
+  async getByCurrentUserForContentItems() {
     const { dataSources } = this.context;
     const contentItemType = await dataSources.RockConstants.modelTypeId(
       'ContentItem'

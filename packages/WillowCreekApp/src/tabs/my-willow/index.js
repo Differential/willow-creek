@@ -15,14 +15,19 @@ import {
   PaddedView,
   BackgroundView,
   styled,
+  HorizontalTileFeed,
 } from '@apollosproject/ui-kit';
 
 import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
+import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
+
 import TileContentFeed from '../TileContentFeed';
 // import { LiveButton } from '../../live';
 import Icon from './Icon';
 
 import getUserFeed from './getUserFeed';
+
+console.log({ Cell, CellContent });
 
 const CellImage = styled(({ theme }) => ({
   width: theme.sizing.baseUnit * 4,
@@ -58,14 +63,28 @@ class MyWillow extends PureComponent {
               <PageTitle padded>My Willow</PageTitle>
             </PaddedView>
             <Query query={getUserFeed} fetchPolicy="cache-and-network">
-              {({ loading, data }) => (
-                <TileContentFeed
-                  content={get(data, 'userFeed.edges', []).map(
-                    (edge) => edge.node
-                  )}
-                  isLoading={loading}
-                />
-              )}
+              {({ loading, data, error }) =>
+                console.log({ loading, data, error }) || (
+                  <HorizontalTileFeed
+                    content={get(data, 'userFeed.edges', []).map(
+                      (edge) => edge.node
+                    )}
+                    renderItem={({ item }) => (
+                      <ContentCardConnected
+                        contentId={item.id}
+                        isLoading={loading}
+                        tile
+                      />
+                    )}
+                    loadingStateObject={{
+                      id: 'fake_id',
+                      title: '',
+                      coverImage: [],
+                    }}
+                    isLoading={loading}
+                  />
+                )
+              }
             </Query>
 
             <PaddedView style={{ paddingBottom: 0 }}>
@@ -92,7 +111,7 @@ class MyWillow extends PureComponent {
             <PaddedView style={{ paddingBottom: 0 }}>
               <H5>Coming up</H5>
             </PaddedView>
-            <Query query={getUserFeed} fetchPolicy="cache-and-network">
+            {/* <Query query={getUserFeed} fetchPolicy="cache-and-network">
               {({ loading, data }) => (
                 <TileContentFeed
                   content={get(data, 'userFeed.edges', []).map(
@@ -101,7 +120,7 @@ class MyWillow extends PureComponent {
                   isLoading={loading}
                 />
               )}
-            </Query>
+                  </Query> */}
           </ScrollView>
         </SafeAreaView>
       </BackgroundView>

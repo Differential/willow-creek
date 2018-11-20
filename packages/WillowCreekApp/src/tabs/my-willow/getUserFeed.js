@@ -1,40 +1,20 @@
 import gql from 'graphql-tag';
 
 import { contentItemFragment } from 'WillowCreekApp/src/content-single/getContentItem';
+import { tileCardFragment } from 'WillowCreekApp/src/ui/ContentCardConnected';
 
 export default gql`
   query getUserFeed {
     userFeed {
       edges {
         node {
-          ...contentItemFragment
-          __typename
           id
-          coverImage {
-            name
-            sources {
-              uri
-            }
-          }
-          parentChannel {
-            id
-            name
-            iconName
-          }
-          theme {
-            type
-            colors {
-              primary
-              secondary
-              screen
-              paper
-            }
-          }
-          isLiked
-          title
+          ...contentItemFragment
+          ...tileCardFragment
         }
       }
     }
   }
   ${contentItemFragment}
+  ${tileCardFragment}
 `;

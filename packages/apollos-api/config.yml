@@ -46,6 +46,10 @@ ROCK_MAPPINGS:
     - 6
     - 8
 
+  SERIES_CONTENT_CHANNEL_TYPE_IDS:
+    - 4
+    - 6
+
   # The apollos app will show scripture for specific ContentChannelTypeIds, specified here.
   # As of right now, it will pull from the 'scriptures' field.
   # Ignore if this doesn't apply to you.

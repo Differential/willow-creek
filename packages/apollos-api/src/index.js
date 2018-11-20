@@ -1,3 +1,4 @@
+import dotenv from 'dotenv/config'; // eslint-disable-line
 import config from './config'; // eslint-disable-line
 import server from './server';
 

@@ -1,5 +1,5 @@
 {
-  "name": "apollos-api",
+  "name": "willow-apollos-api",
   "version": "0.0.1",
   "private": true,
   "main": "lib/index.js",
@@ -28,12 +28,14 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "@apollosproject/config": "^0.6.0",
-    "@apollosproject/data-connector-analytics": "^0.6.0",
-    "@apollosproject/data-connector-people": "^0.6.0",
-    "@apollosproject/data-connector-rock-auth": "^0.6.0",
-    "@apollosproject/rock-apollo-data-source": "^0.6.0",
-    "@apollosproject/server-core": "^0.6.0",
+    "@apollosproject/config": "^0.8.0-alpha.0",
+    "@apollosproject/data-connector-analytics": "^0.8.0-alpha.0",
+    "@apollosproject/data-connector-bible": "^0.8.0-alpha.0",
+    "@apollosproject/data-connector-people": "^0.8.0-alpha.0",
+    "@apollosproject/data-connector-rock-auth": "^0.8.0-alpha.0",
+    "@apollosproject/data-connector-rock-content": "^0.8.0-alpha.0",
+    "@apollosproject/rock-apollo-data-source": "^0.8.0-alpha.0",
+    "@apollosproject/server-core": "^0.8.0-alpha.0",
     "apollo-datasource-rest": "0.1.1",
     "apollo-server": "^2.0.5",
     "casual": "1.5.19",
@@ -44,6 +46,7 @@
     "graphql": "0.13.2",
     "isomorphic-fetch": "2.2.1",
     "lodash": "4.17.10",
+    "natural": "^0.6.2",
     "prettier": "1.12.1",
     "randomcolor": "0.5.3",
     "sanitize-html": "1.18.2",
@@ -51,9 +54,9 @@
     "with-query": "1.0.2"
   },
   "devDependencies": {
+    "@apollosproject/babel-preset-apollos": "^0.7.0",
     "@babel/cli": "7.1.5",
     "@babel/core": "7.1.6",
-    "babel-preset-apollos": "^0.6.0",
     "codecov": "3.0.2",
     "coveralls": "3.0.1",
     "jest": "23.6.0",
