@@ -1,5 +1,13 @@
-import { nest } from 'recompose';
+import React from 'react';
 import { Providers } from '@apollosproject/ui-kit';
 import ClientProvider from './client';
 
-export default nest(ClientProvider, Providers);
+import theme from './theme';
+
+const WillowCreekProviders = (props) => (
+  <Providers themeInput={theme}>
+    <ClientProvider {...props} />
+  </Providers>
+);
+
+export default WillowCreekProviders;

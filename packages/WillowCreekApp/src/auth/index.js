@@ -6,30 +6,19 @@ import {
   FlexedView,
   TabView,
   TabSceneMap as SceneMap,
-  H1,
-  H5,
+  H6,
   styled,
-  Icon,
   ButtonLink,
-  withTheme,
 } from '@apollosproject/ui-kit';
 
 import { track } from 'WillowCreekApp/src/analytics';
+import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
 
 import LoginForm from './login';
 import SignUpForm from './signup';
 
 export LoginButton from './LoginButton';
 export ProtectedAction from './ProtectedAction';
-
-const Title = styled(({ theme }) => ({ color: theme.colors.primary }))(H1);
-
-const BrandIcon = withTheme(({ theme }) => ({
-  name: 'brand-icon',
-  size: theme.sizing.baseUnit * 2.25,
-  marginVertical: theme.sizing.baseUnit,
-  fill: theme.colors.primary,
-}))(Icon);
 
 const HeaderContainer = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.paper,
@@ -78,9 +67,8 @@ class Auth extends PureComponent {
         <HeaderContainer>
           <CancelButton onPress={this.handleFinish}>Cancel</CancelButton>
           <Header>
-            <BrandIcon />
-            <Title>Welcome!</Title>
-            <H5>Please sign in to continue</H5>
+            <PageTitle>Welcome!</PageTitle>
+            <H6>Please sign in to continue</H6>
           </Header>
         </HeaderContainer>
         <TabView

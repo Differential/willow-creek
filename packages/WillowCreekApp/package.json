@@ -38,7 +38,7 @@
     "memoize-one": "4.0.3",
     "moment": "2.22.2",
     "node-fetch": "2.3.0",
-    "path": "^0.12.7",
+    "numeral": "^2.0.6",
     "prettier": "1.15.2",
     "prop-types": "^15.6.2",
     "querystring": "^0.2.0",

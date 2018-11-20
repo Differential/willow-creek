@@ -3,16 +3,17 @@ import { createBottomTabNavigator } from 'react-navigation';
 import TabBar from './tabBar';
 
 import Connect from './connect';
-import Home from './home';
-import Discover from './discover';
+import Grow from './grow';
+import MyWillow from './my-willow';
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Home,
-    Discover,
+    Grow,
+    Home: MyWillow,
     Connect,
   },
   {
+    initialRouteName: 'Home',
     tabBarComponent: TabBar,
     lazy: true,
     removeClippedSubviews: true,

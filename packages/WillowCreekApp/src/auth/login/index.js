@@ -18,6 +18,7 @@ const Login = ({ onLogin }) => (
         variables: {
           authToken: authenticate.token,
         },
+        refetchQueries: ['getUserProfile', 'getAllLikedContent'],
       });
     }}
   >

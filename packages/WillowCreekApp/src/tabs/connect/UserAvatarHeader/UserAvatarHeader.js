@@ -1,9 +1,11 @@
 import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { withNavigation } from 'react-navigation';
 
 import UserAvatarView from 'WillowCreekApp/src/ui/UserAvatarView';
+import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
 
 import {
   withIsLoading,
@@ -14,6 +16,7 @@ import {
   styled,
   PaddedView,
   FlexedView,
+  H6,
 } from '@apollosproject/ui-kit';
 
 const Container = styled(({ theme }) => ({
@@ -39,24 +42,38 @@ const UserAvatarHeader = ({
   navigation,
   disabled,
   isLoading,
+  isLoggedIn,
 }) => (
   <Container>
     <FlexedView>
       <UserAvatarView
-        firstName={firstName}
-        lastName={lastName}
-        location={location}
-        photo={photo}
+        location={isLoggedIn ? location : null}
+        photo={isLoggedIn ? photo : null}
         refetch={refetch}
         disabled={disabled}
         isLoading={isLoading}
-      />
+      >
+        {isLoggedIn || isLoading ? (
+          <PageTitle isLoading={!firstName && isLoading}>
+            {firstName} {lastName}
+          </PageTitle>
+        ) : (
+          <Touchable onPress={() => navigation.navigate('Auth')}>
+            <View>
+              <PageTitle>Log in Now</PageTitle>
+              <H6>Track your progress and connect with community</H6>
+            </View>
+          </Touchable>
+        )}
+      </UserAvatarView>
     </FlexedView>
-    <Touchable
-      onPress={() => navigation.navigate('UserSettings', { photo, refetch })}
-    >
-      <SettingsIcon />
-    </Touchable>
+    {isLoggedIn ? (
+      <Touchable
+        onPress={() => navigation.navigate('UserSettings', { photo, refetch })}
+      >
+        <SettingsIcon />
+      </Touchable>
+    ) : null}
   </Container>
 );
 
@@ -72,6 +89,7 @@ UserAvatarHeader.propTypes = {
   }),
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
+  isLoggedIn: PropTypes.bool,
 };
 
 export default withNavigation(withIsLoading(UserAvatarHeader));

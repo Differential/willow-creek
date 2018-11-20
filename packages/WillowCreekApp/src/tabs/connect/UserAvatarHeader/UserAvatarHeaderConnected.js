@@ -9,13 +9,17 @@ const UserAvatarHeaderConnected = ({ navigation }) => (
   <Query query={getUserProfile} fetchPolicy="cache-and-network">
     {({
       data: {
+        isLoggedIn,
         currentUser: {
           profile: { photo, firstName, lastName, location } = {},
         } = {},
       } = {},
       refetch,
+      loading,
     }) => (
       <UserAvatarHeader
+        isLoading={loading}
+        isLoggedIn={isLoggedIn}
         firstName={firstName}
         lastName={lastName}
         location={location}

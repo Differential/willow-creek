@@ -1,47 +1,42 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 
 import {
   TableView,
   Cell,
-  CellIcon,
-  CellText,
+  CellContent,
   Divider,
   Touchable,
   styled,
   PaddedView,
   H4,
+  H5,
+  H6,
 } from '@apollosproject/ui-kit';
 import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
-import NavigationActions from 'WillowCreekApp/src/NavigationService';
 
-const RowHeader = styled(({ theme }) => ({
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  paddingVertical: theme.sizing.baseUnit,
-}))(PaddedView);
-
-const Name = styled({
-  flexGrow: 1,
-})(View);
+const CellImage = styled(({ theme }) => ({
+  width: theme.sizing.baseUnit * 4,
+  height: theme.sizing.baseUnit * 4,
+}))(Image);
 
 const ActionTable = () => (
   <WebBrowserConsumer>
     {(openUrl) => (
       <View>
-        <RowHeader>
-          <Name>
-            <H4>{'Connect with Apollos'}</H4>
-          </Name>
-        </RowHeader>
+        <PaddedView style={{ paddingBottom: 0 }}>
+          <H5 padded>Engage This Weekend</H5>
+        </PaddedView>
         <TableView>
           <Touchable
             onPress={() => openUrl('https://apollosrock.newspring.cc/page/235')}
           >
             <Cell>
-              <CellIcon name="check" />
-              <CellText>Find a serving opportunity</CellText>
+              <CellImage source={require('./empty.png')} />
+              <CellContent>
+                <H4>Volunteer or Serve</H4>
+                <H6>Lorem ipsum doler sit itmut</H6>
+              </CellContent>
             </Cell>
           </Touchable>
           <Divider />
@@ -49,8 +44,11 @@ const ActionTable = () => (
             onPress={() => openUrl('https://apollosrock.newspring.cc/page/236')}
           >
             <Cell>
-              <CellIcon name="groups" />
-              <CellText>Join a small group</CellText>
+              <CellImage source={require('./empty.png')} />
+              <CellContent>
+                <H4>Join a small group</H4>
+                <H6>Lorem ipsum doler sit itmut</H6>
+              </CellContent>
             </Cell>
           </Touchable>
           <Divider />
@@ -58,8 +56,11 @@ const ActionTable = () => (
             onPress={() => openUrl('https://apollosrock.newspring.cc/page/233')}
           >
             <Cell>
-              <CellIcon name="share" />
-              <CellText>I need prayer</CellText>
+              <CellImage source={require('./empty.png')} />
+              <CellContent>
+                <H4>Get baptized</H4>
+                <H6>Lorem ipsum doler sit itmut</H6>
+              </CellContent>
             </Cell>
           </Touchable>
           <Divider />
@@ -67,18 +68,11 @@ const ActionTable = () => (
             onPress={() => openUrl('https://apollosrock.newspring.cc/page/186')}
           >
             <Cell>
-              <CellIcon name="download" />
-              <CellText>I would like to give</CellText>
-            </Cell>
-          </Touchable>
-        </TableView>
-        <TableView>
-          <Touchable
-            onPress={() => NavigationActions.navigate('TestingControlPanel')}
-          >
-            <Cell>
-              <CellIcon name="settings" />
-              <CellText>Open Testing Panel</CellText>
+              <CellImage source={require('./empty.png')} />
+              <CellContent>
+                <H4>I have a question</H4>
+                <H6>Lorem ipsum doler sit itmut</H6>
+              </CellContent>
             </Cell>
           </Touchable>
         </TableView>

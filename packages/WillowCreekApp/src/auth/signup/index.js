@@ -20,6 +20,7 @@ const Signup = ({ onSignup }) => (
         variables: {
           authToken: registerPerson.token,
         },
+        refetchQueries: ['getUserProfile', 'getAllLikedContent'],
       });
     }}
   >

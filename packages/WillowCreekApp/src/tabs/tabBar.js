@@ -26,7 +26,6 @@ const TabBarWrapper = styled(({ theme, mediaPlayerIsVisible }) => ({
 
 const ThemedBottomTabBar = compose(
   withTheme(({ theme }) => ({
-    showLabel: false,
     activeTintColor: theme.colors.secondary,
     inactiveTintColor: theme.colors.text.tertiary,
   })),

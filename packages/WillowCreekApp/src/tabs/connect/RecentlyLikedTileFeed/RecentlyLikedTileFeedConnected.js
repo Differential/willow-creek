@@ -12,12 +12,10 @@ const RecentlyLikedTileFeedConnected = ({ navigation }) => (
       return (
         <RecentlyLikedTileFeed
           id={'liked'}
-          name={'Recently Liked'}
           content={getAllLikedContent}
           isLoading={loading}
           navigation={navigation}
           loadingStateObject={{
-            title: 'Recently Liked',
             isLoading: true,
           }}
         />

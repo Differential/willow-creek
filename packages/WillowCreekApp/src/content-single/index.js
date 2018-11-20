@@ -66,28 +66,21 @@ class ContentSingle extends PureComponent {
 
     const content = data.node || {};
 
-    const { theme = {}, id } = content;
+    const { id } = content;
 
     return (
-      <ThemeMixin
-        mixin={{
-          type: get(theme, 'type', 'light').toLowerCase(),
-          colors: get(theme, 'colors'),
-        }}
-      >
-        <ModalView navigation={this.props.navigation}>
-          <TrackEventWhenLoaded
-            loaded={!!(!loading && content.title)}
-            eventName={events.ViewContent}
-            properties={{
-              title: content.title,
-              itemId: this.itemId,
-            }}
-          />
-          {this.renderContent({ content, loading, error })}
-          <ActionContainer itemId={id} />
-        </ModalView>
-      </ThemeMixin>
+      <ModalView navigation={this.props.navigation}>
+        <TrackEventWhenLoaded
+          loaded={!!(!loading && content.title)}
+          eventName={events.ViewContent}
+          properties={{
+            title: content.title,
+            itemId: this.itemId,
+          }}
+        />
+        {this.renderContent({ content, loading, error })}
+        <ActionContainer itemId={id} />
+      </ModalView>
     );
   };
 
