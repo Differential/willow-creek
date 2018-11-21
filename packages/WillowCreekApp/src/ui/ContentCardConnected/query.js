@@ -63,6 +63,12 @@ export const tileCardFragment = gql`
     ... on MediaContentItem {
       ...baseCardFragment
     }
+    ... on WillowTVContentItem {
+      ...baseCardFragment
+    }
+    ... on WillowCalendarEventContentItem {
+      ...baseCardFragment
+    }
   }
   ${baseCardFragment}
   ${themeFragment}

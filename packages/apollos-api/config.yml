@@ -9,7 +9,7 @@
 # `.env` should NOT be checked into version control.
 
 ROCK:
-  API_URL: https://apollosrock.newspring.cc/api
+  API_URL: http://rockdemo.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
   IMAGE_URL: https://apollosrock.newspring.cc/GetImage.ashx
 ANALYTICS:
@@ -30,21 +30,12 @@ CLOUDINARY:
 ROCK_MAPPINGS:
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
-    - 2
-    - 3
-    - 4
-    - 6
-    - 8
+    - 5
+
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
-    - 1
-    - 2
-    - 3
     - 4
-    - 5
-    - 6
-    - 8
 
   SERIES_CONTENT_CHANNEL_TYPE_IDS:
     - 4

@@ -25,8 +25,8 @@ const UniversalContentItem = ({ content, loading }) => {
           source={coverImageSources}
         />
       ) : null}
+      <MediaControls contentId={content.id} />
       <BackgroundView>
-        <MediaControls contentId={content.id} />
         <PaddedView>
           <H2 padded isLoading={!content.title && loading}>
             {content.title}
