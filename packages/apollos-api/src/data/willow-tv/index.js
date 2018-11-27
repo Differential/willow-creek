@@ -33,6 +33,11 @@ export const schema = gql`
   extend type Query {
     tvFeed: ContentItemsConnection
   }
+
+  extend type VideoMedia {
+    label: String
+    thumbnail: ImageMediaSource
+  }
 `;
 
 export const resolver = {
@@ -58,25 +63,33 @@ export const resolver = {
       },
     ],
     audios: [],
-    videos: ({ streamtype, streamurl, additionalFeatures }) => [
+    videos: ({ streamtype, streamurl, additionalFeatures, img }) => [
       {
         __typename: 'VideoMedia',
         key: streamtype,
         label: 'Full Verison',
+        thumbnail: { uri: img },
         sources: [{ uri: streamurl }],
       },
-      ...additionalFeatures.map(
-        ({ streamtype: key, streamurl: uri, description: label }) => ({
-          __typename: 'VideoMedia',
-          key,
-          label,
-          sources: [{ uri }],
-        })
-      ),
+      ...additionalFeatures
+        .filter(({ name }) => name)
+        .map(
+          ({
+            streamtype: key,
+            streamurl: uri,
+            name: label,
+            img: featureImg,
+          }) => ({
+            __typename: 'VideoMedia',
+            key,
+            label,
+            thumbnail: { uri: featureImg },
+            sources: [{ uri }],
+          })
+        ),
     ],
     htmlContent: ({ description }) => description,
     summary: ({ description }) => description,
-    childContentItemsConnection: () => null,
     siblingContentItemsConnection: () => null,
     parentChannel: ({ series_name }) => ({
       __typename: 'ContentChannel',

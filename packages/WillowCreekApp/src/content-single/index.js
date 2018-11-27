@@ -1,17 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
-import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { ErrorCard, ThemeMixin, ModalView } from '@apollosproject/ui-kit';
+import { ErrorCard, ModalView } from '@apollosproject/ui-kit';
 import TrackEventWhenLoaded from 'WillowCreekApp/src/analytics/TrackEventWhenLoaded';
-
 import { events } from 'WillowCreekApp/src/analytics';
+
 import ActionContainer from './ActionContainer';
 import getContentItem from './getContentItem';
 
 import DevotionalContentItem from './DevotionalContentItem';
 import UniversalContentItem from './UniversalContentItem';
+import WillowTVContentItem from './WillowTVContentItem';
 
 class ContentSingle extends PureComponent {
   static propTypes = {
@@ -42,6 +42,15 @@ class ContentSingle extends PureComponent {
       case 'DevotionalContentItem':
         return (
           <DevotionalContentItem
+            id={this.itemId}
+            content={content}
+            loading={loading}
+            error={error}
+          />
+        );
+      case 'WillowTVContentItem':
+        return (
+          <WillowTVContentItem
             id={this.itemId}
             content={content}
             loading={loading}

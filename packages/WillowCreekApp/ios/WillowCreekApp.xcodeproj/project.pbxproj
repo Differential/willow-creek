@@ -12,6 +12,8 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* WillowCreekAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WillowCreekAppTests.m */; };
+		02C13A6582BE40BBA854AF20 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 920ADA0EE822442380E6D2E2 /* Gotham-Book.otf */; };
+		02C2372B54FE4144A3AD7A45 /* Inter-UI-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FB46CCBCD654AB2B57E79A5 /* Inter-UI-Medium.otf */; };
 		03AC6791534B405FA9D19C6C /* libDBCustomTabs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD85339158914E5988AE2581 /* libDBCustomTabs.a */; };
 		0BC51FAEC6FB41F198743C64 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 498CF1806D0C4244BF109B43 /* libRNDeviceInfo.a */; };
 		0D919910A0794CA192A29ACE /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C625D3EF7B7044518FA6E2DF /* libBVLinearGradient.a */; };
@@ -25,8 +27,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		175D59F7A22949969FE9F90E /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34AC44DF7F5E46728BB58EC0 /* Gotham-BoldItalic.otf */; };
+		214117D0BC4E400DAB26F429 /* DroidSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 527B691AF73647568E1C6F0C /* DroidSerif-Regular.ttf */; };
 		22CE4E19206B48C6BC051D6B /* libMusicControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6209708F2B4E3FA8A0E38B /* libMusicControl.a */; };
 		24150AECB1C740169A863C85 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02ECAA0F13E840A4BC7B3303 /* libRNSVG.a */; };
+		2A0BDA7CB5614F998EDD910C /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 41F59E82E6EE44419D1047EC /* Gotham-Medium.otf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -41,34 +46,29 @@
 		2DCD954D1E0B4F2C00145EB5 /* WillowCreekAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WillowCreekAppTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		42427BDBBA63420C80CE5CF3 /* libRNDeviceInfo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DF9CA9BC454B84AC7E1152 /* libRNDeviceInfo-tvOS.a */; };
+		4A5DFDEABCBF4DD39A49FD73 /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A37060F4B9A04D1C9C683C76 /* Inter-UI-BlackItalic.otf */; };
+		4F35F130BA6F46A8958DC03C /* DroidSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E5E2128AF35493D9EB14A5B /* DroidSerif-Bold.ttf */; };
 		52A7B2FCEF3840A9A2D67EBB /* libRNScreens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF368A0529B6464F8E67446D /* libRNScreens.a */; };
 		71211180B194444FBC6E03BA /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F220C566767439F83EC90C2 /* libSplashScreen.a */; };
+		72A044D38647439DBE08CB8F /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1854A2FBB4464528AB489608 /* DroidSerif-BoldItalic.ttf */; };
+		762C5FE7DBDB4BED98332907 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA89814D51044FB8FE072BC /* Gotham-BookItalic.otf */; };
+		7A47F3CFEFFD4063BD332C3D /* Inter-UI-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D75A67CE03734E5B87FC8F37 /* Inter-UI-Italic.otf */; };
+		830C27F1F5254A9A970F815B /* Inter-UI-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CEF867435342441A84B08A1F /* Inter-UI-Black.otf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8C12FEB317F340D2A1DCA738 /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BDDF2AD1F3430D81E096E1 /* libRNSVG-tvOS.a */; };
+		8D051F9EFEA9437B82837695 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF4E136C99344565B0A2ACBF /* Inter-UI-Regular.otf */; };
+		8D3A09BF73F1460D9C4BAAD1 /* Inter-UI-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D20F412391004DB2BEA08982 /* Inter-UI-BoldItalic.otf */; };
 		963FCDE4759D4D7AAD1E4A24 /* libSafariViewManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8FEBB87EE645E7A3F89A79 /* libSafariViewManager.a */; };
 		A403C6CF771747F3A0C3CBC8 /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 989B223148EC49A6BAAA8FBA /* libRCTOneSignal.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B73D4F43B6C24342BCD59D06 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 167247A479BB48B1A807BDD5 /* libRCTVideo.a */; };
-		DAE5CC511552410ABC0B299D /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FABBFB6CFB824A03B3F86F04 /* libRNImagePicker.a */; };
-		EFA402F6AAEF43198D0B751F /* libMusicControl-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1FA8AFAF134513B09792D9 /* libMusicControl-tvOS.a */; };
-		4F35F130BA6F46A8958DC03C /* DroidSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E5E2128AF35493D9EB14A5B /* DroidSerif-Bold.ttf */; };
-		72A044D38647439DBE08CB8F /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1854A2FBB4464528AB489608 /* DroidSerif-BoldItalic.ttf */; };
 		C3D40C7720BB40D3B4E1E40C /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4ED57C05B2D2409E99745B4F /* DroidSerif-Italic.ttf */; };
-		214117D0BC4E400DAB26F429 /* DroidSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 527B691AF73647568E1C6F0C /* DroidSerif-Regular.ttf */; };
-		830C27F1F5254A9A970F815B /* Inter-UI-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CEF867435342441A84B08A1F /* Inter-UI-Black.otf */; };
-		4A5DFDEABCBF4DD39A49FD73 /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A37060F4B9A04D1C9C683C76 /* Inter-UI-BlackItalic.otf */; };
-		EA707F1CE45A4F998EBB7FCF /* Inter-UI-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F86CD6F01E64875896A5EED /* Inter-UI-Bold.otf */; };
-		8D3A09BF73F1460D9C4BAAD1 /* Inter-UI-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D20F412391004DB2BEA08982 /* Inter-UI-BoldItalic.otf */; };
-		7A47F3CFEFFD4063BD332C3D /* Inter-UI-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D75A67CE03734E5B87FC8F37 /* Inter-UI-Italic.otf */; };
-		02C2372B54FE4144A3AD7A45 /* Inter-UI-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FB46CCBCD654AB2B57E79A5 /* Inter-UI-Medium.otf */; };
-		E0F2A1E006BF4566921B9AF8 /* Inter-UI-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 05D61174A01B4606AE7FA7D9 /* Inter-UI-MediumItalic.otf */; };
-		8D051F9EFEA9437B82837695 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF4E136C99344565B0A2ACBF /* Inter-UI-Regular.otf */; };
 		D580E69C79314864B8879285 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE3EB0434D47ABAD677E0B /* Gotham-Bold.otf */; };
-		175D59F7A22949969FE9F90E /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34AC44DF7F5E46728BB58EC0 /* Gotham-BoldItalic.otf */; };
-		02C13A6582BE40BBA854AF20 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 920ADA0EE822442380E6D2E2 /* Gotham-Book.otf */; };
-		762C5FE7DBDB4BED98332907 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA89814D51044FB8FE072BC /* Gotham-BookItalic.otf */; };
+		DAE5CC511552410ABC0B299D /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FABBFB6CFB824A03B3F86F04 /* libRNImagePicker.a */; };
+		E0F2A1E006BF4566921B9AF8 /* Inter-UI-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 05D61174A01B4606AE7FA7D9 /* Inter-UI-MediumItalic.otf */; };
+		EA707F1CE45A4F998EBB7FCF /* Inter-UI-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F86CD6F01E64875896A5EED /* Inter-UI-Bold.otf */; };
 		EC725F6CDAF84DA0B35B90A9 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A78417813F6442499334234 /* Gotham-Light.otf */; };
-		2A0BDA7CB5614F998EDD910C /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 41F59E82E6EE44419D1047EC /* Gotham-Medium.otf */; };
+		EFA402F6AAEF43198D0B751F /* libMusicControl-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1FA8AFAF134513B09792D9 /* libMusicControl-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -471,6 +471,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* WillowCreekAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WillowCreekAppTests.m; sourceTree = "<group>"; };
 		02ECAA0F13E840A4BC7B3303 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
+		05D61174A01B4606AE7FA7D9 /* Inter-UI-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-MediumItalic.otf"; path = "../assets/fonts/Inter-UI-MediumItalic.otf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* WillowCreekApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WillowCreekApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -483,52 +484,51 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1554133C48A54797B5C45E7C /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		167247A479BB48B1A807BDD5 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
+		1854A2FBB4464528AB489608 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1EA89814D51044FB8FE072BC /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-BookItalic.otf"; path = "../assets/fonts/Gotham-BookItalic.otf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* WillowCreekApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WillowCreekApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* WillowCreekApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WillowCreekApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1CE18073584877B85C5802 /* ReactNativeCustomTabs.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeCustomTabs.xcodeproj; path = "../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs.xcodeproj"; sourceTree = "<group>"; };
+		2F86CD6F01E64875896A5EED /* Inter-UI-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Bold.otf"; path = "../assets/fonts/Inter-UI-Bold.otf"; sourceTree = "<group>"; };
+		34AC44DF7F5E46728BB58EC0 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-BoldItalic.otf"; path = "../assets/fonts/Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
 		356DC096AC704071AEE3311A /* SafariViewManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SafariViewManager.xcodeproj; path = "../node_modules/react-native-safari-view/SafariViewManager.xcodeproj"; sourceTree = "<group>"; };
 		362EB106E74D40DE93D11AE2 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/ios/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		3D8FEBB87EE645E7A3F89A79 /* libSafariViewManager.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSafariViewManager.a; sourceTree = "<group>"; };
 		3F220C566767439F83EC90C2 /* libSplashScreen.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSplashScreen.a; sourceTree = "<group>"; };
+		41F59E82E6EE44419D1047EC /* Gotham-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Medium.otf"; path = "../assets/fonts/Gotham-Medium.otf"; sourceTree = "<group>"; };
 		498CF1806D0C4244BF109B43 /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
+		4E5E2128AF35493D9EB14A5B /* DroidSerif-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Bold.ttf"; path = "../assets/fonts/DroidSerif-Bold.ttf"; sourceTree = "<group>"; };
+		4ED57C05B2D2409E99745B4F /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Italic.ttf"; path = "../assets/fonts/DroidSerif-Italic.ttf"; sourceTree = "<group>"; };
+		527B691AF73647568E1C6F0C /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Regular.ttf"; path = "../assets/fonts/DroidSerif-Regular.ttf"; sourceTree = "<group>"; };
+		5A78417813F6442499334234 /* Gotham-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Light.otf"; path = "../assets/fonts/Gotham-Light.otf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		6E0A2500BE4D4C37AB5A9902 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		72DF9CA9BC454B84AC7E1152 /* libRNDeviceInfo-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNDeviceInfo-tvOS.a"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		7FB46CCBCD654AB2B57E79A5 /* Inter-UI-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Medium.otf"; path = "../assets/fonts/Inter-UI-Medium.otf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8D6209708F2B4E3FA8A0E38B /* libMusicControl.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libMusicControl.a; sourceTree = "<group>"; };
+		920ADA0EE822442380E6D2E2 /* Gotham-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Book.otf"; path = "../assets/fonts/Gotham-Book.otf"; sourceTree = "<group>"; };
 		95F258855D44480992F1DF98 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		989B223148EC49A6BAAA8FBA /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
+		9BBE3EB0434D47ABAD677E0B /* Gotham-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Bold.otf"; path = "../assets/fonts/Gotham-Bold.otf"; sourceTree = "<group>"; };
 		A11D9E7DEC834DACBA004F16 /* RNScreens.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNScreens.xcodeproj; path = "../node_modules/react-native-screens/ios/RNScreens.xcodeproj"; sourceTree = "<group>"; };
+		A37060F4B9A04D1C9C683C76 /* Inter-UI-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BlackItalic.otf"; path = "../assets/fonts/Inter-UI-BlackItalic.otf"; sourceTree = "<group>"; };
 		A904B06D150D4EC0833BD2B1 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		AF4E136C99344565B0A2ACBF /* Inter-UI-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Regular.otf"; path = "../assets/fonts/Inter-UI-Regular.otf"; sourceTree = "<group>"; };
 		B387AD05B3D945BB8B83A9B5 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		BD85339158914E5988AE2581 /* libDBCustomTabs.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libDBCustomTabs.a; sourceTree = "<group>"; };
 		BF368A0529B6464F8E67446D /* libRNScreens.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNScreens.a; sourceTree = "<group>"; };
 		C625D3EF7B7044518FA6E2DF /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		CB1FA8AFAF134513B09792D9 /* libMusicControl-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libMusicControl-tvOS.a"; sourceTree = "<group>"; };
+		CEF867435342441A84B08A1F /* Inter-UI-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Black.otf"; path = "../assets/fonts/Inter-UI-Black.otf"; sourceTree = "<group>"; };
+		D20F412391004DB2BEA08982 /* Inter-UI-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BoldItalic.otf"; path = "../assets/fonts/Inter-UI-BoldItalic.otf"; sourceTree = "<group>"; };
 		D5C67153B673467087D4A2F2 /* MusicControl.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = MusicControl.xcodeproj; path = "../node_modules/react-native-music-control/ios/MusicControl.xcodeproj"; sourceTree = "<group>"; };
+		D75A67CE03734E5B87FC8F37 /* Inter-UI-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Italic.otf"; path = "../assets/fonts/Inter-UI-Italic.otf"; sourceTree = "<group>"; };
 		E2BDDF2AD1F3430D81E096E1 /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; };
 		FABBFB6CFB824A03B3F86F04 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
-		4E5E2128AF35493D9EB14A5B /* DroidSerif-Bold.ttf */ = {isa = PBXFileReference; name = "DroidSerif-Bold.ttf"; path = "../assets/fonts/DroidSerif-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1854A2FBB4464528AB489608 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4ED57C05B2D2409E99745B4F /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; name = "DroidSerif-Italic.ttf"; path = "../assets/fonts/DroidSerif-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		527B691AF73647568E1C6F0C /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; name = "DroidSerif-Regular.ttf"; path = "../assets/fonts/DroidSerif-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CEF867435342441A84B08A1F /* Inter-UI-Black.otf */ = {isa = PBXFileReference; name = "Inter-UI-Black.otf"; path = "../assets/fonts/Inter-UI-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A37060F4B9A04D1C9C683C76 /* Inter-UI-BlackItalic.otf */ = {isa = PBXFileReference; name = "Inter-UI-BlackItalic.otf"; path = "../assets/fonts/Inter-UI-BlackItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2F86CD6F01E64875896A5EED /* Inter-UI-Bold.otf */ = {isa = PBXFileReference; name = "Inter-UI-Bold.otf"; path = "../assets/fonts/Inter-UI-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D20F412391004DB2BEA08982 /* Inter-UI-BoldItalic.otf */ = {isa = PBXFileReference; name = "Inter-UI-BoldItalic.otf"; path = "../assets/fonts/Inter-UI-BoldItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D75A67CE03734E5B87FC8F37 /* Inter-UI-Italic.otf */ = {isa = PBXFileReference; name = "Inter-UI-Italic.otf"; path = "../assets/fonts/Inter-UI-Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7FB46CCBCD654AB2B57E79A5 /* Inter-UI-Medium.otf */ = {isa = PBXFileReference; name = "Inter-UI-Medium.otf"; path = "../assets/fonts/Inter-UI-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		05D61174A01B4606AE7FA7D9 /* Inter-UI-MediumItalic.otf */ = {isa = PBXFileReference; name = "Inter-UI-MediumItalic.otf"; path = "../assets/fonts/Inter-UI-MediumItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AF4E136C99344565B0A2ACBF /* Inter-UI-Regular.otf */ = {isa = PBXFileReference; name = "Inter-UI-Regular.otf"; path = "../assets/fonts/Inter-UI-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9BBE3EB0434D47ABAD677E0B /* Gotham-Bold.otf */ = {isa = PBXFileReference; name = "Gotham-Bold.otf"; path = "../assets/fonts/Gotham-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		34AC44DF7F5E46728BB58EC0 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; name = "Gotham-BoldItalic.otf"; path = "../assets/fonts/Gotham-BoldItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		920ADA0EE822442380E6D2E2 /* Gotham-Book.otf */ = {isa = PBXFileReference; name = "Gotham-Book.otf"; path = "../assets/fonts/Gotham-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1EA89814D51044FB8FE072BC /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; name = "Gotham-BookItalic.otf"; path = "../assets/fonts/Gotham-BookItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5A78417813F6442499334234 /* Gotham-Light.otf */ = {isa = PBXFileReference; name = "Gotham-Light.otf"; path = "../assets/fonts/Gotham-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		41F59E82E6EE44419D1047EC /* Gotham-Medium.otf */ = {isa = PBXFileReference; name = "Gotham-Medium.otf"; path = "../assets/fonts/Gotham-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -855,6 +855,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		80A985F807E544B99309A68E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4E5E2128AF35493D9EB14A5B /* DroidSerif-Bold.ttf */,
+				1854A2FBB4464528AB489608 /* DroidSerif-BoldItalic.ttf */,
+				4ED57C05B2D2409E99745B4F /* DroidSerif-Italic.ttf */,
+				527B691AF73647568E1C6F0C /* DroidSerif-Regular.ttf */,
+				CEF867435342441A84B08A1F /* Inter-UI-Black.otf */,
+				A37060F4B9A04D1C9C683C76 /* Inter-UI-BlackItalic.otf */,
+				2F86CD6F01E64875896A5EED /* Inter-UI-Bold.otf */,
+				D20F412391004DB2BEA08982 /* Inter-UI-BoldItalic.otf */,
+				D75A67CE03734E5B87FC8F37 /* Inter-UI-Italic.otf */,
+				7FB46CCBCD654AB2B57E79A5 /* Inter-UI-Medium.otf */,
+				05D61174A01B4606AE7FA7D9 /* Inter-UI-MediumItalic.otf */,
+				AF4E136C99344565B0A2ACBF /* Inter-UI-Regular.otf */,
+				9BBE3EB0434D47ABAD677E0B /* Gotham-Bold.otf */,
+				34AC44DF7F5E46728BB58EC0 /* Gotham-BoldItalic.otf */,
+				920ADA0EE822442380E6D2E2 /* Gotham-Book.otf */,
+				1EA89814D51044FB8FE072BC /* Gotham-BookItalic.otf */,
+				5A78417813F6442499334234 /* Gotham-Light.otf */,
+				41F59E82E6EE44419D1047EC /* Gotham-Medium.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -929,32 +954,6 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
-		};
-		80A985F807E544B99309A68E /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				4E5E2128AF35493D9EB14A5B /* DroidSerif-Bold.ttf */,
-				1854A2FBB4464528AB489608 /* DroidSerif-BoldItalic.ttf */,
-				4ED57C05B2D2409E99745B4F /* DroidSerif-Italic.ttf */,
-				527B691AF73647568E1C6F0C /* DroidSerif-Regular.ttf */,
-				CEF867435342441A84B08A1F /* Inter-UI-Black.otf */,
-				A37060F4B9A04D1C9C683C76 /* Inter-UI-BlackItalic.otf */,
-				2F86CD6F01E64875896A5EED /* Inter-UI-Bold.otf */,
-				D20F412391004DB2BEA08982 /* Inter-UI-BoldItalic.otf */,
-				D75A67CE03734E5B87FC8F37 /* Inter-UI-Italic.otf */,
-				7FB46CCBCD654AB2B57E79A5 /* Inter-UI-Medium.otf */,
-				05D61174A01B4606AE7FA7D9 /* Inter-UI-MediumItalic.otf */,
-				AF4E136C99344565B0A2ACBF /* Inter-UI-Regular.otf */,
-				9BBE3EB0434D47ABAD677E0B /* Gotham-Bold.otf */,
-				34AC44DF7F5E46728BB58EC0 /* Gotham-BoldItalic.otf */,
-				920ADA0EE822442380E6D2E2 /* Gotham-Book.otf */,
-				1EA89814D51044FB8FE072BC /* Gotham-BookItalic.otf */,
-				5A78417813F6442499334234 /* Gotham-Light.otf */,
-				41F59E82E6EE44419D1047EC /* Gotham-Medium.otf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1043,6 +1042,9 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 7TM8C6252Z;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1797,6 +1799,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 7TM8C6252Z;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
@@ -1829,6 +1832,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TM8C6252Z;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",

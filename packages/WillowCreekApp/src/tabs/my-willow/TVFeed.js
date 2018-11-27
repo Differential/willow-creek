@@ -21,7 +21,7 @@ class TVFeed extends Component {
         {({ loading, data }) => (
           <HorizontalTileFeed
             content={get(data, 'tvFeed.edges', []).map((edge) => edge.node)}
-            snapToInterval={Dimensions.get('window').width * 0.85}
+            snapToInterval={Dimensions.get('window').width * 0.85 + 17}
             renderItem={({ item }) => (
               <TouchableScale onPress={() => this.handleOnPress(item)}>
                 <FeaturedContentCardConnected

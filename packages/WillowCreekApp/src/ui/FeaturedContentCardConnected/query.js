@@ -12,6 +12,8 @@ export default gql`
       }
       title
       summary
+      isLiked
+      likedCount
     }
   }
 `;
