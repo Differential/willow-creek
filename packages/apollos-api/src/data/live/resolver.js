@@ -4,8 +4,12 @@ export default {
       dataSources.LiveStream.getLiveStream(),
   },
   LiveStream: {
-    isLive: ({ response: { item: { isLive } = {} } = {} }) => isLive,
-    eventStartTime: ({ response: { item: { eventStartTime } = {} } = {} }) =>
-      eventStartTime,
+    isLive: ({ islive }) => islive,
+    eventStartTime: () => null,
+    stream: ({ url, name, img }) => ({
+      sources: [{ uri: url.replace('http:', 'https:') }],
+      label: name,
+      thumbnail: { uri: img },
+    }),
   },
 };

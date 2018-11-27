@@ -16,6 +16,7 @@ import {
 } from '@apollosproject/ui-kit';
 
 import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
+import { LiveButton } from 'WillowCreekApp/src/live';
 
 import UpcomingEventsFeed from './UpcomingEventsFeed';
 import TVFeed from './TVFeed';
@@ -58,6 +59,7 @@ class MyWillow extends PureComponent {
             <PaddedView vertical={false}>
               <PageTitle padded>My Willow</PageTitle>
             </PaddedView>
+
             <TVFeed />
 
             <PaddedView style={{ paddingBottom: 0 }}>

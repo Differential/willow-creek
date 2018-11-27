@@ -3,9 +3,10 @@ import { RESTDataSource } from 'apollo-datasource-rest';
 export default class LiveStream extends RESTDataSource {
   resource = 'LiveStream';
 
-  baseURL = 'https://apollos.churchonline.org/api/v1/';
+  baseURL = 'https://willowcreek.tv/api';
 
   async getLiveStream() {
-    return this.get('events/current');
+    const response = await this.get('live');
+    return response.live;
   }
 }

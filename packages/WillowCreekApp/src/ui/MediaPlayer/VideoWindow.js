@@ -51,7 +51,8 @@ class VideoWindow extends PureComponent {
     if (this.props.onProgress) this.props.onProgress(progress);
   };
 
-  handleOnError = () => {
+  handleOnError = (...args) => {
+    console.log('error', args);
     this.handlePause();
   };
 

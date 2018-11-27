@@ -1,5 +1,5 @@
 import React from 'react';
-import { Query } from 'react-apollo';
+import { Query, Mutation } from 'react-apollo';
 import { get } from 'lodash';
 
 import {
@@ -10,7 +10,7 @@ import {
   ChannelLabel,
   UIText,
 } from '@apollosproject/ui-kit';
-import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
+import { playVideoMutation } from 'WillowCreekApp/src/ui/MediaPlayer/mutations';
 
 import getLiveStream from './getLiveStream';
 
@@ -27,11 +27,26 @@ const LiveNowButton = () => (
     {({ loading, data }) => {
       const isLive = get(data, 'liveStream.isLive', false);
 
+      const videoSource = get(data, 'liveStream.stream.sources[0]', null);
+      const coverImageSources = [
+        get(data, 'liveStream.stream.thumbnail', null),
+      ];
+
       return isLive ? (
-        <WebBrowserConsumer>
-          {(openUrl) => (
+        <Mutation mutation={playVideoMutation}>
+          {(play) => (
             <TouchableScale
-              onPress={() => openUrl('https://apollos.churchonline.org/')}
+              onPress={() =>
+                play({
+                  variables: {
+                    mediaSource: videoSource,
+                    posterSources: coverImageSources,
+                    title: get(data, 'liveStream.stream.label'),
+                    isVideo: true,
+                    artist: null,
+                  },
+                })
+              }
             >
               <LiveCard isLoading={loading}>
                 <CardContent>
@@ -48,7 +63,7 @@ const LiveNowButton = () => (
               </LiveCard>
             </TouchableScale>
           )}
-        </WebBrowserConsumer>
+        </Mutation>
       ) : null;
     }}
   </Query>
