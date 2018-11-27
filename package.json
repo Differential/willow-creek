@@ -5,8 +5,8 @@
     "packages": ["packages/*"]
   },
   "scripts": {
-    "start": "if test \"$NOW_ENV\" = \"true\" ; then yarn start:now ; else yarn start:dev ; fi",
-    "start:now": "./node_modules/.bin/lerna run start --scope apollos-church-api",
+    "start": "if test \"$API_ENV\" = \"true\" ; then yarn start:api ; else yarn start:dev ; fi",
+    "start:api": "./node_modules/.bin/lerna run start --scope apollos-api",
     "start:dev": "./node_modules/.bin/lerna run start --parallel",
     "lint": "./node_modules/.bin/lerna run lint",
     "test": "./node_modules/.bin/lerna run test",
