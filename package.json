@@ -4,6 +4,9 @@
   "workspaces": {
     "packages": ["packages/*"]
   },
+  "engines": {
+    "node": ">=8.11.x"
+  },
   "scripts": {
     "start": "if test \"$API_ENV\" = \"true\" ; then yarn start:api ; else yarn start:dev ; fi",
     "start:api": "./node_modules/.bin/lerna run start --scope apollos-api",
