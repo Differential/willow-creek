@@ -1,5 +1,5 @@
 {
-  "name": "willow-apollos-api",
+  "name": "apollos-api",
   "version": "0.0.1",
   "private": true,
   "main": "lib/index.js",
