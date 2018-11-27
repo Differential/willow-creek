@@ -1,8 +1,7 @@
 FROM node:8-alpine
-COPY ./packages /usr/src/
-RUN mv /usr/src/apollos-church-api /usr/src/app
-WORKDIR /usr/src/app
+COPY . /usr/src/
+WORKDIR /usr/src
 RUN yarn
-RUN ["yarn", "build"]
+WORKDIR ./packages/apollos-api
 EXPOSE 4000
 CMD [ "yarn", "start:prod" ]
