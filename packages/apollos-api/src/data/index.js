@@ -14,7 +14,6 @@ import * as Scripture from '@apollosproject/data-connector-bible';
 import RockConstants from '../connectors/rock/rock-constants';
 
 import * as ContentItem from './content-items';
-import * as Media from './media';
 import * as LiveStream from './live';
 import * as Theme from './theme';
 import * as Interactions from './interactions';
@@ -25,7 +24,6 @@ const data = {
   ContentChannel,
   ContentItem,
   Person,
-  Media,
   Auth,
   LiveStream,
   Theme,

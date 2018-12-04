@@ -1,13 +1,9 @@
+import { liveSchema } from '@apollosproject/data-schema';
 import { gql } from 'apollo-server';
 
 export default gql`
-  type LiveStream {
-    isLive: Boolean
-    eventStartTime: String
+  extend type LiveStream {
     stream: VideoMedia
   }
-
-  extend type Query {
-    liveStream: LiveStream
-  }
+  ${liveSchema}
 `;
