@@ -10,13 +10,15 @@ import {
 import * as Analytics from '@apollosproject/data-connector-analytics';
 import { Person, Family } from '@apollosproject/data-connector-people';
 import * as Scripture from '@apollosproject/data-connector-bible';
-
-import RockConstants from '../connectors/rock/rock-constants';
+import {
+  Interactions,
+  Followings,
+  RockConstants,
+} from '@apollosproject/data-connector-rock-actions';
 
 import * as ContentItem from './content-items';
 import * as LiveStream from './live';
 import * as Theme from './theme';
-import * as Interactions from './interactions';
 import * as WillowTVContentItem from './willow-tv';
 import * as WillowCalendarEventContentItem from './calendar-events';
 
@@ -29,10 +31,11 @@ const data = {
   Theme,
   Scripture,
   Interactions,
-  RockConstants: { dataSource: RockConstants },
+  RockConstants,
   Sharable,
   Analytics,
   Family,
+  Followings,
   UniversalContentItem: {
     dataSource: ContentItem.dataSource,
   }, // alias
@@ -48,6 +51,8 @@ const data = {
   WillowTVContentItem,
   WillowCalendarEventContentItem,
 };
+
+console.log(data);
 
 const { dataSources, resolvers, schema, context } = createApolloServerConfig(
   data
