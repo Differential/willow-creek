@@ -1,4 +1,3 @@
-packages/apolloschurchapp
-packages/apollos-ui-kit
-packages/apollos-church-api/.env
+packages/WillowCreekApp
+packages/apollos-api/.env
 packages/*/node_modules

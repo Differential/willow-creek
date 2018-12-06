@@ -30,27 +30,26 @@ const UpdateLikeStatus = ({ itemId, item, isLiked, children }) => (
     mutation={updateLikeEntity}
     optimisticResponse={{
       updateLikeEntity: {
-        operation: isLiked ? 'Unlike' : 'Like',
-        id: null, // unknown at this time
-        interactionDateTime: new Date().toJSON(),
-        __typename: 'Interaction',
+        id: itemId, // unknown at this time
+        isLiked: !isLiked,
+        __typename: item.__typename,
       },
     }}
     update={(
       cache,
       {
         data: {
-          updateLikeEntity: { operation },
+          updateLikeEntity: { isLiked: liked },
         },
       }
     ) => {
-      updateLikedContent({ liked: operation === 'Like', cache, item });
+      updateLikedContent({ liked, cache, item });
       cache.writeQuery({
         query: getLikedContentItem,
         data: {
           node: {
             ...item,
-            isLiked: operation === 'Like',
+            isLiked: liked,
           },
         },
       });

@@ -7,7 +7,10 @@
 
 # This file should be checked into version control.
 # `.env` should NOT be checked into version control.
-
+APP:
+  # This variable is used for generating deep links.
+  # It should match whatver is in your Info.plist `CFBundleURLTypes`
+  DEEP_LINK_HOST: WillowCreekApp
 ROCK:
   API_URL: http://rockdemo.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
@@ -28,6 +31,18 @@ CLOUDINARY:
 
 # This key holds various properties that allow our GraphQL server to map to your Rock Instance
 ROCK_MAPPINGS:
+  INTERACTIONS:
+    # Name of the InteractionChannel that will be created
+    CHANNEL_NAME: Apollos Willow Creek App
+    # Name of the InteractionComponent that will be created for Content Items
+    COMPONENT_NAME: Apollos Willow Creek Item
+    # 512 is "Mobile App"
+    CHANNEL_MEDIUM_TYPE_ID: 512
+  CONTENT_ITEM_TYPES:
+    - ContentItem
+    - UniversalContentItem
+    - DevotionalContentItem
+    - MediaContentItem
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
     - 5
