@@ -36,7 +36,7 @@ class TVFeed extends Component {
               title: '',
               coverImage: [],
             }}
-            isLoading={loading}
+            isLoading={loading && !get(data, 'tvFeed.edges', []).length}
           />
         )}
       </Query>

@@ -32,7 +32,7 @@ const UpcomingEventsFeed = () => (
               title: '',
               coverImage: [],
             }}
-            isLoading={loading}
+            isLoading={loading && !get(data, 'upcomingEvents', []).length}
           />
         )}
       </Query>
