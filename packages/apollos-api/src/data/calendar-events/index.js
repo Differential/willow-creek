@@ -24,10 +24,7 @@ export const schema = gql`
       after: String
     ): ContentItemsConnection
     parentChannel: ContentChannel
-    sharing: SharableContentItem
     theme: Theme
-    likedCount: Int
-    isLiked: Boolean
   }
 
   extend type Query {
@@ -49,8 +46,10 @@ export const resolver = {
     },
   },
   WillowCalendarEventContentItem: {
-    id: ({ eventOccurenceId, eventItemId }, args, context, { parentType }) =>
-      createGlobalId(`${eventOccurenceId}${eventItemId}`, parentType.name),
+    id: (root, args, context, { parentType }) => {
+      console.log(root);
+      // return createGlobalId(ev, parentType.name),
+    },
     title: ({ eventName }) => eventName,
     coverImage: ({ photo }) =>
       photo && typeof photo === 'string'

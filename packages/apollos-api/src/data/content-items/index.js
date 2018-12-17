@@ -1,4 +1,4 @@
-import { ContentItem } from '@apollosproject/data-connector-rock-content';
+import { ContentItem } from '@apollosproject/data-connector-rock';
 
 export const { schema, dataSource } = ContentItem;
 

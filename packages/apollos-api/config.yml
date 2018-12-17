@@ -38,11 +38,28 @@ ROCK_MAPPINGS:
     COMPONENT_NAME: Apollos Willow Creek Item
     # 512 is "Mobile App"
     CHANNEL_MEDIUM_TYPE_ID: 512
-  CONTENT_ITEM_TYPES:
-    - ContentItem
-    - UniversalContentItem
-    - DevotionalContentItem
-    - MediaContentItem
+
+  CONTENT_ITEM:
+    ContentSeriesContentItem:
+      # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
+      EntityType: ContentChannelItem
+      # Used to define the subset of content channels types that use this specific type.
+      ContentChannelTypeId: [4, 6]
+    DevotionalContentItem:
+      EntityType: ContentChannelItem
+      ContentChannelTypeId: [1]
+    MediaContentItem:
+      EntityType: ContentChannelItem
+    UniversalContentItem:
+      EntityType: ContentChannelItem
+    ContentItem:
+      EntityType: ContentChannelItem
+    WillowCalendarEventContentItem:
+      EntityType: EventCalendarItem
+    WillowTVContentItem:
+      EntityType: WillowTvItem
+
+
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
     - 5
@@ -51,16 +68,6 @@ ROCK_MAPPINGS:
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
     - 4
-
-  SERIES_CONTENT_CHANNEL_TYPE_IDS:
-    - 4
-    - 6
-
-  # The apollos app will show scripture for specific ContentChannelTypeIds, specified here.
-  # As of right now, it will pull from the 'scriptures' field.
-  # Ignore if this doesn't apply to you.
-  DEVOTIONAL_TYPE_IDS:
-    - 1
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

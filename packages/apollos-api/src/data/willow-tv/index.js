@@ -24,10 +24,7 @@ export const schema = gql`
       after: String
     ): ContentItemsConnection
     parentChannel: ContentChannel
-    sharing: SharableContentItem
     theme: Theme
-    likedCount: Int
-    isLiked: Boolean
   }
 
   extend type Query {
@@ -49,8 +46,9 @@ export const resolver = {
     }),
   },
   WillowTVContentItem: {
-    id: ({ url }, args, context, { parentType }) =>
-      createGlobalId(`${url}`, parentType.name),
+    id: (root, args, context, { parentType }) =>
+      // console.log(root);
+      createGlobalId(`${root.url}`, parentType.name),
     title: ({ name }) => decode(name),
     coverImage: ({ img }) => ({
       __typename: 'ImageMedia',

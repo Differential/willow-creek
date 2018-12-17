@@ -2,19 +2,18 @@ import { gql } from 'apollo-server';
 
 import { createApolloServerConfig } from '@apollosproject/server-core';
 
-import * as Auth from '@apollosproject/data-connector-rock-auth';
 import {
   ContentChannel,
   Sharable,
-} from '@apollosproject/data-connector-rock-content';
-import * as Analytics from '@apollosproject/data-connector-analytics';
-import { Person, Family } from '@apollosproject/data-connector-people';
-import * as Scripture from '@apollosproject/data-connector-bible';
-import {
+  Auth,
+  Person,
+  Family,
   Interactions,
   Followings,
   RockConstants,
-} from '@apollosproject/data-connector-rock-actions';
+} from '@apollosproject/data-connector-rock';
+import * as Analytics from '@apollosproject/data-connector-analytics';
+import * as Scripture from '@apollosproject/data-connector-bible';
 
 import * as ContentItem from './content-items';
 import * as LiveStream from './live';
@@ -36,23 +35,13 @@ const data = {
   Analytics,
   Family,
   Followings,
-  UniversalContentItem: {
-    dataSource: ContentItem.dataSource,
-  }, // alias
-  DevotionalContentItem: {
-    dataSource: ContentItem.dataSource,
-  }, // alias
-  ContentSeriesContentItem: {
-    dataSource: ContentItem.dataSource,
-  }, // alias
-  MediaContentItem: {
-    dataSource: ContentItem.dataSource,
-  }, // alias
+  UniversalContentItem: ContentItem,
+  DevotionalContentItem: ContentItem,
+  ContentSeriesContentItem: ContentItem,
+  MediaContentItem: ContentItem,
   WillowTVContentItem,
   WillowCalendarEventContentItem,
 };
-
-console.log(data);
 
 const { dataSources, resolvers, schema, context } = createApolloServerConfig(
   data
