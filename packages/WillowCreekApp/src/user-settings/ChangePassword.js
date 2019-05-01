@@ -67,7 +67,7 @@ class ChangePassword extends PureComponent {
       <SafeAreaView>
         <PaddedView>
           <Button
-            disabled={!props.isValid || props.isSubmitting}
+            disabled={props.isSubmitting}
             onPress={props.handleSubmit}
             title="Save"
             loading={props.isSubmitting}

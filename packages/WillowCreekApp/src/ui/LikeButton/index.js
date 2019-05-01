@@ -5,7 +5,7 @@ import { get } from 'lodash';
 import { Query, Mutation } from 'react-apollo';
 
 import Like from 'WillowCreekApp/src/ui/Like';
-import { track, events } from 'WillowCreekApp/src/analytics';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import updateLikeEntity from './updateLikeEntity';
 import getLikedContentItem from './getLikedContentItem';
@@ -25,60 +25,67 @@ GetLikeData.propTypes = {
   children: PropTypes.func.isRequired,
 };
 
-const UpdateLikeStatus = ({ itemId, item, isLiked, children }) => (
-  <Mutation
-    mutation={updateLikeEntity}
-    optimisticResponse={{
-      updateLikeEntity: {
-        id: itemId, // unknown at this time
-        isLiked: !isLiked,
-        __typename: item.__typename,
-      },
-    }}
-    update={(
-      cache,
-      {
-        data: {
-          updateLikeEntity: { isLiked: liked },
-        },
-      }
-    ) => {
-      updateLikedContent({ liked, cache, item });
-      cache.writeQuery({
-        query: getLikedContentItem,
-        data: {
-          node: {
-            ...item,
-            isLiked: liked,
+const UpdateLikeStatus = ({
+  itemId,
+  item = { __typename: null },
+  isLiked,
+  children,
+}) => (
+  <AnalyticsConsumer>
+    {({ track }) => (
+      <Mutation
+        mutation={updateLikeEntity}
+        optimisticResponse={{
+          updateLikeEntity: {
+            id: itemId, // unknown at this time
+            isLiked: !isLiked,
+            __typename: item && item.__typename,
           },
-        },
-      });
-    }}
-  >
-    {(createNewInteraction) =>
-      itemId
-        ? children({
-            itemId,
-            isLiked,
-            toggleLike: async (variables) => {
-              try {
-                await createNewInteraction({ variables });
-                track({
-                  eventName: isLiked
-                    ? events.UnlikeContent
-                    : events.LikeContent,
-                  properties: {
-                    id: itemId,
-                  },
-                });
-              } catch (e) {
-                throw e.message;
-              }
+        }}
+        update={(
+          cache,
+          {
+            data: {
+              updateLikeEntity: { isLiked: liked },
             },
-          })
-        : null
-    }
-  </Mutation>
+          }
+        ) => {
+          updateLikedContent({ liked, cache, item });
+          cache.writeQuery({
+            query: getLikedContentItem,
+            data: {
+              node: {
+                ...item,
+                isLiked: liked,
+              },
+            },
+          });
+        }}
+      >
+        {(createNewInteraction) =>
+          itemId
+            ? children({
+                itemId,
+                isLiked,
+                toggleLike: async (variables) => {
+                  try {
+                    await createNewInteraction({ variables });
+                    track({
+                      eventName: isLiked ? 'UnlikeContent' : 'LikeContent',
+                      properties: {
+                        id: itemId,
+                      },
+                    });
+                  } catch (e) {
+                    throw e.message;
+                  }
+                },
+              })
+            : null
+        }
+      </Mutation>
+    )}
+  </AnalyticsConsumer>
 );
 
 UpdateLikeStatus.propTypes = {

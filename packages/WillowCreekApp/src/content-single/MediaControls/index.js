@@ -5,28 +5,21 @@ import { View } from 'react-native';
 import { get } from 'lodash';
 
 import { playVideoMutation } from 'WillowCreekApp/src/ui/MediaPlayer/mutations';
-import { Icon, styled, Button, H6, withTheme } from '@apollosproject/ui-kit';
+import { Icon, styled, Button } from '@apollosproject/ui-kit';
 import getContentMedia from './getContentMedia';
 
-const buttonSizeDifferential = 2;
+const buttonSizeDifferential = 4;
 
-const MediaIcon = withTheme(({ theme }) => ({
-  size: theme.sizing.baseUnit * (buttonSizeDifferential / 2),
-}))(Icon); // todo: add back styles
-
+const MediaIcon = Icon; // todo: add back styles
 const MediaButton = styled(({ theme }) => ({
-  paddingHorizontal: theme.sizing.baseUnit,
+  width: theme.sizing.baseUnit * buttonSizeDifferential,
   height: theme.sizing.baseUnit * buttonSizeDifferential,
   borderRadius: theme.sizing.baseUnit * (buttonSizeDifferential / 2),
+  backgroundColor: theme.colors.secondary,
   justifyContent: 'center',
   alignItems: 'center',
   borderWidth: 0, // remove default button border
 }))(Button);
-
-const MediaTitle = styled(({ theme }) => ({
-  paddingLeft: theme.sizing.baseUnit / 4,
-  paddingTop: 3,
-}))(H6);
 
 /** MediaButtton "border styles" live in a seperate component so that Android places it's elevation
  * shadow in the right place. */
@@ -41,8 +34,7 @@ const MediaButtonBorder = styled(({ theme }) => ({
 const Container = styled(({ theme }) => ({
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'flex-start',
-  paddingHorizontal: theme.sizing.baseUnit,
+  justifyContent: 'center',
   marginTop:
     -theme.sizing.baseUnit * (buttonSizeDifferential / 2) -
     buttonSizeDifferential, // MediaButton size / 2 + border
@@ -72,6 +64,7 @@ class MediaControls extends PureComponent {
             {videoSource ? (
               <MediaButtonBorder>
                 <MediaButton
+                  type="primary"
                   onPress={() =>
                     play({
                       variables: {
@@ -85,10 +78,7 @@ class MediaControls extends PureComponent {
                   }
                   useForeground
                 >
-                  <>
-                    <MediaIcon name="play" />
-                    <MediaTitle>Watch</MediaTitle>
-                  </>
+                  <MediaIcon name="play" />
                 </MediaButton>
               </MediaButtonBorder>
             ) : null}

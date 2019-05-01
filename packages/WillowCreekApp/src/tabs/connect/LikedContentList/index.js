@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
+import { get } from 'lodash';
 
 import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
+import ContentCardConnected from '../../../ui/ContentCardConnected';
 
 import getLikedContent from '../getLikedContent';
 /** A FeedView wrapped in a query to pull content data. */
@@ -34,11 +36,17 @@ class LikedContentList extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        <Query query={getLikedContent} fetchPolicy="cache-and-network">
-          {({ loading, error, data: { getAllLikedContent = [] }, refetch }) => (
+        <Query
+          query={getLikedContent}
+          fetchPolicy="cache-and-network"
+          variables={{ first: 20 }}
+        >
+          {({ loading, error, data, refetch }) => (
             <FeedView
-              initialNumToRender={5}
-              content={getAllLikedContent}
+              ListItemComponent={ContentCardConnected}
+              content={get(data, 'likedContent.edges', []).map(
+                (edge) => edge.node
+              )}
               isLoading={loading}
               error={error}
               refetch={refetch}

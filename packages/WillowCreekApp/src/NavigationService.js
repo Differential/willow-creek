@@ -2,22 +2,30 @@ import { NavigationActions } from 'react-navigation';
 
 let _navigator;
 
-function setTopLevelNavigator(navigatorRef) {
+const setTopLevelNavigator = (navigatorRef) => {
   _navigator = navigatorRef;
-}
+};
 
-function navigate(routeName, params) {
+const navigate = (routeName, params) => {
   _navigator.dispatch(
     NavigationActions.navigate({
       routeName,
       params,
     })
   );
-}
+};
 
-// add other navigation functions that you need and export them
+const goBack = (from) => {
+  let key;
+  if (from) {
+    const route = _navigator.state.nav.routes.find((r) => r.routeName === from);
+    if (route) ({ key } = route);
+  }
+  _navigator.dispatch(NavigationActions.back({ key }));
+};
 
 export default {
-  navigate,
   setTopLevelNavigator,
+  navigate,
+  goBack,
 };

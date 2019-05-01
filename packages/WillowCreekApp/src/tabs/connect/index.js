@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation';
 import UserSettings from 'WillowCreekApp/src/user-settings';
 
 import TestingControlPanel from '../../testing-control-panel';
-import Icon from './Icon';
+import tabBarIcon from '../tabBarIcon';
 import Connect from './Connect';
 import LikedContentList from './LikedContentList';
 
@@ -21,8 +21,7 @@ const ConnectNavigator = createStackNavigator(
 );
 
 ConnectNavigator.navigationOptions = {
-  tabBarIcon: Icon,
-  tabBarLabel: 'PROFILE',
+  tabBarIcon: tabBarIcon('profile'),
 };
 
 export default ConnectNavigator;

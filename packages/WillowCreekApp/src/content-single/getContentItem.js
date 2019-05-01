@@ -4,9 +4,9 @@ export const contentItemFragment = gql`
   fragment contentItemFragment on ContentItem {
     id
     title
-    summary
     isLiked
     likedCount
+    summary
     coverImage {
       name
       sources {

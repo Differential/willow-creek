@@ -5,8 +5,20 @@ import {
 import { AsyncStorage } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import { CachePersistor } from 'apollo-cache-persist';
-
+import gql from 'graphql-tag';
 import introspectionQueryResultData from './fragmentTypes.json';
+
+export const CACHE_LOADED = gql`
+  query {
+    cacheLoaded @client
+  }
+`;
+
+export const MARK_CACHE_LOADED = gql`
+  mutation markCacheLoaded {
+    cacheMarkLoaded @client
+  }
+`;
 
 // We reset our apollo cache on every build:
 // TODO: this could be optimized by only reseting cache when our schema or client-side schema changes,

@@ -18,15 +18,15 @@ const FlexedScrollView = styled({ flex: 1 })(ScrollView);
 const UniversalContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
   return (
-    <FlexedScrollView>
-      {coverImageSources.length || loading ? (
-        <GradientOverlayImage
-          isLoading={!coverImageSources.length && loading}
-          source={coverImageSources}
-        />
-      ) : null}
-      <MediaControls contentId={content.id} />
-      <BackgroundView>
+    <BackgroundView>
+      <FlexedScrollView>
+        {coverImageSources.length || loading ? (
+          <GradientOverlayImage
+            isLoading={!coverImageSources.length && loading}
+            source={coverImageSources}
+          />
+        ) : null}
+        <MediaControls contentId={content.id} />
         <PaddedView>
           <H2 padded isLoading={!content.title && loading}>
             {content.title}
@@ -34,8 +34,8 @@ const UniversalContentItem = ({ content, loading }) => {
           <HTMLContent contentId={content.id} />
         </PaddedView>
         <HorizontalContentFeed contentId={content.id} />
-      </BackgroundView>
-    </FlexedScrollView>
+      </FlexedScrollView>
+    </BackgroundView>
   );
 };
 

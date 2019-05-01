@@ -1,39 +1,33 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 
-import { client } from 'WillowCreekApp/src/client';
 import Providers from 'WillowCreekApp/src/Providers';
+import { renderWithApolloData } from 'WillowCreekApp/src/utils/testUtils';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import FullscreenPlayer from './FullscreenPlayer';
 
+// TODO: Get these tests to work.
+
 describe('the FullscreenPlayer component', () => {
   it('should render miniplayer with video', async () => {
-    client.cache.writeData({
-      data: {
+    const cache = new InMemoryCache().restore({
+      ROOT_QUERY: {
         mediaPlayer: {
-          __typename: 'MediaPlayerState',
-          currentTrack: {
-            __typename: 'MediaPlayerTrack',
-            id: 1,
-            mediaSource: { uri: 'some-source' },
-            posterSources: [{ uri: 'some-poster-source' }],
-            title: 'Some Title',
-            artist: 'some artist',
-            isVideo: true,
-          },
-          isVisible: true,
+          currentTime: 0,
           isFullscreen: false,
-          isPlaying: true,
-          progress: {
-            __typename: 'MediaPlayerProgress',
-            currentTime: 12,
-            duration: 56,
-          },
+          isVisible: false,
+          currentTrack: 'MediaPlayerTrack:0',
+          __typename: 'MediaPlayerState',
         },
       },
+      'MediaPlayerTrack:0': {
+        isVideo: true,
+        id: 0,
+        __typename: 'MediaPlayerTrack',
+      },
     });
-    const tree = renderer.create(
-      <Providers>
+    const tree = await renderWithApolloData(
+      <Providers cache={cache}>
         <FullscreenPlayer />
       </Providers>
     );
@@ -41,32 +35,17 @@ describe('the FullscreenPlayer component', () => {
   });
 
   it('should render miniplayer with audio', async () => {
-    client.cache.writeData({
-      data: {
-        mediaPlayer: {
-          __typename: 'MediaPlayerState',
-          currentTrack: {
-            __typename: 'MediaPlayerTrack',
-            id: 1,
-            mediaSource: { uri: 'some-source' },
-            posterSources: [{ uri: 'some-poster-source' }],
-            title: 'Some Title',
-            artist: 'some artist',
-            isVideo: false,
-          },
-          isVisible: true,
-          isFullscreen: false,
-          isPlaying: true,
-          progress: {
-            __typename: 'MediaPlayerProgress',
-            currentTime: 12,
-            duration: 56,
-          },
-        },
+    const mediaPlayer = {
+      currentTrack: {
+        isVideo: false,
       },
-    });
-    const tree = renderer.create(
-      <Providers>
+      isVisible: true,
+      isFullscreen: false,
+    };
+    const tree = await renderWithApolloData(
+      <Providers
+        resolvers={{ Query: { mediaPlayer: Promise.resolve(mediaPlayer) } }}
+      >
         <FullscreenPlayer />
       </Providers>
     );
@@ -74,32 +53,17 @@ describe('the FullscreenPlayer component', () => {
   });
 
   it('should render fullscreen', async () => {
-    client.cache.writeData({
-      data: {
-        mediaPlayer: {
-          __typename: 'MediaPlayerState',
-          currentTrack: {
-            __typename: 'MediaPlayerTrack',
-            id: 1,
-            mediaSource: { uri: 'some-source' },
-            posterSources: [{ uri: 'some-poster-source' }],
-            title: 'Some Title',
-            artist: 'some artist',
-            isVideo: false,
-          },
-          isVisible: true,
-          isFullscreen: true,
-          isPlaying: true,
-          progress: {
-            __typename: 'MediaPlayerProgress',
-            currentTime: 12,
-            duration: 56,
-          },
-        },
+    const mediaPlayer = {
+      currentTrack: {
+        isVideo: true,
       },
-    });
-    const tree = renderer.create(
-      <Providers>
+      isVisible: true,
+      isFullscreen: true,
+    };
+    const tree = await renderWithApolloData(
+      <Providers
+        resolvers={{ Query: { mediaPlayer: Promise.resolve(mediaPlayer) } }}
+      >
         <FullscreenPlayer />
       </Providers>
     );

@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+import { largeCardFragment } from 'WillowCreekApp/src/ui/ContentCardConnected';
 import { contentItemFragment } from '../content-single/getContentItem';
 
 export default gql`
@@ -10,21 +11,7 @@ export default gql`
           edges {
             node {
               ...contentItemFragment
-              __typename
-              id
-              coverImage {
-                name
-                sources {
-                  uri
-                }
-              }
-              isLiked
-              parentChannel {
-                id
-                name
-                iconName
-              }
-              title
+              ...largeCardFragment
             }
           }
         }
@@ -32,4 +19,5 @@ export default gql`
     }
   }
   ${contentItemFragment}
+  ${largeCardFragment}
 `;

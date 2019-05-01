@@ -35,24 +35,26 @@ describe('MediaPlayer Store', () => {
   it('plays a track', async () => {
     resolvers.Mutation.mediaPlayerPlayNow({}, testTrack, {
       cache: client.cache,
+      client,
     });
     expect(client.query({ query })).resolves.toMatchSnapshot();
   });
   it('updates player state', async () => {
     resolvers.Mutation.mediaPlayerPlayNow({}, testTrack, {
       cache: client.cache,
+      client,
     });
     expect(client.query({ query })).resolves.toMatchSnapshot();
     resolvers.Mutation.mediaPlayerUpdateState(
       {},
       { isPlaying: false },
-      { cache: client.cache }
+      { cache: client.cache, client }
     );
     expect(client.query({ query })).resolves.toMatchSnapshot();
     resolvers.Mutation.mediaPlayerUpdateState(
       {},
       { isPlaying: true },
-      { cache: client.cache }
+      { cache: client.cache, client }
     );
   });
 });

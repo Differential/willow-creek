@@ -3,12 +3,13 @@ import { Platform, View, Animated, StyleSheet } from 'react-native';
 import { Mutation, Query } from 'react-apollo';
 
 import {
+  withTheme,
+  Icon,
   styled,
   Touchable,
   H5,
   H6,
-  Icon,
-  withTheme,
+  ButtonIcon,
 } from '@apollosproject/ui-kit';
 
 import Seeker from './Seeker';
@@ -97,10 +98,13 @@ const MiniSeeker = styled({
   bottom: 0,
 })(Seeker);
 
-const StyledIcon = withTheme(({ theme }) => ({
+const IconStyles = withTheme(({ theme }) => ({
   fill: theme.colors.darkTertiary,
   size: theme.sizing.baseUnit * 1.25,
-}))(Icon);
+}));
+
+const StyledIcon = IconStyles(Icon);
+const StyledButtonIcon = IconStyles(ButtonIcon);
 
 /**
  * The MiniControls renders basic track info and a play/pause button.
@@ -163,17 +167,16 @@ class MiniControls extends Component {
                 {isPlaying ? (
                   <Mutation mutation={pauseMutation}>
                     {(pause) => (
-                      <Touchable onPress={() => pause()}>
-                        <StyledIcon name="pause" />
-                      </Touchable>
+                      <StyledButtonIcon
+                        name={'pause'}
+                        onPress={() => pause()}
+                      />
                     )}
                   </Mutation>
                 ) : (
                   <Mutation mutation={playMutation}>
                     {(play) => (
-                      <Touchable onPress={() => play()}>
-                        <StyledIcon name="play" />
-                      </Touchable>
+                      <StyledButtonIcon name={'play'} onPress={() => play()} />
                     )}
                   </Mutation>
                 )}

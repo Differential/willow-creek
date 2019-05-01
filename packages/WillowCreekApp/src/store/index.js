@@ -1,21 +1,27 @@
 import { merge, get } from 'lodash';
 import gql from 'graphql-tag';
-import getLoginState from 'WillowCreekApp/src/auth/getLoginState';
-import { track, events } from 'WillowCreekApp/src/analytics';
-import { client } from '../client'; // eslint-disable-line
-import getAuthToken from './getAuthToken';
+
+import { track } from '@apollosproject/ui-analytics';
+import { Platform } from 'react-native';
+import { CACHE_LOADED } from '../client/cache'; // eslint-disable-line
+
+import {
+  getPushPermissions,
+  updatePushId,
+  getNotificationsEnabled,
+} from '../notifications';
 // TODO: this will require more organization...ie...not keeping everything in one file.
 // But this is simple while our needs our small.
 
 export const schema = `
   type Query {
-    authToken: String
     mediaPlayer: MediaPlayerState
-    isLoggedIn: Boolean
+    devicePushId: String
+    cacheLoaded: Boolean
+    notificationsEnabled: Boolean
   }
 
   type Mutation {
-    logout
     mediaPlayerUpdateState(isPlaying: Boolean, isFullscreen: Boolean, isVisible: Boolean): Boolean
     mediaPlayerSetPlayhead(currentTime: Float): Boolean
     mediaPlayerPlayNow(
@@ -27,7 +33,9 @@ export const schema = `
       isVideo: Boolean,
     ): Boolean
 
-    handleLogin(authToken: String!)
+    cacheMarkLoaded
+    updateDevicePushId(pushId: String!)
+    updatePushPermissions(enabled: Boolean!)
   }
 
   type MediaPlayerState {
@@ -58,7 +66,9 @@ export const schema = `
 
 export const defaults = {
   __typename: 'Query',
-  authToken: null,
+  cacheLoaded: false,
+  pushId: null,
+  notificationsEnabled: Platform.OS === 'android',
   mediaPlayer: {
     __typename: 'MediaPlayerState',
     currentTrack: null,
@@ -73,52 +83,18 @@ export const defaults = {
 
 let trackId = 0;
 
+const getIsLoggedIn = gql`
+  query {
+    isLoggedIn @client
+  }
+`;
+
 export const resolvers = {
   Query: {
-    isLoggedIn: () => {
-      // When logging out, this query returns an error.
-      // Rescue the error, and return false.
-      try {
-        const { authToken } = client.readQuery({ query: getAuthToken });
-        return !!authToken;
-      } catch (e) {
-        return false;
-      }
-    },
+    notificationsEnabled: getPushPermissions,
   },
   Mutation: {
-    logout: (root, variables, { cache }) => {
-      client.resetStore();
-      cache.writeData({
-        data: defaults,
-      });
-      track({ eventName: events.UserLogout });
-      return null;
-    },
-
-    handleLogin: async (root, { authToken }, { cache }) => {
-      try {
-        await cache.writeQuery({
-          query: getAuthToken,
-          data: { authToken },
-        });
-        await cache.writeQuery({
-          query: getLoginState,
-          data: { isLoggedIn: true },
-        });
-        await cache.writeData({
-          data: { authToken },
-        });
-
-        track({ eventName: events.UserLogin });
-      } catch (e) {
-        throw e.message;
-      }
-
-      return null;
-    },
-
-    mediaPlayerPlayNow: (root, trackInfo, { cache }) => {
+    mediaPlayerPlayNow: (root, trackInfo, { cache, client }) => {
       const query = gql`
         query {
           mediaPlayer {
@@ -175,9 +151,9 @@ export const resolvers = {
           mediaPlayer: newMediaPlayerState,
         },
       });
-
       track({
-        eventName: events.UserPlayedMedia,
+        client,
+        eventName: 'UserPlayedMedia',
         properties: {
           uri: mediaTrack.uri,
           title: mediaTrack.title,
@@ -237,6 +213,63 @@ export const resolvers = {
           },
         },
       });
+      return null;
+    },
+    updateDevicePushId: async (root, { pushId }, { cache, client }) => {
+      const query = gql`
+        query {
+          pushId @client
+        }
+      `;
+      cache.writeQuery({
+        query,
+        data: {
+          pushId,
+        },
+      });
+
+      const { data: { isLoggedIn } = {} } = await client.query({
+        query: getIsLoggedIn,
+      });
+
+      if (isLoggedIn) {
+        updatePushId({ pushId, client });
+      }
+      return null;
+    },
+    updatePushPermissions: (root, { enabled }, { cache }) => {
+      cache.writeQuery({
+        query: getNotificationsEnabled,
+        data: {
+          notificationsEnabled: enabled,
+        },
+      });
+
+      return null;
+    },
+
+    cacheMarkLoaded: async (root, args, { cache, client }) => {
+      cache.writeQuery({
+        query: CACHE_LOADED,
+        data: {
+          cacheLoaded: true,
+        },
+      });
+      const { data: { isLoggedIn } = {} } = await client.query({
+        query: getIsLoggedIn,
+      });
+
+      const { pushId } = cache.readQuery({
+        query: gql`
+          query {
+            pushId @client
+          }
+        `,
+      });
+
+      if (isLoggedIn && pushId) {
+        updatePushId({ pushId, client });
+      }
       return null;
     },
   },

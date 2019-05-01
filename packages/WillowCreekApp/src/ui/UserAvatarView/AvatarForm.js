@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
+import { Query, ApolloConsumer } from 'react-apollo';
 
 import {
-  ConnectedImage,
   Touchable,
   ButtonLink,
   Avatar,
@@ -12,7 +12,21 @@ import {
   H5,
   styled,
 } from '@apollosproject/ui-kit';
+import getUserProfile from '../../tabs/connect/getUserProfile';
 import uploadPhoto from './uploadPhoto';
+
+const GetPhotoData = ({ children }) => (
+  <Query query={getUserProfile}>
+    {({ data: { currentUser = {} } = {} }) => {
+      const photo = get(currentUser, 'profile.photo');
+      return children({ photo });
+    }}
+  </Query>
+);
+
+GetPhotoData.propTypes = {
+  children: PropTypes.func.isRequired,
+};
 
 const StyledAvatar = withTheme(({ theme }) => ({
   containerStyle: {
@@ -39,52 +53,58 @@ export default class AvatarForm extends PureComponent {
     this.setState({ isUploadingFile: false });
   }
 
-  handleUploadPhoto = async () => {
+  handleUploadPhoto = async ({ client }) => {
     try {
       await uploadPhoto({
+        client,
         onUpload: () => this.setState({ isUploadingFile: true }),
       });
-      await this.props.refetch();
       await this.setState({ isUploadingFile: false });
     } catch (e) {
+      console.warn(e);
       this.setState({ isUploadingFile: false });
     }
   };
 
   render() {
-    const { photo } = this.props;
     const { isUploadingFile } = this.state;
 
     return (
-      <Wrapper>
-        <RoundTouchable
-          disabled={this.props.disabled}
-          onPress={this.handleUploadPhoto}
-          size="medium"
-        >
-          <View>
-            <StyledAvatar
-              source={photo}
+      <ApolloConsumer>
+        {(client) => (
+          <Wrapper>
+            <RoundTouchable
+              disabled={this.props.disabled}
+              onPress={() => this.handleUploadPhoto({ client })}
               size="medium"
-              isLoading={isUploadingFile}
-            />
-          </View>
-        </RoundTouchable>
-        {this.props.text ? (
-          <H5>
-            <ButtonLink onPress={this.handleUploadPhoto}>
-              Change Photo
-            </ButtonLink>
-          </H5>
-        ) : null}
-      </Wrapper>
+            >
+              <GetPhotoData>
+                {({ photo }) => (
+                  <View>
+                    <StyledAvatar
+                      source={photo}
+                      size="medium"
+                      isLoading={isUploadingFile}
+                    />
+                  </View>
+                )}
+              </GetPhotoData>
+            </RoundTouchable>
+            {this.props.text ? (
+              <H5>
+                <ButtonLink onPress={() => this.handleUploadPhoto({ client })}>
+                  Change Photo
+                </ButtonLink>
+              </H5>
+            ) : null}
+          </Wrapper>
+        )}
+      </ApolloConsumer>
     );
   }
 }
 
 AvatarForm.propTypes = {
-  refetch: PropTypes.func.isRequired,
-  photo: ConnectedImage.propTypes.source,
   disabled: PropTypes.bool,
   text: PropTypes.bool,
 };

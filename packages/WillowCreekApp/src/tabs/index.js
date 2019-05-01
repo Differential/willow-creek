@@ -13,7 +13,7 @@ const TabNavigator = createBottomTabNavigator(
     Connect,
   },
   {
-    initialRouteName: 'Home',
+  	initialRouteName: 'Home',
     tabBarComponent: TabBar,
     lazy: true,
     removeClippedSubviews: true,
