@@ -2,20 +2,32 @@ import { gql } from 'apollo-server';
 
 import { createApolloServerConfig } from '@apollosproject/server-core';
 
-import * as Auth from '@apollosproject/data-connector-rock-auth';
+import * as Analytics from '@apollosproject/data-connector-analytics';
+import * as Scripture from '@apollosproject/data-connector-bible';
+import * as LiveStream from '@apollosproject/data-connector-church-online';
+import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
+import * as OneSignal from '@apollosproject/data-connector-onesignal';
+import * as Pass from '@apollosproject/data-connector-passes';
+import * as Sms from '@apollosproject/data-connector-twilio';
 import {
+  Followings,
+  Interactions,
+  RockConstants,
+  Person,
+  ContentItem,
   ContentChannel,
   Sharable,
-} from '@apollosproject/data-connector-rock-content';
-import * as Analytics from '@apollosproject/data-connector-analytics';
-import { Person, Family } from '@apollosproject/data-connector-people';
-import * as Scripture from '@apollosproject/data-connector-bible';
-import {
-  Interactions,
-  Followings,
-  RockConstants,
-} from '@apollosproject/data-connector-rock-actions';
+  Auth,
+  PersonalDevice,
+  Template,
+  AuthSms,
+  Campus,
+} from '@apollosproject/data-connector-rock';
+import * as Theme from './theme';
 
+// This module is used to attach Rock User updating to the OneSignal module.
+// This module includes a Resolver that overides a resolver defined in `OneSignal`
+import * as OneSignalWithRock from './oneSignalWithRock';
 import * as ContentItem from './content-items';
 import * as LiveStream from './live';
 import * as Theme from './theme';
@@ -23,10 +35,14 @@ import * as WillowTVContentItem from './willow-tv';
 import * as WillowCalendarEventContentItem from './calendar-events';
 
 const data = {
+  Followings,
   ContentChannel,
   ContentItem,
   Person,
+  Cloudinary,
   Auth,
+  AuthSms,
+  Sms,
   LiveStream,
   Theme,
   Scripture,
@@ -34,31 +50,25 @@ const data = {
   RockConstants,
   Sharable,
   Analytics,
-  Family,
-  Followings,
-  UniversalContentItem: {
-    dataSource: ContentItem.dataSource,
-  }, // alias
-  DevotionalContentItem: {
-    dataSource: ContentItem.dataSource,
-  }, // alias
-  ContentSeriesContentItem: {
-    dataSource: ContentItem.dataSource,
-  }, // alias
-  MediaContentItem: {
-    dataSource: ContentItem.dataSource,
-  }, // alias
+  OneSignal,
+  PersonalDevice,
+  OneSignalWithRock,
+  Pass,
+  Template,
+  Campus,
   WillowTVContentItem,
-  WillowCalendarEventContentItem,
+  WillowCalendarEventContentItem,  
 };
 
-console.log(data);
+const {
+  dataSources,
+  resolvers,
+  schema,
+  context,
+  applyServerMiddleware,
+} = createApolloServerConfig(data);
 
-const { dataSources, resolvers, schema, context } = createApolloServerConfig(
-  data
-);
-
-export { dataSources, resolvers, schema, context };
+export { dataSources, resolvers, schema, context, applyServerMiddleware };
 
 // the upload Scalar is added
 export const testSchema = [

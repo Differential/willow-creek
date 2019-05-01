@@ -11,6 +11,6 @@ if (!PORT && process.env.NODE_ENV !== 'test')
     'Add `ENV=4000` if you are having trouble connecting to the server. By default, PORT is random.'
   );
 
-server.listen({ port: PORT }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
+server.listen({ port: PORT }, () => {
+  console.log(`🚀 Server ready at http://0.0.0.0:${PORT}`);
 });
