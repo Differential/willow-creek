@@ -40,10 +40,7 @@ const TabBar = (props) => (
     {({ data = {} }) => (
       <TabBarWrapper mediaPlayerIsVisible={get(data, 'mediaPlayer.isVisible')}>
         <MediaPlayerSpacer>
-          <ThemedBottomTabBar
-            {...props}
-            safeAreaInset={{ bottom: 'never', top: 'never' }}
-          />
+          <ThemedBottomTabBar {...props} />
         </MediaPlayerSpacer>
       </TabBarWrapper>
     )}

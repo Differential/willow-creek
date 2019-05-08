@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { ScrollView, StyleSheet, SafeAreaView, Image } from 'react-native';
+import { ScrollView, StyleSheet, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 import {
@@ -15,6 +15,7 @@ import {
   styled,
 } from '@apollosproject/ui-kit';
 
+import { SafeAreaView } from 'react-navigation';
 import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
 import { LiveButton } from 'WillowCreekApp/src/live';
 
