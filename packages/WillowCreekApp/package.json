@@ -23,6 +23,7 @@
   "dependencies": {
     "@apollosproject/ui-analytics": "^0.8.3",
     "@apollosproject/ui-auth": "^0.8.3",
+    "@apollosproject/ui-htmlview": "^0.8.4",
     "@apollosproject/ui-kit": "^0.8.3",
     "@apollosproject/ui-passes": "^0.8.3",
     "apollo-cache-inmemory": "1.5.1",
