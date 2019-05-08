@@ -9,16 +9,13 @@
   "private": true,
   "scripts": {
     "android": "SIM=\"$($HOME/Library/Android/sdk/emulator/emulator -list-avds | sed -n 1p)\" && $HOME/Library/Android/sdk/emulator/emulator -avd \"${SIM}\" & react-native run-android --appId com.apolloschurch.app --main-activity LaunchActivity",
-    "codecov": "cat ./coverage/lcov.info | codecov",
     "fixlint": "eslint ./src --fix",
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
     "lint": "eslint ./src --ext .js",
-    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
     "prestart": "node ./scripts/get-introspection-data.js",
     "start": "react-native start",
     "storybook": "rnstl --searchDir ../ --pattern \"apollos*/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
-    "test": "jest",
-    "release": "standard-version --release-as minor"
+    "test": "jest"
   },
   "dependencies": {
     "@apollosproject/ui-analytics": "^0.8.3",
@@ -117,14 +114,6 @@
     ],
     "setupFiles": [
       "./jest.setup.js"
-    ],
-    "reporters": [
-      "<rootDir>/../../scripts/fingers-crossed-reporter.js"
-    ]
-  },
-  "rnpm": {
-    "assets": [
-      "assets/fonts"
     ]
   }
 }
