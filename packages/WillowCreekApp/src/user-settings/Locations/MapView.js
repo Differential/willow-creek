@@ -5,10 +5,17 @@ import SafeAreaView from 'react-native-safe-area-view';
 import RNMapView from 'react-native-maps';
 import { debounce } from 'lodash';
 
-import { Button, PaddedView, styled, withTheme } from '@apollosproject/ui-kit';
+import {
+  Button,
+  PaddedView,
+  styled,
+  withTheme,
+  CampusCard,
+} from '@apollosproject/ui-kit';
 
-import CampusCard, { CARD_WIDTH } from './CampusCard';
 import Marker from './Marker';
+
+const { CARD_WIDTH } = CampusCard;
 
 const ContainerView = styled({
   flex: 1,

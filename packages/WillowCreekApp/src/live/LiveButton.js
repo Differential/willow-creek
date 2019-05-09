@@ -62,7 +62,7 @@ const LiveNowButton = () => (
                 </CardContent>
               </LiveCard>
             </TouchableScale>
-          )}
+          )}g
         </Mutation>
       ) : null;
     }}

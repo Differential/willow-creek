@@ -85,6 +85,8 @@ ROCK_MAPPINGS:
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
     - 4
+  CAMPAIGN_CHANNEL_IDS:
+    - 11
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
