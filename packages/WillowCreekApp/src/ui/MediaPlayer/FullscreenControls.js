@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Animated,
   TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import { Query, withApollo } from 'react-apollo';
 import LinearGradient from 'react-native-linear-gradient';
@@ -19,11 +20,9 @@ import {
   styled,
   H4,
   H6,
-  Icon,
-  Touchable,
+  ButtonIcon,
 } from '@apollosproject/ui-kit';
 
-import Seeker from './Seeker';
 import { getControlState } from './queries';
 import {
   play,
@@ -34,8 +33,9 @@ import {
   mute,
   unmute,
 } from './mutations';
-
 import { ControlsConsumer } from './PlayheadState';
+import Seeker from './Seeker';
+import AirPlayButton from './AirPlayButton';
 
 const Background = withTheme(({ theme }) => ({
   style: StyleSheet.absoluteFill,
@@ -47,13 +47,13 @@ const Background = withTheme(({ theme }) => ({
   locations: [0, 0.4, 0.95],
 }))(LinearGradient);
 
-const UpperControl = styled({
+const UpperControls = styled({
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
-})(PaddedView);
+})(View);
 
-const LowerControl = styled({
+const LowerControls = styled({
   position: 'absolute',
   bottom: 0,
   left: 0,
@@ -70,6 +70,7 @@ const PlayControls = styled(({ theme }) => ({
 const PlayHead = styled({ paddingVertical: 0 })(PaddedView);
 
 const Titles = styled({
+  flex: 1,
   alignItems: 'center',
   paddingVertical: 0,
 })(PaddedView);
@@ -77,20 +78,20 @@ const Titles = styled({
 const Title = styled({ textAlign: 'center' })(H4);
 const Artist = styled({ textAlign: 'center' })(H6);
 
-const IconSm = withTheme(({ theme, disabled }) => ({
-  size: theme.sizing.baseUnit,
-  opacity: disabled ? 0.5 : 1.25,
-}))(Icon);
+const IconSm = withTheme(({ theme }) => ({
+  size: theme.sizing.baseUnit * 1.25,
+  iconPadding: theme.sizing.baseUnit * 1.25,
+}))(ButtonIcon);
 
-const IconMd = withTheme(({ theme, disabled }) => ({
+const IconMd = withTheme(({ theme }) => ({
   size: theme.sizing.baseUnit * 1.875,
-  opacity: disabled ? 0.5 : 1,
-}))(Icon);
+  iconPadding: theme.sizing.baseUnit * 0.9375,
+}))(ButtonIcon);
 
-const IconLg = withTheme(({ theme, disabled }) => ({
+const IconLg = withTheme(({ theme }) => ({
   size: theme.sizing.baseUnit * 3.125,
-  opacity: disabled ? 0.5 : 1,
-}))(Icon);
+  iconPadding: theme.sizing.baseUnit * 0.3125,
+}))(ButtonIcon);
 
 /**
  * FullscreenControls displays fading player controls
@@ -201,21 +202,40 @@ class FullscreenControls extends PureComponent {
     this.closeTimeout = setTimeout(this.handleControlVisibility, 5000);
   };
 
-  renderSkipForward = ({ skip }) => (
-    <Touchable onPress={() => skip(30)}>
-      <IconMd name="skip-forward-thirty" />
-    </Touchable>
-  );
-
-  renderSkipBack = ({ skip }) => (
-    <Touchable onPress={() => skip(-30)}>
-      <IconMd name="skip-back-thirty" />
-    </Touchable>
+  renderPlayerControls = ({ isLoading, skip }) => (
+    <PlayControls>
+      <IconSm
+        onPress={this.isMuted ? this.handleUnMute : this.handleMute}
+        name={this.isMuted ? 'mute' : 'volume'}
+        disabled={isLoading}
+      />
+      <IconMd
+        onPress={() => skip(-30)}
+        name={'skip-back-thirty'}
+        disabled={isLoading}
+      />
+      <IconLg
+        onPress={this.isPlaying ? this.handlePause : this.handlePlay}
+        name={this.isPlaying ? 'pause' : 'play'}
+        disabled={isLoading}
+      />
+      <IconMd
+        onPress={() => skip(30)}
+        name={'skip-forward-thirty'}
+        disabled={isLoading}
+      />
+      <IconSm
+        onPress={this.isVideo ? this.handleHideVideo : this.handleShowVideo}
+        name={this.isVideo ? 'video' : 'video-off'}
+        disabled={isLoading}
+      />
+    </PlayControls>
   );
 
   renderFullscreenControls = ({ data: { mediaPlayer = {} } = {} }) => {
     this.isVideo = get(mediaPlayer, 'showVideo');
     this.isPlaying = mediaPlayer.isPlaying;
+    this.isMuted = mediaPlayer.muted;
 
     if (
       (mediaPlayer.isFullscreen && !this.wasFullscreen) ||
@@ -237,52 +257,20 @@ class FullscreenControls extends PureComponent {
               style={StyleSheet.absoluteFill}
               forceInset={{ top: 'always', bottom: 'always' }}
             >
-              <Touchable onPress={this.handleClose}>
-                <UpperControl>
-                  <IconSm name="arrow-down" />
-                  <Titles>
-                    <Title>{get(mediaPlayer, 'currentTrack.title')}</Title>
-                    <Artist>{get(mediaPlayer, 'currentTrack.artist')}</Artist>
-                  </Titles>
-                  <IconSm name="empty" />
-                </UpperControl>
-              </Touchable>
-              <LowerControl>
+              <UpperControls>
+                <IconSm name="arrow-down" onPress={this.handleClose} />
+                <Titles>
+                  <Title>{get(mediaPlayer, 'currentTrack.title')}</Title>
+                  <Artist>{get(mediaPlayer, 'currentTrack.artist')}</Artist>
+                </Titles>
+                <AirPlayButton />
+              </UpperControls>
+              <LowerControls horizontal={false}>
                 <PlayHead>
                   <Seeker onScrubbing={this.handleOnScrubbing} />
                 </PlayHead>
-                <PlayControls>
-                  {get(mediaPlayer, 'muted') ? (
-                    <Touchable onPress={this.handleUnMute}>
-                      <IconSm name="mute" />
-                    </Touchable>
-                  ) : (
-                    <Touchable onPress={this.handleMute}>
-                      <IconSm name="volume" />
-                    </Touchable>
-                  )}
-                  <ControlsConsumer>{this.renderSkipBack}</ControlsConsumer>
-                  {mediaPlayer.isPlaying ? (
-                    <Touchable onPress={this.handlePause}>
-                      <IconLg name="pause" />
-                    </Touchable>
-                  ) : (
-                    <Touchable onPress={this.handlePlay}>
-                      <IconLg name="play" />
-                    </Touchable>
-                  )}
-                  <ControlsConsumer>{this.renderSkipForward}</ControlsConsumer>
-                  {mediaPlayer.showVideo ? (
-                    <Touchable onPress={this.handleHideVideo}>
-                      <IconSm name="video" />
-                    </Touchable>
-                  ) : (
-                    <Touchable onPress={this.handleShowVideo}>
-                      <IconSm name="video-off" />
-                    </Touchable>
-                  )}
-                </PlayControls>
-              </LowerControl>
+                <ControlsConsumer>{this.renderPlayerControls}</ControlsConsumer>
+              </LowerControls>
             </SafeAreaView>
           </Background>
         </Animated.View>

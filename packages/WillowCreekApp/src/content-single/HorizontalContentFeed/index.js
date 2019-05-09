@@ -7,16 +7,10 @@ import { Query } from 'react-apollo';
 import {
   CardTile,
   HorizontalTileFeed,
-  PaddedView,
-  styled,
   TouchableScale,
 } from '@apollosproject/ui-kit';
 
 import getHorizontalContent from './getHorizontalContent';
-
-const FeedContainer = styled({
-  paddingHorizontal: 0,
-})(PaddedView);
 
 const loadingStateObject = {
   node: {
@@ -73,14 +67,12 @@ class HorizontalContentFeed extends Component {
     const content = siblingContent.length ? siblingContent : childContent;
 
     return (content && content.length) || loading ? (
-      <FeedContainer>
-        <HorizontalTileFeed
-          content={content}
-          isLoading={loading}
-          loadingStateObject={loadingStateObject}
-          renderItem={this.renderItem}
-        />
-      </FeedContainer>
+      <HorizontalTileFeed
+        content={content}
+        isLoading={loading}
+        loadingStateObject={loadingStateObject}
+        renderItem={this.renderItem}
+      />
     ) : null;
   };
 

@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 
+import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
+
 import getContentFeed from './getContentFeed';
 /**
  * This is where the component description lives
@@ -50,6 +52,7 @@ class ContentFeed extends PureComponent {
         >
           {({ loading, error, data, refetch }) => (
             <FeedView
+              ListItemComponent={ContentCardConnected}
               content={get(
                 data,
                 'node.childContentItemsConnection.edges',

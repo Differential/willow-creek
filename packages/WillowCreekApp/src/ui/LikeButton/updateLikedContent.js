@@ -1,18 +1,32 @@
 import getAllLikedContent from 'WillowCreekApp/src/tabs/connect/getLikedContent';
 import { contentItemFragment } from 'WillowCreekApp/src/content-single/getContentItem';
 
-const addItemToLikedContentList = ({ cache, item }) => {
+const addItemToLikedContentList = ({ cache, item, variables }) => {
   try {
-    const data = cache.readQuery({ query: getAllLikedContent });
+    const data = cache.readQuery({
+      query: getAllLikedContent,
+      variables,
+    });
     const fullItem = cache.readFragment({
       id: `${item.__typename}:${item.id}`,
       fragment: contentItemFragment,
     });
+    const newEdges = [
+      fullItem,
+      ...data.likedContent.edges.map(({ node }) => node),
+    ].map((node) => ({
+      __typename: 'ContentItemsConnectionEdge',
+      node,
+    }));
     cache.writeQuery({
       query: getAllLikedContent,
+      variables,
       data: {
         ...data,
-        getAllLikedContent: [fullItem, ...data.getAllLikedContent],
+        likedContent: {
+          ...data.likedContent,
+          edges: newEdges,
+        },
       },
     });
   } catch (e) {
@@ -22,16 +36,26 @@ const addItemToLikedContentList = ({ cache, item }) => {
   }
 };
 
-const removeItemFromLikedContentList = ({ cache, item }) => {
+const removeItemFromLikedContentList = ({ cache, item, variables }) => {
   try {
-    const data = cache.readQuery({ query: getAllLikedContent });
+    const data = cache.readQuery({
+      query: getAllLikedContent,
+      variables,
+    });
+
+    const filteredEdges = data.likedContent.edges.filter(
+      ({ node }) => node.id !== item.id
+    );
+
     cache.writeQuery({
       query: getAllLikedContent,
+      variables,
       data: {
         ...data,
-        getAllLikedContent: data.getAllLikedContent.filter(
-          (content) => content.id !== item.id
-        ),
+        likedContent: {
+          ...data.likedContent,
+          edges: filteredEdges,
+        },
       },
     });
   } catch (e) {
@@ -43,9 +67,11 @@ const removeItemFromLikedContentList = ({ cache, item }) => {
 
 const updateLikedContent = ({ liked, cache, item }) => {
   if (liked) {
-    addItemToLikedContentList({ cache, item });
+    addItemToLikedContentList({ cache, item, variables: { first: 3 } });
+    addItemToLikedContentList({ cache, item, variables: { first: 20 } });
   } else {
-    removeItemFromLikedContentList({ cache, item });
+    removeItemFromLikedContentList({ cache, item, variables: { first: 3 } });
+    removeItemFromLikedContentList({ cache, item, variables: { first: 20 } });
   }
 };
 

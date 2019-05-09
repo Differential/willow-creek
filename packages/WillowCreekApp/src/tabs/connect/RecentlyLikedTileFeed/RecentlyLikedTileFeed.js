@@ -4,31 +4,49 @@ import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 
 import {
+  styled,
+  withTheme,
   PaddedView,
   H5,
-  UIText,
+  H6,
   HorizontalTileFeed,
-  styled,
   ButtonLink,
+  TouchableScale,
+  Touchable,
+  withIsLoading,
 } from '@apollosproject/ui-kit';
 
-import TileImageItem from '../../TileImageItem';
+import ContentCard from 'WillowCreekApp/src/ui/ContentCardConnected';
 
 const RowHeader = styled(({ theme }) => ({
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
-  paddingTop: theme.sizing.baseUnit,
-  paddingBottom: 0,
-}))(PaddedView);
+  zIndex: 2, // UX hack to improve tapability. Positions RowHeader above StyledHorizontalTileFeed
+  paddingTop: theme.sizing.baseUnit * 0.5,
+  paddingLeft: theme.sizing.baseUnit,
+}))(View);
 
 const Name = styled({
-  flexGrow: 1,
+  flexGrow: 2,
 })(View);
 
-const LikedContentLink = styled({
-  flexDirection: 'row-reverse',
-})(View);
+const ButtonLinkSpacing = styled(({ theme }) => ({
+  flexDirection: 'row', // correctly positions the loading state
+  justifyContent: 'flex-end', // correctly positions the loading state
+  padding: theme.sizing.baseUnit, // UX hack to improve tapability.
+}))(View);
+
+const AndroidTouchableFix = withTheme(({ theme }) => ({
+  borderRadius: theme.sizing.baseUnit / 2,
+}))(Touchable);
+
+const StyledHorizontalTileFeed = styled(({ theme }) => ({
+  /* UX hack to improve tapability. The magic number below happens to be the number of pixels that
+   * aligns everything in the same place as if none of the UX hacks were there. */
+  marginTop: theme.sizing.baseUnit * -1.25,
+  zIndex: 1,
+}))(HorizontalTileFeed);
 
 class RecentlyLikedTileFeed extends Component {
   static propTypes = {
@@ -36,6 +54,7 @@ class RecentlyLikedTileFeed extends Component {
       navigate: PropTypes.func,
     }),
     isLoading: PropTypes.bool,
+    name: PropTypes.string,
     content: PropTypes.arrayOf(
       PropTypes.any // this component doesn't care about the shape of `node`, just that it exists
     ),
@@ -48,35 +67,46 @@ class RecentlyLikedTileFeed extends Component {
   };
 
   titleImageItem = ({ item }) => (
-    <TileImageItem
-      item={item}
-      isLoading={this.props.isLoading}
-      navigation={this.props.navigation}
-    />
+    <TouchableScale
+      onPress={() => {
+        this.props.navigation.push('ContentSingle', {
+          itemId: item.id,
+        });
+      }}
+    >
+      <ContentCard
+        isLoading={item.isLoading}
+        tile
+        contentId={item.id}
+        inHorizontalList
+      />
+    </TouchableScale>
   );
 
   render() {
-    const { isLoading, navigation, content = [] } = this.props;
+    const { isLoading, name, navigation, content = [] } = this.props;
 
     return (
       <PaddedView horizontal={false}>
         <RowHeader>
           <Name>
-            <H5>Recently Liked</H5>
+            <H5>{name}</H5>
           </Name>
-          <LikedContentLink>
-            <UIText>
-              <ButtonLink
-                onPress={() => {
-                  navigation.navigate('LikedContentList');
-                }}
-              >
-                View All
-              </ButtonLink>
-            </UIText>
-          </LikedContentLink>
+
+          <AndroidTouchableFix
+            onPress={() => {
+              navigation.navigate('LikedContentList');
+            }}
+          >
+            <ButtonLinkSpacing>
+              <H6>
+                {/* we have to wrap "View All" in a ButtonLink twice to inherit styles and color correctly. */}
+                <ButtonLink>View All</ButtonLink>
+              </H6>
+            </ButtonLinkSpacing>
+          </AndroidTouchableFix>
         </RowHeader>
-        <HorizontalTileFeed
+        <StyledHorizontalTileFeed
           initialNumToRender={5}
           content={content}
           renderItem={this.titleImageItem}
@@ -88,4 +118,4 @@ class RecentlyLikedTileFeed extends Component {
   }
 }
 
-export default withNavigation(RecentlyLikedTileFeed);
+export default withNavigation(withIsLoading(RecentlyLikedTileFeed));

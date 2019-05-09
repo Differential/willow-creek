@@ -1,5 +1,6 @@
 import React from 'react';
-import { Platform, View } from 'react-native';
+import { Platform } from 'react-native';
+import SafeAreaView from 'react-native-safe-area-view';
 import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
@@ -21,7 +22,7 @@ const PositioningView = styled(({ theme }) => ({
 const Container = styled(({ theme }) => ({
   backgroundColor: theme.colors.paper,
   ...Platform.select(theme.shadows.default),
-}))(View);
+}))(SafeAreaView);
 
 const ActionContainer = ({ itemId }) => (
   <Container>

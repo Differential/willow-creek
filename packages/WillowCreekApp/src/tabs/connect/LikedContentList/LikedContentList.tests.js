@@ -15,7 +15,7 @@ describe('LikedContentList component', () => {
       },
       result: {
         data: {
-          getAllLikedContent: [
+          likedContent: [
             {
               __typename: 'UniversalContentItem',
               id: 'UniversalContentItem:4148aeb9482181025e9cad42826e676a',

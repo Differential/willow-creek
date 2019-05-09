@@ -18,8 +18,7 @@ import {
 import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
 import AvatarForm from 'WillowCreekApp/src/ui/UserAvatarView/AvatarForm';
 
-import getLoginState from '../auth/getLoginState';
-import logout from '../auth/logout';
+import { getLoginState, logout } from '@apollosproject/ui-auth';
 
 const AvatarView = styled({
   alignItems: 'center',
@@ -51,11 +50,7 @@ class UserSettings extends PureComponent {
           return (
             <BackgroundContainer>
               <AvatarView>
-                <AvatarForm
-                  text
-                  photo={this.props.navigation.getParam('photo', '')}
-                  refetch={this.props.navigation.getParam('refetch', {})}
-                />
+                <AvatarForm text />
               </AvatarView>
               <WebBrowserConsumer>
                 {(openUrl) => (
@@ -70,6 +65,17 @@ class UserSettings extends PureComponent {
                       >
                         <Cell>
                           <CellText>Personal Details</CellText>
+                          <CellIcon name="arrow-next" />
+                        </Cell>
+                      </Touchable>
+                      <Divider />
+                      <Touchable
+                        onPress={async () => {
+                          await this.props.navigation.navigate('Location');
+                        }}
+                      >
+                        <Cell>
+                          <CellText>Location</CellText>
                           <CellIcon name="arrow-next" />
                         </Cell>
                       </Touchable>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 
-import HTMLView from 'WillowCreekApp/src/ui/HTMLView';
+import HTMLView from '@apollosproject/ui-htmlview';
 import { ErrorCard } from '@apollosproject/ui-kit';
 
 import getContentItemContent from './getContentItemContent';

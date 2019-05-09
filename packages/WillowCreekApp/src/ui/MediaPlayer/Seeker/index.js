@@ -58,6 +58,7 @@ class Seeker extends PureComponent {
     duration: PropTypes.any, // eslint-disable-line
     style: PropTypes.any, // eslint-disable-line
     onScrubbing: PropTypes.func,
+    skip: PropTypes.func,
     knobSize: PropTypes.number, // defaults to theme.sizing.baseUnit / 1.5  (12px)
   };
 

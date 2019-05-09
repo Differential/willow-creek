@@ -1,4 +1,20 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' } // Gradle Plugin Portal
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.10.0, 0.99.99]'
+    }
+}
+
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: "com.android.application"
+
+project.ext.envConfigFiles = [
+    release: ".env.production",
+]
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 import com.android.build.OutputFile
 
@@ -106,13 +122,14 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        resValue "string", "build_config_package", "com.willowcreekapp"
     }
     splits {
         abi {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
             universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a", "x86"
+            include "armeabi-v7a", "x86", "arm64-v8a"
         }
     }
     buildTypes {
@@ -126,7 +143,7 @@ android {
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a":1, "x86":2]
+            def versionCodes = ["armeabi-v7a":1, "x86":2, "arm64-v8a": 3]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
@@ -137,16 +154,20 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-video')
-    compile project(':react-native-svg')
-    compile project(':react-native-splash-screen')
-    compile project(':react-native-screens')
-    compile project(':react-native-onesignal')
-    compile project(':react-native-music-control')
-    compile project(':react-native-linear-gradient')
-    compile project(':react-native-image-picker')
-    compile project(':react-native-device-info')
-    compile project(':react-native-custom-tabs')
+    implementation project(':react-native-maps')
+    implementation project(':rn-fetch-blob')
+    implementation project(':react-native-webview')
+    implementation project(':react-native-video')
+    implementation project(':react-native-svg')
+    implementation project(':react-native-splash-screen')
+    implementation project(':react-native-screens')
+    implementation project(':react-native-onesignal')
+    implementation project(':react-native-music-control')
+    implementation project(':react-native-linear-gradient')
+    implementation project(':react-native-image-picker')
+    implementation project(':react-native-device-info')
+    implementation project(':react-native-custom-tabs')
+    implementation project(':react-native-config')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules

@@ -11,6 +11,7 @@ const defaultState = {
   currentTime: new Animated.Value(0),
   playableDuration: new Animated.Value(1),
   seekableDuration: new Animated.Value(1),
+  isLoading: true,
 };
 
 const controlState = () => {};
@@ -31,17 +32,29 @@ class ProviderWithoutApollo extends Component {
   get controlState() {
     return {
       onLoad: this.handleOnLoad,
+      onLoadStart: this.handleOnLoadStart,
+      // onBuffer: this.handleOnBuffer,
       onProgress: this.handleOnProgress,
       skip: this.skip,
+      isLoading: this.state.isLoading,
+      // isBuffering: this.state.isBuffering,
     };
   }
 
   handleOnLoad = ({ duration }) => {
-    this.setState({ duration });
+    this.setState({ duration, isLoading: false });
     this.state.currentTime.setValue(0);
     this.state.playableDuration.setValue(0);
     this.state.seekableDuration.setValue(0);
   };
+
+  handleOnLoadStart = () => {
+    this.setState({ isLoading: true });
+  };
+
+  // handleOnBuffer = ({ isBuffering }) => {
+  //   this.setState({ isBuffering }); // bool value https://github.com/react-native-community/react-native-video/blob/2c391f580702f9579a0ebd01c6e97415feda928b/ios/Video/RCTVideo.m#L636-L643
+  // };
 
   handleOnProgress = ({ currentTime, playableDuration, seekableDuration }) => {
     if (!this.seekingTo || Math.abs(this.seekingTo - currentTime) < 1) {
@@ -64,6 +77,7 @@ class ProviderWithoutApollo extends Component {
   };
 
   skip = async (secondsToSkip) => {
+    if (this.lastCurrentTime === undefined) return;
     const currentTime = Math.min(
       Math.max(this.lastCurrentTime + secondsToSkip, 0),
       this.state.duration

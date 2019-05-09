@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import {
+  H3,
   PaddedView,
   ConnectedImage,
   styled,
@@ -12,48 +13,35 @@ import {
 
 import AvatarForm from './AvatarForm';
 
-const Container = styled({
+const Container = styled(({ theme }) => ({
+  backgroundColor: theme.colors.background.paper,
   flexDirection: 'row',
-})(View);
+}))(View);
 
 const Content = styled(({ theme }) => ({
   flex: 1,
   justifyContent: 'center',
-  paddingHorizontal: theme.sizing.baseUnit * 0.5,
   paddingVertical: theme.sizing.baseUnit * 0.5,
 }))(PaddedView);
 
 const UserAvatarView = withIsLoading(
   ({
     theme,
-    photo,
-    children,
+    firstName,
+    lastName,
     location,
     isLoading,
-    refetch,
-    onPhotoPress,
-    setIsUploadingFile,
-    isUploadingFile,
     disabled,
     ...viewProps
   }) => (
+    // todo: handle file select stuff
     <Container {...viewProps}>
-      <AvatarForm
-        isLoading={isLoading}
-        text={false}
-        disabled={disabled}
-        photo={photo}
-        refetch={refetch}
-      />
+      <AvatarForm isLoading={isLoading} text={false} disabled={disabled} />
       <Content>
-        {children}
-        {isLoading || location ? (
-          <ChannelLabel
-            icon="pin"
-            label={location || ''}
-            isLoading={isLoading}
-          />
-        ) : null}
+        <H3>
+          {firstName} {lastName}
+        </H3>
+        <ChannelLabel icon="pin" label={location || ''} isLoading={isLoading} />
       </Content>
     </Container>
   )
@@ -65,10 +53,8 @@ UserAvatarView.propTypes = {
   lastName: PropTypes.string,
   location: PropTypes.string,
   isLoading: PropTypes.bool,
-  refetch: PropTypes.func,
-  onPhotoPress: PropTypes.func,
+  disabled: PropTypes.bool,
   blurIntensity: PropTypes.number,
-  allowProfileImageChange: PropTypes.bool,
   ...View.propTypes,
 };
 

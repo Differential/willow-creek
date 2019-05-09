@@ -3,10 +3,10 @@ import { withProps } from 'recompose';
 import { Platform } from 'react-native';
 
 import { Paragraph, H4 } from '@apollosproject/ui-kit';
-import HTMLView from 'WillowCreekApp/src/ui/HTMLView';
-import defaultRenderer, {
+import HTMLView, {
+  defaultRenderer,
   wrapTextChildren,
-} from 'WillowCreekApp/src/ui/HTMLView/defaultRenderer';
+} from '@apollosproject/ui-htmlview';
 
 import {
   ScriptureText,

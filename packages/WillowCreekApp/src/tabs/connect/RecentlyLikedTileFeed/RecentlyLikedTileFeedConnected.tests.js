@@ -15,7 +15,7 @@ describe('RecentlyLikedTileFeedConnected', () => {
       },
       result: {
         data: {
-          getAllLikedContent: [
+          likedContent: [
             {
               id: 'UniversalContentItem:296373ecb53580855cadffa0375ebe18',
               __typename: 'UniversalContentItem',
@@ -91,7 +91,7 @@ describe('RecentlyLikedTileFeedConnected', () => {
       },
       result: {
         data: {
-          getAllLikedContent: [],
+          likedContent: [],
         },
       },
     };

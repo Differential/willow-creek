@@ -1,7 +1,7 @@
-import fs from 'fs';
-import Path from 'path';
-import { APP_DATA_URL } from 'react-native-dotenv';
-import fetch from 'node-fetch';
+const fs = require('fs');
+const Path = require('path');
+require('dotenv/config');
+const fetch = require('node-fetch');
 
 const attempts = 0;
 const maxAttempts = 3;
@@ -9,7 +9,7 @@ const timeBetweenAttempts = 5 * 1000;
 
 const getIntrospectionData = async () => {
   try {
-    const query = await fetch(APP_DATA_URL, {
+    const query = await fetch(process.env.APP_DATA_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

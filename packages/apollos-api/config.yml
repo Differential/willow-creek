@@ -11,10 +11,28 @@ APP:
   # This variable is used for generating deep links.
   # It should match whatver is in your Info.plist `CFBundleURLTypes`
   DEEP_LINK_HOST: WillowCreekApp
+  ROOT_API_URL: ${ROOT_URL}
 ROCK:
   API_URL: http://rockdemo.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
   IMAGE_URL: https://apollosrock.newspring.cc/GetImage.ashx
+  # This should match the timezone of the Rock server
+  TIMEZONE: 'America/New_York'
+ONE_SIGNAL:
+  APP_ID: b6e75a77-003f-4466-95ca-82cc5cdc407b
+  REST_KEY: ${ONE_SIGNAL_REST_KEY}
+TWILIO:
+  ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
+  AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
+  FROM_NUMBER: ${TWILIO_FROM_NUMBER}
+PASS:
+  TEMPLATES:
+    CHECKIN: ${PWD}/wallet-passes/checkin.pass
+  CERTIFICATES:
+    WWDR: ${PASS_WWDR_CERT}
+    SIGNER_CERT: ${PASS_SIGNER_CERT}
+    SIGNER_KEY: ${PASS_SIGNER_KEY}
+    SIGNER_KEY_PASSPHRASE: ${PASS_SIGNER_PASSPHRASE}
 ANALYTICS:
   # Filling out these fields will automatically enable analytics tracking
   # on the accompanying service
@@ -22,7 +40,7 @@ ANALYTICS:
   GA_ID:
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
-  BIBLE_ID: "9879dbb7cfe39e4d-01"
+  BIBLE_ID: '9879dbb7cfe39e4d-01'
 CLOUDINARY:
   # Cloudinary is used to improve image loading
   # value should look something like
@@ -38,11 +56,27 @@ ROCK_MAPPINGS:
     COMPONENT_NAME: Apollos Willow Creek Item
     # 512 is "Mobile App"
     CHANNEL_MEDIUM_TYPE_ID: 512
-  CONTENT_ITEM_TYPES:
-    - ContentItem
-    - UniversalContentItem
-    - DevotionalContentItem
-    - MediaContentItem
+
+  CONTENT_ITEM:
+    ContentSeriesContentItem:
+      # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
+      EntityType: ContentChannelItem
+      # Used to define the subset of content channels types that use this specific type.
+      ContentChannelTypeId: [6, 4]
+    DevotionalContentItem:
+      EntityType: ContentChannelItem
+      ContentChannelTypeId: [1]
+    MediaContentItem:
+      EntityType: ContentChannelItem
+    UniversalContentItem:
+      EntityType: ContentChannelItem
+    ContentItem:
+      EntityType: ContentChannelItem
+
+  DATAVIEW_CATEGORIES:
+    # Id of the category used to store all persona dataviews
+    PersonaId: 210
+
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
     - 5
@@ -51,16 +85,6 @@ ROCK_MAPPINGS:
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
     - 4
-
-  SERIES_CONTENT_CHANNEL_TYPE_IDS:
-    - 4
-    - 6
-
-  # The apollos app will show scripture for specific ContentChannelTypeIds, specified here.
-  # As of right now, it will pull from the 'scriptures' field.
-  # Ignore if this doesn't apply to you.
-  DEVOTIONAL_TYPE_IDS:
-    - 1
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

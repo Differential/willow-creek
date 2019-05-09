@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
-
+import { SafeAreaView } from 'react-navigation';
 import { BackgroundView, PaddedView, FeedView } from '@apollosproject/ui-kit';
 
 import PageTitle from 'WillowCreekApp/src/ui/PageTitle';

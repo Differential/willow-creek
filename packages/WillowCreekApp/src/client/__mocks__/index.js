@@ -1,29 +1,39 @@
+import React from 'react';
 import { MockedProvider } from 'react-apollo/test-utils';
 import ApolloClient from 'apollo-client';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 import { SchemaLink } from 'apollo-link-schema';
-import { ApolloLink } from 'apollo-link';
+
 import { testSchema as typeDefs } from 'apollos-church-api';
 
 import cache from '../cache';
-import clientStateLink from '../clientStateLink';
+import { resolvers, schema, defaults } from '../../store';
 
-export default MockedProvider;
+// eslint-disable-next-line
+export default (props) => {
+  let finalProps = props;
+  // eslint-disable-next-line
+  if (!props.mocks) {
+    // eslint-disable-next-line
+    finalProps = { ...props, resolvers };
+  }
+  return <MockedProvider {...finalProps} />;
+};
 
-const schema = makeExecutableSchema({
+const serverSchema = makeExecutableSchema({
   typeDefs,
   resolverValidationOptions: {
     requireResolversForResolveType: false,
   },
 });
-addMockFunctionsToSchema({ schema });
+addMockFunctionsToSchema({ schema: serverSchema });
 
-let link = new SchemaLink({ schema });
-if (clientStateLink) {
-  link = ApolloLink.from([clientStateLink, link]);
-}
+const link = new SchemaLink({ schema: serverSchema });
+cache.writeData({ data: defaults });
 
 export const client = new ApolloClient({
-  cache,
   link,
+  cache,
+  resolvers,
+  typeDefs: schema,
 });

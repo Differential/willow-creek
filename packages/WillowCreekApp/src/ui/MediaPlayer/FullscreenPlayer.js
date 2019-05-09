@@ -6,6 +6,7 @@ import {
   Dimensions,
   PanResponder,
   Platform,
+  StatusBar,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { Query, withApollo } from 'react-apollo';
@@ -214,6 +215,7 @@ class FullscreenPlayer extends PureComponent {
     return (
       <Animated.View style={this.coverStyle}>
         <FullscreenMediaPlayerSafeLayout isFullscreen={isFullscreen}>
+          {isFullscreen ? <StatusBar hidden /> : null}
           {coverFlow}
         </FullscreenMediaPlayerSafeLayout>
       </Animated.View>
