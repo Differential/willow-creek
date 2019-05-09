@@ -79,6 +79,12 @@ class Location extends PureComponent {
 
   render() {
     const { navigation, onFinished } = this.props;
+    // we should use the `onFinished` from the navigation param, if it exists.
+    const handleFinished = this.props.navigation.getParam(
+      'onFinished',
+      onFinished
+    );
+
     return (
       <Query
         query={getAllCampuses}
@@ -126,7 +132,7 @@ class Location extends PureComponent {
                     },
                   });
                   await navigation.goBack();
-                  if (onFinished) onFinished();
+                  if (handleFinished) handleFinished();
                 }}
               />
             )}

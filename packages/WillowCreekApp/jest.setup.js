@@ -1,11 +1,16 @@
+// We ran into an issue where SafeAreaView would break jest tests.
+jest.mock('react-navigation', () => {
+  const ActualNavigation = require.requireActual('react-navigation');
+  return {
+    ...ActualNavigation,
+    SafeAreaView: require.requireActual('SafeAreaView'),
+  };
+});
+
 jest.mock('react-native-config', () => ({
   ONE_SIGNAL_KEY: 'doesntmatter',
 }));
-jest.mock('react-native-custom-tabs', () => ({
-  CustomTabs: {
-    openURL: jest.fn(),
-  },
-}));
+
 jest.mock('Animated', () => {
   const ActualAnimated = require.requireActual('Animated');
   return {
@@ -57,6 +62,7 @@ jest.mock('react-native-device-info', () => ({
 }));
 
 jest.mock('rn-fetch-blob', () => 'Fetch');
+
 jest.mock('@apollosproject/ui-analytics', () => ({
   track: () => '',
   AnalyticsConsumer: ({ children }) => children({ test: jest.fn() }),

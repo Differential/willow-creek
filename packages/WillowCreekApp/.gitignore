@@ -1,9 +1,27 @@
+
 # OSX
 #
 .DS_Store
 
 # Xcode
 #
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# expo
+.expo/
+
+# dependencies
+/node_modules
+
+# storybook
+storyLoader.js
+
+
+# TODO: rename apolloskeystoreupload
+apolloskeystoreupload.keystore
+local.properties
+
+# Xcode
 build/
 *.pbxuser
 !default.pbxuser
@@ -29,6 +47,9 @@ build/
 .gradle
 local.properties
 *.iml
+*.apk
+*.ap_
+keystore.properties
 
 # node.js
 #
@@ -54,3 +75,10 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+

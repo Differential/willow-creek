@@ -1,7 +1,8 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-// import { Sentry } from 'react-native-sentry';
+import SplashScreen from 'react-native-splash-screen';
+
 
 import { BackgroundView, withTheme } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
@@ -15,31 +16,35 @@ import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
 import ChangePassword from './user-settings/ChangePassword';
 import Location from './user-settings/Locations';
-import { LocationFinderMapView } from './ui/Onboarding/slides/LocationFinder';
+import LandingScreen from './LandingScreen';
 import UserWebBrowser from './user-web-browser';
-import Onboarding from './onboarding';
-// Sentry.config(
-//   'https://5908fa19ed37447f86b2717423cadec5:45dd3b58792b413cb67109c5e63a0bb7@sentry.io/1241658'
-// ).install();
+import Onboarding from './ui/Onboarding';
 
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: 'dark-content',
   backgroundColor: theme.colors.paper,
 }))(StatusBar);
 
+
+const ProtectedRouteWithSplashScreen = (props) => {
+  const handleOnRouteChange = () => SplashScreen.hide();
+
+  return <ProtectedRoute {...props} onRouteChange={handleOnRouteChange} />;
+};
+
 const AppNavigator = createStackNavigator(
   {
-    ProtectedRoute,
+    ProtectedRoute: ProtectedRouteWithSplashScreen,
     Tabs,
     ContentSingle,
     Auth,
     PersonalDetails,
     ChangePassword,
     Location,
-    LocationFinderMapView,
     Passes,
     UserWebBrowser,
     Onboarding,
+    LandingScreen,
   },
   {
     initialRouteName: 'ProtectedRoute',

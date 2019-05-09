@@ -28,11 +28,9 @@ GetPhotoData.propTypes = {
   children: PropTypes.func.isRequired,
 };
 
-const StyledAvatar = withTheme(({ theme }) => ({
-  containerStyle: {
-    marginRight: 0,
-    marginBottom: theme.sizing.baseUnit / 2,
-  },
+const StyledAvatar = styled(({ theme }) => ({
+  marginRight: 0,
+  marginBottom: theme.sizing.baseUnit / 2,
 }))(Avatar);
 
 const RoundTouchable = withTheme(({ theme, size }) => ({
