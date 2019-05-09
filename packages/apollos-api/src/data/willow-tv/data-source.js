@@ -23,5 +23,7 @@ export default class LiveStream extends RESTDataSource {
     );
   }
 
-  getFromId = (id) => this.get(id.replace(this.baseURL, ''));
+  getFromId(id){
+    return this.get(id.replace(this.baseURL, ''));
+  }
 }
