@@ -1152,7 +1152,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 7TM8C6252Z;
+						DevelopmentTeam = HBXNNZ69FP;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1957,7 +1957,7 @@
 				CODE_SIGN_ENTITLEMENTS = WillowCreekApp/WillowCreekApp.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 7TM8C6252Z;
+				DEVELOPMENT_TEAM = HBXNNZ69FP;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-airplay-btn/ios",
@@ -1985,7 +1985,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.WillowCreek.WillowCreekPrototype;
+				PRODUCT_BUNDLE_IDENTIFIER = com.customchurchapps.appc2cui2f7;
 				PRODUCT_NAME = WillowCreekApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1998,7 +1998,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WillowCreekApp/WillowCreekApp.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 7TM8C6252Z;
+				DEVELOPMENT_TEAM = HBXNNZ69FP;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-airplay-btn/ios",
@@ -2026,7 +2026,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.WillowCreek.WillowCreekPrototype;
+				PRODUCT_BUNDLE_IDENTIFIER = com.customchurchapps.appc2cui2f7;
 				PRODUCT_NAME = WillowCreekApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
