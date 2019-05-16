@@ -86,10 +86,11 @@ class DevotionalContentItem extends PureComponent {
     loading,
   }) => {
     if (error) return <ErrorCard error={error} />;
+
     // only include scriptures where the references are not null
-    const validScriptures = scriptures.filter(
-      (scripture) => scripture.reference != null
-    );
+    const validScriptures = scriptures
+      ? scriptures.filter((scripture) => scripture.reference != null)
+      : [];
 
     const hasScripture = loading || validScriptures.length;
     const tabRoutes = [{ title: 'Devotional', key: 'content' }];
