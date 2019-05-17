@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@apollosproject/ui-analytics": "^0.8.7-alpha.2",
-    "@apollosproject/ui-auth": "^0.8.7-alpha.2",
+    "@apollosproject/ui-auth": "^0.8.7-alpha.5",
     "@apollosproject/ui-htmlview": "^0.8.7-alpha.2",
     "@apollosproject/ui-kit": "^0.8.7-alpha.2",
     "@apollosproject/ui-onboarding": "^0.8.7-alpha.2",

@@ -52,7 +52,7 @@ function Onboarding({ navigation }) {
           <ApolloConsumer>
             {(client) => (
               <AskNotificationsConnected
-                onPressPrimary={() => navigation.replace('Home')}
+                onPressPrimary={() => navigation.replace('Tabs')}
                 onRequestPushPermissions={() =>
                   requestPushPermissions({ client })
                 }

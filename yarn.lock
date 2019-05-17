@@ -216,10 +216,10 @@
     react-native-device-info "^1.1.0"
     react-native-keyboard-aware-scroll-view "0.7.0"
 
-"@apollosproject/ui-auth@^0.8.7-alpha.2":
-  version "0.8.7-alpha.2"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-auth/-/ui-auth-0.8.7-alpha.2.tgz#7f1cffc4a3a209a5f09b73a688f2b54dff9fe5b5"
-  integrity sha512-sAe5U9hX8E2/ijvvePmNkIhyyrWcHfoRqRe1xd71wvvZGQZhxRJAQEAPZyJnyuC0RtQjkNG+wWR1TC24BXBO1A==
+"@apollosproject/ui-auth@^0.8.7-alpha.5":
+  version "0.8.7-alpha.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-auth/-/ui-auth-0.8.7-alpha.5.tgz#36d5f84eab691ba5c6ccd7bc78fb95da816cebc1"
+  integrity sha512-Kget2xDCoDKke3W9QkR92ghAjj8oVVrPDoc1AkkQcBeBuNO6qdBSn4/erc7b9aiGeBczPsCNnzdORlM/LYwP2Q==
   dependencies:
     apollo-link-context "1.0.14"
     formik "1.5.1"
