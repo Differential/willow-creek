@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BrandLogo from '../../brand/BrandLogo';
 
 import {
   styled,
@@ -18,14 +19,11 @@ const Content = styled({
   justifyContent: 'center',
 })(PaddedView);
 
-const BrandIcon = withTheme(({ theme, color }) => ({
-  name: 'brand-icon',
-  size: theme.sizing.baseUnit * 3,
-  ...(color ? { fill: color } : {}),
-  style: {
-    marginBottom: theme.sizing.baseUnit,
-  },
-}))(Icon);
+const BrandIcon = styled(({ theme, color }) => ({
+  width: theme.sizing.baseUnit * 3,
+  marginBottom: theme.sizing.baseUnit,
+  height: theme.sizing.baseUnit * 3,
+}))(BrandLogo);
 
 const Title = styled(({ theme, color }) => ({
   marginBottom: theme.sizing.baseUnit * 2,
@@ -47,7 +45,7 @@ const LandingScreen = ({
     <Slide {...props} scrollEnabled={false}>
       {BackgroundComponent}
       <Content>
-        <BrandIcon color={textColor} />
+        <BrandIcon />
         <Title color={textColor}>{slideTitle}</Title>
         <StyledH4 color={textColor}>{description}</StyledH4>
       </Content>

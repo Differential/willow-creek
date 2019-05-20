@@ -24,7 +24,7 @@ function Onboarding({ navigation }) {
             onPressPrimary={swipeForward}
             BackgroundComponent={
               <GradientOverlayImage
-                source={'https://picsum.photos/640/640/?random'}
+                source={require('./onboarding_bg.png')}
               />
             }
           />
@@ -32,7 +32,7 @@ function Onboarding({ navigation }) {
             onPressPrimary={swipeForward}
             BackgroundComponent={
               <GradientOverlayImage
-                source={'https://picsum.photos/640/640/?random'}
+                source={require('./onboarding_bg.png')}
               />
             }
           />
@@ -45,7 +45,7 @@ function Onboarding({ navigation }) {
             }}
             BackgroundComponent={
               <GradientOverlayImage
-                source={'https://picsum.photos/640/640/?random'}
+                source={require('./onboarding_bg.png')}
               />
             }
           />
@@ -59,7 +59,7 @@ function Onboarding({ navigation }) {
                 primaryNavText={'Finish'}
                 BackgroundComponent={
                   <GradientOverlayImage
-                    source={'https://picsum.photos/640/640/?random'}
+                    source={require('./onboarding_bg.png')}
                   />
                 }
               />
