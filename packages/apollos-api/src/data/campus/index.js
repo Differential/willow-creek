@@ -7,7 +7,7 @@ const { dataSource, schema } = Campus;
 
 const newResolver = {
   Campus: {
-    image: () => null,
+    image: () => ({ uri: 'https://www.willowcreek.org/-/media/willow-creek/resources/global/hzbni5wg-400x400.jpg' }),
   }
 }
 
