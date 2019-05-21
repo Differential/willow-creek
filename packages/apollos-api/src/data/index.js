@@ -19,7 +19,6 @@ import {
   PersonalDevice,
   Template,
   AuthSms,
-  Campus,
   BinaryFiles,
 } from '@apollosproject/data-connector-rock';
 
@@ -29,6 +28,7 @@ import * as OneSignalWithRock from './oneSignalWithRock';
 import * as ContentItem from './content-items';
 import * as LiveStream from './live';
 import * as Theme from './theme';
+import * as Campus from './campus';
 import * as WillowTVContentItem from './willow-tv';
 import * as WillowCalendarEventContentItem from './calendar-events';
 
