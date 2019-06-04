@@ -7,9 +7,14 @@ import { ProtectedTouchable } from '@apollosproject/ui-auth';
 import { withNavigation } from 'react-navigation';
 
 const LikeIcon = withTheme(
-  ({ theme: { colors: { secondary } = {} } = {}, isLiked } = {}) => ({
+  ({
+    theme: {
+      colors: { text: { primary } },
+      sizing: { baseUnit },
+    }, isLiked } = {}) => ({
     name: isLiked ? 'like-solid' : 'like',
-    fill: secondary,
+    fill: primary,
+    size: baseUnit * 1.5,
   })
 )(Icon);
 

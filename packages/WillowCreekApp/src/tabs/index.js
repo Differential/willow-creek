@@ -15,6 +15,12 @@ const TabNavigator = createBottomTabNavigator(
   {
   	initialRouteName: 'Home',
     tabBarComponent: TabBar,
+    tabBarOptions: {
+      labelStyle: {
+        fontFamily: 'InterUI-Medium',
+        fontSize: 12,
+      },
+    },
     lazy: true,
     removeClippedSubviews: true,
   }

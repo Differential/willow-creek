@@ -6,21 +6,32 @@ import { get } from 'lodash';
 
 import {
   PaddedView,
-  ContentCard,
   ErrorCard,
   styled,
   withTheme,
   Icon,
   H3,
   H6,
+  ContentCard,
 } from '@apollosproject/ui-kit';
 import getContentCard from './query';
+import LikeButton from '../LikeButton';
 
 export query from './query';
 
 const StyledContentCard = styled({
   width: Dimensions.get('window').width * 0.85,
 })(ContentCard);
+
+const CardActions = styled(({ theme: { sizing: { baseUnit }}}) => ({
+  padding: baseUnit * 1.5,
+}))(View);
+
+const CardFooter = styled({
+  position: 'absolute',
+  top: 0,
+  right: 0,
+})(CardActions)
 
 const CardIcon = styled(({ theme }) => ({
   width: theme.sizing.baseUnit * 2,
@@ -56,13 +67,6 @@ const FeaturedContentCardConnected = ({
       {({ data: { node = {} } = {}, loading, error }) => {
         if (error) return <ErrorCard error={error} />;
 
-        const metrics = [
-          {
-            icon: node.isLiked ? 'like-solid' : 'like',
-            value: node.likedCount,
-          },
-        ];
-
         const coverImage = get(node, 'coverImage.sources', undefined);
 
         return (
@@ -82,12 +86,17 @@ const FeaturedContentCardConnected = ({
                 </PaddedView>
               </>
             }
+            footer={
+              <CardFooter floating={true}>
+                <LikeButton itemId={node.id}/>
+              </CardFooter>
+            }
             fixedSize
-            metrics={metrics}
             coverImage={coverImage}
             isLoading={loading}
             theme={cardTheme}
             forceRatio={1}
+            tile={true}
           />
         );
       }}

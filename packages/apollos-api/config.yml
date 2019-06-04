@@ -84,7 +84,7 @@ ROCK_MAPPINGS:
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
-    - 4
+    - 6
   CAMPAIGN_CHANNEL_IDS:
     - 11
 

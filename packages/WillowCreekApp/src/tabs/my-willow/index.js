@@ -21,6 +21,7 @@ import { LiveButton } from 'WillowCreekApp/src/live';
 
 import UpcomingEventsFeed from './UpcomingEventsFeed';
 import TVFeed from './TVFeed';
+import FeaturedCampaign from './FeaturedCampaign'
 
 // import TileContentFeed from '../TileContentFeed';
 // import { LiveButton } from '../../live';
@@ -35,7 +36,7 @@ const CellImage = styled(({ theme }) => ({
 class MyWillow extends PureComponent {
   static navigationOptions = {
     tabBarIcon: Icon,
-    tabBarLabel: 'MY WILLOW',
+    tabBarLabel: 'My Willow',
   };
 
   static propTypes = {
@@ -59,8 +60,8 @@ class MyWillow extends PureComponent {
           <ScrollView>
             <PaddedView vertical={false}>
               <PageTitle padded>My Willow</PageTitle>
-            </PaddedView>
-
+             </PaddedView>
+            <FeaturedCampaign />
             <TVFeed />
 
             <PaddedView style={{ paddingBottom: 0 }}>

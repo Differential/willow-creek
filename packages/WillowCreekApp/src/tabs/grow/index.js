@@ -15,7 +15,7 @@ import Icon from './Icon';
 class Grow extends Component {
   static navigationOptions = {
     tabBarIcon: Icon,
-    tabBarLabel: 'GROW',
+    tabBarLabel: 'Grow',
   };
 
   static propTypes = {

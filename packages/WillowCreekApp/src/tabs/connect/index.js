@@ -22,6 +22,7 @@ const ConnectNavigator = createStackNavigator(
 
 ConnectNavigator.navigationOptions = {
   tabBarIcon: tabBarIcon('profile'),
+    tabBarLabel: 'Profile',
 };
 
 export default ConnectNavigator;
