@@ -10,7 +10,7 @@ import {
   ChannelLabel,
   UIText,
 } from '@apollosproject/ui-kit';
-import { playVideoMutation } from 'WillowCreekApp/src/ui/MediaPlayer/mutations';
+import { playVideoMutation } from '@apollosproject/ui-media-player';
 
 import getLiveStream from './getLiveStream';
 
