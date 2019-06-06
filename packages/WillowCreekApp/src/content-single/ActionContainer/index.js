@@ -1,15 +1,13 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import SafeAreaView from 'react-native-safe-area-view';
+import { Platform, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
-
 import Share from 'WillowCreekApp/src/ui/Share';
 
 import { SideBySideView, styled } from '@apollosproject/ui-kit';
 import LikeButton from 'WillowCreekApp/src/ui/LikeButton';
-import { MediaPlayerSpacer } from 'WillowCreekApp/src/ui/MediaPlayer';
+import { MediaPlayerSpacer } from '@apollosproject/ui-media-player';
 
 import getShareContent from './getShareContent';
 
@@ -22,7 +20,7 @@ const PositioningView = styled(({ theme }) => ({
 const Container = styled(({ theme }) => ({
   backgroundColor: theme.colors.paper,
   ...Platform.select(theme.shadows.default),
-}))(SafeAreaView);
+}))(View);
 
 const ActionContainer = ({ itemId }) => (
   <Container>

@@ -4,8 +4,11 @@ import { contentItemFragment } from 'WillowCreekApp/src/content-single/getConten
 import { largeCardFragment } from 'WillowCreekApp/src/ui/ContentCardConnected';
 
 export default gql`
-  query getUserFeed {
-    userFeed {
+  query getUserFeed($first: Int, $after: String) {
+    userFeed(first: $first, after: $after) {
+      pageInfo {
+        endCursor
+      }
       edges {
         node {
           ...largeCardFragment

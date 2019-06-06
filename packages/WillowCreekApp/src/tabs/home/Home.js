@@ -11,7 +11,10 @@ import {
   BackgroundView,
   H3,
   H6,
+  TouchableScale,
 } from '@apollosproject/ui-kit';
+
+import fetchMoreResolver from '../../utils/fetchMoreResolver';
 import ContentCardConnected from '../../ui/ContentCardConnected';
 
 import { LiveButton } from '../../live';
@@ -55,13 +58,26 @@ class Home extends PureComponent {
     return (
       <BackgroundView>
         <SafeAreaView>
-          <Query query={getUserFeed} fetchPolicy="cache-and-network">
-            {({ loading, error, data, refetch }) => (
+          <Query
+            query={getUserFeed}
+            variables={{
+              first: 10,
+              after: null,
+            }}
+            fetchPolicy="cache-and-network"
+          >
+            {({ loading, error, data, refetch, fetchMore, variables }) => (
               <FeedView
                 ListItemComponent={ContentCardConnected}
                 content={get(data, 'userFeed.edges', []).map(
                   (edge) => edge.node
                 )}
+                fetchMore={fetchMoreResolver({
+                  collectionName: 'userFeed',
+                  fetchMore,
+                  variables,
+                  data,
+                })}
                 isLoading={loading}
                 error={error}
                 refetch={refetch}

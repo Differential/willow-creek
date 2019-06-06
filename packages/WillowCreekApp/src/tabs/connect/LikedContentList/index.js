@@ -4,6 +4,7 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 
 import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
+import fetchMoreResolver from 'WillowCreekApp/src/utils/fetchMoreResolver';
 import ContentCardConnected from '../../../ui/ContentCardConnected';
 
 import getLikedContent from '../getLikedContent';
@@ -41,7 +42,7 @@ class LikedContentList extends PureComponent {
           fetchPolicy="cache-and-network"
           variables={{ first: 20 }}
         >
-          {({ loading, error, data, refetch }) => (
+          {({ loading, error, data, refetch, fetchMore, variables }) => (
             <FeedView
               ListItemComponent={ContentCardConnected}
               content={get(data, 'likedContent.edges', []).map(
@@ -51,6 +52,12 @@ class LikedContentList extends PureComponent {
               error={error}
               refetch={refetch}
               onPressItem={this.handleOnPress}
+              fetchMore={fetchMoreResolver({
+                collectionName: 'likedContent',
+                fetchMore,
+                variables,
+                data,
+              })}
             />
           )}
         </Query>

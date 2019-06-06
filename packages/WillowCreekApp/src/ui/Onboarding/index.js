@@ -12,7 +12,7 @@ import {
   OnboardingSwiper,
 } from '@apollosproject/ui-onboarding';
 
-import { requestPushPermissions } from 'WillowCreekApp/src/notifications';
+import { requestPushPermissions } from '@apollosproject/ui-notifications';
 
 function Onboarding({ navigation }) {
   return (

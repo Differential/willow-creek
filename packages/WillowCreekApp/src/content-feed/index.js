@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 
 import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
+import fetchMoreResolver from 'WillowCreekApp/src/utils/fetchMoreResolver';
 
 import getContentFeed from './getContentFeed';
 /**
@@ -50,7 +51,7 @@ class ContentFeed extends PureComponent {
           variables={{ itemId }}
           fetchPolicy="cache-and-network"
         >
-          {({ loading, error, data, refetch }) => (
+          {({ loading, error, data, refetch, fetchMore, variables }) => (
             <FeedView
               ListItemComponent={ContentCardConnected}
               content={get(
@@ -58,6 +59,12 @@ class ContentFeed extends PureComponent {
                 'node.childContentItemsConnection.edges',
                 []
               ).map((edge) => edge.node)}
+              fetchMore={fetchMoreResolver({
+                collectionName: 'node.childContentItemsConnection',
+                fetchMore,
+                variables,
+                data,
+              })}
               isLoading={loading}
               error={error}
               refetch={refetch}

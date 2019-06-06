@@ -4,7 +4,6 @@ import { SafeAreaView } from 'react-native';
 import { Query, Mutation } from 'react-apollo';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import {
   TextInput,
@@ -13,10 +12,16 @@ import {
   Button,
   ButtonLink,
   TableView,
+  styled,
 } from '@apollosproject/ui-kit';
 
 import getUserProfile from '../tabs/connect/getUserProfile';
 import updateCurrentUser from './updateCurrentUser';
+
+const Footer = styled({
+  flex: 1,
+  justifyContent: 'flex-end',
+})(SafeAreaView);
 
 class PersonalDetails extends PureComponent {
   static navigationOptions = ({ navigation }) => ({
@@ -39,38 +44,36 @@ class PersonalDetails extends PureComponent {
 
   renderForm = (props) => (
     <FlexedView>
-      <KeyboardAwareScrollView>
-        <TableView>
-          <PaddedView>
-            <TextInput
-              label="First Name"
-              type="text"
-              value={props.values.firstName}
-              error={props.touched.firstName && props.errors.firstName}
-              onChangeText={(text) => props.setFieldValue('firstName', text)}
-            />
-            <TextInput
-              label="Last Name"
-              type="text"
-              value={props.values.lastName}
-              error={props.touched.lastName && props.errors.lastName}
-              onChangeText={(text) => props.setFieldValue('lastName', text)}
-            />
-          </PaddedView>
-        </TableView>
-        <TableView>
-          <PaddedView>
-            <TextInput
-              label="Email"
-              type="email"
-              value={props.values.email}
-              error={props.touched.email && props.errors.email}
-              onChangeText={(text) => props.setFieldValue('email', text)}
-            />
-          </PaddedView>
-        </TableView>
-      </KeyboardAwareScrollView>
-      <SafeAreaView>
+      <TableView>
+        <PaddedView>
+          <TextInput
+            label="First Name"
+            type="text"
+            value={props.values.firstName}
+            error={props.touched.firstName && props.errors.firstName}
+            onChangeText={(text) => props.setFieldValue('firstName', text)}
+          />
+          <TextInput
+            label="Last Name"
+            type="text"
+            value={props.values.lastName}
+            error={props.touched.lastName && props.errors.lastName}
+            onChangeText={(text) => props.setFieldValue('lastName', text)}
+          />
+        </PaddedView>
+      </TableView>
+      <TableView>
+        <PaddedView>
+          <TextInput
+            label="Email"
+            type="email"
+            value={props.values.email}
+            error={props.touched.email && props.errors.email}
+            onChangeText={(text) => props.setFieldValue('email', text)}
+          />
+        </PaddedView>
+      </TableView>
+      <Footer>
         <PaddedView>
           <Button
             disabled={!props.isValid || props.isSubmitting}
@@ -79,7 +82,7 @@ class PersonalDetails extends PureComponent {
             loading={props.isSubmitting}
           />
         </PaddedView>
-      </SafeAreaView>
+      </Footer>
     </FlexedView>
   );
 

@@ -25,6 +25,8 @@ class ContentSingle extends PureComponent {
 
   static navigationOptions = {
     header: NavigationHeader,
+    headerTransparent: true,
+    headerMode: 'float',
   };
 
   get itemId() {

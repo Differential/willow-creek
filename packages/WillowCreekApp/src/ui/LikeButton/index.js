@@ -39,6 +39,7 @@ const UpdateLikeStatus = ({
           updateLikeEntity: {
             id: itemId, // unknown at this time
             isLiked: !isLiked,
+            likedCount: 0, // field required but exact value is not needed
             __typename: item && item.__typename,
           },
         }}
