@@ -67,18 +67,29 @@ const overrides = {
   'InputUnderline.focused': {
     backgroundColor: '#ffffff',
   },
-  'Slide.NavWrapper': {
-    justifyContent: 'space-around',
-    alignItems: 'stretch',
-    flexDirection: 'column',
-  },
+  // 'Slide.NavWrapper': {
+  //   justifyContent: 'space-around',
+  //   alignItems: 'stretch',
+  //   flexDirection: 'column',
+  // },
   'Onboarding.PrimaryButton': {
     backgroundColor: '#ffffff',
+    borderColor: '#ffffff',
     flex: 1,
-    borderRadius: 8,
+    // borderRadius: 8,
   },
   'Onboarding.SkipButton': {
-    alignSelf: 'flex-end',
+    // alignSelf: 'flex-end',
+  },
+  'OnboardingSwiper.PaginationDot.Active': {
+    backgroundColor: '#ffffff',
+  },
+  'OnboardingSwiper.PaginationDot': {
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+  },
+  'DateInput.Chip': {
+    backgroundColor: 'transparent',
+    borderColor: 'white',
   }
   // H4: {
   //   lineHeight: 16,

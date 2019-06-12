@@ -3,7 +3,7 @@ import React from 'react';
 import { withThemeMixin, GradientOverlayImage, styled } from '@apollosproject/ui-kit';
 import { ApolloConsumer } from 'react-apollo';
 import { Image } from 'react-native';
-import AskNameWithBackgroundImage from './AskNameWithBackgroundImage.js';
+import AskName from './AskName.js';
 import AboutYouWithFirstName from './AboutYouWithFirstName';
 import AskNotifications from './AskNotifications';
 import LocationFinder from './LocationFinder';
@@ -17,37 +17,18 @@ const BackgroundImage = styled({ position: 'absolute', width: '100%', height: '1
 
 function Onboarding({ navigation }) {
   return (
-    <OnboardingSwiper showsPagination={false}>
+    <>
+    <BackgroundImage
+      source={require('./onboarding_bg.png')}
+    />
+    <OnboardingSwiper>
       {({ swipeForward }) => (
         <>
-          <AskNameWithBackgroundImage
+          <AskName
             onPressPrimary={swipeForward}
-            BackgroundComponent={
-              <BackgroundImage
-                source={require('./onboarding_bg.png')}
-              />
-            }
           />
           <AboutYouWithFirstName
             onPressPrimary={swipeForward}
-            BackgroundComponent={
-              <BackgroundImage
-                source={require('./onboarding_bg.png')}
-              />
-            }
-          />
-          <LocationFinder
-            onPressPrimary={swipeForward}
-            onNavigate={() => {
-              navigation.navigate('Location', {
-                onFinished: swipeForward,
-              });
-            }}
-            BackgroundComponent={
-              <BackgroundImage
-                source={require('./onboarding_bg.png')}
-              />
-            }
           />
           <ApolloConsumer>
             {(client) => (
@@ -57,17 +38,13 @@ function Onboarding({ navigation }) {
                   requestPushPermissions({ client })
                 }
                 primaryNavText={'Finish'}
-                BackgroundComponent={
-              <BackgroundImage
-                source={require('./onboarding_bg.png')}
-              />
-                }
               />
             )}
           </ApolloConsumer>
         </>
       )}
     </OnboardingSwiper>
+    </>
   );
 }
 

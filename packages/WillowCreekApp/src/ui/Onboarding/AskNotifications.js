@@ -8,8 +8,10 @@ import {
   PaddedView,
   Button,
 } from '@apollosproject/ui-kit';
+import { Image, View, Text } from 'react-native';
 
 import { Slide, SlideContent} from '@apollosproject/ui-onboarding';
+import { FeatureRow, FeatureText, FeatureImage, Features } from './features'
 
 const StyledSlideContent = styled({
   flex: 1,
@@ -28,21 +30,24 @@ const AskNotifications = memo(
     buttonText,
     buttonDisabled,
     onPressButton,
+    onPressPrimary,
     ...props
   }) => (
-    <Slide {...props}>
+    <Slide {...props} onPressPrimary={null}>
       {BackgroundComponent}
       <StyledSlideContent title={slideTitle} description={description} icon>
-        {buttonDisabled || onPressButton ? (
-          <PaddedView horizontal={false}>
-            <PrimaryButton
-              title={buttonText}
-              onPress={onPressButton}
-              disabled={buttonDisabled}
-              pill={false}
-            />
-          </PaddedView>
-        ) : null}
+        <Features horizontal={false}>
+          <FeatureRow><FeatureImage source={require('./assets/worship.png')}/><FeatureText>Worship Moments</FeatureText></FeatureRow>
+          <FeatureRow><FeatureImage source={require('./assets/teachings.png')}/><FeatureText>Featured Messages</FeatureText></FeatureRow>
+          <FeatureRow><FeatureImage source={require('./assets/events.png')}/><FeatureText>Community Events</FeatureText></FeatureRow>
+        </Features>
+        <PaddedView horizontal={false}>
+          <PrimaryButton
+            title={buttonDisabled ? 'Continue' : buttonText}
+            onPress={buttonDisabled ? onPressPrimary : onPressButton}
+            pill={false}
+          />
+        </PaddedView>
       </StyledSlideContent>
     </Slide>
   )
