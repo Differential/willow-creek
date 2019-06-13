@@ -6,7 +6,6 @@ import { Image } from 'react-native';
 import AskName from './AskName.js';
 import AboutYouWithFirstName from './AboutYouWithFirstName';
 import AskNotifications from './AskNotifications';
-import LocationFinder from './LocationFinder';
 import {
   OnboardingSwiper,
 } from '@apollosproject/ui-onboarding';

@@ -55,10 +55,10 @@ const overrides = {
   H3: {
     fontFamily: 'Gotham-Bold'
   },
-  'SlideContent.Title': {
+  'Onboarding.SlideContent.Title': {
     color: '#FFFFFF'
   },
-  'SlideContent.Description': {
+  'Onboarding.SlideContent.Description': {
     color: '#FFFFFF'
   },
   'InputUnderline.blurred': {
@@ -72,19 +72,19 @@ const overrides = {
   //   alignItems: 'stretch',
   //   flexDirection: 'column',
   // },
-  'Onboarding.PrimaryButton': {
+  'Onboarding.Slide.PrimaryButton': {
     backgroundColor: '#ffffff',
     borderColor: '#ffffff',
     flex: 1,
     // borderRadius: 8,
   },
-  'Onboarding.SkipButton': {
+  'Onboarding.Slide.SkipButton': {
     // alignSelf: 'flex-end',
   },
-  'OnboardingSwiper.PaginationDot.Active': {
+  'Onboarding.Swiper.PaginationDot.Active': {
     backgroundColor: '#ffffff',
   },
-  'OnboardingSwiper.PaginationDot': {
+  'Onboarding.Swiper.PaginationDot': {
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
   },
   'DateInput.Chip': {

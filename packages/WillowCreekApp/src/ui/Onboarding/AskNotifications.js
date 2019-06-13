@@ -18,7 +18,7 @@ const StyledSlideContent = styled({
   justifyContent: 'space-between',
 })(SlideContent);
 
-const PrimaryButton = styled({}, 'Onboarding.PrimaryButton')(Button)
+const PrimaryButton = styled({}, 'Onboarding.Slide.PrimaryButton')(Button)
 
 // memo = sfc PureComponent 💥
 // eslint-disable-next-line react/display-name
