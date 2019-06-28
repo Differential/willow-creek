@@ -27,7 +27,7 @@ export const defaults = {
   cacheLoaded: false,
 };
 
-const getIsLoggedIn = gql`
+const GET_LOGGED_IN = gql`
   query {
     isLoggedIn @client
   }
@@ -43,7 +43,7 @@ export const resolvers = {
         },
       });
       const { data: { isLoggedIn } = {} } = await client.query({
-        query: getIsLoggedIn,
+        query: GET_LOGGED_IN,
       });
 
       const { pushId } = cache.readQuery({

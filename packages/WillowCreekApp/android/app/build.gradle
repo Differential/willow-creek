@@ -159,14 +159,13 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-passkit-wallet')
        // added this and the two google play packages below when upgraded rn-maps to 0.24.2
     implementation(project(':react-native-maps')){
       exclude group: 'com.google.android.gms', module: 'play-services-base'
       exclude group: 'com.google.android.gms', module: 'play-services-maps'
     }
-    implementation 'com.google.android.gms:play-services-base:10.0.1'
-    implementation 'com.google.android.gms:play-services-maps:10.0.1'
+    implementation 'com.google.android.gms:play-services-base:16.1.0'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
     implementation project(':rn-fetch-blob')
     implementation project(':react-native-webview')
     implementation project(':react-native-video')

@@ -1,4 +1,4 @@
-import { schemaMerge } from '@apollosproject/server-core';
+import { resolverMerge } from '@apollosproject/server-core';
 import {
   Campus,
 } from '@apollosproject/data-connector-rock';
@@ -11,7 +11,7 @@ const newResolver = {
   }
 }
 
-const resolver = schemaMerge(newResolver, Campus)
+const resolver = resolverMerge(newResolver, Campus)
 
 
 export { dataSource, schema, resolver };
