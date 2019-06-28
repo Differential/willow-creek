@@ -8,7 +8,7 @@ import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
 import fetchMoreResolver from 'WillowCreekApp/src/utils/fetchMoreResolver';
 
-import getContentFeed from './getContentFeed';
+import GET_CONTENT_FEED from './getContentFeed';
 /**
  * This is where the component description lives
  * A FeedView wrapped in a query to pull content data.
@@ -47,7 +47,7 @@ class ContentFeed extends PureComponent {
     return (
       <BackgroundView>
         <Query
-          query={getContentFeed}
+          query={GET_CONTENT_FEED}
           variables={{ itemId }}
           fetchPolicy="cache-and-network"
         >

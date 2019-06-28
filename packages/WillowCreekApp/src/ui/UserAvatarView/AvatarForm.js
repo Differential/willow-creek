@@ -12,11 +12,11 @@ import {
   H5,
   styled,
 } from '@apollosproject/ui-kit';
-import getUserProfile from '../../tabs/connect/getUserProfile';
+import GET_USER_PROFILE from '../../tabs/connect/getUserProfile';
 import uploadPhoto from './uploadPhoto';
 
 const GetPhotoData = ({ children }) => (
-  <Query query={getUserProfile}>
+  <Query query={GET_USER_PROFILE}>
     {({ data: { currentUser = {} } = {} }) => {
       const photo = get(currentUser, 'profile.photo');
       return children({ photo });

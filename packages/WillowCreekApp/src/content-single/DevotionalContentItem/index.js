@@ -13,7 +13,7 @@ import {
 import ContentTab from './ContentTab';
 import ScriptureTab from './ScriptureTab';
 
-import getScripture from './getScripture';
+import GET_SCRIPTURE from './getScripture';
 
 const FlexedSafeAreaView = styled({ flex: 1 })(SafeAreaView);
 
@@ -110,7 +110,7 @@ class DevotionalContentItem extends PureComponent {
     return (
       <BackgroundView>
         <FlexedSafeAreaView forceInset={{ top: 'always' }}>
-          <Query query={getScripture} variables={{ itemId: this.props.id }}>
+          <Query query={GET_SCRIPTURE} variables={{ itemId: this.props.id }}>
             {this.renderTabs}
           </Query>
         </FlexedSafeAreaView>

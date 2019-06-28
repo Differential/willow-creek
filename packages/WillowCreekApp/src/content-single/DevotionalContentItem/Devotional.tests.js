@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Providers from 'WillowCreekApp/src/Providers';
 import { renderWithApolloData } from 'WillowCreekApp/src/utils/testUtils';
-import getContentItemContent from '../HTMLContent/getContentItemContent';
-import getScripture from './getScripture';
+import GET_CONTENT_ITEM_CONTENT from '../HTMLContent/getContentItemContent';
+import GET_SCRIPTURE from './getScripture';
 import Devotional from '.';
 
 const content = {
@@ -32,7 +32,7 @@ const scriptures = [
 
 const scriptureMock = {
   request: {
-    query: getScripture,
+    query: GET_SCRIPTURE,
     variables: { itemId: '1' },
   },
   result: {
@@ -44,7 +44,7 @@ const scriptureMock = {
 
 const contentItemHTMLMock = {
   request: {
-    query: getContentItemContent,
+    query: GET_CONTENT_ITEM_CONTENT,
     variables: { contentId: '1' },
   },
   result: {

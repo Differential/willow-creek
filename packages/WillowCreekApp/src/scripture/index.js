@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import { ScriptureItem } from '@apollosproject/ui-scripture';
-import getScripture from './getScripture';
+import GET_SCRIPTURE from './getScripture';
 
 /**
  * This is the data-bound "connected" scripture component.
@@ -15,7 +15,7 @@ const ScriptureConnected = ({
   references,
 }) =>
   references.map((query) => (
-    <Query query={getScripture} variables={{ query }} key={query}>
+    <Query query={GET_SCRIPTURE} variables={{ query }} key={query}>
       {({ loading, data }) => (
         <ScriptureComponent
           reference={get(data, 'scripture.reference', '')}

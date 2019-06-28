@@ -10,9 +10,9 @@ import {
   ChannelLabel,
   UIText,
 } from '@apollosproject/ui-kit';
-import { playVideoMutation } from '@apollosproject/ui-media-player';
 
-import getLiveStream from './getLiveStream';
+import { PLAY_VIDEO } from '@apollosproject/ui-media-player';
+import GET_LIVE_STREAM from './getLiveStream';
 
 const LiveCard = styled(({ theme }) => ({
   backgroundColor: theme.colors.lightSecondary,
@@ -20,7 +20,7 @@ const LiveCard = styled(({ theme }) => ({
 
 const LiveNowButton = () => (
   <Query
-    query={getLiveStream}
+    query={GET_LIVE_STREAM}
     fetchPolicy="cache-and-network"
     pollInterval={60000}
   >
@@ -33,7 +33,7 @@ const LiveNowButton = () => (
       ];
 
       return isLive ? (
-        <Mutation mutation={playVideoMutation}>
+        <Mutation mutation={PLAY_VIDEO}>
           {(play) => (
             <TouchableScale
               onPress={() =>
@@ -62,7 +62,7 @@ const LiveNowButton = () => (
                 </CardContent>
               </LiveCard>
             </TouchableScale>
-          )}g
+          )}
         </Mutation>
       ) : null;
     }}

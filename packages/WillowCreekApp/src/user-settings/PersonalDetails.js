@@ -1,6 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { SafeAreaView } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  StyleSheet,
+  StatusBar,
+  Platform,
+} from 'react-native';
+import { SafeAreaView, Header } from 'react-navigation';
 import { Query, Mutation } from 'react-apollo';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -11,12 +17,11 @@ import {
   FlexedView,
   Button,
   ButtonLink,
-  TableView,
   styled,
 } from '@apollosproject/ui-kit';
 
-import getUserProfile from '../tabs/connect/getUserProfile';
-import updateCurrentUser from './updateCurrentUser';
+import GET_USER_PROFILE from '../tabs/connect/getUserProfile';
+import UPDATE_CURRENT_USER from './updateCurrentUser';
 
 const Footer = styled({
   flex: 1,
@@ -43,8 +48,16 @@ class PersonalDetails extends PureComponent {
   };
 
   renderForm = (props) => (
-    <FlexedView>
-      <TableView>
+    // have to add the offset to account for react-navigation header
+    <KeyboardAvoidingView
+      behavior={'padding'}
+      style={StyleSheet.absoluteFill}
+      keyboardVerticalOffset={
+        Header.HEIGHT +
+        (Platform.OS === 'android' ? StatusBar.currentHeight : 0)
+      }
+    >
+      <FlexedView>
         <PaddedView>
           <TextInput
             label="First Name"
@@ -60,10 +73,6 @@ class PersonalDetails extends PureComponent {
             error={props.touched.lastName && props.errors.lastName}
             onChangeText={(text) => props.setFieldValue('lastName', text)}
           />
-        </PaddedView>
-      </TableView>
-      <TableView>
-        <PaddedView>
           <TextInput
             label="Email"
             type="email"
@@ -72,32 +81,32 @@ class PersonalDetails extends PureComponent {
             onChangeText={(text) => props.setFieldValue('email', text)}
           />
         </PaddedView>
-      </TableView>
-      <Footer>
-        <PaddedView>
-          <Button
-            disabled={!props.isValid || props.isSubmitting}
-            onPress={props.handleSubmit}
-            title="Save"
-            loading={props.isSubmitting}
-          />
-        </PaddedView>
-      </Footer>
-    </FlexedView>
+        <Footer>
+          <PaddedView>
+            <Button
+              disabled={!props.isValid || props.isSubmitting}
+              onPress={props.handleSubmit}
+              title="Save"
+              loading={props.isSubmitting}
+            />
+          </PaddedView>
+        </Footer>
+      </FlexedView>
+    </KeyboardAvoidingView>
   );
 
   render() {
     return (
-      <Query query={getUserProfile} fetchPolicy="cache-and-network">
+      <Query query={GET_USER_PROFILE} fetchPolicy="cache-and-network">
         {({ data: { currentUser = { profile: {} } } = {} }) => {
           const { firstName, lastName, email } = currentUser.profile;
 
           return (
             <Mutation
-              mutation={updateCurrentUser}
+              mutation={UPDATE_CURRENT_USER}
               update={async (cache, { data: { updateProfileFields } }) => {
                 await cache.writeQuery({
-                  query: getUserProfile,
+                  query: GET_USER_PROFILE,
                   data: {
                     currentUser: {
                       ...currentUser,

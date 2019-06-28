@@ -15,8 +15,8 @@ import {
   styled,
 } from '@apollosproject/ui-kit';
 
-import getAuthToken from '../store/getAuthToken';
-import changePassword from './passwordChange';
+import GET_AUTH_TOKEN from '../store/getAuthToken';
+import CHANGE_PASSWORD from './passwordChange';
 
 const Footer = styled({
   flex: 1,
@@ -82,10 +82,10 @@ class ChangePassword extends PureComponent {
   render() {
     return (
       <Mutation
-        mutation={changePassword}
+        mutation={CHANGE_PASSWORD}
         update={async (cache, { data: { token } }) => {
           await cache.writeQuery({
-            query: getAuthToken,
+            query: GET_AUTH_TOKEN,
             data: { authToken: token },
           });
 
