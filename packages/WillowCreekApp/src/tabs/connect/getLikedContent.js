@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
-import { largeCardFragment } from 'WillowCreekApp/src/ui/ContentCardConnected';
-import { contentItemFragment } from 'WillowCreekApp/src/content-single/getContentItem';
+import { LARGE_CARD_FRAGMENT } from 'WillowCreekApp/src/ui/ContentCardConnected';
+import { CONTENT_ITEM_FRAGMENT } from 'WillowCreekApp/src/content-single/getContentItem';
 
 export default gql`
   query getAllLikedContent($first: Int, $after: String) {
@@ -19,6 +19,6 @@ export default gql`
       }
     }
   }
-  ${contentItemFragment}
-  ${largeCardFragment}
+  ${CONTENT_ITEM_FRAGMENT}
+  ${LARGE_CARD_FRAGMENT}
 `;

@@ -9,7 +9,7 @@ import { SideBySideView, styled } from '@apollosproject/ui-kit';
 import LikeButton from 'WillowCreekApp/src/ui/LikeButton';
 import { MediaPlayerSpacer } from '@apollosproject/ui-media-player';
 
-import getShareContent from './getShareContent';
+import GET_SHARE_CONTENT from './getShareContent';
 
 const PositioningView = styled(({ theme }) => ({
   justifyContent: 'space-around',
@@ -27,7 +27,7 @@ const ActionContainer = ({ itemId }) => (
     <MediaPlayerSpacer>
       <PositioningView>
         <LikeButton itemId={itemId} />
-        <Query query={getShareContent} variables={{ itemId }}>
+        <Query query={GET_SHARE_CONTENT} variables={{ itemId }}>
           {({ data: { node } = {}, error, loading }) => {
             const sharing = get(node, 'sharing');
             return loading || error || !sharing ? null : (

@@ -1,0 +1,457 @@
+enum ACTION_FEATURE_ACTION {
+  READ_CONTENT
+}
+
+type ActionListAction {
+  id: ID!
+  title: String
+  subtitle: String
+  image: ImageMedia
+  relatedNode: Node
+  action: ACTION_FEATURE_ACTION
+}
+
+type ActionListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  subtitle: String
+  actions: [ActionListAction]
+}
+
+input AnalyticsDeviceInfo {
+  platform: AnalyticsPlatform
+  deviceId: String
+  deviceModel: String
+  osVersion: String
+  appVersion: String
+}
+
+input AnalyticsIdentifyInput {
+  traits: [AnalyticsMetaField]
+  anonymousId: String!
+  deviceInfo: AnalyticsDeviceInfo
+}
+
+input AnalyticsMetaField {
+  field: String!
+  value: AnalyticsValue
+}
+
+enum AnalyticsPlatform {
+  iOS
+  Android
+}
+
+type AnalyticsResult {
+  success: Boolean
+}
+
+input AnalyticsTrackInput {
+  eventName: String!
+  properties: [AnalyticsMetaField]
+  anonymousId: String
+  deviceInfo: AnalyticsDeviceInfo
+}
+
+scalar AnalyticsValue
+
+type AudioMedia implements Media {
+  name: String
+  key: String
+  sources: [AudioMediaSource]
+}
+
+type AudioMediaSource implements MediaSource {
+  uri: String
+}
+
+type AuthenticatedUser {
+  id: ID!
+  profile: Person
+  rockToken: String
+}
+
+type Authentication {
+  user: AuthenticatedUser
+  token: String
+}
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+type Campus implements Node {
+  id: ID!
+  name: String
+  street1: String
+  street2: String
+  city: String
+  state: String
+  postalCode: String
+  latitude: Float
+  longitude: Float
+  image: ImageMediaSource
+  distanceFromLocation(location: CampusLocationInput): Float
+}
+
+input CampusLocationInput {
+  latitude: Float!
+  longitude: Float!
+}
+
+"""A rgb color string"""
+scalar Color
+
+type ContentChannel implements Node {
+  id: ID!
+  name: String
+  description: String
+  childContentChannels: [ContentChannel]
+  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  iconName: String
+}
+
+interface ContentItem {
+  id: ID!
+  title: String
+  coverImage: ImageMedia
+  images: [ImageMedia]
+  videos: [VideoMedia]
+  audios: [AudioMedia]
+  htmlContent: String
+  summary: String
+  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  parentChannel: ContentChannel
+  theme: Theme
+  isLiked: Boolean
+  likedCount: Int
+  sharing: SharableContentItem
+}
+
+type ContentItemsConnection {
+  edges: [ContentItemsConnectionEdge]
+  pageInfo: PaginationInfo
+}
+
+type ContentItemsConnectionEdge {
+  node: ContentItem
+  cursor: String
+}
+
+input ContentItemsConnectionInput {
+  first: Int
+  after: String
+}
+
+type ContentSeriesContentItem implements ContentItem & Node {
+  id: ID!
+  title: String
+  coverImage: ImageMedia
+  images: [ImageMedia]
+  videos: [VideoMedia]
+  audios: [AudioMedia]
+  htmlContent: String
+  summary: String
+  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  parentChannel: ContentChannel
+  theme: Theme
+  scriptures: [Scripture]
+  isLiked: Boolean
+  likedCount: Int
+  sharing: SharableContentItem
+}
+
+type DevotionalContentItem implements ContentItem & Node {
+  id: ID!
+  title: String
+  coverImage: ImageMedia
+  images: [ImageMedia]
+  videos: [VideoMedia]
+  audios: [AudioMedia]
+  htmlContent: String
+  summary: String
+  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  parentChannel: ContentChannel
+  theme: Theme
+  scriptures: [Scripture]
+  isLiked: Boolean
+  likedCount: Int
+  sharing: SharableContentItem
+}
+
+interface Feature {
+  id: ID!
+  order: Int
+}
+
+enum GENDER {
+  Male
+  Female
+  Unknown
+}
+
+type ImageMedia implements Media {
+  name: String
+  key: String
+  sources: [ImageMediaSource]
+}
+
+type ImageMediaSource implements MediaSource {
+  uri: String
+}
+
+enum LIKE_OPERATION {
+  Like
+  Unlike
+}
+
+input LikeEntityInput {
+  nodeId: ID!
+  operation: LIKE_OPERATION!
+}
+
+type LiveStream {
+  isLive: Boolean
+  eventStartTime: String
+}
+
+interface Media {
+  name: String
+  key: String
+  sources: [MediaSource]
+}
+
+type MediaContentItem implements ContentItem & Node {
+  id: ID!
+  title: String
+  coverImage: ImageMedia
+  images: [ImageMedia]
+  videos: [VideoMedia]
+  audios: [AudioMedia]
+  htmlContent: String
+  summary: String
+  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  parentChannel: ContentChannel
+  theme: Theme
+  scriptures: [Scripture]
+  isLiked: Boolean
+  likedCount: Int
+  sharing: SharableContentItem
+}
+
+enum MediaInputType {
+  IMAGE
+  VIDEO
+  AUDIO
+}
+
+interface MediaSource {
+  uri: String
+}
+
+type Mutation {
+  _placeholder: Boolean
+  updateLikeEntity(input: LikeEntityInput!): ContentItem
+  updateProfileField(input: UpdateProfileInput!): Person
+  updateProfileFields(input: [UpdateProfileInput]!): Person
+  uploadProfileImage(file: Upload!, size: Int!): Person
+  authenticate(identity: String!, password: String!): Authentication
+  changePassword(password: String!): Authentication
+  registerPerson(email: String!, password: String!): Authentication
+  requestSmsLoginPin(phoneNumber: String!): SmsPinResult
+  authenticateWithSms(phoneNumber: String!, pin: String!): Authentication
+  identifySelf(input: AnalyticsIdentifyInput!): AnalyticsResult
+  trackEvent(input: AnalyticsTrackInput!): AnalyticsResult
+  updateUserPushSettings(input: PushSettingsInput!): Person
+  updateUserCampus(campusId: String!): Person
+}
+
+interface Node {
+  id: ID!
+}
+
+type PaginationInfo {
+  startCursor: String
+  endCursor: String
+}
+
+type Pass implements Node {
+  id: ID!
+  type: PassType
+  description: String
+  logo: ImageMediaSource
+  thumbnail: ImageMediaSource
+  barcode: ImageMediaSource
+  primaryFields: [PassField]
+  secondaryFields: [PassField]
+  backgroundColor: Color
+  foregroundColor: Color
+  labelColor: Color
+  logoText: String
+  passkitFileUrl: String
+}
+
+type PassField {
+  key: String!
+  label: String
+  value: String!
+  textAlignment: PassFieldTextAlignment
+}
+
+enum PassFieldTextAlignment {
+  LEFT
+  CENTER
+  RIGHT
+  NATURAL
+}
+
+enum PassType {
+  GENERIC
+}
+
+type Person implements Node {
+  id: ID!
+  firstName: String
+  lastName: String!
+  nickName: String
+  email: String
+  gender: GENDER
+  birthDate: String
+  photo: ImageMediaSource
+  campus: Campus
+}
+
+input PushSettingsInput {
+  enabled: Boolean
+  pushProviderUserId: String
+}
+
+type Query {
+  _placeholder: Boolean
+  node(id: ID!): Node
+  likedContent(first: Int, after: String): ContentItemsConnection
+  contentChannels: [ContentChannel]
+  campaigns: ContentItemsConnection
+  userFeed(first: Int, after: String): ContentItemsConnection
+  personaFeed(first: Int, after: String): ContentItemsConnection
+  currentUser: AuthenticatedUser
+  liveStream: LiveStream
+  scripture(query: String!): Scripture
+  scriptures(query: String!): [Scripture]
+  userPass: Pass
+  campuses(location: CampusLocationInput): [Campus]
+  userFeedFeatures: [Feature]
+}
+
+type Scripture {
+  id: String
+  html: String
+  reference: String
+  copyright: String
+}
+
+interface Sharable {
+  url: String
+  message: String
+  title: String
+}
+
+type SharableContentItem implements Sharable {
+  url: String
+  message: String
+  title: String
+}
+
+type SmsPinResult {
+  success: Boolean
+}
+
+type Theme {
+  type: ThemeType
+  colors: ThemeColors
+}
+
+type ThemeColors {
+  primary: Color
+  secondary: Color
+  screen: Color
+  paper: Color
+  alert: Color
+}
+
+enum ThemeType {
+  LIGHT
+  DARK
+}
+
+type UniversalContentItem implements ContentItem & Node {
+  id: ID!
+  title: String
+  coverImage: ImageMedia
+  images: [ImageMedia]
+  videos: [VideoMedia]
+  audios: [AudioMedia]
+  htmlContent: String
+  summary: String
+  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  parentChannel: ContentChannel
+  theme: Theme
+  isLiked: Boolean
+  likedCount: Int
+  sharing: SharableContentItem
+}
+
+enum UPDATEABLE_PROFILE_FIELDS {
+  FirstName
+  LastName
+  Email
+  NickName
+  Gender
+  BirthDate
+}
+
+input UpdateProfileInput {
+  field: UPDATEABLE_PROFILE_FIELDS!
+  value: String!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type VideoMedia implements Media {
+  name: String
+  key: String
+  sources: [VideoMediaSource]
+  embedHtml: String
+}
+
+type VideoMediaSource implements MediaSource {
+  uri: String
+}
+
+type WeekendContentItem implements ContentItem & Node {
+  id: ID!
+  title: String
+  coverImage: ImageMedia
+  images: [ImageMedia]
+  videos: [VideoMedia]
+  audios: [AudioMedia]
+  htmlContent: String
+  summary: String
+  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  parentChannel: ContentChannel
+  theme: Theme
+  isLiked: Boolean
+  likedCount: Int
+  sharing: SharableContentItem
+  features: [Feature]
+}
+

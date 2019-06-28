@@ -7,7 +7,7 @@ import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 import fetchMoreResolver from 'WillowCreekApp/src/utils/fetchMoreResolver';
 import ContentCardConnected from '../../../ui/ContentCardConnected';
 
-import getLikedContent from '../getLikedContent';
+import GET_LIKED_CONTENT from '../getLikedContent';
 /** A FeedView wrapped in a query to pull content data. */
 class LikedContentList extends PureComponent {
   /** Function for React Navigation to set information in the header. */
@@ -38,7 +38,7 @@ class LikedContentList extends PureComponent {
     return (
       <BackgroundView>
         <Query
-          query={getLikedContent}
+          query={GET_LIKED_CONTENT}
           fetchPolicy="cache-and-network"
           variables={{ first: 20 }}
         >
