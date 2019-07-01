@@ -90,6 +90,12 @@ const overrides = {
   'DateInput.Chip': {
     backgroundColor: 'transparent',
     borderColor: 'white',
+  },
+  'ui-auth.TitleText': {
+    color: '#FFFFFF',
+  },
+  'ui-auth.PromptText': {
+    color: '#FFFFFF'
   }
   // H4: {
   //   lineHeight: 16,

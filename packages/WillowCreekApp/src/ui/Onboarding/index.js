@@ -12,13 +12,12 @@ import {
 
 import { requestPushPermissions } from '@apollosproject/ui-notifications';
 
-const BackgroundImage = styled({ position: 'absolute', width: '100%', height: '100%'})(Image);
+export const BackgroundImage = styled({ position: 'absolute', width: '100%', height: '100%'})((props) => <Image {...props} source={require('./onboarding_bg.png')}/>);
 
 function Onboarding({ navigation }) {
   return (
     <>
     <BackgroundImage
-      source={require('./onboarding_bg.png')}
     />
     <OnboardingSwiper>
       {({ swipeForward }) => (
@@ -47,10 +46,12 @@ function Onboarding({ navigation }) {
   );
 }
 
-Onboarding.navigationOptions = {
+const OnboardingWithTheme = withThemeMixin({ type: 'dark' })(Onboarding);
+
+OnboardingWithTheme.navigationOptions = {
   title: 'Onboarding',
   header: null,
   gesturesEnabled: false,
 };
 
-export default withThemeMixin({ type: 'dark' })(Onboarding);
+export default OnboardingWithTheme;

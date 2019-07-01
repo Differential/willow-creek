@@ -19,6 +19,7 @@ import Location from './user-settings/Locations';
 import LandingScreen from './LandingScreen';
 import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
+import AuthBackground from './ui/AuthBackground'
 
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: 'dark-content',
@@ -32,12 +33,15 @@ const ProtectedRouteWithSplashScreen = (props) => {
   return <ProtectedRoute {...props} onRouteChange={handleOnRouteChange} />;
 };
 
+const AuthWithBackground = (props) => <Auth BackgroundComponent={AuthBackground}/>
+AuthWithBackground.navigationOptions = Auth.navigationOptions;
+
 const AppNavigator = createStackNavigator(
   {
     ProtectedRoute: ProtectedRouteWithSplashScreen,
     Tabs,
     ContentSingle,
-    Auth,
+    Auth: AuthWithBackground,
     PersonalDetails,
     ChangePassword,
     Location,
