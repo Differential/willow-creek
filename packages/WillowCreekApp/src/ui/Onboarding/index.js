@@ -1,80 +1,57 @@
 import React from 'react';
 
-import { GradientOverlayImage } from '@apollosproject/ui-kit';
+import { withThemeMixin, GradientOverlayImage, styled } from '@apollosproject/ui-kit';
 import { ApolloConsumer } from 'react-apollo';
-
+import { Image } from 'react-native';
+import AskName from './AskName.js';
+import AboutYouWithFirstName from './AboutYouWithFirstName';
+import AskNotifications from './AskNotifications';
 import {
-  AskNotificationsConnected,
-  AskNameConnected,
-  FeaturesConnected,
-  AboutYouConnected,
-  LocationFinderConnected,
   OnboardingSwiper,
 } from '@apollosproject/ui-onboarding';
 
 import { requestPushPermissions } from '@apollosproject/ui-notifications';
 
+export const BackgroundImage = styled({ position: 'absolute', width: '100%', height: '100%'})((props) => <Image {...props} source={require('./onboarding_bg.png')}/>);
+
 function Onboarding({ navigation }) {
   return (
+    <>
+    <BackgroundImage
+    />
     <OnboardingSwiper>
       {({ swipeForward }) => (
         <>
-          <AskNameConnected onPressPrimary={swipeForward} />
-          <FeaturesConnected
+          <AskName
             onPressPrimary={swipeForward}
-            BackgroundComponent={
-              <GradientOverlayImage
-                source={require('./onboarding_bg.png')}
-              />
-            }
           />
-          <AboutYouConnected
+          <AboutYouWithFirstName
             onPressPrimary={swipeForward}
-            BackgroundComponent={
-              <GradientOverlayImage
-                source={require('./onboarding_bg.png')}
-              />
-            }
-          />
-          <LocationFinderConnected
-            onPressPrimary={swipeForward}
-            onNavigate={() => {
-              navigation.navigate('Location', {
-                onFinished: swipeForward,
-              });
-            }}
-            BackgroundComponent={
-              <GradientOverlayImage
-                source={require('./onboarding_bg.png')}
-              />
-            }
           />
           <ApolloConsumer>
             {(client) => (
-              <AskNotificationsConnected
+              <AskNotifications
                 onPressPrimary={() => navigation.replace('Tabs')}
                 onRequestPushPermissions={() =>
                   requestPushPermissions({ client })
                 }
                 primaryNavText={'Finish'}
-                BackgroundComponent={
-                  <GradientOverlayImage
-                    source={require('./onboarding_bg.png')}
-                  />
-                }
               />
             )}
           </ApolloConsumer>
         </>
       )}
     </OnboardingSwiper>
+    </>
   );
 }
 
-Onboarding.navigationOptions = {
+const OnboardingWithTheme = withThemeMixin({ type: 'dark' })(Onboarding);
+
+OnboardingWithTheme.navigationOptions = {
   title: 'Onboarding',
   header: null,
   gesturesEnabled: false,
 };
 
-export default Onboarding;
+export default OnboardingWithTheme;

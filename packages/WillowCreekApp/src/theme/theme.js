@@ -15,9 +15,11 @@ const colors = {
   lightPrimary: '#FCFCFC',
   lightSecondary: '#C9C8C7',
   lightTertiary: '#999899',
-
   // Statics
   wordOfChrist: '#8b0000', // only used in Scripture.
+  background: {
+    accent: '#9BCBEB'
+  }
 };
 
 const typography = {
@@ -53,6 +55,48 @@ const overrides = {
   H3: {
     fontFamily: 'Gotham-Bold'
   },
+  'Onboarding.SlideContent.Title': {
+    color: '#FFFFFF'
+  },
+  'Onboarding.SlideContent.Description': {
+    color: '#FFFFFF'
+  },
+  'InputUnderline.blurred': {
+    backgroundColor: '#ffffff',
+  },
+  'InputUnderline.focused': {
+    backgroundColor: '#ffffff',
+  },
+  // 'Slide.NavWrapper': {
+  //   justifyContent: 'space-around',
+  //   alignItems: 'stretch',
+  //   flexDirection: 'column',
+  // },
+  'Onboarding.Slide.PrimaryButton': {
+    backgroundColor: '#ffffff',
+    borderColor: '#ffffff',
+    flex: 1,
+    // borderRadius: 8,
+  },
+  'Onboarding.Slide.SkipButton': {
+    // alignSelf: 'flex-end',
+  },
+  'Onboarding.Swiper.PaginationDot.Active': {
+    backgroundColor: '#ffffff',
+  },
+  'Onboarding.Swiper.PaginationDot': {
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+  },
+  'DateInput.Chip': {
+    backgroundColor: 'transparent',
+    borderColor: 'white',
+  },
+  'ui-auth.TitleText': {
+    color: '#FFFFFF',
+  },
+  'ui-auth.PromptText': {
+    color: '#FFFFFF'
+  }
   // H4: {
   //   lineHeight: 16,
   // },
@@ -66,8 +110,16 @@ const overrides = {
   // },
 };
 
+const buttons = ({ colors: themeColors }) => ({
+  'primary': {
+    fill: '#ffffff',
+    accent: '#00368f', // this should be a global color?
+  }
+})
+
 export default {
   colors,
   typography,
   overrides,
+  buttons,
 };

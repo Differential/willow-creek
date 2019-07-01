@@ -1,8 +1,4 @@
 {
-<<<<<<< ours
-    "version": "0.8.7",
-=======
     "version": "1.0.0",
->>>>>>> theirs
     "environment": "api"
 }
