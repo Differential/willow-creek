@@ -9,7 +9,6 @@ export default class Youtube extends RESTDataSource {
 
   async getFromId(id) {
     const result = await this.get('videos', { part: 'snippet', id });
-    console.log(result.items[0]);
     if (!result.items || !result.items.length) return null;
 
     return result.items[0];
