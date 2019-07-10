@@ -19,9 +19,9 @@ export default class Youtube extends RESTDataSource {
     let campusId = 'DEFAULT';
     try {
       const { id } = await this.context.dataSources.Auth.getCurrentPerson();
-      const { id: rockCampusId } = this.context.dataSources.Campus.getForPerson(
-        { personId: id }
-      );
+      const {
+        id: rockCampusId,
+      } = await this.context.dataSources.Campus.getForPerson({ personId: id });
       campusId = rockCampusId;
     } catch (e) {
       // No campus or no current user.
