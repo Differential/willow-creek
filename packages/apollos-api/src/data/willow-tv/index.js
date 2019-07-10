@@ -1,11 +1,9 @@
 /* eslint-disable camelcase */
 import gql from 'graphql-tag';
 import { createGlobalId } from '@apollosproject/server-core';
-import { get } from 'lodash';
+import ApollosConfig from '@apollosproject/config';
 
 export { default as dataSource } from './data-source';
-
-const toDoPlaylistId = 'UUmFRqL-BDXeaYwMxYDfhu_w'; // TODO
 
 export const schema = gql`
   type WillowTVContentItem implements Node & ContentItem {
@@ -45,7 +43,7 @@ export const resolver = {
   Query: {
     tvFeed: (root, args, { dataSources }) => ({
       edges: dataSources.WillowTVContentItem.getPlaylistItems(
-        toDoPlaylistId
+        ApollosConfig.YOUTUBE.PLAYLIST_ID
       ).then(({ items }) => items.map((node) => ({ node }))),
     }),
   },
@@ -82,7 +80,7 @@ export const resolver = {
 
     parentChannel: () => ({
       __typename: 'ContentChannel',
-      id: createGlobalId(toDoPlaylistId, 'ContentChannel'),
+      id: createGlobalId(ApollosConfig.YOUTUBE.PLAYLIST_ID, 'ContentChannel'),
       name: 'TODO - Channel Name',
       description: 'TODO - Channel Description',
       childContentChannels: [],
