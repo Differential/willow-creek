@@ -42,9 +42,9 @@ export const schema = gql`
 export const resolver = {
   Query: {
     tvFeed: (root, args, { dataSources }) => ({
-      edges: dataSources.WillowTVContentItem.getPlaylistItems(
-        ApollosConfig.YOUTUBE.PLAYLIST_ID
-      ).then(({ items }) => items.map((node) => ({ node }))),
+      edges: dataSources.WillowTVContentItem.getPlaylistItemsForCampus().then(
+        ({ items }) => items.map((node) => ({ node }))
+      ),
     }),
   },
   WillowTVContentItem: {
@@ -80,7 +80,10 @@ export const resolver = {
 
     parentChannel: () => ({
       __typename: 'ContentChannel',
-      id: createGlobalId(ApollosConfig.YOUTUBE.PLAYLIST_ID, 'ContentChannel'),
+      id: async (root, args, { dataSources }) => {
+        const id = await dataSources.WillowTVContentItem.getPlaylistIdForCampus();
+        return createGlobalId(id, 'ContentChannel');
+      },
       name: 'TODO - Channel Name',
       description: 'TODO - Channel Description',
       childContentChannels: [],
