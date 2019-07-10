@@ -21,7 +21,7 @@ import { LiveButton } from 'WillowCreekApp/src/live';
 
 import UpcomingEventsFeed from './UpcomingEventsFeed';
 import TVFeed from './TVFeed';
-import FeaturedCampaign from './FeaturedCampaign'
+import FeaturedCampaign from './FeaturedCampaign';
 
 // import TileContentFeed from '../TileContentFeed';
 // import { LiveButton } from '../../live';
@@ -60,30 +60,9 @@ class MyWillow extends PureComponent {
           <ScrollView>
             <PaddedView vertical={false}>
               <PageTitle padded>My Willow</PageTitle>
-             </PaddedView>
-            <FeaturedCampaign />
-            <TVFeed />
-
-            <PaddedView style={{ paddingBottom: 0 }}>
-              <H5 padded>Engage This Weekend</H5>
             </PaddedView>
-            <TableView>
-              <Cell>
-                <CellImage source={require('./bible-app.png')} />
-                <CellContent>
-                  <H4>Message Notes</H4>
-                  <H6>Follow along with the message!</H6>
-                </CellContent>
-              </Cell>
-              <Divider />
-              <Cell>
-                <CellImage source={require('./locations.png')} />
-                <CellContent>
-                  <H4>Join us live</H4>
-                  <H6>See the schedule and set a reminder</H6>
-                </CellContent>
-              </Cell>
-            </TableView>
+
+            <TVFeed />
 
             <PaddedView style={{ paddingBottom: 0 }}>
               <H5>Coming up</H5>

@@ -1,29 +1,29 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 
-export default class LiveStream extends RESTDataSource {
-  baseURL = 'https://willowcreek.tv/api/';
+export default class Youtube extends RESTDataSource {
+  baseURL = 'https://content.googleapis.com/youtube/v3';
 
-  async getAll() {
-    return this.get('all', null, { ttl: 86400 });
+  willSendRequest = (request) => {
+    request.params.set('key', process.env.YOUTUBE_API_KEY);
+  };
+
+  async getFromId(id) {
+    const result = await this.get('videos', { part: 'snippet', id });
+    console.log(result.items[0]);
+    if (!result.items || !result.items.length) return null;
+
+    return result.items[0];
   }
 
-  async getLiveStream() {
-    return this.get('live');
-  }
-
-  async getLatestService() {
-    const { latestService } = await this.getAll();
-    return latestService;
-  }
-
-  async getArchives() {
-    const { archives } = await this.getAll();
-    return archives.filter(
-      ({ name, series_name, img }) => name && series_name && img // eslint-disable-line camelcase
-    );
-  }
-
-  getFromId(id){
-    return this.get(id.replace(this.baseURL, ''));
-  }
+  getPlaylistItems = (playlistId) =>
+    this.get('playlistItems', {
+      part: 'snippet',
+      playlistId,
+    }).then((result) => ({
+      ...result,
+      items: result.items.map((item) => ({
+        ...item,
+        id: item.snippet.resourceId.videoId,
+      })),
+    }));
 }
