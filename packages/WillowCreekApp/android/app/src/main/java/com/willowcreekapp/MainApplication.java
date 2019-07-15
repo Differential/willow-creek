@@ -3,6 +3,7 @@ package com.willowcreekapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.srfaytkn.reactnative.YouTubeSdkPackage;
 import com.mybdesign.RNPassKit.RNPassKitPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import com.airbnb.android.react.maps.MapsPackage;
@@ -37,6 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new YouTubeSdkPackage(),
             new RNPassKitPackage(),
             new ReactVideoPackage(),
             new MapsPackage(),

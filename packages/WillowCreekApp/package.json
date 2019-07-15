@@ -18,16 +18,16 @@
     "test": "jest"
   },
   "dependencies": {
-    "@apollosproject/ui-analytics": "^1.0.0",
-    "@apollosproject/ui-auth": "^1.0.0",
-    "@apollosproject/ui-htmlview": "^1.0.0",
-    "@apollosproject/ui-kit": "^1.0.0",
-    "@apollosproject/ui-onboarding": "1.0.0",
-    "@apollosproject/ui-passes": "^1.0.0",
-    "@apollosproject/ui-storybook": "^1.0.0-beta.0",
-    "@apollosproject/ui-media-player": "^1.0.0",
-    "@apollosproject/ui-notifications": "^1.0.0",
-    "@apollosproject/ui-scripture": "^1.0.0-beta.0",
+    "@apollosproject/ui-analytics": "^1.0.0-alpha.6",
+    "@apollosproject/ui-auth": "^1.0.0-alpha.20",
+    "@apollosproject/ui-htmlview": "^1.0.1-alpha.14",
+    "@apollosproject/ui-kit": "^1.0.1-alpha.14",
+    "@apollosproject/ui-media-player": "^1.0.1-alpha.15",
+    "@apollosproject/ui-notifications": "^1.0.0-alpha.3",
+    "@apollosproject/ui-onboarding": "^1.0.1-alpha.16",
+    "@apollosproject/ui-passes": "^1.0.1-alpha.14",
+    "@apollosproject/ui-scripture": "^1.0.1-alpha.2",
+    "@apollosproject/ui-storybook": "^1.0.1-alpha.2",
     "apollo-cache-inmemory": "1.5.1",
     "apollo-cache-persist": "0.1.1",
     "apollo-client": "2.5.1",
@@ -67,6 +67,7 @@
     "react-native-video": "^4.4.1",
     "react-native-video-controls": "2.2.3",
     "react-native-webview": "^5.2.0",
+    "react-native-youtube-sdk": "^1.0.1",
     "react-navigation": "2.18.3",
     "react-navigation-tabs": "0.6.0",
     "recompose": "^0.30.0",
@@ -77,6 +78,7 @@
     "yup": "0.26.6"
   },
   "devDependencies": {
+    "@apollosproject/ui-storybook": "^0.8.6",
     "@storybook/addon-actions": "4.1.16",
     "@storybook/addon-links": "4.1.16",
     "@storybook/addons": "4.1.16",
@@ -93,9 +95,7 @@
     "react-native-storybook-loader": "1.8.0",
     "react-native-version": "2.6.2",
     "react-test-renderer": "16.8.3",
-    "prettier": "1.14.2",
-    "waait": "1.0.2",
-    "@apollosproject/ui-storybook": "^0.8.6"
+    "waait": "1.0.2"
   },
   "jest": {
     "preset": "react-native",

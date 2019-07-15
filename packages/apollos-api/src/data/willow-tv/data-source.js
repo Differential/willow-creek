@@ -35,10 +35,10 @@ export default class Youtube extends RESTDataSource {
 
   getPlaylistItemsForCampus = async () => {
     const playlistId = await this.getPlaylistIdForCampus();
-    this.getPlaylistItems(playlistId);
+    return this.getPlaylistItems(playlistId);
   };
 
-  getPlaylistItems = (playlistId) =>
+  getPlaylistItems = async (playlistId) =>
     this.get('playlistItems', {
       part: 'snippet',
       playlistId,

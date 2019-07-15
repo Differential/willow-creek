@@ -43,7 +43,7 @@ export const resolver = {
   Query: {
     tvFeed: (root, args, { dataSources }) => ({
       edges: dataSources.WillowTVContentItem.getPlaylistItemsForCampus().then(
-        ({ items }) => items.map((node) => ({ node }))
+        ({ items = [] } = {}) => items.map((node) => ({ node }))
       ),
     }),
   },
