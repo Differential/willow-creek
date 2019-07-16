@@ -3,7 +3,6 @@ import { StatusBar } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 
-
 import { BackgroundView, withTheme } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
 import { MediaPlayer } from '@apollosproject/ui-media-player';
@@ -19,13 +18,12 @@ import Location from './user-settings/Locations';
 import LandingScreen from './LandingScreen';
 import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
-import AuthBackground from './ui/AuthBackground'
+import AuthBackground from './ui/AuthBackground';
 
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: 'dark-content',
   backgroundColor: theme.colors.paper,
 }))(StatusBar);
-
 
 const ProtectedRouteWithSplashScreen = (props) => {
   const handleOnRouteChange = () => SplashScreen.hide();
@@ -33,7 +31,7 @@ const ProtectedRouteWithSplashScreen = (props) => {
   return <ProtectedRoute {...props} onRouteChange={handleOnRouteChange} />;
 };
 
-const AuthWithBackground = (props) => <Auth BackgroundComponent={AuthBackground}/>
+const AuthWithBackground = () => <Auth BackgroundComponent={AuthBackground} />;
 AuthWithBackground.navigationOptions = Auth.navigationOptions;
 
 const AppNavigator = createStackNavigator(

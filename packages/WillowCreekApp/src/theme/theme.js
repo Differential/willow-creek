@@ -18,8 +18,8 @@ const colors = {
   // Statics
   wordOfChrist: '#8b0000', // only used in Scripture.
   background: {
-    accent: '#9BCBEB'
-  }
+    accent: '#9BCBEB',
+  },
 };
 
 const typography = {
@@ -47,19 +47,19 @@ const typography = {
 
 const overrides = {
   H1: {
-    fontFamily: 'Gotham-Bold'
+    fontFamily: 'Gotham-Bold',
   },
   H2: {
-    fontFamily: 'Gotham-Bold'
+    fontFamily: 'Gotham-Bold',
   },
   H3: {
-    fontFamily: 'Gotham-Bold'
+    fontFamily: 'Gotham-Bold',
   },
   'Onboarding.SlideContent.Title': {
-    color: '#FFFFFF'
+    color: '#FFFFFF',
   },
   'Onboarding.SlideContent.Description': {
-    color: '#FFFFFF'
+    color: '#FFFFFF',
   },
   'InputUnderline.blurred': {
     backgroundColor: '#ffffff',
@@ -95,8 +95,8 @@ const overrides = {
     color: '#FFFFFF',
   },
   'ui-auth.PromptText': {
-    color: '#FFFFFF'
-  }
+    color: '#FFFFFF',
+  },
   // H4: {
   //   lineHeight: 16,
   // },
@@ -110,12 +110,16 @@ const overrides = {
   // },
 };
 
-const buttons = ({ colors: themeColors }) => ({
-  'primary': {
+const buttons = () => ({
+  primary: {
     fill: '#ffffff',
     accent: '#00368f', // this should be a global color?
-  }
-})
+  },
+  ghost: {
+    fill: '#ffffff',
+    accent: '#989A98',
+  },
+});
 
 export default {
   colors,
