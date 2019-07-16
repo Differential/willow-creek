@@ -1,6 +1,6 @@
-import { H4, styled } from '@apollosproject/ui-kit';
+import { H2, styled } from '@apollosproject/ui-kit';
 
-export default styled({
-  textTransform: 'uppercase',
-  letterSpacing: 1,
-})(H4);
+export default styled(({ theme }) => ({
+  marginTop: theme.sizing.baseUnit * 2,
+  marginBottom: theme.sizing.baseUnit / 2,
+}))(H2);
