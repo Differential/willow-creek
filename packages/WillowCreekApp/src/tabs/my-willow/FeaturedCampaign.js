@@ -2,20 +2,15 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { TouchableScale } from '@apollosproject/ui-kit';
 import FeaturedContentCardConnected from 'WillowCreekApp/src/ui/FeaturedContentCardConnected';
-import getCampaignContentItem from './getCampaignContentItem'
 import { get } from 'lodash';
+import getCampaignContentItem from './getCampaignContentItem';
 
 const FeaturedCampaign = () => (
-  <Query
-    query={getCampaignContentItem}
-    fetchPolicy="cache-and-network"
-  >
+  <Query query={getCampaignContentItem} fetchPolicy="cache-and-network">
     {({ data: featuredData, loading: isFeaturedLoading }) => {
-      const featuredContent = get(
-        featuredData,
-        'campaigns.edges',
-        []
-      ).map((edge) => edge.node);
+      const featuredContent = get(featuredData, 'campaigns.edges', []).map(
+        (edge) => edge.node
+      );
 
       const featuredItem = get(
         featuredContent[0],
@@ -25,9 +20,7 @@ const FeaturedCampaign = () => (
 
       return (
         <TouchableScale
-          onPress={() =>
-            this.handleOnPress({ id: featuredItem.id })
-          }
+          onPress={() => this.handleOnPress({ id: featuredItem.id })}
         >
           <FeaturedContentCardConnected
             contentId={featuredItem.id}
@@ -37,6 +30,6 @@ const FeaturedCampaign = () => (
       );
     }}
   </Query>
-)
+);
 
 export default FeaturedCampaign;

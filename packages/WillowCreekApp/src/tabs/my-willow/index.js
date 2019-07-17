@@ -1,19 +1,13 @@
 import React, { PureComponent } from 'react';
-import { ScrollView, StyleSheet, Image } from 'react-native';
+import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import { Query } from 'react-apollo';
+import { get } from 'lodash';
 
 import {
-  TableView,
-  Cell,
-  Divider,
-  H2,
-  H4,
-  H5,
-  H6,
-  CellContent,
+  FeedView,
   PaddedView,
   BackgroundView,
-  styled,
   ThemeMixin,
 } from '@apollosproject/ui-kit';
 
@@ -21,21 +15,15 @@ import { SafeAreaView } from 'react-navigation';
 import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
 import OverlayBackgroundImage from '../../ui/OverlayBackgroundImage';
+import ContentCardConnected from '../../ui/ContentCardConnected';
+import fetchMoreResolver from '../../utils/fetchMoreResolver';
+
 import StretchyView from '../../ui/StretchyView';
-import UpcomingEventsFeed from './UpcomingEventsFeed';
-import TVFeed from './TVFeed';
 import FeaturedCampaign from './FeaturedCampaign';
 
-
-// import TileContentFeed from '../TileContentFeed';
-// import { LiveButton } from '../../live';
+import GET_FEED from './getTVFeed';
 
 import Icon from './Icon';
-
-const CellImage = styled(({ theme }) => ({
-  width: theme.sizing.baseUnit * 4,
-  height: theme.sizing.baseUnit * 4,
-}))(Image);
 
 class MyWillow extends PureComponent {
   static navigationOptions = {
@@ -69,14 +57,44 @@ class MyWillow extends PureComponent {
         >
           {(scrollViewProps) => (
             <SafeAreaView style={StyleSheet.absoluteFill}>
-              <ScrollView {...scrollViewProps}>
-                <ThemeMixin mixin={{ type: 'dark' }}>
-                  <PaddedView>
-                    <PageTitle>My Willow</PageTitle>
-                    <CampusSelectButton bordered />
-                  </PaddedView>
-                </ThemeMixin>
-              </ScrollView>
+              <Query
+                query={GET_FEED}
+                variables={{
+                  first: 10,
+                  after: null,
+                }}
+                fetchPolicy="cache-and-network"
+              >
+                {({ loading, error, data, refetch, fetchMore, variables }) => (
+                  <FeedView
+                    ListItemComponent={ContentCardConnected}
+                    ListHeaderComponent={
+                      <>
+                        <ThemeMixin mixin={{ type: 'dark' }}>
+                          <PaddedView>
+                            <PageTitle>My Willow</PageTitle>
+                            <CampusSelectButton bordered />
+                          </PaddedView>
+                        </ThemeMixin>
+                      </>
+                    }
+                    content={get(data, 'tvFeed.edges', []).map(
+                      (edge) => edge.node
+                    )}
+                    fetchMore={fetchMoreResolver({
+                      collectionName: 'tvFeed',
+                      fetchMore,
+                      variables,
+                      data,
+                    })}
+                    isLoading={loading}
+                    error={error}
+                    refetch={refetch}
+                    onPressItem={this.handleOnPress}
+                    {...scrollViewProps}
+                  />
+                )}
+              </Query>
             </SafeAreaView>
           )}
         </StretchyView>
