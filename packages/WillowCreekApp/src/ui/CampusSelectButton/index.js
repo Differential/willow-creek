@@ -6,8 +6,8 @@ const StyledButton = styled(({ theme }) => ({
   justifyContent: 'space-between',
 }))(Button);
 
-const CampusSelectButton = () => (
-  <StyledButton type="ghost">
+const CampusSelectButton = (props) => (
+  <StyledButton type="ghost" {...props}>
     <H5>Select Campus</H5>
     <Icon name="arrow-down" size={16} />
   </StyledButton>

@@ -21,9 +21,11 @@ import { SafeAreaView } from 'react-navigation';
 import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
 import OverlayBackgroundImage from '../../ui/OverlayBackgroundImage';
+import StretchyView from '../../ui/StretchyView';
 import UpcomingEventsFeed from './UpcomingEventsFeed';
 import TVFeed from './TVFeed';
 import FeaturedCampaign from './FeaturedCampaign';
+
 
 // import TileContentFeed from '../TileContentFeed';
 // import { LiveButton } from '../../live';
@@ -58,19 +60,26 @@ class MyWillow extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        <OverlayBackgroundImage
-          source={{ uri: 'https://picsum.photos/600/600' }}
-        />
-        <SafeAreaView style={StyleSheet.absoluteFill}>
-          <ScrollView>
-            <ThemeMixin mixin={{ type: 'dark' }}>
-              <PaddedView>
-                <PageTitle>My Willow</PageTitle>
-                <CampusSelectButton />
-              </PaddedView>
-            </ThemeMixin>
-          </ScrollView>
-        </SafeAreaView>
+        <StretchyView
+          StretchyComponent={
+            <OverlayBackgroundImage
+              source={{ uri: 'https://picsum.photos/600/600' }}
+            />
+          }
+        >
+          {(scrollViewProps) => (
+            <SafeAreaView style={StyleSheet.absoluteFill}>
+              <ScrollView {...scrollViewProps}>
+                <ThemeMixin mixin={{ type: 'dark' }}>
+                  <PaddedView>
+                    <PageTitle>My Willow</PageTitle>
+                    <CampusSelectButton bordered />
+                  </PaddedView>
+                </ThemeMixin>
+              </ScrollView>
+            </SafeAreaView>
+          )}
+        </StretchyView>
       </BackgroundView>
     );
   }
