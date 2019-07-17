@@ -19,7 +19,6 @@ import ContentCardConnected from '../../ui/ContentCardConnected';
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 
 import StretchyView from '../../ui/StretchyView';
-import FeaturedCampaign from './FeaturedCampaign';
 
 import GET_FEED from './getTVFeed';
 

@@ -30,8 +30,8 @@ import * as ContentItem from './content-items';
 import * as LiveStream from './live';
 import * as Theme from './theme';
 import * as Campus from './campus';
-import * as WillowTVContentItem from './willow-tv';
 import * as WillowCalendarEventContentItem from './calendar-events';
+import * as WillowTVContentItem from './willow-tv';
 
 const data = {
   Followings,
@@ -55,8 +55,8 @@ const data = {
   Pass,
   Template,
   Campus,
-  WillowTVContentItem,
   WillowCalendarEventContentItem,
+  WillowTVContentItem,
   BinaryFiles,
   Features,
 };

@@ -5,7 +5,6 @@ import SplashScreen from 'react-native-splash-screen';
 
 import { BackgroundView, withTheme } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
-import { MediaPlayer } from '@apollosproject/ui-media-player';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 
 import Providers from './Providers';
@@ -19,6 +18,7 @@ import LandingScreen from './LandingScreen';
 import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
 import AuthBackground from './ui/AuthBackground';
+import MediaPlayerYoutube from './ui/MediaPlayerYoutube';
 
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: 'dark-content',
@@ -64,7 +64,7 @@ const App = () => (
           NavigationService.setTopLevelNavigator(navigatorRef);
         }}
       />
-      <MediaPlayer />
+      <MediaPlayerYoutube />
     </BackgroundView>
   </Providers>
 );

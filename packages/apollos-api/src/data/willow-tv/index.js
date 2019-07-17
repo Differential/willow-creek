@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import gql from 'graphql-tag';
 import { createGlobalId } from '@apollosproject/server-core';
-import decode from 'unescape';
+import ApollosConfig from '@apollosproject/config';
 
 export { default as dataSource } from './data-source';
 
@@ -30,102 +30,75 @@ export const schema = gql`
     isLiked: Boolean
   }
 
-  extend type Query {
-    tvFeed: ContentItemsConnection
+  extend type VideoMedia {
+    youtubeId: String
   }
 
-  extend type VideoMedia {
-    label: String
-    thumbnail: ImageMediaSource
+  extend type Query {
+    tvFeed: ContentItemsConnection
   }
 `;
 
 export const resolver = {
   Query: {
     tvFeed: (root, args, { dataSources }) => ({
-      edges: dataSources.WillowTVContentItem.getArchives().then((archives) =>
-        archives.map((node) => ({ node }))
+      edges: dataSources.WillowTVContentItem.getPlaylistItemsForCampus().then(
+        ({ items = [] } = {}) => items.map((node) => ({ node }))
       ),
     }),
   },
   WillowTVContentItem: {
-    id: ({ url }, args, context, { parentType }) =>
-      createGlobalId(`${url}`, parentType.name),
-    title: ({ name }) => decode(name),
-    coverImage: ({ img }) => ({
-      __typename: 'ImageMedia',
-      sources: [{ uri: img }],
-    }),
-    images: ({ img }) => [
-      {
+    id: ({ id }, args, context, { parentType }) =>
+      createGlobalId(`${id}`, parentType.name),
+    title: ({ snippet }) => snippet.title,
+
+    coverImage: ({ snippet }) => {
+      const sources = Object.keys(snippet.thumbnails).map((key) => ({
+        uri: snippet.thumbnails[key].url,
+      }));
+
+      return {
         __typename: 'ImageMedia',
-        sources: [{ uri: img }],
-      },
-    ],
-    audios: [],
-    videos: ({ streamtype, streamurl, additionalFeatures, img }) => [
+        sources,
+      };
+    },
+
+    videos: ({ id }) => [
       {
         __typename: 'VideoMedia',
-        key: streamtype,
-        label: 'Full Verison',
-        thumbnail: { uri: img },
-        sources: [{ uri: streamurl }],
+        key: 'youtube',
+        label: 'Watch now',
+        youtubeId: id,
+        sources: [],
       },
-      ...additionalFeatures
-        .filter(({ name }) => name)
-        .map(
-          ({
-            streamtype: key,
-            streamurl: uri,
-            name: label,
-            img: featureImg,
-          }) => ({
-            __typename: 'VideoMedia',
-            key,
-            label,
-            thumbnail: { uri: featureImg },
-            sources: [{ uri }],
-          })
-        ),
     ],
-    htmlContent: ({ description }) => description,
-    summary: ({ description }) => description,
+
+    htmlContent: ({ snippet }) => snippet.description,
+    summary: ({ snippet }) => snippet.description,
+
     siblingContentItemsConnection: () => null,
-    parentChannel: ({ series_name }) => ({
+
+    parentChannel: () => ({
       __typename: 'ContentChannel',
-      id: createGlobalId(series_name, 'ContentChannel'),
-      name: series_name,
-      description: null,
+      id: async (root, args, { dataSources }) => {
+        const id = await dataSources.WillowTVContentItem.getPlaylistIdForCampus();
+        return createGlobalId(id, 'ContentChannel');
+      },
+      name: 'TODO - Channel Name',
+      description: 'TODO - Channel Description',
       childContentChannels: [],
-      childContentItemsConnection: null,
       iconName: 'play',
     }),
-    sharing: ({ url, name, description }) => ({
+
+    sharing: ({ id, snippet }) => ({
       __typename: 'SharableContentItem',
-      url,
-      title: name,
-      message: description,
+      url: `https://www.youtube.com/watch?v=${id}`,
+      title: snippet.title,
+      message: snippet.description,
     }),
+
     theme: () => null,
-    likedCount: () =>
-      null /* ({ series_name, name, date }, args, { dataSources }) =>
-      dataSources.Interactions.getCountByOperationForContentItem({
-        contentItemId: createGlobalId(
-          `${series_name}${name}${date}`,
-          'WillowTVContentItem'
-        ),
-        operation: 'Like',
-      }), */,
-    isLiked: () =>
-      null /* ({ series_name, name, date }, ...args) =>
-      ContentItem.resolver.UniversalContentItem.isLiked(
-        {
-          id: createGlobalId(
-            `${series_name}${name}${date}`,
-            'WillowTVContentItem'
-          ),
-        },
-        ...args
-      ), */,
+    likedCount: () => null, // TODO: How to expose youtube stats?
+    isLiked: () => null,
   },
 };

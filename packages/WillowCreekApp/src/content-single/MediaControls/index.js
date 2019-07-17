@@ -54,7 +54,14 @@ class MediaControls extends PureComponent {
   }) => {
     if (loading || error) return null;
 
-    const videoSource = get(videos, '[0].sources[0]', null);
+    const video = get(videos, '[0]') || null;
+    let videoSource;
+    if (video.youtubeId) {
+      videoSource = { uri: video.youtubeId, __typename: 'YoutubeVideoSource' };
+    } else {
+      videoSource = get(video, 'sources[0]', null);
+    }
+
     const coverImageSources = (coverImage && coverImage.sources) || [];
 
     return (
