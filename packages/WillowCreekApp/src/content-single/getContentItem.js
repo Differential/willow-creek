@@ -26,16 +26,6 @@ export const CONTENT_ITEM_FRAGMENT = gql`
       id
       name
     }
-    videos {
-      sources {
-        uri
-      }
-    }
-    audios {
-      sources {
-        uri
-      }
-    }
   }
 `;
 

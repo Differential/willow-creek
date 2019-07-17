@@ -9,7 +9,10 @@ export const resolver = {
     __resolveType: async (attrs, ...otherProps) => {
       if (Object.hasOwnProperty.call(attrs, 'eventOccurrenceId'))
         return 'WillowCalendarEventContentItem';
-      if (Object.hasOwnProperty.call(attrs, 'series_name'))
+      if (
+        Object.hasOwnProperty.call(attrs, 'kind') &&
+        attrs.kind.includes('youtube')
+      )
         return 'WillowTVContentItem';
       return ContentItem.resolver.ContentItem.__resolveType(
         attrs,

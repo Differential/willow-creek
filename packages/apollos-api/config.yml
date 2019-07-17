@@ -27,6 +27,12 @@ TWILIO:
   ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
   AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
   FROM_NUMBER: ${TWILIO_FROM_NUMBER}
+YOUTUBE:
+  API_KEY: ${YOUTUBE_API_KEY}
+  PLAYLIST_FOR_CAMPUS:
+    DEFAULT: 'UUmFRqL-BDXeaYwMxYDfhu_w'
+    # This is not a real ID ;)
+    123: 'UUmFRqL-BDXeaYwMxYDfhu_w'
 PASS:
   TEMPLATES:
     CHECKIN: ${PWD}/wallet-passes/checkin.pass
@@ -43,11 +49,11 @@ ANALYTICS:
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID: '9879dbb7cfe39e4d-01'
-CLOUDINARY:
+# CLOUDINARY:
   # Cloudinary is used to improve image loading
   # value should look something like
   # cloudinary://123123123:adkfnla_adASDv_adAS@test
-  URL: ${CLOUDINARY_URL}
+  # URL: ${CLOUDINARY_URL}
 
 # This key holds various properties that allow our GraphQL server to map to your Rock Instance
 ROCK_MAPPINGS:
@@ -64,7 +70,7 @@ ROCK_MAPPINGS:
       # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
       EntityType: ContentChannelItem
       # Used to define the subset of content channels types that use this specific type.
-      ContentChannelTypeId: [6, 4]
+      ContentChannelTypeId: [6]
     DevotionalContentItem:
       EntityType: ContentChannelItem
       ContentChannelTypeId: [1]
@@ -88,7 +94,9 @@ ROCK_MAPPINGS:
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
-    - 6
+    - 5
+    - 4
+    - 3
   CAMPAIGN_CHANNEL_IDS:
     - 11
 
