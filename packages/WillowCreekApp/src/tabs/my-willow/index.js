@@ -16,11 +16,13 @@ import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
 import OverlayBackgroundImage from '../../ui/OverlayBackgroundImage';
 import ContentCardConnected from '../../ui/ContentCardConnected';
+import FindCampusAd from '../../ui/FindCampusAd';
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 
 import StretchyView from '../../ui/StretchyView';
 
 import GET_FEED from './getTVFeed';
+import GET_USER_CAMPUS from './getUserCampus';
 
 import Icon from './Icon';
 
@@ -44,7 +46,11 @@ class MyWillow extends PureComponent {
       transitionKey: item.transitionKey,
     });
 
-  render() {
+  renderNoCampusContent() {
+    return <FindCampusAd />;
+  }
+
+  renderMyWillowContent() {
     return (
       <BackgroundView>
         <StretchyView
@@ -98,6 +104,21 @@ class MyWillow extends PureComponent {
           )}
         </StretchyView>
       </BackgroundView>
+    );
+  }
+
+  render() {
+    return (
+      <Query query={GET_USER_CAMPUS} fetchPolicy="cache-and-network">
+        {({
+          data: { currentUser: { profile: { campus } = {} } = {} } = {},
+          loading,
+        }) =>
+          campus || loading
+            ? this.renderMyWillowContent()
+            : this.renderNoCampusContent()
+        }
+      </Query>
     );
   }
 }
