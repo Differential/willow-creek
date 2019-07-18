@@ -11,12 +11,11 @@ import {
   FlexedView,
   styled,
   withTheme,
-  CampusCard,
 } from '@apollosproject/ui-kit';
 
 import Marker from './Marker';
 
-const { CARD_WIDTH } = CampusCard;
+import CampusCard, { CARD_WIDTH } from './CampusCard';
 
 const FlexedMapView = styled({ flex: 1 })(({ mapRef, ...props }) => (
   <RNMapView ref={mapRef} {...props} />
