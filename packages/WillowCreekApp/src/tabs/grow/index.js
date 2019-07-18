@@ -37,8 +37,8 @@ class Grow extends Component {
       <BackgroundView>
         <SafeAreaView style={StyleSheet.absoluteFill}>
           <ScrollView>
-            <PaddedView vertical={false}>
-              <PageTitle padded>Grow</PageTitle>
+            <PaddedView>
+              <PageTitle>Grow</PageTitle>
             </PaddedView>
             <Query query={getUserFeed} fetchPolicy="cache-and-network">
               {({ loading, error, data, refetch }) => (

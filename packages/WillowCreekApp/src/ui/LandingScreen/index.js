@@ -76,7 +76,7 @@ LandingScreen.propTypes = {
 LandingScreen.defaultProps = {
   slideTitle: "We're glad you're here.",
   description:
-    "At Willow we seek to connect with God in deeper ways and to grow in our relationships with Him and with one another.",
+    'At Willow we seek to connect with God in deeper ways and to grow in our relationships with Him and with one another.',
 };
 
 LandingScreen.navigationOptions = {

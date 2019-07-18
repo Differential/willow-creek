@@ -1,25 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@apollosproject/ui-storybook';
-import { Image } from 'react-native';
-import { styled } from '@apollosproject/ui-kit';
-import Onboarding from '.';
+import BackgroundImage from '../CityBackgroundImage';
 import AskNotifications from './AskNotifications';
-
-const BackgroundImage = styled({ position: 'absolute', width: '100%', height: '100%'})(Image);
+import Onboarding from '.';
 
 storiesOf('Onboarding', module)
   .add('full', () => <Onboarding />)
   .add('AskNotifications', () => (
     <AskNotifications
       onPressPrimary={() => ({})}
-      onRequestPushPermissions={() =>
-        () => ({})
-      }
+      onRequestPushPermissions={() => () => ({})}
       primaryNavText={'Finish'}
-      BackgroundComponent={
-        <BackgroundImage
-          source={require('./onboarding_bg.png')}
-        />
-      }
+      BackgroundComponent={<BackgroundImage />}
     />
   ));

@@ -1,24 +1,21 @@
-import { AskNotificationsConnected } from '@apollosproject/ui-onboarding';
-import BrandIcon from '../BrandIcon';
+import {
+  AskNotificationsConnected,
+  Slide,
+  SlideContent,
+} from '@apollosproject/ui-onboarding';
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  styled,
-  PaddedView,
-  Button,
-} from '@apollosproject/ui-kit';
-import { Image, View, Text } from 'react-native';
+import { styled, PaddedView, Button } from '@apollosproject/ui-kit';
 
-import { Slide, SlideContent} from '@apollosproject/ui-onboarding';
-import { FeatureRow, FeatureText, FeatureImage, Features } from './features'
+import { FeatureRow, FeatureText, FeatureImage, Features } from './features';
 
 const StyledSlideContent = styled({
   flex: 1,
   justifyContent: 'space-between',
 })(SlideContent);
 
-const PrimaryButton = styled({}, 'Onboarding.Slide.PrimaryButton')(Button)
+const PrimaryButton = styled({}, 'Onboarding.Slide.PrimaryButton')(Button);
 
 // memo = sfc PureComponent 💥
 // eslint-disable-next-line react/display-name
@@ -30,16 +27,24 @@ const AskNotifications = memo(
     buttonText,
     buttonDisabled,
     onPressButton,
-    onPressPrimary,
     ...props
   }) => (
     <Slide {...props} onPressPrimary={null}>
       {BackgroundComponent}
       <StyledSlideContent title={slideTitle} description={description} icon>
         <Features horizontal={false}>
-          <FeatureRow><FeatureImage source={require('./assets/worship.png')}/><FeatureText>Worship Moments</FeatureText></FeatureRow>
-          <FeatureRow><FeatureImage source={require('./assets/teachings.png')}/><FeatureText>Featured Messages</FeatureText></FeatureRow>
-          <FeatureRow><FeatureImage source={require('./assets/events.png')}/><FeatureText>Community Events</FeatureText></FeatureRow>
+          <FeatureRow>
+            <FeatureImage source={require('./assets/worship.png')} />
+            <FeatureText>Worship Moments</FeatureText>
+          </FeatureRow>
+          <FeatureRow>
+            <FeatureImage source={require('./assets/teachings.png')} />
+            <FeatureText>Featured Messages</FeatureText>
+          </FeatureRow>
+          <FeatureRow>
+            <FeatureImage source={require('./assets/events.png')} />
+            <FeatureText>Community Events</FeatureText>
+          </FeatureRow>
         </Features>
         <PaddedView horizontal={false}>
           <PrimaryButton
@@ -78,4 +83,6 @@ AskNotifications.defaultProps = {
   buttonDisabled: false,
 };
 
-export default (props) => (<AskNotificationsConnected {...props} Component={AskNotifications} />);
+export default (props) => (
+  <AskNotificationsConnected {...props} Component={AskNotifications} />
+);

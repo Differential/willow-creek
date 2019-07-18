@@ -16,7 +16,7 @@ const LandingScreen = ({ navigation }) => (
     textColor={'white'}
     BackgroundComponent={
       <FullScreenImage
-        source={require('./ui/Onboarding/onboarding_bg.png')}
+        source={require('./ui/CityBackgroundImage/onboarding_bg.png')}
         ImageComponent={Image}
       />
     }
