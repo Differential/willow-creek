@@ -20,17 +20,19 @@ const FindCampusCard = () => (
     <BackgroundImage />
 
     <Container>
-      <ThemeMixin mixin={{ type: 'dark' }}>
-        <H1>
-          Find Your
-          {'\n'}
-          Willow Campus
-        </H1>
-        <BodyText>
-          Whether you’re a longtime member or just exploring, we’ll help you
-          find the right campus.
-        </BodyText>
-      </ThemeMixin>
+      <PaddedView horizontal={false}>
+        <ThemeMixin mixin={{ type: 'dark' }}>
+          <H1>
+            Find Your
+            {'\n'}
+            Willow Campus
+          </H1>
+          <BodyText>
+            Whether you’re a longtime member or just exploring, we’ll help you
+            find the right campus.
+          </BodyText>
+        </ThemeMixin>
+      </PaddedView>
       <CampusSelectButton />
     </Container>
   </FlexedView>
