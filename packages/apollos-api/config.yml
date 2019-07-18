@@ -50,10 +50,10 @@ BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID: '9879dbb7cfe39e4d-01'
 # CLOUDINARY:
-  # Cloudinary is used to improve image loading
-  # value should look something like
-  # cloudinary://123123123:adkfnla_adASDv_adAS@test
-  # URL: ${CLOUDINARY_URL}
+# Cloudinary is used to improve image loading
+# value should look something like
+# cloudinary://123123123:adkfnla_adASDv_adAS@test
+# URL: ${CLOUDINARY_URL}
 
 # This key holds various properties that allow our GraphQL server to map to your Rock Instance
 ROCK_MAPPINGS:
@@ -99,6 +99,8 @@ ROCK_MAPPINGS:
     - 3
   CAMPAIGN_CHANNEL_IDS:
     - 11
+
+  HOME_FEATURE_CHANNEL_ID: 5
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
