@@ -56,7 +56,7 @@ class MediaControls extends PureComponent {
 
     const video = get(videos, '[0]') || null;
     let videoSource;
-    if (video.youtubeId) {
+    if (video && video.youtubeId) {
       videoSource = { uri: video.youtubeId, __typename: 'YoutubeVideoSource' };
     } else {
       videoSource = get(video, 'sources[0]', null);

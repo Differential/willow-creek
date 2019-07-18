@@ -20,8 +20,10 @@ import FindCampusAd from '../../ui/FindCampusAd';
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 
 import StretchyView from '../../ui/StretchyView';
+import FeaturesFeed from '../../ui/FeaturesFeed';
+import CampaignFeed from '../../ui/CampaignFeed';
 
-import GET_FEED from './getTVFeed';
+import GET_FEED from './getFeed';
 import GET_USER_CAMPUS from './getUserCampus';
 
 import Icon from './Icon';
@@ -40,15 +42,14 @@ class MyWillow extends PureComponent {
     }),
   };
 
-  handleOnPress = (item) =>
+  handleOnPress = (item) => {
     this.props.navigation.navigate('ContentSingle', {
       itemId: item.id,
       transitionKey: item.transitionKey,
     });
+  };
 
-  renderNoCampusContent() {
-    return <FindCampusAd />;
-  }
+  renderNoCampusContent = () => <FindCampusAd />;
 
   renderMyWillowContent() {
     return (
@@ -81,6 +82,12 @@ class MyWillow extends PureComponent {
                             <CampusSelectButton bordered />
                           </PaddedView>
                         </ThemeMixin>
+                        {/*
+                          TODO: These two components current exists on both the My Willow and Grow tabs.
+                          Their queries need to be adjusted for the proper logic for each tab
+                        */}
+                        <CampaignFeed onPressItem={this.handleOnPress} />
+                        <FeaturesFeed onPressItem={this.handleOnPress} />
                       </>
                     }
                     content={get(data, 'tvFeed.edges', []).map(
