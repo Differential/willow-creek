@@ -42,11 +42,12 @@ class MyWillow extends PureComponent {
     }),
   };
 
-  handleOnPress = (item) =>
+  handleOnPress = (item) => {
     this.props.navigation.navigate('ContentSingle', {
       itemId: item.id,
       transitionKey: item.transitionKey,
     });
+  };
 
   renderNoCampusContent = () => <FindCampusAd />;
 

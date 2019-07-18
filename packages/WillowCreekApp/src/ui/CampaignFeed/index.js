@@ -7,7 +7,7 @@ import { TouchableScale } from '@apollosproject/ui-kit';
 import ContentCardConnected from '../ContentCardConnected';
 import GET_CAMPAIGN_CONTENT_ITEM from './getCampaignContentItem';
 
-const CampaignFeed = ({ onItemPress }) => (
+const CampaignFeed = ({ onPressItem }) => (
   <Query query={GET_CAMPAIGN_CONTENT_ITEM} fetchPolicy="cache-and-network">
     {({ data: featuredData, loading: isFeaturedLoading }) => {
       const featuredContent = get(featuredData, 'campaigns.edges', []).map(
@@ -22,7 +22,7 @@ const CampaignFeed = ({ onItemPress }) => (
 
       if (!featuredItem.id && !isFeaturedLoading) return null;
       return (
-        <TouchableScale onPress={() => onItemPress({ id: featuredItem.id })}>
+        <TouchableScale onPress={() => onPressItem({ id: featuredItem.id })}>
           <ContentCardConnected
             contentId={featuredItem.id}
             isLoading={isFeaturedLoading}
@@ -34,7 +34,7 @@ const CampaignFeed = ({ onItemPress }) => (
 );
 
 CampaignFeed.propTypes = {
-  onItemPress: PropTypes.func.isRequired,
+  onPressItem: PropTypes.func.isRequired,
 };
 
 export default CampaignFeed;

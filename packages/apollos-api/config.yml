@@ -97,8 +97,9 @@ ROCK_MAPPINGS:
     - 5
     - 4
     - 3
+
   CAMPAIGN_CHANNEL_IDS:
-    - 11
+    - 8
 
   HOME_FEATURE_CHANNEL_ID: 5
 

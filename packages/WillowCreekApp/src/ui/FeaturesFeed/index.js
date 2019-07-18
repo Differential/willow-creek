@@ -7,14 +7,14 @@ import { H6, H3 } from '@apollosproject/ui-kit';
 import ContentTableCard from '../ContentTableCard';
 import GET_FEED_FEATURES from './getFeedFeatures';
 
-const PersonaFeed = ({ onItemPress }) => (
+const PersonaFeed = ({ onPressItem }) => (
   <Query query={GET_FEED_FEATURES} fetchPolicy="cache-and-network">
     {({ data: features, loading: featuresLoading }) =>
       get(features, 'userFeedFeatures', []).map(
         ({ title, subtitle, actions, id }) => (
           <ContentTableCard
             isLoading={featuresLoading}
-            onPress={onItemPress}
+            onPress={onPressItem}
             key={id}
             header={
               <>
@@ -37,7 +37,7 @@ const PersonaFeed = ({ onItemPress }) => (
 );
 
 PersonaFeed.propTypes = {
-  onItemPress: PropTypes.func.isRequired,
+  onPressItem: PropTypes.func.isRequired,
 };
 
 export default PersonaFeed;
