@@ -1,9 +1,28 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
+import ApollosConfig from '@apollosproject/config';
+import gql from 'graphql-tag';
 
-export const { schema, dataSource } = ContentItem;
+const { schema, dataSource } = ContentItem;
+const { ROCK_MAPPINGS } = ApollosConfig;
 
-export const resolver = {
+const resolver = {
   ...ContentItem.resolver,
+  Query: {
+    growCampaign: (root, args, { dataSources }) =>
+      dataSources.ContentItem.paginate({
+        cursor: dataSources.ContentItem.byContentChannelIds([
+          ROCK_MAPPINGS.GROW_FEATURE_CHANNEL_ID,
+        ]),
+        args,
+      }),
+    myWillowCampaign: (root, args, { dataSources }) =>
+      dataSources.ContentItem.paginate({
+        cursor: dataSources.ContentItem.byContentChannelIds([
+          ROCK_MAPPINGS.MY_WILLOW_FEATURE_CHANNEL_ID,
+        ]),
+        args,
+      }),
+  },
   ContentItem: {
     ...ContentItem.resolver.ContentItem,
     __resolveType: async (attrs, ...otherProps) => {
@@ -21,3 +40,13 @@ export const resolver = {
     },
   },
 };
+
+const overrideSchema = gql`
+  ${schema}
+  extend type Query {
+    growCampaign: ContentItemsConnection
+    myWillowCampaign: ContentItemsConnection
+  }
+`;
+
+export { dataSource, resolver, overrideSchema as schema };
