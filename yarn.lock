@@ -228,10 +228,24 @@
     entities "^1.1.2"
     htmlparser2 "3.9.2"
 
-"@apollosproject/ui-kit@^1.0.1-alpha.14", "@apollosproject/ui-kit@^1.0.1-alpha.14+d056ff5":
+"@apollosproject/ui-kit@^1.0.1-alpha.14+d056ff5":
   version "1.0.1-alpha.14"
   resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.0.1-alpha.14.tgz#fd1fd488ba4c6067bbc50e38c2a49428fbabd5f9"
   integrity sha512-pBcxZDyZiMPv0hPIMVd8ThWORZwr+Qjy5OeVVDfKhXsKKtFDtNKatKqosQPqoWL3khUrOLPo/z9G2Vz7Ip34lQ==
+  dependencies:
+    color "^3.1.0"
+    lodash "^4.17.11"
+    moment "^2.24.0"
+    numeral "^2.0.6"
+    react-native-modal-datetime-picker "6.0.0"
+    react-native-tab-view "1.0.2"
+    recompose "^0.30.0"
+    rn-placeholder "1.2.0"
+
+"@apollosproject/ui-kit@^1.1.0-alpha.6":
+  version "1.1.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.1.0-alpha.6.tgz#20d81fc8ea0dd6563a05ccafe95a3cc12a828a65"
+  integrity sha512-xca8bUnEWd2rQrSbdSVnbQCJ67dtJMHITL7Hh7uLqN/vWc4wG3e0litunErpQTykBvVM0u3/ix7LrcamaVcikg==
   dependencies:
     color "^3.1.0"
     lodash "^4.17.11"

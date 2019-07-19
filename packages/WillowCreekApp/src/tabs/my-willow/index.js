@@ -11,6 +11,8 @@ import {
   ThemeMixin,
 } from '@apollosproject/ui-kit';
 
+import FeaturedCard from '@apollosproject/ui-kit/src/FeaturedCard';
+
 import { SafeAreaView } from 'react-navigation';
 import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
@@ -20,8 +22,8 @@ import FindCampusAd from '../../ui/FindCampusAd';
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 
 import StretchyView from '../../ui/StretchyView';
-import FeaturesFeed from '../../ui/FeaturesFeed';
-import CampaignFeed from '../../ui/CampaignFeed';
+// import FeaturesFeed from '../../ui/FeaturesFeed';
+// import CampaignFeed from '../../ui/CampaignFeed';
 
 import GET_FEED from './getFeed';
 import GET_USER_CAMPUS from './getUserCampus';
@@ -57,6 +59,7 @@ class MyWillow extends PureComponent {
         <StretchyView
           StretchyComponent={
             <OverlayBackgroundImage
+              style={{ aspectRatio: 0.8 }}
               source={{ uri: 'https://picsum.photos/600/600' }}
             />
           }
@@ -73,7 +76,14 @@ class MyWillow extends PureComponent {
               >
                 {({ loading, error, data, refetch, fetchMore, variables }) => (
                   <FeedView
-                    ListItemComponent={ContentCardConnected}
+                    ListItemComponent={({ title, coverImage, summary }) => (
+                      <FeaturedCard
+                        title={title}
+                        image={coverImage.sources}
+                        description={summary}
+                        hasAction
+                      />
+                    )}
                     ListHeaderComponent={
                       <>
                         <ThemeMixin mixin={{ type: 'dark' }}>
@@ -82,12 +92,6 @@ class MyWillow extends PureComponent {
                             <CampusSelectButton bordered />
                           </PaddedView>
                         </ThemeMixin>
-                        {/*
-                          TODO: These two components current exists on both the My Willow and Grow tabs.
-                          Their queries need to be adjusted for the proper logic for each tab
-                        */}
-                        <CampaignFeed onPressItem={this.handleOnPress} />
-                        <FeaturesFeed onPressItem={this.handleOnPress} />
                       </>
                     }
                     content={get(data, 'tvFeed.edges', []).map(

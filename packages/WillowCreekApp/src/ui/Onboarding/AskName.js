@@ -17,6 +17,7 @@ import {
 // eslint-disable-next-line react/display-name
 const AskName = memo(
   ({
+    BackgroundComponent,
     onPressPrimary,
     slideTitle,
     description,
@@ -52,7 +53,7 @@ const AskName = memo(
                   get(touched, 'firstName', false) &&
                   get(errors, 'firstName', null)
                 }
-                onChangeText={(text) => setFieldValue('firstName', text)}
+                onChangeText={text => setFieldValue('firstName', text)}
                 onSubmitEditing={() => LastNameInput.focus()}
                 disabled={isLoading}
                 enablesReturnKeyAutomatically
@@ -67,11 +68,11 @@ const AskName = memo(
                   get(touched, 'lastName', false) &&
                   get(errors, 'lastName', null)
                 }
-                onChangeText={(text) => setFieldValue('lastName', text)}
+                onChangeText={text => setFieldValue('lastName', text)}
                 onSubmitEditing={onPressPrimary}
                 disabled={isLoading}
                 enablesReturnKeyAutomatically
-                inputRef={(r) => {
+                inputRef={r => {
                   LastNameInput = r;
                 }}
               />
@@ -84,6 +85,10 @@ const AskName = memo(
 );
 
 AskName.propTypes = {
+  BackgroundComponent: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   /* The `Swiper` component used in `<Onboading>` looks for and hijacks the title prop of it's
    * children. Thus we have to use more unique name.
    */
@@ -104,7 +109,7 @@ AskName.defaultProps = {
   description: "Every relationship starts with a name. What's yours?",
 };
 
-const AskNameWithBackgroundImage = (props) => (
+const AskNameWithBackgroundImage = props => (
   <AskNameConnected Component={AskName} {...props} />
 );
 

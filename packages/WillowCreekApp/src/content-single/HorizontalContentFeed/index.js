@@ -5,11 +5,13 @@ import { withNavigation } from 'react-navigation';
 import { Query } from 'react-apollo';
 
 import {
-  CardTile,
+  PaddedView,
   HorizontalTileFeed,
   TouchableScale,
+  H5,
 } from '@apollosproject/ui-kit';
 
+import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
 import GET_HORIZONTAL_CONTENT from './getHorizontalContent';
 
 const loadingStateObject = {
@@ -36,9 +38,10 @@ class HorizontalContentFeed extends Component {
 
   renderItem = ({ item, index }) => (
     <TouchableScale onPress={() => this.handleOnPressItem(item)}>
-      <CardTile
-        number={index + 1}
-        title={get(item, 'title', '')}
+      <ContentCardConnected
+        tile
+        contentId={item.id}
+        inHorizontalList
         /*
          * These are props that are not yet being passed in the data.
          * We will need to make sure they get added back when that data is available.
@@ -67,12 +70,17 @@ class HorizontalContentFeed extends Component {
     const content = siblingContent.length ? siblingContent : childContent;
 
     return (content && content.length) || loading ? (
-      <HorizontalTileFeed
-        content={content}
-        isLoading={loading}
-        loadingStateObject={loadingStateObject}
-        renderItem={this.renderItem}
-      />
+      <>
+        <PaddedView vertical={false}>
+          <H5>You might also like</H5>
+        </PaddedView>
+        <HorizontalTileFeed
+          content={content}
+          isLoading={loading}
+          loadingStateObject={loadingStateObject}
+          renderItem={this.renderItem}
+        />
+      </>
     ) : null;
   };
 

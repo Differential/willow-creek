@@ -7,7 +7,7 @@ import {
   ThemeMixin,
   BackgroundView,
   PaddedView,
-  H3,
+  H2,
 } from '@apollosproject/ui-kit';
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
@@ -30,7 +30,6 @@ const WillowTVContentItem = ({ content, loading }) => {
         StretchyComponent={
           coverImageSources.length || loading ? (
             <OverlayBackgroundImage
-              rounded={false}
               isLoading={!coverImageSources.length && loading}
               source={coverImageSources}
             />
@@ -42,9 +41,9 @@ const WillowTVContentItem = ({ content, loading }) => {
             <ThemeMixin mixin={{ type: 'dark' }}>
               <HeaderView style={{ height: stretchyHeight }}>
                 <MediaControls contentId={content.id} />
-                <H3 padded isLoading={!content.title && loading}>
+                <H2 padded isLoading={!content.title && loading}>
                   {content.title}
-                </H3>
+                </H2>
               </HeaderView>
             </ThemeMixin>
             <PaddedView />

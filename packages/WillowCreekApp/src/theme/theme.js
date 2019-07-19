@@ -49,17 +49,17 @@ const overrides = {
   H1: {
     fontFamily: 'Gotham-Bold',
     fontSize: 43,
-    lineHeight: 56,
+    lineHeight: 50,
   },
   H2: {
     fontFamily: 'Gotham-Bold',
     fontSize: 36,
-    lineHeight: 40,
+    lineHeight: 39,
   },
   H3: {
     fontFamily: 'Gotham-Bold',
     fontSize: 24,
-    lineHeight: 32,
+    lineHeight: 28,
   },
   'Onboarding.SlideContent.Title': {
     color: '#FFFFFF',
@@ -114,6 +114,9 @@ const overrides = {
   //   lineHeight: 16,
   //   fontFamily: typography.sans.regular.default,
   // },
+  'Card.Image': {
+    resizeMode: 'cover',
+  },
 };
 
 const buttons = () => ({

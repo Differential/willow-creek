@@ -49,7 +49,18 @@ export const resolver = {
   WillowTVContentItem: {
     id: ({ id }, args, context, { parentType }) =>
       createGlobalId(`${id}`, parentType.name),
-    title: ({ snippet }) => snippet.title,
+    title: ({ snippet }) => {
+      // todo: this logic is whack.
+      const parts = snippet.title.split('|');
+      if (!parts.length) return snippet.title;
+
+      const longestPart = parts.reduce((longestIndex, titlePart, i) => {
+        if (parts[longestIndex].length < titlePart.length) return i;
+        return longestIndex;
+      }, 0);
+
+      return parts[longestPart].trim();
+    },
 
     coverImage: ({ snippet }) => {
       const sources = Object.keys(snippet.thumbnails).map((key) => ({
@@ -75,7 +86,12 @@ export const resolver = {
     htmlContent: ({ snippet }) => snippet.description,
     summary: ({ snippet }) => snippet.description,
 
-    siblingContentItemsConnection: () => null,
+    siblingContentItemsConnection: ({ id }, args, { dataSources }) => ({
+      edges: dataSources.WillowTVContentItem.getPlaylistItemsForCampus().then(
+        ({ items = [] } = {}) =>
+          items.filter((item) => id !== item.id).map((node) => ({ node }))
+      ),
+    }),
 
     parentChannel: () => ({
       __typename: 'ContentChannel',

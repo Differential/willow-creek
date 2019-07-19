@@ -29,7 +29,7 @@ const ClippingMask = styled(({ rounded, containerWidth }) => ({
 
   // the following values were determined by the precise & scientific
   // method of guess and check.
-  borderRadius: 10000000000, // containerWidth * 1.5,
+  borderRadius: rounded ? containerWidth * 4 : null,
   top: '-400%',
   left: '-200%',
   right: '-200%',
@@ -41,7 +41,7 @@ const SizingContainer = styled({
   aspectRatio: 1,
 })(View);
 
-const OverlayBackgroundImage = ({ rounded = true, ...props }) => {
+const OverlayBackgroundImage = ({ rounded = true, style, ...props }) => {
   const [layoutState, setLayout] = useState({
     width: DeviceWindow.width,
     height: DeviceWindow.width,
@@ -49,6 +49,7 @@ const OverlayBackgroundImage = ({ rounded = true, ...props }) => {
 
   return (
     <SizingContainer
+      style={style}
       onLayout={({ nativeEvent: { layout } = {} }) => setLayout(layout)}
     >
       <ClippingMask rounded={rounded} containerWidth={layoutState.width}>
