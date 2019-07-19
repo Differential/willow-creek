@@ -15,7 +15,7 @@ APP:
 ROCK:
   API_URL: http://rockdemo.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: https://apollosrock.newspring.cc/GetImage.ashx
+  IMAGE_URL: http://rockdemo.willowcreek.org/GetImage.ashx
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/New_York'
 ONE_SIGNAL:
@@ -101,8 +101,8 @@ ROCK_MAPPINGS:
   CAMPAIGN_CHANNEL_IDS:
     - 8
 
-  GROW_FEATURE_CHANNEL_ID: 9
-  MY_WILLOW_FEATURE_CHANNEL_ID: 10
+  GROW_FEATURE_ITEM_ID: 83
+  MY_WILLOW_FEATURE_ITEM_ID: 84
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

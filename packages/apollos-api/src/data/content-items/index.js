@@ -8,17 +8,17 @@ const { ROCK_MAPPINGS } = ApollosConfig;
 const resolver = {
   ...ContentItem.resolver,
   Query: {
-    growCampaign: (root, args, { dataSources }) =>
+    growCampaign: async (root, args, { dataSources }) =>
       dataSources.ContentItem.paginate({
-        cursor: dataSources.ContentItem.byContentChannelIds([
-          ROCK_MAPPINGS.GROW_FEATURE_CHANNEL_ID,
+        cursor: await dataSources.ContentItem.getCursorByParentContentItemId([
+          ROCK_MAPPINGS.GROW_FEATURE_ITEM_ID,
         ]),
         args,
       }),
-    myWillowCampaign: (root, args, { dataSources }) =>
+    myWillowCampaign: async (root, args, { dataSources }) =>
       dataSources.ContentItem.paginate({
-        cursor: dataSources.ContentItem.byContentChannelIds([
-          ROCK_MAPPINGS.MY_WILLOW_FEATURE_CHANNEL_ID,
+        cursor: await dataSources.ContentItem.getCursorByParentContentItemId([
+          ROCK_MAPPINGS.MY_WILLOW_FEATURE_ITEM_ID,
         ]),
         args,
       }),
