@@ -36,7 +36,10 @@ class Grow extends Component {
   render() {
     return (
       <BackgroundView>
-        <SafeAreaView style={StyleSheet.absoluteFill}>
+        <SafeAreaView
+          forceInset={{ top: 'always', bottom: 'never' }}
+          style={StyleSheet.absoluteFill}
+        >
           <Query query={getUserFeed} fetchPolicy="cache-and-network">
             {({ loading, error, data, refetch }) => (
               <FeedView

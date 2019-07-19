@@ -1,44 +1,42 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Query, Mutation } from 'react-apollo';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { get } from 'lodash';
 
 import { PLAY_VIDEO } from '@apollosproject/ui-media-player';
-import { Icon, styled, Button } from '@apollosproject/ui-kit';
+import {
+  H6,
+  Icon,
+  styled,
+  Button,
+  ConnectedImage,
+} from '@apollosproject/ui-kit';
 import GET_CONTENT_MEDIA from './getContentMedia';
 
-const buttonSizeDifferential = 4;
+const buttonSizeDifferential = 6;
 
-const MediaIcon = Icon; // todo: add back styles
+const MediaIcon = Icon;
+
 const MediaButton = styled(({ theme }) => ({
-  width: theme.sizing.baseUnit * buttonSizeDifferential,
+  aspectRatio: 16 / 9,
   height: theme.sizing.baseUnit * buttonSizeDifferential,
-  borderRadius: theme.sizing.baseUnit * (buttonSizeDifferential / 2),
-  backgroundColor: theme.colors.secondary,
+  borderRadius: theme.sizing.baseUnit,
+  backgroundColor: theme.colors.black,
   justifyContent: 'center',
   alignItems: 'center',
   borderWidth: 0, // remove default button border
 }))(Button);
 
-/** MediaButtton "border styles" live in a seperate component so that Android places it's elevation
- * shadow in the right place. */
-const MediaButtonBorder = styled(({ theme }) => ({
-  borderRadius:
-    theme.sizing.baseUnit * (buttonSizeDifferential / 2) +
-    buttonSizeDifferential, // this is eqivalent to the MediaButton size above + the padding below
-  padding: buttonSizeDifferential, // padding + backgroundColor = MediaButton + "borderStyles"
-  backgroundColor: theme.colors.paper,
-}))(View);
+const MediaImage = styled(({ theme }) => ({
+  opacity: theme.alpha.low,
+  ...StyleSheet.absoluteFillObject,
+}))(ConnectedImage);
 
-const Container = styled(({ theme }) => ({
+const Container = styled({
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'center',
-  marginTop:
-    -theme.sizing.baseUnit * (buttonSizeDifferential / 2) -
-    buttonSizeDifferential, // MediaButton size / 2 + border
-}))(View);
+})(View);
 
 class MediaControls extends PureComponent {
   static propTypes = {
@@ -66,28 +64,27 @@ class MediaControls extends PureComponent {
 
     return (
       <Mutation mutation={PLAY_VIDEO}>
-        {(play) => (
+        {play => (
           <Container>
             {videoSource ? (
-              <MediaButtonBorder>
-                <MediaButton
-                  type="primary"
-                  onPress={() =>
-                    play({
-                      variables: {
-                        mediaSource: videoSource,
-                        posterSources: coverImageSources,
-                        title,
-                        isVideo: true,
-                        artist: parentChannel.name,
-                      },
-                    })
-                  }
-                  useForeground
-                >
-                  <MediaIcon name="play" />
-                </MediaButton>
-              </MediaButtonBorder>
+              <MediaButton
+                type="secondary"
+                onPress={() =>
+                  play({
+                    variables: {
+                      mediaSource: videoSource,
+                      posterSources: coverImageSources,
+                      title,
+                      isVideo: true,
+                      artist: parentChannel.name,
+                    },
+                  })
+                }
+              >
+                <MediaImage source={coverImage.sources} />
+                <MediaIcon name="play" />
+                <H6>Play</H6>
+              </MediaButton>
             ) : null}
           </Container>
         )}

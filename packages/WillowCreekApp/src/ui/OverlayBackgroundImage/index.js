@@ -18,21 +18,21 @@ const ImageContainer = styled(({ theme }) => ({
 
   // the following values were determined by the precise & scientific
   // method of guess and check.
-  height: '40%',
-  left: '30%',
-  right: '30%',
+  height: '20%',
+  left: '40%',
+  right: '40%',
 }))(View);
 
-const ClippingMask = styled(({ containerWidth }) => ({
+const ClippingMask = styled(({ rounded, containerWidth }) => ({
   overflow: 'hidden',
   position: 'absolute',
 
   // the following values were determined by the precise & scientific
   // method of guess and check.
-  borderRadius: containerWidth * 1.5,
-  top: '-150%',
-  left: '-75%',
-  right: '-75%',
+  borderRadius: 10000000000, // containerWidth * 1.5,
+  top: '-400%',
+  left: '-200%',
+  right: '-200%',
   bottom: 0,
 }))(View);
 
@@ -41,7 +41,7 @@ const SizingContainer = styled({
   aspectRatio: 1,
 })(View);
 
-const OverlayBackgroundImage = ({ ...props }) => {
+const OverlayBackgroundImage = ({ rounded = true, ...props }) => {
   const [layoutState, setLayout] = useState({
     width: DeviceWindow.width,
     height: DeviceWindow.width,
@@ -51,7 +51,7 @@ const OverlayBackgroundImage = ({ ...props }) => {
     <SizingContainer
       onLayout={({ nativeEvent: { layout } = {} }) => setLayout(layout)}
     >
-      <ClippingMask containerWidth={layoutState.width}>
+      <ClippingMask rounded={rounded} containerWidth={layoutState.width}>
         <ImageContainer>
           <Image {...props} />
         </ImageContainer>

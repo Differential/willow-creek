@@ -27,7 +27,6 @@ const AskName = memo(
     errors,
     setFieldValue,
     isLoading,
-    BackgroundComponent,
     ...props
   }) => {
     let LastNameInput = null;
@@ -53,7 +52,7 @@ const AskName = memo(
                   get(touched, 'firstName', false) &&
                   get(errors, 'firstName', null)
                 }
-                onChangeText={text => setFieldValue('firstName', text)}
+                onChangeText={(text) => setFieldValue('firstName', text)}
                 onSubmitEditing={() => LastNameInput.focus()}
                 disabled={isLoading}
                 enablesReturnKeyAutomatically
@@ -68,11 +67,11 @@ const AskName = memo(
                   get(touched, 'lastName', false) &&
                   get(errors, 'lastName', null)
                 }
-                onChangeText={text => setFieldValue('lastName', text)}
+                onChangeText={(text) => setFieldValue('lastName', text)}
                 onSubmitEditing={onPressPrimary}
                 disabled={isLoading}
                 enablesReturnKeyAutomatically
-                inputRef={r => {
+                inputRef={(r) => {
                   LastNameInput = r;
                 }}
               />
@@ -105,7 +104,7 @@ AskName.defaultProps = {
   description: "Every relationship starts with a name. What's yours?",
 };
 
-const AskNameWithBackgroundImage = props => (
+const AskNameWithBackgroundImage = (props) => (
   <AskNameConnected Component={AskName} {...props} />
 );
 

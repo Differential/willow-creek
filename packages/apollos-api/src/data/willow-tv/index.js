@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 import gql from 'graphql-tag';
 import { createGlobalId } from '@apollosproject/server-core';
-import ApollosConfig from '@apollosproject/config';
 
 export { default as dataSource } from './data-source';
 
@@ -84,8 +83,8 @@ export const resolver = {
         const id = await dataSources.WillowTVContentItem.getPlaylistIdForCampus();
         return createGlobalId(id, 'ContentChannel');
       },
-      name: 'TODO - Channel Name',
-      description: 'TODO - Channel Description',
+      name: null,
+      description: null,
       childContentChannels: [],
       iconName: 'play',
     }),

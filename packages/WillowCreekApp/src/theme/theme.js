@@ -48,12 +48,18 @@ const typography = {
 const overrides = {
   H1: {
     fontFamily: 'Gotham-Bold',
+    fontSize: 43,
+    lineHeight: 56,
   },
   H2: {
     fontFamily: 'Gotham-Bold',
+    fontSize: 36,
+    lineHeight: 40,
   },
   H3: {
     fontFamily: 'Gotham-Bold',
+    fontSize: 24,
+    lineHeight: 32,
   },
   'Onboarding.SlideContent.Title': {
     color: '#FFFFFF',
