@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 import gql from 'graphql-tag';
 import { createGlobalId } from '@apollosproject/server-core';
-import ApollosConfig from '@apollosproject/config';
 
 export { default as dataSource } from './data-source';
 
@@ -42,7 +41,7 @@ export const schema = gql`
 export const resolver = {
   Query: {
     tvFeed: (root, args, { dataSources }) => ({
-      edges: dataSources.WillowTVContentItem.getPlaylistItemsForCampus().then(
+      edges: dataSources.Youtube.getPlaylistItemsForCampus().then(
         ({ items = [] } = {}) => items.map((node) => ({ node }))
       ),
     }),
@@ -81,7 +80,7 @@ export const resolver = {
     parentChannel: () => ({
       __typename: 'ContentChannel',
       id: async (root, args, { dataSources }) => {
-        const id = await dataSources.WillowTVContentItem.getPlaylistIdForCampus();
+        const id = await dataSources.Youtube.getPlaylistIdForCampus();
         return createGlobalId(id, 'ContentChannel');
       },
       name: 'TODO - Channel Name',
