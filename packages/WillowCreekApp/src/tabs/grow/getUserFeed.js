@@ -5,7 +5,7 @@ import { LARGE_CARD_FRAGMENT } from 'WillowCreekApp/src/ui/ContentCardConnected'
 
 export default gql`
   query getUserFeed {
-    userFeed {
+    personaFeed {
       edges {
         node {
           ...largeCardFragment

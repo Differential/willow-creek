@@ -8,7 +8,6 @@ import { BackgroundView, PaddedView, FeedView } from '@apollosproject/ui-kit';
 
 import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
 import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
-import FeaturesFeed from '../../ui/FeaturesFeed';
 import CampaignFeed from '../../ui/CampaignFeed';
 import getUserFeed from './getUserFeed';
 import Icon from './Icon';
@@ -50,10 +49,9 @@ class Grow extends Component {
                       type="growCampaign"
                       onPressItem={this.handleOnPress}
                     />
-                    <FeaturesFeed onPressItem={this.handleOnPress} />
                   </>
                 }
-                content={get(data, 'userFeed.edges', []).map(
+                content={get(data, 'personaFeed.edges', []).map(
                   (edge) => edge.node
                 )}
                 isLoading={loading}

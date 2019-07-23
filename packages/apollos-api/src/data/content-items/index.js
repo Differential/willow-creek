@@ -22,6 +22,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
 const resolver = {
   ...ContentItem.resolver,
   Query: {
+    ...ContentItem.resolver.Query,
     growCampaign: async (root, args, { dataSources }) =>
       dataSources.ContentItem.paginate({
         cursor: await dataSources.ContentItem.getCursorByParentContentItemId([
