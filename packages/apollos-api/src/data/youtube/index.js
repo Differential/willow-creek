@@ -2,6 +2,7 @@
 import gql from 'graphql-tag';
 import { createGlobalId } from '@apollosproject/server-core';
 import { ContentItem } from '@apollosproject/data-connector-rock';
+import ApollosConfig from '@apollosproject/config';
 
 export { default as dataSource } from './data-source';
 
@@ -41,13 +42,15 @@ export const schema = gql`
 
 export const resolver = {
   Query: {
-    tvFeed: async (root, args, { dataSources }) =>
-      dataSources.ContentItem.paginate({
-        cursor: dataSources.ContentItem.byPersonaGuid().andFilter(
-          `ContentChannelId eq 12`
+    tvFeed: async (root, args, { dataSources }) => {
+      const cursor = await dataSources.ContentItem.getContentItemsForCampus();
+      return dataSources.ContentItem.paginate({
+        cursor: cursor.andFilter(
+          `ContentChannelId eq ${ApollosConfig.ROCK_MAPPINGS.YOUTUBE_CONTENT_CHANNEL}`
         ),
         args,
-      }),
+      });
+    },
   },
   WillowTVContentItem: {
     ...ContentItem.resolver.ContentItem,
