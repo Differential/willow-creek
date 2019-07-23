@@ -42,6 +42,7 @@ export default class Youtube extends RESTDataSource {
     this.get('playlistItems', {
       part: 'snippet',
       playlistId,
+      maxResults: 50,
     }).then((result) => ({
       ...result,
       items: result.items.map((item) => ({

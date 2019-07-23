@@ -40,18 +40,26 @@ export const schema = gql`
 
 export const resolver = {
   Query: {
-    tvFeed: (root, args, { dataSources }) => ({
-      edges: dataSources.Youtube.getPlaylistItemsForCampus().then(
-        ({ items = [] } = {}) => items.map((node) => ({ node }))
-      ),
-    }),
+    tvFeed: async (root, args, { dataSources }) =>
+      dataSources.ContentItem.paginate({
+        cursor: dataSources.ContentItem.byPersonaGuid().andFilter(
+          `ContentChannelId eq 12`
+        ),
+        args,
+      }),
   },
   WillowTVContentItem: {
     id: ({ id }, args, context, { parentType }) =>
       createGlobalId(`${id}`, parentType.name),
-    title: ({ snippet }) => snippet.title,
+    coverImage: async (
+      { attributeValues },
+      args,
+      { dataSources: { Youtube } }
+    ) => {
+      const { snippet } = await Youtube.getFromId(
+        attributeValues.youtubeId.value
+      );
 
-    coverImage: ({ snippet }) => {
       const sources = Object.keys(snippet.thumbnails).map((key) => ({
         uri: snippet.thumbnails[key].url,
       }));
@@ -62,18 +70,19 @@ export const resolver = {
       };
     },
 
-    videos: ({ id }) => [
+    videos: ({
+      attributeValues: {
+        youtubeId: { value },
+      },
+    }) => [
       {
         __typename: 'VideoMedia',
         key: 'youtube',
         label: 'Watch now',
-        youtubeId: id,
+        youtubeId: value,
         sources: [],
       },
     ],
-
-    htmlContent: ({ snippet }) => snippet.description,
-    summary: ({ snippet }) => snippet.description,
 
     siblingContentItemsConnection: () => null,
 
@@ -89,11 +98,16 @@ export const resolver = {
       iconName: 'play',
     }),
 
-    sharing: ({ id, snippet }) => ({
+    sharing: ({
+      title,
+      attributeValues: {
+        youtubeId: { value },
+      },
+    }) => ({
       __typename: 'SharableContentItem',
-      url: `https://www.youtube.com/watch?v=${id}`,
-      title: snippet.title,
-      message: snippet.description,
+      url: `https://www.youtube.com/watch?v=${value}`,
+      title,
+      message: null,
     }),
 
     theme: () => null,

@@ -1,4 +1,3 @@
-import { fetch } from 'apollo-env';
 import RockApolloDataSource from '@apollosproject/rock-apollo-data-source';
 import gql from 'graphql-tag';
 import moment from 'moment';
@@ -21,11 +20,21 @@ class YoutubeImport extends RockApolloDataSource {
     contentChannelId,
     contentChannelTypeId,
   }) => {
-    const { Youtube, ContentItem, BinaryFiles } = this.context.dataSources;
-    const { snippet } = await Youtube.getFromId(youtubeId);
+    const { Youtube } = this.context.dataSources;
+    const video = await Youtube.getFromId(youtubeId);
+    return this.createContentItemFromVideo(video, {
+      contentChannelTypeId,
+      contentChannelId,
+    });
+  };
 
+  createContentItemFromVideo = async (
+    { snippet },
+    { contentChannelTypeId, contentChannelId }
+  ) => {
+    const { ContentItem } = this.context.dataSources;
     const alreadyExists = await this.request('/ContentChannelItems')
-      .filter(`Title eq '${snippet.title}'`)
+      .filter(`Title eq '${snippet.title.replace(/'/g, ``)}'`)
       .first();
 
     if (alreadyExists) {
@@ -33,7 +42,7 @@ class YoutubeImport extends RockApolloDataSource {
     }
 
     const id = await this.post('/ContentChannelItems', {
-      Title: snippet.title,
+      Title: snippet.title.replace(/'/g, ``),
       Content: `${snippet.description} ${snippet.thumbnails.high.url}`,
       ContentChannelTypeId: contentChannelTypeId,
       ContentChannelId: contentChannelId,
@@ -42,9 +51,30 @@ class YoutubeImport extends RockApolloDataSource {
         .split(/[-+]\d+:\d+/)[0],
     });
 
-    // const image = fetch()
+    await this.post(
+      `/ContentChannelItems/AttributeValue/${id}?attributeKey=YoutubeId&attributeValue=${snippet.resourceId.videoId}`
+    );
 
     return ContentItem.getFromId(id);
+  };
+
+  importChannelFromYoutube = async ({
+    channelId,
+    contentChannelId,
+    contentChannelTypeId,
+  }) => {
+    const { Youtube } = this.context.dataSources;
+
+    const { items } = await Youtube.getPlaylistItems(channelId);
+
+    return Promise.all(
+      items.map(async (video) =>
+        this.createContentItemFromVideo(video, {
+          contentChannelTypeId,
+          contentChannelId,
+        })
+      )
+    );
   };
 }
 
@@ -55,6 +85,11 @@ const schema = gql`
       contentChannelId: String!
       contentChannelTypeId: String!
     ): ContentItem
+    importYoutubeChannel(
+      channelId: String!
+      contentChannelId: String!
+      contentChannelTypeId: String!
+    ): [ContentItem]
   }
 `;
 
@@ -62,6 +97,8 @@ const resolver = {
   Mutation: {
     importYoutubeVideo: (root, args, { dataSources }) =>
       dataSources.YoutubeImport.importFromYoutube(args),
+    importYoutubeChannel: (root, args, { dataSources }) =>
+      dataSources.YoutubeImport.importChannelFromYoutube(args),
   },
 };
 
