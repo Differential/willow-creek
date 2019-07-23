@@ -43,7 +43,7 @@ class YoutubeImport extends RockApolloDataSource {
 
     const id = await this.post('/ContentChannelItems', {
       Title: snippet.title.replace(/'/g, ``),
-      Content: `${snippet.description} ${snippet.thumbnails.high.url}`,
+      Content: `${snippet.description}`,
       ContentChannelTypeId: contentChannelTypeId,
       ContentChannelId: contentChannelId,
       StartDateTime: moment(snippet.publishedAt)

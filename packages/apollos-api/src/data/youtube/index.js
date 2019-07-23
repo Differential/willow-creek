@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import gql from 'graphql-tag';
 import { createGlobalId } from '@apollosproject/server-core';
+import { ContentItem } from '@apollosproject/data-connector-rock';
 
 export { default as dataSource } from './data-source';
 
@@ -49,6 +50,7 @@ export const resolver = {
       }),
   },
   WillowTVContentItem: {
+    ...ContentItem.resolver.ContentItem,
     id: ({ id }, args, context, { parentType }) =>
       createGlobalId(`${id}`, parentType.name),
     coverImage: async (
@@ -85,18 +87,6 @@ export const resolver = {
     ],
 
     siblingContentItemsConnection: () => null,
-
-    parentChannel: () => ({
-      __typename: 'ContentChannel',
-      id: async (root, args, { dataSources }) => {
-        const id = await dataSources.Youtube.getPlaylistIdForCampus();
-        return createGlobalId(id, 'ContentChannel');
-      },
-      name: 'TODO - Channel Name',
-      description: 'TODO - Channel Description',
-      childContentChannels: [],
-      iconName: 'play',
-    }),
 
     sharing: ({
       title,
