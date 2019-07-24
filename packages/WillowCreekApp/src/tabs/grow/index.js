@@ -4,10 +4,14 @@ import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { SafeAreaView } from 'react-navigation';
-import { BackgroundView, PaddedView, FeedView } from '@apollosproject/ui-kit';
+import {
+  BackgroundView,
+  PaddedView,
+  FeedView,
+  HighlightCard,
+} from '@apollosproject/ui-kit';
 
 import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
-import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
 import CampaignFeed from '../../ui/CampaignFeed';
 import getUserFeed from './getUserFeed';
 import Icon from './Icon';
@@ -42,7 +46,14 @@ class Grow extends Component {
           <Query query={getUserFeed} fetchPolicy="cache-and-network">
             {({ loading, error, data, refetch }) => (
               <FeedView
-                ListItemComponent={ContentCardConnected}
+                ListItemComponent={({ title, coverImage, summary }) => (
+                  <HighlightCard
+                    title={title}
+                    image={coverImage.sources}
+                    description={summary}
+                    hasAction
+                  />
+                )}
                 ListHeaderComponent={
                   <>
                     <PaddedView>
