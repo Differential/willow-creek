@@ -82,11 +82,10 @@ class MyWillow extends PureComponent {
                             <CampusSelectButton bordered />
                           </PaddedView>
                         </ThemeMixin>
-                        {/*
-                          TODO: These two components current exists on both the My Willow and Grow tabs.
-                          Their queries need to be adjusted for the proper logic for each tab
-                        */}
-                        <CampaignFeed onPressItem={this.handleOnPress} />
+                        <CampaignFeed
+                          type="myWillowCampaign"
+                          onPressItem={this.handleOnPress}
+                        />
                         <FeaturesFeed onPressItem={this.handleOnPress} />
                       </>
                     }

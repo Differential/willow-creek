@@ -4,18 +4,12 @@ import { CONTENT_ITEM_FRAGMENT } from 'WillowCreekApp/src/content-single/getCont
 import { LARGE_CARD_FRAGMENT } from 'WillowCreekApp/src/ui/ContentCardConnected';
 
 export default gql`
-  query campaigns {
-    campaigns {
+  query myWillowCampaign {
+    myWillowCampaign {
       edges {
         node {
-          childContentItemsConnection {
-            edges {
-              node {
-                ...largeCardFragment
-                ...contentItemFragment
-              }
-            }
-          }
+          ...largeCardFragment
+          ...contentItemFragment
         }
       }
     }

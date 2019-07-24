@@ -31,7 +31,10 @@ import * as LiveStream from './live';
 import * as Theme from './theme';
 import * as Campus from './campus';
 import * as WillowCalendarEventContentItem from './calendar-events';
-import * as WillowTVContentItem from './willow-tv';
+
+import * as Youtube from './youtube';
+
+import * as YoutubeImport from './youtube-import';
 
 const data = {
   Followings,
@@ -56,10 +59,19 @@ const data = {
   Template,
   Campus,
   WillowCalendarEventContentItem,
-  WillowTVContentItem,
+  Youtube,
   BinaryFiles,
   Features,
+  YoutubeImport,
 };
+
+// If we are in development mode, we allow users to import data from Youtube.
+const isDev =
+  process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
+
+if (isDev) {
+  data.YoutubeImport = YoutubeImport;
+}
 
 const {
   dataSources,

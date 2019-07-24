@@ -16,6 +16,7 @@
     "start": "if test \"$API_ENV\" = \"true\" ; then yarn start:api ; else yarn start:dev ; fi",
     "start:api": "./node_modules/.bin/lerna run start --scope apollos-api",
     "start:dev": "./node_modules/.bin/lerna run start --parallel",
+    "ios": "lerna run ios",
     "lint": "./node_modules/.bin/lerna run lint",
     "test": "./node_modules/.bin/lerna run test",
     "ci-test": "./node_modules/.bin/lerna run test  --stream -- --maxWorkers=2",
