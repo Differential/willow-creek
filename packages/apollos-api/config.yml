@@ -106,6 +106,8 @@ ROCK_MAPPINGS:
 
   YOUTUBE_CONTENT_CHANNEL: 12
 
+  # Used to determine what Campus ID correseponds to what DataView.
+  # We hijack the persona feature to show a campus specific user feed.
   CAMPUS_DATA_VIEWS:
     -
       # Chicago

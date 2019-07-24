@@ -65,6 +65,7 @@ const data = {
   YoutubeImport,
 };
 
+// If we are in development mode, we allow users to import data from Youtube.
 const isDev =
   process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
 
