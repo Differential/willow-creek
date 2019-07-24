@@ -9,21 +9,19 @@ import {
   PaddedView,
   BackgroundView,
   ThemeMixin,
+  HighlightCard,
 } from '@apollosproject/ui-kit';
-
-import FeaturedCard from '@apollosproject/ui-kit/src/FeaturedCard';
 
 import { SafeAreaView } from 'react-navigation';
 import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
 import OverlayBackgroundImage from '../../ui/OverlayBackgroundImage';
-import ContentCardConnected from '../../ui/ContentCardConnected';
 import FindCampusAd from '../../ui/FindCampusAd';
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 
 import StretchyView from '../../ui/StretchyView';
-// import FeaturesFeed from '../../ui/FeaturesFeed';
-// import CampaignFeed from '../../ui/CampaignFeed';
+import FeaturesFeed from '../../ui/FeaturesFeed';
+import CampaignFeed from '../../ui/CampaignFeed';
 
 import GET_FEED from './getFeed';
 import GET_USER_CAMPUS from './getUserCampus';
@@ -77,7 +75,7 @@ class MyWillow extends PureComponent {
                 {({ loading, error, data, refetch, fetchMore, variables }) => (
                   <FeedView
                     ListItemComponent={({ title, coverImage, summary }) => (
-                      <FeaturedCard
+                      <HighlightCard
                         title={title}
                         image={coverImage.sources}
                         description={summary}
@@ -92,6 +90,11 @@ class MyWillow extends PureComponent {
                             <CampusSelectButton bordered />
                           </PaddedView>
                         </ThemeMixin>
+                        <CampaignFeed
+                          type="myWillowCampaign"
+                          onPressItem={this.handleOnPress}
+                        />
+                        <FeaturesFeed onPressItem={this.handleOnPress} />
                       </>
                     }
                     content={get(data, 'tvFeed.edges', []).map(

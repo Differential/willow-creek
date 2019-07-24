@@ -8,7 +8,6 @@ import { BackgroundView, PaddedView, FeedView } from '@apollosproject/ui-kit';
 
 import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
 import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
-import FeaturesFeed from '../../ui/FeaturesFeed';
 import CampaignFeed from '../../ui/CampaignFeed';
 import getUserFeed from './getUserFeed';
 import Icon from './Icon';
@@ -49,15 +48,13 @@ class Grow extends Component {
                     <PaddedView>
                       <PageTitle>Grow</PageTitle>
                     </PaddedView>
-                    {/*
-                          TODO: These two components current exists on both the My Willow and Grow tabs.
-                          Their queries need to be adjusted for the proper logic for each tab
-                        */}
-                    <CampaignFeed onPressItem={this.handleOnPress} />
-                    <FeaturesFeed onPressItem={this.handleOnPress} />
+                    <CampaignFeed
+                      type="growCampaign"
+                      onPressItem={this.handleOnPress}
+                    />
                   </>
                 }
-                content={get(data, 'userFeed.edges', []).map(
+                content={get(data, 'personaFeed.edges', []).map(
                   (edge) => edge.node
                 )}
                 isLoading={loading}
