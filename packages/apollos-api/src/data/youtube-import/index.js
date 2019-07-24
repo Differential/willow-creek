@@ -19,18 +19,20 @@ class YoutubeImport extends RockApolloDataSource {
     youtubeId,
     contentChannelId,
     contentChannelTypeId,
+    campusGuids,
   }) => {
     const { Youtube } = this.context.dataSources;
     const video = await Youtube.getFromId(youtubeId);
     return this.createContentItemFromVideo(video, {
       contentChannelTypeId,
       contentChannelId,
+      campusGuids,
     });
   };
 
   createContentItemFromVideo = async (
     { snippet },
-    { contentChannelTypeId, contentChannelId }
+    { contentChannelTypeId, contentChannelId, campusGuids = [] }
   ) => {
     const { ContentItem } = this.context.dataSources;
     const alreadyExists = await this.request('/ContentChannelItems')
@@ -55,6 +57,14 @@ class YoutubeImport extends RockApolloDataSource {
       `/ContentChannelItems/AttributeValue/${id}?attributeKey=YoutubeId&attributeValue=${snippet.resourceId.videoId}`
     );
 
+    if (campusGuids && campusGuids.length) {
+      await this.post(
+        `/ContentChannelItems/AttributeValue/${id}?attributeKey=Personas&attributeValue=${campusGuids.join(
+          ','
+        )}`
+      );
+    }
+
     return ContentItem.getFromId(id);
   };
 
@@ -62,16 +72,18 @@ class YoutubeImport extends RockApolloDataSource {
     channelId,
     contentChannelId,
     contentChannelTypeId,
+    campusGuids,
   }) => {
     const { Youtube } = this.context.dataSources;
 
-    const { items } = await Youtube.getPlaylistItems(channelId);
+    const { items } = await Youtube.getChannelItems(channelId);
 
     return Promise.all(
       items.map(async (video) =>
         this.createContentItemFromVideo(video, {
           contentChannelTypeId,
           contentChannelId,
+          campusGuids,
         })
       )
     );
@@ -84,11 +96,13 @@ const schema = gql`
       youtubeId: String!
       contentChannelId: String!
       contentChannelTypeId: String!
+      campusGuids: [String!]
     ): ContentItem
     importYoutubeChannel(
       channelId: String!
       contentChannelId: String!
       contentChannelTypeId: String!
+      campusGuids: [String!]
     ): [ContentItem]
   }
 `;

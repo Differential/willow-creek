@@ -69,7 +69,7 @@ class MyWillow extends PureComponent {
                   first: 10,
                   after: null,
                 }}
-                fetchPolicy="network-only"
+                fetchPolicy="cache-and-network"
               >
                 {({ loading, error, data, refetch, fetchMore, variables }) => (
                   <FeedView

@@ -14,6 +14,18 @@ export default class Youtube extends RESTDataSource {
     return result.items[0];
   }
 
+  getChannelItems = async (channelId) => {
+    const channels = await this.get('channels', {
+      part: 'contentDetails',
+      id: channelId,
+    });
+    const { relatedPlaylists } = channels.items.map(
+      ({ contentDetails }) => contentDetails
+    )[0];
+
+    return this.getPlaylistItems(relatedPlaylists.uploads);
+  };
+
   getPlaylistItems = async (playlistId) =>
     this.get('playlistItems', {
       part: 'snippet',
