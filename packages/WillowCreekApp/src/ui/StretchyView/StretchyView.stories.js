@@ -11,6 +11,7 @@ storiesOf('StretchyView', module)
     <StretchyView
       StretchyComponent={
         <OverlayBackgroundImage
+          overlayColor={'white'}
           source={{ uri: 'https://picsum.photos/600/600' }}
         />
       }

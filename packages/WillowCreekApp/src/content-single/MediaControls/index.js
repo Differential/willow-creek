@@ -14,7 +14,7 @@ import {
 } from '@apollosproject/ui-kit';
 import GET_CONTENT_MEDIA from './getContentMedia';
 
-const buttonSizeDifferential = 6;
+const buttonSizeDifferential = 5;
 
 const MediaIcon = Icon;
 
@@ -26,6 +26,9 @@ const MediaButton = styled(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   borderWidth: 0, // remove default button border
+  marginBottom:
+    -(theme.sizing.baseUnit * buttonSizeDifferential) / 2 -
+    theme.sizing.baseUnit * 2,
 }))(Button);
 
 const MediaImage = styled(({ theme }) => ({
@@ -64,7 +67,7 @@ class MediaControls extends PureComponent {
 
     return (
       <Mutation mutation={PLAY_VIDEO}>
-        {play => (
+        {(play) => (
           <Container>
             {videoSource ? (
               <MediaButton

@@ -40,12 +40,14 @@ const WillowTVContentItem = ({ content, loading }) => {
           <FlexedScrollView {...scrollViewProps}>
             <ThemeMixin mixin={{ type: 'dark' }}>
               <HeaderView style={{ height: stretchyHeight }}>
-                <MediaControls contentId={content.id} />
                 <H2 padded isLoading={!content.title && loading}>
                   {content.title}
                 </H2>
+
+                <MediaControls contentId={content.id} />
               </HeaderView>
             </ThemeMixin>
+            <PaddedView />
             <PaddedView />
             <PaddedView>
               <HTMLContent contentId={content.id} />
