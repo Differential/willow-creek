@@ -1,88 +1,62 @@
 import React from 'react';
-import { ScrollView, Image } from 'react-native';
+import { ScrollView } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
   styled,
-  GradientOverlayImage,
+  ThemeMixin,
   BackgroundView,
   PaddedView,
   H2,
-  H4,
-  H5,
-  H6,
-  TableView,
-  Cell,
-  CellContent,
-  Divider,
-  UIText,
-  withThemeMixin,
 } from '@apollosproject/ui-kit';
-
-import HorizontalContentFeed from '../HorizontalContentFeed';
 import MediaControls from '../MediaControls';
-import AdditionalFeatures from './AdditionalFeatures';
+import HTMLContent from '../HTMLContent';
+import HorizontalContentFeed from '../HorizontalContentFeed';
+import StretchyView from '../../ui/StretchyView';
+import OverlayBackgroundImage from '../../ui/OverlayBackgroundImage';
 
 const FlexedScrollView = styled({ flex: 1 })(ScrollView);
 
-const PrimaryContentBlock = withThemeMixin(({ theme }) => ({
-  type: 'dark',
-  colors: {
-    paper: theme.colors.secondary,
-    screen: theme.colors.secondary,
-  },
-}))(BackgroundView);
-
-const CellImage = styled(({ theme }) => ({
-  width: theme.sizing.baseUnit * 4,
-  height: theme.sizing.baseUnit * 4,
-}))(Image);
+const HeaderView = styled(({ theme }) => ({
+  justifyContent: 'flex-end',
+  paddingBottom: theme.sizing.baseUnit * 2,
+}))(PaddedView);
 
 const WillowTVContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
   return (
-    <FlexedScrollView>
-      <PrimaryContentBlock>
-        {coverImageSources.length || loading ? (
-          <GradientOverlayImage
-            isLoading={!coverImageSources.length && loading}
-            source={coverImageSources}
-          />
-        ) : null}
-        <MediaControls contentId={content.id} />
-        <PaddedView>
-          <H2 isLoading={!content.title && loading}>{content.title}</H2>
-          <UIText isLoading={!content.summary && loading}>
-            {content.summary}
-          </UIText>
-        </PaddedView>
-      </PrimaryContentBlock>
+    <BackgroundView>
+      <StretchyView
+        StretchyComponent={
+          coverImageSources.length || loading ? (
+            <OverlayBackgroundImage
+              isLoading={!coverImageSources.length && loading}
+              source={coverImageSources}
+            />
+          ) : null
+        }
+      >
+        {({ stretchyHeight, ...scrollViewProps }) => (
+          <FlexedScrollView {...scrollViewProps}>
+            <ThemeMixin mixin={{ type: 'dark' }}>
+              <HeaderView style={{ height: stretchyHeight }}>
+                <H2 padded isLoading={!content.title && loading}>
+                  {content.title}
+                </H2>
 
-      <AdditionalFeatures contentId={content.id} />
-
-      <PaddedView style={{ paddingBottom: 0 }}>
-        <H5 padded>Engage</H5>
-      </PaddedView>
-      <TableView>
-        <Cell>
-          <CellImage source={require('./bible-app.png')} />
-          <CellContent>
-            <H4>Message Notes</H4>
-            <H6>Follow along with the message!</H6>
-          </CellContent>
-        </Cell>
-        <Divider />
-        <Cell>
-          <CellImage source={require('./disc-q.png')} />
-          <CellContent>
-            <H4>Discussion Questions</H4>
-            <H6>Key points to consider from this message</H6>
-          </CellContent>
-        </Cell>
-      </TableView>
-
-      <HorizontalContentFeed contentId={content.id} />
-    </FlexedScrollView>
+                <MediaControls contentId={content.id} />
+              </HeaderView>
+            </ThemeMixin>
+            <PaddedView />
+            <PaddedView />
+            <PaddedView>
+              <HTMLContent contentId={content.id} />
+            </PaddedView>
+            <HorizontalContentFeed contentId={content.id} />
+          </FlexedScrollView>
+        )}
+      </StretchyView>
+    </BackgroundView>
   );
 };
 

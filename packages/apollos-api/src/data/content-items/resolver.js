@@ -38,24 +38,6 @@ const resolver = {
     ...ContentItem.resolver.ContentItem,
     id: ({ id }, args, context, { parentType }) =>
       createGlobalId(`${id}`, parentType.name),
-    coverImage: async (
-      { attributeValues },
-      args,
-      { dataSources: { Youtube } }
-    ) => {
-      const { snippet } = await Youtube.getFromId(
-        attributeValues.youtubeId.value
-      );
-
-      const sources = Object.keys(snippet.thumbnails).map((key) => ({
-        uri: snippet.thumbnails[key].url,
-      }));
-
-      return {
-        __typename: 'ImageMedia',
-        sources,
-      };
-    },
 
     videos: ({
       attributeValues: {

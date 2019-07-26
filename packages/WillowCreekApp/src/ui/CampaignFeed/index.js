@@ -2,9 +2,8 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
-import { TouchableScale } from '@apollosproject/ui-kit';
+import { TouchableScale, FeaturedCard } from '@apollosproject/ui-kit';
 
-import ContentCardConnected from '../ContentCardConnected';
 import GET_GROW_CAMPAIGN_CONTENT_ITEM from './getGrowCampaignContentItem';
 import GET_MY_WILLOW_CAMPAIGN_CONTENT_ITEM from './getMyWillowCampaignContentItem';
 
@@ -12,6 +11,16 @@ const queryMap = {
   myWillowCampaign: GET_MY_WILLOW_CAMPAIGN_CONTENT_ITEM,
   growCampaign: GET_GROW_CAMPAIGN_CONTENT_ITEM,
 };
+
+const ConnectedFeaturedCard = ({ title, summary, coverImage, isLoading }) => (
+  <FeaturedCard
+    title={title}
+    image={coverImage && coverImage.sources}
+    isLoading={isLoading}
+    description={summary}
+    hasAction
+  />
+);
 
 const CampaignFeed = ({ onPressItem, type }) => (
   <Query query={queryMap[type]} fetchPolicy="cache-and-network">
@@ -21,13 +30,15 @@ const CampaignFeed = ({ onPressItem, type }) => (
       );
       const featuredItem = featuredContent[0];
 
+      console.log(featuredItem);
+
       if (!featuredItem || (!featuredItem.id && !isFeaturedLoading))
         return null;
 
       return (
         <TouchableScale onPress={() => onPressItem({ id: featuredItem.id })}>
-          <ContentCardConnected
-            contentId={featuredItem.id}
+          <ConnectedFeaturedCard
+            {...featuredItem}
             isLoading={isFeaturedLoading}
           />
         </TouchableScale>

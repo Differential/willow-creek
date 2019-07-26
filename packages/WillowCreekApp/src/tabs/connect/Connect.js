@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import { ScrollView, SafeAreaView } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
@@ -62,21 +63,22 @@ class Connect extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        <Query query={GET_LOGIN_STATE}>
-          {({ data }) => {
-            if (get(data, 'isLoggedIn', false))
-              return (
-                <SafeAreaView>
+        <SafeAreaView
+          style={StyleSheet.absoluteFill}
+          forceInset={{ top: 'always', bottom: 'never' }}
+        >
+          <Query query={GET_LOGIN_STATE}>
+            {({ data }) => {
+              if (get(data, 'isLoggedIn', false))
+                return (
                   <StyledScrollView>
                     <UserAvatarHeaderConnected key="UserAvatarHeaderConnected" />
                     <RecentlyLikedTileFeedConnected key="RecentlyLikedTileFeedConnected" />
                     <Toolbar />
                     <ActionTable />
                   </StyledScrollView>
-                </SafeAreaView>
-              );
-            return (
-              <SafeAreaView>
+                );
+              return (
                 <ScrollView>
                   <Header>
                     <BrandIcon />
@@ -98,10 +100,10 @@ class Connect extends PureComponent {
                   </Header>
                   <ActionTable />
                 </ScrollView>
-              </SafeAreaView>
-            );
-          }}
-        </Query>
+              );
+            }}
+          </Query>
+        </SafeAreaView>
       </BackgroundView>
     );
   }

@@ -1,11 +1,32 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
+import { get } from 'lodash';
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
 
   // A cursor returning content items by a guid.
   // Returns a more inclusive cursor if no guid is passed.
+
+  async getCoverImage(root) {
+    if (get(root, 'attributeValues.youtubeId.value', '') !== '') {
+      const { snippet } = await this.context.dataSources.Youtube.getFromId(
+        root.attributeValues.youtubeId.value
+      );
+
+      const sources = Object.keys(snippet.thumbnails).map((key) => ({
+        uri: snippet.thumbnails[key].url,
+      }));
+
+      return {
+        __typename: 'ImageMedia',
+        sources,
+      };
+    }
+
+    return super.getCoverImage(root);
+  }
+
   byPersonaGuid = (guid) =>
     guid
       ? this.request(`ContentChannelItems/GetFromPersonDataView?guids=${guid}`)

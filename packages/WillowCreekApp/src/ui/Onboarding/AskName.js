@@ -17,6 +17,7 @@ import {
 // eslint-disable-next-line react/display-name
 const AskName = memo(
   ({
+    BackgroundComponent,
     onPressPrimary,
     slideTitle,
     description,
@@ -27,7 +28,6 @@ const AskName = memo(
     errors,
     setFieldValue,
     isLoading,
-    BackgroundComponent,
     ...props
   }) => {
     let LastNameInput = null;
@@ -85,6 +85,10 @@ const AskName = memo(
 );
 
 AskName.propTypes = {
+  BackgroundComponent: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   /* The `Swiper` component used in `<Onboading>` looks for and hijacks the title prop of it's
    * children. Thus we have to use more unique name.
    */

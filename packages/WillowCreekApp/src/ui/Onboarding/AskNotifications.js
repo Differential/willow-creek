@@ -22,6 +22,7 @@ const PrimaryButton = styled({}, 'Onboarding.Slide.PrimaryButton')(Button);
 const AskNotifications = memo(
   ({
     BackgroundComponent,
+    onPressPrimary,
     slideTitle,
     description,
     buttonText,
@@ -73,6 +74,7 @@ AskNotifications.propTypes = {
   buttonText: PropTypes.string,
   buttonDisabled: PropTypes.bool,
   onPressButton: PropTypes.func,
+  onPressPrimary: PropTypes.func,
 };
 
 AskNotifications.defaultProps = {

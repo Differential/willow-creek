@@ -44,7 +44,7 @@ class ContentTableCard extends PureComponent {
               onPress={onPress}
               label={item.parentChannel ? item.parentChannel.name : ''}
               title={item.title || ''}
-              imageSource={item.coverImage ? item.coverImage.sources : ''}
+              imageSource={item.image ? item.image.sources : ''}
             />
           ))}
         </Content>

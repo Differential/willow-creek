@@ -9,13 +9,13 @@ import {
   PaddedView,
   BackgroundView,
   ThemeMixin,
+  HighlightCard,
 } from '@apollosproject/ui-kit';
 
 import { SafeAreaView } from 'react-navigation';
 import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
 import OverlayBackgroundImage from '../../ui/OverlayBackgroundImage';
-import ContentCardConnected from '../../ui/ContentCardConnected';
 import FindCampusAd from '../../ui/FindCampusAd';
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 
@@ -57,6 +57,7 @@ class MyWillow extends PureComponent {
         <StretchyView
           StretchyComponent={
             <OverlayBackgroundImage
+              style={{ aspectRatio: 0.8 }}
               source={{ uri: 'https://picsum.photos/600/600' }}
             />
           }
@@ -73,7 +74,14 @@ class MyWillow extends PureComponent {
               >
                 {({ loading, error, data, refetch, fetchMore, variables }) => (
                   <FeedView
-                    ListItemComponent={ContentCardConnected}
+                    ListItemComponent={({ title, coverImage, summary }) => (
+                      <HighlightCard
+                        title={title}
+                        image={coverImage.sources}
+                        description={summary}
+                        hasAction
+                      />
+                    )}
                     ListHeaderComponent={
                       <>
                         <ThemeMixin mixin={{ type: 'dark' }}>

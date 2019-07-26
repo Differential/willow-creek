@@ -12,6 +12,7 @@ import GET_CONTENT_ITEM from './getContentItem';
 
 import DevotionalContentItem from './DevotionalContentItem';
 import UniversalContentItem from './UniversalContentItem';
+import WillowTVContentItem from './WillowTVContentItem';
 
 import NavigationHeader from './NavigationHeader';
 
@@ -46,6 +47,15 @@ class ContentSingle extends PureComponent {
       case 'DevotionalContentItem':
         return (
           <DevotionalContentItem
+            id={this.itemId}
+            content={content}
+            loading={loading}
+            error={error}
+          />
+        );
+      case 'WillowTVContentItem':
+        return (
+          <WillowTVContentItem
             id={this.itemId}
             content={content}
             loading={loading}
