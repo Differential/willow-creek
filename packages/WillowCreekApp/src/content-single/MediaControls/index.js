@@ -65,27 +65,25 @@ class MediaControls extends PureComponent {
     <Mutation mutation={PLAY_VIDEO}>
       {(play) => (
         <Container>
-          <MediaButtonBorder>
-            <MediaButton
-              type="primary"
-              onPress={() =>
-                play({
-                  variables: {
-                    mediaSource: videoSource,
-                    posterSources: coverImageSources,
-                    title,
-                    isVideo: true,
-                    artist: parentChannelName,
-                  },
-                })
-              }
-              useForeground
-            >
-              <MediaImage source={coverImageSources} />
-              <MediaIcon name="play" />
-              <H6>Play</H6>
-            </MediaButton>
-          </MediaButtonBorder>
+          <MediaButton
+            type="primary"
+            onPress={() =>
+              play({
+                variables: {
+                  mediaSource: videoSource,
+                  posterSources: coverImageSources,
+                  title,
+                  isVideo: true,
+                  artist: parentChannelName,
+                },
+              })
+            }
+            useForeground
+          >
+            <MediaImage source={coverImageSources} />
+            <MediaIcon name="play" />
+            <H6>Play</H6>
+          </MediaButton>
         </Container>
       )}
     </Mutation>
