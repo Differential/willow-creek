@@ -19,6 +19,17 @@ export default gql`
           youtubeId
         }
       }
+      ... on WeekendContentItem {
+        liveStream {
+          isLive
+          media {
+            sources {
+              uri
+            }
+          }
+          webViewUrl
+        }
+      }
     }
   }
 `;

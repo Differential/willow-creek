@@ -54,6 +54,7 @@ class HorizontalContentFeed extends Component {
 
   renderFeed = ({ data, loading, error }) => {
     if (error) return null;
+    if (loading) return null;
 
     const childContent = get(
       data,

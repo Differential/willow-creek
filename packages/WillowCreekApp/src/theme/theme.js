@@ -130,6 +130,24 @@ const buttons = () => ({
   },
 });
 
+/* Base overlays. These are used as configuration for LinearGradients across the app */
+// export const overlays = () => ({});
+
+/* Overrides allow you to override the styles of any component styled using the `styled` HOC.
+ * For example, this component:
+ * const SomeComponent = styled({ margin: 10, padding: 20 }, 'SomeComponent');
+ * can have its styles overriden by including in overrides:
+ * {
+ *   overides: {
+ *     SomeComponent: {
+ *       margin: 5,
+ *       padding: 15,
+ *     },
+ *   },
+ * }
+ */
+// const overrides = {};
+
 export default {
   colors,
   typography,
