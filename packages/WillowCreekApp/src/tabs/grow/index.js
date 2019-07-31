@@ -49,8 +49,8 @@ class Grow extends Component {
                 ListItemComponent={({ title, coverImage, summary }) => (
                   <HighlightCard
                     title={title}
-                    image={coverImage.sources}
-                    description={summary}
+                    coverImage={coverImage.sources}
+                    summary={summary}
                     hasAction
                   />
                 )}

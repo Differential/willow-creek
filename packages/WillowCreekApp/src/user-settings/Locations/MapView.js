@@ -31,6 +31,11 @@ const Footer = styled({
   right: 0,
 })(View);
 
+const StyledCampusCard = styled(({ theme }) => ({
+  width: CARD_WIDTH,
+  marginHorizontal: theme.sizing.baseUnit / 4,
+}))(CampusCard);
+
 class MapView extends Component {
   static propTypes = {
     campuses: PropTypes.arrayOf(
@@ -176,7 +181,7 @@ class MapView extends Component {
               )}
             >
               {campuses.map((campus) => (
-                <CampusCard
+                <StyledCampusCard
                   key={campus.id}
                   distance={campus.distanceFromLocation}
                   title={campus.name}

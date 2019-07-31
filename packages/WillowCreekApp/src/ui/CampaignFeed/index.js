@@ -15,9 +15,9 @@ const queryMap = {
 const ConnectedFeaturedCard = ({ title, summary, coverImage, isLoading }) => (
   <FeaturedCard
     title={title}
-    image={coverImage && coverImage.sources}
+    coverImage={coverImage && coverImage.sources}
     isLoading={isLoading}
-    description={summary}
+    summary={summary}
     hasAction
   />
 );
@@ -29,8 +29,6 @@ const CampaignFeed = ({ onPressItem, type }) => (
         (edge) => edge.node
       );
       const featuredItem = featuredContent[0];
-
-      console.log(featuredItem);
 
       if (!featuredItem || (!featuredItem.id && !isFeaturedLoading))
         return null;

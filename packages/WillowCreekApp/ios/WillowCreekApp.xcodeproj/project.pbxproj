@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -853,6 +852,7 @@
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+
 				78C398B91ACF4ADC00677621 /* libRCTLinking.a */,
 				3DAD3E881DF850E9000B6D8A /* libRCTLinking-tvOS.a */,
 			);
@@ -872,6 +872,7 @@
 			children = (
 				0BE434FF7E9549F392208DEF /* libRNAirplay.a */,
 				CF3175A44C4B4612AD79C04E /* libReactNativeConfig.a */,
+				9DA3750D49B0422F9A4B45BE /* libDBCustomTabs.a */,
 				0F155E84A5784CBE8D95A974 /* libRNDeviceInfo.a */,
 				605AEFB6B1BB4611BDCFE95C /* libRNImagePicker.a */,
 				9F0EC3F23A3F4FFBBBC6583A /* libBVLinearGradient.a */,

@@ -23,6 +23,8 @@ ONE_SIGNAL:
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
   URL: https://apollos.churchonline.org/api/v1/
+  MEDIA_URLS: []
+  WEB_VIEW_URL: https://apollos.churchonline.org/
 TWILIO:
   ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
   AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
@@ -142,7 +144,9 @@ ROCK_MAPPINGS:
       CampusDataViewGuid: d96b6f89-441a-489a-b8df-a406ae108474
       CampusId: 2
 
+  SERMON_CHANNEL_ID: 5
 
+  HOME_FEATURE_CHANNEL_ID: 13
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
