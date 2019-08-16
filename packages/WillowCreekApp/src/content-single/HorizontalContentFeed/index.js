@@ -4,14 +4,10 @@ import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
 import { Query } from 'react-apollo';
 
-import {
-  PaddedView,
-  HorizontalTileFeed,
-  TouchableScale,
-  H5,
-} from '@apollosproject/ui-kit';
+import { HorizontalTileFeed, TouchableScale } from '@apollosproject/ui-kit';
 
-import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
+import HorizontalContentCardConnected from '../../ui/HorizontalContentCardConnected';
+
 import GET_HORIZONTAL_CONTENT from './getHorizontalContent';
 
 const loadingStateObject = {
@@ -36,19 +32,9 @@ class HorizontalContentFeed extends Component {
     });
   };
 
-  renderItem = ({ item, index }) => (
+  renderItem = ({ item }) => (
     <TouchableScale onPress={() => this.handleOnPressItem(item)}>
-      <ContentCardConnected
-        tile
-        contentId={item.id}
-        inHorizontalList
-        /*
-         * These are props that are not yet being passed in the data.
-         * We will need to make sure they get added back when that data is available.
-         * byLine={item.content.speaker}
-         * date={item.meta.date}
-         */
-      />
+      <HorizontalContentCardConnected contentId={get(item, 'id', '')} />
     </TouchableScale>
   );
 
@@ -69,19 +55,24 @@ class HorizontalContentFeed extends Component {
     ).map((edge) => edge.node);
 
     const content = siblingContent.length ? siblingContent : childContent;
+    const currentIndex = content.findIndex(
+      ({ id }) => id === this.props.contentId
+    );
+    const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
 
-    return (content && content.length) || loading ? (
-      <>
-        <PaddedView vertical={false}>
-          <H5>You might also like</H5>
-        </PaddedView>
-        <HorizontalTileFeed
-          content={content}
-          isLoading={loading}
-          loadingStateObject={loadingStateObject}
-          renderItem={this.renderItem}
-        />
-      </>
+    return content && content.length ? (
+      <HorizontalTileFeed
+        content={content}
+        loadingStateObject={loadingStateObject}
+        renderItem={this.renderItem}
+        initialScrollIndex={initialScrollIndex}
+        getItemLayout={(itemData, index) => ({
+          // We need to pass this function so that initialScrollIndex will work.
+          length: 240,
+          offset: 240 * index,
+          index,
+        })}
+      />
     ) : null;
   };
 

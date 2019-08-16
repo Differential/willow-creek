@@ -363,18 +363,25 @@ type ScriptureFeature implements Feature & Node {
   id: ID!
   order: Int
   scriptures: [Scripture]
+  sharing: SharableFeature
 }
 
 interface Sharable {
-  url: String
   message: String
   title: String
+  url: String @deprecated(reason: "Not supported on the interface")
 }
 
 type SharableContentItem implements Sharable {
-  url: String
   message: String
   title: String
+  url: String
+}
+
+type SharableFeature implements Sharable {
+  message: String
+  title: String
+  url: String @deprecated(reason: "Not supported on a feature")
 }
 
 type SmsPinResult {
@@ -385,6 +392,7 @@ type TextFeature implements Feature & Node {
   id: ID!
   order: Int
   body: String
+  sharing: SharableFeature
 }
 
 type Theme {

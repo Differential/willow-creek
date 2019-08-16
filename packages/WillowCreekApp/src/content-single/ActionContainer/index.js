@@ -1,10 +1,10 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
 import PropTypes from 'prop-types';
-import ShareButton from 'WillowCreekApp/src/ui/ShareButton';
+import ShareContentButtonConnected from 'WillowCreekApp/src/ui/ShareContentButtonConnected';
 
 import { SideBySideView, styled } from '@apollosproject/ui-kit';
-import LikeButton from 'WillowCreekApp/src/ui/LikeButton';
+import LikeContentButtonConnected from 'WillowCreekApp/src/ui/LikeContentButtonConnected';
 import { MediaPlayerSpacer } from '@apollosproject/ui-media-player';
 
 const PositioningView = styled(({ theme }) => ({
@@ -22,8 +22,8 @@ const ActionContainer = ({ itemId }) => (
   <Container>
     <MediaPlayerSpacer>
       <PositioningView>
-        <LikeButton itemId={itemId} />
-        <ShareButton itemId={itemId} />
+        <LikeContentButtonConnected itemId={itemId} />
+        <ShareContentButtonConnected itemId={itemId} />
       </PositioningView>
     </MediaPlayerSpacer>
   </Container>

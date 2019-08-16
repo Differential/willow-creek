@@ -1,4 +1,5 @@
 import React from 'react';
+import { NativeModules } from 'react-native';
 // We ran into an issue where SafeAreaView would break jest tests.
 jest.mock('react-navigation', () => {
   const ActualNavigation = require.requireActual('react-navigation');
@@ -83,3 +84,12 @@ jest.mock('NativeEventEmitter');
 jest.mock('react-native-maps');
 jest.mock('DatePickerIOS', () => 'DatePicker');
 jest.mock('./src/client/index');
+
+NativeModules.RNGestureHandlerModule = {
+  attachGestureHandler: jest.fn(),
+  createGestureHandler: jest.fn(),
+  dropGestureHandler: jest.fn(),
+  updateGestureHandler: jest.fn(),
+  State: {},
+  Directions: {},
+};

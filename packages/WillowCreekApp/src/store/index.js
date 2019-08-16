@@ -25,6 +25,9 @@ ${mediaPlayerSchema}
 export const defaults = {
   __typename: 'Query',
   cacheLoaded: false,
+  mediaPlayer: {
+    __typename: 'MediaPlayerState',
+  },
 };
 
 const GET_LOGGED_IN = gql`

@@ -1,11 +1,13 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 
 import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 import Passes from '@apollosproject/ui-passes';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
+import hoistNonReactStatic from 'hoist-non-react-statics';
 
 import Providers from './Providers';
 import NavigationService from './NavigationService';
@@ -31,12 +33,13 @@ const ProtectedRouteWithSplashScreen = (props) => {
   return <ProtectedRoute {...props} onRouteChange={handleOnRouteChange} />;
 };
 
-const AuthWithBackground = () => (
+const AuthWithBackground = (props) => (
   <ThemeMixin mixin={{ type: 'onboarding' }}>
-    <Auth BackgroundComponent={AuthBackground} />
+    <Auth BackgroundComponent={AuthBackground} {...props} />
   </ThemeMixin>
 );
-AuthWithBackground.navigationOptions = Auth.navigationOptions;
+
+hoistNonReactStatic(AuthWithBackground, Auth);
 
 const AppNavigator = createStackNavigator(
   {
@@ -59,11 +62,13 @@ const AppNavigator = createStackNavigator(
   }
 );
 
+const AppContainer = createAppContainer(AppNavigator);
+
 const App = () => (
   <Providers>
     <BackgroundView>
       <AppStatusBar barStyle="dark-content" />
-      <AppNavigator
+      <AppContainer
         ref={(navigatorRef) => {
           NavigationService.setTopLevelNavigator(navigatorRef);
         }}

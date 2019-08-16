@@ -7,6 +7,7 @@
   "logoText": "Apollos Church",
   "backgroundColor": "rgb(0,103,109)",
   "foregroundColor": "rgb(248,247,244)",
+  "labelColor": "rgb(248,247,244)",
   "serialNumber": "checkinpass-{{ person | GetPersonAlternateId }}",
   "thumbnail": {
     "uri": "{{ person.Photo.Url }}&format=png&height=200"

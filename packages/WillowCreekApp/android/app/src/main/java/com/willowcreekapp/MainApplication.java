@@ -2,13 +2,15 @@ package com.willowcreekapp;
 
 import android.app.Application;
 
-import com.facebook.react.ReactApplication;
 import com.srfaytkn.reactnative.YouTubeSdkPackage;
-import com.mybdesign.RNPassKit.RNPassKitPackage;
-import com.brentvatne.react.ReactVideoPackage;
+import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
+import com.facebook.react.ReactApplication;
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
+import com.brentvatne.react.ReactVideoPackage;
 import com.horcrux.svg.SvgPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
@@ -37,13 +39,15 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
+        new YouTubeSdkPackage(),
           new MainReactPackage(),
-            new YouTubeSdkPackage(),
-            new RNPassKitPackage(),
-            new ReactVideoPackage(),
+              new RNFusedLocationPackage(),
+            new AsyncStoragePackage(),
+            new RNGestureHandlerPackage(),
             new MapsPackage(),
             new RNFetchBlobPackage(),
             new RNCWebViewPackage(),
+            new ReactVideoPackage(),
             new SvgPackage(),
             new SplashScreenReactPackage(),
             new RNScreensPackage(),
@@ -52,7 +56,6 @@ public class MainApplication extends Application implements ReactApplication {
             new LinearGradientPackage(),
             new ImagePickerPackage(),
             new RNDeviceInfo(),
-            new CustomTabsPackage(),
             new ReactNativeConfigPackage()
       );
     }

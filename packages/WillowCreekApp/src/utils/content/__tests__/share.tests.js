@@ -13,7 +13,16 @@ describe('the share function', () => {
     share({ title: 'title', url: 'http://url.com' });
     expect(Share.share).toBeCalledWith({
       title: 'title',
-      message: 'title',
+      message: undefined,
+      url: 'http://url.com',
+    });
+  });
+  test('use message if provided', () => {
+    Platform.OS = 'ios';
+    share({ title: 'title', message: 'some message', url: 'http://url.com' });
+    expect(Share.share).toBeCalledWith({
+      title: 'title',
+      message: 'some message',
       url: 'http://url.com',
     });
   });
@@ -22,7 +31,7 @@ describe('the share function', () => {
     share({ title: 'title', url: 'http://url.com' });
     expect(Share.share).toBeCalledWith({
       title: 'title',
-      message: 'title\nhttp://url.com',
+      message: 'http://url.com',
       url: 'http://url.com',
     });
   });

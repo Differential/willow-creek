@@ -13,7 +13,7 @@ const TabNavigator = createBottomTabNavigator(
     Connect,
   },
   {
-  	initialRouteName: 'Home',
+    initialRouteName: 'Home',
     tabBarComponent: TabBar,
     tabBarOptions: {
       labelStyle: {
@@ -23,11 +23,8 @@ const TabNavigator = createBottomTabNavigator(
     },
     lazy: true,
     removeClippedSubviews: true,
+    navigationOptions: { header: null },
   }
 );
-
-TabNavigator.navigationOptions = {
-  header: null,
-};
 
 export default TabNavigator;

@@ -20,7 +20,7 @@ import FindCampusAd from '../../ui/FindCampusAd';
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 
 import StretchyView from '../../ui/StretchyView';
-import FeaturesFeed from '../../ui/FeaturesFeed';
+import FeaturesFeed from '../home/Features';
 import CampaignFeed from '../../ui/CampaignFeed';
 
 import GET_FEED from './getFeed';

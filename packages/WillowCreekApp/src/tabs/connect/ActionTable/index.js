@@ -4,21 +4,15 @@ import { View, Image } from 'react-native';
 import {
   TableView,
   Cell,
-  CellContent,
+  CellText,
+  CellIcon,
   Divider,
   Touchable,
   styled,
   PaddedView,
-  H4,
   H5,
-  H6,
 } from '@apollosproject/ui-kit';
 import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
-
-const CellImage = styled(({ theme }) => ({
-  width: theme.sizing.baseUnit * 4,
-  height: theme.sizing.baseUnit * 4,
-}))(Image);
 
 const ActionTable = () => (
   <WebBrowserConsumer>
@@ -32,11 +26,8 @@ const ActionTable = () => (
             onPress={() => openUrl('https://apollosrock.newspring.cc/page/235')}
           >
             <Cell>
-              <CellImage source={require('./empty.png')} />
-              <CellContent>
-                <H4>Volunteer or Serve</H4>
-                <H6>Lorem ipsum doler sit itmut</H6>
-              </CellContent>
+              <CellText>Find a serving opportunity</CellText>
+              <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
           <Divider />
@@ -44,11 +35,8 @@ const ActionTable = () => (
             onPress={() => openUrl('https://apollosrock.newspring.cc/page/236')}
           >
             <Cell>
-              <CellImage source={require('./empty.png')} />
-              <CellContent>
-                <H4>Join a small group</H4>
-                <H6>Lorem ipsum doler sit itmut</H6>
-              </CellContent>
+              <CellText>Join a small group</CellText>
+              <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
           <Divider />
@@ -56,11 +44,8 @@ const ActionTable = () => (
             onPress={() => openUrl('https://apollosrock.newspring.cc/page/233')}
           >
             <Cell>
-              <CellImage source={require('./empty.png')} />
-              <CellContent>
-                <H4>Get baptized</H4>
-                <H6>Lorem ipsum doler sit itmut</H6>
-              </CellContent>
+              <CellText>I need prayer</CellText>
+              <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
           <Divider />
@@ -68,11 +53,19 @@ const ActionTable = () => (
             onPress={() => openUrl('https://apollosrock.newspring.cc/page/186')}
           >
             <Cell>
-              <CellImage source={require('./empty.png')} />
-              <CellContent>
-                <H4>I have a question</H4>
-                <H6>Lorem ipsum doler sit itmut</H6>
-              </CellContent>
+              <CellText>I would like to give</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+        </TableView>
+        <TableView>
+          <Touchable
+            onPress={() => NavigationActions.navigate('TestingControlPanel')}
+          >
+            <Cell>
+              <CellIcon name="settings" />
+              <CellText>Open Testing Panel</CellText>
+              <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
         </TableView>

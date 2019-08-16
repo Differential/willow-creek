@@ -2,20 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Query, Mutation } from 'react-apollo';
 import { Dimensions } from 'react-native';
-
+import Geolocation from 'react-native-geolocation-service';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
+import requestLocation from './requestLocation';
 
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
 import MapView from './MapView';
-
-const getCurrentLocation = () =>
-  new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => resolve(position),
-      (e) => reject(e)
-    );
-  });
 
 class Location extends PureComponent {
   static propTypes = {
@@ -30,7 +23,6 @@ class Location extends PureComponent {
       latitudeDelta: PropTypes.number,
       longitudeDelta: PropTypes.number,
     }),
-    onFinished: PropTypes.func,
   };
 
   static defaultProps = {
@@ -62,24 +54,23 @@ class Location extends PureComponent {
     },
   };
 
-  componentDidMount() {
-    return getCurrentLocation().then((position) => {
-      if (position) {
+  async componentDidMount() {
+    await requestLocation();
+    Geolocation.getCurrentPosition(
+      (position) => {
         this.setState({
           userLocation: {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           },
         });
-      }
-    });
+      },
+      () => null,
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+    );
   }
 
   render() {
-    const { navigation, onFinished } = this.props;
-    // we should use the `onFinished` from the navigation param, if it exists.
-    const handleFinished = navigation.getParam('onFinished', onFinished);
-
     return (
       <Query
         query={GET_CAMPUSES}
@@ -93,7 +84,7 @@ class Location extends PureComponent {
           <Mutation mutation={CHANGE_CAMPUS} refetchQueries={['tvFeed']}>
             {(handlePress) => (
               <MapView
-                navigation={navigation}
+                navigation={this.props.navigation}
                 isLoading={loading}
                 error={error}
                 campuses={campuses}
@@ -105,8 +96,7 @@ class Location extends PureComponent {
                       campusId: id,
                     },
                   });
-                  await navigation.goBack();
-                  if (handleFinished) handleFinished();
+                  this.props.navigation.goBack();
                 }}
               />
             )}

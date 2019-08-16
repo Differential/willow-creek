@@ -16,6 +16,7 @@ ROCK:
   API_URL: http://rockdemo.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
   IMAGE_URL: http://rockdemo.willowcreek.org/GetImage.ashx
+  SHARE_URL: http://rockdemo.willowcreek.org
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/New_York'
 ONE_SIGNAL:
@@ -111,42 +112,45 @@ ROCK_MAPPINGS:
   # Used to determine what Campus ID correseponds to what DataView.
   # We hijack the persona feature to show a campus specific user feed.
   CAMPUS_DATA_VIEWS:
-    -
-      # Chicago
+    - # Chicago
       CampusDataViewGuid: 5f0f1aeb-330a-4cff-b99e-30d9f6f02c9c
       CampusId: 6
-    -
-      # Casa De Luz
+    - # Casa De Luz
       CampusDataViewGuid: 9cd67fd5-f316-4fb9-99b7-ce998721558a
       CampusId: 5
-    -
-      # Crystal Lake
+    - # Crystal Lake
       CampusDataViewGuid: 4db5a26d-9f4d-4d24-8ec0-4ffc05809ffa
       CampusId: 4
-    -
-      # Huntley Campus
+    - # Huntley Campus
       CampusDataViewGuid: f28fef3a-e6d7-4837-b003-c9a1d9cd235f
       CampusId: 7
-    -
-      # North Shore
+    - # North Shore
       CampusDataViewGuid: 5bb891df-f608-4a2b-948e-1537a5e6b1c6
       CampusId: 3
-    -
-      # South Barrington
+    - # South Barrington
       CampusDataViewGuid: bbdfae06-5f70-4703-954c-a21d1a6b140b
       CampusId: 1
-    -
-      # South Lake
+    - # South Lake
       CampusDataViewGuid: e3bc6b72-bc9f-4f08-8ba8-49577bb049ed
       CampusId: 8
-    -
-      # Wheaton
+    - # Wheaton
       CampusDataViewGuid: d96b6f89-441a-489a-b8df-a406ae108474
       CampusId: 2
 
   SERMON_CHANNEL_ID: 5
 
   HOME_FEATURE_CHANNEL_ID: 13
+
+HOME_FEATURES:
+  - title: FOR YOU
+    algorithms: [SERMON_CHILDREN, PERSONA_FEED]
+    subtitle: Explore what God calls you to today
+  - title: BULLETIN
+    subtitle: What's happening at apollos?
+    algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 13
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

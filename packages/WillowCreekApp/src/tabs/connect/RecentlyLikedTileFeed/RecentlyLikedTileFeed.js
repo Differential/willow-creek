@@ -16,7 +16,7 @@ import {
   withIsLoading,
 } from '@apollosproject/ui-kit';
 
-import ContentCard from 'WillowCreekApp/src/ui/ContentCardConnected';
+import HorizontalContentCardConnected from 'WillowCreekApp/src/ui/HorizontalContentCardConnected';
 
 const RowHeader = styled(({ theme }) => ({
   flexDirection: 'row',
@@ -74,11 +74,9 @@ class RecentlyLikedTileFeed extends Component {
         });
       }}
     >
-      <ContentCard
+      <HorizontalContentCardConnected
         isLoading={item.isLoading}
-        tile
         contentId={item.id}
-        inHorizontalList
       />
     </TouchableScale>
   );
@@ -107,7 +105,6 @@ class RecentlyLikedTileFeed extends Component {
           </AndroidTouchableFix>
         </RowHeader>
         <StyledHorizontalTileFeed
-          initialNumToRender={5}
           content={content}
           renderItem={this.titleImageItem}
           loadingStateObject={this.loadingStateObject}

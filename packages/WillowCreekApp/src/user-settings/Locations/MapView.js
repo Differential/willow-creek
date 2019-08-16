@@ -65,10 +65,6 @@ class MapView extends Component {
     }),
   };
 
-  state = {
-    campus: null,
-  };
-
   animation = new Animated.Value(0);
 
   componentDidMount() {
@@ -85,28 +81,33 @@ class MapView extends Component {
     return { paddingHorizontal: this.props.theme.sizing.baseUnit * 0.75 }; // pad cards from edge of screen but account for card margin
   }
 
+  get currentCampus() {
+    const cardIndex = Math.floor(
+      this.previousScrollPosition / CARD_WIDTH + 0.3
+    ); // animate 30% away from landing on the next item;
+    const campus = this.props.campuses[cardIndex];
+    return campus;
+  }
+
   updateCoordinates = ({ value }) => {
     this.previousScrollPosition = value;
-    const cardIndex = Math.floor(value / CARD_WIDTH + 0.3); // animate 30% away from landing on the next item;
-    const campus = this.props.campuses[cardIndex];
-    this.setState({ campus });
+
+    const campus = this.currentCampus;
+
+    const { userLocation } = this.props;
     if (!campus) {
-      this.map.fitToCoordinates(
-        [...this.props.campuses, this.props.userLocation],
-        {
-          edgePadding: {
-            top: 100,
-            left: 100,
-            right: 100,
-            // This is higher to avoid the campus cards (baseUnit * 6) on the bottom
-            bottom: 100 + this.props.theme.sizing.baseUnit * 12,
-          },
-        }
-      );
+      this.map.fitToCoordinates([...this.props.campuses, userLocation], {
+        edgePadding: {
+          top: 100,
+          left: 100,
+          right: 100,
+          // This is higher to avoid the campus cards (baseUnit * 6) on the bottom
+          bottom: 100 + this.props.theme.sizing.baseUnit * 12,
+        },
+      });
       return;
     }
 
-    const { userLocation } = this.props;
     this.map.fitToCoordinates([campus, userLocation], {
       edgePadding: {
         top: 100,
@@ -196,7 +197,7 @@ class MapView extends Component {
                 pill={false}
                 type="secondary"
                 onPress={() =>
-                  onLocationSelect(this.state.campus || campuses[0])
+                  onLocationSelect(this.currentCampus || campuses[0])
                 }
               />
             </PaddedView>

@@ -3,9 +3,20 @@ import PropTypes from 'prop-types';
 
 import { ActionCard } from '@apollosproject/ui-kit';
 import { ScriptureItem } from '@apollosproject/ui-scripture';
+import ShareContentButtonConnected from 'WillowCreekApp/src/ui/ShareContentButtonConnected';
 
-const ScriptureFeature = ({ scriptures, isLoading }) => (
-  <ActionCard icon={'text'}>
+const ScriptureFeature = ({
+  scriptures,
+  sharing: { message } = {},
+  isLoading,
+  contentId,
+}) => (
+  <ActionCard
+    icon={'text'}
+    action={
+      <ShareContentButtonConnected message={message} itemId={contentId} />
+    }
+  >
     {scriptures.map(({ copyright, reference, html, id }) => (
       <ScriptureItem
         key={id}
@@ -28,10 +39,15 @@ ScriptureFeature.propTypes = {
       copyright: PropTypes.string,
     })
   ),
+  sharing: PropTypes.shape({ message: PropTypes.string }),
+  contentId: PropTypes.string.isRequired,
 };
 
 export const SCRIPTURE_FEATURE_FRAGMENT = `
 fragment ScriptureFeatureFragment on ScriptureFeature {
+  sharing {
+    message
+  }
   scriptures {
     id
     html
