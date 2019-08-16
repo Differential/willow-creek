@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StatusBar } from 'react-native';
 
 import {
   styled,
@@ -44,6 +45,7 @@ const LandingScreen = ({
   ...props
 }) => (
   <BackgroundView>
+    <StatusBar barStyle="light-content" />
     <Slide {...props} scrollEnabled={false}>
       {BackgroundComponent}
       <Content>

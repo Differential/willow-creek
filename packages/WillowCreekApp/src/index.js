@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 
-import { BackgroundView, withTheme } from '@apollosproject/ui-kit';
+import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 
@@ -31,7 +31,11 @@ const ProtectedRouteWithSplashScreen = (props) => {
   return <ProtectedRoute {...props} onRouteChange={handleOnRouteChange} />;
 };
 
-const AuthWithBackground = () => <Auth BackgroundComponent={AuthBackground} />;
+const AuthWithBackground = () => (
+  <ThemeMixin mixin={{ type: 'onboarding' }}>
+    <Auth BackgroundComponent={AuthBackground} />
+  </ThemeMixin>
+);
 AuthWithBackground.navigationOptions = Auth.navigationOptions;
 
 const AppNavigator = createStackNavigator(

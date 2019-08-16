@@ -19,7 +19,7 @@ function Onboarding({ navigation }) {
             <AskName onPressPrimary={swipeForward} />
             <AboutYouWithFirstName onPressPrimary={swipeForward} />
             <ApolloConsumer>
-              {client => (
+              {(client) => (
                 <AskNotifications
                   onPressPrimary={() => navigation.replace('Tabs')}
                   onRequestPushPermissions={() =>
@@ -36,7 +36,7 @@ function Onboarding({ navigation }) {
   );
 }
 
-const OnboardingWithTheme = withThemeMixin({ type: 'dark' })(Onboarding);
+const OnboardingWithTheme = withThemeMixin({ type: 'onboarding' })(Onboarding);
 
 OnboardingWithTheme.navigationOptions = {
   title: 'Onboarding',

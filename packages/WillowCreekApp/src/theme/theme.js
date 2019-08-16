@@ -1,3 +1,5 @@
+import Color from 'color';
+
 const colors = {
   primary: '#243E85',
   secondary: '#022C71',
@@ -100,20 +102,6 @@ const overrides = {
   'ui-auth.TitleText': {
     color: '#FFFFFF',
   },
-  'ui-auth.PromptText': {
-    color: '#FFFFFF',
-  },
-  // H4: {
-  //   lineHeight: 16,
-  // },
-  // H5: {
-  //   textTransform: 'uppercase',
-  //   color: colors.darkSecondary,
-  // },
-  // H6: {
-  //   lineHeight: 16,
-  //   fontFamily: typography.sans.regular.default,
-  // },
   'Card.Image': {
     resizeMode: 'cover',
   },
@@ -130,6 +118,37 @@ const buttons = () => ({
   },
 });
 
+const types = {
+  onboarding: ({ colors: themeColors, alpha }) => ({
+    colors: {
+      text: {
+        primary: themeColors.lightPrimary,
+        secondary: themeColors.lightSecondary,
+        tertiary: themeColors.lightTertiary,
+        link: themeColors.tertiary,
+      },
+      background: {
+        screen: themeColors.white,
+        paper: themeColors.transparent,
+        accent: Color(themeColors.darkTertiary)
+          .fade(alpha.medium)
+          .string(),
+        inactive: themeColors.darkTertiary,
+      },
+      shadows: {
+        default: Color(themeColors.darkTertiary)
+          .fade(alpha.medium)
+          .string(),
+      },
+      action: {
+        default: themeColors.darkTertiary,
+        primary: themeColors.primary,
+        secondary: themeColors.secondary,
+        tertiary: themeColors.tertiary,
+      },
+    },
+  }),
+};
 /* Base overlays. These are used as configuration for LinearGradients across the app */
 // export const overlays = () => ({});
 
@@ -153,4 +172,5 @@ export default {
   typography,
   overrides,
   buttons,
+  types,
 };
