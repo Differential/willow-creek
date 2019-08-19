@@ -1,13 +1,13 @@
 {
-  "description": "Apollos Church",
+  "description": "Willow Creek",
   "formatVersion": 1,
-  "organizationName": "Apollos Church",
-  "passTypeIdentifier": "pass.com.apollos.testing",
+  "organizationName": "Willow Creek",
+  "passTypeIdentifier": "pass.org.willowcreek.checkin",
   "teamIdentifier": "7TM8C6252Z",
-  "logoText": "Apollos Church",
-  "backgroundColor": "rgb(0,103,109)",
-  "foregroundColor": "rgb(248,247,244)",
-  "labelColor": "rgb(248,247,244)",
+  "logoText": "Willow Creek",
+  "backgroundColor": "rgb(36,62,133)",
+  "foregroundColor": "rgb(255,255,255)",
+  "labelColor": "rgb(255,255,255)",
   "serialNumber": "checkinpass-{{ person | GetPersonAlternateId }}",
   "thumbnail": {
     "uri": "{{ person.Photo.Url }}&format=png&height=200"

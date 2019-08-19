@@ -108,10 +108,6 @@ const overrides = {
 };
 
 const buttons = () => ({
-  primary: {
-    fill: '#ffffff',
-    accent: '#00368f', // this should be a global color?
-  },
   ghost: {
     fill: '#ffffff',
     accent: '#989A98',
