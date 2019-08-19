@@ -12,13 +12,19 @@ const queryMap = {
   growCampaign: GET_GROW_CAMPAIGN_CONTENT_ITEM,
 };
 
-const ConnectedFeaturedCard = ({ title, summary, coverImage, isLoading }) => (
+const ConnectedFeaturedCard = ({
+  title,
+  summary,
+  coverImage,
+  isLoading,
+  __typename,
+}) => (
   <FeaturedCard
     title={title}
     coverImage={coverImage && coverImage.sources}
     isLoading={isLoading}
     summary={summary}
-    hasAction
+    hasAction={['MediaContentItem', 'WeekendContentItem'].includes(__typename)}
   />
 );
 

@@ -26,6 +26,7 @@ class YoutubeVideoWindow extends Component {
   lastDuration = 1;
 
   componentWillReceiveProps(newProps) {
+    if (!this.isYoutube) return;
     if (newProps.paused !== this.props.paused) {
       if (newProps.paused) {
         this.video.pause();
@@ -39,16 +40,22 @@ class YoutubeVideoWindow extends Component {
     this.unmounted = true;
   }
 
+  get isYoutube() {
+    return this.props.source && !this.props.source.uri.includes('http');
+  }
+
   setVideoRef = (element) => {
     this.video = element;
   };
 
   handleOnReady = () => {
+    if (!this.isYoutube) return;
     this.didLoad = false;
     if (this.props.onLoadStart) this.props.onLoadStart();
   };
 
   handleOnChangeState = ({ state }) => {
+    if (!this.isYoutube) return;
     if (this.props.onBuffer)
       this.props.onBuffer({ isBuffering: state === 'BUFFERING' });
 
@@ -74,6 +81,7 @@ class YoutubeVideoWindow extends Component {
   };
 
   handleOnProgress = ({ currentTime, duration }) => {
+    if (!this.isYoutube) return;
     if (!this.didLoad || duration !== this.lastDuration) {
       this.didLoad = true;
       this.props.onLoad({ duration });
@@ -89,6 +97,7 @@ class YoutubeVideoWindow extends Component {
   };
 
   handlePlayListener = () => {
+    if (!this.isYoutube) return;
     if (!this.isPlaying) return;
     requestAnimationFrame(async () => {
       if (this.unmounted || !this.isPlaying) return;
@@ -100,13 +109,14 @@ class YoutubeVideoWindow extends Component {
   };
 
   seek = (time) => {
+    if (!this.isYoutube) return this.video.seek(time);
     this.video.seekTo(time);
   };
 
   render() {
     // gracefully handle non-youtube videos
-    if (this.props.source && this.props.source.uri.includes('http'))
-      return <Video {...this.props} />;
+    if (!this.isYoutube)
+      return <Video {...this.props} ref={this.setVideoRef} />;
 
     const { source, paused } = this.props;
     const videoId = source.uri;

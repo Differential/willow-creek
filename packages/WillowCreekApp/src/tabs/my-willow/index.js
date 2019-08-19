@@ -94,7 +94,7 @@ class MyWillow extends PureComponent {
                           type="myWillowCampaign"
                           onPressItem={this.handleOnPress}
                         />
-                        <FeaturesFeed onPressItem={this.handleOnPress} />
+                        <FeaturesFeed navigation={this.props.navigation} />
                       </>
                     }
                     content={get(data, 'tvFeed.edges', []).map(

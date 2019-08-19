@@ -16,6 +16,9 @@ export default gql`
           }
         }
         videos {
+          sources {
+            uri
+          }
           youtubeId
         }
       }
