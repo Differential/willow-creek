@@ -41,6 +41,14 @@ const AuthWithBackground = (props) => (
 
 hoistNonReactStatic(AuthWithBackground, Auth);
 
+const PassesWithBrand = (props) => (
+  <ThemeMixin mixin={{ buttons: { primary: { accent: 'white' } } }}>
+    <Passes {...props} />
+  </ThemeMixin>
+);
+
+hoistNonReactStatic(PassesWithBrand, Passes);
+
 const AppNavigator = createStackNavigator(
   {
     ProtectedRoute: ProtectedRouteWithSplashScreen,
@@ -50,7 +58,7 @@ const AppNavigator = createStackNavigator(
     PersonalDetails,
     ChangePassword,
     Location,
-    Passes,
+    Passes: PassesWithBrand,
     UserWebBrowser,
     Onboarding,
     LandingScreen,

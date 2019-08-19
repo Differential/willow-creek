@@ -107,7 +107,11 @@ const overrides = {
   },
 };
 
-const buttons = () => ({
+const buttons = ({ colors: themeColors }) => ({
+  primary: {
+    fill: '#ffffff',
+    accent: themeColors.action.primary,
+  },
   ghost: {
     fill: '#ffffff',
     accent: '#989A98',
