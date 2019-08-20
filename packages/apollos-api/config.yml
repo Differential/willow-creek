@@ -139,18 +139,19 @@ ROCK_MAPPINGS:
 
   SERMON_CHANNEL_ID: 5
 
-  HOME_FEATURE_CHANNEL_ID: 13
-
 HOME_FEATURES:
   - title: FOR YOU
-    algorithms: [PERSONA_FEED]
     subtitle: Explore what God calls you to today
-  - title: BULLETIN
-    subtitle: What's happening at apollos?
     algorithms:
-      - type: CONTENT_CHANNEL
+      - type: PERSONA_FEED
         arguments:
-          contentChannelId: 13
+          personaId: 699
+  - title: GET INVOLVED
+    subtitle: Coming Up
+    algorithms:
+      - type: PERSONA_FEED
+        arguments:
+          personaId: 596
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

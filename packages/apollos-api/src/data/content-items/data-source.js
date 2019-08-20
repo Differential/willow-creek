@@ -70,6 +70,34 @@ class ExtendedContentItem extends ContentItem.dataSource {
     const campusPersonaGuid = await this.getPersonaGuidForCampus();
     return this.byPersonaGuid(campusPersonaGuid);
   };
+
+  byPersonaFeed = async ({
+    first = 3,
+    personaId = ApollosConfig.ROCK_MAPPINGS.DATAVIEW_CATEGORIES.PersonaId,
+  }) => {
+    const {
+      dataSources: { Person },
+    } = this.context;
+
+    // Grabs the guids associated with all dataviews user is memeber
+    const getPersonaGuidsForUser = await Person.getPersonas({
+      categoryId: personaId,
+    });
+
+    if (getPersonaGuidsForUser.length === 0) {
+      return this.request().empty();
+    }
+
+    // Grabs content items based on personas
+    return this.request(
+      `ContentChannelItems/GetFromPersonDataView?guids=${getPersonaGuidsForUser
+        .map((obj) => obj.guid)
+        .join()}`
+    )
+      .andFilter(this.LIVE_CONTENT())
+      .top(first)
+      .orderBy('StartDateTime', 'desc');
+  };
 }
 
 export default ExtendedContentItem;
