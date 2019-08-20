@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import { get } from 'lodash';
 import { H5, Icon, styled, Button } from '@apollosproject/ui-kit';
 import { withNavigation } from 'react-navigation';
 
@@ -26,17 +27,13 @@ const StyledButton = styled(({ theme }) => ({
 
 const CampusSelectButton = withNavigation(({ navigation, ...otherProps }) => (
   <Query query={GET_USER_CAMPUS} fetchPolicy="cache-and-network">
-    {({
-      data: {
-        currentUser: { profile: { campus: { name } = {} } = {} } = {},
-      } = {},
-    }) => (
+    {({ data: { currentUser: { profile: { campus } } = {} } = {} }) => (
       <StyledButton
         type="ghost"
         onPress={() => navigation.navigate('Location')}
         {...otherProps}
       >
-        <H5>{name || 'Select Campus'}</H5>
+        <H5>{get(campus, 'name') || 'Select Campus'}</H5>
         <Icon name="arrow-down" size={16} />
       </StyledButton>
     )}
