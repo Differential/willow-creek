@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
+import Badge from '@apollosproject/ui-kit/src/theme/icons/Badge';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Passes from '@apollosproject/ui-passes';
@@ -49,6 +50,8 @@ const PassesWithBrand = (props) => (
 
 hoistNonReactStatic(PassesWithBrand, Passes);
 
+const customIcons = { Badge };
+
 const AppNavigator = createStackNavigator(
   {
     ProtectedRoute: ProtectedRouteWithSplashScreen,
@@ -73,7 +76,7 @@ const AppNavigator = createStackNavigator(
 const AppContainer = createAppContainer(AppNavigator);
 
 const App = () => (
-  <Providers>
+  <Providers iconInput={customIcons}>
     <BackgroundView>
       <AppStatusBar barStyle="dark-content" />
       <AppContainer

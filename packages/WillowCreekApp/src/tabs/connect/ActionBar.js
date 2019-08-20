@@ -9,19 +9,23 @@ const Toolbar = ({ navigation }) => (
     {(openUrl) => (
       <ActionBar>
         <ActionBarItem
+          onPress={() =>
+            openUrl(
+              'https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities'
+            )
+          }
+          icon="groups"
+          label="Groups"
+        />
+        <ActionBarItem
           onPress={() => navigation.navigate('Passes')}
-          icon="check"
+          icon="badge"
           label="Check-in"
         />
         <ActionBarItem
-          onPress={() => openUrl('https://apollosrock.newspring.cc/page/186')}
-          icon="download"
+          onPress={() => openUrl('https://www.willowcreek.org/en/give')}
+          icon="like-solid"
           label="Give"
-        />
-        <ActionBarItem
-          onPress={() => navigation.navigate('TestingControlPanel')}
-          icon="information"
-          label="Test"
         />
       </ActionBar>
     )}
