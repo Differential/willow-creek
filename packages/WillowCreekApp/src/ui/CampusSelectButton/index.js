@@ -27,13 +27,13 @@ const StyledButton = styled(({ theme }) => ({
 
 const CampusSelectButton = withNavigation(({ navigation, ...otherProps }) => (
   <Query query={GET_USER_CAMPUS} fetchPolicy="cache-and-network">
-    {({ data: { currentUser: { profile: { campus } } = {} } = {} }) => (
+    {({ data: { currentUser: { profile } = {} } = {} }) => (
       <StyledButton
         type="ghost"
         onPress={() => navigation.navigate('Location')}
         {...otherProps}
       >
-        <H5>{get(campus, 'name') || 'Select Campus'}</H5>
+        <H5>{get(profile, 'campus.name') || 'Select Campus'}</H5>
         <Icon name="arrow-down" size={16} />
       </StyledButton>
     )}
