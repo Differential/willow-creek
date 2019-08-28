@@ -72,9 +72,9 @@ class ExtendedContentItem extends ContentItem.dataSource {
   };
 
   byPersonaFeed = async ({
-    first = 3,
     personaId = ApollosConfig.ROCK_MAPPINGS.DATAVIEW_CATEGORIES.PersonaId,
-  }) => {
+    contentChannelIds,
+  } = {}) => {
     const {
       dataSources: { Person },
     } = this.context;
@@ -89,14 +89,22 @@ class ExtendedContentItem extends ContentItem.dataSource {
     }
 
     // Grabs content items based on personas
-    return this.request(
+    let request = this.request(
       `ContentChannelItems/GetFromPersonDataView?guids=${getPersonaGuidsForUser
         .map((obj) => obj.guid)
         .join()}`
     )
       .andFilter(this.LIVE_CONTENT())
-      .top(first)
       .orderBy('StartDateTime', 'desc');
+
+    if (contentChannelIds && contentChannelIds.length) {
+      request = request.andFilter(
+        contentChannelIds
+          .map((id) => `(ContentChannelId eq ${id})`)
+          .join(' or ')
+      );
+    }
+    return request;
   };
 }
 

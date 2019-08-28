@@ -3,11 +3,15 @@ import { get } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
 
 export default class Features extends baseFeatures.dataSource {
-  async personaFeedAlgorithm({ personaId, first = 3 }) {
+  async personaFeedAlgorithm({ personaId, contentChannelIds, first = 3 }) {
     const { ContentItem } = this.context.dataSources;
 
     // Get the first three persona items.
-    const personaFeed = await ContentItem.byPersonaFeed({ personaId, first });
+    const personaFeed = await ContentItem.byPersonaFeed({
+      personaId,
+      first,
+      contentChannelIds,
+    });
     const items = await personaFeed.get();
 
     // Map them into specific actions.

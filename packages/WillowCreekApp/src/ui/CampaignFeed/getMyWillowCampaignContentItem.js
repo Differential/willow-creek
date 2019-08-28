@@ -8,8 +8,14 @@ export default gql`
     myWillowCampaign {
       edges {
         node {
-          ...largeCardFragment
-          ...contentItemFragment
+          childContentItemsConnection {
+            edges {
+              node {
+                ...largeCardFragment
+                ...contentItemFragment
+              }
+            }
+          }
         }
       }
     }
