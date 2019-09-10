@@ -19,7 +19,7 @@ const ActionTable = () => (
     {(openUrl) => (
       <View>
         <PaddedView style={{ paddingBottom: 0 }}>
-          <H5 padded>Engage This Weekend</H5>
+          <H5 padded>Connect</H5>
         </PaddedView>
         <TableView>
           <Touchable

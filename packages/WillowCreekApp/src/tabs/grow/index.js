@@ -4,14 +4,11 @@ import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { SafeAreaView } from 'react-navigation';
-import {
-  BackgroundView,
-  PaddedView,
-  FeedView,
-  HighlightCard,
-} from '@apollosproject/ui-kit';
+import { BackgroundView, PaddedView, FeedView } from '@apollosproject/ui-kit';
 
+import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
 import PageTitle from 'WillowCreekApp/src/ui/PageTitle';
+import FeaturesFeed from '../home/Features';
 import CampaignFeed from '../../ui/CampaignFeed';
 import getUserFeed from './getUserFeed';
 import Icon from './Icon';
@@ -46,13 +43,8 @@ class Grow extends Component {
           <Query query={getUserFeed} fetchPolicy="cache-and-network">
             {({ loading, error, data, refetch }) => (
               <FeedView
-                ListItemComponent={({ title, coverImage, summary }) => (
-                  <HighlightCard
-                    title={title}
-                    coverImage={coverImage && coverImage.sources}
-                    summary={summary}
-                    hasAction
-                  />
+                ListItemComponent={({ id }) => (
+                  <ContentCardConnected contentId={id} />
                 )}
                 ListHeaderComponent={
                   <>
@@ -63,9 +55,10 @@ class Grow extends Component {
                       type="growCampaign"
                       onPressItem={this.handleOnPress}
                     />
+                    <FeaturesFeed navigation={this.props.navigation} />
                   </>
                 }
-                content={get(data, 'personaFeed.edges', []).map(
+                content={get(data, 'userFeed.edges', []).map(
                   (edge) => edge.node
                 )}
                 isLoading={loading}
