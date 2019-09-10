@@ -92,7 +92,11 @@ ROCK_MAPPINGS:
 
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
-    - 5
+    - 4
+    - 17
+    - 16
+    - 14
+
 
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
@@ -149,8 +153,11 @@ HOME_FEATURES:
         arguments:
           personaId: 699
           contentChannelIds:
-            - 5
-            - 2
+            - 12
+            - 15
+            - 16
+            - 17
+            - 18
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
