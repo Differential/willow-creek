@@ -92,20 +92,26 @@ ROCK_MAPPINGS:
 
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
-    - 5
+    - 4
+    - 17
+    - 16
+    - 14
+
 
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
-    - 5
-    - 4
-    - 3
+    - 12
+    - 15
+    - 16
+    - 17
+    - 18
 
   CAMPAIGN_CHANNEL_IDS:
     - 8
 
-  GROW_FEATURE_ITEM_ID: 83
-  MY_WILLOW_FEATURE_ITEM_ID: 84
+  GROW_CAMPAIGN_CONTENT_CHANNEL_ID: 11
+  MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID: 13
 
   YOUTUBE_CONTENT_CHANNEL: 12
 
@@ -139,18 +145,19 @@ ROCK_MAPPINGS:
 
   SERMON_CHANNEL_ID: 5
 
-  HOME_FEATURE_CHANNEL_ID: 13
-
 HOME_FEATURES:
   - title: FOR YOU
-    algorithms: [PERSONA_FEED]
     subtitle: Explore what God calls you to today
-  - title: BULLETIN
-    subtitle: What's happening at apollos?
     algorithms:
-      - type: CONTENT_CHANNEL
+      - type: PERSONA_FEED
         arguments:
-          contentChannelId: 13
+          personaId: 699
+          contentChannelIds:
+            - 12
+            - 15
+            - 16
+            - 17
+            - 18
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

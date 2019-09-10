@@ -3,12 +3,12 @@ import { createBottomTabNavigator } from 'react-navigation';
 import TabBar from './tabBar';
 
 import Connect from './connect';
-import Grow from './grow';
+import Discover from './discover';
 import MyWillow from './my-willow';
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Grow,
+    Discover,
     Home: MyWillow,
     Connect,
   },

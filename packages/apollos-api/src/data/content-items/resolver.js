@@ -12,17 +12,23 @@ const resolver = {
     ...ContentItem.resolver.Query,
     growCampaign: async (root, args, { dataSources }) =>
       dataSources.ContentItem.paginate({
-        cursor: await dataSources.ContentItem.getCursorByParentContentItemId([
-          ROCK_MAPPINGS.GROW_FEATURE_ITEM_ID,
-        ]),
-        args,
+        cursor: await dataSources.ContentItem.byPersonaFeed({
+          contentChannelIds: [ROCK_MAPPINGS.GROW_CAMPAIGN_CONTENT_CHANNEL_ID],
+        }),
       }),
     myWillowCampaign: async (root, args, { dataSources }) =>
       dataSources.ContentItem.paginate({
-        cursor: await dataSources.ContentItem.getCursorByParentContentItemId([
-          ROCK_MAPPINGS.MY_WILLOW_FEATURE_ITEM_ID,
-        ]),
-        args,
+        cursor: await dataSources.ContentItem.byPersonaFeed({
+          contentChannelIds: [
+            ROCK_MAPPINGS.MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID,
+          ],
+        }),
+      }),
+    personaFeed: async (root, args, { dataSources }) =>
+      dataSources.ContentItem.paginate({
+        cursor: await dataSources.ContentItem.byPersonaFeed({
+          contentChannelIds: ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
+        }),
       }),
     tvFeed: async (root, args, { dataSources }) => {
       const cursor = await dataSources.ContentItem.getContentItemsForCampus();

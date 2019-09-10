@@ -34,7 +34,12 @@ const CampaignFeed = ({ onPressItem, type }) => (
       const featuredContent = get(featuredData, `${type}.edges`, []).map(
         (edge) => edge.node
       );
-      const featuredItem = featuredContent[0];
+
+      const featuredItem = get(
+        featuredContent[0],
+        'childContentItemsConnection.edges[0].node',
+        {}
+      );
 
       if (!featuredItem || (!featuredItem.id && !isFeaturedLoading))
         return null;
