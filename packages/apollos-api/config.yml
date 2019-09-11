@@ -13,6 +13,7 @@ APP:
   DEEP_LINK_HOST: WillowCreekApp
   ROOT_API_URL: ${ROOT_URL}
 ROCK:
+  USE_PLUGIN: true
   API_URL: http://rockdemo.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
   IMAGE_URL: http://rockdemo.willowcreek.org/GetImage.ashx

@@ -155,6 +155,23 @@
     natural "^0.6.2"
     sanitize-html "^1.19.3"
 
+"@apollosproject/data-connector-rock@^1.1.1-alpha.20":
+  version "1.1.1-alpha.20"
+  resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-rock/-/data-connector-rock-1.1.1-alpha.20.tgz#602728da59fc7b8b9dd8a8adcc0218114dbd7abb"
+  integrity sha512-Gj4MWM95K4xcjP/MifJQDcQmflHiLaA7hBaYGJ1DR8sKzcf1kx3rBR0FzX3vYYFB0cljgQ8G8mI4WMK5ZrdYyg==
+  dependencies:
+    "@apollosproject/data-schema" "^1.1.0"
+    "@apollosproject/server-core" "^1.1.0"
+    awesome-phonenumber "^2.4.2"
+    form-data "^2.3.3"
+    jest "^23.6.0"
+    jsonwebtoken "^8.5.1"
+    lodash "^4.17.11"
+    moment "^2.22.2"
+    moment-timezone "^0.5.23"
+    natural "^0.6.2"
+    sanitize-html "^1.19.3"
+
 "@apollosproject/data-connector-twilio@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-twilio/-/data-connector-twilio-1.1.0.tgz#0ec5e810545bc11b4c50464ad7defb374338bc03"
