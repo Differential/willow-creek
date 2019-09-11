@@ -56,10 +56,7 @@ class MyWillow extends PureComponent {
       <BackgroundView>
         <StretchyView
           StretchyComponent={
-            <OverlayBackgroundImage
-              style={{ aspectRatio: 0.8 }}
-              source={{ uri: 'https://picsum.photos/600/600' }}
-            />
+            <OverlayBackgroundImage style={{ aspectRatio: 0.8 }} />
           }
         >
           {(scrollViewProps) => (
