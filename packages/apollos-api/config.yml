@@ -14,10 +14,10 @@ APP:
   ROOT_API_URL: ${ROOT_URL}
 ROCK:
   USE_PLUGIN: true
-  API_URL: http://rockdemo.willowcreek.org/api
+  API_URL: http://rock.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: http://rockdemo.willowcreek.org/GetImage.ashx
-  SHARE_URL: http://rockdemo.willowcreek.org
+  IMAGE_URL: http://rock.willowcreek.org/GetImage.ashx
+  SHARE_URL: http://rock.willowcreek.org
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/New_York'
 ONE_SIGNAL:

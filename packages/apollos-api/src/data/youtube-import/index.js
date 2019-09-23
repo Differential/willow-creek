@@ -88,6 +88,27 @@ class YoutubeImport extends RockApolloDataSource {
       )
     );
   };
+
+  importPlaylistFromYoutube = async ({
+    playlistId,
+    contentChannelId,
+    contentChannelTypeId,
+    campusGuids,
+  }) => {
+    const { Youtube } = this.context.dataSources;
+
+    const { items } = await Youtube.getPlaylistItems(playlistId);
+
+    return Promise.all(
+      items.map(async (video) =>
+        this.createContentItemFromVideo(video, {
+          contentChannelTypeId,
+          contentChannelId,
+          campusGuids,
+        })
+      )
+    );
+  };
 }
 
 const schema = gql`
@@ -104,6 +125,12 @@ const schema = gql`
       contentChannelTypeId: String!
       campusGuids: [String!]
     ): [ContentItem]
+    importYoutubePlaylist(
+      playlistId: String!
+      contentChannelId: String!
+      contentChannelTypeId: String!
+      campusGuids: [String!]
+    ): [ContentItem]
   }
 `;
 
@@ -113,6 +140,8 @@ const resolver = {
       dataSources.YoutubeImport.importFromYoutube(args),
     importYoutubeChannel: (root, args, { dataSources }) =>
       dataSources.YoutubeImport.importChannelFromYoutube(args),
+    importYoutubePlaylist: (root, args, { dataSources }) =>
+      dataSources.YoutubeImport.importPlaylistFromYoutube(args),
   },
 };
 
