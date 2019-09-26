@@ -6,6 +6,7 @@ import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
 import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
 import * as OneSignal from '@apollosproject/data-connector-onesignal';
+// import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Sms from '@apollosproject/data-connector-twilio';
 import {
@@ -19,7 +20,9 @@ import {
   PersonalDevice,
   Template,
   AuthSms,
+  Group,
   BinaryFiles,
+  Events,
 } from '@apollosproject/data-connector-rock';
 
 // This module is used to attach Rock User updating to the OneSignal module.
@@ -56,6 +59,7 @@ const data = {
   PersonalDevice,
   OneSignalWithRock,
   Pass,
+  // Search,
   Template,
   Campus,
   WillowCalendarEventContentItem,
@@ -63,6 +67,8 @@ const data = {
   BinaryFiles,
   Features,
   YoutubeImport,
+  Group,
+  Events,
 };
 
 // If we are in development mode, we allow users to import data from Youtube.
@@ -79,9 +85,17 @@ const {
   schema,
   context,
   applyServerMiddleware,
+  setupJobs,
 } = createApolloServerConfig(data);
 
-export { dataSources, resolvers, schema, context, applyServerMiddleware };
+export {
+  dataSources,
+  resolvers,
+  schema,
+  context,
+  applyServerMiddleware,
+  setupJobs,
+};
 
 // the upload Scalar is added
 export const testSchema = [

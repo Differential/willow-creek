@@ -9,7 +9,7 @@
 # `.env` should NOT be checked into version control.
 APP:
   # This variable is used for generating deep links.
-  # It should match whatver is in your Info.plist `CFBundleURLTypes`
+  # It should match whatver is in your Info.plist `CFBundleURLTypes
   DEEP_LINK_HOST: WillowCreekApp
   ROOT_API_URL: ${ROOT_URL}
 ROCK:
@@ -27,6 +27,11 @@ CHURCH_ONLINE:
   URL: https://apollos.churchonline.org/api/v1/
   MEDIA_URLS: []
   WEB_VIEW_URL: https://apollos.churchonline.org/
+ALGOLIA:
+  APPLICATION_ID: ${ALGOLIA_APP_ID}
+  API_KEY: ${ALGOLIA_API_KEY}
+  # TODO: should we support multiple indices? how?
+  SEARCH_INDEX: test_ContentItems
 TWILIO:
   ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
   AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
@@ -53,6 +58,7 @@ ANALYTICS:
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID: '9879dbb7cfe39e4d-01'
+
 # CLOUDINARY:
 # Cloudinary is used to improve image loading
 # value should look something like
@@ -146,6 +152,10 @@ ROCK_MAPPINGS:
       CampusId: 2
 
   SERMON_CHANNEL_ID: 5
+
+  SERVING_GROUP_TYPE_ID: 23
+  COMMUNITY_GROUP_TYPE_ID: 25
+  FAMILY_GROUP_TYPE_ID: 10
 
 HOME_FEATURES:
   - title: FOR GROUPS

@@ -1,5 +1,6 @@
 enum ACTION_FEATURE_ACTION {
   READ_CONTENT
+  READ_EVENT
 }
 
 type ActionListAction {
@@ -94,6 +95,7 @@ type Campus implements Node {
   longitude: Float
   image: ImageMediaSource
   distanceFromLocation(location: CampusLocationInput): Float
+  events: [Event]
 }
 
 input CampusLocationInput {
@@ -185,6 +187,14 @@ type DevotionalContentItem implements ContentItem & Node {
   sharing: SharableContentItem
 }
 
+type Event implements Node {
+  id: ID!
+  name: String
+  location: String
+  start: String
+  end: String
+}
+
 interface Feature {
   id: ID!
   order: Int
@@ -194,6 +204,19 @@ enum GENDER {
   Male
   Female
   Unknown
+}
+
+type Group implements Node {
+  id: ID!
+  name: String
+  leader: Person
+  members: [Person]
+}
+
+enum GROUP_TYPE {
+  Serving
+  Community
+  Family
 }
 
 type ImageMedia implements Media {
@@ -328,6 +351,7 @@ type Person implements Node {
   birthDate: String
   photo: ImageMediaSource
   campus: Campus
+  groups(type: GROUP_TYPE, asLeader: Boolean): [Group]
 }
 
 input PushSettingsInput {
@@ -348,6 +372,7 @@ type Query {
   scripture(query: String!): Scripture
   scriptures(query: String!): [Scripture]
   userPass: Pass
+  search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
   userFeedFeatures: [Feature]
 }
@@ -364,6 +389,19 @@ type ScriptureFeature implements Feature & Node {
   order: Int
   scriptures: [Scripture]
   sharing: SharableFeature
+}
+
+type SearchResult {
+  cursor: String
+  title: String
+  summary: String
+  coverImage: ImageMedia
+  node: Node
+}
+
+type SearchResultsConnection {
+  edges: [SearchResult]
+  pageInfo: PaginationInfo
 }
 
 interface Sharable {
