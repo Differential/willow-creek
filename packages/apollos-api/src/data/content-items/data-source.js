@@ -10,9 +10,12 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
   async getCoverImage(root) {
     if (get(root, 'attributeValues.youtubeId.value', '') !== '') {
-      const { snippet } = await this.context.dataSources.Youtube.getFromId(
+      const result = await this.context.dataSources.Youtube.getFromId(
         root.attributeValues.youtubeId.value
       );
+
+      if (!result || !result.snippet) return null;
+      const { snippet } = result;
 
       const sources = Object.keys(snippet.thumbnails).map((key) => ({
         uri: snippet.thumbnails[key].url,

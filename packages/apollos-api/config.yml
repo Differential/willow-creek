@@ -14,10 +14,10 @@ APP:
   ROOT_API_URL: ${ROOT_URL}
 ROCK:
   USE_PLUGIN: true
-  API_URL: http://rock.willowcreek.org/api
+  API_URL: https://rock.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: http://rock.willowcreek.org/GetImage.ashx
-  SHARE_URL: http://rock.willowcreek.org
+  IMAGE_URL: https://rock.willowcreek.org/GetImage.ashx
+  SHARE_URL: https://rock.willowcreek.org
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/New_York'
 ONE_SIGNAL:
@@ -77,9 +77,10 @@ ROCK_MAPPINGS:
       ContentChannelTypeId: [6]
     DevotionalContentItem:
       EntityType: ContentChannelItem
-      ContentChannelTypeId: [1]
+      ContentChannelTypeId: [12]
     MediaContentItem:
       EntityType: ContentChannelItem
+      ContentChannelTypeId: [5]
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
@@ -89,28 +90,36 @@ ROCK_MAPPINGS:
 
   DATAVIEW_CATEGORIES:
     # Id of the category used to store all persona dataviews
-    PersonaId: 699
+    PersonaId: 814
 
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
-    - 18 # Devotionals
-    - 19 # Stories
-    - 12 # Videos
-    - 20 # Worship Music
-    - 3 # Blog
-    - 16 # Podcast series
+    - 20 # Note from pastor
+    - 18 # Articles
+    - 19 # Church updates
+    - 15 # Classes
+    - 22 # Devo series
+    - 24 # Podcast series
+    - 17 # Sermon Series
+    - 13 # Stories
+    - 12 # Willow Creative
+    - 14 # Worship
 
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
-    - 3
-    - 8
-    - 15
-    - 5
+    - 20
+    - 18
     - 19
+    - 13
+    - 14
+    - 16 # Sermons
+    - 21 # Devotionals
 
   CAMPAIGN_CHANNEL_IDS:
-    - 13
+    - 25
+
+  NEXT_STEPS_CONTENT_CHANNEL_ID: 26
 
   GROW_CAMPAIGN_CONTENT_CHANNEL_ID: 13
   MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID: 13
@@ -145,28 +154,15 @@ ROCK_MAPPINGS:
       CampusDataViewGuid: d96b6f89-441a-489a-b8df-a406ae108474
       CampusId: 2
 
-  SERMON_CHANNEL_ID: 5
+  SERMON_CHANNEL_ID: 16
 
 HOME_FEATURES:
-  - title: FOR GROUPS
-    subtitle: Encourage your group
-    algorithms:
-      - type: PERSONA_FEED
-        arguments:
-          personaId: 706
-  - title: FOR PARENTS
-    subtitle: Disciple your family
-    algorithms:
-      - type: PERSONA_FEED
-        arguments:
-          personaId: 705
-          algorithms:
   - title: NEXT STEPS
     subtitle: Explore what God calls you to today
     algorithms:
       - type: PERSONA_FEED
         arguments:
-          personaId: 704
+          personaId: 814
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
