@@ -1,8 +1,8 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import wait from 'waait';
 
 import Providers from 'WillowCreekApp/src/Providers';
+
+import { renderWithApolloData } from '../../../utils/testUtils';
 
 import GET_LIKED_CONTENT from '../getLikedContent';
 import RecentlyLikedTileFeedConnected from './RecentlyLikedTileFeedConnected';
@@ -12,75 +12,70 @@ describe('RecentlyLikedTileFeedConnected', () => {
     const mock = {
       request: {
         query: GET_LIKED_CONTENT,
+        variables: { first: 3 },
       },
       result: {
         data: {
-          likedContent: [
-            {
-              id: 'UniversalContentItem:296373ecb53580855cadffa0375ebe18',
-              __typename: 'UniversalContentItem',
-              title: 'Guys Night!',
-              coverImage: {
-                sources: [
-                  {
-                    uri:
-                      'https://apollosrock.newspring.cc/GetImage.ashx?guid=58c037fa-cc7f-4d72-9571-a0cc0558e346',
-                  },
-                ],
-              },
-              sharing: {
-                title: 'Guys Night!',
-                message: '',
-                url: 'https://apollosrock.newspring.cc/',
-              },
+          likedContent: {
+            __typename: 'ContentItemsConnection',
+            pageInfo: {
+              __typename: 'PaginationInfo',
+              endCursor: '123',
             },
-            {
-              id: 'UniversalContentItem:39193b5ad28717ebfeab4d226664d8e7',
-              __typename: 'UniversalContentItem',
-              title: 'This August at NewSpring',
-              coverImage: {
-                sources: [
-                  {
-                    uri:
-                      'https://apollosrock.newspring.cc/GetImage.ashx?guid=f54b0db0-95f5-44ad-b8f2-8bcd1b23cfdb',
+            edges: [
+              {
+                __typename: 'ContentItemsConnectionEdge',
+                node: {
+                  __typename: 'UniversalContentItem',
+                  id: 'UniversalContentItem:d57994350b9d213866b24dea3a97433d',
+                  coverImage: null,
+                  parentChannel: {
+                    id: 'ContentChannel:4f68015ba18662a7409d1219a4ce013e',
+                    name: 'Editorial',
+                    iconName: 'text',
+                    __typename: 'ContentChannel',
                   },
-                ],
+                  title: 'Mea Animal Aperiam Ornatus Eu',
+                  summary: 'Bla bla bla',
+                  theme: null,
+                  isLiked: false,
+                  likedCount: 0,
+                  videos: [],
+                  audios: [],
+                },
               },
-              sharing: {
-                title: 'This August at NewSpring',
-                message: '',
-                url: 'https://apollosrock.newspring.cc/',
-              },
-            },
-            {
-              id: 'UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db',
-              __typename: 'UniversalContentItem',
-              title: 'A Place to Worship Free of Fear',
-              coverImage: {
-                sources: [
-                  {
-                    uri:
-                      'https://apollosrock.newspring.cc/GetImage.ashx?guid=a65bc45d-f961-4b7e-a899-63eb1f9b8da9',
+              {
+                __typename: 'ContentItemsConnectionEdge',
+                node: {
+                  __typename: 'UniversalContentItem',
+                  id: 'UniversalContentItem:b36e55d803443431e96bb4b5068147ec',
+                  coverImage: null,
+                  parentChannel: {
+                    id: 'ContentChannel:4f68015ba18662a7409d1219a4ce013e',
+                    name: 'Editorial',
+                    iconName: 'text',
+                    __typename: 'ContentChannel',
                   },
-                ],
+                  title: 'Probo Senserit Id Mea, Ut Sed Malis Postea,',
+                  summary: 'Bla bla bla',
+                  theme: null,
+                  isLiked: false,
+                  likedCount: 0,
+                  videos: [],
+                  audios: [],
+                },
               },
-              sharing: {
-                title: 'A Place to Worship Free of Fear',
-                message: '',
-                url: 'https://apollosrock.newspring.cc/',
-              },
-            },
-          ],
+            ],
+          },
         },
       },
     };
     const navigation = { navigate: jest.fn(), getParam: jest.fn() };
-    const tree = renderer.create(
+    const tree = await renderWithApolloData(
       <Providers mocks={[mock]}>
         <RecentlyLikedTileFeedConnected navigation={navigation} />
       </Providers>
     );
-    await wait(0); // wait for response from graphql
     expect(tree).toMatchSnapshot();
   });
 
@@ -91,17 +86,23 @@ describe('RecentlyLikedTileFeedConnected', () => {
       },
       result: {
         data: {
-          likedContent: [],
+          likedContent: {
+            __typename: 'ContentItemsConnection',
+            pageInfo: {
+              __typename: 'PaginationInfo',
+              endCursor: null,
+            },
+            edges: [],
+          },
         },
       },
     };
     const navigation = { navigate: jest.fn(), getParam: jest.fn() };
-    const tree = renderer.create(
+    const tree = await renderWithApolloData(
       <Providers mocks={[mock]}>
         <RecentlyLikedTileFeedConnected navigation={navigation} />
       </Providers>
     );
-    await wait(0); // wait for response from graphql
     expect(tree).toMatchSnapshot();
   });
 });

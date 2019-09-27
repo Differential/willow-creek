@@ -1,17 +1,17 @@
 import React from 'react';
 import { flatMap } from 'lodash';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import renderer from 'react-test-renderer';
 
-import Providers from 'WillowCreekApp/src/Providers';
+import Providers from '../../../Providers';
+import { renderWithApolloData } from '../../../utils/testUtils';
+import GET_CONTENT_CARD from '../../../ui/ContentCardConnected/query';
 
-import { renderWithApolloData } from '../../utils/testUtils';
-import GET_CONTENT_CARD from '../../ui/ContentCardConnected/query';
+import GET_CONTENT_CHANNELS from './getContentChannels';
+import DiscoverFeed from '.';
 
-import Discover from './Discover';
-import GET_CONTENT_CHANNELS from './DiscoverFeed/getContentChannels';
-
-describe('The Discover tab component', () => {
-  it('Should retrieve the Content Channel Feeds', async () => {
+describe('The DiscoverFeed component', () => {
+  it('should render', async () => {
     const mockFeedData = {
       request: {
         query: GET_CONTENT_CHANNELS,
@@ -542,11 +542,21 @@ describe('The Discover tab component', () => {
         }))
     );
 
-    const DiscoverStack = createStackNavigator({ Discover });
-    const DiscoverWithNavigation = createAppContainer(DiscoverStack);
+    const DiscoverStack = createStackNavigator({ DiscoverFeed });
+    const DiscoverFeedWithNavigation = createAppContainer(DiscoverStack);
     const tree = await renderWithApolloData(
       <Providers mocks={[mockFeedData, ...mockChannelCardData]}>
-        <DiscoverWithNavigation />
+        <DiscoverFeedWithNavigation />
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render a loading state', () => {
+    const DiscoverStack = createStackNavigator({ DiscoverFeed });
+    const DiscoverFeedWithNavigation = createAppContainer(DiscoverStack);
+    const tree = renderer.create(
+      <Providers cache={null}>
+        <DiscoverFeedWithNavigation />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

@@ -1,4 +1,5 @@
 import { createStackNavigator } from 'react-navigation';
+import { withTheme } from '@apollosproject/ui-kit';
 
 import UserSettings from 'WillowCreekApp/src/user-settings';
 
@@ -17,12 +18,16 @@ const ConnectNavigator = createStackNavigator(
   {
     initialRouteName: 'Connect',
     headerMode: 'screen',
+    defaultNavigationOptions: ({ screenProps }) => ({
+      headerTintColor: screenProps.headerTintColor,
+    }),
+    navigationOptions: { tabBarIcon: tabBarIcon('profile') },
   }
 );
 
-ConnectNavigator.navigationOptions = {
-  tabBarIcon: tabBarIcon('profile'),
-    tabBarLabel: 'Profile',
-};
+const EnhancedConnect = withTheme(({ theme, ...props }) => ({
+  ...props,
+  screenProps: { headerTintColor: theme.colors.text.secondary },
+}))(ConnectNavigator);
 
-export default ConnectNavigator;
+export default EnhancedConnect;
