@@ -28,10 +28,10 @@ CHURCH_ONLINE:
   MEDIA_URLS: []
   WEB_VIEW_URL: https://apollos.churchonline.org/
 ALGOLIA:
-  APPLICATION_ID: ${ALGOLIA_APP_ID}
-  API_KEY: ${ALGOLIA_API_KEY}
+  APPLICATION_ID: 60X0UL6O42
+  API_KEY: ${ALGOLIASEARCH_API_KEY}
   # TODO: should we support multiple indices? how?
-  SEARCH_INDEX: test_ContentItems
+  SEARCH_INDEX: ContentItems
 TWILIO:
   ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
   AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
