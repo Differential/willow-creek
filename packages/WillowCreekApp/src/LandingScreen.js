@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Image } from 'react-native';
 import { styled, GradientOverlayImage } from '@apollosproject/ui-kit';
 
@@ -26,12 +25,6 @@ const LandingScreen = ({ navigation }) => (
 
 LandingScreen.navigationOptions = {
   header: null,
-};
-
-LandingScreen.propTypes = {
-  navigation: PropTypes.shape({
-    push: PropTypes.func,
-  }),
 };
 
 export default LandingScreen;

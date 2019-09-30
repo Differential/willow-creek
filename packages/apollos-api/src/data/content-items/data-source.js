@@ -14,13 +14,16 @@ class ExtendedContentItem extends ContentItem.dataSource {
         root.attributeValues.youtubeId.value
       );
 
-      const sources = Object.keys(snippet.thumbnails).map((key) => ({
+      const availableSources = Object.keys(snippet.thumbnails).map((key) => ({
         uri: snippet.thumbnails[key].url,
+        width: snippet.thumbnails[key].width,
       }));
+
+      const source = availableSources.sort((a, b) => b - a)[0];
 
       return {
         __typename: 'ImageMedia',
-        sources,
+        sources: [source],
       };
     }
 

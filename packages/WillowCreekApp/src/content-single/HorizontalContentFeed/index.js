@@ -38,23 +38,17 @@ class HorizontalContentFeed extends Component {
     </TouchableScale>
   );
 
-  renderFeed = ({ data, loading, error }) => {
+  renderFeed = ({ data, loading, error, fetchMore }) => {
     if (error) return null;
     if (loading) return null;
 
-    const childContent = get(
-      data,
-      'node.childContentItemsConnection.edges',
-      []
-    ).map((edge) => edge.node);
+    const children = get(data, 'node.childContentItemsConnection.edges', []);
+    const siblings = get(data, 'node.siblingContentItemsConnection.edges', []);
+    const isParent = children.length > 0;
 
-    const siblingContent = get(
-      data,
-      'node.siblingContentItemsConnection.edges',
-      []
-    ).map((edge) => edge.node);
-
-    const content = siblingContent.length ? siblingContent : childContent;
+    const edges = isParent ? children : siblings;
+    const content = edges.map((edge) => edge.node);
+    const { cursor } = edges.length && edges[edges.length - 1];
     const currentIndex = content.findIndex(
       ({ id }) => id === this.props.contentId
     );
@@ -72,6 +66,28 @@ class HorizontalContentFeed extends Component {
           offset: 240 * index,
           index,
         })}
+        onEndReached={() =>
+          fetchMore({
+            query: GET_HORIZONTAL_CONTENT,
+            variables: { cursor, itemId: this.props.contentId },
+            updateQuery: (previousResult, { fetchMoreResult }) => {
+              const connection = isParent
+                ? 'childContentItemsConnection'
+                : 'siblingContentItemsConnection';
+              const newEdges = get(fetchMoreResult.node, connection, []).edges;
+
+              return {
+                node: {
+                  ...previousResult.node,
+                  [connection]: {
+                    ...previousResult.node[connection],
+                    edges: [...edges, ...newEdges],
+                  },
+                },
+              };
+            },
+          })
+        }
       />
     ) : null;
   };
