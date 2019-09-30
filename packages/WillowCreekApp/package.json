@@ -83,7 +83,6 @@
     "react-native-inappbrowser-reborn": "^3.0.0"
   },
   "devDependencies": {
-    "@apollosproject/ui-storybook": "^0.8.6",
     "@storybook/addon-actions": "4.1.16",
     "@storybook/addon-links": "4.1.16",
     "@storybook/addons": "4.1.16",
