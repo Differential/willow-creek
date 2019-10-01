@@ -10,16 +10,19 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
   async getCoverImage(root) {
     if (get(root, 'attributeValues.youtubeId.value', '') !== '') {
-      const { snippet } = await this.context.dataSources.Youtube.getFromId(
+      const result = await this.context.dataSources.Youtube.getFromId(
         root.attributeValues.youtubeId.value
       );
+
+      if (!result || !result.snippet) return null;
+      const { snippet } = result;
 
       const availableSources = Object.keys(snippet.thumbnails).map((key) => ({
         uri: snippet.thumbnails[key].url,
         width: snippet.thumbnails[key].width,
       }));
 
-      const source = availableSources.sort((a, b) => b - a)[0];
+      const source = availableSources.sort((a, b) => b.width - a.width)[0];
 
       return {
         __typename: 'ImageMedia',
