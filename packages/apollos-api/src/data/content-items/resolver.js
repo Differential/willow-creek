@@ -33,9 +33,7 @@ const resolver = {
     tvFeed: async (root, args, { dataSources }) => {
       const cursor = await dataSources.ContentItem.getContentItemsForCampus();
       return dataSources.ContentItem.paginate({
-        cursor: cursor.andFilter(
-          `ContentChannelId eq ${ApollosConfig.ROCK_MAPPINGS.YOUTUBE_CONTENT_CHANNEL}`
-        ),
+        cursor,
         args,
       });
     },

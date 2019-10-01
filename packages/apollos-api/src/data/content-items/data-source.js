@@ -9,6 +9,12 @@ class ExtendedContentItem extends ContentItem.dataSource {
   // Returns a more inclusive cursor if no guid is passed.
 
   async getCoverImage(root) {
+    const existingImage = await super.getCoverImage(root);
+
+    if (existingImage) {
+      return existingImage;
+    }
+
     if (get(root, 'attributeValues.youtubeId.value', '') !== '') {
       const result = await this.context.dataSources.Youtube.getFromId(
         root.attributeValues.youtubeId.value
@@ -30,12 +36,12 @@ class ExtendedContentItem extends ContentItem.dataSource {
       };
     }
 
-    return super.getCoverImage(root);
+    return null;
   }
 
   byPersonaGuid = (guid) =>
     guid
-      ? this.request(`ContentChannelItems/GetFromPersonDataView?guids=${guid}`)
+      ? this.request(`Apollos/ContentChannelItemsByDataViewGuids?guids=${guid}`)
           .andFilter(this.LIVE_CONTENT())
           .orderBy('StartDateTime', 'desc')
       : this.request('ContentChannelItems')
@@ -73,8 +79,46 @@ class ExtendedContentItem extends ContentItem.dataSource {
   };
 
   getContentItemsForCampus = async () => {
-    const campusPersonaGuid = await this.getPersonaGuidForCampus();
-    return this.byPersonaGuid(campusPersonaGuid);
+    let campusId;
+    let campusGuid;
+    let personaGuids;
+    const { Campus, Person, Auth } = this.context.dataSources;
+
+    try {
+      // If we have a user
+      const { id } = await Auth.getCurrentPerson();
+      // And that user has a campus
+      const { id: rockCampusId, guid } = await Campus.getForPerson({
+        personId: id,
+      });
+      // The campus id is the current user's campus
+      campusId = rockCampusId;
+      campusGuid = guid;
+
+      const personas = await Person.getPersonas({
+        categoryId: ApollosConfig.ROCK_MAPPINGS.DATAVIEW_CATEGORIES.PersonaId,
+      });
+
+      personaGuids = personas.map((obj) => obj.guid).join(',');
+    } catch (e) {
+      // No campus or no current user.
+      return this.request().empty();
+    }
+
+    // Return data matching their data views.
+    if (personaGuids !== '') {
+      return this.request(
+        `Apollos/ContentChannelItemsByCampusIdAndAttributeValue?campusId=${campusId}&attributeKey=Personas&attributeValues=${personaGuids}`
+      )
+        .andFilter(this.LIVE_CONTENT())
+        .orderBy('StartDateTime', 'desc');
+    }
+    // Return data matching just their campus
+    return this.request(
+      `Apollos/ContentChannelItemsByAttributeValue?attributeKey=Campus&attributeValues=${campusGuid}`
+    )
+      .andFilter(this.LIVE_CONTENT())
+      .orderBy('StartDateTime', 'desc');
   };
 
   byPersonaFeed = async ({
@@ -105,7 +149,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
     let request = this.request(
       `${endpoint}?guids=${getPersonaGuidsForUser
         .map((obj) => obj.guid)
-        .join()}`
+        .join(',')}`
     )
       .andFilter(this.LIVE_CONTENT())
       .orderBy('StartDateTime', 'desc');
