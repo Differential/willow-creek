@@ -128,27 +128,35 @@ ROCK_MAPPINGS:
   CAMPUS_DATA_VIEWS:
     - # Chicago
       CampusDataViewGuid: 5f0f1aeb-330a-4cff-b99e-30d9f6f02c9c
+      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 6
     - # Casa De Luz
       CampusDataViewGuid: 9cd67fd5-f316-4fb9-99b7-ce998721558a
+      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 5
     - # Crystal Lake
       CampusDataViewGuid: 4db5a26d-9f4d-4d24-8ec0-4ffc05809ffa
+      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 4
     - # Huntley Campus
       CampusDataViewGuid: f28fef3a-e6d7-4837-b003-c9a1d9cd235f
+      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 7
     - # North Shore
       CampusDataViewGuid: 5bb891df-f608-4a2b-948e-1537a5e6b1c6
+      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 3
     - # South Barrington
       CampusDataViewGuid: bbdfae06-5f70-4703-954c-a21d1a6b140b
+      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w
       CampusId: 1
     - # South Lake
       CampusDataViewGuid: e3bc6b72-bc9f-4f08-8ba8-49577bb049ed
+      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 8
     - # Wheaton
       CampusDataViewGuid: d96b6f89-441a-489a-b8df-a406ae108474
+      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 2
 
   SERMON_CHANNEL_ID: 5
