@@ -8,10 +8,10 @@ export default gql`
         sources {
           uri
         }
-        label
-        thumbnail {
-          uri
-        }
+        #        label
+        #        thumbnail {
+        #          uri
+        #        }
       }
     }
   }
