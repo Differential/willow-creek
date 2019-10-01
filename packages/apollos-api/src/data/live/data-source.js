@@ -12,7 +12,7 @@ export default class LiveStream extends RESTDataSource {
   }
 
   // Given a logged in user, what is the youtube channelID of their campus?
-  getPersonaGuidForCampus = async () => {
+  getYoutubeChannelIdForCampus = async () => {
     let campusId;
     try {
       // If we have a user
@@ -39,7 +39,7 @@ export default class LiveStream extends RESTDataSource {
   };
 
   async getLiveStream() {
-    const channelId = await this.getPersonaGuidForCampus();
+    const channelId = await this.getYoutubeChannelIdForCampus();
     if (!channelId) return null;
 
     return {
