@@ -86,3 +86,5 @@ buck-out/
 # Haul
 #
 haul-debug.log
+# CocoaPods
+/ios/Pods/

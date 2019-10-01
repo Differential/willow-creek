@@ -6,21 +6,33 @@ import { withTheme } from '@apollosproject/ui-kit';
 
 import Browser from './Browser';
 
-const { Provider: BaseProvider, Consumer } = createContext(Browser.openURL);
+const { Provider: BaseProvider, Consumer } = createContext(Browser.open);
 
+// NOTE: don't think this is working...
 const Provider = withTheme(({ theme }) => ({
-  value: (url, options = {}) =>
-    Browser.openURL(url, {
+  value: (url, headers = {}, options = {}) =>
+    Browser.open(url, {
       ...Platform.select({
         ios: {
-          tintColor: theme.colors.primary,
-          barTintColor: theme.colors.background.paper,
+          dismissButtonStyle: 'cancel',
+          preferredBarTintColor: theme.colors.background.paper,
+          preferredControlTintColor: theme.colors.primary,
+          readerMode: false,
+          animated: true,
+          modalPresentationStyle: 'overFullScreen',
+          modalTransitionStyle: 'partialCurl',
+          modalEnabled: true,
         },
         android: {
           toolbarColor: theme.colors.background.paper,
           enableDefaultShare: true,
+          showTitle: true,
+          secondaryToolbarColor: 'black',
+          enableUrlBarHiding: true,
+          forceCloseOnRedirection: false,
         },
       }),
+      headers: { ...headers },
       ...options,
     }),
 }))(BaseProvider);
