@@ -28,7 +28,7 @@ CHURCH_ONLINE:
   MEDIA_URLS: []
   WEB_VIEW_URL: https://apollos.churchonline.org/
 ALGOLIA:
-  APPLICATION_ID: 60X0UL6O42
+  APPLICATION_ID: EHIORCCAE1
   API_KEY: ${ALGOLIASEARCH_API_KEY}
   # TODO: should we support multiple indices? how?
   SEARCH_INDEX: ContentItems
