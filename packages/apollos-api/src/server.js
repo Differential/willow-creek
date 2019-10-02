@@ -19,6 +19,16 @@ const isDev =
 
 const extensions = isDev ? [() => new RockLoggingExtension()] : [];
 
+const cacheOptions = isDev
+  ? {}
+  : {
+      cacheControl: {
+        stripFormattedExtensions: false,
+        calculateHttpHeaders: true,
+        defaultMaxAge: 600,
+      },
+    };
+
 const apolloServer = new ApolloServer({
   typeDefs: schema,
   resolvers,
@@ -35,11 +45,7 @@ const apolloServer = new ApolloServer({
       'editor.cursorShape': 'line',
     },
   },
-  cacheControl: {
-    stripFormattedExtensions: false,
-    calculateHttpHeaders: true,
-    defaultMaxAge: 600,
-  },
+  ...cacheOptions,
 });
 
 const app = express();
