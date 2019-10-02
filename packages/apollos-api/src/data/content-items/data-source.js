@@ -1,6 +1,6 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
-import { get } from 'lodash';
+import { get, intersectionBy } from 'lodash';
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
@@ -9,17 +9,26 @@ class ExtendedContentItem extends ContentItem.dataSource {
   // Returns a more inclusive cursor if no guid is passed.
 
   async getCoverImage(root) {
+    const existingImage = await super.getCoverImage(root);
+
+    if (existingImage) {
+      return existingImage;
+    }
+
     if (get(root, 'attributeValues.youtubeId.value', '') !== '') {
-      const { snippet } = await this.context.dataSources.Youtube.getFromId(
+      const result = await this.context.dataSources.Youtube.getFromId(
         root.attributeValues.youtubeId.value
       );
+
+      if (!result || !result.snippet) return null;
+      const { snippet } = result;
 
       const availableSources = Object.keys(snippet.thumbnails).map((key) => ({
         uri: snippet.thumbnails[key].url,
         width: snippet.thumbnails[key].width,
       }));
 
-      const source = availableSources.sort((a, b) => b - a)[0];
+      const source = availableSources.sort((a, b) => b.width - a.width)[0];
 
       return {
         __typename: 'ImageMedia',
@@ -27,94 +36,111 @@ class ExtendedContentItem extends ContentItem.dataSource {
       };
     }
 
-    return super.getCoverImage(root);
+    return null;
   }
 
-  byPersonaGuid = (guid) =>
-    guid
-      ? this.request(`ContentChannelItems/GetFromPersonDataView?guids=${guid}`)
-          .andFilter(this.LIVE_CONTENT())
-          .orderBy('StartDateTime', 'desc')
-      : this.request('ContentChannelItems')
-          .andFilter(this.LIVE_CONTENT())
-          .orderBy('StartDateTime', 'desc');
+  byUserCampus = async ({ contentChannelIds = [] }) => {
+    // let campusId;
+    let campusGuid;
+    // let personaGuids;
+    const { Campus, Auth } = this.context.dataSources;
 
-  // Given a logged in user, what is the GUID of their campuses data view?
-  getPersonaGuidForCampus = async () => {
-    let campusId;
     try {
       // If we have a user
-      const { id } = await this.context.dataSources.Auth.getCurrentPerson();
+      const { id } = await Auth.getCurrentPerson();
       // And that user has a campus
-      const {
-        id: rockCampusId,
-      } = await this.context.dataSources.Campus.getForPerson({ personId: id });
+      const { guid } = await Campus.getForPerson({
+        personId: id,
+      });
       // The campus id is the current user's campus
-      campusId = rockCampusId;
+      campusGuid = guid;
     } catch (e) {
       // No campus or no current user.
-      return null;
+      return this.request().empty();
     }
 
-    // Now let's lookup the GUID for the CampusId (static values)
-    if (
-      ApollosConfig.ROCK_MAPPINGS.CAMPUS_DATA_VIEWS.find(
-        ({ CampusId }) => CampusId === campusId
-      )
-    ) {
-      return ApollosConfig.ROCK_MAPPINGS.CAMPUS_DATA_VIEWS.find(
-        ({ CampusId }) => CampusId === campusId
-      ).CampusDataViewGuid;
+    // Return data matching just their campus
+    const cursor = this.request(
+      `Apollos/ContentChannelItemsByAttributeValue?attributeKey=Campus&attributeValues=${campusGuid}`
+    );
+
+    if (contentChannelIds.length !== 0) {
+      cursor.filterOneOf(
+        ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS.map(
+          (id) => `ContentChannelId eq ${id}`
+        )
+      );
     }
-    return null;
+
+    return cursor
+      .andFilter(this.LIVE_CONTENT())
+      .orderBy('StartDateTime', 'desc');
   };
 
-  getContentItemsForCampus = async () => {
-    const campusPersonaGuid = await this.getPersonaGuidForCampus();
-    return this.byPersonaGuid(campusPersonaGuid);
-  };
+  async byPersonaFeedAndCampus({ contentChannelIds = [] }) {
+    const { Person, Auth, Campus } = this.context.dataSources;
 
-  byPersonaFeed = async ({
-    personaId = ApollosConfig.ROCK_MAPPINGS.DATAVIEW_CATEGORIES.PersonaId,
-    contentChannelIds,
-  } = {}) => {
+    const userPersonas = await Person.getPersonas({
+      categoryId: ApollosConfig.ROCK_MAPPINGS.DATAVIEW_CATEGORIES.PersonaId,
+    });
+
+    if (userPersonas.length === 0) {
+      return this.byUserCampus({ contentChannelIds });
+    }
+
+    const { id: personId } = await Auth.getCurrentPerson();
+    const { id: campusId } = await Campus.getForPerson({
+      personId,
+    });
+
+    const cursor = this.request(
+      `Apollos/ContentChannelItemsByCampusIdAndAttributeValue?campusId=${campusId}&attributeKey=Personas&attributeValues=${userPersonas
+        .map(({ guid }) => guid)
+        .join(',')}`
+    );
+
+    if (contentChannelIds.length !== 0) {
+      cursor.filterOneOf(
+        ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS.map(
+          (id) => `ContentChannelId eq ${id}`
+        )
+      );
+    }
+
+    return cursor
+      .andFilter(this.LIVE_CONTENT())
+      .orderBy('StartDateTime', 'desc');
+  }
+
+  byPersonaIds = async ({ personaIds }) => {
     const {
       dataSources: { Person },
     } = this.context;
 
-    // Grabs the guids associated with all dataviews user is memeber
-    const getPersonaGuidsForUser = await Person.getPersonas({
-      categoryId: personaId,
+    const userPersonas = await Person.getPersonas({
+      categoryId: ApollosConfig.ROCK_MAPPINGS.DATAVIEW_CATEGORIES.PersonaId,
     });
 
-    if (getPersonaGuidsForUser.length === 0) {
+    if (userPersonas.length === 0) {
       return this.request().empty();
     }
 
-    // Rely on custom code without the plugin.
-    // Use plugin, if the user has set USE_PLUGIN to true.
-    // In general, you should ALWAYS use the plugin if possible.
-    const endpoint = get(ApollosConfig, 'ROCK.USE_PLUGIN', false)
-      ? 'Apollos/ContentChannelItemsByDataViewGuids'
-      : 'ContentChannelItems/GetFromPersonDataView';
+    // Get personas the user has, AND are in the personaIds array.
+    const personaGuidsInCommon = intersectionBy(
+      userPersonas,
+      personaIds.map((id) => ({ id })),
+      'id'
+    );
 
-    // Grabs content items based on personas
-    let request = this.request(
-      `${endpoint}?guids=${getPersonaGuidsForUser
-        .map((obj) => obj.guid)
-        .join()}`
-    )
-      .andFilter(this.LIVE_CONTENT())
-      .orderBy('StartDateTime', 'desc');
-
-    if (contentChannelIds && contentChannelIds.length) {
-      request = request.andFilter(
-        contentChannelIds
-          .map((id) => `(ContentChannelId eq ${id})`)
-          .join(' or ')
-      );
+    if (personaGuidsInCommon.length === 0) {
+      return this.request().empty();
     }
-    return request;
+
+    return this.request(
+      `Apollos/ContentChannelItemsByDataViewGuids?guids=${personaGuidsInCommon
+        .map(({ guid }) => guid)
+        .join(',')}`
+    ).orderBy('StartDateTime', 'desc');
   };
 }
 

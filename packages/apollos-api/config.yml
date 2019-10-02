@@ -14,10 +14,10 @@ APP:
   ROOT_API_URL: ${ROOT_URL}
 ROCK:
   USE_PLUGIN: true
-  API_URL: http://rockdemo.willowcreek.org/api
+  API_URL: https://rock.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: http://rockdemo.willowcreek.org/GetImage.ashx
-  SHARE_URL: http://rockdemo.willowcreek.org
+  IMAGE_URL: https://rock.willowcreek.org/GetImage.ashx
+  SHARE_URL: https://rock.willowcreek.org
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/New_York'
 ONE_SIGNAL:
@@ -83,9 +83,10 @@ ROCK_MAPPINGS:
       ContentChannelTypeId: [6]
     DevotionalContentItem:
       EntityType: ContentChannelItem
-      ContentChannelTypeId: [1]
+      ContentChannelTypeId: [12]
     MediaContentItem:
       EntityType: ContentChannelItem
+      ContentChannelTypeId: [5]
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
@@ -95,63 +96,43 @@ ROCK_MAPPINGS:
 
   DATAVIEW_CATEGORIES:
     # Id of the category used to store all persona dataviews
-    PersonaId: 699
+    PersonaId: 814
 
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
-    - 18 # Devotionals
-    - 19 # Stories
-    - 12 # Videos
-    - 20 # Worship Music
-    - 3 # Blog
-    - 16 # Podcast series
+    - 20 # Note from pastor
+    - 18 # Articles
+    - 19 # Church updates
+    - 15 # Classes
+    - 22 # Devo series
+    - 24 # Podcast series
+    - 17 # Sermon Series
+    - 13 # Stories
+    - 12 # Willow Creative
+    - 14 # Worship
 
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
-    - 3
-    - 8
-    - 15
-    - 5
+    - 20
+    - 18
     - 19
+    - 13
+    - 14
+    - 16 # Sermons
+    - 21 # Devotionals
 
   CAMPAIGN_CHANNEL_IDS:
-    - 13
+    - 25
+
+  NEXT_STEPS_CONTENT_CHANNEL_ID: 26
 
   GROW_CAMPAIGN_CONTENT_CHANNEL_ID: 13
   MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID: 13
 
   YOUTUBE_CONTENT_CHANNEL: 12
 
-  # Used to determine what Campus ID correseponds to what DataView.
-  # We hijack the persona feature to show a campus specific user feed.
-  CAMPUS_DATA_VIEWS:
-    - # Chicago
-      CampusDataViewGuid: 5f0f1aeb-330a-4cff-b99e-30d9f6f02c9c
-      CampusId: 6
-    - # Casa De Luz
-      CampusDataViewGuid: 9cd67fd5-f316-4fb9-99b7-ce998721558a
-      CampusId: 5
-    - # Crystal Lake
-      CampusDataViewGuid: 4db5a26d-9f4d-4d24-8ec0-4ffc05809ffa
-      CampusId: 4
-    - # Huntley Campus
-      CampusDataViewGuid: f28fef3a-e6d7-4837-b003-c9a1d9cd235f
-      CampusId: 7
-    - # North Shore
-      CampusDataViewGuid: 5bb891df-f608-4a2b-948e-1537a5e6b1c6
-      CampusId: 3
-    - # South Barrington
-      CampusDataViewGuid: bbdfae06-5f70-4703-954c-a21d1a6b140b
-      CampusId: 1
-    - # South Lake
-      CampusDataViewGuid: e3bc6b72-bc9f-4f08-8ba8-49577bb049ed
-      CampusId: 8
-    - # Wheaton
-      CampusDataViewGuid: d96b6f89-441a-489a-b8df-a406ae108474
-      CampusId: 2
-
-  SERMON_CHANNEL_ID: 5
+  SERMON_CHANNEL_ID: 16
 
   SERVING_GROUP_TYPE_ID: 23
   COMMUNITY_GROUP_TYPE_ID: 25
@@ -161,22 +142,21 @@ HOME_FEATURES:
   - title: FOR GROUPS
     subtitle: Encourage your group
     algorithms:
-      - type: PERSONA_FEED
+      - type: SINGLE_PERSONA
         arguments:
-          personaId: 706
+          personaIds:
+            - 637
   - title: FOR PARENTS
     subtitle: Disciple your family
     algorithms:
-      - type: PERSONA_FEED
+      - type: SINGLE_PERSONA
         arguments:
-          personaId: 705
-          algorithms:
+          personaIds:
+            - 635
   - title: NEXT STEPS
     subtitle: Explore what God calls you to today
     algorithms:
       - type: PERSONA_FEED
-        arguments:
-          personaId: 704
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

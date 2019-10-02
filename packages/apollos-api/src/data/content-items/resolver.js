@@ -18,10 +18,8 @@ const resolver = {
       }),
     myWillowCampaign: async (root, args, { dataSources }) =>
       dataSources.ContentItem.paginate({
-        cursor: await dataSources.ContentItem.byPersonaFeed({
-          contentChannelIds: [
-            ROCK_MAPPINGS.MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID,
-          ],
+        cursor: await dataSources.ContentItem.byPersonaFeedAndCampus({
+          contentChannelId: ROCK_MAPPINGS.MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID,
         }),
       }),
     personaFeed: async (root, args, { dataSources }) =>
@@ -31,11 +29,12 @@ const resolver = {
         }),
       }),
     tvFeed: async (root, args, { dataSources }) => {
-      const cursor = await dataSources.ContentItem.getContentItemsForCampus();
+      const cursor = await dataSources.ContentItem.byUserCampus({
+        contentChannelIds: ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
+      });
       return dataSources.ContentItem.paginate({
-        cursor: cursor.andFilter(
-          `ContentChannelId eq ${ApollosConfig.ROCK_MAPPINGS.YOUTUBE_CONTENT_CHANNEL}`
-        ),
+        cursor,
+
         args,
       });
     },
