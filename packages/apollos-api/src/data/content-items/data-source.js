@@ -1,6 +1,6 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
-import { get, insersectionBy } from 'lodash';
+import { get, intersectionBy } from 'lodash';
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
@@ -39,7 +39,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
     return null;
   }
 
-  getContentItemsForCampus = async () => {
+  byUserCampus = async ({ contentChannelIds = [] }) => {
     // let campusId;
     let campusGuid;
     // let personaGuids;
@@ -60,10 +60,57 @@ class ExtendedContentItem extends ContentItem.dataSource {
     }
 
     // Return data matching just their campus
-    return this.request(
+    const cursor = this.request(
       `Apollos/ContentChannelItemsByAttributeValue?attributeKey=Campus&attributeValues=${campusGuid}`
-    ).orderBy('StartDateTime', 'desc');
+    );
+
+    if (contentChannelIds.length !== 0) {
+      cursor.filterOneOf(
+        ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS.map(
+          (id) => `ContentChannelId eq ${id}`
+        )
+      );
+    }
+
+    return cursor
+      .andFilter(this.LIVE_CONTENT())
+      .orderBy('StartDateTime', 'desc');
   };
+
+  async byPersonaFeedAndCampus({ contentChannelIds = [] }) {
+    const { Person, Auth, Campus } = this.context.dataSources;
+
+    const userPersonas = await Person.getPersonas({
+      categoryId: ApollosConfig.ROCK_MAPPINGS.DATAVIEW_CATEGORIES.PersonaId,
+    });
+
+    if (userPersonas.length === 0) {
+      return this.byUserCampus({ contentChannelIds });
+    }
+
+    const { id: personId } = await Auth.getCurrentPerson();
+    const { id: campusId } = await Campus.getForPerson({
+      personId,
+    });
+
+    const cursor = this.request(
+      `Apollos/ContentChannelItemsByCampusIdAndAttributeValue?campusId=${campusId}&attributeKey=Personas&attributeValues=${userPersonas
+        .map(({ guid }) => guid)
+        .join(',')}`
+    );
+
+    if (contentChannelIds.length !== 0) {
+      cursor.filterOneOf(
+        ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS.map(
+          (id) => `ContentChannelId eq ${id}`
+        )
+      );
+    }
+
+    return cursor
+      .andFilter(this.LIVE_CONTENT())
+      .orderBy('StartDateTime', 'desc');
+  }
 
   byPersonaIds = async ({ personaIds }) => {
     const {
@@ -79,7 +126,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
     }
 
     // Get personas the user has, AND are in the personaIds array.
-    const personaGuidsInCommon = insersectionBy(
+    const personaGuidsInCommon = intersectionBy(
       userPersonas,
       personaIds.map((id) => ({ id })),
       'id'
