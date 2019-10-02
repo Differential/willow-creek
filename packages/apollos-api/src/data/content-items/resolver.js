@@ -33,7 +33,13 @@ const resolver = {
     tvFeed: async (root, args, { dataSources }) => {
       const cursor = await dataSources.ContentItem.getContentItemsForCampus();
       return dataSources.ContentItem.paginate({
-        cursor,
+        cursor: cursor
+          .filterOneOf(
+            ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS.map(
+              (id) => `ContentChannelId eq ${id}`
+            )
+          )
+          .andFilter(dataSources.ContentItem.LIVE_CONTENT()),
         args,
       });
     },
