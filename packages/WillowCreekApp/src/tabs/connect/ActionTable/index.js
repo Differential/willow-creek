@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
+import NavigationActions from 'WillowCreekApp/src/NavigationService';
 
 import {
   TableView,
