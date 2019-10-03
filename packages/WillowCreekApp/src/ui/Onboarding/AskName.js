@@ -77,8 +77,7 @@ const AskName = memo(
               />
               <TextInput
                 label={'Email (optional)'}
-                type={'text'}
-                textContentType={'email'} // ios autofill
+                type={'email'}
                 returnKeyType={'next'}
                 value={get(values, 'email')}
                 error={

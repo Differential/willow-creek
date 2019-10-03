@@ -6,7 +6,7 @@ import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
 
 const Toolbar = ({ navigation }) => (
   <WebBrowserConsumer>
-    {(openUrl) => (
+    {openUrl => (
       <ActionBar>
         <ActionBarItem
           onPress={() =>
@@ -17,11 +17,11 @@ const Toolbar = ({ navigation }) => (
           icon="groups"
           label="Groups"
         />
-        <ActionBarItem
+        {/*<ActionBarItem
           onPress={() => navigation.navigate('Passes')}
           icon="badge"
           label="Check-in"
-        />
+        />*/}
         <ActionBarItem
           onPress={() => openUrl('https://www.willowcreek.org/en/give')}
           icon="like-solid"

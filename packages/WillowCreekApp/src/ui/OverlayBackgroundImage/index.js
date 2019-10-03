@@ -54,7 +54,7 @@ const OverlayBackgroundImage = ({ rounded = true, style, ...props }) => {
     >
       <ClippingMask rounded={rounded} containerWidth={layoutState.width}>
         <ImageContainer>
-          <Image {...props} />
+          {props.source ? <Image {...props} /> : null}
         </ImageContainer>
       </ClippingMask>
     </SizingContainer>

@@ -4,12 +4,12 @@ import TabBar from './tabBar';
 
 import Connect from './connect';
 import Discover from './discover';
-import MyWillow from './my-willow';
+import Home from './home';
 
 const TabNavigator = createBottomTabNavigator(
   {
     Discover,
-    Home: MyWillow,
+    Home,
     Connect,
   },
   {
