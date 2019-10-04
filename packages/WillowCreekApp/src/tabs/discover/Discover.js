@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { StatusBar } from 'react-native';
 import { throttle } from 'lodash';
 
 import { BackgroundView } from '@apollosproject/ui-kit';
@@ -23,6 +24,16 @@ class Discover extends PureComponent {
       }),
     300
   );
+
+  componentDidMount() {
+    this._navListener = this.props.navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('dark-content');
+    });
+  }
+
+  componentWillUnmount() {
+    this._navListener.remove();
+  }
 
   handleOnFocus = (inputState) => {
     this.setState({

@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { View, SafeAreaView } from 'react-native';
+import { View, SafeAreaView, StatusBar } from 'react-native';
 
 import {
   FeedView,
@@ -21,6 +21,7 @@ import ContentCardConnected from '../../ui/ContentCardConnected';
 import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
 import OverlayBackgroundImage from '../../ui/OverlayBackgroundImage';
+import Icon from './Icon';
 
 import Features from './Features';
 import GET_USER_FEED from './getUserFeed';
@@ -38,6 +39,8 @@ const BackgroundFill = styled(({ theme }) => ({
 class Home extends PureComponent {
   static navigationOptions = () => ({
     header: null,
+    tabBarIcon: Icon,
+    tabBarLabel: 'My Willow',
   });
 
   static propTypes = {
@@ -47,6 +50,16 @@ class Home extends PureComponent {
       navigate: PropTypes.func,
     }),
   };
+
+  componentDidMount() {
+    this._navListener = this.props.navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('light-content');
+    });
+  }
+
+  componentWillUnmount() {
+    this._navListener.remove();
+  }
 
   handleOnPress = (item) =>
     this.props.navigation.navigate('ContentSingle', {

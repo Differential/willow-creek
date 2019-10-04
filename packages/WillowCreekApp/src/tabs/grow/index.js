@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
@@ -26,6 +26,16 @@ class Grow extends Component {
       navigate: PropTypes.func,
     }),
   };
+
+  componentDidMount() {
+    this._navListener = this.props.navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('dark-content');
+    });
+  }
+
+  componentWillUnmount() {
+    this._navListener.remove();
+  }
 
   handleOnPress = (item) =>
     this.props.navigation.navigate('ContentSingle', {
