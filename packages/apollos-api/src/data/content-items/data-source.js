@@ -1,6 +1,6 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
-import { get, intersectionBy } from 'lodash';
+import { flatten, get, intersectionBy } from 'lodash';
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
@@ -37,6 +37,32 @@ class ExtendedContentItem extends ContentItem.dataSource {
     }
 
     return null;
+  }
+
+  async getTheme({ id, attributeValues: { themeColor } }) {
+    const theme = {
+      type: 'DARK',
+      colors: {
+        primary: get(themeColor, 'value'),
+      },
+    };
+
+    if (!themeColor) {
+      const parentItemsCursor = await this.getCursorByChildContentItemId(id);
+      if (parentItemsCursor) {
+        const parentItems = await parentItemsCursor.get();
+
+        if (parentItems.length) {
+          const parentThemeColors = flatten(
+            parentItems.map((i) => get(i, 'attributeValues.themeColor.value'))
+          );
+          if (parentThemeColors && parentThemeColors.length)
+            [theme.colors.primary] = parentThemeColors;
+        }
+      }
+    }
+
+    return theme;
   }
 
   byUserCampus = async ({ contentChannelIds = [] }) => {

@@ -58,8 +58,6 @@ const resolver = {
       },
     ],
 
-    siblingContentItemsConnection: () => null,
-
     sharing: ({
       title,
       attributeValues: {
@@ -72,12 +70,13 @@ const resolver = {
       message: null,
     }),
 
-    theme: () => null,
-    likedCount: () => null, // TODO: How to expose youtube stats?
-    isLiked: () => null,
+    theme: (root, input, { dataSources }) =>
+      dataSources.ContentItem.getTheme(root),
   },
   ContentItem: {
     ...ContentItem.resolver.ContentItem,
+    theme: (root, input, { dataSources }) =>
+      dataSources.ContentItem.getTheme(root),
     __resolveType: async (attrs, ...otherProps) => {
       if (get(attrs, 'attributeValues.youtubeId.value', '') !== '') {
         return 'WillowTVContentItem';

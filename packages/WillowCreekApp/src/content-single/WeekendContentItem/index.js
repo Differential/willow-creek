@@ -12,6 +12,7 @@ import {
   ThemeMixin,
   ThemeConsumer,
   CardLabel,
+  H4,
 } from '@apollosproject/ui-kit';
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
@@ -30,49 +31,56 @@ const Header = styled(({ hasMedia, theme }) => ({
 const WeekendContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
   return (
-    <ThemeMixin mixin={content.theme || {}}>
-      <ThemeConsumer>
-        {(theme) => (
-          <BackgroundView>
-            <StretchyView>
-              {({ Stretchy, ...scrollViewProps }) => (
-                <FlexedScrollView {...scrollViewProps}>
-                  <Header hasMedia={content.videos && content.videos.sources}>
-                    <ThemeMixin mixin={{ type: 'dark' }}>
-                      {coverImageSources.length || loading ? (
-                        <Stretchy
-                          background
-                          style={{ backgroundColor: theme.colors.primary }}
-                        >
-                          <GradientOverlayImage
-                            isLoading={!coverImageSources.length && loading}
-                            overlayColor={theme.colors.primary}
-                            overlayType="featured"
-                            source={coverImageSources}
-                          />
-                        </Stretchy>
-                      ) : null}
-                      <CardLabel
-                        title={
-                          content.parentChannel && content.parentChannel.name
-                        }
-                      />
-                      <H2 padded isLoading={!content.title && loading}>
-                        {content.title}
-                      </H2>
-                      <HTMLContent contentId={content.id} />
-                    </ThemeMixin>
-                  </Header>
-                  <MediaControls contentId={content.id} />
-                  <Features contentId={content.id} />
-                  <HorizontalContentFeed contentId={content.id} />
-                </FlexedScrollView>
-              )}
-            </StretchyView>
-          </BackgroundView>
-        )}
-      </ThemeConsumer>
-    </ThemeMixin>
+    <ThemeConsumer>
+      {(theme) => (
+        <BackgroundView>
+          <StretchyView>
+            {({ Stretchy, ...scrollViewProps }) => (
+              <FlexedScrollView {...scrollViewProps}>
+                <Header hasMedia={content.videos && content.videos.sources}>
+                  <ThemeMixin
+                    mixin={{
+                      type: 'dark',
+                    }}
+                  >
+                    {coverImageSources.length || loading ? (
+                      <Stretchy
+                        background
+                        style={{ backgroundColor: theme.colors.primary }}
+                      >
+                        <GradientOverlayImage
+                          isLoading={!coverImageSources.length && loading}
+                          overlayColor={theme.colors.primary}
+                          overlayType="featured"
+                          source={coverImageSources}
+                        />
+                      </Stretchy>
+                    ) : null}
+                    <CardLabel
+                      title={
+                        content.parentChannel && content.parentChannel.name
+                      }
+                    />
+                    <H2 padded isLoading={!content.title && loading}>
+                      {content.title}
+                    </H2>
+                    <H4>{content.summary}</H4>
+                    <PaddedView />
+                  </ThemeMixin>
+                </Header>
+                <MediaControls contentId={content.id} />
+                <PaddedView />
+                <PaddedView>
+                  <HTMLContent contentId={content.id} />
+                </PaddedView>
+                <Features contentId={content.id} />
+                <HorizontalContentFeed contentId={content.id} />
+              </FlexedScrollView>
+            )}
+          </StretchyView>
+        </BackgroundView>
+      )}
+    </ThemeConsumer>
   );
 };
 
