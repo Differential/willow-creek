@@ -131,13 +131,27 @@ class Home extends PureComponent {
                                 featuredData,
                                 'campaigns.edges',
                                 []
-                              ).map((edge) => edge.node);
+                              )
+                                .map((edge) => edge.node)
+                                .filter((node) =>
+                                  get(
+                                    node,
+                                    'childContentItemsConnection.edges.length'
+                                  )
+                                )
+                                .map(
+                                  (node) =>
+                                    node.childContentItemsConnection.edges
+                                )
+                                .flat();
 
                               const featuredItem = get(
-                                featuredContent[0],
-                                'childContentItemsConnection.edges[0].node',
-                                {}
+                                featuredContent,
+                                '[0].node',
+                                null
                               );
+
+                              if (!featuredItem) return null;
 
                               return (
                                 <TouchableScale

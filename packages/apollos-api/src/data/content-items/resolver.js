@@ -10,18 +10,15 @@ const resolver = {
   ...ContentItem.resolver,
   Query: {
     ...ContentItem.resolver.Query,
-    growCampaign: async (root, args, { dataSources }) =>
-      dataSources.ContentItem.paginate({
-        cursor: await dataSources.ContentItem.byPersonaFeed({
-          contentChannelIds: [ROCK_MAPPINGS.GROW_CAMPAIGN_CONTENT_CHANNEL_ID],
-        }),
-      }),
-    myWillowCampaign: async (root, args, { dataSources }) =>
-      dataSources.ContentItem.paginate({
-        cursor: await dataSources.ContentItem.byPersonaFeedAndCampus({
-          contentChannelId: ROCK_MAPPINGS.MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID,
-        }),
-      }),
+    campaigns: async (root, args, { dataSources }) => {
+      const cursor = await dataSources.ContentItem.byUserCampus({
+        contentChannelIds: ROCK_MAPPINGS.CAMPAIGN_CHANNEL_IDS,
+      });
+      return dataSources.ContentItem.paginate({
+        cursor,
+        args,
+      });
+    },
     personaFeed: async (root, args, { dataSources }) =>
       dataSources.ContentItem.paginate({
         cursor: await dataSources.ContentItem.byPersonaFeed({

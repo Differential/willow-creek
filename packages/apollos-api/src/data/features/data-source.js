@@ -6,21 +6,20 @@ export default class Features extends baseFeatures.dataSource {
   ACTION_ALGORITHIMS = {
     // We need to make sure `this` refers to the class, not the `ACTION_ALGORITHIMS` object.
     PERSONA_FEED: this.personaFeedAlgorithm.bind(this),
-    SINGLE_PERSONA: this.singlePersonaAlgorithm.bind(this),
     CONTENT_CHANNEL: this.contentChannelAlgorithm.bind(this),
     SERMON_CHILDREN: this.sermonChildrenAlgorithm.bind(this),
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
   };
 
-  async singlePersonaAlgorithm({ personaIds, contentChannelIds, first = 3 }) {
+  async personaFeedAlgorithm({ contentChannelIds, first = 3 }) {
     const { ContentItem } = this.context.dataSources;
 
     // Get the first three persona items.
-    const personaFeed = await ContentItem.byPersonaIds({
-      personaIds,
+    const personaFeed = await ContentItem.byPersonaFeedAndCampus({
       first,
       contentChannelIds,
     });
+    console.log({ contentChannelIds });
     const items = await personaFeed.get();
 
     // Map them into specific actions.

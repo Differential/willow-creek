@@ -82,8 +82,9 @@ class ContentSingle extends PureComponent {
 
     const content = data.node || {};
 
-    const { id, theme: { colors = {} } = {} } = content;
+    const { id, theme } = content;
 
+    const colors = get(theme, 'colors') || {};
     const { primary, secondary, screen, paper } = colors;
 
     return (

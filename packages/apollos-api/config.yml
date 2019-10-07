@@ -139,24 +139,13 @@ ROCK_MAPPINGS:
   FAMILY_GROUP_TYPE_ID: 10
 
 HOME_FEATURES:
-  - title: FOR GROUPS
-    subtitle: Encourage your group
-    algorithms:
-      - type: SINGLE_PERSONA
-        arguments:
-          personaIds:
-            - 637
-  - title: FOR PARENTS
-    subtitle: Disciple your family
-    algorithms:
-      - type: SINGLE_PERSONA
-        arguments:
-          personaIds:
-            - 635
   - title: NEXT STEPS
     subtitle: Explore what God calls you to today
     algorithms:
       - type: PERSONA_FEED
+        arguments:
+          contentChannelIds:
+            - 26
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

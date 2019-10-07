@@ -81,7 +81,10 @@ class Location extends PureComponent {
         fetchPolicy="cache-and-network"
       >
         {({ loading, error, data: { campuses = [] } = {} }) => (
-          <Mutation mutation={CHANGE_CAMPUS} refetchQueries={['tvFeed']}>
+          <Mutation
+            mutation={CHANGE_CAMPUS}
+            refetchQueries={['campaigns', 'getUserFeed', 'getFeedFeatures']}
+          >
             {(handlePress) => (
               <MapView
                 navigation={this.props.navigation}
