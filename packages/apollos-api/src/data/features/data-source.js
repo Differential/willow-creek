@@ -19,7 +19,7 @@ export default class Features extends baseFeatures.dataSource {
       first,
       contentChannelIds,
     });
-    console.log({ contentChannelIds });
+
     const items = await personaFeed.get();
 
     // Map them into specific actions.
