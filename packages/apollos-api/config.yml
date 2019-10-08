@@ -58,12 +58,14 @@ ANALYTICS:
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID: '9879dbb7cfe39e4d-01'
-
 # CLOUDINARY:
-# Cloudinary is used to improve image loading
-# value should look something like
-# cloudinary://123123123:adkfnla_adASDv_adAS@test
-# URL: ${CLOUDINARY_URL}
+#   # Cloudinary is used to improve image loading
+#   # value should look something like
+#   # cloudinary://123123123:adkfnla_adASDv_adAS@test
+#   URL: ${CLOUDINARY_URL}
+ENGINE:
+  API_KEY: ${ENGINE_API_KEY}
+  SCHEMA_TAG: ${ENGINE_SCHEMA_TAG}
 
 # This key holds various properties that allow our GraphQL server to map to your Rock Instance
 ROCK_MAPPINGS:

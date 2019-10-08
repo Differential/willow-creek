@@ -12,6 +12,7 @@ import hoistNonReactStatic from 'hoist-non-react-statics';
 import Providers from './Providers';
 import NavigationService from './NavigationService';
 import ContentSingle from './content-single';
+import Event from './event';
 import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
 import ChangePassword from './user-settings/ChangePassword';
@@ -35,7 +36,7 @@ const ProtectedRouteWithSplashScreen = (props) => {
 
 const AuthWithBackground = (props) => (
   <ThemeMixin mixin={{ type: 'onboarding' }}>
-    <Auth BackgroundComponent={AuthBackground} {...props} />
+    <Auth BackgroundComponent={AuthBackground} emailRequired {...props} />
   </ThemeMixin>
 );
 
@@ -59,6 +60,7 @@ const AppNavigator = createStackNavigator(
     ChangePassword,
     Location,
     Passes: PassesWithBrand,
+    Event,
     UserWebBrowser,
     Onboarding,
     LandingScreen,
