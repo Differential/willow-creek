@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
-import { get } from 'lodash';
+import { get, pick, identity } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { ErrorCard, ThemeMixin } from '@apollosproject/ui-kit';
@@ -82,14 +82,26 @@ class ContentSingle extends PureComponent {
 
     const content = data.node || {};
 
-    const { theme = {}, id } = content;
+    const { id, theme } = content;
+
+    const colors = get(theme, 'colors') || {};
+    const { primary, secondary, screen, paper } = colors;
 
     return (
       <ThemeMixin
-        mixin={{
-          type: get(theme, 'type', 'light').toLowerCase(),
-          colors: get(theme, 'colors'),
-        }}
+        mixin={
+          content.theme
+            ? {
+                type: 'light', // type: 'light', // we only brand the header light/dark
+                colors: {
+                  ...(primary ? { primary } : {}),
+                  ...(secondary ? { secondary } : {}),
+                  ...(screen ? { screen } : {}),
+                  ...(paper ? { paper } : {}),
+                },
+              }
+            : {}
+        }
       >
         <TrackEventWhenLoaded
           loaded={!!(!loading && content.title)}

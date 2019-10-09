@@ -193,6 +193,7 @@ type Event implements Node {
   location: String
   start: String
   end: String
+  image: ImageMedia
 }
 
 interface Feature {
@@ -209,7 +210,8 @@ enum GENDER {
 type Group implements Node {
   id: ID!
   name: String
-  leader: Person
+  leader: Person @deprecated(reason: "No longer used, use 'leaders' instead")
+  leaders: [Person]
   members: [Person]
 }
 
@@ -344,7 +346,7 @@ enum PassType {
 type Person implements Node {
   id: ID!
   firstName: String
-  lastName: String!
+  lastName: String
   nickName: String
   email: String
   gender: GENDER

@@ -3,7 +3,6 @@ import { StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
-import Badge from '@apollosproject/ui-kit/src/theme/icons/Badge';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Passes from '@apollosproject/ui-passes';
@@ -13,6 +12,7 @@ import hoistNonReactStatic from 'hoist-non-react-statics';
 import Providers from './Providers';
 import NavigationService from './NavigationService';
 import ContentSingle from './content-single';
+import Event from './event';
 import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
 import ChangePassword from './user-settings/ChangePassword';
@@ -36,7 +36,7 @@ const ProtectedRouteWithSplashScreen = (props) => {
 
 const AuthWithBackground = (props) => (
   <ThemeMixin mixin={{ type: 'onboarding' }}>
-    <Auth BackgroundComponent={AuthBackground} {...props} />
+    <Auth BackgroundComponent={AuthBackground} emailRequired {...props} />
   </ThemeMixin>
 );
 
@@ -50,8 +50,6 @@ const PassesWithBrand = (props) => (
 
 hoistNonReactStatic(PassesWithBrand, Passes);
 
-const customIcons = { Badge };
-
 const AppNavigator = createStackNavigator(
   {
     ProtectedRoute: ProtectedRouteWithSplashScreen,
@@ -62,6 +60,7 @@ const AppNavigator = createStackNavigator(
     ChangePassword,
     Location,
     Passes: PassesWithBrand,
+    Event,
     UserWebBrowser,
     Onboarding,
     LandingScreen,
@@ -76,7 +75,7 @@ const AppNavigator = createStackNavigator(
 const AppContainer = createAppContainer(AppNavigator);
 
 const App = () => (
-  <Providers iconInput={customIcons}>
+  <Providers>
     <BackgroundView>
       <AppStatusBar barStyle="dark-content" />
       <AppContainer

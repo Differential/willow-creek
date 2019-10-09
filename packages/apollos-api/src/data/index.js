@@ -22,7 +22,7 @@ import {
   AuthSms,
   Group,
   BinaryFiles,
-  Events,
+  Event,
 } from '@apollosproject/data-connector-rock';
 
 // This module is used to attach Rock User updating to the OneSignal module.
@@ -68,7 +68,7 @@ const data = {
   Features,
   YoutubeImport,
   Group,
-  Events,
+  Event,
 };
 
 // If we are in development mode, we allow users to import data from Youtube.

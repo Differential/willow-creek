@@ -1,4 +1,5 @@
 import { ApolloServer } from 'apollo-server-express';
+import ApollosConfig from '@apollosproject/config';
 import express from 'express';
 import { RockLoggingExtension } from '@apollosproject/rock-apollo-data-source';
 
@@ -19,6 +20,18 @@ const isDev =
 
 const extensions = isDev ? [() => new RockLoggingExtension()] : [];
 
+const cacheOptions = isDev
+  ? {}
+  : {
+      cacheControl: {
+        stripFormattedExtensions: false,
+        calculateHttpHeaders: true,
+        defaultMaxAge: 600,
+      },
+    };
+
+const { ENGINE } = ApollosConfig;
+
 const apolloServer = new ApolloServer({
   typeDefs: schema,
   resolvers,
@@ -35,10 +48,10 @@ const apolloServer = new ApolloServer({
       'editor.cursorShape': 'line',
     },
   },
-  cacheControl: {
-    stripFormattedExtensions: false,
-    calculateHttpHeaders: true,
-    defaultMaxAge: 600,
+  ...cacheOptions,
+  engine: {
+    apiKey: ENGINE.API_KEY,
+    schemaTag: ENGINE.SCHEMA_TAG,
   },
 });
 

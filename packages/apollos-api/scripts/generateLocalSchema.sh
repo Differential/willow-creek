@@ -19,7 +19,8 @@ else
   done
   echo 'Curling Server for most recent schema.'
   ./node_modules/.bin/get-graphql-schema http://localhost:4000 > local.graphql
-  echo 'Done. Check local.graphql'
+  echo 'Publishing Schema to Apollo Engine.'
+  npx apollo server:publish --endpoint=http://localhost:4000
   if [ "$*" = "--start-server" ]; then
     echo "Killing Server (PID $SERVER_PID)"
     kill -9 $SERVER_PID

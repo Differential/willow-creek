@@ -35,8 +35,6 @@ export default gql`
   }
 
   extend type Query {
-    growCampaign: ContentItemsConnection @cacheControl(maxAge: 0)
-    myWillowCampaign: ContentItemsConnection @cacheControl(maxAge: 0)
     tvFeed: ContentItemsConnection @cacheControl(maxAge: 0)
   }
 `;

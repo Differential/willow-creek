@@ -6,11 +6,9 @@ import { SafeAreaView } from 'react-navigation';
 
 import { PaddedView, TextInput } from '@apollosproject/ui-kit';
 
-import {
-  AskNameConnected,
-  Slide,
-  SlideContent,
-} from '@apollosproject/ui-onboarding';
+import { Slide, SlideContent } from '@apollosproject/ui-onboarding';
+
+import AskNameConnected from './AskNameConnected';
 
 // import updateUserName from './updateUserName';
 
@@ -31,6 +29,7 @@ const AskName = memo(
     ...props
   }) => {
     let LastNameInput = null;
+    let EmailInput = null;
 
     return (
       <Slide
@@ -53,7 +52,7 @@ const AskName = memo(
                   get(touched, 'firstName', false) &&
                   get(errors, 'firstName', null)
                 }
-                onChangeText={text => setFieldValue('firstName', text)}
+                onChangeText={(text) => setFieldValue('firstName', text)}
                 onSubmitEditing={() => LastNameInput.focus()}
                 disabled={isLoading}
                 enablesReturnKeyAutomatically
@@ -68,12 +67,28 @@ const AskName = memo(
                   get(touched, 'lastName', false) &&
                   get(errors, 'lastName', null)
                 }
-                onChangeText={text => setFieldValue('lastName', text)}
+                onChangeText={(text) => setFieldValue('lastName', text)}
+                onSubmitEditing={() => EmailInput.focus()}
+                disabled={isLoading}
+                enablesReturnKeyAutomatically
+                inputRef={(r) => {
+                  LastNameInput = r;
+                }}
+              />
+              <TextInput
+                label={'Email (optional)'}
+                type={'email'}
+                returnKeyType={'next'}
+                value={get(values, 'email')}
+                error={
+                  get(touched, 'email', false) && get(errors, 'email', null)
+                }
+                onChangeText={(text) => setFieldValue('email', text)}
                 onSubmitEditing={onPressPrimary}
                 disabled={isLoading}
                 enablesReturnKeyAutomatically
-                inputRef={r => {
-                  LastNameInput = r;
+                inputRef={(r) => {
+                  EmailInput = r;
                 }}
               />
             </PaddedView>
@@ -97,6 +112,7 @@ AskName.propTypes = {
   description: PropTypes.string,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
+  email: PropTypes.string,
   touched: PropTypes.shape({}),
   errors: PropTypes.shape({}),
   values: PropTypes.shape({}),
@@ -109,7 +125,7 @@ AskName.defaultProps = {
   description: "Every relationship starts with a name. What's yours?",
 };
 
-const AskNameWithBackgroundImage = props => (
+const AskNameWithBackgroundImage = (props) => (
   <AskNameConnected Component={AskName} {...props} />
 );
 

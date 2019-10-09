@@ -10,20 +10,15 @@ const resolver = {
   ...ContentItem.resolver,
   Query: {
     ...ContentItem.resolver.Query,
-    growCampaign: async (root, args, { dataSources }) =>
-      dataSources.ContentItem.paginate({
-        cursor: await dataSources.ContentItem.byPersonaFeed({
-          contentChannelIds: [ROCK_MAPPINGS.GROW_CAMPAIGN_CONTENT_CHANNEL_ID],
-        }),
-      }),
-    myWillowCampaign: async (root, args, { dataSources }) =>
-      dataSources.ContentItem.paginate({
-        cursor: await dataSources.ContentItem.byPersonaFeed({
-          contentChannelIds: [
-            ROCK_MAPPINGS.MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID,
-          ],
-        }),
-      }),
+    campaigns: async (root, args, { dataSources }) => {
+      const cursor = await dataSources.ContentItem.byUserCampus({
+        contentChannelIds: ROCK_MAPPINGS.CAMPAIGN_CHANNEL_IDS,
+      });
+      return dataSources.ContentItem.paginate({
+        cursor,
+        args,
+      });
+    },
     personaFeed: async (root, args, { dataSources }) =>
       dataSources.ContentItem.paginate({
         cursor: await dataSources.ContentItem.byPersonaFeed({
@@ -31,11 +26,12 @@ const resolver = {
         }),
       }),
     tvFeed: async (root, args, { dataSources }) => {
-      const cursor = await dataSources.ContentItem.getContentItemsForCampus();
+      const cursor = await dataSources.ContentItem.byUserCampus({
+        contentChannelIds: ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
+      });
       return dataSources.ContentItem.paginate({
-        cursor: cursor.andFilter(
-          `ContentChannelId eq ${ApollosConfig.ROCK_MAPPINGS.YOUTUBE_CONTENT_CHANNEL}`
-        ),
+        cursor,
+
         args,
       });
     },
@@ -59,8 +55,6 @@ const resolver = {
       },
     ],
 
-    siblingContentItemsConnection: () => null,
-
     sharing: ({
       title,
       attributeValues: {
@@ -73,12 +67,13 @@ const resolver = {
       message: null,
     }),
 
-    theme: () => null,
-    likedCount: () => null, // TODO: How to expose youtube stats?
-    isLiked: () => null,
+    theme: (root, input, { dataSources }) =>
+      dataSources.ContentItem.getTheme(root),
   },
   ContentItem: {
     ...ContentItem.resolver.ContentItem,
+    theme: (root, input, { dataSources }) =>
+      dataSources.ContentItem.getTheme(root),
     __resolveType: async (attrs, ...otherProps) => {
       if (get(attrs, 'attributeValues.youtubeId.value', '') !== '') {
         return 'WillowTVContentItem';

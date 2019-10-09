@@ -6,6 +6,7 @@ import { DefaultCard, HighlightCard } from '@apollosproject/ui-kit';
 const contentCardComponentMapper = (props) => {
   // map typename to the the card we want to render.
   switch (get(props, '__typename')) {
+    case 'WillowTVContentItem':
     case 'MediaContentItem':
     case 'WeekendContentItem':
     case 'ContentSeriesContentItem':

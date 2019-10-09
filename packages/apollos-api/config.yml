@@ -14,10 +14,10 @@ APP:
   ROOT_API_URL: ${ROOT_URL}
 ROCK:
   USE_PLUGIN: true
-  API_URL: http://rockdemo.willowcreek.org/api
+  API_URL: https://rock.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: http://rockdemo.willowcreek.org/GetImage.ashx
-  SHARE_URL: http://rockdemo.willowcreek.org
+  IMAGE_URL: https://rock.willowcreek.org/GetImage.ashx
+  SHARE_URL: https://rock.willowcreek.org
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/New_York'
 ONE_SIGNAL:
@@ -28,7 +28,7 @@ CHURCH_ONLINE:
   MEDIA_URLS: []
   WEB_VIEW_URL: https://apollos.churchonline.org/
 ALGOLIA:
-  APPLICATION_ID: 60X0UL6O42
+  APPLICATION_ID: EHIORCCAE1
   API_KEY: ${ALGOLIASEARCH_API_KEY}
   # TODO: should we support multiple indices? how?
   SEARCH_INDEX: ContentItems
@@ -58,12 +58,14 @@ ANALYTICS:
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID: '9879dbb7cfe39e4d-01'
-
 # CLOUDINARY:
-# Cloudinary is used to improve image loading
-# value should look something like
-# cloudinary://123123123:adkfnla_adASDv_adAS@test
-# URL: ${CLOUDINARY_URL}
+#   # Cloudinary is used to improve image loading
+#   # value should look something like
+#   # cloudinary://123123123:adkfnla_adASDv_adAS@test
+#   URL: ${CLOUDINARY_URL}
+ENGINE:
+  API_KEY: ${ENGINE_API_KEY}
+  SCHEMA_TAG: ${ENGINE_SCHEMA_TAG}
 
 # This key holds various properties that allow our GraphQL server to map to your Rock Instance
 ROCK_MAPPINGS:
@@ -83,9 +85,10 @@ ROCK_MAPPINGS:
       ContentChannelTypeId: [6]
     DevotionalContentItem:
       EntityType: ContentChannelItem
-      ContentChannelTypeId: [1]
+      ContentChannelTypeId: [12]
     MediaContentItem:
       EntityType: ContentChannelItem
+      ContentChannelTypeId: [5]
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
@@ -95,28 +98,38 @@ ROCK_MAPPINGS:
 
   DATAVIEW_CATEGORIES:
     # Id of the category used to store all persona dataviews
-    PersonaId: 699
+    PersonaId: 814
 
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
-    - 18 # Devotionals
-    - 19 # Stories
-    - 12 # Videos
-    - 20 # Worship Music
-    - 3 # Blog
-    - 16 # Podcast series
+    - 20 # Note from pastor
+    - 18 # Articles
+    - 19 # Church updates
+    - 15 # Classes
+    - 22 # Devo series
+    - 24 # Podcast series
+    - 17 # Sermon Series
+    - 13 # Stories
+    - 12 # Willow Creative
+    - 14 # Worship
 
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   FEED_CONTENT_CHANNEL_IDS:
-    - 3
-    - 8
-    - 15
-    - 5
+    - 20
+    - 18
     - 19
+    - 13
+    - 14
+    - 16 # Sermons
+    - 21 # Devotionals
 
   CAMPAIGN_CHANNEL_IDS:
-    - 13
+    - 25
+
+  POINTER_CHANNEL_TYPE_ID: 14
+
+  NEXT_STEPS_CONTENT_CHANNEL_ID: 26
 
   GROW_CAMPAIGN_CONTENT_CHANNEL_ID: 13
   MY_WILLOW_CAMPAIGN_CONTENT_CHANNEL_ID: 13
@@ -159,32 +172,20 @@ ROCK_MAPPINGS:
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 2
 
-  SERMON_CHANNEL_ID: 5
+  SERMON_CHANNEL_ID: 16
 
   SERVING_GROUP_TYPE_ID: 23
   COMMUNITY_GROUP_TYPE_ID: 25
   FAMILY_GROUP_TYPE_ID: 10
 
 HOME_FEATURES:
-  - title: FOR GROUPS
-    subtitle: Encourage your group
-    algorithms:
-      - type: PERSONA_FEED
-        arguments:
-          personaId: 706
-  - title: FOR PARENTS
-    subtitle: Disciple your family
-    algorithms:
-      - type: PERSONA_FEED
-        arguments:
-          personaId: 705
-          algorithms:
   - title: NEXT STEPS
     subtitle: Explore what God calls you to today
     algorithms:
       - type: PERSONA_FEED
         arguments:
-          personaId: 704
+          contentChannelIds:
+            - 26
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
