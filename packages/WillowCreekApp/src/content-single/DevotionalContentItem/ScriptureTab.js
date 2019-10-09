@@ -18,6 +18,7 @@ const ScriptureTab = ({ id, scripture = [], isLoading, navigation }) => (
           <ScriptureItem
             key={ref.id}
             reference={ref.reference}
+            copyright={ref.copyright}
             html={ref.html}
             isLoading={isLoading}
             translation="NIV"
