@@ -110,7 +110,11 @@ class DevotionalContentItem extends PureComponent {
     return (
       <BackgroundView>
         <FlexedSafeAreaView forceInset={{ top: 'always' }}>
-          <Query query={GET_SCRIPTURE} variables={{ itemId: this.props.id }}>
+          <Query
+            query={GET_SCRIPTURE}
+            fetchPolicy="cache-and-network"
+            variables={{ itemId: this.props.id }}
+          >
             {this.renderTabs}
           </Query>
         </FlexedSafeAreaView>
