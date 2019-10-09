@@ -57,7 +57,7 @@ ANALYTICS:
   GA_ID:
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
-  BIBLE_ID: '9879dbb7cfe39e4d-01'
+  BIBLE_ID: '71c6eab17ae5b667-01'
 # CLOUDINARY:
 #   # Cloudinary is used to improve image loading
 #   # value should look something like
@@ -82,7 +82,7 @@ ROCK_MAPPINGS:
       # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
       EntityType: ContentChannelItem
       # Used to define the subset of content channels types that use this specific type.
-      ContentChannelTypeId: [6]
+      ContentChannelTypeId: [6, 13]
     DevotionalContentItem:
       EntityType: ContentChannelItem
       ContentChannelTypeId: [12]
