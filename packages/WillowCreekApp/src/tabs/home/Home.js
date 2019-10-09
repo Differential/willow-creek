@@ -154,7 +154,9 @@ class Home extends PureComponent {
                               return (
                                 <TouchableScale
                                   onPress={() =>
-                                    this.handleOnPress({ id: featuredItem.id })
+                                    this.handleOnPress({
+                                      id: featuredItem.id,
+                                    })
                                   }
                                 >
                                   <ContentCardConnected

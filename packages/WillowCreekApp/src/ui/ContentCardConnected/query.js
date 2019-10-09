@@ -54,6 +54,11 @@ export const BASE_CARD_FRAGMENT = gql`
         name
       }
     }
+    ... on WillowTVContentItem {
+      liveStream {
+        isLive
+      }
+    }
     ... on DevotionalContentItem {
       parentChannel {
         id

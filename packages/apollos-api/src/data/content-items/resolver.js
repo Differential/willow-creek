@@ -66,7 +66,10 @@ const resolver = {
       title,
       message: null,
     }),
-
+    liveStream: async (root, args, { dataSources }) => ({
+      ...(await dataSources.LiveStream.getLiveStream()), // TODO: Wish there was a better way to inherit these defaults from the LiveStream module.
+      isLive: await dataSources.ContentItem.isContentActiveLiveStream(root), // We need to override the global IsLive with an IsLive that is contextual to a ContentItem
+    }),
     theme: (root, input, { dataSources }) =>
       dataSources.ContentItem.getTheme(root),
   },

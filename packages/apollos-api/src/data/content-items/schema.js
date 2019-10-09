@@ -28,6 +28,7 @@ export default gql`
     theme: Theme
     likedCount: Int
     isLiked: Boolean
+    liveStream: LiveStream
   }
 
   extend type VideoMedia {
