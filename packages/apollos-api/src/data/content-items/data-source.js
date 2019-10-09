@@ -1,6 +1,6 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
-import { flatten, get } from 'lodash';
+import { flatten, get, uniq } from 'lodash';
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
@@ -23,7 +23,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
       if (!result || !result.snippet) return null;
       const { snippet } = result;
 
-      const availableSources = Object.keys(snippet.thumbnails).map(key => ({
+      const availableSources = Object.keys(snippet.thumbnails).map((key) => ({
         uri: snippet.thumbnails[key].url,
         width: snippet.thumbnails[key].width,
       }));
@@ -55,7 +55,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
         if (parentItems.length) {
           const parentThemeColors = flatten(
-            parentItems.map(i => get(i, 'attributeValues.themeColor.value'))
+            parentItems.map((i) => get(i, 'attributeValues.themeColor.value'))
           );
           if (parentThemeColors && parentThemeColors.length)
             [theme.colors.primary] = parentThemeColors;
@@ -69,6 +69,17 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
     return theme;
   }
+
+  bySearchableContent = () =>
+    this.request()
+      .filterOneOf(
+        uniq([
+          ...ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
+          ...ApollosConfig.ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS,
+        ]).map((id) => `ContentChannelId eq ${id}`)
+      )
+      .cache({ ttl: 60 })
+      .andFilter(this.LIVE_CONTENT());
 
   byUserCampus = async ({ contentChannelIds = [] }) => {
     // let campusId;
@@ -97,7 +108,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
     if (contentChannelIds.length !== 0) {
       cursor.filterOneOf(
-        contentChannelIds.map(id => `ContentChannelId eq ${id}`)
+        contentChannelIds.map((id) => `ContentChannelId eq ${id}`)
       );
     }
 
@@ -130,7 +141,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
     if (contentChannelIds.length !== 0) {
       cursor.filterOneOf(
-        contentChannelIds.map(id => `ContentChannelId eq ${id}`)
+        contentChannelIds.map((id) => `ContentChannelId eq ${id}`)
       );
     }
 
