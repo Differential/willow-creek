@@ -20,7 +20,7 @@ import fetchMoreResolver from '../../utils/fetchMoreResolver';
 import ContentCardConnected from '../../ui/ContentCardConnected';
 import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
-import OverlayBackgroundImage from '../../ui/OverlayBackgroundImage';
+import CampusBackgroundImage from '../../ui/CampusBackgroundImage';
 import Icon from './Icon';
 
 import Features from './Features';
@@ -109,9 +109,7 @@ class Home extends PureComponent {
                       ListHeaderComponent={
                         <>
                           <Stretchy background>
-                            <OverlayBackgroundImage
-                              style={{ aspectRatio: 0.9 }}
-                            />
+                            <CampusBackgroundImage />
                           </Stretchy>
                           <ThemeMixin mixin={{ type: 'dark' }}>
                             <PaddedView>
