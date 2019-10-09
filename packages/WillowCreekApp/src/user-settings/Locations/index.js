@@ -57,7 +57,7 @@ class Location extends PureComponent {
   async componentDidMount() {
     await requestLocation();
     Geolocation.getCurrentPosition(
-      (position) => {
+      position => {
         this.setState({
           userLocation: {
             latitude: position.coords.latitude,
@@ -85,7 +85,7 @@ class Location extends PureComponent {
             mutation={CHANGE_CAMPUS}
             refetchQueries={['campaigns', 'getUserFeed', 'getFeedFeatures']}
           >
-            {(handlePress) => (
+            {handlePress => (
               <MapView
                 navigation={this.props.navigation}
                 isLoading={loading}
