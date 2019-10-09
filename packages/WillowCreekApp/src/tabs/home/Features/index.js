@@ -115,12 +115,6 @@ const Features = memo(({ navigation }) => (
                       transitionKey: 2,
                     });
                   }
-                  if (action === 'READ_EVENT') {
-                    navigation.navigate('Event', {
-                      eventId: relatedNode.id,
-                      transitionKey: 2,
-                    });
-                  }
                 }}
                 onPressCardActionButton={() =>
                   navigation.navigate('ContentFeed', {
