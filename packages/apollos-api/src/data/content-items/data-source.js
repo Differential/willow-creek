@@ -141,10 +141,8 @@ class ExtendedContentItem extends ContentItem.dataSource {
       contentChannelIds: [16],
     })).first();
 
-    console.log({ mostRecentSermon });
-
     // If the most recent sermon is the sermon we are checking, this is the live sermon.
-    return mostRecentSermon.id === id;
+    return mostRecentSermon && mostRecentSermon.id === id;
   }
 }
 
