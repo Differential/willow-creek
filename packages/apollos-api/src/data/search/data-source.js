@@ -39,6 +39,7 @@ query getItem {
 
     while (itemsLeft) {
       const { edges } = await ContentItem.paginate({
+        // Change from core: bySearchableContent instead of byActive
         cursor: ContentItem.bySearchableContent(),
         args,
       });
@@ -53,6 +54,7 @@ query getItem {
         items.map((item) => this.mapItemToAlgolia(item))
       );
 
+      // Change from core: added filter to eliminate sending `null`
       await this.addObjects(indexableItems.filter((item) => !!item));
     }
   }
