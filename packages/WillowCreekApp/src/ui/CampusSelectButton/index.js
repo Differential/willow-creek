@@ -29,7 +29,7 @@ const CampusSelectButton = withNavigation(({ navigation, ...otherProps }) => (
   <Query query={GET_USER_CAMPUS} fetchPolicy="cache-and-network">
     {({ data: { currentUser: { profile } = {} } = {} }) => (
       <StyledButton
-        type="ghost"
+        type="secondary"
         onPress={() => navigation.navigate('Location')}
         {...otherProps}
       >

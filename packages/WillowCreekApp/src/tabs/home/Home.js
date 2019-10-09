@@ -53,7 +53,7 @@ class Home extends PureComponent {
 
   componentDidMount() {
     this._navListener = this.props.navigation.addListener('didFocus', () => {
-      StatusBar.setBarStyle('light-content');
+      StatusBar.setBarStyle('dark-content');
     });
   }
 
@@ -71,7 +71,6 @@ class Home extends PureComponent {
     return (
       <BackgroundView>
         <SafeAreaView style={{ flex: 1 }}>
-          <BackgroundFill />
           <View style={{ flex: 1 }}>
             <StretchyView>
               {({ Stretchy, ...scrollViewProps }) => (
@@ -108,17 +107,10 @@ class Home extends PureComponent {
                       refetch={refetch}
                       ListHeaderComponent={
                         <>
-                          <Stretchy background>
-                            <OverlayBackgroundImage
-                              style={{ aspectRatio: 0.9 }}
-                            />
-                          </Stretchy>
-                          <ThemeMixin mixin={{ type: 'dark' }}>
-                            <PaddedView>
-                              <PageTitle>My Willow</PageTitle>
-                              <CampusSelectButton bordered />
-                            </PaddedView>
-                          </ThemeMixin>
+                          <PaddedView>
+                            <PageTitle>My Willow</PageTitle>
+                            <CampusSelectButton bordered />
+                          </PaddedView>
                           <Query
                             query={GET_CAMPAIGN_CONTENT_ITEM}
                             fetchPolicy="cache-and-network"
