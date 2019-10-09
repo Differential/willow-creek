@@ -23,7 +23,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
       if (!result || !result.snippet) return null;
       const { snippet } = result;
 
-      const availableSources = Object.keys(snippet.thumbnails).map(key => ({
+      const availableSources = Object.keys(snippet.thumbnails).map((key) => ({
         uri: snippet.thumbnails[key].url,
         width: snippet.thumbnails[key].width,
       }));
@@ -55,7 +55,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
         if (parentItems.length) {
           const parentThemeColors = flatten(
-            parentItems.map(i => get(i, 'attributeValues.themeColor.value'))
+            parentItems.map((i) => get(i, 'attributeValues.themeColor.value'))
           );
           if (parentThemeColors && parentThemeColors.length)
             [theme.colors.primary] = parentThemeColors;
@@ -71,21 +71,11 @@ class ExtendedContentItem extends ContentItem.dataSource {
   }
 
   byUserCampus = async ({ contentChannelIds = [] }) => {
-    // let campusId;
-    let campusGuid;
-    // let personaGuids;
-    const { Campus, Auth } = this.context.dataSources;
+    const { Person } = this.context.dataSources;
 
-    try {
-      // If we have a user
-      const { id } = await Auth.getCurrentPerson();
-      // And that user has a campus
-      const { guid } = await Campus.getForPerson({
-        personId: id,
-      });
-      // The campus id is the current user's campus
-      campusGuid = guid;
-    } catch (e) {
+    const { campusGuid } = await Person.getCurrentUserCampusId();
+
+    if (!campusGuid) {
       // No campus or no current user.
       return this.request().empty();
     }
@@ -97,7 +87,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
     if (contentChannelIds.length !== 0) {
       cursor.filterOneOf(
-        contentChannelIds.map(id => `ContentChannelId eq ${id}`)
+        contentChannelIds.map((id) => `ContentChannelId eq ${id}`)
       );
     }
 
@@ -107,7 +97,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
   };
 
   async byPersonaFeedAndCampus({ contentChannelIds = [], first = 3 }) {
-    const { Person, Auth, Campus } = this.context.dataSources;
+    const { Person } = this.context.dataSources;
 
     const userPersonas = await Person.getPersonas({
       categoryId: ApollosConfig.ROCK_MAPPINGS.DATAVIEW_CATEGORIES.PersonaId,
@@ -117,10 +107,11 @@ class ExtendedContentItem extends ContentItem.dataSource {
       return this.byUserCampus({ contentChannelIds });
     }
 
-    const { id: personId } = await Auth.getCurrentPerson();
-    const { id: campusId } = await Campus.getForPerson({
-      personId,
-    });
+    const { campusId } = await Person.getCurrentUserCampusId();
+
+    if (!campusId) {
+      return this.request().empty();
+    }
 
     const cursor = this.request(
       `Apollos/ContentChannelItemsByCampusIdAndAttributeValue?campusId=${campusId}&attributeKey=Personas&attributeValues=${userPersonas
@@ -130,7 +121,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
     if (contentChannelIds.length !== 0) {
       cursor.filterOneOf(
-        contentChannelIds.map(id => `ContentChannelId eq ${id}`)
+        contentChannelIds.map((id) => `ContentChannelId eq ${id}`)
       );
     }
 
@@ -138,6 +129,22 @@ class ExtendedContentItem extends ContentItem.dataSource {
       .andFilter(this.LIVE_CONTENT())
       .orderBy('StartDateTime', 'desc')
       .top(first);
+  }
+
+  async isContentActiveLiveStream({ id }) {
+    const { LiveStream } = this.context.dataSources;
+    const { isLive } = await LiveStream.getLiveStream();
+    // if there is no live stream, then there is no live content. Easy enough!
+    if (!isLive) return false;
+
+    const mostRecentSermon = await (await this.byUserCampus({
+      contentChannelIds: [16],
+    })).first();
+
+    console.log({ mostRecentSermon });
+
+    // If the most recent sermon is the sermon we are checking, this is the live sermon.
+    return mostRecentSermon.id === id;
   }
 }
 

@@ -13,7 +13,6 @@ import {
   Followings,
   Interactions,
   RockConstants,
-  Person,
   ContentChannel,
   Sharable,
   Auth,
@@ -34,6 +33,7 @@ import * as Theme from './theme';
 import * as Campus from './campus';
 import * as WillowCalendarEventContentItem from './calendar-events';
 import * as Features from './features';
+import * as Person from './person';
 
 import * as Youtube from './youtube';
 

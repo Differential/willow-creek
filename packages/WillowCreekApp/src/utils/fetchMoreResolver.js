@@ -13,7 +13,6 @@ export default function fetchMoreResolver({
 
     const after = get(data, `${pageInfoPath}.endCursor`);
     if (!after) return;
-
     fetchMore({
       variables: { ...variables, after },
       updateQuery: (previousResult, { fetchMoreResult }) => {

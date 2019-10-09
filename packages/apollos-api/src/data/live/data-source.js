@@ -13,18 +13,10 @@ export default class LiveStream extends RESTDataSource {
 
   // Given a logged in user, what is the youtube channelID of their campus?
   getYoutubeChannelIdForCampus = async () => {
-    let campusId;
-    try {
-      // If we have a user
-      const { id } = await this.context.dataSources.Auth.getCurrentPerson();
-      // And that user has a campus
-      const {
-        id: rockCampusId,
-      } = await this.context.dataSources.Campus.getForPerson({ personId: id });
-      // The campus id is the current user's campus
-      campusId = rockCampusId;
-    } catch (e) {
-      // No campus or no current user.
+    const { Person } = this.context.dataSources;
+    const { campusId } = await Person.getCurrentUserCampusId();
+
+    if (!campusId) {
       return null;
     }
 
