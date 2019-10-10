@@ -144,34 +144,132 @@ ROCK_MAPPINGS:
       CampusDataViewGuid: 5f0f1aeb-330a-4cff-b99e-30d9f6f02c9c
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 6
+      ProfileLinks:
+        - title: Groups
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/chicago
+        - title: Give
+          url: https://pushpay.com/pay/wcchicago
+        - title: Find a serving opportunity
+          url: https://www.willowcreek.org/en/serving-opportunities/chicago
+        - title: Join a small group
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/chicago
+        - title: I need prayer
+          url: mailto:glenn@willowchicago.org
+        - title: I would like to give
+          url: https://pushpay.com/pay/wcchicago
     - # Casa De Luz
       CampusDataViewGuid: 9cd67fd5-f316-4fb9-99b7-ce998721558a
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 5
+      ProfileLinks:
+        - title: Groups
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
+        - title: Give
+          url: https://pushpay.com/pay/wccasadeluz
+        - title: Join a small group
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
+        - title: I would like to give
+          url: https://pushpay.com/pay/wccasadeluz
     - # Crystal Lake
       CampusDataViewGuid: 4db5a26d-9f4d-4d24-8ec0-4ffc05809ffa
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 4
+      ProfileLinks:
+        - title: Groups
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/crystal-lake
+        - title: Give
+          url: https://pushpay.com/pay/wccrystallake
+        - title: Find a serving opportunity
+          url: https://www.willowcreek.org/en/serving-opportunities/crystal-lake
+        - title: Join a small group
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/crystal-lake
+        - title: I need prayer
+          url: mailto:wclprays@willowcreek.org
+        - title: I would like to give
+          url: https://pushpay.com/pay/wccrystallake
     - # Huntley Campus
       CampusDataViewGuid: f28fef3a-e6d7-4837-b003-c9a1d9cd235f
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 7
+      ProfileLinks:
+        - title: Groups
+          url: https://www.willowcreek.org/connect/getting-started/huntley/groups
+        - title: Give
+          url: https://pushpay.com/pay/wchuntley
+        - title: Find a serving opportunity
+          url: https://www.willowcreek.org/en/serving-opportunities/huntley
+        - title: Join a small group
+          url: https://www.willowcreek.org/connect/getting-started/huntley/groups
+        - title: I need prayer
+          url: mailto:hmadsen@wcservingvolunteer.org
+        - title: I would like to give
+          url: https://pushpay.com/pay/wchuntley
     - # North Shore
       CampusDataViewGuid: 5bb891df-f608-4a2b-948e-1537a5e6b1c6
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 3
+      ProfileLinks:
+        - title: Groups
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
+        - title: Give
+          url: https://pushpay.com/pay/wcnorthshore
+        - title: Join a small group
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
+        - title: I need prayer
+          url: mailto:nsprayer@willowcreek.org
+        - title: I would like to give
+          url: https://pushpay.com/pay/wcnorthshore
     - # South Barrington
       CampusDataViewGuid: bbdfae06-5f70-4703-954c-a21d1a6b140b
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w
       CampusId: 1
+      ProfileLinks:
+        - title: Groups
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-barrington
+        - title: Give
+          url: https://pushpay.com/g/willowcreek?src=hpp
+        - title: Find a serving opportunity
+          url: https://www.willowcreek.org/en/serving-opportunities/south-barrington/serve-finder
+        - title: Join a small group
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-barrington
+        - title: I need prayer
+          url: https://www.willowcreek.org/en/contact/prayer
+        - title: I would like to give
+          url: https://pushpay.com/g/willowcreek?src=hpp
     - # South Lake
       CampusDataViewGuid: e3bc6b72-bc9f-4f08-8ba8-49577bb049ed
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 8
+      ProfileLinks:
+        - title: Groups
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-lake
+        - title: Give
+          url: https://pushpay.com/pay/wcsouthlake
+        - title: Find a serving opportunity
+          url: https://www.willowcreek.org/en/serving-opportunities/south-lake
+        - title: Join a small group
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-lake
+        - title: I need prayer
+          url: https://www.willowcreek.org/en/contact/prayer
+        - title: I would like to give
+          url: https://pushpay.com/pay/wcsouthlake
     - # Wheaton
       CampusDataViewGuid: d96b6f89-441a-489a-b8df-a406ae108474
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 2
+      ProfileLinks:
+        - title: Groups
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/wheaton
+        - title: Give
+          url: http://pushpay.com/pay/wcwheaton
+        - title: Find a serving opportunity
+          url: https://www.willowcreek.org/en/serving-opportunities/wheaton
+        - title: Join a small group
+          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/wheaton
+        - title: I need prayer
+          url: mailto:prayer@willowwheaton.org
+        - title: I would like to give
+          url: http://pushpay.com/pay/wcwheaton
 
   SERMON_CHANNEL_ID: 16
 
