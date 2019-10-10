@@ -27,6 +27,7 @@ const Features = ({ contentId }) => {
         if (loading) return null;
 
         const features = get(node, 'features', []);
+
         if (!features || !features.length) return null;
 
         return (

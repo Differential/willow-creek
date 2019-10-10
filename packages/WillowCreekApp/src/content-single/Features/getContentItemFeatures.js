@@ -26,6 +26,16 @@ export default gql`
           ...FeaturesFragment
         }
       }
+      ... on WillowTVContentItem {
+        features {
+          ...FeaturesFragment
+        }
+      }
+      ... on MediaContentItem {
+        features {
+          ...FeaturesFragment
+        }
+      }
     }
   }
   ${FEATURES_FRAGMENT}

@@ -72,6 +72,13 @@ const resolver = {
     }),
     theme: (root, input, { dataSources }) =>
       dataSources.ContentItem.getTheme(root),
+    features: (root, args, { dataSources }) =>
+      dataSources.ContentItem.getFeatures(root),
+  },
+  MediaContentItem: {
+    ...ContentItem.resolver.MediaContentItem,
+    features: (root, args, { dataSources }) =>
+      dataSources.ContentItem.getFeatures(root),
   },
   ContentItem: {
     ...ContentItem.resolver.ContentItem,

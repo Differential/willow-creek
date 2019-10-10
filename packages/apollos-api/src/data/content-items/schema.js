@@ -29,6 +29,11 @@ export default gql`
     likedCount: Int
     isLiked: Boolean
     liveStream: LiveStream
+    features: [Feature]
+  }
+
+  extend type MediaContentItem {
+    features: [Feature]
   }
 
   extend type VideoMedia {
