@@ -25,7 +25,7 @@ const resolver = {
           contentChannelIds: ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
         }),
       }),
-    tvFeed: async (root, args, { dataSources }) => {
+    userFeed: async (root, args, { dataSources }) => {
       const cursor = await dataSources.ContentItem.byUserCampus({
         contentChannelIds: ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
       });
