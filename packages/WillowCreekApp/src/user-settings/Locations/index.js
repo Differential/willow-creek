@@ -4,7 +4,6 @@ import { Query, Mutation } from 'react-apollo';
 import { Dimensions } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
-import requestLocation from './requestLocation';
 
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
@@ -55,9 +54,8 @@ class Location extends PureComponent {
   };
 
   async componentDidMount() {
-    await requestLocation();
     Geolocation.getCurrentPosition(
-      position => {
+      (position) => {
         this.setState({
           userLocation: {
             latitude: position.coords.latitude,
@@ -81,11 +79,8 @@ class Location extends PureComponent {
         fetchPolicy="cache-and-network"
       >
         {({ loading, error, data: { campuses = [] } = {} }) => (
-          <Mutation
-            mutation={CHANGE_CAMPUS}
-            refetchQueries={['campaigns', 'getUserFeed', 'getFeedFeatures']}
-          >
-            {handlePress => (
+          <Mutation mutation={CHANGE_CAMPUS}>
+            {(handlePress) => (
               <MapView
                 navigation={this.props.navigation}
                 isLoading={loading}

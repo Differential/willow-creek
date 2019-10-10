@@ -1,7 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { SafeAreaView } from 'react-native';
+import {
+  Platform,
+  KeyboardAvoidingView,
+  StyleSheet,
+  StatusBar,
+} from 'react-native';
 import { Mutation } from 'react-apollo';
+import { SafeAreaView, Header } from 'react-navigation';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -9,7 +15,6 @@ import {
   Button,
   ButtonLink,
   TextInput,
-  BackgroundView,
   PaddedView,
   FlexedView,
   styled,
@@ -43,8 +48,15 @@ class ChangePassword extends PureComponent {
   };
 
   renderForm = (props) => (
-    <FlexedView>
-      <BackgroundView>
+    <KeyboardAvoidingView
+      behavior={'padding'}
+      style={StyleSheet.absoluteFill}
+      keyboardVerticalOffset={
+        Header.HEIGHT +
+        (Platform.OS === 'android' ? StatusBar.currentHeight : 0)
+      }
+    >
+      <FlexedView>
         <PaddedView>
           <TextInput
             label="New Password"
@@ -65,18 +77,18 @@ class ChangePassword extends PureComponent {
             }
           />
         </PaddedView>
-      </BackgroundView>
-      <Footer>
-        <PaddedView>
-          <Button
-            disabled={props.isSubmitting}
-            onPress={props.handleSubmit}
-            title="Save"
-            loading={props.isSubmitting}
-          />
-        </PaddedView>
-      </Footer>
-    </FlexedView>
+        <Footer>
+          <PaddedView>
+            <Button
+              disabled={props.isSubmitting}
+              onPress={props.handleSubmit}
+              title="Save"
+              loading={props.isSubmitting}
+            />
+          </PaddedView>
+        </Footer>
+      </FlexedView>
+    </KeyboardAvoidingView>
   );
 
   render() {
