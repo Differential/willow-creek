@@ -1,6 +1,6 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
-import { flatten, get } from 'lodash';
+import { flatten, get, uniq } from 'lodash';
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
@@ -69,6 +69,17 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
     return theme;
   }
+
+  bySearchableContent = () =>
+    this.request()
+      .filterOneOf(
+        uniq([
+          ...ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
+          ...ApollosConfig.ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS,
+        ]).map((id) => `ContentChannelId eq ${id}`)
+      )
+      .cache({ ttl: 60 })
+      .andFilter(this.LIVE_CONTENT());
 
   byUserCampus = async ({ contentChannelIds = [] }) => {
     const { Person } = this.context.dataSources;
