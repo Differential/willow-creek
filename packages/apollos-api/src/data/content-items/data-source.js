@@ -9,34 +9,44 @@ class ExtendedContentItem extends ContentItem.dataSource {
   // Returns a more inclusive cursor if no guid is passed.
 
   async getCoverImage(root) {
-    const existingImage = await super.getCoverImage(root);
+    const { Cache } = this.context.dataSources;
+    const cachedValue = await Cache.get({
+      key: `contentItem-coverImage-${root.id}`,
+    });
 
-    if (existingImage) {
-      return existingImage;
+    if (cachedValue) {
+      return cachedValue;
     }
 
-    if (get(root, 'attributeValues.youtubeId.value', '') !== '') {
-      const result = await this.context.dataSources.Youtube.getFromId(
-        root.attributeValues.youtubeId.value
-      );
+    let image;
+    image = await super.getCoverImage(root);
 
-      if (!result || !result.snippet) return null;
-      const { snippet } = result;
+    if (!image) {
+      if (get(root, 'attributeValues.youtubeId.value', '') !== '') {
+        const result = await this.context.dataSources.Youtube.getFromId(
+          root.attributeValues.youtubeId.value
+        );
 
-      const availableSources = Object.keys(snippet.thumbnails).map((key) => ({
-        uri: snippet.thumbnails[key].url,
-        width: snippet.thumbnails[key].width,
-      }));
+        if (!result || !result.snippet) return null;
+        const { snippet } = result;
 
-      const source = availableSources.sort((a, b) => b.width - a.width)[0];
+        const availableSources = Object.keys(snippet.thumbnails).map((key) => ({
+          uri: snippet.thumbnails[key].url,
+          width: snippet.thumbnails[key].width,
+        }));
 
-      return {
-        __typename: 'ImageMedia',
-        sources: [source],
-      };
+        const source = availableSources.sort((a, b) => b.width - a.width)[0];
+
+        image = {
+          __typename: 'ImageMedia',
+          sources: [source],
+        };
+      }
     }
-
-    return null;
+    if (image != null) {
+      Cache.set({ key: `coverImage-${root.id}`, data: image });
+    }
+    return image;
   }
 
   async getTheme({ id, attributeValues: { themeColor } }) {
