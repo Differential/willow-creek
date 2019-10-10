@@ -10,6 +10,8 @@ import {
   H2,
   StretchyView,
 } from '@apollosproject/ui-kit';
+import { SafeAreaView } from 'react-navigation';
+
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
 import HorizontalContentFeed from '../HorizontalContentFeed';
@@ -33,12 +35,14 @@ const UniversalContentItem = ({ content, loading }) => {
               </Stretchy>
             ) : null}
             <MediaControls contentId={content.id} />
-            <PaddedView vertical={false}>
-              <H2 padded isLoading={!content.title && loading}>
-                {content.title}
-              </H2>
-              <HTMLContent contentId={content.id} />
-            </PaddedView>
+            <SafeAreaView>
+              <PaddedView vertical={false}>
+                <H2 padded isLoading={!content.title && loading}>
+                  {content.title}
+                </H2>
+                <HTMLContent contentId={content.id} />
+              </PaddedView>
+            </SafeAreaView>
             <Features contentId={content.id} />
             <HorizontalContentFeed contentId={content.id} />
           </FlexedScrollView>

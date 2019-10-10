@@ -10,6 +10,7 @@ import {
   Paragraph,
   StretchyView,
 } from '@apollosproject/ui-kit';
+import { SafeAreaView } from 'react-navigation';
 
 import { FlexedScrollView, EventInfoItem } from './components';
 
@@ -28,21 +29,23 @@ const Event = ({ event, loading }) => {
                 />
               </Stretchy>
             ) : null}
-            <PaddedView vertical={false}>
-              <H2 padded isLoading={!event.name && loading}>
-                {event.name}
-              </H2>
-              <Paragraph>
-                <EventInfoItem
-                  icon={'time'}
-                  title={moment(event.start).format('ddd, MMMM Do, YYYY')}
-                  subtitle={`${moment(event.start).format('LT')} — ${moment(
-                    event.end
-                  ).format('LT')}`}
-                />
-                <EventInfoItem icon={'pin'} title={event.location} />
-              </Paragraph>
-            </PaddedView>
+            <SafeAreaView>
+              <PaddedView vertical={false}>
+                <H2 padded isLoading={!event.name && loading}>
+                  {event.name}
+                </H2>
+                <Paragraph>
+                  <EventInfoItem
+                    icon={'time'}
+                    title={moment(event.start).format('ddd, MMMM Do, YYYY')}
+                    subtitle={`${moment(event.start).format('LT')} — ${moment(
+                      event.end
+                    ).format('LT')}`}
+                  />
+                  <EventInfoItem icon={'pin'} title={event.location} />
+                </Paragraph>
+              </PaddedView>
+            </SafeAreaView>
           </FlexedScrollView>
         )}
       </StretchyView>
