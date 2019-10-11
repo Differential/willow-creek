@@ -15,5 +15,10 @@ export default gql`
     image {
       uri
     }
+    resources {
+      url
+      title
+      icon
+    }
   }
 `;

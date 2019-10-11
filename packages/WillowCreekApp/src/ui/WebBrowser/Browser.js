@@ -30,14 +30,15 @@ const Browser = {
       );
     const headers = { Cookie: cookie };
     try {
-      if (await InAppBrowser.isAvailable()) {
+      Linking.openURL(url);
+      if ((await InAppBrowser.isAvailable()) && url.startsWith('http')) {
         InAppBrowser.open(url, {
           headers,
           ...options,
         });
       } else Linking.openURL(url);
     } catch (e) {
-      console.error(e);
+      console.warn(e);
     }
   },
 };
