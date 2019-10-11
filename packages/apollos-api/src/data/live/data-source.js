@@ -8,14 +8,8 @@ export default class LiveStream extends RESTDataSource {
       null,
       { cacheOptions: { ttl: 60 } }
     );
-    console.log(
-      response.includes('\\"status\\":\\"LIVE_STREAM_OFFLINE\\"'),
-      'is livestream online'
-    );
-    return (
-      response.includes('og:video:url') &&
-      response.includes('\\"status\\":\\"LIVE_STREAM_OFFLINE\\"')
-    );
+
+    return response.includes('og:video:url');
   }
 
   // Given a logged in user, what is the youtube channelID of their campus?
