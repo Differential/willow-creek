@@ -58,14 +58,14 @@ export default class Features extends baseFeatures.dataSource {
     }
 
     if (event.value) {
-      const eventItem = await Event.request('EventItems')
-        .filter(`Guid eq guid'${event.value}'`)
-        .expand('EventItemOccurrences, EventItemOccurrences/Schedule')
-        .first();
+      const idMatch = event.value.match(/EventOccurrenceId=(\d+)/);
+      if (!idMatch || !idMatch[1]) {
+        return null;
+      }
+      const eventItem = await Event.getFromId(idMatch[1]);
 
-      if (eventItem && eventItem.eventItemOccurrences.length) {
-        // Not sure if this is the right logic. How do we know this is the right event occurence?
-        return { ...eventItem.eventItemOccurrences[0], __type: 'Event' };
+      if (eventItem) {
+        return { ...eventItem, __type: 'Event' };
       }
     }
 
