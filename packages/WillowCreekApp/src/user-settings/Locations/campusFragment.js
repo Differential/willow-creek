@@ -18,6 +18,7 @@ export default gql`
     resources {
       url
       title
+      icon
     }
   }
 `;

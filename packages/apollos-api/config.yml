@@ -144,10 +144,15 @@ ROCK_MAPPINGS:
       CampusDataViewGuid: 5f0f1aeb-330a-4cff-b99e-30d9f6f02c9c
       YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
       CampusId: 6
+      # These are shown on the Connect tab.
+      # Links with an icon show up in the ActionBar.
+      # All other links show up as links in the "Connect" list.
       ProfileLinks:
         - title: Groups
+          icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/chicago
         - title: Give
+          icon: like-solid
           url: https://pushpay.com/pay/wcchicago
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/chicago
@@ -163,8 +168,10 @@ ROCK_MAPPINGS:
       CampusId: 5
       ProfileLinks:
         - title: Groups
+          icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
         - title: Give
+          icon: like-solid
           url: https://pushpay.com/pay/wccasadeluz
         - title: Join a small group
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
@@ -176,8 +183,10 @@ ROCK_MAPPINGS:
       CampusId: 4
       ProfileLinks:
         - title: Groups
+          icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/crystal-lake
         - title: Give
+          icon: like-solid
           url: https://pushpay.com/pay/wccrystallake
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/crystal-lake
@@ -193,8 +202,10 @@ ROCK_MAPPINGS:
       CampusId: 7
       ProfileLinks:
         - title: Groups
+          icon: groups
           url: https://www.willowcreek.org/connect/getting-started/huntley/groups
         - title: Give
+          icon: like-solid
           url: https://pushpay.com/pay/wchuntley
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/huntley
@@ -210,8 +221,10 @@ ROCK_MAPPINGS:
       CampusId: 3
       ProfileLinks:
         - title: Groups
+          icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
         - title: Give
+          icon: like-solid
           url: https://pushpay.com/pay/wcnorthshore
         - title: Join a small group
           url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
@@ -225,8 +238,10 @@ ROCK_MAPPINGS:
       CampusId: 1
       ProfileLinks:
         - title: Groups
+          icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-barrington
         - title: Give
+          icon: like-solid
           url: https://pushpay.com/g/willowcreek?src=hpp
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/south-barrington/serve-finder
@@ -242,8 +257,10 @@ ROCK_MAPPINGS:
       CampusId: 8
       ProfileLinks:
         - title: Groups
+          icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-lake
         - title: Give
+          icon: like-solid
           url: https://pushpay.com/pay/wcsouthlake
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/south-lake
@@ -259,8 +276,10 @@ ROCK_MAPPINGS:
       CampusId: 2
       ProfileLinks:
         - title: Groups
+          icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/wheaton
         - title: Give
+          icon: like-solid
           url: http://pushpay.com/pay/wcwheaton
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/wheaton
