@@ -50,6 +50,7 @@ class MediaControls extends PureComponent {
     coverImageSources,
     title,
     parentChannelName,
+    isVideo = true,
   }) => (
     <Mutation mutation={PLAY_VIDEO}>
       {(play) =>
@@ -60,7 +61,7 @@ class MediaControls extends PureComponent {
                 mediaSource: videoSource,
                 posterSources: coverImageSources,
                 title,
-                isVideo: true,
+                isVideo,
                 artist: parentChannelName,
               },
             }),
@@ -87,6 +88,7 @@ class MediaControls extends PureComponent {
     data: {
       node: {
         videos,
+        audios,
         title,
         parentChannel = {},
         coverImage = {},
@@ -97,6 +99,7 @@ class MediaControls extends PureComponent {
     if (loading || error) return null;
 
     const isLive = get(liveStream, 'isLive', false);
+    let isVideo = true;
     const hasLiveStreamContent = !!(
       get(liveStream, 'webViewUrl') || get(liveStream, 'media.sources[0]')
     );
@@ -110,6 +113,12 @@ class MediaControls extends PureComponent {
     } else {
       videoSource = get(videos, '[0].sources[0]', null);
     }
+
+    if (!videoSource && Array.isArray(audios) && audios.length) {
+      videoSource = get(audios, '[0].sources[0]', null);
+      isVideo = false;
+    }
+
     const shouldRender = (isLive && hasLiveStreamContent) || videoSource;
 
     if (!shouldRender) return null;
@@ -141,6 +150,7 @@ class MediaControls extends PureComponent {
       videoSource,
       parentChannelName: parentChannel.name,
       title,
+      isVideo,
     });
   };
 

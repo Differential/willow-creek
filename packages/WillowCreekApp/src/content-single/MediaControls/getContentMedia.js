@@ -21,6 +21,11 @@ export default gql`
           }
           youtubeId
         }
+        audios {
+          sources {
+            uri
+          }
+        }
       }
       ... on WeekendContentItem {
         liveStream {
