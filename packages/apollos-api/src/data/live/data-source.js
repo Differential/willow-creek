@@ -9,7 +9,10 @@ export default class LiveStream extends RESTDataSource {
       { cacheOptions: { ttl: 60 } }
     );
 
-    return response.includes('og:video:url');
+    return (
+      response.includes('og:video:url') &&
+      !response.includes('\\"status\\":\\"LIVE_STREAM_OFFLINE\\"')
+    );
   }
 
   // Given a logged in user, what is the youtube channelID of their campus?
@@ -36,7 +39,7 @@ export default class LiveStream extends RESTDataSource {
     if (!channelId) return null;
 
     return {
-      isLive: this.getIsLive.bind(this, { channelId }),
+      isLive: await this.getIsLive.call(this, { channelId }),
     };
   }
 }
