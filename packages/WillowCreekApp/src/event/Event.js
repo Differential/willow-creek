@@ -11,6 +11,7 @@ import {
   StretchyView,
 } from '@apollosproject/ui-kit';
 import { SafeAreaView } from 'react-navigation';
+import HTMLView from '@apollosproject/ui-htmlview';
 
 import { FlexedScrollView, EventInfoItem } from './components';
 
@@ -44,6 +45,7 @@ const Event = ({ event, loading }) => {
                   />
                   <EventInfoItem icon={'pin'} title={event.location} />
                 </Paragraph>
+                <HTMLView isLoading={loading}>{event.description}</HTMLView>
               </PaddedView>
             </SafeAreaView>
           </FlexedScrollView>
@@ -58,6 +60,7 @@ Event.propTypes = {
     __typename: PropTypes.string,
     id: PropTypes.string,
     name: PropTypes.string,
+    description: PropTypes.string,
     start: PropTypes.string,
     end: PropTypes.string,
     location: PropTypes.string,
