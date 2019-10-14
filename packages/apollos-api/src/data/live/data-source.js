@@ -8,6 +8,7 @@ export default class LiveStream extends RESTDataSource {
       null,
       { cacheOptions: { ttl: 60 } }
     );
+
     return response.includes('og:video:url');
   }
 

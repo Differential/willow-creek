@@ -36,6 +36,15 @@ const resolver = {
       });
     },
   },
+  ContentChannel: {
+    childContentItemsConnection: async ({ id }, args, { dataSources }) =>
+      dataSources.ContentItem.paginate({
+        cursor: await dataSources.ContentItem.byUserCampus({
+          contentChannelIds: [id],
+        }),
+        args,
+      }),
+  },
   WillowTVContentItem: {
     ...ContentItem.resolver.ContentItem,
     id: ({ id }, args, context, { parentType }) =>
