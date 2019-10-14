@@ -25,6 +25,7 @@ const mocks = {
           .toJSON(),
         location: 'Willow Creek, Chicago',
         name: 'Cookout',
+        description: 'Some detailed description',
         image: {
           __typename: 'ImageMedia',
           sources: [
