@@ -37,24 +37,14 @@ const resolver = {
     },
     contentChannels: async (root, args, context) => {
       const channels = await context.dataSources.ContentChannel.getRootChannels();
-      const sortOrder = [
-        'Sermon Series',
-        'Devotional Series',
-        'Worship',
-        'Podcast Series',
-        'Articles',
-        'A Note from the Pastor',
-        'Church Updates',
-        'Stories',
-        'Willow Creative',
-        'Digital Classes',
-      ];
+      const sortOrder =
+        ApollosConfig.ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS;
       // Setup a result array.
       const result = [];
-      sortOrder.forEach((sortName) => {
+      sortOrder.forEach((configId) => {
         // Remove the matched element from the channel list.
         const channel = channels.splice(
-          channels.findIndex(({ name }) => name === sortName),
+          channels.findIndex(({ id }) => id === configId),
           1
         );
         // And then push it (or nothing) to the end of the result array.
