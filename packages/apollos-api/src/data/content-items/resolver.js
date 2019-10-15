@@ -35,6 +35,24 @@ const resolver = {
         args,
       });
     },
+    contentChannels: async (root, args, context) => {
+      const channels = await context.dataSources.ContentChannel.getRootChannels();
+      const sortOrder =
+        ApollosConfig.ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS;
+      // Setup a result array.
+      const result = [];
+      sortOrder.forEach((configId) => {
+        // Remove the matched element from the channel list.
+        const channel = channels.splice(
+          channels.findIndex(({ id }) => id === configId),
+          1
+        );
+        // And then push it (or nothing) to the end of the result array.
+        result.push(...channel);
+      });
+      // Return results and any left over channels.
+      return [...result, ...channels];
+    },
   },
   ContentChannel: {
     childContentItemsConnection: async ({ id }, args, { dataSources }) =>
