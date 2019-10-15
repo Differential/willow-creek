@@ -36,7 +36,7 @@ export default class LiveStream extends RESTDataSource {
 
   async getLiveStream() {
     const channelId = await this.getYoutubeChannelIdForCampus();
-    if (!channelId) return null;
+    if (!channelId) return { isLive: false };
 
     return {
       isLive: await this.getIsLive.call(this, { channelId }),
