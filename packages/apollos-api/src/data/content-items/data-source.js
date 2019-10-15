@@ -91,13 +91,16 @@ class ExtendedContentItem extends ContentItem.dataSource {
       .cache({ ttl: 60 })
       .andFilter(this.LIVE_CONTENT());
 
-  byUserCampus = async ({ contentChannelIds = [] }) => {
+  byUserCampus = async ({ contentChannelIds = [], fallback }) => {
     const { Person } = this.context.dataSources;
 
     const { campusGuid } = await Person.getCurrentUserCampusId();
 
     if (!campusGuid) {
       // No campus or no current user.
+      if (fallback) {
+        return fallback();
+      }
       return this.request().empty();
     }
 

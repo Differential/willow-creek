@@ -41,6 +41,7 @@ const resolver = {
       dataSources.ContentItem.paginate({
         cursor: await dataSources.ContentItem.byUserCampus({
           contentChannelIds: [id],
+          fallback: () => dataSources.ContentItem.byContentChannelId(id),
         }),
         args,
       }),
