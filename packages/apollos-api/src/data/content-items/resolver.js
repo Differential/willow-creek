@@ -35,6 +35,34 @@ const resolver = {
         args,
       });
     },
+    contentChannels: async (root, args, context) => {
+      const channels = await context.dataSources.ContentChannel.getRootChannels();
+      const sortOrder = [
+        'Sermon Series',
+        'Devotional Series',
+        'Worship',
+        'Podcast Series',
+        'Articles',
+        'A Note from the Pastor',
+        'Church Updates',
+        'Stories',
+        'Willow Creative',
+        'Digital Classes',
+      ];
+      // Setup a result array.
+      const result = [];
+      sortOrder.forEach((sortName) => {
+        // Remove the matched element from the channel list.
+        const channel = channels.splice(
+          channels.findIndex(({ name }) => name === sortName),
+          1
+        );
+        // And then push it (or nothing) to the end of the result array.
+        result.push(...channel);
+      });
+      // Return results and any left over channels.
+      return [...result, ...channels];
+    },
   },
   ContentChannel: {
     childContentItemsConnection: async ({ id }, args, { dataSources }) =>
