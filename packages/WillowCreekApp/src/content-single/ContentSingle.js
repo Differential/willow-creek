@@ -105,7 +105,7 @@ class ContentSingle extends PureComponent {
       >
         <TrackEventWhenLoaded
           loaded={!!(!loading && content.title)}
-          eventName={'View Contentx'}
+          eventName={'View Content'}
           properties={{
             title: content.title,
             itemId: this.itemId,

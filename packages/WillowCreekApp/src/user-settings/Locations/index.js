@@ -4,6 +4,7 @@ import { Query, Mutation } from 'react-apollo';
 import { Dimensions } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
@@ -81,22 +82,32 @@ class Location extends PureComponent {
         {({ loading, error, data: { campuses = [] } = {} }) => (
           <Mutation mutation={CHANGE_CAMPUS}>
             {(handlePress) => (
-              <MapView
-                navigation={this.props.navigation}
-                isLoading={loading}
-                error={error}
-                campuses={campuses}
-                initialRegion={this.props.initialRegion}
-                userLocation={this.state.userLocation}
-                onLocationSelect={async ({ id }) => {
-                  await handlePress({
-                    variables: {
-                      campusId: id,
-                    },
-                  });
-                  this.props.navigation.goBack();
-                }}
-              />
+              <AnalyticsConsumer>
+                {({ track }) => (
+                  <MapView
+                    navigation={this.props.navigation}
+                    isLoading={loading}
+                    error={error}
+                    campuses={campuses}
+                    initialRegion={this.props.initialRegion}
+                    userLocation={this.state.userLocation}
+                    onLocationSelect={async ({ id, title }) => {
+                      await handlePress({
+                        variables: {
+                          campusId: id,
+                        },
+                      });
+                      track({
+                        eventName: 'Change Campus',
+                        properties: {
+                          campus: title,
+                        },
+                      });
+                      this.props.navigation.goBack();
+                    }}
+                  />
+                )}
+              </AnalyticsConsumer>
             )}
           </Mutation>
         )}
