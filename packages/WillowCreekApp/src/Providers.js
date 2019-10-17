@@ -9,6 +9,7 @@ import { NotificationsProvider } from '@apollosproject/ui-notifications';
 import NavigationService from './NavigationService';
 import ClientProvider from './client';
 import customTheme, { customIcons } from './theme';
+import { track } from './amplitude';
 
 const AppProviders = (props) => (
   <ClientProvider {...props}>
@@ -21,7 +22,7 @@ const AppProviders = (props) => (
         closeAuth={() => NavigationService.navigate('Onboarding')}
       >
         <MediaPlayerProvider>
-          <AnalyticsProvider>
+          <AnalyticsProvider trackFunctions={[track]}>
             <Providers
               themeInput={customTheme}
               iconInput={customIcons}
