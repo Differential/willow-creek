@@ -55,7 +55,7 @@ query getItem {
       );
 
       // Change from core: added filter to eliminate sending `null`
-      await this.addObjects(indexableItems.filter((item) => !!item));
+      await this.addObjects(indexableItems.filter((item) => !!item.objectID));
     }
   }
 }
