@@ -41,6 +41,36 @@ export default class Features extends baseFeatures.dataSource {
     );
   }
 
+  async upcomingEventsAlgorithm() {
+    const { Event, Person } = this.context.dataSources;
+
+    const { campusId } = await Person.getCurrentUserCampusId();
+
+    if (!campusId) {
+      return [];
+    }
+
+    // Get the first three persona items.
+    const events = await Event.findRecent()
+      .andFilter(`CampusId eq ${campusId}`)
+      .andFilter(
+        `Schedule/EffectiveEndDate ge datetime'${new Date().toISOString()}'`
+      )
+      .top(3)
+      .get();
+
+    console.log(events);
+    // Map them into specific actions.
+    return events.map((event, i) => ({
+      id: createGlobalId(`${event.id}${i}`, 'ActionListAction'),
+      title: Event.getName(event),
+      subtitle: Event.getDateTime(event.schedule).start,
+      relatedNode: { ...event, __type: 'Event' },
+      image: Event.getImage(event),
+      action: 'READ_EVENT',
+    }));
+  }
+
   async getRelatedNode({ item }) {
     const { POINTER_CHANNEL_TYPE_ID } = ApollosConfig.ROCK_MAPPINGS;
     const { Event, ContentItem } = this.context.dataSources;

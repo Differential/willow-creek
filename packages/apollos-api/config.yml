@@ -305,6 +305,9 @@ HOME_FEATURES:
         arguments:
           contentChannelIds:
             - 26
+  - title: Upcoming Events
+    subtitle: Happening at your church!
+    algorithms: [UPCOMING_EVENTS]
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

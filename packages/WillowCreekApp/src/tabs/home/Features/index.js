@@ -116,7 +116,7 @@ const Features = memo(({ navigation }) => (
                     });
                   }
                 }}
-                onPressCardActionButton={() =>
+                onPressActionListButton={() =>
                   navigation.navigate('ContentFeed', {
                     itemId: id,
                     itemTitle: title,
