@@ -7,6 +7,7 @@ import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import GET_USER_FEED from '../../tabs/home/getUserFeed';
+import GET_FEED_FEATURES from '../../tabs/home/getFeedFeatures';
 import GET_CAMPAIGN_CONTENT_ITEM from '../../tabs/home/getCampaignContentItem';
 
 import GET_CAMPUSES from './getCampusLocations';
@@ -93,7 +94,8 @@ class Location extends PureComponent {
                   after: null,
                 },
               },
-              { query: GET_CAMPAIGN_CONTENT_ITEM },
+              { query: GET_CAMPAIGN_CONTENT_ITEM, variables: undefined },
+              { query: GET_FEED_FEATURES, variables: undefined },
             ]}
           >
             {(handlePress) => (
