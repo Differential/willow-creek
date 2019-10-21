@@ -1,4 +1,4 @@
-import { ContentItem } from '@apollosproject/data-connector-rock';
+import { ContentItem, Followings } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
 import { createGlobalId } from '@apollosproject/server-core';
 
@@ -66,6 +66,7 @@ const resolver = {
   },
   WillowTVContentItem: {
     ...ContentItem.resolver.ContentItem,
+    ...Followings.resolver.UniversalContentItem,
     id: ({ id }, args, context, { parentType }) =>
       createGlobalId(`${id}`, parentType.name),
 

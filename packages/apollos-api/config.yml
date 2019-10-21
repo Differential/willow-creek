@@ -90,6 +90,8 @@ ROCK_MAPPINGS:
     MediaContentItem:
       EntityType: ContentChannelItem
       ContentChannelTypeId: [5]
+    WillowTVContentItem:
+      EntityType: ContentChannelItem
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
