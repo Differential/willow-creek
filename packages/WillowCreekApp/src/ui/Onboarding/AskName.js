@@ -2,9 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 
-import { SafeAreaView } from 'react-navigation';
-
-import { PaddedView, TextInput } from '@apollosproject/ui-kit';
+import { TextInput } from '@apollosproject/ui-kit';
 
 import { Slide, SlideContent } from '@apollosproject/ui-onboarding';
 

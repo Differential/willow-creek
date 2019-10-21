@@ -47,7 +47,7 @@ const Browser = {
           headers,
           ...options,
         });
-      } else Linking.openURL(url.toString());
+      } else Linking.openURL(baseURL);
     } catch (e) {
       console.warn(e);
     }
