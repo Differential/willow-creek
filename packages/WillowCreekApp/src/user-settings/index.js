@@ -85,9 +85,7 @@ class UserSettings extends PureComponent {
                       </TableView>
                       <TableView>
                         <Touchable
-                          onPress={() =>
-                            openUrl('https://apollosrock.newspring.cc/')
-                          }
+                          onPress={() => openUrl('mailto:INFO@WILLOWCREEK.ORG')}
                         >
                           <Cell>
                             <CellText>Give Feedback</CellText>
@@ -98,7 +96,9 @@ class UserSettings extends PureComponent {
                       <TableView>
                         <Touchable
                           onPress={() =>
-                            openUrl('https://apollosrock.newspring.cc/')
+                            openUrl(
+                              'https://www.willowcreek.org/en/about/privacy'
+                            )
                           }
                         >
                           <Cell>
@@ -106,17 +106,13 @@ class UserSettings extends PureComponent {
                             <CellIcon name="arrow-next" />
                           </Cell>
                         </Touchable>
-                        <Divider />
-                        <Touchable
-                          onPress={() =>
-                            openUrl('https://apollosrock.newspring.cc/')
-                          }
-                        >
-                          <Cell>
-                            <CellText>Terms of Use</CellText>
-                            <CellIcon name="arrow-next" />
-                          </Cell>
-                        </Touchable>
+                        {/* <Divider /> */}
+                        {/* <Touchable onPress={() => openUrl('')}> */}
+                        {/*   <Cell> */}
+                        {/*     <CellText>Terms of Use</CellText> */}
+                        {/*     <CellIcon name="arrow-next" /> */}
+                        {/*   </Cell> */}
+                        {/* </Touchable> */}
                       </TableView>
                       <TableView>
                         <Mutation mutation={LOGOUT}>
