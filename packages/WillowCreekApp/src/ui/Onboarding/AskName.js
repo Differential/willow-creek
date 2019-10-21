@@ -39,61 +39,53 @@ const AskName = memo(
         onPressSecondary={null}
       >
         {BackgroundComponent}
-        <SafeAreaView forceInset={{ top: 'always', bottom: 'always' }}>
-          <SlideContent title={slideTitle} description={description} icon>
-            <PaddedView horizontal={false}>
-              <TextInput
-                label={'First Name'}
-                type={'text'}
-                textContentType={'givenName'} // ios autofill
-                returnKeyType={'next'}
-                value={get(values, 'firstName')}
-                error={
-                  get(touched, 'firstName', false) &&
-                  get(errors, 'firstName', null)
-                }
-                onChangeText={(text) => setFieldValue('firstName', text)}
-                onSubmitEditing={() => LastNameInput.focus()}
-                disabled={isLoading}
-                enablesReturnKeyAutomatically
-              />
-              <TextInput
-                label={'Last Name'}
-                type={'text'}
-                textContentType={'familyName'} // ios autofill
-                returnKeyType={'next'}
-                value={get(values, 'lastName')}
-                error={
-                  get(touched, 'lastName', false) &&
-                  get(errors, 'lastName', null)
-                }
-                onChangeText={(text) => setFieldValue('lastName', text)}
-                onSubmitEditing={() => EmailInput.focus()}
-                disabled={isLoading}
-                enablesReturnKeyAutomatically
-                inputRef={(r) => {
-                  LastNameInput = r;
-                }}
-              />
-              <TextInput
-                label={'Email (optional)'}
-                type={'email'}
-                returnKeyType={'next'}
-                value={get(values, 'email')}
-                error={
-                  get(touched, 'email', false) && get(errors, 'email', null)
-                }
-                onChangeText={(text) => setFieldValue('email', text)}
-                onSubmitEditing={onPressPrimary}
-                disabled={isLoading}
-                enablesReturnKeyAutomatically
-                inputRef={(r) => {
-                  EmailInput = r;
-                }}
-              />
-            </PaddedView>
-          </SlideContent>
-        </SafeAreaView>
+        <SlideContent title={slideTitle} description={description} icon>
+          <TextInput
+            label={'First Name'}
+            type={'text'}
+            textContentType={'givenName'} // ios autofill
+            returnKeyType={'next'}
+            value={get(values, 'firstName')}
+            error={
+              get(touched, 'firstName', false) && get(errors, 'firstName', null)
+            }
+            onChangeText={(text) => setFieldValue('firstName', text)}
+            onSubmitEditing={() => LastNameInput.focus()}
+            disabled={isLoading}
+            enablesReturnKeyAutomatically
+          />
+          <TextInput
+            label={'Last Name'}
+            type={'text'}
+            textContentType={'familyName'} // ios autofill
+            returnKeyType={'next'}
+            value={get(values, 'lastName')}
+            error={
+              get(touched, 'lastName', false) && get(errors, 'lastName', null)
+            }
+            onChangeText={(text) => setFieldValue('lastName', text)}
+            onSubmitEditing={() => EmailInput.focus()}
+            disabled={isLoading}
+            enablesReturnKeyAutomatically
+            inputRef={(r) => {
+              LastNameInput = r;
+            }}
+          />
+          <TextInput
+            label={'Email (optional)'}
+            type={'email'}
+            returnKeyType={'next'}
+            value={get(values, 'email')}
+            error={get(touched, 'email', false) && get(errors, 'email', null)}
+            onChangeText={(text) => setFieldValue('email', text)}
+            onSubmitEditing={onPressPrimary}
+            disabled={isLoading}
+            enablesReturnKeyAutomatically
+            inputRef={(r) => {
+              EmailInput = r;
+            }}
+          />
+        </SlideContent>
       </Slide>
     );
   }
