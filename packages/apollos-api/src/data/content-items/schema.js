@@ -24,10 +24,7 @@ export default gql`
       after: String
     ): ContentItemsConnection
     parentChannel: ContentChannel
-    sharing: SharableContentItem
     theme: Theme
-    likedCount: Int
-    isLiked: Boolean
     liveStream: LiveStream
   }
 
