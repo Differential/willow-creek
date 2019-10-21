@@ -64,6 +64,16 @@ const resolver = {
         args,
       }),
   },
+  SearchResult: {
+    node: async ({ id }, _, { models, dataSources }, { schema }) => {
+      try {
+        return await models.Node.get(id, dataSources, schema);
+      } catch (e) {
+        console.log(e);
+        return null;
+      }
+    },
+  },
   WillowTVContentItem: {
     ...ContentItem.resolver.ContentItem,
     ...Followings.resolver.UniversalContentItem,

@@ -7,7 +7,6 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
   // A cursor returning content items by a guid.
   // Returns a more inclusive cursor if no guid is passed.
-
   async getCoverImage(root) {
     const { Cache } = this.context.dataSources;
     const cachedValue = await Cache.get({

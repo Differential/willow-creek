@@ -43,7 +43,6 @@ import * as YoutubeImport from './youtube-import';
 const data = {
   Followings,
   ContentChannel,
-  ContentItem,
   Person,
   Cloudinary,
   Auth,
@@ -71,6 +70,7 @@ const data = {
   Group,
   Event,
   Cache,
+  ContentItem,
 };
 
 // If we are in development mode, we allow users to import data from Youtube.
