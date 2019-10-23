@@ -20,6 +20,7 @@ const ConnectNavigator = createStackNavigator(
     headerMode: 'screen',
     defaultNavigationOptions: ({ screenProps }) => ({
       headerTintColor: screenProps.headerTintColor,
+      headerTitleStyle: screenProps.headerTitleStyle,
     }),
     navigationOptions: { tabBarIcon: tabBarIcon('profile') },
   }
@@ -27,7 +28,12 @@ const ConnectNavigator = createStackNavigator(
 
 const EnhancedConnect = withTheme(({ theme, ...props }) => ({
   ...props,
-  screenProps: { headerTintColor: theme.colors.text.secondary },
+  screenProps: {
+    headerTintColor: theme.colors.text.primary,
+    headerTitleStyle: {
+      color: theme.colors.text.primary,
+    },
+  },
 }))(ConnectNavigator);
 
 export default EnhancedConnect;
