@@ -15,6 +15,7 @@ import {
   StretchyView,
   styled,
 } from '@apollosproject/ui-kit';
+import FindCampusAd from '../../ui/FindCampusAd';
 
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 import ContentCardConnected from '../../ui/ContentCardConnected';
@@ -26,6 +27,7 @@ import Icon from './Icon';
 import Features from './Features';
 import GET_USER_FEED from './getUserFeed';
 import GET_CAMPAIGN_CONTENT_ITEM from './getCampaignContentItem';
+import GET_USER_CAMPUS from './getUserCampus';
 
 const BackgroundFill = styled(({ theme }) => ({
   height: 44,
@@ -61,13 +63,15 @@ class Home extends PureComponent {
     this._navListener.remove();
   }
 
+  renderNoCampusContent = () => <FindCampusAd />;
+
   handleOnPress = (item) =>
     this.props.navigation.navigate('ContentSingle', {
       itemId: item.id,
       transitionKey: item.transitionKey,
     });
 
-  render() {
+  renderMyWillowContent() {
     return (
       <BackgroundView>
         <SafeAreaView style={{ flex: 1 }}>
@@ -180,6 +184,21 @@ class Home extends PureComponent {
           </View>
         </SafeAreaView>
       </BackgroundView>
+    );
+  }
+
+  render() {
+    return (
+      <Query query={GET_USER_CAMPUS} fetchPolicy="cache-and-network">
+        {({
+          data: { currentUser: { profile: { campus } = {} } = {} } = {},
+          loading,
+        }) =>
+          !campus || loading
+            ? this.renderNoCampusContent()
+            : this.renderMyWillowContent()
+        }
+      </Query>
     );
   }
 }
