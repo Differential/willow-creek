@@ -6,6 +6,7 @@ import Geolocation from 'react-native-geolocation-service';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
+import { get } from 'lodash';
 import GET_USER_FEED from '../../tabs/home/getUserFeed';
 import GET_FEED_FEATURES from '../../tabs/home/getFeedFeatures';
 import GET_CAMPAIGN_CONTENT_ITEM from '../../tabs/home/getCampaignContentItem';
@@ -83,7 +84,7 @@ class Location extends PureComponent {
         }}
         fetchPolicy="cache-and-network"
       >
-        {({ loading, error, data: { campuses = [] } = {} }) => (
+        {({ loading, error, data: { campuses = [], currentUser } = {} }) => (
           <Mutation
             mutation={CHANGE_CAMPUS}
             refetchQueries={[
@@ -108,6 +109,7 @@ class Location extends PureComponent {
                     campuses={campuses}
                     initialRegion={this.props.initialRegion}
                     userLocation={this.state.userLocation}
+                    currentCampus={get(currentUser, 'profile.campus')}
                     onLocationSelect={async ({ id, title }) => {
                       await handlePress({
                         variables: {

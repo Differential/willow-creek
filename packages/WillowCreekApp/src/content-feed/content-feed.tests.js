@@ -38,6 +38,7 @@ describe('content feed query component', () => {
                       __typename: 'ContentChannel',
                     },
                     title: 'Mea Animal Aperiam Ornatus Eu',
+                    hyphenatedTitle: 'Mea Animal Aperiam Ornatus Eu',
                     summary: 'Bla bla bla',
                     theme: null,
                     isLiked: false,
@@ -59,6 +60,8 @@ describe('content feed query component', () => {
                       __typename: 'ContentChannel',
                     },
                     title: 'Probo Senserit Id Mea, Ut Sed Malis Postea,',
+                    hyphenatedTitle:
+                      'Probo Senserit Id Mea, Ut Sed Malis Postea,',
                     summary: 'Bla bla bla',
                     theme: null,
                     isLiked: false,

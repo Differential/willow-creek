@@ -118,7 +118,7 @@ type ContentChannel implements Node {
 
 interface ContentItem {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -151,7 +151,7 @@ input ContentItemsConnectionInput {
 
 type ContentSeriesContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -171,7 +171,7 @@ type ContentSeriesContentItem implements ContentItem & Node {
 
 type DevotionalContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -258,7 +258,7 @@ interface Media {
 
 type MediaContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -462,7 +462,7 @@ enum ThemeType {
 
 type UniversalContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -508,7 +508,7 @@ type VideoMediaSource implements MediaSource {
 
 type WeekendContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]

@@ -8,7 +8,7 @@ export { default as dataSource } from './data-source';
 export const schema = gql`
   type WillowCalendarEventContentItem implements Node & ContentItem {
     id: ID!
-    title: String
+    title(hyphenated: Boolean): String
     coverImage: ImageMedia
     images: [ImageMedia]
     videos: [VideoMedia]
