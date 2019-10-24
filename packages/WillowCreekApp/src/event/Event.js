@@ -31,7 +31,7 @@ const Event = ({ event, loading }) => {
               </Stretchy>
             ) : null}
             <SafeAreaView>
-              <PaddedView vertical={false}>
+              <PaddedView vertical={!!coverImageSources.length}>
                 <H2 padded isLoading={!event.name && loading}>
                   {event.name}
                 </H2>
