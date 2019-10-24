@@ -9,6 +9,19 @@ class ExtendedContentItem extends ContentItem.dataSource {
   // Returns a more inclusive cursor if no guid is passed.
 
   async getCoverImage(root) {
+    const pickBestImage = (images) => {
+      // TODO: there's probably a _much_ more explicit and better way to handle this
+      const squareImage = images.find((image) =>
+        image.key.toLowerCase().includes('square')
+      );
+      if (squareImage) return { ...squareImage, __typename: 'ImageMedia' };
+      return { ...images[0], __typename: 'ImageMedia' };
+    };
+
+    const withSources = (image) => image.sources.length;
+
+    let image;
+
     const { Cache } = this.context.dataSources;
     const cachedValue = await Cache.get({
       key: `contentItem-coverImage-${root.id}`,
@@ -17,9 +30,10 @@ class ExtendedContentItem extends ContentItem.dataSource {
     if (cachedValue) {
       return cachedValue;
     }
+    // filter images w/o URLs
+    const ourImages = this.getImages(root).filter(withSources);
 
-    let image;
-    image = await super.getCoverImage(root);
+    if (ourImages.length) image = pickBestImage(ourImages);
 
     if (!image) {
       if (get(root, 'attributeValues.youtubeId.value', '') !== '') {
@@ -43,6 +57,25 @@ class ExtendedContentItem extends ContentItem.dataSource {
         };
       }
     }
+
+    if (!image) {
+      // If no image, check parent for image:
+      const parentItemsCursor = await this.getCursorByChildContentItemId(
+        root.id
+      );
+      if (!parentItemsCursor) return null;
+
+      const parentItems = await parentItemsCursor.get();
+
+      if (parentItems.length) {
+        const parentImages = flatten(parentItems.map(this.getImages));
+        const validParentImages = parentImages.filter(withSources);
+
+        if (validParentImages && validParentImages.length)
+          image = pickBestImage(validParentImages);
+      }
+    }
+
     if (image != null) {
       Cache.set({ key: `coverImage-${root.id}`, data: image });
     }
