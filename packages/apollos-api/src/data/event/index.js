@@ -23,17 +23,26 @@ const resolver = resolverMerge(
 );
 
 async function getMostRecentOccurenceForEvent(event) {
+  // Let's grab the iCal content
   const iCal = event.schedule.iCalendarContent;
   const iCalEvent = Object.values(await ical.async.parseICS(iCal))[0];
+
+  // Default the start date to the iCal's reported state date
   let mostRecentOccurence = iCalEvent.start;
+
+  // Sometimes we have a "recurring rule"
   if (iCalEvent.rrule) {
+    // Using the embeded RRule JS library, let's grab the next time this event occurs.
     mostRecentOccurence = new Date(iCalEvent.rrule.after(new Date()));
+    // Rock also likes to throw events inside this rdate property in the iCal string.
   } else if (iCalEvent.rdate) {
+    // rdate's aren't supported by the iCal library. Let's parse them ourselves.
     mostRecentOccurence = iCalEvent.rdate
-      .split(',')
-      .map((d) => moment(d).toDate())
-      .find((d) => d > new Date());
+      .split(',') // Take a list of values
+      .map((d) => moment(d).toDate()) // Use moment to parse them into dates
+      .find((d) => d > new Date()); // Now find the one that happens soonest (it's already sorted by earliest to latest)
   }
+  // We should have _something_ at this point. Return it!
   return mostRecentOccurence;
 }
 
@@ -47,6 +56,7 @@ class dataSource extends Event.dataSource {
       )
       .get();
 
+    // Phew - this gets tricky. We have to parse the iCal to figure out the REAL start date
     const eventsWithMostRecentOccurence = await Promise.all(
       events.map(async (event) => ({
         ...event,

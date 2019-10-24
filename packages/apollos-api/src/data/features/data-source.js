@@ -64,7 +64,7 @@ export default class Features extends baseFeatures.dataSource {
     return events.map((event, i) => ({
       id: createGlobalId(`${event.id}${i}`, 'ActionListAction'),
       title: Event.getName(event),
-      subtitle: moment(event.mostRecentOccurence)
+      subtitle: moment(event.mostRecentOccurence) // we add the `mostRecentOccurence` field in the `getUpcomingEventsByCampus` method.
         .tz('America/Chicago')
         .format('MMMM Do YYYY'),
       relatedNode: { ...event, __type: 'Event' },
