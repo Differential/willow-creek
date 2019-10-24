@@ -26,17 +26,27 @@ class HorizontalContentFeed extends Component {
     }),
   };
 
+  renderItem = ({ item }) => {
+    const itemId = get(item, 'id', '');
+    const disabled = get(item, 'id', '') === this.props.contentId;
+    return (
+      <TouchableScale
+        onPress={() => this.handleOnPressItem(item)}
+        disabled={disabled}
+      >
+        <HorizontalContentCardConnected
+          contentId={itemId}
+          disabled={disabled}
+        />
+      </TouchableScale>
+    );
+  };
+
   handleOnPressItem = (item) => {
     this.props.navigation.push('ContentSingle', {
       itemId: item.id,
     });
   };
-
-  renderItem = ({ item }) => (
-    <TouchableScale onPress={() => this.handleOnPressItem(item)}>
-      <HorizontalContentCardConnected contentId={get(item, 'id', '')} />
-    </TouchableScale>
-  );
 
   renderFeed = ({ data, loading, error, fetchMore }) => {
     if (error) return null;

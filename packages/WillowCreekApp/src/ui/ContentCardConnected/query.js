@@ -31,6 +31,7 @@ export const BASE_CARD_FRAGMENT = gql`
     ...coverImageFragment
     ...themeFragment
     title
+    hyphenatedTitle: title(hyphenated: true)
     summary
     isLiked
     ... on MediaContentItem {

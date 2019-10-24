@@ -8,7 +8,7 @@ export default gql`
 
   type WillowTVContentItem implements Node & ContentItem {
     id: ID!
-    title: String
+    title(hyphenated: Boolean): String
     coverImage: ImageMedia
     images: [ImageMedia]
     videos: [VideoMedia]
@@ -24,10 +24,7 @@ export default gql`
       after: String
     ): ContentItemsConnection
     parentChannel: ContentChannel
-    sharing: SharableContentItem
     theme: Theme
-    likedCount: Int
-    isLiked: Boolean
     liveStream: LiveStream
   }
 

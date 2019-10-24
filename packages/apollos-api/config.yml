@@ -16,7 +16,7 @@ ROCK:
   API_URL: https://rock.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
   IMAGE_URL: https://rock.willowcreek.org/GetImage.ashx
-  SHARE_URL: https://rock.willowcreek.org
+  SHARE_URL: https://willowcreek.tv
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/New_York'
   USE_PLUGIN: true
@@ -90,6 +90,8 @@ ROCK_MAPPINGS:
     MediaContentItem:
       EntityType: ContentChannelItem
       ContentChannelTypeId: [5]
+    WillowTVContentItem:
+      EntityType: ContentChannelItem
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
@@ -153,7 +155,7 @@ ROCK_MAPPINGS:
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/chicago
         - title: Give
-          icon: like-solid
+          icon: love-it-hand
           url: https://pushpay.com/pay/wcchicago
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/chicago
@@ -172,7 +174,7 @@ ROCK_MAPPINGS:
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
         - title: Give
-          icon: like-solid
+          icon: love-it-hand
           url: https://pushpay.com/pay/wccasadeluz
         - title: Join a small group
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
@@ -187,7 +189,7 @@ ROCK_MAPPINGS:
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/crystal-lake
         - title: Give
-          icon: like-solid
+          icon: love-it-hand
           url: https://pushpay.com/pay/wccrystallake
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/crystal-lake
@@ -206,7 +208,7 @@ ROCK_MAPPINGS:
           icon: groups
           url: https://www.willowcreek.org/connect/getting-started/huntley/groups
         - title: Give
-          icon: like-solid
+          icon: love-it-hand
           url: https://pushpay.com/pay/wchuntley
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/huntley
@@ -225,7 +227,7 @@ ROCK_MAPPINGS:
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
         - title: Give
-          icon: like-solid
+          icon: love-it-hand
           url: https://pushpay.com/pay/wcnorthshore
         - title: Join a small group
           url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
@@ -242,7 +244,7 @@ ROCK_MAPPINGS:
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-barrington
         - title: Give
-          icon: like-solid
+          icon: love-it-hand
           url: https://pushpay.com/g/willowcreek?src=hpp
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/south-barrington/serve-finder
@@ -261,7 +263,7 @@ ROCK_MAPPINGS:
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-lake
         - title: Give
-          icon: like-solid
+          icon: love-it-hand
           url: https://pushpay.com/pay/wcsouthlake
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/south-lake
@@ -280,7 +282,7 @@ ROCK_MAPPINGS:
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/wheaton
         - title: Give
-          icon: like-solid
+          icon: love-it-hand
           url: http://pushpay.com/pay/wcwheaton
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/wheaton
@@ -298,11 +300,12 @@ ROCK_MAPPINGS:
   FAMILY_GROUP_TYPE_ID: 10
 
 HOME_FEATURES:
-  - title: NEXT STEPS
-    subtitle: Explore what God calls you to today
+  - title:
+    subtitle: Next Steps
     algorithms:
       - type: PERSONA_FEED
         arguments:
+          useSubtitle: false
           contentChannelIds:
             - 26
   - title: Upcoming Events

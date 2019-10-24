@@ -18,6 +18,7 @@ export const GET_ROCK_AUTH_DETAILS = gql`
 export const getRockAuthDetails = async () => {
   const { data: { currentUser: { rock } = {} } = {} } = await client.query({
     query: GET_ROCK_AUTH_DETAILS,
+    fetchPolicy: 'network-only',
   });
   return rock;
 };
@@ -46,7 +47,7 @@ const Browser = {
           headers,
           ...options,
         });
-      } else Linking.openURL(url.toString());
+      } else Linking.openURL(baseURL);
     } catch (e) {
       console.warn(e);
     }

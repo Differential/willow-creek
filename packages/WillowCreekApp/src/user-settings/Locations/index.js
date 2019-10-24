@@ -6,6 +6,11 @@ import Geolocation from 'react-native-geolocation-service';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
+import { get } from 'lodash';
+import GET_USER_FEED from '../../tabs/home/getUserFeed';
+import GET_FEED_FEATURES from '../../tabs/home/getFeedFeatures';
+import GET_CAMPAIGN_CONTENT_ITEM from '../../tabs/home/getCampaignContentItem';
+
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
 import MapView from './MapView';
@@ -79,8 +84,21 @@ class Location extends PureComponent {
         }}
         fetchPolicy="cache-and-network"
       >
-        {({ loading, error, data: { campuses = [] } = {} }) => (
-          <Mutation mutation={CHANGE_CAMPUS}>
+        {({ loading, error, data: { campuses = [], currentUser } = {} }) => (
+          <Mutation
+            mutation={CHANGE_CAMPUS}
+            refetchQueries={[
+              {
+                query: GET_USER_FEED,
+                variables: {
+                  first: 10,
+                  after: null,
+                },
+              },
+              { query: GET_CAMPAIGN_CONTENT_ITEM, variables: undefined },
+              { query: GET_FEED_FEATURES, variables: undefined },
+            ]}
+          >
             {(handlePress) => (
               <AnalyticsConsumer>
                 {({ track }) => (
@@ -91,6 +109,7 @@ class Location extends PureComponent {
                     campuses={campuses}
                     initialRegion={this.props.initialRegion}
                     userLocation={this.state.userLocation}
+                    currentCampus={get(currentUser, 'profile.campus')}
                     onLocationSelect={async ({ id, title }) => {
                       await handlePress({
                         variables: {
