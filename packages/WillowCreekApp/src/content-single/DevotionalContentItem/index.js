@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-navigation';
 import { Query } from 'react-apollo';
-import { PagerScroll } from 'react-native-tab-view';
 
 import {
   ErrorCard,
@@ -99,7 +98,6 @@ class DevotionalContentItem extends PureComponent {
     return (
       <TabView
         routes={tabRoutes}
-        renderPager={(props) => <PagerScroll {...props} />}
         renderScene={SceneMap({
           content: this.contentRoute({ scriptures, loading }),
           scripture: this.scriptureRoute({ scriptures, loading }),
