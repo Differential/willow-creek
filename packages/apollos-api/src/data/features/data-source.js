@@ -2,6 +2,7 @@ import { Features as baseFeatures } from '@apollosproject/data-connector-rock';
 import { get } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
+import moment from 'moment-timezone';
 
 export default class Features extends baseFeatures.dataSource {
   ACTION_ALGORITHIMS = {
@@ -43,6 +44,33 @@ export default class Features extends baseFeatures.dataSource {
         };
       })
     );
+  }
+
+  async upcomingEventsAlgorithm() {
+    const { Event, Person } = this.context.dataSources;
+
+    const { campusId } = await Person.getCurrentUserCampusId();
+
+    if (!campusId) {
+      return [];
+    }
+
+    const events = await Event.getUpcomingEventsByCampus({
+      campusId,
+      limit: 3,
+    });
+
+    // Map them into specific actions.
+    return events.map((event, i) => ({
+      id: createGlobalId(`${event.id}${i}`, 'ActionListAction'),
+      title: Event.getName(event),
+      subtitle: moment(event.mostRecentOccurence) // we add the `mostRecentOccurence` field in the `getUpcomingEventsByCampus` method.
+        .tz('America/Chicago')
+        .format('MMMM Do YYYY'),
+      relatedNode: { ...event, __type: 'Event' },
+      image: Event.getImage(event),
+      action: 'READ_EVENT',
+    }));
   }
 
   async getRelatedNode({ item }) {

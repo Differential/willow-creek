@@ -21,7 +21,6 @@ import {
   AuthSms,
   Group,
   BinaryFiles,
-  Event,
 } from '@apollosproject/data-connector-rock';
 
 // This module is used to attach Rock User updating to the OneSignal module.
@@ -31,7 +30,7 @@ import * as ContentItem from './content-items';
 import * as LiveStream from './live';
 import * as Theme from './theme';
 import * as Campus from './campus';
-import * as WillowCalendarEventContentItem from './calendar-events';
+import * as Event from './event';
 import * as Features from './features';
 import * as Person from './person';
 
@@ -63,7 +62,6 @@ const data = {
   Search,
   Template,
   Campus,
-  WillowCalendarEventContentItem,
   Youtube,
   BinaryFiles,
   Features,

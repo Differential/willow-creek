@@ -13437,6 +13437,11 @@ lru-cache@^5.0.0, lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+luxon@^1.3.3:
+  version "1.19.3"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.19.3.tgz#86c04a1395529b4386ae235a8fe16d0a82a0695b"
+  integrity sha512-YwTDjGRQC0QC9Iya2g2eKZfgEFqRId4ZoLHORQcfTMB/5xrTx427V7ZPjQJ1vzvhA2vJfG2bh1Kv8V8IFMWCUA==
+
 macos-release@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/macos-release/-/macos-release-2.2.0.tgz#ab58d55dd4714f0a05ad4b0e90f4370fef5cdea8"
@@ -14368,6 +14373,16 @@ node-gyp@^3.8.0:
     semver "~5.3.0"
     tar "^2.0.0"
     which "1"
+
+node-ical@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/node-ical/-/node-ical-0.10.0.tgz#bfe12a4a141812fd43834107193854af8a4f728f"
+  integrity sha512-EzI2Lha7ZGnQg+cBqz8BCXrn0ey0pRapwHFEni9gSjNx/6hjAYP7T7rcoGxbMRLmnDDe3ksqc1aHKb83c3iydw==
+  dependencies:
+    moment-timezone "^0.5.23"
+    request "^2.88.0"
+    rrule "^2.5.6"
+    uuid "^3.3.2"
 
 node-int64@^0.4.0:
   version "0.4.0"
@@ -17372,6 +17387,15 @@ rootpath@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/rootpath/-/rootpath-0.1.2.tgz#5b379a87dca906e9b91d690a599439bef267ea6b"
   integrity sha1-Wzeah9ypBum5HWkKWZQ5vvJn6ms=
+
+rrule@^2.5.6:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/rrule/-/rrule-2.6.2.tgz#f175c6c0b20d6f798739e4e1d979ffb3d79589e8"
+  integrity sha512-xL38CM1zOYOIp4OO8hdD6zHH5UdR9siHMvPiv+CCSh7o0LYJ0owg87QcFW7GXJ0PfpLBHjanEMvvBjJxbRhAcQ==
+  dependencies:
+    tslib "^1.9.0"
+  optionalDependencies:
+    luxon "^1.3.3"
 
 rsvp@^3.3.3:
   version "3.6.2"

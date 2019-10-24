@@ -116,12 +116,12 @@ const Features = memo(({ navigation }) => (
                     });
                   }
                 }}
-                onPressCardActionButton={() =>
-                  navigation.navigate('ContentFeed', {
-                    itemId: id,
-                    itemTitle: title,
-                  })
-                }
+                // onPressActionListButton={() =>
+                //   navigation.navigate('ContentFeed', {
+                //     itemId: id,
+                //     itemTitle: title,
+                //   })
+                // }
               />
             ) : null
         )
