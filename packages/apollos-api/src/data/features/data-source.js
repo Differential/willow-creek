@@ -1,5 +1,5 @@
 import { Features as baseFeatures } from '@apollosproject/data-connector-rock';
-import { get } from 'lodash';
+import { get, flatten } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
 import moment from 'moment-timezone';
@@ -44,6 +44,43 @@ export default class Features extends baseFeatures.dataSource {
         };
       })
     );
+  }
+
+  async createActionListFeature({
+    algorithms = [],
+    title,
+    subtitle,
+    additionalAction,
+  }) {
+    // Generate a list of actions.
+    // We should flatten just in case a single algorithm generates multiple actions
+    const actions = flatten(
+      await Promise.all(
+        algorithms.map(async (algorithm) => {
+          // Lookup the algorithm function, based on the name, and run it.
+          if (typeof algorithm === 'object') {
+            return this.ACTION_ALGORITHIMS[algorithm.type](algorithm.arguments);
+          }
+          return this.ACTION_ALGORITHIMS[algorithm]();
+        })
+      )
+    );
+    return {
+      // The Feature ID is based on all of the action ids, added together.
+      // This is naive, and could be improved.
+      id: createGlobalId(
+        actions
+          .map(({ relatedNode: { id } }) => id)
+          .reduce((acc, sum) => acc + sum, 0),
+        'ActionListFeature'
+      ),
+      actions,
+      title,
+      subtitle,
+      additionalAction,
+      // Typanme is required so GQL knows specifically what Feature is being created
+      __typename: 'ActionListFeature',
+    };
   }
 
   async upcomingEventsAlgorithm() {

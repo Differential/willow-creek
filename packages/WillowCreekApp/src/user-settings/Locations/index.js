@@ -8,7 +8,7 @@ import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import { get } from 'lodash';
 import GET_USER_FEED from '../../tabs/home/getUserFeed';
-import GET_FEED_FEATURES from '../../tabs/home/getFeedFeatures';
+import GET_FEED_FEATURES from '../../tabs/home/Features/getFeedFeatures';
 import GET_CAMPAIGN_CONTENT_ITEM from '../../tabs/home/getCampaignContentItem';
 
 import GET_CAMPUSES from './getCampusLocations';
