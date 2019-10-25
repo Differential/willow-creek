@@ -8,7 +8,7 @@ export default gql`
         title
         subtitle
         additionalAction {
-          actionMeta
+          # actionMeta
           title
         }
         actions {

@@ -6,15 +6,15 @@ export default gql`
     additionalAction: ActionListAction
   }
 
-  extend type ActionListAction {
-    actionMeta: String
-  }
+  #extend type ActionListAction {
+  #  actionMeta: String
+  #}
 
   enum ACTION_FEATURE_ACTION {
     READ_CONTENT
     READ_EVENT
     VISIT_ROUTE
-    OPEN_URL
+    #OPEN_URL
   }
 
   ### FROM CORE
