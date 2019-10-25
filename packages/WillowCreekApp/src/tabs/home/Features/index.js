@@ -118,7 +118,7 @@ const Features = memo(({ navigation }) => (
                 }}
                 onPressActionListButton={
                   additionalAction
-                    ? () => navigation.navigate('EventFeed')
+                    ? () => navigation.navigate('EventFeed') // TODO: Wire this up to use the same functionality that onPressActionItem uses
                     : null
                 }
               />
