@@ -40,7 +40,9 @@ export default class Features extends baseFeatures.dataSource {
           relatedNode,
           image: ContentItem.getCoverImage(item),
           action:
-            relatedNode.__type === 'Event' ? 'READ_EVENT' : 'READ_CONTENT',
+            get(relatedNode, '__type') === 'Event'
+              ? 'READ_EVENT'
+              : 'READ_CONTENT',
         };
       })
     );
