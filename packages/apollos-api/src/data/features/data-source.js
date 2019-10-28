@@ -33,6 +33,10 @@ export default class Features extends baseFeatures.dataSource {
       items.map(async (item, i) => {
         const relatedNode = await this.getRelatedNode({ item });
 
+        if (!relatedNode) {
+          return null;
+        }
+
         return {
           id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
           title: item.title,
@@ -45,7 +49,7 @@ export default class Features extends baseFeatures.dataSource {
               : 'READ_CONTENT',
         };
       })
-    );
+    ).filter((item) => !!item);
   }
 
   async upcomingEventsAlgorithm() {
