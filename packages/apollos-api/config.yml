@@ -311,6 +311,10 @@ HOME_FEATURES:
   - title: Upcoming Events
     subtitle: Happening at your church!
     algorithms: [UPCOMING_EVENTS]
+    additionalAction:
+      title: 'See more'
+      action: VISIT_ROUTE
+      actionMeta: EventFeed
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

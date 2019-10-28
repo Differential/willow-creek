@@ -91,6 +91,9 @@ class dataSource extends Event.dataSource {
         .format(),
     };
   };
+
+  // overrides a core method
+  getByCampus = async (id) => this.getUpcomingEventsByCampus({ campusId: id });
 }
 
 export { schema, resolver, dataSource };

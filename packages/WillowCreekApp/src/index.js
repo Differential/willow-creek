@@ -13,6 +13,7 @@ import Providers from './Providers';
 import NavigationService from './NavigationService';
 import ContentSingle from './content-single';
 import Event from './event';
+import EventFeed from './event-feed';
 import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
 import ChangePassword from './user-settings/ChangePassword';
@@ -61,6 +62,7 @@ const AppNavigator = createStackNavigator(
     Location,
     Passes: PassesWithBrand,
     Event,
+    EventFeed,
     UserWebBrowser,
     Onboarding,
     LandingScreen,

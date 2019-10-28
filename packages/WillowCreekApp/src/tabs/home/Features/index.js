@@ -90,7 +90,7 @@ const Features = memo(({ navigation }) => (
         />
       ) : (
         get(features, 'userFeedFeatures', []).map(
-          ({ title, subtitle, actions, id }) =>
+          ({ title, subtitle, actions, id, additionalAction }) =>
             actions.length ? (
               <ActionListCard
                 isLoading={loading}
@@ -116,12 +116,11 @@ const Features = memo(({ navigation }) => (
                     });
                   }
                 }}
-                // onPressActionListButton={() =>
-                //   navigation.navigate('ContentFeed', {
-                //     itemId: id,
-                //     itemTitle: title,
-                //   })
-                // }
+                onPressActionListButton={
+                  additionalAction
+                    ? () => navigation.navigate('EventFeed') // TODO: Wire this up to use the same functionality that onPressActionItem uses
+                    : null
+                }
               />
             ) : null
         )
