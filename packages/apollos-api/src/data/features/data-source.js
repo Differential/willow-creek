@@ -29,7 +29,7 @@ export default class Features extends baseFeatures.dataSource {
     const items = await personaFeed.get();
 
     // Map them into specific actions.
-    return Promise.all(
+    const featureListItems = await Promise.all(
       items.map(async (item, i) => {
         const relatedNode = await this.getRelatedNode({ item });
 
@@ -49,7 +49,9 @@ export default class Features extends baseFeatures.dataSource {
               : 'READ_CONTENT',
         };
       })
-    ).filter((item) => !!item);
+    );
+
+    return featureListItems.filter((item) => !!item);
   }
 
   async createActionListFeature({
