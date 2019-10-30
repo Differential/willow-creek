@@ -15,7 +15,7 @@ export default class Features extends baseFeatures.dataSource {
 
   async personaFeedAlgorithm({
     contentChannelIds,
-    first = 3,
+    first = 5,
     useSubtitle = true,
   }) {
     const { ContentItem } = this.context.dataSources;
@@ -26,7 +26,7 @@ export default class Features extends baseFeatures.dataSource {
       contentChannelIds,
     });
 
-    const items = await personaFeed.get();
+    const items = await personaFeed.orderBy('Priority').get();
 
     // Map them into specific actions.
     const featureListItems = await Promise.all(
@@ -43,10 +43,7 @@ export default class Features extends baseFeatures.dataSource {
           subtitle: useSubtitle ? get(item, 'contentChannel.name') : '',
           relatedNode,
           image: ContentItem.getCoverImage(item),
-          action:
-            get(relatedNode, '__type') === 'Event'
-              ? 'READ_EVENT'
-              : 'READ_CONTENT',
+          action: relatedNode.action,
         };
       })
     );
@@ -125,13 +122,17 @@ export default class Features extends baseFeatures.dataSource {
     if (item.contentChannelTypeId !== POINTER_CHANNEL_TYPE_ID)
       return { ...item, __type: ContentItem.resolveType(item) };
 
-    const { contentItem, event } = item.attributeValues;
+    const { contentItem, event, url } = item.attributeValues;
 
     if (contentItem.value) {
       const node = await ContentItem.request()
         .filter(`Guid eq guid'${contentItem.value}'`)
         .first();
-      return { ...node, __type: ContentItem.resolveType(node) };
+      return {
+        ...node,
+        __type: ContentItem.resolveType(node),
+        action: 'READ_CONTENT',
+      };
     }
 
     if (event.value) {
@@ -142,8 +143,17 @@ export default class Features extends baseFeatures.dataSource {
       const eventItem = await Event.getFromId(idMatch[1]);
 
       if (eventItem) {
-        return { ...eventItem, __type: 'Event' };
+        return { ...eventItem, __type: 'Event', action: 'READ_EVENT' };
       }
+    }
+
+    if (url.value) {
+      return {
+        __type: 'LinkFeature',
+        url: url.value,
+        id: url.value,
+        action: 'OPEN_URL',
+      };
     }
 
     return null;
