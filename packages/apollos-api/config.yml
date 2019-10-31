@@ -58,7 +58,8 @@ ANALYTICS:
   GA_ID:
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
-  BIBLE_ID: '71c6eab17ae5b667-01'
+  BIBLE_ID:
+    NIV: '71c6eab17ae5b667-01'
 # CLOUDINARY:
 #   # Cloudinary is used to improve image loading
 #   # value should look something like

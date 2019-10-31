@@ -77,7 +77,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
     }
 
     if (image != null) {
-      Cache.set({ key: `coverImage-${root.id}`, data: image });
+      Cache.set({ key: `contentItem-coverImage-${root.id}`, data: image });
     }
     return image;
   }
