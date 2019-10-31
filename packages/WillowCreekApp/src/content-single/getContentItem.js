@@ -5,7 +5,6 @@ export const CONTENT_ITEM_FRAGMENT = gql`
     id
     title
     isLiked
-    likedCount
     summary
     coverImage {
       name

@@ -30,6 +30,12 @@ const Browser = {
     auth = { useRockCookie: false, useRockToken: false }
   ) => {
     const url = new URL(baseURL);
+    // NOTE: RN adds a trailing slash
+    // https://github.com/facebook/react-native/issues/24428
+    url._url = url.toString().endsWith('/')
+      ? url.toString().slice(0, -1)
+      : url.toString();
+
     const { authCookie, authToken } = await getRockAuthDetails();
     let headers = {};
     if (auth.useRockCookie && authCookie) {

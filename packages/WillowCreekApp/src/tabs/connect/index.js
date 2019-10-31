@@ -29,7 +29,7 @@ const ConnectNavigator = createStackNavigator(
 const EnhancedConnect = withTheme(({ theme, ...props }) => ({
   ...props,
   screenProps: {
-    headerTintColor: theme.colors.action.primary,
+    headerTintColor: theme.colors.action.secondary,
     headerTitleStyle: {
       color: theme.colors.text.primary,
     },

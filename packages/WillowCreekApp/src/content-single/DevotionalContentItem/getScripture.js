@@ -11,6 +11,7 @@ export default gql`
           html
           reference
           copyright
+          version
         }
       }
     }

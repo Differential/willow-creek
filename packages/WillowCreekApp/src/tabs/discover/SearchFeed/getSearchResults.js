@@ -1,6 +1,4 @@
 import gql from 'graphql-tag';
-import { CONTENT_ITEM_FRAGMENT } from 'WillowCreekApp/src/content-single/getContentItem';
-import { LARGE_CARD_FRAGMENT } from 'WillowCreekApp/src/ui/ContentCardConnected';
 
 export default gql`
   query searchResults($searchText: String!) {
@@ -18,13 +16,10 @@ export default gql`
         node {
           ... on ContentItem {
             id
-            ...contentItemFragment
-            ...largeCardFragment
+            __typename
           }
         }
       }
     }
   }
-  ${CONTENT_ITEM_FRAGMENT}
-  ${LARGE_CARD_FRAGMENT}
 `;

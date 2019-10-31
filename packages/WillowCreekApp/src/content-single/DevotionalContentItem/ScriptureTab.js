@@ -18,10 +18,10 @@ const ScriptureTab = ({ id, scripture = [], isLoading, navigation }) => (
           <ScriptureItem
             key={ref.id}
             reference={ref.reference}
-            copyright={ref.copyright}
             html={ref.html}
             isLoading={isLoading}
-            translation="NIV"
+            copyright={ref.copyright}
+            version={ref.version}
           />
         ))}
     </PaddedView>
@@ -43,6 +43,10 @@ ScriptureTab.propTypes = {
       reference: PropTypes.string,
       /** The scripture source to render */
       html: PropTypes.string,
+      /** The copyright of the Bible version */
+      copyright: PropTypes.string,
+      /** The Bible version abbreviation */
+      version: PropTypes.string,
     })
   ),
 };
