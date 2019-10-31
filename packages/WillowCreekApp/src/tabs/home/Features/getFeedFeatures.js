@@ -23,6 +23,9 @@ export default gql`
           }
           relatedNode {
             id
+            ... on LinkFeature {
+              url
+            }
           }
         }
       }

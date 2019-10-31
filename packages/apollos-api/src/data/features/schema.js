@@ -14,7 +14,7 @@ export default gql`
     READ_CONTENT
     READ_EVENT
     VISIT_ROUTE
-    #OPEN_URL
+    OPEN_URL
   }
 
   ### FROM CORE
@@ -53,6 +53,13 @@ export default gql`
     order: Int
 
     body: String
+  }
+
+  type LinkFeature implements Feature & Node {
+    id: ID!
+    order: Int
+
+    url: String
   }
 
   type ScriptureFeature implements Feature & Node {
