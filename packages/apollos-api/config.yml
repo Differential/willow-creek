@@ -18,7 +18,7 @@ ROCK:
   IMAGE_URL: https://rock.willowcreek.org/GetImage.ashx
   SHARE_URL: https://willowcreek.tv
   # This should match the timezone of the Rock server
-  TIMEZONE: 'America/New_York'
+  TIMEZONE: 'America/Chicago'
   USE_PLUGIN: true
   SHOW_INACTIVE_CONTENT: ${ROCK_SHOW_INACTIVE_CONTENT}
 ONE_SIGNAL:
