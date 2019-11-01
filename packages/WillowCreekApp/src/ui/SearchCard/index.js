@@ -33,8 +33,8 @@ const SearchCard = memo(
         isLoading={isLoading}
         summary={summary}
         title={title}
-        {...node}
         {...otherProps}
+        {...node}
       />
     );
   }

@@ -1,7 +1,8 @@
 import { createGlobalId } from '@apollosproject/server-core';
 import { dataSource } from '@apollosproject/data-connector-algolia-search';
 import { graphql } from 'graphql';
-import { get } from 'lodash';
+import { get, uniq } from 'lodash';
+import ApollosConfig from '@apollosproject/config';
 
 class Search extends dataSource {
   async mapItemToAlgolia(item) {
@@ -37,6 +38,11 @@ query getItem {
     let itemsLeft = true;
     const args = { after: null, first: 100 };
 
+    const validChannels = uniq([
+      ...ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
+      ...ApollosConfig.ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS,
+    ]);
+
     while (itemsLeft) {
       const { edges } = await ContentItem.paginate({
         // Change from core: bySearchableContent instead of byActive
@@ -50,8 +56,12 @@ query getItem {
 
       if (itemsLeft) args.after = result[result.length - 1].cursor;
 
+      const filteredItems = items.filter(({ contentChannelId }) =>
+        validChannels.includes(contentChannelId)
+      );
+
       const indexableItems = await Promise.all(
-        items.map((item) => this.mapItemToAlgolia(item))
+        filteredItems.map((item) => this.mapItemToAlgolia(item))
       );
 
       // Change from core: added filter to eliminate sending `null`

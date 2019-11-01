@@ -106,22 +106,6 @@ const resolver = {
     ...ContentItem.resolver.ContentItem,
     theme: (root, input, { dataSources }) =>
       dataSources.ContentItem.getTheme(root),
-    __resolveType: async (attrs, ...otherProps) => {
-      if (get(attrs, 'attributeValues.youtubeId.value', '') !== '') {
-        return 'WillowTVContentItem';
-      }
-      if (Object.hasOwnProperty.call(attrs, 'eventOccurrenceId'))
-        return 'WillowCalendarEventContentItem';
-      // if (
-      //   Object.hasOwnProperty.call(attrs, 'kind') &&
-      //   attrs.kind.includes('youtube')
-      // )
-      //   return 'WillowTVContentItem';
-      return ContentItem.resolver.ContentItem.__resolveType(
-        attrs,
-        ...otherProps
-      );
-    },
   },
 };
 
