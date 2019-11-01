@@ -18,6 +18,7 @@ const horizontalContentCardComponentMapper = ({
     case 'WeekendContentItem':
     case 'ContentSeriesContentItem':
     case 'DevotionalContentItem':
+    case 'WillowTVContentItem':
       return <HorizontalHighlightCard title={hyphenatedTitle} {...props} />;
     default:
       return <HorizontalDefaultCard title={title} {...props} />;

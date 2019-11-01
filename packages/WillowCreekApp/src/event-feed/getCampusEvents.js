@@ -14,6 +14,7 @@ export default gql`
             description
             start
             end
+            url
             image {
               sources {
                 uri

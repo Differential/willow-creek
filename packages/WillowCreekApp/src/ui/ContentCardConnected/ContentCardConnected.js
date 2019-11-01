@@ -19,7 +19,9 @@ const ContentCardConnected = memo(
           if (error) return <ErrorCard error={error} />;
 
           const coverImage = get(node, 'coverImage.sources', undefined);
-          const hasMedia = !!get(node, 'videos.[0].sources[0]', null);
+          const hasMedia =
+            !!get(node, 'videos.[0].sources[0]', null) ||
+            !!get(node, 'videos.[0].youtubeId', null);
           const isLive = get(node, 'liveStream.isLive', false);
           const labelText = get(node, 'parentChannel.name', null);
 

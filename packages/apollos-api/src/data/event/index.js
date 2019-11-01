@@ -3,8 +3,15 @@ import ical from 'node-ical';
 import moment from 'moment-timezone';
 import ApollosConfig from '@apollosproject/config';
 import { resolverMerge } from '@apollosproject/server-core';
+import gql from 'graphql-tag';
 
-const { schema } = Event;
+const schema = gql`
+  extend type Event {
+    url: String
+  }
+
+  ${Event.schema}
+`;
 
 const resolver = resolverMerge(
   {
@@ -17,6 +24,8 @@ const resolver = resolverMerge(
         const times = await dataSources.Event.getDateTime(root.schedule);
         return times.end;
       },
+      url: (root) =>
+        `https://rock.willowcreek.org/page/439?EventOccurrenceId=${root.id}`,
     },
   },
   Event

@@ -26,6 +26,9 @@ export default gql`
             ... on LinkFeature {
               url
             }
+            ... on Event {
+              url
+            }
           }
         }
       }

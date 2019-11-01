@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 
+import Browser from '../ui/WebBrowser';
 import EventCard from './EventCard';
 
 import GET_CAMPUS_EVENTS from './getCampusEvents';
@@ -31,11 +32,11 @@ class ContentFeed extends PureComponent {
   /** Function that is called when a card in the feed is pressed.
    * Takes the user to the ContentSingle
    */
-  handleOnPress = (event) =>
-    this.props.navigation.navigate('Event', {
-      eventId: event.id,
-      sharing: event.sharing,
-    });
+  handleOnPress = (event) => Browser.open(event.url);
+  // this.props.navigation.navigate('Event', {
+  //   eventId: event.id,
+  //   sharing: event.sharing,
+  // });
 
   render() {
     return (
