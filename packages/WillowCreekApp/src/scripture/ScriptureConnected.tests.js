@@ -18,6 +18,7 @@ const mocks = {
         id: 'GEN.1.1',
         reference: 'Genesis 1:1',
         copyright: 'PUBLIC DOMAIN',
+        version: 'WEB',
         html:
           '<p class="p"><span data-number="1" class="v">1</span>In the beginning, God created the heavens and the earth. </p>',
       },

@@ -77,7 +77,7 @@ class ExtendedContentItem extends ContentItem.dataSource {
     }
 
     if (image != null) {
-      Cache.set({ key: `coverImage-${root.id}`, data: image });
+      Cache.set({ key: `contentItem-coverImage-${root.id}`, data: image });
     }
     return image;
   }
@@ -115,12 +115,6 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
   bySearchableContent = () =>
     this.request()
-      .filterOneOf(
-        uniq([
-          ...ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
-          ...ApollosConfig.ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS,
-        ]).map((id) => `ContentChannelId eq ${id}`)
-      )
       .cache({ ttl: 60 })
       .andFilter(this.LIVE_CONTENT());
 
@@ -200,6 +194,13 @@ class ExtendedContentItem extends ContentItem.dataSource {
 
     // If the most recent sermon is the sermon we are checking, this is the live sermon.
     return mostRecentSermon && mostRecentSermon.id === id;
+  }
+
+  resolveType(attrs, ...otherProps) {
+    if (get(attrs, 'attributeValues.youtubeId.value', '') !== '') {
+      return 'WillowTVContentItem';
+    }
+    return super.resolveType(attrs, ...otherProps);
   }
 }
 

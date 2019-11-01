@@ -25,7 +25,7 @@ const DiscoverNavigator = createStackNavigator(
 const EnhancedDiscover = withTheme(({ theme, ...props }) => ({
   ...props,
   screenProps: {
-    headerTintColor: theme.colors.action.primary,
+    headerTintColor: theme.colors.action.secondary,
     headerTitleStyle: {
       color: theme.colors.text.primary,
     },
