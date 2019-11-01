@@ -1,15 +1,20 @@
-import { DefaultCard } from '@apollosproject/ui-kit';
+import { ContentCard, withThemeMixin } from '@apollosproject/ui-kit';
 import React from 'react';
 import moment from 'moment';
 
-const EventCard = ({ name, image, start, end }) => (
-  <DefaultCard
+const EventCard = withThemeMixin(({ theme }) => ({
+  colors: { background: { accent: theme.colors.white } },
+}))(({ name, image, start, end }) => (
+  <ContentCard
     title={name}
     coverImage={image && image.sources}
-    summary={`${moment(start).format('ddd, MMMM Do, YYYY')} \n\n${moment(
-      start
-    ).format('LT')} — ${moment(end).format('LT')}`}
+    summary={
+      start &&
+      `${moment(start).format('ddd, MMMM Do, YYYY')} \n\n${moment(start).format(
+        'LT'
+      )} — ${moment(end).format('LT')}`
+    }
   />
-);
+));
 
 export default EventCard;

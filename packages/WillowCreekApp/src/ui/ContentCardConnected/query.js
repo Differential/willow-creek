@@ -59,6 +59,9 @@ export const BASE_CARD_FRAGMENT = gql`
       liveStream {
         isLive
       }
+      videos {
+        youtubeId
+      }
     }
     ... on DevotionalContentItem {
       parentChannel {

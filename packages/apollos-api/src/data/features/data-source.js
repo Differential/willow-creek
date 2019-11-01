@@ -111,7 +111,7 @@ export default class Features extends baseFeatures.dataSource {
         .format('MMMM Do YYYY'),
       relatedNode: { ...event, __type: 'Event' },
       image: Event.getImage(event),
-      action: 'READ_EVENT',
+      action: 'OPEN_URL',
     }));
   }
 
@@ -143,7 +143,7 @@ export default class Features extends baseFeatures.dataSource {
       const eventItem = await Event.getFromId(idMatch[1]);
 
       if (eventItem) {
-        return { ...eventItem, __type: 'Event', action: 'READ_EVENT' };
+        return { ...eventItem, __type: 'Event', action: 'OPEN_URL' };
       }
     }
 
