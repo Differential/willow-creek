@@ -28,8 +28,8 @@ const FindCampusCard = () => (
             Willow Campus
           </H1>
           <BodyText>
-            Whether you’re a longtime member or just exploring, we’ll help you
-            find the right campus.
+            Whether you’ve attended Willow for a long time, or just exploring,
+            we’ll help you find the right campus.
           </BodyText>
         </ThemeMixin>
       </PaddedView>
