@@ -83,7 +83,10 @@ class MapView extends Component {
   }
 
   componentDidUpdate(oldProps) {
-    if (oldProps.userLocation !== this.props.userLocation) {
+    if (
+      oldProps.userLocation !== this.props.userLocation ||
+      oldProps.campuses.length !== this.props.campuses.length
+    ) {
       this.updateCoordinates({ value: this.previousScrollPosition });
     }
   }

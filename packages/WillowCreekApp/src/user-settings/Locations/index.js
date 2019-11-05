@@ -69,7 +69,7 @@ class Location extends PureComponent {
           },
         });
       },
-      () => null,
+      (e) => console.warn('Error getting location!', e),
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
     );
   }
@@ -84,7 +84,7 @@ class Location extends PureComponent {
         }}
         fetchPolicy="cache-and-network"
       >
-        {({ loading, error, data: { campuses = [], currentUser } = {} }) => (
+        {({ loading, error, data: { campuses, currentUser } = {} }) => (
           <Mutation
             mutation={CHANGE_CAMPUS}
             refetchQueries={[
@@ -106,7 +106,7 @@ class Location extends PureComponent {
                     navigation={this.props.navigation}
                     isLoading={loading}
                     error={error}
-                    campuses={campuses}
+                    campuses={campuses || []}
                     initialRegion={this.props.initialRegion}
                     userLocation={this.state.userLocation}
                     currentCampus={get(currentUser, 'profile.campus')}
