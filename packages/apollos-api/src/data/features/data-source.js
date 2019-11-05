@@ -15,7 +15,7 @@ export default class Features extends baseFeatures.dataSource {
 
   async personaFeedAlgorithm({
     contentChannelIds,
-    first = 5,
+    first = 100,
     useSubtitle = true,
   }) {
     const { ContentItem } = this.context.dataSources;

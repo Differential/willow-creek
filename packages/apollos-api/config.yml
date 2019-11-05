@@ -308,6 +308,7 @@ HOME_FEATURES:
       - type: PERSONA_FEED
         arguments:
           useSubtitle: false
+          first: 100
           contentChannelIds:
             - 26
   - title: Upcoming Events

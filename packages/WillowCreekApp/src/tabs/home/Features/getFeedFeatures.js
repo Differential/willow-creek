@@ -28,6 +28,7 @@ export default gql`
             }
             ... on Event {
               url
+              start
             }
           }
         }

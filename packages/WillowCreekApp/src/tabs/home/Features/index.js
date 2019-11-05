@@ -1,8 +1,9 @@
 import React, { memo } from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
-import { styled, ActionListCard, H3, H6 } from '@apollosproject/ui-kit';
+import { styled, H3, H6 } from '@apollosproject/ui-kit';
 import Browser from '../../../ui/WebBrowser';
+import ActionListCard from '../../../ui/ActionListCard';
 
 import GET_FEED_FEATURES from './getFeedFeatures';
 
