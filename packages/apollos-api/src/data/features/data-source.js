@@ -108,7 +108,7 @@ export default class Features extends baseFeatures.dataSource {
       title: Event.getName(event),
       subtitle: moment(event.mostRecentOccurence) // we add the `mostRecentOccurence` field in the `getUpcomingEventsByCampus` method.
         .tz('America/Chicago')
-        .format('MMMM Do YYYY'),
+        .format('dddd, MMM D'),
       relatedNode: { ...event, __type: 'Event' },
       image: Event.getImage(event),
       action: 'OPEN_URL',
