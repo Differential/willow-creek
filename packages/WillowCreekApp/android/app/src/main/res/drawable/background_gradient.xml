@@ -13,7 +13,7 @@
                 android:angle="135"
                 android:startColor="#092d74"
                 android:centerColor="#0070b9"
-                android:centerX="70%"
+                android:centerX="65%"
                 android:centerY="90%"
                 android:endColor="#7500ffea"
                 />
