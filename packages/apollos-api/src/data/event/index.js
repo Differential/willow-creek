@@ -37,13 +37,16 @@ async function getMostRecentOccurenceForEvent(event) {
   const iCalEvent = Object.values(await ical.async.parseICS(iCal))[0];
 
   // Default the start date to the iCal's reported state date
-  let mostRecentOccurence = moment.tz(iCalEvent.start, 'America/Chicago');
+  let mostRecentOccurence = moment.tz(
+    iCalEvent.start,
+    ApollosConfig.ROCK.TIMEZONE
+  );
 
   // Dates returned from `iCal` are parsed if they are in UTC.
   // We need to find the difference between the times returned and the correct time.
   // And then offset by that time.
   const tzOffset = moment.tz
-    .zone('America/Chicago')
+    .zone(ApollosConfig.ROCK.TIMEZONE)
     .utcOffset(mostRecentOccurence);
 
   mostRecentOccurence = mostRecentOccurence.add(tzOffset, 'minutes').toDate();
@@ -54,11 +57,11 @@ async function getMostRecentOccurenceForEvent(event) {
     // console.log(iCalEvent.rrule.after(new Date()));
     mostRecentOccurence = moment.tz(
       iCalEvent.rrule.after(new Date()),
-      'America/Chicago'
+      ApollosConfig.ROCK.TIMEZONE
     );
 
     const offset = moment.tz
-      .zone('America/Chicago')
+      .zone(ApollosConfig.ROCK.TIMEZONE)
       .utcOffset(mostRecentOccurence);
 
     mostRecentOccurence = mostRecentOccurence.add(offset, 'minutes').toDate();
@@ -69,7 +72,7 @@ async function getMostRecentOccurenceForEvent(event) {
     // rdate's aren't supported by the iCal library. Let's parse them ourselves.
     mostRecentOccurence = iCalEvent.rdate
       .split(',') // Take a list of values
-      .map((d) => moment.tz(d, 'America/Chicago').toDate()) // Use moment to parse them into dates
+      .map((d) => moment.tz(d, ApollosConfig.ROCK.TIMEZONE).toDate()) // Use moment to parse them into dates
       .find((d) => d > new Date()); // Now find the one that happens soonest (it's already sorted by earliest to latest)
   }
   // We should have _something_ at this point. Return it!
