@@ -191,10 +191,10 @@ class Home extends PureComponent {
     return (
       <Query query={GET_USER_CAMPUS} fetchPolicy="cache-and-network">
         {({
-          data: { currentUser: { profile: { campus } = {} } = {} } = {},
           loading,
+          data: { currentUser: { profile: { campus } = {} } = {} } = {},
         }) =>
-          !campus || loading
+          !campus && !loading
             ? this.renderNoCampusContent()
             : this.renderMyWillowContent()
         }
