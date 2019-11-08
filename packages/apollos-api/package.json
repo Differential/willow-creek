@@ -4,7 +4,7 @@
   "private": true,
   "main": "lib/index.js",
   "scripts": {
-    "start": "yarn start:dev",
+    "start": "TZ=UTC yarn start:dev",
     "start:dev": "nodemon ./src/index.js --exec babel-node --delay 2",
     "start:prod": "NODE_ENV=production node ./lib/index.js",
     "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
