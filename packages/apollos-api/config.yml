@@ -307,7 +307,6 @@ HOME_FEATURES:
     algorithms:
       - type: PERSONA_FEED
         arguments:
-          useSubtitle: false
           first: 100
           contentChannelIds:
             - 26
