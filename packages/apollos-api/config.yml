@@ -310,8 +310,8 @@ HOME_FEATURES:
           first: 100
           contentChannelIds:
             - 26
-  - title: Upcoming Events
-    subtitle: Happening at your church!
+  - title:
+    subtitle: Here's what's coming up!
     algorithms: [UPCOMING_EVENTS]
     additionalAction:
       title: 'See more'
