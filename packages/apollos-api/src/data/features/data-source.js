@@ -13,11 +13,7 @@ export default class Features extends baseFeatures.dataSource {
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
   };
 
-  async personaFeedAlgorithm({
-    contentChannelIds,
-    first = 100,
-    useSubtitle = true,
-  }) {
+  async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
     const { ContentItem } = this.context.dataSources;
 
     // Get the first three persona items.
@@ -40,7 +36,7 @@ export default class Features extends baseFeatures.dataSource {
         return {
           id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
           title: item.title,
-          subtitle: useSubtitle ? get(item, 'contentChannel.name') : '',
+          subtitle: get(item, 'attributeValues.subtitle.value', ''),
           relatedNode,
           image: ContentItem.getCoverImage(item),
           action: relatedNode.action,
