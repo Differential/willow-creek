@@ -9,10 +9,15 @@ export default class LiveStream extends RESTDataSource {
       { cacheOptions: { ttl: 60 } }
     );
 
-    return (
+    const isLive =
       response.includes('og:video:url') &&
-      !response.includes('\\"status\\":\\"LIVE_STREAM_OFFLINE\\"')
-    );
+      !response.includes('\\"status\\":\\"LIVE_STREAM_OFFLINE\\"');
+
+    if (isLive) {
+      const videoId = response.match(/itemprop="videoId" content="(.*?)">/)[1];
+      return { isLive: true, videoId };
+    }
+    return { isLive: false };
   }
 
   // Given a logged in user, what is the youtube channelID of their campus?
@@ -38,8 +43,14 @@ export default class LiveStream extends RESTDataSource {
     const channelId = await this.getYoutubeChannelIdForCampus();
     if (!channelId) return { isLive: false };
 
-    return {
-      isLive: await this.getIsLive.call(this, { channelId }),
-    };
+    const { isLive, videoId } = await this.getIsLive.call(this, { channelId });
+
+    if (isLive) {
+      return {
+        isLive,
+        media: { sources: [{ uri: videoId }] },
+      };
+    }
+    return { isLive: false };
   }
 }

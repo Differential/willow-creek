@@ -38,6 +38,17 @@ export default gql`
           webViewUrl
         }
       }
+      ... on WillowTVContentItem {
+        liveStream {
+          isLive
+          media {
+            sources {
+              uri
+            }
+          }
+          webViewUrl
+        }
+      }
     }
   }
 `;

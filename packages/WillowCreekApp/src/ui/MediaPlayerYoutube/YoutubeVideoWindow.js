@@ -82,17 +82,21 @@ class YoutubeVideoWindow extends Component {
 
   handleOnProgress = ({ currentTime, duration }) => {
     if (!this.isYoutube) return;
-    if (!this.didLoad || duration !== this.lastDuration) {
+
+    // Temporary fix for livestream passing invalid duration (0)
+    const fixedDuration = duration || currentTime;
+
+    if (!this.didLoad || fixedDuration !== this.lastDuration) {
       this.didLoad = true;
-      this.props.onLoad({ duration });
+      this.props.onLoad({ duration: fixedDuration });
     }
 
-    this.lastDuration = duration;
+    this.lastDuration = fixedDuration;
 
     this.props.onProgress({
       currentTime,
-      playableDuration: duration,
-      seekableDuration: duration,
+      playableDuration: fixedDuration,
+      seekableDuration: fixedDuration,
     });
   };
 
