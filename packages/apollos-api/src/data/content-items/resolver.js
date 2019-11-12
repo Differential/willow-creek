@@ -1,10 +1,38 @@
 import { ContentItem, Followings } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
-import { createGlobalId } from '@apollosproject/server-core';
-
+import { createGlobalId, resolverMerge } from '@apollosproject/server-core';
 import { get } from 'lodash';
 
 const { ROCK_MAPPINGS } = ApollosConfig;
+
+const contentItemOverrides = {
+  siblingContentItemsConnection: async ({ id }, args, { dataSources }) => {
+    // For the time being, we don't have a endpoint that will both return items by ID and filter by an attribute value
+    // Thus, we need to do our campus filtering in the JS.
+    const items = await dataSources.ContentItem.paginate({
+      cursor: await dataSources.ContentItem.getCursorBySiblingContentItemId(id),
+      args,
+    });
+    const unfilteredEdges = await items.edges;
+    const { campusGuid } = await dataSources.Person.getCurrentUserCampusId();
+    const edges = unfilteredEdges.filter((item) =>
+      get(item, 'node.attributeValues.campus.value').includes(campusGuid)
+    );
+    return { edges };
+  },
+  childContentItemsConnection: async ({ id }, args, { dataSources }) => {
+    const items = await dataSources.ContentItem.paginate({
+      cursor: await dataSources.ContentItem.getCursorByParentContentItemId(id),
+      args,
+    });
+    const unfilteredEdges = await items.edges;
+    const { campusGuid } = await dataSources.Person.getCurrentUserCampusId();
+    const edges = unfilteredEdges.filter((item) =>
+      get(item, 'node.attributeValues.campus.value').includes(campusGuid)
+    );
+    return { edges };
+  },
+};
 
 const resolver = {
   ...ContentItem.resolver,
@@ -35,24 +63,6 @@ const resolver = {
         args,
       });
     },
-    contentChannels: async (root, args, context) => {
-      const channels = await context.dataSources.ContentChannel.getRootChannels();
-      const sortOrder =
-        ApollosConfig.ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS;
-      // Setup a result array.
-      const result = [];
-      sortOrder.forEach((configId) => {
-        // Remove the matched element from the channel list.
-        const channel = channels.splice(
-          channels.findIndex(({ id }) => id === configId),
-          1
-        );
-        // And then push it (or nothing) to the end of the result array.
-        result.push(...channel);
-      });
-      // Return results and any left over channels.
-      return [...result, ...channels];
-    },
   },
   ContentChannel: {
     childContentItemsConnection: async ({ id }, args, { dataSources }) =>
@@ -67,6 +77,7 @@ const resolver = {
   WillowTVContentItem: {
     ...ContentItem.resolver.ContentItem,
     ...Followings.resolver.UniversalContentItem,
+    ...contentItemOverrides,
     id: ({ id }, args, context, { parentType }) =>
       createGlobalId(`${id}`, parentType.name),
 
@@ -104,9 +115,25 @@ const resolver = {
   },
   ContentItem: {
     ...ContentItem.resolver.ContentItem,
+    ...contentItemOverrides,
     theme: (root, input, { dataSources }) =>
       dataSources.ContentItem.getTheme(root),
   },
+  ContentSeriesContentItem: {
+    ...contentItemOverrides,
+  },
+  DevotionalContentItem: {
+    ...contentItemOverrides,
+  },
+  MediaContentItem: {
+    ...contentItemOverrides,
+  },
+  UniversalContentItem: {
+    ...contentItemOverrides,
+  },
+  WeekendContentItem: {
+    ...contentItemOverrides,
+  },
 };
 
-export default resolver;
+export default resolverMerge(resolver, ContentItem);

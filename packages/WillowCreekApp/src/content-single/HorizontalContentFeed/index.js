@@ -26,6 +26,10 @@ class HorizontalContentFeed extends Component {
     }),
   };
 
+  lastCursor = false;
+
+  allItemsLoaded = false;
+
   renderItem = ({ item }) => {
     const itemId = get(item, 'id', '');
     const disabled = get(item, 'id', '') === this.props.contentId;
@@ -64,6 +68,11 @@ class HorizontalContentFeed extends Component {
     );
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
 
+    if (this.lastCursor === cursor) {
+      this.allItemsLoaded = true;
+    }
+    this.lastCursor = cursor;
+
     return content && content.length ? (
       <HorizontalTileFeed
         content={content}
@@ -77,6 +86,7 @@ class HorizontalContentFeed extends Component {
           index,
         })}
         onEndReached={() =>
+          !this.allItemsLoaded &&
           fetchMore({
             query: GET_HORIZONTAL_CONTENT,
             variables: { cursor, itemId: this.props.contentId },
@@ -109,6 +119,7 @@ class HorizontalContentFeed extends Component {
       <Query
         query={GET_HORIZONTAL_CONTENT}
         variables={{ itemId: this.props.contentId }}
+        fetchPolicy="cache-and-network"
       >
         {this.renderFeed}
       </Query>
