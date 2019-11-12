@@ -13,16 +13,10 @@
                 android:angle="135"
                 android:startColor="#092d74"
                 android:centerColor="#0070b9"
-                android:centerX="70%"
+                android:centerX="65%"
                 android:centerY="90%"
                 android:endColor="#7500ffea"
                 />
         </shape>
     </item>
-    <item
-        android:width="95.28dp"
-        android:height="100dp"
-        android:top="-24dp"
-        android:drawable="@mipmap/splash_icon"
-        android:gravity="center" />
 </layer-list>
