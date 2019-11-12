@@ -35,7 +35,6 @@ const contentItemOverrides = {
 };
 
 const resolver = {
-  ...ContentItem.resolver,
   Query: {
     ...ContentItem.resolver.Query,
     campaigns: async (root, args, { dataSources }) => {
@@ -114,7 +113,6 @@ const resolver = {
       dataSources.ContentItem.getTheme(root),
   },
   ContentItem: {
-    ...ContentItem.resolver.ContentItem,
     ...contentItemOverrides,
     theme: (root, input, { dataSources }) =>
       dataSources.ContentItem.getTheme(root),
