@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import { styled, H3, H6 } from '@apollosproject/ui-kit';
@@ -17,10 +17,11 @@ const StyledH6 = styled(({ theme }) => ({
 //     transitionKey: 2,
 //   });
 
-const Features = memo(({ navigation }) => (
+const Features = ({ navigation, refetchRef }) => (
   <Query query={GET_FEED_FEATURES} fetchPolicy="cache-and-network">
-    {({ data: features, loading }) =>
-      loading ? (
+    {({ data: features, loading, refetch }) => {
+      refetchRef(refetch);
+      return loading ? (
         <ActionListCard
           isLoading
           header={
@@ -127,10 +128,10 @@ const Features = memo(({ navigation }) => (
               />
             ) : null
         )
-      )
-    }
+      );
+    }}
   </Query>
-));
+);
 
 Features.displayName = 'Features';
 

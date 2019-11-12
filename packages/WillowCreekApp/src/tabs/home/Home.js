@@ -53,6 +53,10 @@ class Home extends PureComponent {
     }),
   };
 
+  refetchFeatures = () => ({});
+
+  refetchCampaign = () => ({});
+
   componentDidMount() {
     this._navListener = this.props.navigation.addListener('didFocus', () => {
       StatusBar.setBarStyle('light-content');
@@ -91,7 +95,7 @@ class Home extends PureComponent {
                     loading,
                     error,
                     data,
-                    refetch,
+                    refetch: refetchFeed,
                     fetchMore,
                     variables,
                   }) => (
@@ -109,7 +113,13 @@ class Home extends PureComponent {
                       })}
                       isLoading={loading}
                       error={error}
-                      refetch={refetch}
+                      refetch={() =>
+                        Promise.all([
+                          refetchFeed(),
+                          this.refetchFeatures(),
+                          this.refetchCampaign(),
+                        ])
+                      }
                       ListHeaderComponent={
                         <>
                           <Stretchy background>
@@ -128,7 +138,9 @@ class Home extends PureComponent {
                             {({
                               data: featuredData,
                               loading: isFeaturedLoading,
+                              refetch: refetchCampaign,
                             }) => {
+                              this.refetchCampaign = refetchCampaign;
                               const featuredContent = get(
                                 featuredData,
                                 'campaigns.edges',
@@ -172,7 +184,12 @@ class Home extends PureComponent {
                               );
                             }}
                           </Query>
-                          <Features navigation={this.props.navigation} />
+                          <Features
+                            navigation={this.props.navigation}
+                            refetchRef={(refetch) =>
+                              (this.refetchFeatures = refetch)
+                            }
+                          />
                         </>
                       }
                       onPressItem={this.handleOnPress}
