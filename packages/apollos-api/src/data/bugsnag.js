@@ -3,7 +3,7 @@ import Config from '@apollosproject/config';
 
 const bugsnagClient = bugsnag({
   apiKey: process.env.BUGSNAG_API_KEY,
-  releaseStage: process.env.RELEASE_STATE || 'development',
+  releaseStage: process.env.RELEASE_STAGE || 'development',
 });
 
 export const report = (error, metaData, beforeSend) => {
