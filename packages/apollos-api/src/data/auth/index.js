@@ -4,7 +4,6 @@ const { schema, resolver, contextMiddleware } = Auth;
 
 class dataSource extends Auth.dataSource {
   createUserProfile = async (props = {}) => {
-    console.warn('creating user profile');
     try {
       const { email } = props;
 
@@ -12,7 +11,7 @@ class dataSource extends Auth.dataSource {
         Email: email,
         IsSystem: false, // Required by Rock
         Gender: 0, // Required by Rock
-        ConnectionStatusValueId: 5679, // Points to 'App User' 
+        ConnectionStatusValueId: 5679, // Points to 'App User'
       });
     } catch (err) {
       throw new Error('Unable to create profile!');
