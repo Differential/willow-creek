@@ -40,6 +40,7 @@
     "@apollosproject/rock-apollo-data-source": "^1.2.2",
     "@apollosproject/server-core": "^1.2.2",
     "@babel/node": "^7.2.2",
+    "@bugsnag/js": "^6.4.3",
     "apollo-datasource-rest": "^0.4.0",
     "apollo-server": "^2.0.5",
     "apollo-server-express": "2.4.8",
