@@ -12,7 +12,7 @@ class dataSource extends Auth.dataSource {
         Email: email,
         IsSystem: false, // Required by Rock
         Gender: 0, // Required by Rock
-        ConnectionStatusValueId: 5679, //
+        ConnectionStatusValueId: 5679, // Points to 'App User' 
       });
     } catch (err) {
       throw new Error('Unable to create profile!');
