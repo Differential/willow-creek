@@ -15,7 +15,6 @@ import {
   RockConstants,
   ContentChannel,
   Sharable,
-  Auth,
   PersonalDevice,
   Template,
   AuthSms,
@@ -36,6 +35,7 @@ import * as Person from './person';
 
 import * as Youtube from './youtube';
 import * as Search from './search';
+import * as Auth from './auth';
 
 // Included only in Dev.
 import * as YoutubeImport from './youtube-import';
