@@ -1,9 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import Passes from '@apollosproject/ui-passes';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
@@ -78,15 +79,41 @@ const AppNavigator = createStackNavigator(
 
 const AppContainer = createAppContainer(AppNavigator);
 
+function getActiveRouteName(navigationState) {
+  if (!navigationState) {
+    return null;
+  }
+  const route = navigationState.routes[navigationState.index];
+  // dive into nested navigators
+  if (route.routes) {
+    return getActiveRouteName(route);
+  }
+  return route.routeName;
+}
+
 const App = () => (
   <Providers>
     <BackgroundView>
       <AppStatusBar barStyle="dark-content" />
-      <AppContainer
-        ref={(navigatorRef) => {
-          NavigationService.setTopLevelNavigator(navigatorRef);
-        }}
-      />
+      <AnalyticsConsumer>
+        {({ track }) => (
+          <AppContainer
+            ref={(navigatorRef) => {
+              NavigationService.setTopLevelNavigator(navigatorRef);
+            }}
+            onNavigationStateChange={(prevState, currentState) => {
+              const currentScreen = getActiveRouteName(currentState);
+              const prevScreen = getActiveRouteName(prevState);
+
+              if (prevScreen !== currentScreen) {
+                // the line below uses the Google Analytics tracker
+                // change the tracker here to use other Mobile analytics SDK.
+                track({ eventName: `Viewed ${currentScreen}` });
+              }
+            }}
+          />
+        )}
+      </AnalyticsConsumer>
       <MediaPlayerYoutube />
     </BackgroundView>
   </Providers>
