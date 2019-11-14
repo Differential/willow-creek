@@ -13,7 +13,7 @@ function Onboarding({ navigation }) {
   return (
     <>
       <BackgroundImage />
-      <OnboardingSwiper>
+      <OnboardingSwiper scrollEnabled={false}>
         {({ swipeForward }) => (
           <>
             <AskName onPressPrimary={swipeForward} />
