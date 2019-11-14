@@ -24,6 +24,8 @@ import Onboarding from './ui/Onboarding';
 import AuthBackground from './ui/AuthBackground';
 import MediaPlayerYoutube from './ui/MediaPlayerYoutube';
 
+import './bugsnag';
+
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: 'dark-content',
   backgroundColor: theme.colors.paper,

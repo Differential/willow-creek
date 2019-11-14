@@ -40,6 +40,7 @@
     "apollo-link-http": "1.5.11",
     "apollo-link-schema": "1.1.6",
     "apollo-upload-client": "9.0.0",
+    "bugsnag-react-native": "^2.23.2",
     "color": "3.0.0",
     "dotenv": "^6.2.0",
     "events": "^3.0.0",
