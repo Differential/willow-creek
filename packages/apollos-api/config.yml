@@ -61,11 +61,11 @@ BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID:
     NIV: '71c6eab17ae5b667-01'
-# CLOUDINARY:
-#   # Cloudinary is used to improve image loading
-#   # value should look something like
-#   # cloudinary://123123123:adkfnla_adASDv_adAS@test
-#   URL: ${CLOUDINARY_URL}
+CLOUDINARY:
+  # Cloudinary is used to improve image loading
+  # value should look something like
+  # cloudinary://123123123:adkfnla_adASDv_adAS@test
+  URL: ${CLOUDINARY_URL}
 ENGINE:
   API_KEY: ${ENGINE_API_KEY}
   SCHEMA_TAG: ${ENGINE_SCHEMA_TAG}
