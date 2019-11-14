@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { View, SafeAreaView, Platform, StatusBar } from 'react-native';
+import { View, SafeAreaView, StatusBar } from 'react-native';
 
 import {
   FeedView,
