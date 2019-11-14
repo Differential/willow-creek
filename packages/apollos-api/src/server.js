@@ -38,7 +38,10 @@ const apolloServer = new ApolloServer({
   typeDefs: schema,
   resolvers,
   dataSources,
-  context,
+  context: ({ req, res, ...args }) => {
+    res.set('Vary', 'X-Campus');
+    return context({ req, res, ...args });
+  },
   introspection: true,
   extensions,
   debug: true,

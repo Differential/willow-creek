@@ -9,6 +9,7 @@ import { resolvers, schema, defaults } from '../store';
 import NavigationService from '../NavigationService';
 import httpLink from './httpLink';
 import cache, { ensureCacheHydration, MARK_CACHE_LOADED } from './cache';
+import campusLink from './campusLink';
 
 const goToAuth = () => NavigationService.navigate('Auth');
 const wipeData = () => cache.writeData({ data: defaults });
@@ -21,7 +22,7 @@ const onAuthError = () => {
 
 const errorLink = buildErrorLink(onAuthError);
 
-const link = ApolloLink.from([authLink, errorLink, httpLink]);
+const link = ApolloLink.from([authLink, campusLink, errorLink, httpLink]);
 
 export const client = new ApolloClient({
   link,
