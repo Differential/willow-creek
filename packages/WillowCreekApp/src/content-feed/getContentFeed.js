@@ -13,6 +13,7 @@ export default gql`
           edges {
             node {
               ...baseCardFragment
+              ...contentItemFragment
             }
           }
         }
