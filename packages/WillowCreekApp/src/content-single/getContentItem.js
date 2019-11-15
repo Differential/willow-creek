@@ -15,9 +15,6 @@ export const CONTENT_ITEM_FRAGMENT = gql`
       type
       colors {
         primary
-        secondary
-        screen
-        paper
       }
     }
     parentChannel {

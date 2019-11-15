@@ -14,8 +14,8 @@ import {
   H6,
   ContentCard,
 } from '@apollosproject/ui-kit';
-import getContentCard from './query';
 import LikeButton from '../LikeButton';
+import getContentCard from './query';
 
 export query from './query';
 
@@ -23,7 +23,7 @@ const StyledContentCard = styled({
   width: Dimensions.get('window').width * 0.85,
 })(ContentCard);
 
-const CardActions = styled(({ theme: { sizing: { baseUnit }}}) => ({
+const CardActions = styled(({ theme: { sizing: { baseUnit } } }) => ({
   padding: baseUnit * 1.5,
 }))(View);
 
@@ -31,7 +31,7 @@ const CardFooter = styled({
   position: 'absolute',
   top: 0,
   right: 0,
-})(CardActions)
+})(CardActions);
 
 const CardIcon = styled(({ theme }) => ({
   width: theme.sizing.baseUnit * 2,
@@ -54,7 +54,6 @@ const FeaturedContentCardConnected = ({
   contentId,
   isLoading,
   tile,
-  theme,
   ...otherProps
 }) => {
   const cardTheme = { type: 'dark', colors: { paper: theme.colors.secondary } };
@@ -87,8 +86,8 @@ const FeaturedContentCardConnected = ({
               </>
             }
             footer={
-              <CardFooter floating={true}>
-                <LikeButton itemId={node.id}/>
+              <CardFooter floating>
+                <LikeButton itemId={node.id} />
               </CardFooter>
             }
             fixedSize
@@ -96,7 +95,7 @@ const FeaturedContentCardConnected = ({
             isLoading={loading}
             theme={cardTheme}
             forceRatio={1}
-            tile={true}
+            tile
           />
         );
       }}

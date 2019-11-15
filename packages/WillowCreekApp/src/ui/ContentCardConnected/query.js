@@ -49,6 +49,7 @@ export const BASE_CARD_FRAGMENT = gql`
         sources {
           uri
         }
+        youtubeId
       }
       parentChannel {
         id
