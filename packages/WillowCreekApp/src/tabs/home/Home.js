@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import { get, flatten } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { View, SafeAreaView, StatusBar } from 'react-native';
+import { View, SafeAreaView, StatusBar, Platform } from 'react-native';
 
 import {
   FeedView,
@@ -61,9 +61,10 @@ class Home extends PureComponent {
   componentDidMount() {
     this._navListener = this.props.navigation.addListener('didFocus', () => {
       StatusBar.setBarStyle('light-content');
-      // Android only styles
-      StatusBar.setTranslucent(true);
-      StatusBar.setBackgroundColor('transparent');
+      if (Platform.OS === 'Android') {
+        StatusBar.setTranslucent(true);
+        StatusBar.setBackgroundColor('transparent');
+      }
     });
   }
 
