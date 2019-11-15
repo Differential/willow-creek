@@ -1,5 +1,6 @@
 import { Linking } from 'react-native';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
+import { track } from '@apollosproject/ui-analytics';
 import gql from 'graphql-tag';
 import { client } from '../../client';
 
@@ -54,6 +55,7 @@ const Browser = {
           ...options,
         });
       } else Linking.openURL(baseURL);
+      track({ client, eventName: 'Visit Link', properties: { url: baseURL } });
     } catch (e) {
       console.warn(e);
     }

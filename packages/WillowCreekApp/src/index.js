@@ -106,8 +106,6 @@ const App = () => (
               const prevScreen = getActiveRouteName(prevState);
 
               if (prevScreen !== currentScreen) {
-                // the line below uses the Google Analytics tracker
-                // change the tracker here to use other Mobile analytics SDK.
                 track({ eventName: `Viewed ${currentScreen}` });
               }
             }}

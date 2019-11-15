@@ -2,6 +2,8 @@ import gql from 'graphql-tag';
 
 import { schema as mediaPlayerSchema } from '@apollosproject/ui-media-player';
 import { updatePushId } from '@apollosproject/ui-notifications';
+
+// import { identify } from '@apollosproject/ui-analytics';
 import { CACHE_LOADED } from '../client/cache'; // eslint-disable-line
 
 // TODO: this will require more organization...ie...not keeping everything in one file.
@@ -56,6 +58,17 @@ export const resolvers = {
           }
         `,
       });
+
+      if (isLoggedIn) {
+        // TODO: Export `identify` from ui-analytics and use ui-analytics.identify directly.
+        client.mutate({
+          mutation: gql`
+            mutation identify {
+              identify @client
+            }
+          `,
+        });
+      }
 
       if (isLoggedIn && pushId) {
         updatePushId({ pushId, client });

@@ -110,7 +110,7 @@ class Location extends PureComponent {
                     initialRegion={this.props.initialRegion}
                     userLocation={this.state.userLocation}
                     currentCampus={get(currentUser, 'profile.campus')}
-                    onLocationSelect={async ({ id, title }) => {
+                    onLocationSelect={async ({ id, name }) => {
                       await handlePress({
                         variables: {
                           campusId: id,
@@ -119,7 +119,7 @@ class Location extends PureComponent {
                       track({
                         eventName: 'Change Campus',
                         properties: {
-                          campus: title,
+                          campus: name,
                         },
                       });
                       this.props.navigation.goBack();
