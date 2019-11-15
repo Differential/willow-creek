@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
-import { get, pick, identity } from 'lodash';
+import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { ErrorCard, ThemeMixin } from '@apollosproject/ui-kit';
@@ -13,6 +13,7 @@ import GET_CONTENT_ITEM from './getContentItem';
 import DevotionalContentItem from './DevotionalContentItem';
 import UniversalContentItem from './UniversalContentItem';
 import WeekendContentItem from './WeekendContentItem';
+import ContentSeriesContentItem from './ContentSeriesContentItem';
 
 import NavigationHeader from './NavigationHeader';
 
@@ -45,6 +46,15 @@ class ContentSingle extends PureComponent {
     }
 
     switch (__typename) {
+      case 'ContentSeriesContentItem':
+        return (
+          <ContentSeriesContentItem
+            id={this.itemId}
+            content={content}
+            loading={loading}
+            error={error}
+          />
+        );
       case 'DevotionalContentItem':
         return (
           <DevotionalContentItem
@@ -54,7 +64,6 @@ class ContentSingle extends PureComponent {
             error={error}
           />
         );
-      case 'WillowTVContentItem':
       case 'WeekendContentItem':
         return (
           <WeekendContentItem
@@ -65,6 +74,7 @@ class ContentSingle extends PureComponent {
           />
         );
       case 'UniversalContentItem':
+      case 'WillowTVContentItem':
       default:
         return (
           <UniversalContentItem
@@ -82,8 +92,7 @@ class ContentSingle extends PureComponent {
 
     const content = data.node || {};
 
-    const { id, theme } = content;
-
+    const { theme = {}, id } = content;
     const colors = get(theme, 'colors') || {};
     const { primary, secondary, screen, paper } = colors;
 
@@ -92,9 +101,9 @@ class ContentSingle extends PureComponent {
         mixin={
           content.theme
             ? {
-                type: 'light', // type: 'light', // we only brand the header light/dark
+                type: 'light',
                 colors: {
-                  ...(primary ? { primary } : {}),
+                  ...(primary ? { primary, tertiary: primary } : {}),
                   ...(secondary ? { secondary } : {}),
                   ...(screen ? { screen } : {}),
                   ...(paper ? { paper } : {}),
@@ -105,7 +114,7 @@ class ContentSingle extends PureComponent {
       >
         <TrackEventWhenLoaded
           loaded={!!(!loading && content.title)}
-          eventName={'View Content'}
+          eventName={'View Contentx'}
           properties={{
             title: content.title,
             itemId: this.itemId,

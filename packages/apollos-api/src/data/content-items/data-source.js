@@ -1,6 +1,7 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
 import { flatten, get } from 'lodash';
+import Color from 'color';
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
@@ -88,8 +89,13 @@ class ExtendedContentItem extends ContentItem.dataSource {
     return image;
   }
 
-  async getTheme({ id, attributeValues: { themeColor } }) {
+  async getTheme(root) {
+    const {
+      id,
+      attributeValues: { themeColor },
+    } = root;
     const primary = get(themeColor, 'value');
+
     const theme = {
       type: 'DARK',
       colors: {
@@ -97,17 +103,16 @@ class ExtendedContentItem extends ContentItem.dataSource {
       },
     };
 
-    if (!primary) {
+    if (!primary && id) {
       const parentItemsCursor = await this.getCursorByChildContentItemId(id);
       if (parentItemsCursor) {
         const parentItems = await parentItemsCursor.get();
-
         if (parentItems.length) {
-          const parentThemeColors = flatten(
+          const parentPrimaryColors = flatten(
             parentItems.map((i) => get(i, 'attributeValues.themeColor.value'))
-          );
-          if (parentThemeColors && parentThemeColors.length)
-            [theme.colors.primary] = parentThemeColors;
+          ).filter((v) => v);
+          if (parentPrimaryColors && parentPrimaryColors.length)
+            [theme.colors.primary] = parentPrimaryColors;
         }
       }
     }
@@ -115,6 +120,8 @@ class ExtendedContentItem extends ContentItem.dataSource {
     // if there's still no primary color set in the CMS, we want to return a null theme so that
     // the front end uses its default theme:
     if (!theme.colors.primary) return null;
+    theme.type =
+      Color(theme.colors.primary).luminosity() > 0.5 ? 'LIGHT' : 'DARK';
 
     return theme;
   }
@@ -203,6 +210,15 @@ class ExtendedContentItem extends ContentItem.dataSource {
   }
 
   resolveType(attrs, ...otherProps) {
+    const { contentChannelId } = attrs;
+    if (
+      ApollosConfig.ROCK_MAPPINGS.CONTENT_ITEM.WeekendContentItem.ContentChannelId.includes(
+        contentChannelId
+      )
+    ) {
+      return 'WeekendContentItem';
+    }
+
     if (get(attrs, 'attributeValues.youtubeId.value', '') !== '') {
       return 'WillowTVContentItem';
     }

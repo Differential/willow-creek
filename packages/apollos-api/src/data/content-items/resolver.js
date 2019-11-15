@@ -32,6 +32,40 @@ const contentItemOverrides = {
     );
     return { edges };
   },
+  theme: (root, input, { dataSources }) =>
+    dataSources.ContentItem.getTheme(root),
+};
+
+const youtubeContentItemOverrides = {
+  videos: ({
+    attributeValues: {
+      youtubeId: { value },
+    },
+  }) => [
+    {
+      __typename: 'VideoMedia',
+      key: 'youtube',
+      label: 'Watch now',
+      youtubeId: value,
+      sources: [],
+    },
+  ],
+
+  sharing: ({
+    title,
+    attributeValues: {
+      youtubeId: { value },
+    },
+  }) => ({
+    __typename: 'SharableContentItem',
+    url: `https://www.youtube.com/watch?v=${value}`,
+    title,
+    message: null,
+  }),
+  liveStream: async (root, args, { dataSources }) => ({
+    ...(await dataSources.LiveStream.getLiveStream()), // TODO: Wish there was a better way to inherit these defaults from the LiveStream module.
+    isLive: await dataSources.ContentItem.isContentActiveLiveStream(root), // We need to override the global IsLive with an IsLive that is contextual to a ContentItem
+  }),
 };
 
 const resolver = {
@@ -79,43 +113,10 @@ const resolver = {
     ...contentItemOverrides,
     id: ({ id }, args, context, { parentType }) =>
       createGlobalId(`${id}`, parentType.name),
-
-    videos: ({
-      attributeValues: {
-        youtubeId: { value },
-      },
-    }) => [
-      {
-        __typename: 'VideoMedia',
-        key: 'youtube',
-        label: 'Watch now',
-        youtubeId: value,
-        sources: [],
-      },
-    ],
-
-    sharing: ({
-      title,
-      attributeValues: {
-        youtubeId: { value },
-      },
-    }) => ({
-      __typename: 'SharableContentItem',
-      url: `https://www.youtube.com/watch?v=${value}`,
-      title,
-      message: null,
-    }),
-    liveStream: async (root, args, { dataSources }) => ({
-      ...(await dataSources.LiveStream.getLiveStream()), // TODO: Wish there was a better way to inherit these defaults from the LiveStream module.
-      isLive: await dataSources.ContentItem.isContentActiveLiveStream(root), // We need to override the global IsLive with an IsLive that is contextual to a ContentItem
-    }),
-    theme: (root, input, { dataSources }) =>
-      dataSources.ContentItem.getTheme(root),
+    ...youtubeContentItemOverrides,
   },
   ContentItem: {
     ...contentItemOverrides,
-    theme: (root, input, { dataSources }) =>
-      dataSources.ContentItem.getTheme(root),
   },
   ContentSeriesContentItem: {
     ...contentItemOverrides,
@@ -131,6 +132,7 @@ const resolver = {
   },
   WeekendContentItem: {
     ...contentItemOverrides,
+    ...youtubeContentItemOverrides,
   },
 };
 
