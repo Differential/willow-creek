@@ -97,17 +97,15 @@ class ExtendedContentItem extends ContentItem.dataSource {
       },
     };
 
-    if (!primary) {
+    if (!primary && id) {
       const parentItemsCursor = await this.getCursorByChildContentItemId(id);
       if (parentItemsCursor) {
         const parentItems = await parentItemsCursor.get();
-
         if (parentItems.length) {
-          const parentThemeColors = flatten(
-            parentItems.map((i) => get(i, 'attributeValues.themeColor.value'))
-          );
-          if (parentThemeColors && parentThemeColors.length)
-            [theme.colors.primary] = parentThemeColors;
+          const parentThemes = flatten(
+            await Promise.all(parentItems.map((i) => this.getTheme(i)))
+          ).filter((v) => v);
+          if (parentThemes && parentThemes.length) return parentThemes[0];
         }
       }
     }
