@@ -17,7 +17,6 @@ import {
   Sharable,
   PersonalDevice,
   Template,
-  AuthSms,
   Group,
   BinaryFiles,
 } from '@apollosproject/data-connector-rock';
@@ -36,6 +35,7 @@ import * as Person from './person';
 import * as Youtube from './youtube';
 import * as Search from './search';
 import * as Auth from './auth';
+import * as AuthSms from './auth-sms';
 
 // Included only in Dev.
 import * as YoutubeImport from './youtube-import';

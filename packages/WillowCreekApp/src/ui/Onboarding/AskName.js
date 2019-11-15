@@ -24,6 +24,7 @@ const AskName = memo(
     errors,
     setFieldValue,
     isLoading,
+    existingUser,
     ...props
   }) => {
     let LastNameInput = null;
@@ -49,7 +50,7 @@ const AskName = memo(
             }
             onChangeText={(text) => setFieldValue('firstName', text)}
             onSubmitEditing={() => LastNameInput.focus()}
-            disabled={isLoading}
+            disabled={isLoading || existingUser}
             enablesReturnKeyAutomatically
           />
           <TextInput
@@ -63,7 +64,7 @@ const AskName = memo(
             }
             onChangeText={(text) => setFieldValue('lastName', text)}
             onSubmitEditing={() => EmailInput.focus()}
-            disabled={isLoading}
+            disabled={isLoading || existingUser}
             enablesReturnKeyAutomatically
             inputRef={(r) => {
               LastNameInput = r;
@@ -77,7 +78,7 @@ const AskName = memo(
             error={get(touched, 'email', false) && get(errors, 'email', null)}
             onChangeText={(text) => setFieldValue('email', text)}
             onSubmitEditing={onPressPrimary}
-            disabled={isLoading}
+            disabled={isLoading || existingUser}
             enablesReturnKeyAutomatically
             inputRef={(r) => {
               EmailInput = r;
@@ -97,6 +98,7 @@ AskName.propTypes = {
   /* The `Swiper` component used in `<Onboading>` looks for and hijacks the title prop of it's
    * children. Thus we have to use more unique name.
    */
+  existingUser: PropTypes.bool,
   setFieldValue: PropTypes.func.isRequired,
   slideTitle: PropTypes.string,
   description: PropTypes.string,

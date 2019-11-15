@@ -84,6 +84,7 @@ const AskNameConnected = memo(
                     touched={touched}
                     errors={errors}
                     setFieldValue={setFieldValue}
+                    existingUser={firstName || lastName || email}
                     isLoading={loading || isSubmitting}
                     {...props}
                   />
