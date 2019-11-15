@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import { get, flatten } from 'lodash';
 import PropTypes from 'prop-types';
+import Color from 'color';
 
 import { View, SafeAreaView, StatusBar } from 'react-native';
 
@@ -9,18 +10,19 @@ import {
   FeedView,
   BackgroundView,
   TouchableScale,
+  Touchable,
   FeaturedCard,
   ThemeMixin,
   PaddedView,
   StretchyView,
   styled,
   FlexedView,
+  H2,
 } from '@apollosproject/ui-kit';
 import FindCampusAd from '../../ui/FindCampusAd';
 
 import fetchMoreResolver from '../../utils/fetchMoreResolver';
 import ContentCardConnected from '../../ui/ContentCardConnected';
-import PageTitle from '../../ui/PageTitle';
 import CampusSelectButton from '../../ui/CampusSelectButton';
 import CampusBackgroundImage from '../../ui/CampusBackgroundImage';
 import Icon from './Icon';
@@ -30,9 +32,9 @@ import GET_USER_FEED from './getUserFeed';
 import GET_CAMPAIGN_CONTENT_ITEM from './getCampaignContentItem';
 import GET_USER_CAMPUS from './getUserCampus';
 
-const BackgroundFill = styled(({ theme }) => ({
+const BackgroundFill = styled(({ theme, color }) => ({
   height: 44,
-  backgroundColor: theme.colors.secondary,
+  backgroundColor: color || theme.colors.secondary,
   position: 'absolute',
   top: 0,
   left: 0,
@@ -42,6 +44,21 @@ const BackgroundFill = styled(({ theme }) => ({
 const FlexedSafeAreaView = styled({
   flex: 1,
 })(SafeAreaView);
+
+const CampusTouchableRow = styled(({ theme }) => ({
+  opacity: theme.alpha.medium,
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingVertical: theme.sizing.baseUnit / 2,
+}))(View);
+
+const CampusTouchable = (
+  { onPress, ...props } // eslint-disable-line
+) => (
+  <Touchable onPress={onPress}>
+    <CampusTouchableRow {...props} />
+  </Touchable>
+);
 
 class Home extends PureComponent {
   static navigationOptions = () => ({
@@ -73,8 +90,6 @@ class Home extends PureComponent {
 
   refetchFeatures = () => ({});
 
-  refetchCampaign = () => ({});
-
   renderNoCampusContent = () => <FindCampusAd />;
 
   handleOnPress = (item) =>
@@ -85,127 +100,123 @@ class Home extends PureComponent {
 
   renderMyWillowContent() {
     return (
-      <BackgroundView>
-        <FlexedSafeAreaView>
-          <BackgroundFill />
-          <FlexedView>
-            <StretchyView>
-              {({ Stretchy, ...scrollViewProps }) => (
-                <Query
-                  query={GET_USER_FEED}
-                  variables={{
-                    first: 10,
-                    after: null,
-                  }}
-                  fetchPolicy="cache-and-network"
-                >
-                  {({
-                    loading,
-                    error,
-                    data,
-                    refetch: refetchFeed,
-                    fetchMore,
-                    variables,
-                  }) => (
-                    <FeedView
-                      {...scrollViewProps}
-                      ListItemComponent={ContentCardConnected}
-                      content={get(data, 'userFeed.edges', []).map(
-                        (edge) => edge.node
-                      )}
-                      fetchMore={fetchMoreResolver({
-                        collectionName: 'userFeed',
-                        fetchMore,
-                        variables,
-                        data,
-                      })}
-                      isLoading={loading}
-                      error={error}
-                      refetch={() =>
-                        Promise.all([
-                          refetchFeed(),
-                          this.refetchFeatures(),
-                          this.refetchCampaign(),
-                        ])
-                      }
-                      ListHeaderComponent={
-                        <>
-                          <Stretchy background>
-                            <CampusBackgroundImage />
-                          </Stretchy>
-                          <ThemeMixin mixin={{ type: 'dark' }}>
-                            <PaddedView>
-                              <PageTitle>My Willow</PageTitle>
-                              <CampusSelectButton bordered />
-                            </PaddedView>
-                          </ThemeMixin>
-                          <Query
-                            query={GET_CAMPAIGN_CONTENT_ITEM}
-                            fetchPolicy="cache-and-network"
-                          >
-                            {({
-                              data: featuredData,
-                              loading: isFeaturedLoading,
-                              refetch: refetchCampaign,
-                            }) => {
-                              this.refetchCampaign = refetchCampaign;
-                              const featuredContent = flatten(
-                                get(featuredData, 'campaigns.edges', [])
-                                  .map((edge) => edge.node)
-                                  .filter((node) =>
-                                    get(
-                                      node,
-                                      'childContentItemsConnection.edges.length'
-                                    )
-                                  )
-                                  .map(
-                                    (node) =>
-                                      node.childContentItemsConnection.edges
-                                  )
-                              );
+      <Query query={GET_CAMPAIGN_CONTENT_ITEM} fetchPolicy="cache-and-network">
+        {({
+          data: featuredData,
+          loading: isFeaturedLoading,
+          refetch: refetchCampaign,
+        }) => {
+          const featuredContent = flatten(
+            get(featuredData, 'campaigns.edges', [])
+              .map((edge) => edge.node)
+              .filter((node) =>
+                get(node, 'childContentItemsConnection.edges.length')
+              )
+              .map((node) => node.childContentItemsConnection.edges)
+          );
 
-                              const featuredItem = get(
-                                featuredContent,
-                                '[0].node',
-                                null
-                              );
-
-                              if (!featuredItem) return null;
-
-                              return (
-                                <TouchableScale
-                                  onPress={() =>
-                                    this.handleOnPress({
-                                      id: featuredItem.id,
-                                    })
-                                  }
-                                >
-                                  <ContentCardConnected
-                                    Component={FeaturedCard}
-                                    contentId={featuredItem.id}
-                                    isLoading={isFeaturedLoading}
-                                  />
-                                </TouchableScale>
-                              );
-                            }}
-                          </Query>
-                          <Features
-                            navigation={this.props.navigation}
-                            refetchRef={(refetch) =>
-                              (this.refetchFeatures = refetch)
+          const featuredItem = get(featuredContent, '[0].node', null);
+          const featuredColor = get(featuredItem, 'theme.colors.primary')
+            ? Color(get(featuredItem, 'theme.colors.primary'))
+                .darken(0.5)
+                .toString()
+            : null;
+          return (
+            <BackgroundView>
+              <FlexedSafeAreaView>
+                <BackgroundFill color={featuredColor} />
+                <FlexedView>
+                  <StretchyView>
+                    {({ Stretchy, ...scrollViewProps }) => (
+                      <Query
+                        query={GET_USER_FEED}
+                        variables={{
+                          first: 10,
+                          after: null,
+                        }}
+                        fetchPolicy="cache-and-network"
+                      >
+                        {({
+                          loading,
+                          error,
+                          data,
+                          refetch: refetchFeed,
+                          fetchMore,
+                          variables,
+                        }) => (
+                          <FeedView
+                            {...scrollViewProps}
+                            ListItemComponent={ContentCardConnected}
+                            content={get(data, 'userFeed.edges', []).map(
+                              (edge) => edge.node
+                            )}
+                            fetchMore={fetchMoreResolver({
+                              collectionName: 'userFeed',
+                              fetchMore,
+                              variables,
+                              data,
+                            })}
+                            isLoading={loading}
+                            error={error}
+                            refetch={() =>
+                              Promise.all([
+                                refetchFeed(),
+                                this.refetchFeatures(),
+                                refetchCampaign(),
+                              ])
                             }
+                            ListHeaderComponent={
+                              <>
+                                <Stretchy background>
+                                  <CampusBackgroundImage
+                                    overlayColor={featuredColor}
+                                  />
+                                </Stretchy>
+                                <ThemeMixin mixin={{ type: 'dark' }}>
+                                  <PaddedView>
+                                    <CampusSelectButton
+                                      ButtonComponent={CampusTouchable}
+                                    />
+                                    <H2>My Willow</H2>
+                                  </PaddedView>
+                                </ThemeMixin>
+                                {featuredItem ? (
+                                  <TouchableScale
+                                    onPress={() =>
+                                      this.handleOnPress({
+                                        id: featuredItem.id,
+                                      })
+                                    }
+                                  >
+                                    <ContentCardConnected
+                                      Component={FeaturedCard}
+                                      contentId={featuredItem.id}
+                                      isLoading={
+                                        !featuredItem && isFeaturedLoading
+                                      }
+                                    />
+                                  </TouchableScale>
+                                ) : null}
+                                <Features
+                                  navigation={this.props.navigation}
+                                  refetchRef={(refetch) => {
+                                    this.refetchFeatures = refetch;
+                                  }}
+                                />
+                              </>
+                            }
+                            onPressItem={this.handleOnPress}
                           />
-                        </>
-                      }
-                      onPressItem={this.handleOnPress}
-                    />
-                  )}
-                </Query>
-              )}
-            </StretchyView>
-          </FlexedView>
-        </FlexedSafeAreaView>
-      </BackgroundView>
+                        )}
+                      </Query>
+                    )}
+                  </StretchyView>
+                </FlexedView>
+              </FlexedSafeAreaView>
+            </BackgroundView>
+          );
+        }}
+      </Query>
     );
   }
 

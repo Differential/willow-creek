@@ -5,16 +5,16 @@ import { ConnectedImage, styled } from '@apollosproject/ui-kit';
 
 const DeviceWindow = Dimensions.get('window');
 
-const Image = styled(({ theme }) => ({
+const Image = styled({
   ...StyleSheet.absoluteFillObject,
-  opacity: 1 - theme.alpha.high,
-}))(ConnectedImage);
+  opacity: 0.025,
+})(ConnectedImage);
 
-const ImageContainer = styled(({ theme }) => ({
+const ImageContainer = styled(({ theme, overlayColor }) => ({
   position: 'absolute',
   bottom: 0,
   overflow: 'hidden',
-  backgroundColor: theme.colors.secondary,
+  backgroundColor: overlayColor || theme.colors.secondary,
 
   // the following values were determined by the precise & scientific
   // method of guess and check.
@@ -41,7 +41,12 @@ const SizingContainer = styled({
   aspectRatio: 1,
 })(View);
 
-const OverlayBackgroundImage = ({ rounded = true, style, ...props }) => {
+const OverlayBackgroundImage = ({
+  rounded = true,
+  overlayColor,
+  style,
+  ...props
+}) => {
   const [layoutState, setLayout] = useState({
     width: DeviceWindow.width,
     height: DeviceWindow.width,
@@ -53,7 +58,7 @@ const OverlayBackgroundImage = ({ rounded = true, style, ...props }) => {
       onLayout={({ nativeEvent: { layout } = {} }) => setLayout(layout)}
     >
       <ClippingMask rounded={rounded} containerWidth={layoutState.width}>
-        <ImageContainer>
+        <ImageContainer overlayColor={overlayColor}>
           {props.source ? <Image {...props} /> : null}
         </ImageContainer>
       </ClippingMask>

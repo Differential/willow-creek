@@ -24,10 +24,13 @@ const GET_CAMPUS_BG = gql`
   }
 `;
 
-const CampusBackgroundImage = () => (
+const CampusBackgroundImage = (props) => (
   <Query query={GET_CAMPUS_BG} fetchPolicy="cache-and-network">
     {({ data: { currentUser } = {} }) => (
-      <StyledOverlay source={get(currentUser, 'profile.campus.image')} />
+      <StyledOverlay
+        {...props}
+        source={get(currentUser, 'profile.campus.image')}
+      />
     )}
   </Query>
 );
