@@ -109,6 +109,7 @@ class ContentSingle extends PureComponent {
           properties={{
             title: content.title,
             itemId: this.itemId,
+            contentChannel: get(content, 'parentChannel.name'),
           }}
         />
         {this.renderContent({ content, loading, error })}
