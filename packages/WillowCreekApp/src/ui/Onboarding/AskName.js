@@ -2,9 +2,16 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 
-import { TextInput } from '@apollosproject/ui-kit';
+import { TextInput, H5, ButtonLink } from '@apollosproject/ui-kit';
+import { Mutation } from 'react-apollo';
+import {
+  StackActions,
+  NavigationActions,
+  withNavigation,
+} from 'react-navigation';
 
 import { Slide, SlideContent } from '@apollosproject/ui-onboarding';
+import { LOGOUT } from '@apollosproject/ui-auth';
 
 import AskNameConnected from './AskNameConnected';
 
@@ -24,6 +31,8 @@ const AskName = memo(
     errors,
     setFieldValue,
     isLoading,
+    existingUser,
+    navigation,
     ...props
   }) => {
     let LastNameInput = null;
@@ -37,7 +46,15 @@ const AskName = memo(
         onPressSecondary={null}
       >
         {BackgroundComponent}
-        <SlideContent title={slideTitle} description={description} icon>
+        <SlideContent
+          title={slideTitle}
+          description={
+            existingUser
+              ? 'We found a profile matching your phone number. Look correct?'
+              : description
+          }
+          icon
+        >
           <TextInput
             label={'First Name'}
             type={'text'}
@@ -49,7 +66,7 @@ const AskName = memo(
             }
             onChangeText={(text) => setFieldValue('firstName', text)}
             onSubmitEditing={() => LastNameInput.focus()}
-            disabled={isLoading}
+            disabled={isLoading || (existingUser && get(values, 'firstName'))}
             enablesReturnKeyAutomatically
           />
           <TextInput
@@ -63,7 +80,7 @@ const AskName = memo(
             }
             onChangeText={(text) => setFieldValue('lastName', text)}
             onSubmitEditing={() => EmailInput.focus()}
-            disabled={isLoading}
+            disabled={isLoading || (existingUser && get(values, 'lastName'))}
             enablesReturnKeyAutomatically
             inputRef={(r) => {
               LastNameInput = r;
@@ -77,12 +94,44 @@ const AskName = memo(
             error={get(touched, 'email', false) && get(errors, 'email', null)}
             onChangeText={(text) => setFieldValue('email', text)}
             onSubmitEditing={onPressPrimary}
-            disabled={isLoading}
+            disabled={isLoading || existingUser}
             enablesReturnKeyAutomatically
             inputRef={(r) => {
               EmailInput = r;
             }}
           />
+          {existingUser ? (
+            <Mutation mutation={LOGOUT}>
+              {(handleLogout) => (
+                <H5>
+                  Not right?
+                  {'\n'}
+                  <ButtonLink
+                    onPress={async () => {
+                      await handleLogout();
+                      // This resets the navigation stack and navigates to login with email screen
+                      await navigation.dispatch(
+                        StackActions.reset({
+                          index: 0,
+                          key: null,
+                          actions: [
+                            NavigationActions.navigate({
+                              routeName: 'Auth',
+                              action: NavigationActions.navigate({
+                                routeName: 'AuthPassword',
+                              }),
+                            }),
+                          ],
+                        })
+                      );
+                    }}
+                  >
+                    Logout and sign up with an email and password ›
+                  </ButtonLink>
+                </H5>
+              )}
+            </Mutation>
+          ) : null}
         </SlideContent>
       </Slide>
     );
@@ -97,6 +146,7 @@ AskName.propTypes = {
   /* The `Swiper` component used in `<Onboading>` looks for and hijacks the title prop of it's
    * children. Thus we have to use more unique name.
    */
+  existingUser: PropTypes.bool,
   setFieldValue: PropTypes.func.isRequired,
   slideTitle: PropTypes.string,
   description: PropTypes.string,
@@ -119,4 +169,4 @@ const AskNameWithBackgroundImage = (props) => (
   <AskNameConnected Component={AskName} {...props} />
 );
 
-export default AskNameWithBackgroundImage;
+export default withNavigation(AskNameWithBackgroundImage);

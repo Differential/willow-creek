@@ -13,12 +13,15 @@ import UPDATE_USER_NAME from './updateUserName';
 const AskNameConnected = memo(
   ({ Component, onPressPrimary, onPressSecondary, ...props }) => (
     <Query query={GET_USER_FIRST_AND_LAST_NAME}>
-      {({ loading, data: { currentUser = { profile: {} } } = {} }) => {
+      {({
+        loading,
+        data: { authStatus, currentUser = { profile: {} } } = {},
+      }) => {
         const { firstName, lastName, email } = currentUser.profile;
 
         return (
           <Mutation mutation={UPDATE_USER_NAME}>
-            {(updateName) => (
+            {updateName => (
               <Formik
                 initialValues={{ firstName, lastName, email }}
                 isInitialValid={() => !!(firstName && lastName)} // isInitialValid defaults to `false` this correctly checks for user data
@@ -84,6 +87,7 @@ const AskNameConnected = memo(
                     touched={touched}
                     errors={errors}
                     setFieldValue={setFieldValue}
+                    existingUser={authStatus === 'NEW_USER_WITH_ROCK_PROFILE'}
                     isLoading={loading || isSubmitting}
                     {...props}
                   />

@@ -1,7 +1,6 @@
 import React from 'react';
 import Config from 'react-native-config';
 import { Providers } from '@apollosproject/ui-kit';
-import { AuthProvider } from '@apollosproject/ui-auth';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
 import { MediaPlayerProvider } from '@apollosproject/ui-media-player';
 import { NotificationsProvider } from '@apollosproject/ui-notifications';
@@ -10,6 +9,8 @@ import NavigationService from './NavigationService';
 import ClientProvider from './client';
 import customTheme, { customIcons } from './theme';
 import { track, identify } from './amplitude';
+
+import { AuthProvider } from './auth';
 
 const AppProviders = (props) => (
   <ClientProvider {...props}>

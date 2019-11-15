@@ -7,7 +7,7 @@ import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import Passes from '@apollosproject/ui-passes';
-import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
+import { ProtectedRoute } from '@apollosproject/ui-auth';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 import Providers from './Providers';
@@ -24,6 +24,7 @@ import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
 import AuthBackground from './ui/AuthBackground';
 import MediaPlayerYoutube from './ui/MediaPlayerYoutube';
+import Auth from './auth';
 
 import './bugsnag';
 
