@@ -30,7 +30,7 @@ const AskNotifications = memo(
     onPressButton,
     ...props
   }) => (
-    <Slide {...props} onPressPrimary={null}>
+    <Slide {...props}>
       {BackgroundComponent}
       <StyledSlideContent title={slideTitle} description={description} icon>
         <Features horizontal={false}>
@@ -47,13 +47,15 @@ const AskNotifications = memo(
             <FeatureText>Community Events</FeatureText>
           </FeatureRow>
         </Features>
-        <PaddedView horizontal={false}>
-          <PrimaryButton
-            title={buttonDisabled ? 'Continue' : buttonText}
-            onPress={buttonDisabled ? onPressPrimary : onPressButton}
-            pill={false}
-          />
-        </PaddedView>
+        {buttonDisabled || onPressButton ? (
+          <PaddedView horizontal={false}>
+            <PrimaryButton
+              title={buttonDisabled ? 'Continue' : buttonText}
+              onPress={buttonDisabled ? onPressPrimary : onPressButton}
+              pill={false}
+            />
+          </PaddedView>
+        ) : null}
       </StyledSlideContent>
     </Slide>
   )
