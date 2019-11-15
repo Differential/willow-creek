@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
-import { get } from 'lodash';
+import { get, flatten } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { View, SafeAreaView, StatusBar } from 'react-native';
@@ -141,23 +141,20 @@ class Home extends PureComponent {
                               refetch: refetchCampaign,
                             }) => {
                               this.refetchCampaign = refetchCampaign;
-                              const featuredContent = get(
-                                featuredData,
-                                'campaigns.edges',
-                                []
-                              )
-                                .map((edge) => edge.node)
-                                .filter((node) =>
-                                  get(
-                                    node,
-                                    'childContentItemsConnection.edges.length'
+                              const featuredContent = flatten(
+                                get(featuredData, 'campaigns.edges', [])
+                                  .map((edge) => edge.node)
+                                  .filter((node) =>
+                                    get(
+                                      node,
+                                      'childContentItemsConnection.edges.length'
+                                    )
                                   )
-                                )
-                                .map(
-                                  (node) =>
-                                    node.childContentItemsConnection.edges
-                                )
-                                .flat();
+                                  .map(
+                                    (node) =>
+                                      node.childContentItemsConnection.edges
+                                  )
+                              );
 
                               const featuredItem = get(
                                 featuredContent,
