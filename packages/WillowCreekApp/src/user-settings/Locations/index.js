@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Query, Mutation } from 'react-apollo';
-import { Dimensions } from 'react-native';
+import { Dimensions, StatusBar } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
@@ -60,6 +60,10 @@ class Location extends PureComponent {
   };
 
   async componentDidMount() {
+    /* We are forced to do manually switch to `dark-content` because this renders in a `ModalView`
+     * so it's the only way to override these styles. It is admitidly brittle. If you change
+     * anything related to status bar style be careful. */
+    StatusBar.setBarStyle('dark-content');
     Geolocation.getCurrentPosition(
       (position) => {
         this.setState({
@@ -72,6 +76,14 @@ class Location extends PureComponent {
       (e) => console.warn('Error getting location!', e),
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
     );
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  componentDidUnmount() {
+    /* We are forced to do manually switch back to `light-content` because this renders in a
+     * ModalView so it's the only way to override these styles. It is admitidly brittle. If you
+     * change anything related to status bar style be careful. */
+    StatusBar.setBarStyle('light-content');
   }
 
   render() {
