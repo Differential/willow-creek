@@ -2,9 +2,16 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 
-import { TextInput } from '@apollosproject/ui-kit';
+import { TextInput, H5, ButtonLink } from '@apollosproject/ui-kit';
+import { Mutation } from 'react-apollo';
+import {
+  StackActions,
+  NavigationActions,
+  withNavigation,
+} from 'react-navigation';
 
 import { Slide, SlideContent } from '@apollosproject/ui-onboarding';
+import { LOGOUT } from '@apollosproject/ui-auth';
 
 import AskNameConnected from './AskNameConnected';
 
@@ -25,6 +32,7 @@ const AskName = memo(
     setFieldValue,
     isLoading,
     existingUser,
+    navigation,
     ...props
   }) => {
     let LastNameInput = null;
@@ -38,7 +46,15 @@ const AskName = memo(
         onPressSecondary={null}
       >
         {BackgroundComponent}
-        <SlideContent title={slideTitle} description={description} icon>
+        <SlideContent
+          title={slideTitle}
+          description={
+            existingUser
+              ? 'We found a profile matching your phone number. Look correct?'
+              : description
+          }
+          icon
+        >
           <TextInput
             label={'First Name'}
             type={'text'}
@@ -50,7 +66,7 @@ const AskName = memo(
             }
             onChangeText={(text) => setFieldValue('firstName', text)}
             onSubmitEditing={() => LastNameInput.focus()}
-            disabled={isLoading || existingUser}
+            disabled={isLoading || (existingUser && get(values, 'firstName'))}
             enablesReturnKeyAutomatically
           />
           <TextInput
@@ -64,7 +80,7 @@ const AskName = memo(
             }
             onChangeText={(text) => setFieldValue('lastName', text)}
             onSubmitEditing={() => EmailInput.focus()}
-            disabled={isLoading || existingUser}
+            disabled={isLoading || (existingUser && get(values, 'lastName'))}
             enablesReturnKeyAutomatically
             inputRef={(r) => {
               LastNameInput = r;
@@ -84,6 +100,38 @@ const AskName = memo(
               EmailInput = r;
             }}
           />
+          {existingUser ? (
+            <Mutation mutation={LOGOUT}>
+              {(handleLogout) => (
+                <H5>
+                  Not right?
+                  {'\n'}
+                  <ButtonLink
+                    onPress={async () => {
+                      await handleLogout();
+                      // This resets the navigation stack and navigates to login with email screen
+                      await navigation.dispatch(
+                        StackActions.reset({
+                          index: 0,
+                          key: null,
+                          actions: [
+                            NavigationActions.navigate({
+                              routeName: 'Auth',
+                              action: NavigationActions.navigate({
+                                routeName: 'AuthPassword',
+                              }),
+                            }),
+                          ],
+                        })
+                      );
+                    }}
+                  >
+                    Logout and sign up with an email and password ›
+                  </ButtonLink>
+                </H5>
+              )}
+            </Mutation>
+          ) : null}
         </SlideContent>
       </Slide>
     );
@@ -121,4 +169,4 @@ const AskNameWithBackgroundImage = (props) => (
   <AskNameConnected Component={AskName} {...props} />
 );
 
-export default AskNameWithBackgroundImage;
+export default withNavigation(AskNameWithBackgroundImage);
