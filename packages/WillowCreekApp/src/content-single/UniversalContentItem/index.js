@@ -10,7 +10,6 @@ import {
   H2,
   StretchyView,
 } from '@apollosproject/ui-kit';
-import { SafeAreaView } from 'react-navigation';
 
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';

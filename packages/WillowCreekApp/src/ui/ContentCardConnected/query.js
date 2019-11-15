@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { CONTENT_ITEM_FRAGMENT } from 'WillowCreekApp/src/content-single/getContentItem';
 
 export const COVER_IMAGE_FRAGMENT = gql`
   fragment coverImageFragment on ContentItem {
@@ -81,9 +82,11 @@ const GET_CONTENT_CARD = gql`
       id
       __typename
       ...baseCardFragment
+      ...contentItemFragment
     }
   }
   ${BASE_CARD_FRAGMENT}
+  ${CONTENT_ITEM_FRAGMENT}
 `;
 
 export default GET_CONTENT_CARD;
