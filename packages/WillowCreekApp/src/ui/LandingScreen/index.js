@@ -45,7 +45,11 @@ const LandingScreen = ({
   ...props
 }) => (
   <BackgroundView>
-    <StatusBar barStyle="light-content" />
+    <StatusBar
+      barStyle="light-content"
+      backgroundColor={'transparent'}
+      translucent
+    />
     <Slide {...props} scrollEnabled={false}>
       {BackgroundComponent}
       <Content>

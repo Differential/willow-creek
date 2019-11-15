@@ -14,6 +14,7 @@ import {
   PaddedView,
   StretchyView,
   styled,
+  FlexedView,
 } from '@apollosproject/ui-kit';
 import FindCampusAd from '../../ui/FindCampusAd';
 
@@ -38,6 +39,10 @@ const BackgroundFill = styled(({ theme }) => ({
   right: 0,
 }))(View);
 
+const FlexedSafeAreaView = styled({
+  flex: 1,
+})(SafeAreaView);
+
 class Home extends PureComponent {
   static navigationOptions = () => ({
     header: null,
@@ -53,19 +58,22 @@ class Home extends PureComponent {
     }),
   };
 
-  refetchFeatures = () => ({});
-
-  refetchCampaign = () => ({});
-
   componentDidMount() {
     this._navListener = this.props.navigation.addListener('didFocus', () => {
       StatusBar.setBarStyle('light-content');
+      // Android only styles
+      StatusBar.setTranslucent(true);
+      StatusBar.setBackgroundColor('transparent');
     });
   }
 
   componentWillUnmount() {
     this._navListener.remove();
   }
+
+  refetchFeatures = () => ({});
+
+  refetchCampaign = () => ({});
 
   renderNoCampusContent = () => <FindCampusAd />;
 
@@ -78,9 +86,9 @@ class Home extends PureComponent {
   renderMyWillowContent() {
     return (
       <BackgroundView>
-        <SafeAreaView style={{ flex: 1 }}>
+        <FlexedSafeAreaView>
           <BackgroundFill />
-          <View style={{ flex: 1 }}>
+          <FlexedView>
             <StretchyView>
               {({ Stretchy, ...scrollViewProps }) => (
                 <Query
@@ -195,8 +203,8 @@ class Home extends PureComponent {
                 </Query>
               )}
             </StretchyView>
-          </View>
-        </SafeAreaView>
+          </FlexedView>
+        </FlexedSafeAreaView>
       </BackgroundView>
     );
   }
