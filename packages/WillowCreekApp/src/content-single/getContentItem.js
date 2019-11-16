@@ -5,6 +5,7 @@ export const CONTENT_ITEM_FRAGMENT = gql`
     id
     title
     summary
+    htmlContent
     coverImage {
       name
       sources {
