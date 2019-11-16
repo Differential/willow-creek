@@ -16,6 +16,9 @@ export default gql`
         ... on WeekendContentItem {
           id
         }
+        ... on WillowTVContentItem {
+          id
+        }
       }
     }
   }
