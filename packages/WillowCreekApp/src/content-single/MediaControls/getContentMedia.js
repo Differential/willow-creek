@@ -17,6 +17,12 @@ export const contentMediaFragment = gql`
       sources {
         uri
       }
+      youtubeId
+    }
+    audios {
+      sources {
+        uri
+      }
     }
   }
 `;

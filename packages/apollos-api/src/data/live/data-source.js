@@ -53,4 +53,19 @@ export default class LiveStream extends RESTDataSource {
     }
     return { isLive: false };
   }
+
+  async getLiveStreams() {
+    const { ContentItem } = this.context.dataSources;
+    // This logic is a little funky right now.
+    // The follow method looks at the sermon feed and the `getLiveStream` on this module
+    // If we have data in the sermon feed, and the `getLiveStream.isLive` is true
+    // this returns an array of livestreams
+    const liveItems = await ContentItem.getActiveLiveStreamContent();
+    return Promise.all(
+      liveItems.map(async (item) => ({
+        contentItem: item,
+        ...(await this.getLiveStream()),
+      }))
+    );
+  }
 }
