@@ -14,7 +14,11 @@ const loadingStateObject = {
   node: {
     id: 'fakeId0',
     title: '',
+    coverImage: '',
     isLoading: true,
+    parentChannel: {
+      name: '',
+    },
   },
 };
 
@@ -33,14 +37,20 @@ class HorizontalContentFeed extends Component {
   renderItem = ({ item }) => {
     const itemId = get(item, 'id', '');
     const disabled = get(item, 'id', '') === this.props.contentId;
+    const isLoading = get(item.node, 'isLoading');
+    const labelText = get(item.node, 'parentChannel.name', null);
+    console.log(item);
     return (
       <TouchableScale
         onPress={() => this.handleOnPressItem(item)}
-        disabled={disabled}
+        disabled={isLoading || disabled}
       >
         <HorizontalContentCardConnected
+          labelText={labelText}
           contentId={itemId}
           disabled={disabled}
+          isLoading={isLoading}
+          __typename={isLoading ? 'MediaContentItem' : get(item, '__typename')}
         />
       </TouchableScale>
     );
@@ -54,7 +64,6 @@ class HorizontalContentFeed extends Component {
 
   renderFeed = ({ data, loading, error, fetchMore }) => {
     if (error) return null;
-    if (loading) return null;
 
     const children = get(data, 'node.childContentItemsConnection.edges', []);
     const siblings = get(data, 'node.siblingContentItemsConnection.edges', []);
@@ -73,8 +82,9 @@ class HorizontalContentFeed extends Component {
     }
     this.lastCursor = cursor;
 
-    return content && content.length ? (
+    return (
       <HorizontalTileFeed
+        isLoading={loading}
         content={content}
         loadingStateObject={loadingStateObject}
         renderItem={this.renderItem}
@@ -109,7 +119,7 @@ class HorizontalContentFeed extends Component {
           })
         }
       />
-    ) : null;
+    );
   };
 
   render() {
@@ -121,7 +131,9 @@ class HorizontalContentFeed extends Component {
         variables={{ itemId: this.props.contentId }}
         fetchPolicy="cache-and-network"
       >
-        {this.renderFeed}
+        {({ data, error, fetchMore, loading }) =>
+          this.renderFeed({ data, error, fetchMore, loading })
+        }
       </Query>
     );
   }
