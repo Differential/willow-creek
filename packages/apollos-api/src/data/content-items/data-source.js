@@ -195,19 +195,17 @@ class ExtendedContentItem extends ContentItem.dataSource {
       .top(first);
   }
 
-  async isContentActiveLiveStream({ id }) {
+  getActiveLiveStreamContent = async () => {
     const { LiveStream } = this.context.dataSources;
     const { isLive } = await LiveStream.getLiveStream();
     // if there is no live stream, then there is no live content. Easy enough!
-    if (!isLive) return false;
+    if (!isLive) return [];
 
     const mostRecentSermon = await (await this.byUserCampus({
       contentChannelIds: [16],
     })).first();
-
-    // If the most recent sermon is the sermon we are checking, this is the live sermon.
-    return mostRecentSermon && mostRecentSermon.id === id;
-  }
+    return [mostRecentSermon];
+  };
 
   resolveType(attrs, ...otherProps) {
     const { contentChannelId } = attrs;
