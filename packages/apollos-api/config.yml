@@ -148,7 +148,7 @@ ROCK_MAPPINGS:
   CAMPUS_DATA_VIEWS:
     - # Chicago
       CampusDataViewGuid: 5f0f1aeb-330a-4cff-b99e-30d9f6f02c9c
-      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
+      YoutubeChannelId: UCmniIV0tciTcKRTzPJsl9JA
       CampusId: 6
       # These are shown on the Connect tab.
       # Links with an icon show up in the ActionBar.
@@ -157,9 +157,9 @@ ROCK_MAPPINGS:
         - title: Groups
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/chicago
-        - title: Give
-          icon: love-it-hand
-          url: https://pushpay.com/pay/wcchicago
+        # - title: Give
+        #   icon: love-it-hand
+        #   url: https://pushpay.com/pay/wcchicago
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/chicago
         - title: Join a small group
@@ -178,9 +178,9 @@ ROCK_MAPPINGS:
         - title: Groups
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
-        - title: Give
-          icon: love-it-hand
-          url: https://pushpay.com/pay/wccasadeluz
+        # - title: Give
+        #   icon: love-it-hand
+        #   url: https://pushpay.com/pay/wccasadeluz
         - title: Join a small group
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
         - title: I would like to give
@@ -189,15 +189,15 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/contact
     - # Crystal Lake
       CampusDataViewGuid: 4db5a26d-9f4d-4d24-8ec0-4ffc05809ffa
-      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
+      YoutubeChannelId: UC9E9uVr2aeALkyMCC6ryErQ
       CampusId: 4
       ProfileLinks:
         - title: Groups
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/crystal-lake
-        - title: Give
-          icon: love-it-hand
-          url: https://pushpay.com/pay/wccrystallake
+        # - title: Give
+        #   icon: love-it-hand
+        #   url: https://pushpay.com/pay/wccrystallake
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/crystal-lake
         - title: Join a small group
@@ -210,15 +210,15 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/contact
     - # Huntley Campus
       CampusDataViewGuid: f28fef3a-e6d7-4837-b003-c9a1d9cd235f
-      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
+      YoutubeChannelId: UCTURjBpziqKIfe3_W3ZK9QA
       CampusId: 7
       ProfileLinks:
         - title: Groups
           icon: groups
           url: https://www.willowcreek.org/connect/getting-started/huntley/groups
-        - title: Give
-          icon: love-it-hand
-          url: https://pushpay.com/pay/wchuntley
+        # - title: Give
+        #   icon: love-it-hand
+        #   url: https://pushpay.com/pay/wchuntley
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/huntley
         - title: Join a small group
@@ -231,15 +231,15 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/contact
     - # North Shore
       CampusDataViewGuid: 5bb891df-f608-4a2b-948e-1537a5e6b1c6
-      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
+      YoutubeChannelId: UCBwM1fD-lp0-JeNf-rGGniw
       CampusId: 3
       ProfileLinks:
         - title: Groups
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
-        - title: Give
-          icon: love-it-hand
-          url: https://pushpay.com/pay/wcnorthshore
+        # - title: Give
+        #   icon: love-it-hand
+        #   url: https://pushpay.com/pay/wcnorthshore
         - title: Join a small group
           url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
         - title: I need prayer
@@ -256,9 +256,9 @@ ROCK_MAPPINGS:
         - title: Groups
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-barrington
-        - title: Give
-          icon: love-it-hand
-          url: https://pushpay.com/g/willowcreek?src=hpp
+        # - title: Give
+        #   icon: love-it-hand
+        #   url: https://pushpay.com/g/willowcreek?src=hpp
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/south-barrington/serve-finder
         - title: Join a small group
@@ -271,15 +271,15 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/contact
     - # South Lake
       CampusDataViewGuid: e3bc6b72-bc9f-4f08-8ba8-49577bb049ed
-      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
+      YoutubeChannelId: UCVWoE4BvcXQ9s3k0qPJ12nQ
       CampusId: 8
       ProfileLinks:
         - title: Groups
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-lake
-        - title: Give
-          icon: love-it-hand
-          url: https://pushpay.com/pay/wcsouthlake
+        # - title: Give
+        #   icon: love-it-hand
+        #   url: https://pushpay.com/pay/wcsouthlake
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/south-lake
         - title: Join a small group
@@ -292,15 +292,15 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/contact
     - # Wheaton
       CampusDataViewGuid: d96b6f89-441a-489a-b8df-a406ae108474
-      YoutubeChannelId: UCmFRqL-BDXeaYwMxYDfhu_w # TODO
+      YoutubeChannelId: UClw5lxvIxdYq5M5y0teCCng
       CampusId: 2
       ProfileLinks:
         - title: Groups
           icon: groups
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/wheaton
-        - title: Give
-          icon: love-it-hand
-          url: http://pushpay.com/pay/wcwheaton
+        # - title: Give
+        #   icon: love-it-hand
+        #   url: http://pushpay.com/pay/wcwheaton
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/wheaton
         - title: Join a small group
