@@ -41,19 +41,19 @@ const ActionTable = () => (
                   </>
                 ))}
             </TableView>
-            <TableView>
-              <Touchable
-                onPress={() =>
-                  NavigationActions.navigate('TestingControlPanel')
-                }
-              >
-                <Cell>
-                  <CellIcon name="settings" />
-                  <CellText>Open Testing Panel</CellText>
-                  <CellIcon name="arrow-next" />
-                </Cell>
-              </Touchable>
-            </TableView>
+            {/* <TableView> */}
+            {/*   <Touchable */}
+            {/*     onPress={() => */}
+            {/*       NavigationActions.navigate('TestingControlPanel') */}
+            {/*     } */}
+            {/*   > */}
+            {/*     <Cell> */}
+            {/*       <CellIcon name="settings" /> */}
+            {/*       <CellText>Open Testing Panel</CellText> */}
+            {/*       <CellIcon name="arrow-next" /> */}
+            {/*     </Cell> */}
+            {/*   </Touchable> */}
+            {/* </TableView> */}
           </View>
         )}
       </WebBrowserConsumer>
