@@ -11,6 +11,7 @@ import { track } from '@apollosproject/ui-analytics';
 import { GET_PUSH_ID, updatePushId } from '@apollosproject/ui-notifications';
 
 import gql from 'graphql-tag';
+import bugsnag from '../bugsnag';
 
 const GET_AUTH_TOKEN = gql`
   query authToken {
@@ -21,11 +22,8 @@ const GET_AUTH_TOKEN = gql`
 
 const resolvers = {
   Mutation: {
-    handleLogin: async (
-      root,
-      { authToken, status: authStatus },
-      { cache, client }
-    ) => {
+    handleLogin: async (root, { authToken, status }, { cache, client }) => {
+      const authStatus = status || 'NEW_USER';
       try {
         await AsyncStorage.setItem('authToken', authToken);
         await cache.writeQuery({
@@ -50,6 +48,7 @@ const resolvers = {
 
         track({ eventName: 'UserLogin', client });
       } catch (e) {
+        bugsnag.notify(e);
         throw e.message;
       }
 
