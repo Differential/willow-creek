@@ -110,6 +110,10 @@ class dataSource extends Event.dataSource {
 
   // eslint-disable-next-line class-methods-use-this
   getDateTime = async (schedule) => {
+    if (!schedule) {
+      return { start: null, end: null };
+    }
+
     const iCal = schedule.iCalendarContent;
     const dateTimes = iCal.match(/DTEND:(\w+).*DTSTART:(\w+)/s);
     const start = await getMostRecentOccurenceForEvent({ schedule });
