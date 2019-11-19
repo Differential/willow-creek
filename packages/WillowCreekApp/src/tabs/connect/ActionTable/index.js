@@ -28,7 +28,7 @@ const ActionTable = () => (
             </PaddedView>
             <TableView>
               {get(data, 'currentUser.profile.campus.resources', [])
-                .filter(({ icon }) => !icon) // Resources with an icon show up in the action bar.
+                .filter(({ style }) => style === 'LIST_ITEM') // Resources with an icon show up in the action bar.
                 .map(({ url, title }) => (
                   <>
                     <Touchable onPress={() => openUrl(url)}>
