@@ -19,6 +19,7 @@ export default gql`
       url
       title
       icon
+      style
     }
   }
 `;

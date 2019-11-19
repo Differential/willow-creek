@@ -27,15 +27,25 @@ const resolver = {
     resources: (root, args, { dataSources }) =>
       dataSources.Campus.webResourcesForCampus(root),
   },
+  CampusResource: {
+    style: ({ style }) => style || 'LIST_ITEM',
+  },
 };
 
 const schema = gql`
   ${originalSchema}
 
+  enum CAMPUS_RESOURCE_STYLE {
+    LIST_ITEM
+    BAR_ITEM
+    EXTERNAL_BAR_ITEM
+  }
+
   type CampusResource {
     url: String
     title: String
     icon: String
+    style: CAMPUS_RESOURCE_STYLE
   }
 
   extend type Campus {
