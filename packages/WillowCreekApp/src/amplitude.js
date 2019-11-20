@@ -36,9 +36,6 @@ export const identify = () => {
 
   amplitude.getInstance().setUserProperties({
     campusName: get(data, 'currentUser.profile.campus.name'),
-  });
-
-  amplitude.getInstance().setUserProperties({
     app_version: getVersion(),
   });
 };
