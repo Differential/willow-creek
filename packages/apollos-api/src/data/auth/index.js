@@ -3,6 +3,8 @@ import { Auth } from '@apollosproject/data-connector-rock';
 const { schema, resolver, contextMiddleware } = Auth;
 
 class dataSource extends Auth.dataSource {
+  expanded = true;
+
   createUserProfile = async (props = {}) => {
     try {
       const { email } = props;
