@@ -1,6 +1,8 @@
 import { Campus } from '@apollosproject/data-connector-rock';
 import gql from 'graphql-tag';
 import ApollosConfig from '@apollosproject/config';
+import { parseGlobalId } from '@apollosproject/server-core';
+import { get } from 'lodash';
 
 const {
   dataSource: originalDataSource,
@@ -18,6 +20,49 @@ class dataSource extends originalDataSource {
     }
     return [];
   }
+
+  updateCurrentUserCampus = async ({ campusId }) => {
+    const { Auth } = this.context.dataSources;
+
+    const currentUser = await Auth.getCurrentPerson();
+    const { id: rockCampusId } = parseGlobalId(campusId);
+
+    const campus = await this.request()
+      .filter(`Id eq ${rockCampusId}`)
+      .first();
+
+    if (!campus) return null;
+
+    await this.post(
+      `/People/AttributeValue/${currentUser.id}?attributeKey=AppCampus&attributeValue=${campus.guid}`
+    );
+
+    return currentUser;
+  };
+
+  getForPerson = async ({ personId }) => {
+    const APP_CAMPUS_ATTRIBUTE_ID = 132803;
+    const appCampusAttribute = await this.request('AttributeValues')
+      .filter(
+        `(AttributeId eq ${APP_CAMPUS_ATTRIBUTE_ID}) and (EntityId eq ${personId})`
+      )
+      .first();
+
+    if (
+      !appCampusAttribute ||
+      !appCampusAttribute.value ||
+      appCampusAttribute.value === ''
+    ) {
+      return null;
+    }
+
+    // And that user has a campus
+    return this.request()
+      .filter(`Guid eq guid'${appCampusAttribute.value}'`)
+      .expand('Location')
+      .expand('Location/Image')
+      .first();
+  };
 }
 
 const resolver = {
