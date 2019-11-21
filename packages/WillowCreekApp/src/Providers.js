@@ -22,6 +22,7 @@ const AppProviders = (props) => (
       <AuthProvider
         navigateToAuth={() => NavigationService.navigate('Auth')}
         closeAuth={() => NavigationService.navigate('Onboarding')}
+        useServerAnalytics={false}
       >
         <MediaPlayerProvider>
           <AnalyticsProvider

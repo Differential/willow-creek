@@ -101,7 +101,7 @@ class Location extends PureComponent {
           >
             {(handlePress) => (
               <AnalyticsConsumer>
-                {({ track }) => (
+                {({ track, identify }) => (
                   <MapView
                     navigation={this.props.navigation}
                     isLoading={loading}
@@ -129,6 +129,7 @@ class Location extends PureComponent {
                           campus: campus.name,
                         },
                       });
+                      identify();
                       this.props.navigation.goBack();
                     }}
                   />
