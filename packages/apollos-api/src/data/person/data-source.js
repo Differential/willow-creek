@@ -6,10 +6,10 @@ class Person extends personData.dataSource {
 
     try {
       // If we have a user
-      const { attributeValues } = await Auth.getCurrentPerson();
+      const { id } = await Auth.getCurrentPerson();
 
       const { guid: campusGuid, id: campusId } = await Campus.getForPerson({
-        attributeValues,
+        personId: id,
       });
       // The campus id is the current user's campus
       return { campusId, campusGuid };

@@ -37,20 +37,28 @@ class dataSource extends originalDataSource {
       `/People/AttributeValue/${currentUser.id}?attributeKey=AppCampus&attributeValue=${campus.guid}`
     );
 
-    currentUser.attributeValues.appCampus.value = campus.guid;
     return currentUser;
   };
 
-  getForPerson = async ({ attributeValues }) => {
-    const campusGuid = get(attributeValues, 'appCampus.value', '');
+  getForPerson = async ({ personId }) => {
+    const APP_CAMPUS_ATTRIBUTE_ID = 132803;
+    const appCampusAttribute = await this.request('AttributeValues')
+      .filter(
+        `(AttributeId eq ${APP_CAMPUS_ATTRIBUTE_ID}) and (EntityId eq ${personId})`
+      )
+      .first();
 
-    if (campusGuid === '') {
+    if (
+      !appCampusAttribute ||
+      !appCampusAttribute.value ||
+      appCampusAttribute.value === ''
+    ) {
       return null;
     }
 
     // And that user has a campus
     return this.request()
-      .filter(`Guid eq guid'${campusGuid}'`)
+      .filter(`Guid eq guid'${appCampusAttribute.value}'`)
       .expand('Location')
       .expand('Location/Image')
       .first();
@@ -59,10 +67,6 @@ class dataSource extends originalDataSource {
 
 const resolver = {
   ...originalResolver,
-  Person: {
-    campus: ({ attributeValues }, args, { dataSources }) =>
-      dataSources.Campus.getForPerson({ attributeValues }),
-  },
   Campus: {
     ...originalResolver.Campus,
     resources: (root, args, { dataSources }) =>
