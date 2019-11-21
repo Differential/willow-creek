@@ -136,6 +136,7 @@ interface ContentItem {
 
 type ContentItemsConnection {
   edges: [ContentItemsConnectionEdge]
+  totalCount: Int
   pageInfo: PaginationInfo
 }
 
@@ -375,7 +376,7 @@ type Query {
   currentUser: AuthenticatedUser
   liveStream: LiveStream @deprecated(reason: "Use liveStreams, there may be multiple.")
   liveStreams: [LiveStream]
-  scripture(query: String!, version: VERSION): Scripture
+  scripture(query: String!, version: VERSION): Scripture @deprecated(reason: "Use 'scriptures' instead.")
   scriptures(query: String!, version: VERSION): [Scripture]
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection

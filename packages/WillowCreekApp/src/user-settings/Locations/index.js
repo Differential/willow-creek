@@ -101,7 +101,7 @@ class Location extends PureComponent {
           >
             {(handlePress) => (
               <AnalyticsConsumer>
-                {({ track }) => (
+                {({ track, identify }) => (
                   <MapView
                     navigation={this.props.navigation}
                     isLoading={loading}
@@ -110,18 +110,26 @@ class Location extends PureComponent {
                     initialRegion={this.props.initialRegion}
                     userLocation={this.state.userLocation}
                     currentCampus={get(currentUser, 'profile.campus')}
-                    onLocationSelect={async ({ id, name }) => {
+                    onLocationSelect={async (campus) => {
                       await handlePress({
                         variables: {
-                          campusId: id,
+                          campusId: campus.id,
+                        },
+                        optimisticResponse: {
+                          updateUserCampus: {
+                            __typename: 'Mutation',
+                            id: currentUser.id,
+                            campus,
+                          },
                         },
                       });
                       track({
                         eventName: 'Change Campus',
                         properties: {
-                          campus: name,
+                          campus: campus.name,
                         },
                       });
+                      identify();
                       this.props.navigation.goBack();
                     }}
                   />
