@@ -157,7 +157,7 @@ const types = {
       action: {
         default: themeColors.darkTertiary,
         primary: themeColors.primary,
-        secondary: themeColors.secondary,
+        secondary: themeColors.lightPrimary,
         tertiary: themeColors.tertiary,
       },
     },
