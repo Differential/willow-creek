@@ -2,6 +2,7 @@ import React from 'react';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import InAppBrowser from 'react-native-inappbrowser-reborn';
 import {
   GradientOverlayImage,
   BackgroundView,
@@ -14,6 +15,10 @@ import { SafeAreaView } from 'react-navigation';
 import HTMLView from '@apollosproject/ui-htmlview';
 
 import { FlexedScrollView, EventInfoItem } from './components';
+
+const handlePressAnchor = (url) => {
+  InAppBrowser.open(url);
+};
 
 const Event = ({ event, loading }) => {
   const coverImageSources = get(event, 'image.sources', []);
@@ -30,24 +35,24 @@ const Event = ({ event, loading }) => {
                 />
               </Stretchy>
             ) : null}
-            <SafeAreaView>
-              <PaddedView vertical={!!coverImageSources.length}>
-                <H2 padded isLoading={!event.name && loading}>
-                  {event.name}
-                </H2>
-                <Paragraph>
-                  <EventInfoItem
-                    icon={'time'}
-                    title={moment(event.start).format('ddd, MMMM Do, YYYY')}
-                    subtitle={`${moment(event.start).format('LT')} — ${moment(
-                      event.end
-                    ).format('LT')}`}
-                  />
-                  <EventInfoItem icon={'pin'} title={event.location} />
-                </Paragraph>
-                <HTMLView isLoading={loading}>{event.description}</HTMLView>
-              </PaddedView>
-            </SafeAreaView>
+            <PaddedView vertical={false}>
+              <H2 padded isLoading={!event.name && loading}>
+                {event.name}
+              </H2>
+              <Paragraph>
+                <EventInfoItem
+                  icon={'time'}
+                  title={moment(event.start).format('ddd, MMMM Do, YYYY')}
+                  subtitle={`${moment(event.start).format('LT')} — ${moment(
+                    event.end
+                  ).format('LT')}`}
+                />
+                <EventInfoItem icon={'pin'} title={event.location} />
+              </Paragraph>
+              <HTMLView isLoading={loading} onPressAnchor={handlePressAnchor}>
+                {event.description}
+              </HTMLView>
+            </PaddedView>
           </FlexedScrollView>
         )}
       </StretchyView>
