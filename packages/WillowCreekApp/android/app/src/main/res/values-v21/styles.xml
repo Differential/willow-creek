@@ -6,6 +6,6 @@
 
     <style name="LaunchTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/background_splash</item>
-        <item name="colorPrimaryDark">@color/splashBg</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>
