@@ -21,7 +21,7 @@ const AskNameConnected = memo(
 
         return (
           <Mutation mutation={UPDATE_USER_NAME}>
-            {updateName => (
+            {(updateName) => (
               <Formik
                 initialValues={{ firstName, lastName, email }}
                 isInitialValid={() => !!(firstName && lastName)} // isInitialValid defaults to `false` this correctly checks for user data
@@ -32,7 +32,7 @@ const AskNameConnected = memo(
                   lastName: Yup.string().required(
                     'Your last name is required!'
                   ),
-                  email: Yup.string().email('Email must be a valid email'),
+                  // email: Yup.string().email('Email must be a valid email'),
                 })}
                 enableReinitialize
                 onSubmit={async (

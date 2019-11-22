@@ -1,11 +1,7 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  mutation updateName(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-  ) {
+  mutation updateName($firstName: String!, $lastName: String!, $email: String) {
     updateProfileFields(
       input: [
         { field: FirstName, value: $firstName }
