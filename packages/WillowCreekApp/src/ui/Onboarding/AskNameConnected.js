@@ -35,12 +35,15 @@ const AskNameConnected = memo(
                   // email: Yup.string().email('Email must be a valid email'),
                 })}
                 enableReinitialize
-                onSubmit={async (
-                  variables,
-                  { setSubmitting, setFieldError }
-                ) => {
+                onSubmit={async (args, { setSubmitting, setFieldError }) => {
                   try {
-                    await updateName({ variables });
+                    await updateName({
+                      variables: {
+                        firstName: args.firstName,
+                        lastName: args.lastName,
+                        email: args.email || '',
+                      },
+                    });
                     onPressPrimary();
                   } catch (e) {
                     const { graphQLErrors } = e;
