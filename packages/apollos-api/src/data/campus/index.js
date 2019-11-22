@@ -53,6 +53,17 @@ class dataSource extends originalDataSource {
       !appCampusAttribute.value ||
       appCampusAttribute.value === ''
     ) {
+      // Default to the families campus if we don't have an app campus
+      // Note: We do not ever want to write the family campus field.
+      const family = await this.request(`/Groups/GetFamilies/${personId}`)
+        .expand('Campus')
+        .expand('Campus/Location')
+        .expand('Campus/Location/Image')
+        .first();
+
+      if (family && family.campus && family.campus.location) {
+        return family.campus;
+      }
       return null;
     }
 

@@ -3,7 +3,6 @@ import { setContext } from 'apollo-link-context';
 import gql from 'graphql-tag';
 
 export default setContext((request, { headers, cache }) => {
-  let campusId = null;
   try {
     const data = cache.readQuery({
       query: gql`
@@ -20,9 +19,12 @@ export default setContext((request, { headers, cache }) => {
         }
       `,
     });
-    campusId = get(data, 'currentUser.profile.campus.id');
+    const campusId = get(data, 'currentUser.profile.campus.id');
+    if (campusId) {
+      return { headers: { ...headers, 'X-Campus': campusId } };
+    }
   } catch (e) {
     console.log(e);
   }
-  return { headers: { ...headers, 'X-Campus': campusId } };
+  return { headers };
 });
