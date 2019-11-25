@@ -10,6 +10,7 @@ import { get } from 'lodash';
 import GET_USER_FEED from '../../tabs/home/getUserFeed';
 import GET_FEED_FEATURES from '../../tabs/home/Features/getFeedFeatures';
 import GET_CAMPAIGN_CONTENT_ITEM from '../../tabs/home/getCampaignContentItem';
+import GET_CONTENT_CHANNELS from '../../tabs/discover/DiscoverFeed/getContentChannels';
 
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
@@ -97,6 +98,7 @@ class Location extends PureComponent {
               },
               { query: GET_CAMPAIGN_CONTENT_ITEM, variables: undefined },
               { query: GET_FEED_FEATURES, variables: undefined },
+              { query: GET_CONTENT_CHANNELS, variables: undefined },
             ]}
           >
             {(handlePress) => (
