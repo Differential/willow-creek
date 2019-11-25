@@ -111,7 +111,7 @@ class Location extends PureComponent {
                     userLocation={this.state.userLocation}
                     currentCampus={get(currentUser, 'profile.campus')}
                     onLocationSelect={async (campus) => {
-                      await handlePress({
+                      handlePress({
                         variables: {
                           campusId: campus.id,
                         },
