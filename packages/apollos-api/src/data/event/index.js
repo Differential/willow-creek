@@ -110,7 +110,7 @@ class dataSource extends Event.dataSource {
 
   // eslint-disable-next-line class-methods-use-this
   getDateTime = async (schedule) => {
-    if (!schedule) {
+    if (!schedule || !schedule.iCalendarContent) {
       return { start: null, end: null };
     }
 
