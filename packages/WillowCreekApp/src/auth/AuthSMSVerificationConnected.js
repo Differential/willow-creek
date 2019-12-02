@@ -105,6 +105,7 @@ class VerificationConnected extends Component {
                         disabled={isSubmitting || !isValid}
                         isLoading={isSubmitting}
                         onPressNext={handleSubmit}
+                        onPressBack={() => this.props.navigation.goBack()}
                         setFieldValue={setFieldValue}
                         touched={touched}
                         values={values}
