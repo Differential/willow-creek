@@ -125,6 +125,7 @@ class Location extends PureComponent {
                             campus,
                           },
                         },
+                        awaitRefetchQueries: true,
                       });
                       track({
                         eventName: 'Change Campus',

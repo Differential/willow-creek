@@ -79,12 +79,19 @@ class MapView extends Component {
 
   scrollView = null;
 
+  // We need to cache this value in state, because otherwise the campus order changes
+  // After selecting a campus, but before the home feed loads.
+  state = { currentCampus: null };
+
   componentDidMount() {
     this.animation.addListener(debounce(this.updateCoordinates));
   }
 
   componentDidUpdate(oldProps) {
     // update mapview if there are campuses and the location changes
+    if (this.props.currentCampus && !this.state.currentCampus) {
+      this.setState({ currentCampus: this.props.currentCampus });
+    }
     if (
       this.props.campuses.length &&
       oldProps.userLocation !== this.props.userLocation
@@ -101,8 +108,9 @@ class MapView extends Component {
   }
 
   get sortedCampuses() {
-    const { currentCampus = null, campuses = [] } = this.props;
-    if (!this.props.currentCampus) {
+    const { campuses = [] } = this.props;
+    const { currentCampus } = this.state;
+    if (!currentCampus) {
       return campuses;
     }
     return [
