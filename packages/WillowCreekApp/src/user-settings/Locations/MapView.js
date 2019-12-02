@@ -53,6 +53,7 @@ class MapView extends Component {
       latitude: PropTypes.number.isRequired,
       longitude: PropTypes.number.isRequired,
     }),
+    loadingNewCampus: PropTypes.bool.isRequired,
     onLocationSelect: PropTypes.func.isRequired,
     initialRegion: PropTypes.shape({
       latitude: PropTypes.number.isRequired,
@@ -149,7 +150,7 @@ class MapView extends Component {
   };
 
   render() {
-    const { onLocationSelect } = this.props;
+    const { onLocationSelect, loadingNewCampus } = this.props;
     const interpolations = this.sortedCampuses.map((marker, index) => {
       const inputRange = [
         (index - 1) * CARD_WIDTH,
@@ -236,6 +237,7 @@ class MapView extends Component {
                 onPress={() =>
                   onLocationSelect(this.currentCampus || this.sortedCampuses[0])
                 }
+                loading={loadingNewCampus}
               />
             </PaddedView>
           </MediaPlayerSpacer>

@@ -57,6 +57,7 @@ class Location extends PureComponent {
       latitude: 39.104797,
       longitude: -84.511959,
     },
+    loadingNewCampus: false,
   };
 
   async componentDidMount() {
@@ -109,9 +110,11 @@ class Location extends PureComponent {
                     campuses={campuses || []}
                     initialRegion={this.props.initialRegion}
                     userLocation={this.state.userLocation}
+                    loadingNewCampus={this.state.loadingNewCampus}
                     currentCampus={get(currentUser, 'profile.campus')}
                     onLocationSelect={async (campus) => {
-                      handlePress({
+                      this.setState({ loadingNewCampus: true });
+                      await handlePress({
                         variables: {
                           campusId: campus.id,
                         },
