@@ -53,6 +53,7 @@ class MapView extends Component {
       latitude: PropTypes.number.isRequired,
       longitude: PropTypes.number.isRequired,
     }),
+    loadingNewCampus: PropTypes.bool.isRequired,
     onLocationSelect: PropTypes.func.isRequired,
     initialRegion: PropTypes.shape({
       latitude: PropTypes.number.isRequired,
@@ -78,12 +79,19 @@ class MapView extends Component {
 
   scrollView = null;
 
+  // We need to cache this value in state, because otherwise the campus order changes
+  // After selecting a campus, but before the home feed loads.
+  state = { currentCampus: null };
+
   componentDidMount() {
     this.animation.addListener(debounce(this.updateCoordinates));
   }
 
   componentDidUpdate(oldProps) {
     // update mapview if there are campuses and the location changes
+    if (this.props.currentCampus && !this.state.currentCampus) {
+      this.setState({ currentCampus: this.props.currentCampus });
+    }
     if (
       this.props.campuses.length &&
       oldProps.userLocation !== this.props.userLocation
@@ -100,8 +108,9 @@ class MapView extends Component {
   }
 
   get sortedCampuses() {
-    const { currentCampus = null, campuses = [] } = this.props;
-    if (!this.props.currentCampus) {
+    const { campuses = [] } = this.props;
+    const { currentCampus } = this.state;
+    if (!currentCampus) {
       return campuses;
     }
     return [
@@ -149,7 +158,7 @@ class MapView extends Component {
   };
 
   render() {
-    const { onLocationSelect } = this.props;
+    const { onLocationSelect, loadingNewCampus } = this.props;
     const interpolations = this.sortedCampuses.map((marker, index) => {
       const inputRange = [
         (index - 1) * CARD_WIDTH,
@@ -236,6 +245,7 @@ class MapView extends Component {
                 onPress={() =>
                   onLocationSelect(this.currentCampus || this.sortedCampuses[0])
                 }
+                loading={loadingNewCampus}
               />
             </PaddedView>
           </MediaPlayerSpacer>
