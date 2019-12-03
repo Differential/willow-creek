@@ -110,6 +110,15 @@ describe('Display Native Map with Locations', () => {
       result: {
         data: {
           campuses,
+          currentUser: {
+            id: 'AuthenticatedUser:123',
+            __typename: 'AuthenticatedUser',
+            profile: {
+              id: 'Person:123',
+              __typename: 'Person',
+              campus: campuses[3],
+            },
+          },
         },
       },
     };

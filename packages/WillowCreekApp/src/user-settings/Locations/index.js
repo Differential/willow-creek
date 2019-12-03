@@ -4,7 +4,13 @@ import { Query, Mutation } from 'react-apollo';
 import { Dimensions } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
-import requestLocation from './requestLocation';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+
+import { get } from 'lodash';
+import GET_USER_FEED from '../../tabs/home/getUserFeed';
+import GET_FEED_FEATURES from '../../tabs/home/Features/getFeedFeatures';
+import GET_CAMPAIGN_CONTENT_ITEM from '../../tabs/home/getCampaignContentItem';
+import GET_CONTENT_CHANNELS from '../../tabs/discover/DiscoverFeed/getContentChannels';
 
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
@@ -52,10 +58,10 @@ class Location extends PureComponent {
       latitude: 39.104797,
       longitude: -84.511959,
     },
+    loadingNewCampus: false,
   };
 
   async componentDidMount() {
-    await requestLocation();
     Geolocation.getCurrentPosition(
       (position) => {
         this.setState({
@@ -65,7 +71,7 @@ class Location extends PureComponent {
           },
         });
       },
-      () => null,
+      (e) => console.warn('Error getting location!', e),
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
     );
   }
@@ -80,28 +86,61 @@ class Location extends PureComponent {
         }}
         fetchPolicy="cache-and-network"
       >
-        {({ loading, error, data: { campuses = [] } = {} }) => (
+        {({ loading, error, data: { campuses, currentUser } = {} }) => (
           <Mutation
             mutation={CHANGE_CAMPUS}
-            refetchQueries={['campaigns', 'getUserFeed', 'getFeedFeatures']}
+            refetchQueries={[
+              {
+                query: GET_USER_FEED,
+                variables: {
+                  first: 10,
+                  after: null,
+                },
+              },
+              { query: GET_CAMPAIGN_CONTENT_ITEM, variables: undefined },
+              { query: GET_FEED_FEATURES, variables: undefined },
+              { query: GET_CONTENT_CHANNELS, variables: undefined },
+            ]}
           >
             {(handlePress) => (
-              <MapView
-                navigation={this.props.navigation}
-                isLoading={loading}
-                error={error}
-                campuses={campuses}
-                initialRegion={this.props.initialRegion}
-                userLocation={this.state.userLocation}
-                onLocationSelect={async ({ id }) => {
-                  await handlePress({
-                    variables: {
-                      campusId: id,
-                    },
-                  });
-                  this.props.navigation.goBack();
-                }}
-              />
+              <AnalyticsConsumer>
+                {({ track, identify }) => (
+                  <MapView
+                    navigation={this.props.navigation}
+                    isLoading={loading}
+                    error={error}
+                    campuses={campuses || []}
+                    initialRegion={this.props.initialRegion}
+                    userLocation={this.state.userLocation}
+                    loadingNewCampus={this.state.loadingNewCampus}
+                    currentCampus={get(currentUser, 'profile.campus')}
+                    onLocationSelect={async (campus) => {
+                      this.setState({ loadingNewCampus: true });
+                      await handlePress({
+                        variables: {
+                          campusId: campus.id,
+                        },
+                        optimisticResponse: {
+                          updateUserCampus: {
+                            __typename: 'Mutation',
+                            id: currentUser.id,
+                            campus,
+                          },
+                        },
+                        awaitRefetchQueries: true,
+                      });
+                      track({
+                        eventName: 'Change Campus',
+                        properties: {
+                          campus: campus.name,
+                        },
+                      });
+                      identify();
+                      this.props.navigation.goBack();
+                    }}
+                  />
+                )}
+              </AnalyticsConsumer>
             )}
           </Mutation>
         )}

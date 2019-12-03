@@ -14,6 +14,7 @@ import {
   H6,
 } from '@apollosproject/ui-kit';
 import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
+import { LiveConsumer } from '../../live';
 import GET_CONTENT_MEDIA from './getContentMedia';
 
 const Container = styled(({ theme }) => ({
@@ -50,6 +51,7 @@ class MediaControls extends PureComponent {
     coverImageSources,
     title,
     parentChannelName,
+    isVideo = true,
   }) => (
     <Mutation mutation={PLAY_VIDEO}>
       {(play) =>
@@ -60,7 +62,7 @@ class MediaControls extends PureComponent {
                 mediaSource: videoSource,
                 posterSources: coverImageSources,
                 title,
-                isVideo: true,
+                isVideo,
                 artist: parentChannelName,
               },
             }),
@@ -82,21 +84,16 @@ class MediaControls extends PureComponent {
   );
 
   renderControls = ({
+    liveStream,
     loading,
     error,
     data: {
-      node: {
-        videos,
-        title,
-        parentChannel = {},
-        coverImage = {},
-        liveStream = {},
-      } = {},
+      node: { videos, audios, title, parentChannel = {}, coverImage = {} } = {},
     } = {},
   }) => {
     if (loading || error) return null;
-
-    const isLive = get(liveStream, 'isLive', false);
+    let isVideo = true;
+    const isLive = !!liveStream;
     const hasLiveStreamContent = !!(
       get(liveStream, 'webViewUrl') || get(liveStream, 'media.sources[0]')
     );
@@ -110,6 +107,12 @@ class MediaControls extends PureComponent {
     } else {
       videoSource = get(videos, '[0].sources[0]', null);
     }
+
+    if (!videoSource && Array.isArray(audios) && audios.length) {
+      videoSource = get(audios, '[0].sources[0]', null);
+      isVideo = false;
+    }
+
     const shouldRender = (isLive && hasLiveStreamContent) || videoSource;
 
     if (!shouldRender) return null;
@@ -141,19 +144,26 @@ class MediaControls extends PureComponent {
       videoSource,
       parentChannelName: parentChannel.name,
       title,
+      isVideo,
     });
   };
 
   render() {
     if (!this.props.contentId) return null;
     return (
-      <Query
-        query={GET_CONTENT_MEDIA}
-        fetchPolicy="cache-and-network"
-        variables={{ contentId: this.props.contentId }}
-      >
-        {this.renderControls}
-      </Query>
+      <LiveConsumer contentId={this.props.contentId}>
+        {(liveStream) => (
+          <Query
+            query={GET_CONTENT_MEDIA}
+            fetchPolicy="cache-and-network"
+            variables={{ contentId: this.props.contentId }}
+          >
+            {({ data, loading, error }) =>
+              this.renderControls({ data, loading, error, liveStream })
+            }
+          </Query>
+        )}
+      </LiveConsumer>
     );
   }
 }

@@ -70,7 +70,8 @@ type AudioMediaSource implements MediaSource {
 type AuthenticatedUser {
   id: ID!
   profile: Person
-  rockToken: String
+  rock: RockPersonDetails
+  rockToken: String @deprecated(reason: "Use rock.authCookie instead")
 }
 
 type Authentication {
@@ -117,7 +118,7 @@ type ContentChannel implements Node {
 
 interface ContentItem {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -135,6 +136,7 @@ interface ContentItem {
 
 type ContentItemsConnection {
   edges: [ContentItemsConnectionEdge]
+  totalCount: Int
   pageInfo: PaginationInfo
 }
 
@@ -150,7 +152,7 @@ input ContentItemsConnectionInput {
 
 type ContentSeriesContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -170,7 +172,7 @@ type ContentSeriesContentItem implements ContentItem & Node {
 
 type DevotionalContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -190,6 +192,7 @@ type DevotionalContentItem implements ContentItem & Node {
 type Event implements Node {
   id: ID!
   name: String
+  description: String
   location: String
   start: String
   end: String
@@ -246,6 +249,7 @@ type LiveStream {
   eventStartTime: String
   media: VideoMedia
   webViewUrl: String
+  contentItem: ContentItem
 }
 
 interface Media {
@@ -256,7 +260,7 @@ interface Media {
 
 type MediaContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -370,13 +374,19 @@ type Query {
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
   currentUser: AuthenticatedUser
-  liveStream: LiveStream
-  scripture(query: String!): Scripture
-  scriptures(query: String!): [Scripture]
+  liveStream: LiveStream @deprecated(reason: "Use liveStreams, there may be multiple.")
+  liveStreams: [LiveStream]
+  scripture(query: String!, version: VERSION): Scripture @deprecated(reason: "Use 'scriptures' instead.")
+  scriptures(query: String!, version: VERSION): [Scripture]
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
   userFeedFeatures: [Feature]
+}
+
+type RockPersonDetails {
+  authToken: String
+  authCookie: String
 }
 
 type Scripture implements Node {
@@ -384,6 +394,7 @@ type Scripture implements Node {
   html: String
   reference: String
   copyright: String
+  version: String
 }
 
 type ScriptureFeature implements Feature & Node {
@@ -455,7 +466,7 @@ enum ThemeType {
 
 type UniversalContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -488,6 +499,11 @@ input UpdateProfileInput {
 """The `Upload` scalar type represents a file upload."""
 scalar Upload
 
+enum VERSION {
+  WEB
+  KJV
+}
+
 type VideoMedia implements Media {
   name: String
   key: String
@@ -501,7 +517,7 @@ type VideoMediaSource implements MediaSource {
 
 type WeekendContentItem implements ContentItem & Node {
   id: ID!
-  title: String
+  title(hyphenated: Boolean): String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]

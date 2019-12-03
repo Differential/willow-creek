@@ -1,7 +1,6 @@
 import gql from 'graphql-tag';
 
-import { LARGE_CARD_FRAGMENT } from 'WillowCreekApp/src/ui/ContentCardConnected';
-import { CONTENT_ITEM_FRAGMENT } from '../content-single/getContentItem';
+import { BASE_CARD_FRAGMENT } from 'WillowCreekApp/src/ui/ContentCardConnected';
 
 export default gql`
   query getContentFeed($itemId: ID!, $after: String, $first: Int) {
@@ -13,14 +12,12 @@ export default gql`
           }
           edges {
             node {
-              ...contentItemFragment
-              ...largeCardFragment
+              ...baseCardFragment
             }
           }
         }
       }
     }
   }
-  ${CONTENT_ITEM_FRAGMENT}
-  ${LARGE_CARD_FRAGMENT}
+  ${BASE_CARD_FRAGMENT}
 `;

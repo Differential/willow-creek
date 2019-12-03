@@ -25,19 +25,21 @@ const StyledButton = styled(({ theme }) => ({
   justifyContent: 'space-between',
 }))(Button);
 
-const CampusSelectButton = withNavigation(({ navigation, ...otherProps }) => (
-  <Query query={GET_USER_CAMPUS} fetchPolicy="cache-and-network">
-    {({ data: { currentUser: { profile } = {} } = {} }) => (
-      <StyledButton
-        type="secondary"
-        onPress={() => navigation.navigate('Location')}
-        {...otherProps}
-      >
-        <H5>{get(profile, 'campus.name') || 'Select Campus'}</H5>
-        <Icon name="arrow-down" size={16} />
-      </StyledButton>
-    )}
-  </Query>
-));
+const CampusSelectButton = withNavigation(
+  ({ navigation, ButtonComponent = StyledButton, ...otherProps }) => (
+    <Query query={GET_USER_CAMPUS} fetchPolicy="cache-and-network">
+      {({ data: { currentUser: { profile } = {} } = {} }) => (
+        <ButtonComponent
+          type="ghost"
+          onPress={() => navigation.navigate('Location')}
+          {...otherProps}
+        >
+          <H5>{get(profile, 'campus.name') || 'Select Campus '} </H5>
+          <Icon name="arrow-down" size={14} />
+        </ButtonComponent>
+      )}
+    </Query>
+  )
+);
 
 export default CampusSelectButton;

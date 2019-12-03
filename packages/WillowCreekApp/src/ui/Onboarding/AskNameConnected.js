@@ -13,7 +13,10 @@ import UPDATE_USER_NAME from './updateUserName';
 const AskNameConnected = memo(
   ({ Component, onPressPrimary, onPressSecondary, ...props }) => (
     <Query query={GET_USER_FIRST_AND_LAST_NAME}>
-      {({ loading, data: { currentUser = { profile: {} } } = {} }) => {
+      {({
+        loading,
+        data: { authStatus, currentUser = { profile: {} } } = {},
+      }) => {
         const { firstName, lastName, email } = currentUser.profile;
 
         return (
@@ -29,15 +32,18 @@ const AskNameConnected = memo(
                   lastName: Yup.string().required(
                     'Your last name is required!'
                   ),
-                  email: Yup.string().email('Email must be a valid email'),
+                  // email: Yup.string().email('Email must be a valid email'),
                 })}
                 enableReinitialize
-                onSubmit={async (
-                  variables,
-                  { setSubmitting, setFieldError }
-                ) => {
+                onSubmit={async (args, { setSubmitting, setFieldError }) => {
                   try {
-                    await updateName({ variables });
+                    await updateName({
+                      variables: {
+                        firstName: args.firstName,
+                        lastName: args.lastName,
+                        email: args.email || '',
+                      },
+                    });
                     onPressPrimary();
                   } catch (e) {
                     const { graphQLErrors } = e;
@@ -84,6 +90,7 @@ const AskNameConnected = memo(
                     touched={touched}
                     errors={errors}
                     setFieldValue={setFieldValue}
+                    existingUser={authStatus === 'NEW_USER_WITH_ROCK_PROFILE'}
                     isLoading={loading || isSubmitting}
                     {...props}
                   />

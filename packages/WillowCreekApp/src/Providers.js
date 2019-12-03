@@ -1,14 +1,17 @@
 import React from 'react';
 import Config from 'react-native-config';
 import { Providers } from '@apollosproject/ui-kit';
-import { AuthProvider } from '@apollosproject/ui-auth';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
 import { MediaPlayerProvider } from '@apollosproject/ui-media-player';
 import { NotificationsProvider } from '@apollosproject/ui-notifications';
 
 import NavigationService from './NavigationService';
+import { LiveProvider } from './live';
 import ClientProvider from './client';
 import customTheme, { customIcons } from './theme';
+import { track, identify } from './amplitude';
+
+import { AuthProvider } from './auth';
 
 const AppProviders = (props) => (
   <ClientProvider {...props}>
@@ -19,14 +22,20 @@ const AppProviders = (props) => (
       <AuthProvider
         navigateToAuth={() => NavigationService.navigate('Auth')}
         closeAuth={() => NavigationService.navigate('Onboarding')}
+        useServerAnalytics={false}
       >
         <MediaPlayerProvider>
-          <AnalyticsProvider>
-            <Providers
-              themeInput={customTheme}
-              iconInput={customIcons}
-              {...props}
-            />
+          <AnalyticsProvider
+            trackFunctions={[track]}
+            identifyFunctions={[identify]}
+          >
+            <LiveProvider>
+              <Providers
+                themeInput={customTheme}
+                iconInput={customIcons}
+                {...props}
+              />
+            </LiveProvider>
           </AnalyticsProvider>
         </MediaPlayerProvider>
       </AuthProvider>

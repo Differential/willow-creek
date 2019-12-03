@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import NavigationActions from 'WillowCreekApp/src/NavigationService';
-
+import { get } from 'lodash';
 import {
   TableView,
   Cell,
@@ -13,66 +13,52 @@ import {
   PaddedView,
   H5,
 } from '@apollosproject/ui-kit';
+import { Query } from 'react-apollo';
 import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
+import GET_USER_PROFILE from '../getUserProfile';
 
 const ActionTable = () => (
-  <WebBrowserConsumer>
-    {(openUrl) => (
-      <View>
-        <PaddedView style={{ paddingBottom: 0 }}>
-          <H5 padded>Connect</H5>
-        </PaddedView>
-        <TableView>
-          <Touchable
-            onPress={() => openUrl('https://apollosrock.newspring.cc/page/235')}
-          >
-            <Cell>
-              <CellText>Find a serving opportunity</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-          <Divider />
-          <Touchable
-            onPress={() => openUrl('https://apollosrock.newspring.cc/page/236')}
-          >
-            <Cell>
-              <CellText>Join a small group</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-          <Divider />
-          <Touchable
-            onPress={() => openUrl('https://apollosrock.newspring.cc/page/233')}
-          >
-            <Cell>
-              <CellText>I need prayer</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-          <Divider />
-          <Touchable
-            onPress={() => openUrl('https://apollosrock.newspring.cc/page/186')}
-          >
-            <Cell>
-              <CellText>I would like to give</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-        </TableView>
-        <TableView>
-          <Touchable
-            onPress={() => NavigationActions.navigate('TestingControlPanel')}
-          >
-            <Cell>
-              <CellIcon name="settings" />
-              <CellText>Open Testing Panel</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-        </TableView>
-      </View>
+  <Query query={GET_USER_PROFILE}>
+    {({ data }) => (
+      <WebBrowserConsumer>
+        {(openUrl) => (
+          <View>
+            <PaddedView style={{ paddingBottom: 0 }}>
+              <H5 padded>Connect</H5>
+            </PaddedView>
+            <TableView>
+              {get(data, 'currentUser.profile.campus.resources', [])
+                .filter(({ style }) => style === 'LIST_ITEM') // Resources with an icon show up in the action bar.
+                .map(({ url, title }) => (
+                  <>
+                    <Touchable onPress={() => openUrl(url)}>
+                      <Cell>
+                        <CellText>{title}</CellText>
+                        <CellIcon name="arrow-next" />
+                      </Cell>
+                    </Touchable>
+                    <Divider />
+                  </>
+                ))}
+            </TableView>
+            {/* <TableView> */}
+            {/*   <Touchable */}
+            {/*     onPress={() => */}
+            {/*       NavigationActions.navigate('TestingControlPanel') */}
+            {/*     } */}
+            {/*   > */}
+            {/*     <Cell> */}
+            {/*       <CellIcon name="settings" /> */}
+            {/*       <CellText>Open Testing Panel</CellText> */}
+            {/*       <CellIcon name="arrow-next" /> */}
+            {/*     </Cell> */}
+            {/*   </Touchable> */}
+            {/* </TableView> */}
+          </View>
+        )}
+      </WebBrowserConsumer>
     )}
-  </WebBrowserConsumer>
+  </Query>
 );
 
 const StyledActionTable = styled(({ theme }) => ({

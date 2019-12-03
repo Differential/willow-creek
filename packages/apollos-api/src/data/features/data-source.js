@@ -1,7 +1,8 @@
 import { Features as baseFeatures } from '@apollosproject/data-connector-rock';
-import { get } from 'lodash';
+import { get, flatten } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
+import moment from 'moment-timezone';
 
 export default class Features extends baseFeatures.dataSource {
   ACTION_ALGORITHIMS = {
@@ -12,7 +13,7 @@ export default class Features extends baseFeatures.dataSource {
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
   };
 
-  async personaFeedAlgorithm({ contentChannelIds, first = 3 }) {
+  async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
     const { ContentItem } = this.context.dataSources;
 
     // Get the first three persona items.
@@ -21,24 +22,93 @@ export default class Features extends baseFeatures.dataSource {
       contentChannelIds,
     });
 
-    const items = await personaFeed.get();
+    const items = await personaFeed.orderBy('Priority').get();
 
     // Map them into specific actions.
-    return Promise.all(
+    const featureListItems = await Promise.all(
       items.map(async (item, i) => {
         const relatedNode = await this.getRelatedNode({ item });
+
+        if (!relatedNode) {
+          return null;
+        }
 
         return {
           id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
           title: item.title,
-          subtitle: get(item, 'contentChannel.name'),
+          subtitle: get(item, 'attributeValues.subtitle.value', ''),
           relatedNode,
           image: ContentItem.getCoverImage(item),
-          action:
-            relatedNode.__type === 'Event' ? 'READ_EVENT' : 'READ_CONTENT',
+          action: relatedNode.action,
         };
       })
     );
+
+    return featureListItems.filter((item) => !!item);
+  }
+
+  async createActionListFeature({
+    algorithms = [],
+    title,
+    subtitle,
+    additionalAction,
+  }) {
+    // Generate a list of actions.
+    // We should flatten just in case a single algorithm generates multiple actions
+    const actions = flatten(
+      await Promise.all(
+        algorithms.map(async (algorithm) => {
+          // Lookup the algorithm function, based on the name, and run it.
+          if (typeof algorithm === 'object') {
+            return this.ACTION_ALGORITHIMS[algorithm.type](algorithm.arguments);
+          }
+          return this.ACTION_ALGORITHIMS[algorithm]();
+        })
+      )
+    );
+    return {
+      // The Feature ID is based on all of the action ids, added together.
+      // This is naive, and could be improved.
+      id: createGlobalId(
+        actions
+          .map(({ relatedNode: { id } }) => id)
+          .reduce((acc, sum) => acc + sum, 0),
+        'ActionListFeature'
+      ),
+      actions,
+      title,
+      subtitle,
+      additionalAction,
+      // Typanme is required so GQL knows specifically what Feature is being created
+      __typename: 'ActionListFeature',
+    };
+  }
+
+  async upcomingEventsAlgorithm() {
+    const { Event, Person } = this.context.dataSources;
+
+    const { campusId } = await Person.getCurrentUserCampusId();
+
+    if (!campusId) {
+      return [];
+    }
+
+    const events = await Event.getUpcomingEventsByCampus({
+      campusId,
+      limit: 3,
+    });
+
+    // Map them into specific actions.
+    return events.map((event, i) => ({
+      id: createGlobalId(`${event.id}${i}`, 'ActionListAction'),
+      title: Event.getName(event),
+      subtitle: moment(event.mostRecentOccurence) // we add the `mostRecentOccurence` field in the `getUpcomingEventsByCampus` method.
+        .tz('America/Chicago')
+        .format('dddd, MMM D'),
+      relatedNode: { ...event, __type: 'Event' },
+      image: Event.getImage(event),
+      action: 'OPEN_URL',
+    }));
   }
 
   async getRelatedNode({ item }) {
@@ -48,25 +118,38 @@ export default class Features extends baseFeatures.dataSource {
     if (item.contentChannelTypeId !== POINTER_CHANNEL_TYPE_ID)
       return { ...item, __type: ContentItem.resolveType(item) };
 
-    const { contentItem, event } = item.attributeValues;
+    const { contentItem, event, url } = item.attributeValues;
 
     if (contentItem.value) {
       const node = await ContentItem.request()
         .filter(`Guid eq guid'${contentItem.value}'`)
         .first();
-      return { ...node, __type: ContentItem.resolveType(node) };
+      return {
+        ...node,
+        __type: ContentItem.resolveType(node),
+        action: 'READ_CONTENT',
+      };
     }
 
     if (event.value) {
-      const eventItem = await Event.request('EventItems')
-        .filter(`Guid eq guid'${event.value}'`)
-        .expand('EventItemOccurrences, EventItemOccurrences/Schedule')
-        .first();
-
-      if (eventItem && eventItem.eventItemOccurrences.length) {
-        // Not sure if this is the right logic. How do we know this is the right event occurence?
-        return { ...eventItem.eventItemOccurrences[0], __type: 'Event' };
+      const idMatch = event.value.match(/EventOccurrenceId=(\d+)/);
+      if (!idMatch || !idMatch[1]) {
+        return null;
       }
+      const eventItem = await Event.getFromId(idMatch[1]);
+
+      if (eventItem) {
+        return { ...eventItem, __type: 'Event', action: 'OPEN_URL' };
+      }
+    }
+
+    if (url.value) {
+      return {
+        __type: 'LinkFeature',
+        url: url.value,
+        id: url.value,
+        action: 'OPEN_URL',
+      };
     }
 
     return null;

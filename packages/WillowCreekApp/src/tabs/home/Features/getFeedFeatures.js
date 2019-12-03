@@ -7,6 +7,10 @@ export default gql`
         id
         title
         subtitle
+        additionalAction {
+          # actionMeta
+          title
+        }
         actions {
           id
           title
@@ -19,6 +23,13 @@ export default gql`
           }
           relatedNode {
             id
+            ... on LinkFeature {
+              url
+            }
+            ... on Event {
+              url
+              start
+            }
           }
         }
       }

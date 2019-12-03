@@ -6,6 +6,7 @@ export default gql`
       reference
       html
       copyright
+      version
     }
   }
 `;

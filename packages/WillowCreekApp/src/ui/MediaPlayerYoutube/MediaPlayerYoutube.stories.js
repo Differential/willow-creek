@@ -50,6 +50,34 @@ storiesOf('ui-media-player-youtube/MediaPlayerYoutube', module).add(
                 </ButtonLink>
               )}
             </Mutation>
+            <Mutation mutation={PLAY_VIDEO}>
+              {(play) => (
+                <ButtonLink
+                  onPress={() =>
+                    play({
+                      variables: {
+                        mediaSource: {
+                          uri: 'wCMUeMijrak',
+                          __typename: 'YoutubeMediaSource',
+                        },
+                        posterSources: [
+                          {
+                            uri:
+                              'https://img.youtube.com/vi/FFkGi4bjfmg/maxresdefault.jpg',
+                            __typename: 'ImageMediaSource',
+                          },
+                        ],
+                        title: 'Welcome to the Willow Creek YouTube Channel',
+                        artist: 'Willow Creek Community Church',
+                        isVideo: true,
+                      },
+                    })
+                  }
+                >
+                  Play Livestream
+                </ButtonLink>
+              )}
+            </Mutation>
           </CenteredView>
         </FlexedView>
         <MediaPlayerYoutube />

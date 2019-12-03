@@ -2,14 +2,17 @@ export default {
   Query: {
     liveStream: (root, args, { dataSources }) =>
       dataSources.LiveStream.getLiveStream(),
+    liveStreams: (root, args, { dataSources }) =>
+      dataSources.LiveStream.getLiveStreams(),
   },
   LiveStream: {
-    isLive: ({ islive }) => islive,
-    eventStartTime: () => null,
-    stream: ({ url, name, img }) => ({
-      sources: [{ uri: url.replace('http:', 'https:') }],
-      label: name,
-      thumbnail: { uri: img },
-    }),
+    contentItem: async (root, args, { dataSources }) => {
+      if (root.contentItem) {
+        return root.contentItem;
+      }
+      return dataSources.ContentItem.byUserCampus({
+        contentChannelIds: [16],
+      }).first();
+    },
   },
 };

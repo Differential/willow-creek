@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
-// import PropTypes from 'prop-types';
-
-import { styled, ActionListCard, H3, H6 } from '@apollosproject/ui-kit';
+import { styled, H3, H6 } from '@apollosproject/ui-kit';
+import Browser from '../../../ui/WebBrowser';
+import ActionListCard from '../../../ui/ActionListCard';
 
 import GET_FEED_FEATURES from './getFeedFeatures';
 
@@ -17,10 +17,11 @@ const StyledH6 = styled(({ theme }) => ({
 //     transitionKey: 2,
 //   });
 
-const Features = memo(({ navigation }) => (
+const Features = ({ navigation, refetchRef }) => (
   <Query query={GET_FEED_FEATURES} fetchPolicy="cache-and-network">
-    {({ data: features, loading }) =>
-      loading ? (
+    {({ data: features, loading, refetch }) => {
+      refetchRef(refetch);
+      return loading ? (
         <ActionListCard
           isLoading
           header={
@@ -90,7 +91,7 @@ const Features = memo(({ navigation }) => (
         />
       ) : (
         get(features, 'userFeedFeatures', []).map(
-          ({ title, subtitle, actions, id }) =>
+          ({ title, subtitle, actions, id, additionalAction }) =>
             actions.length ? (
               <ActionListCard
                 isLoading={loading}
@@ -115,20 +116,22 @@ const Features = memo(({ navigation }) => (
                       transitionKey: 2,
                     });
                   }
+                  if (action === 'OPEN_URL') {
+                    Browser.open(relatedNode.url);
+                  }
                 }}
-                onPressCardActionButton={() =>
-                  navigation.navigate('ContentFeed', {
-                    itemId: id,
-                    itemTitle: title,
-                  })
+                onPressActionListButton={
+                  additionalAction
+                    ? () => navigation.navigate('EventFeed') // TODO: Wire this up to use the same functionality that onPressActionItem uses
+                    : null
                 }
               />
             ) : null
         )
-      )
-    }
+      );
+    }}
   </Query>
-));
+);
 
 Features.displayName = 'Features';
 

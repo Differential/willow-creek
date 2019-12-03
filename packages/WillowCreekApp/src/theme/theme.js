@@ -119,6 +119,20 @@ const buttons = ({ colors: themeColors }) => ({
 });
 
 const types = {
+  light: () => ({
+    colors: {
+      shadows: {
+        default: 'rgba(48, 48, 48, 0.08)',
+      },
+    },
+  }),
+  dark: () => ({
+    colors: {
+      shadows: {
+        default: 'rgba(8, 0, 20, 0.25)',
+      },
+    },
+  }),
   onboarding: ({ colors: themeColors, alpha }) => ({
     colors: {
       text: {
@@ -143,7 +157,7 @@ const types = {
       action: {
         default: themeColors.darkTertiary,
         primary: themeColors.primary,
-        secondary: themeColors.secondary,
+        secondary: themeColors.lightPrimary,
         tertiary: themeColors.tertiary,
       },
     },

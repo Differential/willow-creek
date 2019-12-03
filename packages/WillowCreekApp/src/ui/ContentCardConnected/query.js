@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { CONTENT_ITEM_FRAGMENT } from 'WillowCreekApp/src/content-single/getContentItem';
 
 export const COVER_IMAGE_FRAGMENT = gql`
   fragment coverImageFragment on ContentItem {
@@ -31,13 +32,17 @@ export const BASE_CARD_FRAGMENT = gql`
     ...coverImageFragment
     ...themeFragment
     title
+    hyphenatedTitle: title(hyphenated: true)
     summary
-    isLiked
     ... on MediaContentItem {
       videos {
         sources {
           uri
         }
+      }
+      parentChannel {
+        id
+        name
       }
     }
     ... on WeekendContentItem {
@@ -45,13 +50,19 @@ export const BASE_CARD_FRAGMENT = gql`
         sources {
           uri
         }
-      }
-      liveStream {
-        isLive
+        youtubeId
       }
       parentChannel {
         id
         name
+      }
+    }
+    ... on WillowTVContentItem {
+      liveStream {
+        isLive
+      }
+      videos {
+        youtubeId
       }
     }
     ... on DevotionalContentItem {
@@ -65,22 +76,17 @@ export const BASE_CARD_FRAGMENT = gql`
   ${THEME_FRAGMENT}
 `;
 
-export const LARGE_CARD_FRAGMENT = gql`
-  fragment largeCardFragment on ContentItem {
-    ...baseCardFragment
-  }
-  ${BASE_CARD_FRAGMENT}
-`;
-
 const GET_CONTENT_CARD = gql`
   query getContentCard($contentId: ID!) {
     node(id: $contentId) {
       id
       __typename
-      ...largeCardFragment
+      ...baseCardFragment
+      ...contentItemFragment
     }
   }
-  ${LARGE_CARD_FRAGMENT}
+  ${BASE_CARD_FRAGMENT}
+  ${CONTENT_ITEM_FRAGMENT}
 `;
 
 export default GET_CONTENT_CARD;

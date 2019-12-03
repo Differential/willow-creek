@@ -4,9 +4,8 @@ export const CONTENT_ITEM_FRAGMENT = gql`
   fragment contentItemFragment on ContentItem {
     id
     title
-    isLiked
-    likedCount
     summary
+    htmlContent
     coverImage {
       name
       sources {
@@ -17,9 +16,6 @@ export const CONTENT_ITEM_FRAGMENT = gql`
       type
       colors {
         primary
-        secondary
-        screen
-        paper
       }
     }
     parentChannel {
@@ -34,11 +30,6 @@ export const CONTENT_ITEM_FRAGMENT = gql`
     audios {
       sources {
         uri
-      }
-    }
-    ... on WeekendContentItem {
-      liveStream {
-        isLive
       }
     }
   }

@@ -10,6 +10,8 @@ export default gql`
           id
           html
           reference
+          copyright
+          version
         }
       }
     }

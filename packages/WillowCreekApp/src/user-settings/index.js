@@ -3,6 +3,7 @@ import { ScrollView } from 'react-native';
 import { StackActions, NavigationActions } from 'react-navigation';
 import PropTypes from 'prop-types';
 import { Query, Mutation } from 'react-apollo';
+import { getVersion, getBuildNumber } from 'react-native-device-info';
 
 import {
   BackgroundView,
@@ -85,9 +86,7 @@ class UserSettings extends PureComponent {
                       </TableView>
                       <TableView>
                         <Touchable
-                          onPress={() =>
-                            openUrl('https://apollosrock.newspring.cc/')
-                          }
+                          onPress={() => openUrl('mailto:INFO@WILLOWCREEK.ORG')}
                         >
                           <Cell>
                             <CellText>Give Feedback</CellText>
@@ -98,7 +97,9 @@ class UserSettings extends PureComponent {
                       <TableView>
                         <Touchable
                           onPress={() =>
-                            openUrl('https://apollosrock.newspring.cc/')
+                            openUrl(
+                              'https://www.willowcreek.org/en/about/privacy'
+                            )
                           }
                         >
                           <Cell>
@@ -106,17 +107,13 @@ class UserSettings extends PureComponent {
                             <CellIcon name="arrow-next" />
                           </Cell>
                         </Touchable>
-                        <Divider />
-                        <Touchable
-                          onPress={() =>
-                            openUrl('https://apollosrock.newspring.cc/')
-                          }
-                        >
-                          <Cell>
-                            <CellText>Terms of Use</CellText>
-                            <CellIcon name="arrow-next" />
-                          </Cell>
-                        </Touchable>
+                        {/* <Divider /> */}
+                        {/* <Touchable onPress={() => openUrl('')}> */}
+                        {/*   <Cell> */}
+                        {/*     <CellText>Terms of Use</CellText> */}
+                        {/*     <CellIcon name="arrow-next" /> */}
+                        {/*   </Cell> */}
+                        {/* </Touchable> */}
                       </TableView>
                       <TableView>
                         <Mutation mutation={LOGOUT}>
@@ -150,6 +147,13 @@ class UserSettings extends PureComponent {
                             </Touchable>
                           )}
                         </Mutation>
+                      </TableView>
+                      <TableView>
+                        <Cell>
+                          <CellText>
+                            {`App Version: ${getVersion()}.${getBuildNumber()}`}
+                          </CellText>
+                        </Cell>
                       </TableView>
                     </>
                   )}

@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
 import { Query } from 'react-apollo';
 
-import { HorizontalTileFeed, TouchableScale } from '@apollosproject/ui-kit';
+import {
+  HorizontalTileFeed,
+  TouchableScale,
+  PaddedView,
+  H5,
+} from '@apollosproject/ui-kit';
 
 import HorizontalContentCardConnected from '../../ui/HorizontalContentCardConnected';
 
@@ -26,17 +31,27 @@ class HorizontalContentFeed extends Component {
     }),
   };
 
+  renderItem = ({ item }) => {
+    const itemId = get(item, 'id', '');
+    const disabled = get(item, 'id', '') === this.props.contentId;
+    return (
+      <TouchableScale
+        onPress={() => this.handleOnPressItem(item)}
+        disabled={disabled}
+      >
+        <HorizontalContentCardConnected
+          contentId={itemId}
+          disabled={disabled}
+        />
+      </TouchableScale>
+    );
+  };
+
   handleOnPressItem = (item) => {
     this.props.navigation.push('ContentSingle', {
       itemId: item.id,
     });
   };
-
-  renderItem = ({ item }) => (
-    <TouchableScale onPress={() => this.handleOnPressItem(item)}>
-      <HorizontalContentCardConnected contentId={get(item, 'id', '')} />
-    </TouchableScale>
-  );
 
   renderFeed = ({ data, loading, error, fetchMore }) => {
     if (error) return null;
@@ -53,42 +68,47 @@ class HorizontalContentFeed extends Component {
       ({ id }) => id === this.props.contentId
     );
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
-
     return content && content.length ? (
-      <HorizontalTileFeed
-        content={content}
-        loadingStateObject={loadingStateObject}
-        renderItem={this.renderItem}
-        initialScrollIndex={initialScrollIndex}
-        getItemLayout={(itemData, index) => ({
-          // We need to pass this function so that initialScrollIndex will work.
-          length: 240,
-          offset: 240 * index,
-          index,
-        })}
-        onEndReached={() =>
-          fetchMore({
-            query: GET_HORIZONTAL_CONTENT,
-            variables: { cursor, itemId: this.props.contentId },
-            updateQuery: (previousResult, { fetchMoreResult }) => {
-              const connection = isParent
-                ? 'childContentItemsConnection'
-                : 'siblingContentItemsConnection';
-              const newEdges = get(fetchMoreResult.node, connection, []).edges;
+      <PaddedView horizontal={false}>
+        <PaddedView vertical={false}>
+          <H5>In this series</H5>
+        </PaddedView>
+        <HorizontalTileFeed
+          content={content}
+          loadingStateObject={loadingStateObject}
+          renderItem={this.renderItem}
+          initialScrollIndex={initialScrollIndex}
+          getItemLayout={(itemData, index) => ({
+            // We need to pass this function so that initialScrollIndex will work.
+            length: 240,
+            offset: 240 * index,
+            index,
+          })}
+          onEndReached={() =>
+            fetchMore({
+              query: GET_HORIZONTAL_CONTENT,
+              variables: { cursor, itemId: this.props.contentId },
+              updateQuery: (previousResult, { fetchMoreResult }) => {
+                const connection = isParent
+                  ? 'childContentItemsConnection'
+                  : 'siblingContentItemsConnection';
+                const newEdges = get(fetchMoreResult.node, connection, [])
+                  .edges;
 
-              return {
-                node: {
-                  ...previousResult.node,
-                  [connection]: {
-                    ...previousResult.node[connection],
-                    edges: [...edges, ...newEdges],
+                return {
+                  node: {
+                    ...previousResult.node,
+                    [connection]: {
+                      ...previousResult.node[connection],
+                      edges: [...edges, ...newEdges],
+                    },
                   },
-                },
-              };
-            },
-          })
-        }
-      />
+                };
+              },
+            })
+          }
+        />
+      </PaddedView>
     ) : null;
   };
 

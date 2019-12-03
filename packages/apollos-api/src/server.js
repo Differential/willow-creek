@@ -2,6 +2,7 @@ import { ApolloServer } from 'apollo-server-express';
 import ApollosConfig from '@apollosproject/config';
 import express from 'express';
 import { RockLoggingExtension } from '@apollosproject/rock-apollo-data-source';
+import { get } from 'lodash';
 
 import {
   resolvers,
@@ -12,6 +13,7 @@ import {
   applyServerMiddleware,
   setupJobs,
 } from './data';
+import { report } from './data/bugsnag';
 
 export { resolvers, schema, testSchema };
 
@@ -36,11 +38,29 @@ const apolloServer = new ApolloServer({
   typeDefs: schema,
   resolvers,
   dataSources,
-  context,
+  context: ({ req, res, ...args }) => {
+    res.set('Vary', 'X-Campus');
+    return context({ req, res, ...args });
+  },
   introspection: true,
   extensions,
+  debug: true,
   formatError: (error) => {
-    console.error(error.extensions.exception.stacktrace.join('\n'));
+    report(
+      error,
+      {
+        'GraphQL Info': { path: error.path },
+        'Custom Stacktrace': {
+          trace: get(error, 'extensions.exception.stacktrace', []).join('\n'),
+        },
+      },
+      (err) => {
+        err.errorClass = error.message;
+      }
+    );
+    if (get(error, 'extensions.exception.stacktrace')) {
+      delete error.extensions.exception.stacktrace;
+    }
     return error;
   },
   playground: {
