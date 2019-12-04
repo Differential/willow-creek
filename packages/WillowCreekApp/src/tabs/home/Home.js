@@ -4,7 +4,7 @@ import { get, flatten } from 'lodash';
 import PropTypes from 'prop-types';
 import Color from 'color';
 
-import { View, SafeAreaView, StatusBar, Platform } from 'react-native';
+import { View, SafeAreaView, StatusBar } from 'react-native';
 
 import {
   FeedView,
@@ -37,6 +37,13 @@ const BackgroundFill = styled(({ theme, color }) => ({
   left: 0,
   right: 0,
 }))(View);
+
+const ThemedStatusBar = styled(
+  ({ theme }) => ({
+    backgroundColor: theme.colors.paper,
+  }),
+  'Home.ThemedStatusBar'
+)(StatusBar);
 
 const FlexedSafeAreaView = styled({
   flex: 1,
@@ -73,12 +80,9 @@ class Home extends PureComponent {
   };
 
   componentDidMount() {
+    // this produces a smoother transition when the app launches or comes from on boarding
     this._navListener = this.props.navigation.addListener('didFocus', () => {
       StatusBar.setBarStyle('dark-content');
-      if (Platform.OS === 'Android') {
-        StatusBar.setTranslucent(true);
-        StatusBar.setBackgroundColor('transparent');
-      }
     });
   }
 
@@ -121,6 +125,7 @@ class Home extends PureComponent {
           //             : null;
           return (
             <BackgroundView>
+              <ThemedStatusBar />
               <FlexedSafeAreaView>
                 {/* <BackgroundFill color={featuredColor} /> */}
                 <FlexedView>
