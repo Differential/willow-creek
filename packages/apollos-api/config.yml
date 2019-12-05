@@ -168,8 +168,6 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/chicago
         - title: I need prayer
           url: mailto:glenn@willowchicago.org
-        - title: I would like to give
-          url: https://pushpay.com/pay/wcchicago
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
     - # Casa De Luz
@@ -187,8 +185,6 @@ ROCK_MAPPINGS:
           style: EXTERNAL_BAR_ITEM
         - title: Join a small group
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
-        - title: I would like to give
-          url: https://pushpay.com/pay/wccasadeluz
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
     - # Crystal Lake
@@ -210,8 +206,6 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/crystal-lake
         - title: I need prayer
           url: mailto:wclprays@willowcreek.org
-        - title: I would like to give
-          url: https://pushpay.com/pay/wccrystallake
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
     - # Huntley Campus
@@ -233,8 +227,6 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/connect/getting-started/huntley/groups
         - title: I need prayer
           url: mailto:hmadsen@wcservingvolunteer.org
-        - title: I would like to give
-          url: https://pushpay.com/pay/wchuntley
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
     - # North Shore
@@ -254,8 +246,6 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
         - title: I need prayer
           url: mailto:nsprayer@willowcreek.org
-        - title: I would like to give
-          url: https://pushpay.com/pay/wcnorthshore
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
     - # South Barrington
@@ -277,8 +267,6 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-barrington
         - title: I need prayer
           url: https://www.willowcreek.org/en/contact/prayer
-        - title: I would like to give
-          url: https://pushpay.com/g/willowcreek?src=hpp
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
     - # South Lake
@@ -300,8 +288,6 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/south-lake
         - title: I need prayer
           url: https://www.willowcreek.org/en/contact/prayer
-        - title: I would like to give
-          url: https://pushpay.com/pay/wcsouthlake
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
     - # Wheaton
@@ -323,8 +309,6 @@ ROCK_MAPPINGS:
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/wheaton
         - title: I need prayer
           url: mailto:prayer@willowwheaton.org
-        - title: I would like to give
-          url: http://pushpay.com/pay/wcwheaton
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
 
