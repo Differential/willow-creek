@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import { get, flatten } from 'lodash';
 import PropTypes from 'prop-types';
-import Color from 'color';
 
 import { View, SafeAreaView, StatusBar } from 'react-native';
 
@@ -28,15 +27,6 @@ import Features from './Features';
 import GET_USER_FEED from './getUserFeed';
 import GET_CAMPAIGN_CONTENT_ITEM from './getCampaignContentItem';
 import GET_USER_CAMPUS from './getUserCampus';
-
-const BackgroundFill = styled(({ theme, color }) => ({
-  height: 44,
-  backgroundColor: color || theme.colors.secondary,
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  right: 0,
-}))(View);
 
 const ThemedStatusBar = styled(
   ({ theme }) => ({
@@ -118,16 +108,10 @@ class Home extends PureComponent {
           );
 
           const featuredItem = get(featuredContent, '[0].node', null);
-          //           const featuredColor = get(featuredItem, 'theme.colors.primary')
-          //             ? Color(get(featuredItem, 'theme.colors.primary'))
-          //                 .darken(0.5)
-          //                 .toString()
-          //             : null;
           return (
             <BackgroundView>
               <ThemedStatusBar />
               <FlexedSafeAreaView>
-                {/* <BackgroundFill color={featuredColor} /> */}
                 <FlexedView>
                   <Query
                     query={GET_USER_FEED}
