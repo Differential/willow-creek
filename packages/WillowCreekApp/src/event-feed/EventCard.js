@@ -83,9 +83,6 @@ const EventCard = withIsLoading(
               'h:mmA'
             )}`}
         </StyledH6>
-        <StyledH6 numberOfLines={1} ellipsizeMode="tail">
-          Location: {location}
-        </StyledH6>
       </FlexedView>
     </Cell>
   ))
