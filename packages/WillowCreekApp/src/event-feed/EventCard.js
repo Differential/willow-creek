@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import moment from 'moment';
 import isNull from 'lodash/isNull';
@@ -70,7 +71,7 @@ const EventCard = withThemeMixin(({ theme }) => ({
   colors: { background: { accent: theme.colors.white } },
 }))(({ image, start, end, name, __typename }) => (
   <Cell>
-    <Image source={image} start={start} type={__typename} />
+    <Image source={image && image.sources} start={start} type={__typename} />
     <FlexedView>
       <H4 numberOfLines={2} ellipsizeMode="tail">
         {name}
@@ -84,5 +85,15 @@ const EventCard = withThemeMixin(({ theme }) => ({
     </FlexedView>
   </Cell>
 ));
+
+Image.propTypes = {
+  source: PropTypes.arrayOf(
+    PropTypes.shape({
+      uri: PropTypes.string,
+    })
+  ),
+  start: PropTypes.string,
+  type: PropTypes.string,
+};
 
 export default EventCard;
