@@ -11,7 +11,6 @@ import {
   styled,
   withThemeMixin,
   ConnectedImage,
-  withIsLoading,
 } from '@apollosproject/ui-kit';
 
 const StyledH6 = styled(({ theme }) => ({
@@ -67,25 +66,23 @@ const Image = ({ source, start, type }) => {
   return <CellImage source={source} />;
 };
 
-const EventCard = withIsLoading(
-  withThemeMixin(({ theme }) => ({
-    colors: { background: { accent: theme.colors.white } },
-  }))(({ image, start, end, name, location, __typename }) => (
-    <Cell>
-      <Image source={image} start={start} type={__typename} />
-      <FlexedView>
-        <H4 numberOfLines={2} ellipsizeMode="tail">
-          {name}
-        </H4>
-        <StyledH6 numberOfLines={1}>
-          {start &&
-            `${moment(start).format('dddd, h:mmA')} — ${moment(end).format(
-              'h:mmA'
-            )}`}
-        </StyledH6>
-      </FlexedView>
-    </Cell>
-  ))
-);
+const EventCard = withThemeMixin(({ theme }) => ({
+  colors: { background: { accent: theme.colors.white } },
+}))(({ image, start, end, name, __typename }) => (
+  <Cell>
+    <Image source={image} start={start} type={__typename} />
+    <FlexedView>
+      <H4 numberOfLines={2} ellipsizeMode="tail">
+        {name}
+      </H4>
+      <StyledH6 numberOfLines={1}>
+        {start &&
+          `${moment(start).format('dddd, h:mmA')} — ${moment(end).format(
+            'h:mmA'
+          )}`}
+      </StyledH6>
+    </FlexedView>
+  </Cell>
+));
 
 export default EventCard;

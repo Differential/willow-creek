@@ -12,7 +12,6 @@ export default gql`
             id
             name
             description
-            location
             start
             end
             url
