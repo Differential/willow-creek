@@ -12,6 +12,7 @@
     "fixlint": "eslint ./src --fix",
     "ios": "react-native run-ios --simulator=\"iPhone 11\"",
     "lint": "eslint ./src --ext .js",
+    "pods": "(cd ios && bundle install && bundle exec pod install)",
     "prestart": "yarn generate-stories && node ./scripts/get-introspection-data.js",
     "start": "react-native start",
     "generate-stories": "rnstl --searchDir ./src --pattern **/*.stories.js",
