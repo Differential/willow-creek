@@ -69,7 +69,7 @@ const Image = ({ source, start, type }) => {
 
 const EventCard = withThemeMixin(({ theme }) => ({
   colors: { background: { accent: theme.colors.white } },
-}))(({ image, start, end, name, __typename }) => (
+}))(({ image, start, end, name, location, __typename }) => (
   <Cell>
     <Image source={image && image.sources} start={start} type={__typename} />
     <FlexedView>
@@ -82,6 +82,7 @@ const EventCard = withThemeMixin(({ theme }) => ({
             'h:mmA'
           )}`}
       </StyledH6>
+      <StyledH6 numberOfLines={1}>{location}</StyledH6>
     </FlexedView>
   </Cell>
 ));
