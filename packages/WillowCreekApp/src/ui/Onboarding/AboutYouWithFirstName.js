@@ -86,6 +86,7 @@ const AboutYouOverride = memo(
               ? moment(values.birthDate).format('MM/DD/YYYY')
               : '' // Pass an empty string if we don't have a birthday to show the placeholder.
           }
+          maximumDate={new Date()}
           onChange={(value) =>
             setFieldValue('birthDate', moment.utc(value).toJSON())
           }
