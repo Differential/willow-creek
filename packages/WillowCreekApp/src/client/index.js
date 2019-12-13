@@ -16,8 +16,14 @@ const goToAuth = () => NavigationService.navigate('Auth');
 const wipeData = () => cache.writeData({ data: defaults });
 
 let resetStore;
-const onAuthError = () => {
-  resetStore();
+let storeResetting = false;
+
+const onAuthError = async () => {
+  storeResetting = true;
+  if (!storeResetting) {
+    await resetStore();
+  }
+  storeResetting = false;
   goToAuth();
 };
 
