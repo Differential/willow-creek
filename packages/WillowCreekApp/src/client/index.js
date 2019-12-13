@@ -12,15 +12,15 @@ import httpLink from './httpLink';
 import cache, { ensureCacheHydration, MARK_CACHE_LOADED } from './cache';
 import campusLink from './campusLink';
 
-const goToAuth = () => NavigationService.navigate('Auth');
+const goToAuth = () => NavigationService.resetToAuth();
 const wipeData = () => cache.writeData({ data: defaults });
 
 let resetStore;
 let storeResetting = false;
 
 const onAuthError = async () => {
-  storeResetting = true;
   if (!storeResetting) {
+    storeResetting = true;
     await resetStore();
   }
   storeResetting = false;
