@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import NavigationActions from 'WillowCreekApp/src/NavigationService';
+// import NavigationActions from 'WillowCreekApp/src/NavigationService';
 import { get } from 'lodash';
 import {
   TableView,

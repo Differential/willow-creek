@@ -248,18 +248,18 @@
     graphql-tag "^2.10.0"
     lodash "^4.17.11"
 
-"@apollosproject/ui-analytics@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-analytics/-/ui-analytics-1.2.4.tgz#d5e7d2da163eec9dfe0e5b6ead45b99a5cf04b9d"
-  integrity sha512-joInM+yrfTfbu9l+WlsZbvVH1mkrtF1UNRLfmwpoUhnxHTYzQb19OkOIL1suTn17Pwja4noVQ09G85CDVLWH1w==
+"@apollosproject/ui-analytics@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-analytics/-/ui-analytics-1.2.5.tgz#becee191fba716b3de9aa780527374d083b9e562"
+  integrity sha512-bDAsS36ovAtWOBS3JM9Yiz2He8SaLmN2upYPT5s8odaVzW/RaSj4G2G/eHiREtw+3um6YJs1khV0c081706J9g==
   dependencies:
     graphql-tag "2.9.2"
     react-native-device-info "^4.0.1"
 
-"@apollosproject/ui-auth@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-auth/-/ui-auth-1.2.4.tgz#7f40c25603f9830098ad024187fec04f7e0c47ad"
-  integrity sha512-wKZeVjto9Of2s1uBc8sKNvXKdDJ0fcsAEdmJK+YiFVLfcaOwIsM6Q0b3qhfCZtVJR1zUxwGRXO60X/tX4SExsA==
+"@apollosproject/ui-auth@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-auth/-/ui-auth-1.2.5.tgz#4c3ea123bd301c0f38206a03ca778ac990f11966"
+  integrity sha512-XjsjfgRAzODwBVDfPqWFmjzfpC3SyBU+5UIxTZtl1QwOunh6Btlo/ChmjP+DEto0Dw5m25QKL3jQbNWUvRxz2Q==
   dependencies:
     "@react-native-community/async-storage" "^1.5.1"
     apollo-cache-inmemory "^1.5.1"
@@ -270,42 +270,42 @@
     graphql-tag "2.9.2"
     yup "^0.27.0"
 
-"@apollosproject/ui-htmlview@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-htmlview/-/ui-htmlview-1.2.4.tgz#04ce2d9429cccf8361689ef13c4346bf3b44811e"
-  integrity sha512-e3ypABomwIOtqfbz7jNEf7zIOopli81ykt5MmVl6X59uushpOHwOEsOvfdQniwxmKjhggryNy8WJy5mJsxuC9Q==
+"@apollosproject/ui-htmlview@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-htmlview/-/ui-htmlview-1.2.5.tgz#031f186f8ca380dbb14699a5336773cdf3c1ebc1"
+  integrity sha512-wT6T6/MnjG3X5sPrAUyW75SLaWa3/9suqly9MnY+FBq6kH2+dqrpmmBRp1JXfiVv9AV8M4/eF87ATWoLVvylkA==
   dependencies:
-    "@apollosproject/ui-kit" "^1.2.4"
-    "@apollosproject/ui-storybook" "^1.2.4"
+    "@apollosproject/ui-kit" "^1.2.5"
+    "@apollosproject/ui-storybook" "^1.2.5"
     entities "^1.1.2"
     htmlparser2 "3.9.2"
 
-"@apollosproject/ui-kit@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.2.4.tgz#9b895df3063ee4553ca104f2f0318fe214080f2f"
-  integrity sha512-DVB/33SYDvn9AS8bagPlLMfliZ4wY9GANvIDcVAAibS34iJGsyQoNaCsUv/9kZAjjA9mlRGdkjb2o97LJQMXXQ==
+"@apollosproject/ui-kit@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.2.5.tgz#5fa8a3a4b6070801cf9016cf1d2ec4511e8321f5"
+  integrity sha512-GjGRI89J5gWzl4ByvYcTrrhWoCFif0Vcr1l4RrhFr5TBGCbkFnOnZYf4TR0nR1YKLGCCdadFd2B7XbJU54A+QQ==
   dependencies:
     color "^3.1.0"
     lodash "^4.17.11"
     moment "^2.24.0"
     numeral "^2.0.6"
-    react-native-modal-datetime-picker "6.0.0"
+    react-native-modal-datetime-picker "7.6.0"
     react-native-safe-area-context "^0.3.6"
     react-native-tab-view "1.0.2"
     recompose "^0.30.0"
     rn-placeholder "1.2.0"
 
-"@apollosproject/ui-media-player@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-media-player/-/ui-media-player-1.2.4.tgz#377a430ca35eb45dd8d64acf8c508c7a699d3026"
-  integrity sha512-si8yfohcyv5ynLXIjhQnDeEAHVJ40iCoHqlTe4A9Hx2rRIh6DqO2l79f8NdA3tFWWqBKNGozV4Pzk6tbFx0nng==
+"@apollosproject/ui-media-player@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-media-player/-/ui-media-player-1.2.5.tgz#b97237f95efba5f3b66745df693ee7f3ded622f8"
+  integrity sha512-NxJqkCRA72sxcDC8ZgbKqbtjYJGFFXAqq4FSbqyMd2/+IOCswViHsK3AW7PYAYsDeRmuRDG9pZJpomxr1itTJA==
   dependencies:
     graphql-tag "^2.10.1"
 
-"@apollosproject/ui-notifications@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-notifications/-/ui-notifications-1.2.4.tgz#eb60907bb2be5e6e8d1361f432d6813ac41c9a3d"
-  integrity sha512-imedZeb+dh3DOxDKulORA5FmaDnVBYa5P4Ey7z89Jfvz3LP9NE4PJtr/Zww2N7eF1xwvpDy9CZd95YHRsLYhCA==
+"@apollosproject/ui-notifications@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-notifications/-/ui-notifications-1.2.5.tgz#e75ea44c6ddc2d28ca7c776944b4443195a697a4"
+  integrity sha512-TlupQRoZ+JfpxdXR0etAC+fo0dl5R11T/riu66pmR4BidyPbg0/mGej07gHvyqLn6DtxAZ0bq7e8ADyGFlE0ng==
   dependencies:
     apollo-cache-inmemory "^1.5.1"
     apollo-link-context "1.0.14"
@@ -314,10 +314,10 @@
     lodash "^4.17.11"
     url "^0.11.0"
 
-"@apollosproject/ui-onboarding@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-onboarding/-/ui-onboarding-1.2.4.tgz#a465e87cb133b88de5492bef47502bcc089705cf"
-  integrity sha512-AzO81sflGbJrrPBndyQgM114DjcjJN6M3ZJCmoqxNw74bZjCCEgFrjef3n5qihHjd53rNsIUe4zxVSRsnFtu6A==
+"@apollosproject/ui-onboarding@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-onboarding/-/ui-onboarding-1.2.5.tgz#6f78b4e404e4ed2bd9167952a805fed8236e0a6b"
+  integrity sha512-pGGJAY4fadxPvrzSaaCGSPMqoxNRb9UFz2NqNoP8aHuBBucOSb7+XVSQD+2jSUyDFO95lqAKO/cZTKG/XwYq9Q==
   dependencies:
     "@react-native-community/async-storage" "^1.5.1"
     formik "1.5.1"
@@ -329,24 +329,24 @@
     react-native-swiper "^1.5.14"
     yup "0.26.6"
 
-"@apollosproject/ui-passes@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-passes/-/ui-passes-1.2.4.tgz#a8a950e871a5fd74647183a49e9f03334b3f96d7"
-  integrity sha512-nmxyfWEaNrScqTzTlGdWh0SKJUo7DISS5K3QZ7sGfNtx4UTKTzVZXUNcMc0Ap8SzAGhRvpDcJTE/pT+ok0YG+g==
+"@apollosproject/ui-passes@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-passes/-/ui-passes-1.2.5.tgz#485c719e78236ef36e9db0a6620b931ee2b3019e"
+  integrity sha512-eV9ZEr504npEkfoJJmQK/mrbv3JotPCB/3U+ILaA3pEEE7ZlSgbBD7shfWXhi2xN332eRLiYq7DsgYeTKTeOSQ==
   dependencies:
-    "@apollosproject/ui-kit" "^1.2.4"
+    "@apollosproject/ui-kit" "^1.2.5"
     graphql-tag "^2.10.1"
     react-apollo "2.5.5"
 
-"@apollosproject/ui-scripture@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-scripture/-/ui-scripture-1.2.4.tgz#e46c18d35449370a4da1070307af8bc9d7f73d7a"
-  integrity sha512-OEjpovcL2H93p2w8h55oJCY4PEfNTMx4W7C+fer9QXL+IacrkGnLMJW3rD17bQwAEcDmpsNx+AgjjI+ZYGCWew==
+"@apollosproject/ui-scripture@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-scripture/-/ui-scripture-1.2.5.tgz#9168812b365cfdd2b524c5b67fe117f275cd5c8b"
+  integrity sha512-B9/EDGmNcCcn+hPXi2wEmb8xos1a4Cbc1HrnnwX0hhv57ollf9OWs3BuKOOVMzEPwkPYh9bObL9peBB/lb/LxQ==
 
-"@apollosproject/ui-storybook@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-storybook/-/ui-storybook-1.2.4.tgz#8230aca20296f9f4e55fb31cd4e263ad10c2c1f3"
-  integrity sha512-34tBAIUpbtuK9xUy9hAsrPmc86r5v6jmTRljRYoN4ol+TsCOeD8CYe1URDjtLwaO2d9YT00mZlvGruZUfnpBPg==
+"@apollosproject/ui-storybook@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-storybook/-/ui-storybook-1.2.5.tgz#7afec72d97ee1b9332d7b62950f789199d3ac2a4"
+  integrity sha512-qxyUyUfcYwT7Wcy7LWXUzLeNX0Uom6h1Oaq5ATSHfLTE6g7DbBa1H/Fr1MLX6mH2xP6DsvmJKK3qH5yZAVI0gA==
   dependencies:
     "@storybook/addon-actions" "5.2.4"
     "@storybook/addon-links" "5.2.4"
@@ -16388,12 +16388,12 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
-react-native-animatable@^1.2.4:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.0.tgz#b5c3940fc758cfd9b2fe54613a457c4b6962b46e"
-  integrity sha512-GGYEYvderfzPZcPnw7xov4nlRmi9d6oqcIzx0fGkUUsMshOQEtq5IEzFp3np0uTB9n8/gZIZcdbUPggVlVydMg==
+react-native-animatable@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.3.tgz#a13a4af8258e3bb14d0a9d839917e9bb9274ec8a"
+  integrity sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w==
   dependencies:
-    prop-types "^15.5.10"
+    prop-types "^15.7.2"
 
 react-native-config@^0.11.7:
   version "0.11.7"
@@ -16444,26 +16444,26 @@ react-native-maps@0.25.0:
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.25.0.tgz#81bc51eb50e33811a9e1c345cc48869413ead67d"
   integrity sha512-PFJuW1pt+HnnnN0m0OGk29RSvICFVkK/DScX6cUk0SuCSN2DAHx0y6y57lZyYXcYqU4J4usNpfxgp/ccjASDiw==
 
-react-native-modal-datetime-picker@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-6.0.0.tgz#8018994524122ad48fd6bc66f26f623c75a49fb3"
-  integrity sha512-O8brvSXgvRtfHzAyCNSrPcylE05cyK30D8/7rM0kjXLnlDcoiXtEl62qDQw8wnJOAL6kQFGn/iQ8H4mGXptiHw==
+react-native-modal-datetime-picker@7.6.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-7.6.0.tgz#6818f221010d0f61a6396a956b303fee65726fee"
+  integrity sha512-p7MquU/oAFO+S7+d1IYYK/8b9mroZXuStK2HA2FxX3e8O1YeNyq2Bggr4KPr6D0saJ/6iGzq8pFwN0YfaCW9+A==
   dependencies:
-    prop-types "^15.6.1"
-    react-native-modal "^6.2.0"
+    prop-types "^15.7.2"
+    react-native-modal "^11.0.2"
 
-react-native-modal@^6.2.0:
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-6.5.0.tgz#46220b2289a41597d344c1db17454611b426a758"
-  integrity sha512-ewchdETAGd32xLGLK93NETEGkRcePtN7ZwjmLSQnNW1Zd0SRUYE8NqftjamPyfKvK0i2DZjX4YAghGZTqaRUbA==
+react-native-modal@^11.0.2:
+  version "11.5.3"
+  resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-11.5.3.tgz#28b4c761680a165eaf1d2c0fb08e272c0191b39f"
+  integrity sha512-U6RghSkZUZ6c0LHMbwAnVscEwGoI58eXfBstVs18t50miV0GmLcJhIOu5OND+SDGVkBQFiGFRu/pTUJaA7wfGw==
   dependencies:
-    prop-types "^15.6.1"
-    react-native-animatable "^1.2.4"
+    prop-types "^15.6.2"
+    react-native-animatable "1.3.3"
 
-react-native-music-control@0.10.6:
-  version "0.10.6"
-  resolved "https://registry.yarnpkg.com/react-native-music-control/-/react-native-music-control-0.10.6.tgz#a16232cd97e9b9e2b098be22261ed0927851cf95"
-  integrity sha512-JWbQg+v7Wm4ba4ooSDbIWD9xvJ7iQ3DlvdHtso1AhMyDfTGeq3tscITpl2rlMZkRa7UfPpMh09M6+9Ak6CMMRA==
+react-native-music-control@0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/react-native-music-control/-/react-native-music-control-0.10.5.tgz#b1adf71d656bbca8f75b179f6a94a390bd200a10"
+  integrity sha512-rG4xSc5LZf9cgwmUX1gLgVbQaNqtAepAvaZ8ZvwDEMlZU+jK/+2pqLbElEARyNFEt8+jjSHG2TULbQPaPA7Vhw==
 
 react-native-onesignal@3.3.2:
   version "3.3.2"
@@ -16476,6 +16476,11 @@ react-native-passkit-wallet@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/react-native-passkit-wallet/-/react-native-passkit-wallet-0.1.4.tgz#246476c8163813a4b054d06215a9d06042757ec3"
   integrity sha512-H1EQ1NyRVPRujivOZrUkcn7OWGAtsAqGVYghxOLBFHpFLpyGyCvGnfpGjcu4UVej8X50SJsh9d9ysZtVTct23Q==
+
+react-native-permissions@^2.0.5:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-2.0.8.tgz#e6d20a7b6e3df5333a3d80cc83024686fa2f49e3"
+  integrity sha512-qK8Thp+9PTl/YjhKkRr8LPHfX5Evv5Zj/3CmAiqE45qCTB5UbWTKBWUfg3iqfMrjv9nE2rcS1PrIjZCDh6s/gQ==
 
 react-native-safari-view@2.1.0:
   version "2.1.0"
