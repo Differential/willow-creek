@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import moment from 'moment';
 import isNull from 'lodash/isNull';
-import isEmpty from 'lodash/isEmpty';
 
 import {
   H3,

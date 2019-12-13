@@ -26,7 +26,7 @@ const TextContainer = styled(({ theme }) => ({
   borderColor: theme.colors.shadows.default,
 }))(FlexedView);
 
-export const Cell = styled(({ theme }) => ({
+const Cell = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit,
   paddingVertical: theme.sizing.baseUnit / 4,
   backgroundColor: theme.colors.background.paper,
