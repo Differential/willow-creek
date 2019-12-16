@@ -15,6 +15,7 @@ export default gql`
             start
             end
             url
+            location
             image {
               sources {
                 uri
