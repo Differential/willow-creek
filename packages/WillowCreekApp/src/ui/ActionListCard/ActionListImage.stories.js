@@ -18,7 +18,7 @@ storiesOf('ui-action-list-card/ActionListImage', module)
       type="Event"
     />
   ))
-  .add('isloading', () => (
+  .add('loading', () => (
     <ActionListImage
       source="https://picsum.photos/800/1600/?random"
       start="2020-02-18T01:00:00Z"
