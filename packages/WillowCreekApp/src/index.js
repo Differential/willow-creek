@@ -26,8 +26,6 @@ import AuthBackground from './ui/AuthBackground';
 import MediaPlayerYoutube from './ui/MediaPlayerYoutube';
 import Auth from './auth';
 
-import './bugsnag';
-
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: 'dark-content',
   backgroundColor: theme.colors.paper,
