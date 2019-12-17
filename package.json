@@ -27,7 +27,8 @@
     "nuke": "./scripts/boom.sh && yarn nuke:node && yarn nuke:cache",
     "nuke:node": "rm -rdf ./node_modules packages/*/node_modules && yarn cache clean && yarn",
     "nuke:cache": "watchman watch-del-all && ./node_modules/.bin/lerna run start --scope apolloschurchapp --stream -- --reset-cache",
-    "postinstall": "lerna run postinstall && lerna run build"
+    "postinstall": "lerna run postinstall && lerna run build",
+    "pods": "lerna run pods --stream --scope WillowCreekApp"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
@@ -45,6 +46,5 @@
     "babel-eslint": "^10.0.2",
     "prettier": "^1.18.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
