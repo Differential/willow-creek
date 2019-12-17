@@ -41,12 +41,12 @@ const CellMonth = styled(({ theme }) => ({
 
 const hasNoImage = (source) => isNull(source) || source === '';
 
-const Image = ({ isLoading, source, start, type }) => {
+const ActionListImage = ({ isLoading, source, start, type }) => {
+  if (isLoading) {
+    return <CellImage />;
+  }
   if (hasNoImage(source) && type === 'Event') {
     const date = moment(start);
-    if (isLoading) {
-      return <CellImage />;
-    }
     return (
       <CellView>
         <CellDate>{date.format('D')}</CellDate>
@@ -57,7 +57,7 @@ const Image = ({ isLoading, source, start, type }) => {
   return <CellImage source={source} />;
 };
 
-Image.propTypes = {
+ActionListImage.propTypes = {
   source: PropTypes.oneOfType([
     PropTypes.arrayOf(ImageSourceType),
     ImageSourceType,
@@ -67,4 +67,4 @@ Image.propTypes = {
   isLoading: PropTypes.bool,
 };
 
-export default withIsLoading(Image);
+export default withIsLoading(ActionListImage);
