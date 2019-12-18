@@ -3,11 +3,7 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import {
-  BackgroundView,
-  FeedView,
-  withIsLoading,
-} from '@apollosproject/ui-kit';
+import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 
 import Browser from '../ui/WebBrowser';
 import EventCard from './EventCard';
@@ -68,4 +64,4 @@ class ContentFeed extends PureComponent {
   }
 }
 
-export default withIsLoading(ContentFeed);
+export default ContentFeed;
