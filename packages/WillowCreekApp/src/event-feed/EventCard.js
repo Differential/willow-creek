@@ -1,8 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { View } from 'react-native';
 
-import { styled, FlexedView, H4, withThemeMixin } from '@apollosproject/ui-kit';
+import {
+  styled,
+  FlexedView,
+  H4,
+  withThemeMixin,
+  withIsLoading,
+  ImageSourceType,
+} from '@apollosproject/ui-kit';
 
 import ActionListImage from '../ui/ActionListCard/ActionListImage';
 import { StyledH6 } from '../ui/ActionListCard/ActionListItem';
@@ -17,9 +25,7 @@ const Cell = styled(({ theme }) => ({
   justifyContent: 'flex-start',
 }))(View);
 
-const EventCard = withThemeMixin(({ theme }) => ({
-  colors: { background: { accent: theme.colors.white } },
-}))(({ image, start, end, name, location, __typename }) => (
+const EventCard = ({ image, start, end, name, location, __typename }) => (
   <Cell>
     <ActionListImage
       source={image && image.sources}
@@ -39,6 +45,27 @@ const EventCard = withThemeMixin(({ theme }) => ({
       <StyledH6 numberOfLines={1}>{location}</StyledH6>
     </FlexedView>
   </Cell>
-));
+);
 
-export default EventCard;
+EventCard.propTypes = {
+  image: PropTypes.oneOfType([
+    PropTypes.arrayOf(ImageSourceType),
+    ImageSourceType,
+  ]),
+  start: PropTypes.string,
+  end: PropTypes.string,
+  name: PropTypes.string,
+  location: PropTypes.string,
+  __typename: PropTypes.string,
+  /* This prop type is listed because it is needed. However, the prop is passed into context
+   * automatically by `withIsLoading` so the prop variable is never used. */
+  isLoading: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
+};
+
+EventCard.displayName = 'EventCard';
+
+const EventCardWithTheme = withThemeMixin(({ theme }) => ({
+  colors: { background: { accent: theme.colors.white } },
+}))(EventCard);
+
+export default withIsLoading(EventCardWithTheme);
