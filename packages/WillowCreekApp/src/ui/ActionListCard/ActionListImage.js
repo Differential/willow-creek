@@ -10,6 +10,7 @@ import {
   styled,
   ConnectedImage,
   ImageSourceType,
+  getIsLoading,
   withIsLoading,
 } from '@apollosproject/ui-kit';
 
@@ -67,4 +68,4 @@ ActionListImage.propTypes = {
   isLoading: PropTypes.bool,
 };
 
-export default withIsLoading(ActionListImage);
+export default getIsLoading(withIsLoading(ActionListImage));
