@@ -105,6 +105,12 @@ const overrides = {
   'Card.Image': {
     resizeMode: 'cover',
   },
+  'ui-kit.inputs.Search.InputWrapper': {
+    backgroundColor: '#F4F4F5',
+  },
+  'ui-kit.inputs.Search.ClearSearchButtonBackground': {
+    backgroundColor: '#F4F4F5',
+  },
 };
 
 const buttons = ({ colors: themeColors }) => ({
