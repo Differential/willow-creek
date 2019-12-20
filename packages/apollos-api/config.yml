@@ -304,11 +304,13 @@ ROCK_MAPPINGS:
           url: http://pushpay.com/pay/wcwheaton
           style: EXTERNAL_BAR_ITEM
         - title: Find a serving opportunity
-          url: https://www.willowcreek.org/en/serving-opportunities/wheaton
+          url: mailto:lmclaughlin@willowcreek.org?subject=I would like to serve!
         - title: Join a small group
-          url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/wheaton
+          url: mailto:lmclaughlin@willowcreek.org?subject=I would like to join a small group
         - title: I need prayer
-          url: mailto:prayer@willowwheaton.org
+          url: mailto:prayer@willowwheaton.org?subject=I need prayer
+        - title: I have a praise
+          url: mailto:prayer@willowwheaton.org?subject=I need prayer
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
 
