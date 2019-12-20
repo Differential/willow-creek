@@ -10,6 +10,8 @@ import {
   styled,
   ConnectedImage,
   ImageSourceType,
+  getIsLoading,
+  withIsLoading,
 } from '@apollosproject/ui-kit';
 
 const CellImage = styled(({ theme }) => ({
@@ -40,7 +42,10 @@ const CellMonth = styled(({ theme }) => ({
 
 const hasNoImage = (source) => isNull(source) || source === '';
 
-const Image = ({ source, start, type }) => {
+const ActionListImage = ({ isLoading, source, start, type }) => {
+  if (isLoading) {
+    return <CellImage />;
+  }
   if (hasNoImage(source) && type === 'Event') {
     const date = moment(start);
     return (
@@ -53,13 +58,14 @@ const Image = ({ source, start, type }) => {
   return <CellImage source={source} />;
 };
 
-Image.propTypes = {
+ActionListImage.propTypes = {
   source: PropTypes.oneOfType([
     PropTypes.arrayOf(ImageSourceType),
     ImageSourceType,
   ]),
   start: PropTypes.string,
   type: PropTypes.string,
+  isLoading: PropTypes.bool,
 };
 
-export default Image;
+export default getIsLoading(withIsLoading(ActionListImage));

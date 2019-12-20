@@ -42,6 +42,7 @@ const ActionListItem = ({
   relatedNode,
   label,
   onPressActionItem,
+  isLoading,
 }) => {
   const type = get(relatedNode, '__typename');
   const start = get(relatedNode, 'start');
@@ -49,10 +50,19 @@ const ActionListItem = ({
   return (
     <TouchableScale onPress={() => onPressActionItem({ action, relatedNode })}>
       <Cell>
-        <ActionListImage source={imageSource} type={type} start={start} />
+        <ActionListImage
+          source={imageSource}
+          type={type}
+          start={start}
+          isLoading={isLoading}
+        />
         <TextContainer>
-          {label ? <StyledH6 numberOfLines={1}>{label}</StyledH6> : null}
-          <H4 numberOfLines={2} ellipsizeMode="tail">
+          {label ? (
+            <StyledH6 numberOfLines={1} isLoading={isLoading}>
+              {label}
+            </StyledH6>
+          ) : null}
+          <H4 numberOfLines={2} ellipsizeMode="tail" isLoading={isLoading}>
             {title}
           </H4>
         </TextContainer>
@@ -71,6 +81,7 @@ ActionListItem.propTypes = {
   relatedNode: PropTypes.any, // eslint-disable-line
   label: PropTypes.string,
   onPressActionItem: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 export default ActionListItem;
