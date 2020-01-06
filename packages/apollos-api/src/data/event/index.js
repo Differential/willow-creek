@@ -26,6 +26,8 @@ const resolver = resolverMerge(
       },
       url: (root) =>
         `https://rock.willowcreek.org/page/439?EventOccurrenceId=${root.id}`,
+      // Current app design calls for no user-supplied images.
+      image: () => null,
     },
   },
   Event

@@ -106,7 +106,9 @@ export default class Features extends baseFeatures.dataSource {
         .tz('America/Chicago')
         .format('dddd, MMM D'),
       relatedNode: { ...event, __type: 'Event' },
-      image: Event.getImage(event),
+      // image: Event.getImage(event),
+      // Current app design calls for no user-supplied images.
+      image: null,
       action: 'OPEN_URL',
     }));
   }
