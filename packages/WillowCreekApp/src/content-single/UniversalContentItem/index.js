@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Platform } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
@@ -24,7 +24,7 @@ const UniversalContentItem = ({ content, loading }) => {
     <BackgroundView>
       <StretchyView>
         {({ Stretchy, ...scrollViewProps }) => (
-          <FlexedScrollView {...scrollViewProps}>
+          <FlexedScrollView {...(Platform.OS === 'ios' ? scrollViewProps : {})}>
             {coverImageSources.length || loading ? (
               <Stretchy>
                 <GradientOverlayImage
