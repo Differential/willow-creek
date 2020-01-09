@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, ScrollView, View } from 'react-native';
+import { Platform, ScrollView, View } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
@@ -34,7 +34,9 @@ const ContentSeriesContentItem = ({ content, loading }) => {
           <FlexedView style={{ backgroundColor: overlayColor }}>
             <StretchyView>
               {({ Stretchy, ...scrollViewProps }) => (
-                <FlexedScrollView {...scrollViewProps}>
+                <FlexedScrollView
+                  {...(Platform.OS === 'ios' ? scrollViewProps : {})}
+                >
                   <Content>
                     <ThemeMixin
                       mixin={{

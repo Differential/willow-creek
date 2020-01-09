@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Dimensions } from 'react-native';
+import { ScrollView, Dimensions, Platform } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
@@ -51,7 +51,9 @@ const WeekendContentItem = ({ content, loading }) => {
         <BackgroundView>
           <StretchyView>
             {({ Stretchy, ...scrollViewProps }) => (
-              <FlexedScrollView {...scrollViewProps}>
+              <FlexedScrollView
+                {...(Platform.OS === 'ios' ? scrollViewProps : {})}
+              >
                 <Header hasMedia={content.videos && content.videos.sources}>
                   <ThemeMixin
                     mixin={{
