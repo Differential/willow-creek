@@ -90,7 +90,7 @@ const AskNameConnected = memo(
                     touched={touched}
                     errors={errors}
                     setFieldValue={setFieldValue}
-                    existingUser={authStatus === 'NEW_USER_WITH_ROCK_PROFILE'}
+                    existingUser={authStatus !== 'NEW_USER'}
                     isLoading={loading || isSubmitting}
                     {...props}
                   />
