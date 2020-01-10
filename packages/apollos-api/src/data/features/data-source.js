@@ -8,23 +8,14 @@ export default class Features extends baseFeatures.dataSource {
   ACTION_ALGORITHIMS = {
     // We need to make sure `this` refers to the class, not the `ACTION_ALGORITHIMS` object.
     PERSONA_FEED: this.personaFeedAlgorithm.bind(this),
+    POINTER_FEED: this.pointerFeedAlgorithm.bind(this),
     CONTENT_CHANNEL: this.contentChannelAlgorithm.bind(this),
     SERMON_CHILDREN: this.sermonChildrenAlgorithm.bind(this),
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
   };
 
-  async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
+  async resolvePointers({ items }) {
     const { ContentItem } = this.context.dataSources;
-
-    // Get the first three persona items.
-    const personaFeed = await ContentItem.byPersonaFeedAndCampus({
-      first,
-      contentChannelIds,
-    });
-
-    const items = await personaFeed.orderBy('Priority').get();
-
-    // Map them into specific actions.
     const featureListItems = await Promise.all(
       items.map(async (item, i) => {
         const relatedNode = await this.getRelatedNode({ item });
@@ -45,6 +36,36 @@ export default class Features extends baseFeatures.dataSource {
     );
 
     return featureListItems.filter((item) => !!item);
+  }
+
+  async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
+    const { ContentItem } = this.context.dataSources;
+
+    // Get the first three persona items.
+    const personaFeed = await ContentItem.byPersonaFeedAndCampus({
+      first,
+      contentChannelIds,
+    });
+
+    const items = await personaFeed.orderBy('Priority').get();
+
+    // Map them into specific actions.
+    return this.resolvePointers({ items });
+  }
+
+  async pointerFeedAlgorithm({ contentChannelIds, first = 100 }) {
+    const { ContentItem } = this.context.dataSources;
+
+    // Get the first three items from the campus channel.
+    const pointerItems = await ContentItem.byUserCampus({
+      first,
+      contentChannelIds,
+    });
+
+    const items = await pointerItems.orderBy('Priority').get();
+
+    // Map them into specific actions.
+    return this.resolvePointers({ items });
   }
 
   async createActionListFeature({
