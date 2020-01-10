@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, ScrollView, View } from 'react-native';
+import { Platform, Animated, View } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
@@ -7,16 +7,18 @@ import {
   GradientOverlayImage,
   FlexedView,
   PaddedView,
-  StretchyView,
   ThemeMixin,
   ThemeConsumer,
   H2,
 } from '@apollosproject/ui-kit';
+
+import StretchyView from '../../ui/StretchyView';
+
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
 import HorizontalContentFeed from '../HorizontalContentFeed';
 
-const FlexedScrollView = styled({ flex: 1 })(ScrollView);
+const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
 const Content = styled(() => ({
   alignItems: 'flex-start',
