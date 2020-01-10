@@ -16,10 +16,10 @@ class StretchyView extends PureComponent {
 
   scrollY = new Animated.Value(0);
 
-  handleScroll = Animated.event([
-    { nativeEvent: { contentOffset: { y: this.scrollY } } },
-    { useNativeDriver: true },
-  ]);
+  handleScroll = Animated.event(
+    [{ nativeEvent: { contentOffset: { y: this.scrollY } } }],
+    { useNativeDriver: true }
+  );
 
   handleLayout = ({
     nativeEvent: {
