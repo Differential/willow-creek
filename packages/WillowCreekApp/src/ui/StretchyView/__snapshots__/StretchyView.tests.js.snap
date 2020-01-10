@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the StretchyView component should render as a background 1`] = `
+<View
+  StretchyComponent={
+    <pure(Component)
+      maintainAspectRatio={true}
+      overlayColor="white"
+      overlayType="featured"
+      source={
+        Object {
+          "uri": "https://picsum.photos/600/600",
+        }
+      }
+      style={
+        Object {
+          "aspectRatio": 1,
+          "width": "100%",
+        }
+      }
+    />
+  }
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <RCTScrollView
+    Stretchy={[Function]}
+    onScroll={[Function]}
+    scrollEventThrottle={16}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 16,
+            "paddingVertical": 16,
+          }
+        }
+      >
+        <Text
+          padded={true}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 43,
+              "lineHeight": 49.45,
+              "paddingVertical": 48.38,
+            }
+          }
+        >
+          Well hello there!
+        </Text>
+        <Text
+          padded={true}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 36,
+              "lineHeight": 41.4,
+              "paddingBottom": 20.02,
+              "paddingTop": 24,
+            }
+          }
+        >
+          Hello there!
+          
+
+        </Text>
+        <Text
+          padded={true}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 24,
+              "lineHeight": 27.6,
+              "paddingBottom": 18,
+              "paddingTop": 27,
+            }
+          }
+        >
+          Hello there!
+        </Text>
+        <Text
+          padded={true}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 43,
+              "lineHeight": 49.45,
+              "paddingVertical": 48.38,
+            }
+          }
+        >
+          Try to scroll me around.
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`the StretchyView component should render as a header 1`] = `
+<View
+  StretchyComponent={
+    <mapProps(getContext(mapProps(withPropsOnChange(mapProps(ConnectedImage)))))
+      source={
+        Object {
+          "uri": "https://picsum.photos/600/600",
+        }
+      }
+      style={
+        Object {
+          "aspectRatio": 1,
+          "width": "100%",
+        }
+      }
+    />
+  }
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <RCTScrollView
+    Stretchy={[Function]}
+    onScroll={[Function]}
+    scrollEventThrottle={16}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "height": undefined,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 36,
+              "lineHeight": 41.4,
+            }
+          }
+        >
+          Text on top of the stretchy!
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 16,
+            "paddingVertical": 16,
+          }
+        }
+      >
+        <Text
+          padded={true}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 43,
+              "lineHeight": 49.45,
+              "paddingVertical": 48.38,
+            }
+          }
+        >
+          Well hello there!
+        </Text>
+        <Text
+          padded={true}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 36,
+              "lineHeight": 41.4,
+              "paddingBottom": 20.02,
+              "paddingTop": 24,
+            }
+          }
+        >
+          Hello there!
+          
+
+        </Text>
+        <Text
+          padded={true}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 24,
+              "lineHeight": 27.6,
+              "paddingBottom": 18,
+              "paddingTop": 27,
+            }
+          }
+        >
+          Hello there!
+        </Text>
+        <Text
+          padded={true}
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "InterUI-Black",
+              "fontSize": 43,
+              "lineHeight": 49.45,
+              "paddingVertical": 48.38,
+            }
+          }
+        >
+          Try to scroll me around.
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
