@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, ScrollView, Platform } from 'react-native';
+import { Animated, Platform } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
@@ -8,8 +8,9 @@ import {
   BackgroundView,
   PaddedView,
   H2,
-  StretchyView,
 } from '@apollosproject/ui-kit';
+
+import StretchyView from '../../ui/StretchyView';
 
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
