@@ -13,7 +13,7 @@ import {
   MediaThumbnailItem,
   H6,
 } from '@apollosproject/ui-kit';
-import { LiveConsumer } from '@apollosproject/ui-connected';
+import { LiveConsumer } from '../../live/LiveContext';
 
 import { WebBrowserConsumer } from '../../ui/WebBrowser';
 

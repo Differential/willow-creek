@@ -16,7 +16,7 @@ import {
   StretchyView,
 } from '@apollosproject/ui-kit';
 
-import { LiveConsumer } from '@apollosproject/ui-connected';
+import { LiveConsumer } from '../../live/LiveContext';
 
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';

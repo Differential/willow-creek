@@ -19,9 +19,9 @@ PODS:
     - glog
   - glog (0.3.5)
   - OneSignal (2.10.1)
-  - Permission-Notifications (2.0.5):
+  - Permission-Notifications (2.0.8):
     - RNPermissions
-  - Permission-PhotoLibrary (2.0.5):
+  - Permission-PhotoLibrary (2.0.8):
     - RNPermissions
   - React (0.60.5):
     - React-Core (= 0.60.5)
@@ -299,8 +299,8 @@ SPEC CHECKSUMS:
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   OneSignal: 8fb749fa07f88006403c9b659a570fb7fb74519a
-  Permission-Notifications: 172e3ac9b8a915f0797af17891c93fe5caea6b40
-  Permission-PhotoLibrary: d6d09cca5d0de1fda1958175106234773a566893
+  Permission-Notifications: 0722c1cd783b86d2ae77a1a0c925d525f9170e7d
+  Permission-PhotoLibrary: c15c7245aeb74aff3ad5edf70ce34adbcf02541b
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
   React-cxxreact: 8384287780c4999351ad9b6e7a149d9ed10a2395
@@ -342,6 +342,6 @@ SPEC CHECKSUMS:
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
   YouTubeSdk: e7fb8ffad760e5e7f68b535e98c903f65aab1b46
 
-PODFILE CHECKSUM: 4d39aaf28e44d03e5013c41ba0483da61d45219d
+PODFILE CHECKSUM: dc0fe490200e80677982ed808e9bf59d2de3a3ac
 
 COCOAPODS: 1.8.4

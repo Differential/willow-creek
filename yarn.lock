@@ -68,6 +68,13 @@
   dependencies:
     js-yaml "^3.12.0"
 
+"@apollosproject/config@^1.3.0-beta.1":
+  version "1.3.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollosproject/config/-/config-1.3.0-beta.1.tgz#8be140b53f784d8de81a8f15c3b8c57faff3f260"
+  integrity sha512-vgTHIyiU1UWKcBapF5pxvdBuVxGnywTEMm5b5M/9FpaPg98eW1LXXecWubdwrh/uw66y6+bEFcFruKbXGZb7qg==
+  dependencies:
+    js-yaml "^3.12.0"
+
 "@apollosproject/data-connector-algolia-search@^1.3.0-beta.0":
   version "1.3.0-beta.0"
   resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-algolia-search/-/data-connector-algolia-search-1.3.0-beta.0.tgz#7fb17290dcbb24bd5dad6c8eedd7ed7c4aeb505f"

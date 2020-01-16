@@ -31,6 +31,7 @@
     "@apollosproject/ui-passes": "^1.3.0-beta.0",
     "@apollosproject/ui-scripture": "^1.3.0-beta.0",
     "@apollosproject/ui-storybook": "^1.3.0-beta.0",
+    "@apollosproject/config": "^1.3.0-beta.1",
     "@react-native-community/async-storage": "^1.5.1",
     "@react-native-community/geolocation": "^2.0.2",
     "amplitude-js": "^5.5.0",
@@ -89,7 +90,6 @@
     "yup": "0.26.6",
     "react-native-modal-datetime-picker": "7.6.0",
     "react-native-permissions": "^2.0.5",
-    "@apollosproject/config": "^1.3.0-beta.0",
     "@apollosproject/ui-fragments": "^1.3.0-beta.0",
     "@apollosproject/ui-mapview": "^1.3.0-beta.0"
   },
