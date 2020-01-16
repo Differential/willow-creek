@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Providers from 'WillowCreekApp/src/Providers';
+import Providers from '../Providers';
 
 import { renderWithApolloData } from '../utils/testUtils';
 import getScripture from './getScripture';

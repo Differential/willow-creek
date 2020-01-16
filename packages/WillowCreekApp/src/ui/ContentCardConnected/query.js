@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+<<<<<<< ours
 import { CONTENT_ITEM_FRAGMENT } from 'WillowCreekApp/src/content-single/getContentItem';
 
 export const COVER_IMAGE_FRAGMENT = gql`
@@ -75,18 +76,28 @@ export const BASE_CARD_FRAGMENT = gql`
   ${COVER_IMAGE_FRAGMENT}
   ${THEME_FRAGMENT}
 `;
+=======
+import ApollosConfig from '@apollosproject/config';
+>>>>>>> theirs
 
 const GET_CONTENT_CARD = gql`
   query getContentCard($contentId: ID!) {
     node(id: $contentId) {
       id
       __typename
+<<<<<<< ours
       ...baseCardFragment
       ...contentItemFragment
     }
   }
   ${BASE_CARD_FRAGMENT}
   ${CONTENT_ITEM_FRAGMENT}
+=======
+      ...contentCardFragment
+    }
+  }
+  ${ApollosConfig.FRAGMENTS.CONTENT_CARD_FRAGMENT}
+>>>>>>> theirs
 `;
 
 export default GET_CONTENT_CARD;

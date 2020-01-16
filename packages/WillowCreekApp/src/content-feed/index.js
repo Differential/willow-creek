@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 
-import ContentCardConnected from 'WillowCreekApp/src/ui/ContentCardConnected';
-import fetchMoreResolver from 'WillowCreekApp/src/utils/fetchMoreResolver';
+import ContentCardConnected from '../ui/ContentCardConnected';
+import fetchMoreResolver from '../utils/fetchMoreResolver';
 
 import GET_CONTENT_FEED from './getContentFeed';
 /**

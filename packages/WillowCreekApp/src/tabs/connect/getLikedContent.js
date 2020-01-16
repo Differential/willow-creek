@@ -1,6 +1,5 @@
 import gql from 'graphql-tag';
-
-import { BASE_CARD_FRAGMENT } from 'WillowCreekApp/src/ui/ContentCardConnected';
+import ApollosConfig from '@apollosproject/config';
 
 export default gql`
   query getAllLikedContent($first: Int, $after: String) {
@@ -12,11 +11,11 @@ export default gql`
         node {
           ... on ContentItem {
             isLiked
-            ...baseCardFragment
+            ...contentCardFragment
           }
         }
       }
     }
   }
-  ${BASE_CARD_FRAGMENT}
+  ${ApollosConfig.FRAGMENTS.CONTENT_CARD_FRAGMENT}
 `;

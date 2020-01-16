@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Query, Mutation } from 'react-apollo';
 import { Dimensions, StatusBar } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
+import MapView from '@apollosproject/ui-mapview';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
@@ -14,7 +15,6 @@ import GET_CONTENT_CHANNELS from '../../tabs/discover/DiscoverFeed/getContentCha
 
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
-import MapView from './MapView';
 
 class Location extends PureComponent {
   static propTypes = {

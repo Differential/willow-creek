@@ -2,7 +2,7 @@ import React from 'react';
 import { flatMap } from 'lodash';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import Providers from 'WillowCreekApp/src/Providers';
+import Providers from '../../Providers';
 
 import { renderWithApolloData } from '../../utils/testUtils';
 import GET_CONTENT_CARD from '../../ui/ContentCardConnected/query';

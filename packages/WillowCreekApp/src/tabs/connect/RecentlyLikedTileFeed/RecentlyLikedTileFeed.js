@@ -16,7 +16,7 @@ import {
   withIsLoading,
 } from '@apollosproject/ui-kit';
 
-import HorizontalContentCardConnected from 'WillowCreekApp/src/ui/HorizontalContentCardConnected';
+import HorizontalContentCardConnected from '../../../ui/HorizontalContentCardConnected';
 
 const RowHeader = styled(({ theme }) => ({
   flexDirection: 'row',

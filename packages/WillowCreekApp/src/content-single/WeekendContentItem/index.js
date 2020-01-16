@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Dimensions, Platform } from 'react-native';
+import { Animated, Dimensions } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
@@ -13,15 +13,15 @@ import {
   CardLabel,
   H4,
   withTheme,
+  StretchyView,
 } from '@apollosproject/ui-kit';
 
-import StretchyView from '../../ui/StretchyView';
+import { LiveConsumer } from '@apollosproject/ui-connected';
 
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
 import HorizontalContentFeed from '../HorizontalContentFeed';
 import Features from '../Features';
-import { LiveConsumer } from '../../live';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
@@ -53,9 +53,7 @@ const WeekendContentItem = ({ content, loading }) => {
         <BackgroundView>
           <StretchyView>
             {({ Stretchy, ...scrollViewProps }) => (
-              <FlexedScrollView
-                {...(Platform.OS === 'ios' ? scrollViewProps : {})}
-              >
+              <FlexedScrollView>
                 <Header hasMedia={content.videos && content.videos.sources}>
                   <ThemeMixin
                     mixin={{

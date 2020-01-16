@@ -1,9 +1,14 @@
 import React from 'react';
-
+import {
+  checkNotifications,
+  openSettings,
+  requestNotifications,
+  RESULTS,
+} from 'react-native-permissions';
 import { withThemeMixin } from '@apollosproject/ui-kit';
 import { ApolloConsumer } from 'react-apollo';
 import { OnboardingSwiper } from '@apollosproject/ui-onboarding';
-import { requestPushPermissions } from '@apollosproject/ui-notifications';
+
 import BackgroundImage from '../CityBackgroundImage';
 import AskName from './AskName';
 import AboutYouWithFirstName from './AboutYouWithFirstName';
@@ -18,17 +23,23 @@ function Onboarding({ navigation }) {
           <>
             <AskName onPressPrimary={swipeForward} />
             <AboutYouWithFirstName onPressPrimary={swipeForward} />
-            <ApolloConsumer>
-              {(client) => (
-                <AskNotifications
-                  onPressPrimary={() => navigation.replace('Tabs')}
-                  onRequestPushPermissions={() =>
-                    requestPushPermissions({ client })
+            <AskNotifications
+              onPressPrimary={() => navigation.replace('Tabs')}
+              onRequestPushPermissions={(update) => {
+                checkNotifications().then((checkRes) => {
+                  if (checkRes.status === RESULTS.DENIED) {
+                    requestNotifications(['alert', 'badge', 'sound']).then(
+                      () => {
+                        update();
+                      }
+                    );
+                  } else {
+                    openSettings();
                   }
-                  primaryNavText={'Finish'}
-                />
-              )}
-            </ApolloConsumer>
+                });
+              }}
+              primaryNavText={'Finish'}
+            />
           </>
         )}
       </OnboardingSwiper>
