@@ -10,7 +10,6 @@ import { ApolloConsumer } from 'react-apollo';
 import { OnboardingSwiper } from '@apollosproject/ui-onboarding';
 
 import BackgroundImage from '../CityBackgroundImage';
-import AskName from './AskName';
 import AboutYouWithFirstName from './AboutYouWithFirstName';
 import AskNotifications from './AskNotifications';
 
@@ -21,7 +20,7 @@ function Onboarding({ navigation }) {
       <OnboardingSwiper scrollEnabled={false}>
         {({ swipeForward }) => (
           <>
-            <AskName onPressPrimary={swipeForward} />
+            {/* <AskName onPressPrimary={swipeForward} /> */}
             <AboutYouWithFirstName onPressPrimary={swipeForward} />
             <AskNotifications
               onPressPrimary={() => navigation.replace('Tabs')}
