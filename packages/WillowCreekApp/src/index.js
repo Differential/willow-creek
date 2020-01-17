@@ -7,8 +7,8 @@ import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import Passes from '@apollosproject/ui-passes';
-import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 import hoistNonReactStatic from 'hoist-non-react-statics';
+import Auth, { ProtectedRoute } from './auth';
 
 import Providers from './Providers';
 import NavigationService from './NavigationService';

@@ -114,6 +114,13 @@ const overrides = {
   'ui-auth.TabCard': {
     backgroundColor: '#FFFFFF',
   },
+  'ui-auth.NextButton': {
+    backgroundColor: '#FCFCFC',
+    borderColor: '#FCFCFC',
+  },
+  'ui-auth.PromptText': {
+    color: '#FCFCFC',
+  },
 };
 
 const buttons = ({ colors: themeColors }) => ({
@@ -146,6 +153,35 @@ const types = {
     colors: {
       text: {
         primary: themeColors.lightPrimary,
+        secondary: themeColors.lightSecondary,
+        tertiary: themeColors.lightTertiary,
+        link: themeColors.tertiary,
+      },
+      background: {
+        screen: themeColors.white,
+        paper: themeColors.transparent,
+        accent: Color(themeColors.darkTertiary)
+          .fade(alpha.medium)
+          .string(),
+        inactive: themeColors.darkTertiary,
+      },
+      shadows: {
+        default: Color(themeColors.darkTertiary)
+          .fade(alpha.medium)
+          .string(),
+      },
+      action: {
+        default: themeColors.darkTertiary,
+        primary: themeColors.primary,
+        secondary: themeColors.lightPrimary,
+        tertiary: themeColors.tertiary,
+      },
+    },
+  }),
+  'auth-entry': ({ colors: themeColors, alpha }) => ({
+    colors: {
+      text: {
+        primary: themeColors.darkPrimary,
         secondary: themeColors.lightSecondary,
         tertiary: themeColors.lightTertiary,
         link: themeColors.tertiary,
