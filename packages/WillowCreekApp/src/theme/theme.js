@@ -111,6 +111,9 @@ const overrides = {
   'ui-kit.inputs.Search.ClearSearchButtonBackground': {
     backgroundColor: '#F4F4F5',
   },
+  'ui-auth.TabCard': {
+    backgroundColor: '#FFFFFF',
+  },
 };
 
 const buttons = ({ colors: themeColors }) => ({
@@ -148,8 +151,8 @@ const types = {
         link: themeColors.tertiary,
       },
       background: {
-        screen: themeColors.white,
-        paper: themeColors.transparent,
+        screen: themeColors.lightSecondary,
+        paper: themeColors.paper,
         accent: Color(themeColors.darkTertiary)
           .fade(alpha.medium)
           .string(),

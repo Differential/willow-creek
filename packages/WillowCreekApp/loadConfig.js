@@ -66,7 +66,7 @@ ApollosConfig.loadJs({
       }
     `,
     CONTENT_CARD_FRAGMENT: gql`
-      fragment baseCardFragment on ContentItem {
+      fragment contentCardFragment on ContentItem {
         id
         __typename
         theme {
