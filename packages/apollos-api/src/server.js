@@ -80,6 +80,39 @@ const app = express();
 applyServerMiddleware({ app, dataSources, context });
 setupJobs({ app, dataSources, context });
 
+app.get('/.well-known/apple-app-associations', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(
+    JSON.stringify({
+      applinks: {
+        apps: [],
+        details: [
+          {
+            appID: ApollosConfig.APP.APPLE_APP_ID,
+            paths: ['/apollos/*'],
+          },
+        ],
+      },
+    })
+  );
+});
+
+app.get('/.well-known/assetlinks.json', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(
+    JSON.stringify([
+      {
+        relation: ['delegate_permission/common.handle_all_urls'],
+        target: {
+          namespace: 'android',
+          package_name: ApollosConfig.APP.ANDROID_APP_ID,
+          sha256_cert_fingerprints: [ApollosConfig.APP.GOOGLE_KEYSTORE_SHA256],
+        },
+      },
+    ])
+  );
+});
+
 apolloServer.applyMiddleware({ app });
 apolloServer.applyMiddleware({ app, path: '/' });
 

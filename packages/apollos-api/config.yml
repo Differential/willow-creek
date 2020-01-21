@@ -12,10 +12,13 @@ APP:
   # It should match whatver is in your Info.plist `CFBundleURLTypes
   DEEP_LINK_HOST: WillowCreekApp
   ROOT_API_URL: ${ROOT_URL}
+  APPLE_APP_ID: com.customchurchapps.appc2cui2f7
+  GOOGLE_APP_ID: com.willowcreekapp
+  GOOGLE_KEYSTORE_SHA256: 56:32:BF:42:A3:4D:33:AC:14:36:FC:E5:C4:93:6B:49:6E:C9:8B:E2:01:A0:9A:2A:B9:8E:A0:15:F4:EA:89:69
 ROCK:
   API_URL: https://rock.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: https://rock.willowcreek.org/GetImage.ashx
+  IMAGE_URL: ${ROCK_URL}/GetImage.ashx
   SHARE_URL: https://willowcreek.tv
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/Chicago'
