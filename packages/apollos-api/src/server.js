@@ -80,7 +80,7 @@ const app = express();
 applyServerMiddleware({ app, dataSources, context });
 setupJobs({ app, dataSources, context });
 
-app.get('/.well-known/apple-app-associations', (req, res) => {
+app.get('/.well-known/apple-app-association', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.send(
     JSON.stringify({
