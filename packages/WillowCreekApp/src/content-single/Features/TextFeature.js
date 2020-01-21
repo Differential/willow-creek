@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ActionCard, BodyText } from '@apollosproject/ui-kit';
-import ShareContentButtonConnected from 'WillowCreekApp/src/ui/ShareContentButtonConnected';
+import ShareContentButtonConnected from '../../ui/ShareContentButtonConnected';
 
 const TextFeature = ({ body, sharing: { message } = {}, contentId }) => (
   <ActionCard
@@ -19,15 +19,5 @@ TextFeature.propTypes = {
   sharing: PropTypes.shape({ message: PropTypes.string }),
   contentId: PropTypes.string.isRequired,
 };
-
-export const TEXT_FEATURE_FRAGMENT = `
-fragment TextFeatureFragment on TextFeature {
-  body
-  id
-  sharing {
-    message
-  }
-}
-`;
 
 export default TextFeature;

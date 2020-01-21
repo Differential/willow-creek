@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Platform } from 'react-native';
+import { Animated } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
@@ -8,9 +8,8 @@ import {
   BackgroundView,
   PaddedView,
   H2,
+  StretchyView,
 } from '@apollosproject/ui-kit';
-
-import StretchyView from '../../ui/StretchyView';
 
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
@@ -25,7 +24,7 @@ const UniversalContentItem = ({ content, loading }) => {
     <BackgroundView>
       <StretchyView>
         {({ Stretchy, ...scrollViewProps }) => (
-          <FlexedScrollView {...(Platform.OS === 'ios' ? scrollViewProps : {})}>
+          <FlexedScrollView>
             {coverImageSources.length || loading ? (
               <Stretchy>
                 <GradientOverlayImage

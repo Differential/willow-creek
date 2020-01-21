@@ -1,7 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 import { withTheme } from '@apollosproject/ui-kit';
 
-import UserSettings from 'WillowCreekApp/src/user-settings';
+import UserSettings from '../../user-settings';
 
 import TestingControlPanel from '../../testing-control-panel';
 import tabBarIcon from '../tabBarIcon';

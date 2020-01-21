@@ -13,8 +13,10 @@ import {
   MediaThumbnailItem,
   H6,
 } from '@apollosproject/ui-kit';
-import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
-import { LiveConsumer } from '../../live';
+import { LiveConsumer } from '../../live/LiveContext';
+
+import { WebBrowserConsumer } from '../../ui/WebBrowser';
+
 import GET_CONTENT_MEDIA from './getContentMedia';
 
 const Container = styled(({ theme }) => ({

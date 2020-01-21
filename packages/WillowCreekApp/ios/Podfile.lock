@@ -19,6 +19,8 @@ PODS:
     - glog
   - glog (0.3.5)
   - OneSignal (2.10.1)
+  - Permission-Notifications (2.0.8):
+    - RNPermissions
   - Permission-PhotoLibrary (2.0.8):
     - RNPermissions
   - React (0.60.5):
@@ -72,7 +74,7 @@ PODS:
     - React
   - react-native-image-picker (0.28.0):
     - React
-  - react-native-maps (0.25.0):
+  - react-native-maps (0.26.1):
     - React
   - react-native-music-control (0.10.5):
     - React
@@ -145,6 +147,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Permission-Notifications (from `../node_modules/react-native-permissions/ios/Notifications.podspec`)
   - Permission-PhotoLibrary (from `../node_modules/react-native-permissions/ios/PhotoLibrary.podspec`)
   - React (from `../node_modules/react-native/`)
   - React-Core (from `../node_modules/react-native/React`)
@@ -203,6 +206,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  Permission-Notifications:
+    :path: "../node_modules/react-native-permissions/ios/Notifications.podspec"
   Permission-PhotoLibrary:
     :path: "../node_modules/react-native-permissions/ios/PhotoLibrary.podspec"
   React:
@@ -294,6 +299,7 @@ SPEC CHECKSUMS:
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   OneSignal: 8fb749fa07f88006403c9b659a570fb7fb74519a
+  Permission-Notifications: 0722c1cd783b86d2ae77a1a0c925d525f9170e7d
   Permission-PhotoLibrary: c15c7245aeb74aff3ad5edf70ce34adbcf02541b
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
@@ -305,7 +311,7 @@ SPEC CHECKSUMS:
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-image-picker: e6e06d4315e3c85bad17e4b2002cd29f11d202c8
-  react-native-maps: 190c02ca533fddac5bb49cf17bdece3644612107
+  react-native-maps: 6e499eee4eabf422ba8b6f94e993cc768bf35153
   react-native-music-control: 700e53dc9b2ec7342f69705243609c1cd644fa44
   react-native-onesignal: 8958311abbd9125f26e600914e48833b57321cbf
   react-native-passkit-wallet: 51e3babdaeec4c10b5736786ebd1bfb470fcaa36
@@ -336,6 +342,6 @@ SPEC CHECKSUMS:
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
   YouTubeSdk: e7fb8ffad760e5e7f68b535e98c903f65aab1b46
 
-PODFILE CHECKSUM: f95025aadd924e599d0255037c3d7528f9842823
+PODFILE CHECKSUM: dc0fe490200e80677982ed808e9bf59d2de3a3ac
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.8.4

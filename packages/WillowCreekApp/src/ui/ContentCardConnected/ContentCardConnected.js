@@ -6,6 +6,7 @@ import { get } from 'lodash';
 import { ErrorCard } from '@apollosproject/ui-kit';
 
 import { LiveConsumer } from '../../live/LiveContext';
+
 import contentCardComponentMapper from './contentCardComponentMapper';
 import GET_CONTENT_CARD from './query';
 
