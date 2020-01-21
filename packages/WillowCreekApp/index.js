@@ -6,10 +6,11 @@ import { AppRegistry, YellowBox } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import ApollosConfig from '@apollosproject/config';
 import Storybook from './storybook';
+// import MainApp from './src';
 
 const useStorybook = ApollosConfig.STORYBOOK === 'true';
 
-const MainApp = require('./src');
+const MainApp = require('./src').default;
 
 let App = MainApp;
 if (useStorybook) {

@@ -17,13 +17,12 @@ function Onboarding({ navigation }) {
   return (
     <>
       <BackgroundImage />
-      <OnboardingSwiper scrollEnabled={false}>
+      <OnboardingSwiper>
         {({ swipeForward }) => (
           <>
             {/* <AskName onPressPrimary={swipeForward} /> */}
             <AboutYouWithFirstName onPressPrimary={swipeForward} />
             <AskNotifications
-              onPressPrimary={() => navigation.replace('Tabs')}
               onRequestPushPermissions={(update) => {
                 checkNotifications().then((checkRes) => {
                   if (checkRes.status === RESULTS.DENIED) {
@@ -37,6 +36,7 @@ function Onboarding({ navigation }) {
                   }
                 });
               }}
+              onPressPrimary={() => navigation.replace('Tabs')}
               primaryNavText={'Finish'}
             />
           </>

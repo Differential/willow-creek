@@ -26,7 +26,7 @@ const LiveConsumer = ({ contentId, children }) => (
 );
 
 LiveConsumer.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.func,
   contentId: PropTypes.string,
 };
 

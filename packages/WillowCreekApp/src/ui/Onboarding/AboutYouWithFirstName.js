@@ -109,6 +109,7 @@ const AboutYouWithFirstName = (props) => (
   </Query>
 );
 
+AboutYouOverride.displayName = 'AboutYou';
 AboutYouOverride.defaultProps = AboutYou.defaultProps;
 
 export default (props) => (
