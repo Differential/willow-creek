@@ -88,7 +88,10 @@ app.get('/.well-known/apple-app-site-association', (req, res) => {
         apps: [],
         details: [
           {
-            appID: ApollosConfig.APP.APPLE_APP_ID,
+            appID: [
+              ApollosConfig.APP.APPLE_TEAM_ID,
+              ApollosConfig.APP.APPLE_APP_ID,
+            ].join('.'),
             paths: ['/apollos/*'],
           },
         ],
