@@ -35,13 +35,13 @@
           <category android:name="android.intent.category.BROWSABLE" />
 
           <!-- Handle urls starting with "http://www.example.com/products" -->
-          <data android:scheme="http"
+          <data android:scheme="https"
                 android:host="willowcreek-api.herokuapp.com"
-                android:pathPrefix="/apollos" />
+                android:pathPrefix="/app-link" />
 
-          <data android:scheme="http"
+          <data android:scheme="https"
                 android:host="willowcreek-api-staging.herokuapp.com"
-                android:pathPrefix="/apollos" />
+                android:pathPrefix="/app-link" />
 
           <!-- Handle local urls starting with "example://products" -->
           <data android:scheme="WillowCreekApp"

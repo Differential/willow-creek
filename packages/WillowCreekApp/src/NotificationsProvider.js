@@ -49,9 +49,9 @@ class NotificationsInit extends NotificationsProvider {
     if (!rawUrl) return;
     const url = URL.parse(rawUrl);
     const route = url.pathname.substring(1);
-    const cleanedRoute = route.includes('/apollos/')
+    const cleanedRoute = route.includes('/app-link/')
       ? route
-      : route.split('apollos/')[1];
+      : route.split('app-link/')[1];
     const args = querystring.parse(url.query);
     this.props.navigate(cleanedRoute, args);
   };
