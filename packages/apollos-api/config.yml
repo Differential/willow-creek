@@ -236,16 +236,16 @@ ROCK_MAPPINGS:
       ProfileLinks:
         - title: Groups
           icon: groups
-          url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
+          url: https://www.northshoregroups.org/
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
           url: https://pushpay.com/pay/wcnorthshore
           style: EXTERNAL_BAR_ITEM
         - title: Join a small group
-          url: https://www.willowcreek.org/en/connect/ministries/small-groups/north-shore
+          url: https://www.northshoregroups.org/
         - title: I need prayer
-          url: mailto:nsprayer@willowcreek.org
+          url: https://visitwillow.org/prayer
         - title: Contact us
           url: https://www.willowcreek.org/en/contact
     - # South Barrington
