@@ -3,14 +3,13 @@ import { Auth } from '@apollosproject/data-connector-rock';
 const { schema, resolver, contextMiddleware } = Auth;
 
 class dataSource extends Auth.dataSource {
-  createUserProfile = async (props = {}) => {
+  createUserProfile = async ({ email, ...otherFields }) => {
     try {
-      const { email } = props;
-
       return await this.post('/People', {
         Email: email,
-        IsSystem: false, // Required by Rock
         Gender: 0, // Required by Rock
+        ...otherFields,
+        IsSystem: false, // Required by Rock
         ConnectionStatusValueId: 5679, // Points to 'App User'
       });
     } catch (err) {

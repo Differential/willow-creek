@@ -13,14 +13,14 @@ class dataSource extends AuthSms.dataSource {
       phoneNumber: inputPhoneNumber,
     });
 
-    const existingPhoneNumbers = await this.request('/PhoneNumbers')
-      .filter(`Number eq '${phoneNumber}'`)
-      .get();
-
-    // If we have only one phone number, use that phone number
-    if (existingPhoneNumbers.length === 1) {
-      return { personId: existingPhoneNumbers[0].personId, newUser: false };
-    }
+    //     const existingPhoneNumbers = await this.request('/PhoneNumbers')
+    //       .filter(`Number eq '${phoneNumber}'`)
+    //       .get();
+    //
+    //     // If we have only one phone number, use that phone number
+    //     if (existingPhoneNumbers.length === 1) {
+    //       return { personId: existingPhoneNumbers[0].personId, newUser: false };
+    //     }
 
     // Otherwise, create a new user.
     const personAttributes = Utils.fieldsAsObject(userProfile || []);
