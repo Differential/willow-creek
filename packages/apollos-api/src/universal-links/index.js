@@ -34,7 +34,7 @@ export function setupUniversalLinks({ app }) {
         {
           relation: ['delegate_permission/common.handle_all_urls'],
           target: {
-            namespace: 'android',
+            namespace: 'android_app',
             package_name: ANDROID_APP_ID,
             sha256_cert_fingerprints: [GOOGLE_KEYSTORE_SHA256],
           },
