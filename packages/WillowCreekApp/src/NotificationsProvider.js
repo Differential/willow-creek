@@ -53,9 +53,7 @@ class NotificationsInit extends Component {
     Linking.getInitialURL().then((url) => {
       this.navigate(url);
     });
-    Linking.addEventListener('url', ({ url }) =>
-      this.navigate(url.split('apollos/')[1])
-    );
+    Linking.addEventListener('url', ({ url }) => this.navigate(url));
   }
 
   componentWillUnmount() {
@@ -66,12 +64,14 @@ class NotificationsInit extends Component {
   }
 
   navigate = (rawUrl) => {
-    console.warn(rawUrl);
     if (!rawUrl) return;
     const url = URL.parse(rawUrl);
     const route = url.pathname.substring(1);
+    const cleanedRoute = route.includes('/apollos/')
+      ? route
+      : route.split('apollos/')[1];
     const args = querystring.parse(url.query);
-    // this.props.navigate(route, args);
+    this.props.navigate(cleanedRoute, args);
   };
 
   onReceived = (notification) => {

@@ -6,7 +6,7 @@ import Storybook from './storybook';
 import MainApp from './src';
 import './src/bugsnag';
 
-const useStorybook = Config.STORYBOOK === 'true';
+const useStorybook = Config.STORYBOOK === 'true' && false;
 
 let App = MainApp;
 if (useStorybook) {
