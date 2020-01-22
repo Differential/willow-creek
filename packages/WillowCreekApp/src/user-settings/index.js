@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { ScrollView } from 'react-native';
-import { StackActions, NavigationActions } from 'react-navigation';
 import PropTypes from 'prop-types';
 import { Query, Mutation } from 'react-apollo';
 import { getVersion, getBuildNumber } from 'react-native-device-info';
@@ -15,9 +14,11 @@ import {
   Touchable,
   ActivityIndicator,
 } from '@apollosproject/ui-kit';
-import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
 
 import { GET_LOGIN_STATE, LOGOUT } from '@apollosproject/ui-auth';
+import { WebBrowserConsumer } from '../ui/WebBrowser';
+import NavigationService from '../NavigationService';
+
 import ChangeAvatar from './ChangeAvatar';
 
 class UserSettings extends PureComponent {
@@ -123,21 +124,7 @@ class UserSettings extends PureComponent {
                                 await handleLogout();
                                 // This resets the navigation stack, and the navigates to the first auth screen.
                                 // This ensures that user isn't navigated to a subscreen of Auth, like the pin entry screen.
-                                await this.props.navigation.dispatch(
-                                  StackActions.reset({
-                                    index: 0,
-                                    key: null,
-                                    actions: [
-                                      NavigationActions.navigate({
-                                        routeName: 'Auth',
-                                        action: NavigationActions.navigate({
-                                          routeName:
-                                            'AuthSMSPhoneEntryConnected',
-                                        }),
-                                      }),
-                                    ],
-                                  })
-                                );
+                                await NavigationService.resetToAuth();
                               }}
                             >
                               <Cell>

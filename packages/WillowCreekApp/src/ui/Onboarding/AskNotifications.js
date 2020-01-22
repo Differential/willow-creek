@@ -15,19 +15,17 @@ const StyledSlideContent = styled({
   justifyContent: 'space-between',
 })(SlideContent);
 
-const PrimaryButton = styled({}, 'Onboarding.Slide.PrimaryButton')(Button);
-
 // memo = sfc PureComponent 💥
 // eslint-disable-next-line react/display-name
 const AskNotifications = memo(
   ({
     BackgroundComponent,
-    onPressPrimary,
     slideTitle,
     description,
     buttonText,
     buttonDisabled,
     onPressButton,
+    isLoading,
     ...props
   }) => (
     <Slide {...props}>
@@ -49,9 +47,10 @@ const AskNotifications = memo(
         </Features>
         {buttonDisabled || onPressButton ? (
           <PaddedView horizontal={false}>
-            <PrimaryButton
-              title={buttonDisabled ? 'Continue' : buttonText}
-              onPress={buttonDisabled ? onPressPrimary : onPressButton}
+            <Button
+              title={buttonText}
+              onPress={onPressButton}
+              disabled={buttonDisabled || isLoading}
               pill={false}
             />
           </PaddedView>
@@ -77,6 +76,7 @@ AskNotifications.propTypes = {
   buttonDisabled: PropTypes.bool,
   onPressButton: PropTypes.func,
   onPressPrimary: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 AskNotifications.defaultProps = {

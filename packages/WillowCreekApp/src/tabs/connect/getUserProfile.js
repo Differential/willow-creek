@@ -1,26 +1,18 @@
 import gql from 'graphql-tag';
-import CampusParts from 'WillowCreekApp/src/user-settings/Locations/campusFragment';
+import ApollosConfig from '@apollosproject/config';
 
 export default gql`
   query CurrentUserProfile {
     currentUser {
       id
       profile {
-        id
-        firstName
-        lastName
+        ...UserProfileParts
         campus {
           ...CampusParts
-        }
-        email
-        nickName
-        gender
-        birthDate
-        photo {
-          uri
         }
       }
     }
   }
-  ${CampusParts}
+  ${ApollosConfig.FRAGMENTS.CAMPUS_PARTS_FRAGMENT}
+  ${ApollosConfig.FRAGMENTS.USER_PROFILE_PARTS_FRAGMENT}
 `;

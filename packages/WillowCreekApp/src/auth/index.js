@@ -3,20 +3,44 @@ import { createStackNavigator } from 'react-navigation';
 import PropTypes from 'prop-types';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
+import { ThemeMixin } from '@apollosproject/ui-kit';
+
 import {
   AuthSMSPhoneEntryConnected,
-  AuthPassword,
+  AuthSMSVerificationConnected,
+  AuthEmailEntryConnected,
+  AuthPasswordEntryConnected,
+  AuthProfileEntryConnected,
+  Entry,
 } from '@apollosproject/ui-auth';
 
-import AuthSMSVerificationConnected from './AuthSMSVerificationConnected';
+export {
+  LoginButton,
+  ProtectedAction,
+  ProtectedTouchable,
+  AuthProvider,
+  AuthConsumer,
+  ProtectedRoute,
+  Entry,
+} from '@apollosproject/ui-auth';
 
-export AuthProvider from './AuthProvider';
+const StyledEntry = (props) => (
+  <ThemeMixin mixin={{ type: 'auth-entry' }}>
+    <Entry {...props} />
+  </ThemeMixin>
+);
 
 const AuthNavigator = createStackNavigator(
   {
-    AuthSMSPhoneEntryConnected,
+    AuthSMSPhoneEntryConnected: (props) => (
+      <AuthSMSPhoneEntryConnected {...props} Component={StyledEntry} />
+    ),
     AuthSMSVerificationConnected,
-    AuthPassword,
+    AuthEmailEntryConnected: (props) => (
+      <AuthEmailEntryConnected {...props} Component={StyledEntry} />
+    ),
+    AuthPasswordEntryConnected,
+    AuthProfileEntryConnected,
   },
   {
     initialRouteName: 'AuthSMSPhoneEntryConnected',
@@ -35,9 +59,10 @@ AuthNavigator.propTypes = {
     passwordPromptText: PropTypes.string,
     smsPolicyInfo: PropTypes.node,
     smsPromptText: PropTypes.string,
+    emailRequired: PropTypes.bool,
+    handleForgotPassword: PropTypes.func,
   }),
   BackgroundComponent: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  emailRequired: PropTypes.bool,
 };
 
 const Auth = (props) => <AuthNavigator {...props} screenProps={props} />;

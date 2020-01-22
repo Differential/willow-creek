@@ -1,5 +1,5 @@
-import GET_ALL_LIKED_CONTENT from 'WillowCreekApp/src/tabs/connect/getLikedContent';
-import { BASE_CARD_FRAGMENT } from 'WillowCreekApp/src/ui/ContentCardConnected';
+import ApollosConfig from '@apollosproject/config';
+import GET_ALL_LIKED_CONTENT from '../../tabs/connect/getLikedContent';
 
 const addItemToLikedContentList = ({ cache, item, variables }) => {
   try {
@@ -9,8 +9,8 @@ const addItemToLikedContentList = ({ cache, item, variables }) => {
     });
     const fullItem = cache.readFragment({
       id: `${item.__typename}:${item.id}`,
-      fragment: BASE_CARD_FRAGMENT,
-      fragmentName: 'baseCardFragment',
+      fragment: ApollosConfig.FRAGMENTS.CONTENT_CARD_FRAGMENT,
+      fragmentName: 'contentCardFragment',
     });
     const newEdges = [
       fullItem,

@@ -16,14 +16,13 @@ const goToAuth = () => NavigationService.resetToAuth();
 const wipeData = () => cache.writeData({ data: defaults });
 
 let resetStore;
-let storeResetting = false;
-
+let storeIsResetting = false;
 const onAuthError = async () => {
-  if (!storeResetting) {
-    storeResetting = true;
+  if (!storeIsResetting) {
+    storeIsResetting = true;
     await resetStore();
   }
-  storeResetting = false;
+  storeIsResetting = false;
   goToAuth();
 };
 

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { TableView } from '@apollosproject/ui-kit';
-import { UserWebBrowserConsumer } from 'WillowCreekApp/src/user-web-browser';
-import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
+import { UserWebBrowserConsumer } from '../user-web-browser';
+import { WebBrowserConsumer } from '../ui/WebBrowser';
 import TouchableCell from './TouchableCell';
 
 export default class TestingControlPanel extends PureComponent {

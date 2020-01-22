@@ -1,11 +1,14 @@
-import { AuthSms } from '@apollosproject/data-connector-rock';
+import { AuthSms, Utils } from '@apollosproject/data-connector-rock';
 import gql from 'graphql-tag';
 import { AuthenticationError } from 'apollo-server';
 
 const { resolver } = AuthSms;
 
 class dataSource extends AuthSms.dataSource {
-  createOrFindSmsLoginUserId = async ({ phoneNumber: inputPhoneNumber }) => {
+  createOrFindSmsLoginUserId = async ({
+    phoneNumber: inputPhoneNumber,
+    userProfile,
+  }) => {
     const { phoneNumber, countryCode } = this.parsePhoneNumber({
       phoneNumber: inputPhoneNumber,
     });
@@ -20,24 +23,22 @@ class dataSource extends AuthSms.dataSource {
     }
 
     // Otherwise, create a new user.
+    const personAttributes = Utils.fieldsAsObject(userProfile || []);
     const personId = await this.context.dataSources.Auth.createUserProfile({
       email: null,
+      ...personAttributes,
     });
 
-    // And create their phone number.
-    await this.post('/PhoneNumbers', {
-      PersonId: personId,
-      IsMessagingEnabled: true,
-      IsSystem: false,
-      Number: phoneNumber,
-      CountryCode: countryCode,
-      NumberTypeValueId: 12, // 12 is a Constant Set in Rock, means "Mobile"
-    });
+    await this.createPhoneNumber({ personId, phoneNumber, countryCode });
 
     return { personId, newUser: true };
   };
 
-  authenticateWithSms = async ({ pin, phoneNumber: phoneNumberInput }) => {
+  authenticateWithSms = async ({
+    pin,
+    phoneNumber: phoneNumberInput,
+    userProfile,
+  }) => {
     const { phoneNumber } = this.parsePhoneNumber({
       phoneNumber: phoneNumberInput,
     });
@@ -57,6 +58,7 @@ class dataSource extends AuthSms.dataSource {
       // We created a login for this user, but don't know who they are yet.
       const { personId, newUser } = await this.createOrFindSmsLoginUserId({
         phoneNumber,
+        userProfile,
       });
 
       status = newUser ? 'NEW_USER' : 'NEW_USER_WITH_ROCK_PROFILE';

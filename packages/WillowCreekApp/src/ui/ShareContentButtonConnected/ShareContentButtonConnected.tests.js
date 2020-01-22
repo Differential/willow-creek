@@ -1,6 +1,6 @@
 import React from 'react';
-import Providers from 'WillowCreekApp/src/Providers';
-import { renderWithApolloData } from 'WillowCreekApp/src/utils/testUtils';
+import { renderWithApolloData } from '../../utils/testUtils';
+import Providers from '../../Providers';
 import getShareContent from './getShareContent';
 import ShareContentButtonConnected from '.';
 

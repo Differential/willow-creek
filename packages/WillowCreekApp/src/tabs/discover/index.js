@@ -1,7 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 import { withTheme } from '@apollosproject/ui-kit';
 
-import ContentFeed from 'WillowCreekApp/src/content-feed';
+import ContentFeed from '../../content-feed';
 
 import tabBarIcon from '../tabBarIcon';
 

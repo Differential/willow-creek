@@ -111,6 +111,16 @@ const overrides = {
   'ui-kit.inputs.Search.ClearSearchButtonBackground': {
     backgroundColor: '#F4F4F5',
   },
+  'ui-auth.TabCard': {
+    backgroundColor: '#FFFFFF',
+  },
+  'ui-auth.NextButton': {
+    backgroundColor: '#FCFCFC',
+    borderColor: '#FCFCFC',
+  },
+  'ui-auth.PromptText': {
+    color: '#FCFCFC',
+  },
 };
 
 const buttons = ({ colors: themeColors }) => ({
@@ -150,6 +160,35 @@ const types = {
       background: {
         screen: themeColors.white,
         paper: themeColors.transparent,
+        accent: Color(themeColors.darkTertiary)
+          .fade(alpha.medium)
+          .string(),
+        inactive: themeColors.darkTertiary,
+      },
+      shadows: {
+        default: Color(themeColors.darkTertiary)
+          .fade(alpha.medium)
+          .string(),
+      },
+      action: {
+        default: themeColors.darkTertiary,
+        primary: themeColors.primary,
+        secondary: themeColors.lightPrimary,
+        tertiary: themeColors.tertiary,
+      },
+    },
+  }),
+  'auth-entry': ({ colors: themeColors, alpha }) => ({
+    colors: {
+      text: {
+        primary: themeColors.darkPrimary,
+        secondary: themeColors.lightSecondary,
+        tertiary: themeColors.lightTertiary,
+        link: themeColors.tertiary,
+      },
+      background: {
+        screen: themeColors.lightSecondary,
+        paper: themeColors.paper,
         accent: Color(themeColors.darkTertiary)
           .fade(alpha.medium)
           .string(),

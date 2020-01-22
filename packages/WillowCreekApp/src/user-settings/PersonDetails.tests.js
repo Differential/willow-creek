@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Providers from 'WillowCreekApp/src/Providers';
+import Providers from '../Providers';
 
 import GET_USER_PROFILE from '../tabs/connect/getUserProfile';
 import { renderWithApolloData } from '../utils/testUtils';

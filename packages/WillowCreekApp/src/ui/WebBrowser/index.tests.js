@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Platform } from 'react-native';
 
-import Providers from 'WillowCreekApp/src/Providers';
+import Providers from '../../Providers';
 
 import { WebBrowserConsumer } from '.';
 
