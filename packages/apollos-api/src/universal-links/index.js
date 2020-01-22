@@ -19,7 +19,7 @@ export function setupUniversalLinks({ app }) {
           details: [
             {
               appID: [APPLE_TEAM_ID, APPLE_APP_ID].join('.'),
-              paths: ['/apollos/*'],
+              paths: ['/app-link/*'],
             },
           ],
         },
