@@ -4,7 +4,7 @@ export function setupUniversalLinks({ app }) {
   const {
     APPLE_TEAM_ID,
     APPLE_APP_ID,
-    ANDROID_APP_ID,
+    GOOGLE_APP_ID,
     GOOGLE_KEYSTORE_SHA256,
     PLAY_STORE_LINK,
     APP_STORE_LINK,
