@@ -1,22 +1,12 @@
 import URL from 'url';
 import querystring from 'querystring';
-import React, { Component } from 'react';
 import { Linking } from 'react-native';
 import PropTypes from 'prop-types';
-import gql from 'graphql-tag';
 import { withApollo } from 'react-apollo';
-import { get } from 'lodash';
 import OneSignal from 'react-native-onesignal';
 import { NotificationsProvider } from '@apollosproject/ui-notifications';
-import { resolvers, defaults } from './store';
 
-const UPDATE_DEVICE_PUSH_ID = gql`
-  mutation updateDevicePushId($pushId: String!) {
-    updateDevicePushId(pushId: $pushId) @client
-  }
-`;
-
-class NotificationsInit extends Component {
+class NotificationsInit extends NotificationsProvider {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
@@ -33,14 +23,6 @@ class NotificationsInit extends Component {
   };
 
   static navigationOptions = {};
-
-  constructor(props) {
-    super(props);
-    const { client } = props;
-    client.addResolvers(resolvers);
-    client.writeData({ data: defaults });
-    client.onResetStore(() => client.writeData({ data: defaults }));
-  }
 
   componentDidMount() {
     OneSignal.init(this.props.oneSignalKey, {
@@ -73,36 +55,6 @@ class NotificationsInit extends Component {
     const args = querystring.parse(url.query);
     this.props.navigate(cleanedRoute, args);
   };
-
-  onReceived = (notification) => {
-    console.log('Notification received: ', notification);
-  };
-
-  onOpened = (openResult) => {
-    console.log('Message: ', openResult.notification.payload.body);
-    console.log('Data: ', openResult.notification.payload.additionalData);
-    console.log('isActive: ', openResult.notification.isAppInFocus);
-    console.log('openResult: ', openResult);
-    // URL looks like this
-    // apolloschurchapp://AppStackNavigator/Connect
-    // apolloschurchapp://SomethingElse/Connect
-    // apolloschurchapp://SomethingElse/ContentSingle?itemId=SomeItemId:blablalba
-    const url = get(openResult, 'notification.payload.additionalData.url');
-    if (url) {
-      this.navigate(url);
-    }
-  };
-
-  onIds = (device) => {
-    this.props.client.mutate({
-      mutation: UPDATE_DEVICE_PUSH_ID,
-      variables: { pushId: device.userId },
-    });
-  };
-
-  render() {
-    return <NotificationsProvider {...this.props} navigate={() => ({})} />;
-  }
 }
 
 export default withApollo(NotificationsInit);
