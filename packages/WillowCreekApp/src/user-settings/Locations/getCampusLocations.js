@@ -5,6 +5,7 @@ export default gql`
   query getAllCampuses($latitude: Float!, $longitude: Float!) {
     campuses(location: { latitude: $latitude, longitude: $longitude }) {
       ...CampusParts
+      distanceFromLocation
     }
     currentUser {
       id

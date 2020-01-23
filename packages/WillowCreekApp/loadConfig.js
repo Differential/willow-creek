@@ -5,6 +5,28 @@ import gql from 'graphql-tag';
 ApollosConfig.loadJs({
   FRAGMENTS: {
     ...FRAGMENTS,
+    CAMPUS_PARTS_FRAGMENT: gql`
+      fragment CampusParts on Campus {
+        id
+        name
+        latitude
+        longitude
+        street1
+        street2
+        city
+        state
+        postalCode
+        image {
+          uri
+        }
+        resources {
+          url
+          title
+          icon
+          style
+        }
+      }
+    `,
     CONTENT_MEDIA_FRAGMENT: gql`
       fragment contentMediaFragment on ContentItem {
         id
