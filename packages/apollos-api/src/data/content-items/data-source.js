@@ -15,6 +15,21 @@ class ExtendedContentItem extends ContentItem.dataSource {
     return '';
   };
 
+  getCursorByParentContentItemId = async (id) => {
+    const associations = await this.request('ContentChannelItemAssociations')
+      .filter(`ContentChannelItemId eq ${id}`)
+      .cache({ ttl: 60 })
+      .get();
+
+    if (!associations || !associations.length) return this.request().empty();
+
+    return this.getFromIds(
+      associations.map(
+        ({ childContentChannelItemId }) => childContentChannelItemId
+      )
+    ).orderBy('Priority'); // Changed from Core, ordering by Priority instead of 'order'
+  };
+
   async getCoverImage(root) {
     const pickBestImage = (images) => {
       // TODO: there's probably a _much_ more explicit and better way to handle this
