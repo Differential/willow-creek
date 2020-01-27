@@ -15,19 +15,20 @@ class ExtendedContentItem extends ContentItem.dataSource {
     return '';
   };
 
+  _getCursorByParentContentItemId = this.getCursorByParentContentItemId;
+
   getCursorByParentContentItemId = async (id) => {
-    const associations = await this.request('ContentChannelItemAssociations')
-      .filter(`ContentChannelItemId eq ${id}`)
-      .cache({ ttl: 60 })
-      .get();
+    const cursor = await this._getCursorByParentContentItemId(id);
 
-    if (!associations || !associations.length) return this.request().empty();
+    return cursor.orderBy('Priority'); // Changed from Core, ordering by Priority instead of 'order'
+  };
 
-    return this.getFromIds(
-      associations.map(
-        ({ childContentChannelItemId }) => childContentChannelItemId
-      )
-    ).orderBy('Priority'); // Changed from Core, ordering by Priority instead of 'order'
+  _getCursorBySiblingContentItemId = this.getCursorBySiblingContentItemId;
+
+  getCursorBySiblingContentItemId = async (id) => {
+    const cursor = await this._getCursorBySiblingContentItemId(id);
+
+    return cursor.orderBy('Priority'); // Changed from Core, ordering by Priority instead of 'order'
   };
 
   async getCoverImage(root) {
