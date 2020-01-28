@@ -14,13 +14,13 @@ import {
   H5,
 } from '@apollosproject/ui-kit';
 import { Query } from 'react-apollo';
-import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
+import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import GET_USER_PROFILE from '../getUserProfile';
 
 const ActionTable = () => (
   <Query query={GET_USER_PROFILE}>
     {({ data }) => (
-      <WebBrowserConsumer>
+      <RockAuthedWebBrowser>
         {(openUrl) => (
           <View>
             <PaddedView style={{ paddingBottom: 0 }}>
@@ -56,7 +56,7 @@ const ActionTable = () => (
             {/* </TableView> */}
           </View>
         )}
-      </WebBrowserConsumer>
+      </RockAuthedWebBrowser>
     )}
   </Query>
 );

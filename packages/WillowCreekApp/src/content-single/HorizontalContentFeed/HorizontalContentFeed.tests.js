@@ -1,7 +1,7 @@
 import React from 'react';
+import { GET_CONTENT_CARD } from '@apollosproject/ui-connected';
 import Providers from '../../Providers';
 import { renderWithApolloData } from '../../utils/testUtils';
-import GET_CONTENT_CARD from '../../ui/ContentCardConnected/query';
 import GET_HORIZONTAL_CONTENT from './getHorizontalContent';
 import HorizontalContentFeed from '.';
 
