@@ -269,14 +269,29 @@
     recompose "^0.30.0"
     rn-placeholder "1.2.0"
 
-"@apollosproject/ui-mapview@^1.3.0-beta.0":
-  version "1.3.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-mapview/-/ui-mapview-1.3.0-beta.0.tgz#d3edcd59eb781ed4c680ecc3a48dcb33a0d3264c"
-  integrity sha512-adcVfZMgB4ATsrAo/6/WcgFJoaCfZxwmICEJqOXLZuyOoByJYo/V7eCk6lo26irLJrIM6DlgaB6lXErg4vx4cA==
+"@apollosproject/ui-kit@^1.3.0-beta.1":
+  version "1.3.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.3.0-beta.1.tgz#e148fddd409074953e7af963a6182aa09988f6bf"
+  integrity sha512-b5vOIlJ/u/VTjw023dGFVYSHp+hqqKWE40D6vlpqr31j5/utIj/zq8RSTFtASe++w3v9ESwsnHaIJJSfcjGOnQ==
   dependencies:
-    "@apollosproject/ui-kit" "^1.3.0-beta.0"
-    "@apollosproject/ui-media-player" "^1.3.0-beta.0"
-    "@apollosproject/ui-storybook" "^1.3.0-beta.0"
+    color "^3.1.0"
+    lodash "^4.17.11"
+    moment "^2.24.0"
+    numeral "^2.0.6"
+    react-native-modal-datetime-picker "7.6.0"
+    react-native-safe-area-context "^0.3.6"
+    react-native-tab-view "1.0.2"
+    recompose "^0.30.0"
+    rn-placeholder "1.2.0"
+
+"@apollosproject/ui-mapview@1.3.0-alpha.15":
+  version "1.3.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-mapview/-/ui-mapview-1.3.0-alpha.15.tgz#f9791a5f3eb365439a0ee7ce992f5464f96bb82b"
+  integrity sha512-lTEONWzGIVNgQ81JE+quN6aCTGvZ3/w5Dg5p5SJNMYbKW4H+RJtUxqgyDqT5fbDShJwHaeLIZ9F2vGWTULla9A==
+  dependencies:
+    "@apollosproject/ui-kit" "^1.3.0-beta.1"
+    "@apollosproject/ui-media-player" "^1.3.0-beta.1"
+    "@apollosproject/ui-storybook" "^1.3.0-beta.1"
     react-native-maps "0.26.1"
     react-navigation "^3.11.0"
 
@@ -284,6 +299,13 @@
   version "1.3.0-beta.0"
   resolved "https://registry.yarnpkg.com/@apollosproject/ui-media-player/-/ui-media-player-1.3.0-beta.0.tgz#67bc013ed8c45980cc986eb34e832ce1d6702e4d"
   integrity sha512-/PtT2li2U0QC2xxUkm6+1PuH3tXExvD4jBhXhYe1WbRf6ok/NkOyyE+WS+x9Bn6JvSbqXFnidJvLEbrRo9hmwA==
+  dependencies:
+    graphql-tag "^2.10.1"
+
+"@apollosproject/ui-media-player@^1.3.0-beta.1":
+  version "1.3.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-media-player/-/ui-media-player-1.3.0-beta.1.tgz#138378bc441e76e77356feb6e9caa1b8fea0a55b"
+  integrity sha512-nw+OW/2ijtJafE/7c4Voogmrp9BFwZPAR4e0+6/pk5eWUdn1LJHTJ3UZ5q/iUqEyKuI3VjAVjeJDhVaSTuCNDg==
   dependencies:
     graphql-tag "^2.10.1"
 
@@ -332,6 +354,16 @@
   version "1.3.0-beta.0"
   resolved "https://registry.yarnpkg.com/@apollosproject/ui-storybook/-/ui-storybook-1.3.0-beta.0.tgz#2c4e44662e11ca3a8dae908a293308009a082338"
   integrity sha512-tyUyqCHnSxg4faqWNe/mtaClQRVOoVnyxDkFR1+Wm+xOBsOkCmGDYEGe1ip783ElY8tCRs1tk3S/8nQDRYz1WA==
+  dependencies:
+    "@storybook/addon-actions" "5.2.4"
+    "@storybook/addon-links" "5.2.4"
+    "@storybook/addons" "5.2.4"
+    "@storybook/react-native" "5.2.4"
+
+"@apollosproject/ui-storybook@^1.3.0-beta.1":
+  version "1.3.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-storybook/-/ui-storybook-1.3.0-beta.1.tgz#46796f652301109def40e03345f550ce785d0291"
+  integrity sha512-0F33UCclMft6Xwiw2GOKS8ahZZr7xh9BoQykX6q2aB+gx0Plx4JoLWikBL33lv5z8VIUOLk3PySWhNc+Rn5MBQ==
   dependencies:
     "@storybook/addon-actions" "5.2.4"
     "@storybook/addon-links" "5.2.4"

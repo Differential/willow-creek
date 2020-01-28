@@ -124,7 +124,7 @@ class Location extends PureComponent {
                     campuses={campuses || []}
                     initialRegion={this.props.initialRegion}
                     userLocation={this.state.userLocation}
-                    loadingNewCampus={this.state.loadingNewCampus}
+                    isLoadingSelectedCampus={this.state.loadingNewCampus}
                     currentCampus={get(currentUser, 'profile.campus')}
                     onLocationSelect={async (campus) => {
                       this.setState({ loadingNewCampus: true });
