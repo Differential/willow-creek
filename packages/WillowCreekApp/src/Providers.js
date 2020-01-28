@@ -3,8 +3,9 @@ import ApollosConfig from '@apollosproject/config';
 import { Providers } from '@apollosproject/ui-kit';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
 import { MediaPlayerProvider } from '@apollosproject/ui-media-player';
-import { NotificationsProvider } from '@apollosproject/ui-notifications';
+
 import { AuthProvider } from '@apollosproject/ui-auth';
+import NotificationsProvider from './NotificationsProvider';
 import { LiveProvider } from './live/LiveContext';
 
 import NavigationService from './NavigationService';

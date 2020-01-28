@@ -3,7 +3,6 @@ import './loadConfig';
 import './src/bugsnag';
 
 import { AppRegistry, YellowBox } from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
 import ApollosConfig from '@apollosproject/config';
 import Storybook from './storybook';
 // import MainApp from './src';

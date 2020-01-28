@@ -3,6 +3,7 @@ import ApollosConfig from '@apollosproject/config';
 import express from 'express';
 import { RockLoggingExtension } from '@apollosproject/rock-apollo-data-source';
 import { get } from 'lodash';
+import { setupUniversalLinks } from './universal-links';
 
 import {
   resolvers,
@@ -79,6 +80,7 @@ const app = express();
 
 applyServerMiddleware({ app, dataSources, context });
 setupJobs({ app, dataSources, context });
+setupUniversalLinks({ app });
 
 apolloServer.applyMiddleware({ app });
 apolloServer.applyMiddleware({ app, path: '/' });

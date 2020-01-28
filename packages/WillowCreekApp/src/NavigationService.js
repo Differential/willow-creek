@@ -1,21 +1,34 @@
 import { StackActions, NavigationActions } from 'react-navigation';
 
 let _navigator;
+let _pendingActions = [];
+
+const performWhenReady = (func) => (...args) => {
+  if (_navigator) {
+    func(...args);
+  } else {
+    _pendingActions.push(() => func(...args));
+  }
+};
 
 const setTopLevelNavigator = (navigatorRef) => {
   _navigator = navigatorRef;
+  if (_pendingActions.length > 0) {
+    _pendingActions.forEach((action) => action());
+  }
+  _pendingActions = [];
 };
 
-const navigate = (routeName, params) => {
+const navigate = performWhenReady((routeName, params) => {
   _navigator.dispatch(
     NavigationActions.navigate({
       routeName,
       params,
     })
   );
-};
+});
 
-const resetToAuth = () => {
+const resetToAuth = performWhenReady(() => {
   _navigator.dispatch(
     StackActions.reset({
       index: 0,
@@ -30,16 +43,16 @@ const resetToAuth = () => {
       ],
     })
   );
-};
+});
 
-const goBack = (from) => {
+const goBack = performWhenReady((from) => {
   let key;
   if (from) {
     const route = _navigator.state.nav.routes.find((r) => r.routeName === from);
     if (route) ({ key } = route);
   }
   _navigator.dispatch(NavigationActions.back({ key }));
-};
+});
 
 export default {
   setTopLevelNavigator,
