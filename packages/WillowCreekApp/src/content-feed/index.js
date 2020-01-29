@@ -3,10 +3,10 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
+import { fetchMoreResolver } from '@apollosproject/ui-connected';
 
-import ContentCardConnected from '../ui/ContentCardConnected';
-import fetchMoreResolver from '../utils/fetchMoreResolver';
+import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
+import ContentCardConnected from '../ui/ContentCardConnected/ContentCardConnected';
 
 import GET_CONTENT_FEED from './getContentFeed';
 /**

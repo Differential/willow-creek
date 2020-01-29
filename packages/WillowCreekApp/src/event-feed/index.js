@@ -4,8 +4,8 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
+import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
-import Browser from '../ui/WebBrowser';
 import EventCard from './EventCard';
 
 import GET_CAMPUS_EVENTS from './getCampusEvents';
@@ -29,37 +29,32 @@ class ContentFeed extends PureComponent {
     }),
   };
 
-  /** Function that is called when a card in the feed is pressed.
-   * Takes the user to the ContentSingle
-   */
-  handleOnPress = (event) => Browser.open(event.url);
-  // this.props.navigation.navigate('Event', {
-  //   eventId: event.id,
-  //   sharing: event.sharing,
-  // });
-
   render() {
     return (
-      <BackgroundView>
-        <Query query={GET_CAMPUS_EVENTS} fetchPolicy="cache-and-network">
-          {({ loading, error, data, refetch, fetchMore, variables }) => (
-            <FeedView
-              ListItemComponent={EventCard}
-              content={get(data, 'currentUser.profile.campus.events', [])}
-              // fetchMore={fetchMoreResolver({
-              //   collectionName: 'node.childContentItemsConnection',
-              //   fetchMore,
-              //   variables,
-              //   data,
-              // })}
-              isLoading={loading}
-              error={error}
-              refetch={refetch}
-              onPressItem={this.handleOnPress}
-            />
-          )}
-        </Query>
-      </BackgroundView>
+      <RockAuthedWebBrowser>
+        {(openUrl) => (
+          <BackgroundView>
+            <Query query={GET_CAMPUS_EVENTS} fetchPolicy="cache-and-network">
+              {({ loading, error, data, refetch, fetchMore, variables }) => (
+                <FeedView
+                  ListItemComponent={EventCard}
+                  content={get(data, 'currentUser.profile.campus.events', [])}
+                  // fetchMore={fetchMoreResolver({
+                  //   collectionName: 'node.childContentItemsConnection',
+                  //   fetchMore,
+                  //   variables,
+                  //   data,
+                  // })}
+                  isLoading={loading}
+                  error={error}
+                  refetch={refetch}
+                  onPressItem={(event) => openUrl(event.url)}
+                />
+              )}
+            </Query>
+          </BackgroundView>
+        )}
+      </RockAuthedWebBrowser>
     );
   }
 }

@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import { View, SafeAreaView, StatusBar } from 'react-native';
 
+import { fetchMoreResolver } from '@apollosproject/ui-connected';
+
 import {
   FeedView,
   BackgroundView,
@@ -18,8 +20,7 @@ import {
 } from '@apollosproject/ui-kit';
 import FindCampusAd from '../../ui/FindCampusAd';
 
-import fetchMoreResolver from '../../utils/fetchMoreResolver';
-import ContentCardConnected from '../../ui/ContentCardConnected';
+import ContentCardConnected from '../../ui/ContentCardConnected/ContentCardConnected';
 import CampusSelectButton from '../../ui/CampusSelectButton';
 import Icon from './Icon';
 

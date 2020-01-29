@@ -10,9 +10,8 @@ import {
   ThemeMixin,
   ThemeConsumer,
   H2,
+  StretchyView,
 } from '@apollosproject/ui-kit';
-
-import StretchyView from '../../ui/StretchyView';
 
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';

@@ -15,12 +15,12 @@ import campusLink from './campusLink';
 const goToAuth = () => NavigationService.resetToAuth();
 const wipeData = () => cache.writeData({ data: defaults });
 
-let resetStore;
+let clearStore;
 let storeIsResetting = false;
 const onAuthError = async () => {
   if (!storeIsResetting) {
     storeIsResetting = true;
-    await resetStore();
+    await clearStore();
   }
   storeIsResetting = false;
   goToAuth();
@@ -43,11 +43,11 @@ export const client = new ApolloClient({
 
 // Hack to give auth link access to method on client;
 // eslint-disable-next-line prefer-destructuring
-resetStore = client.resetStore;
+clearStore = client.clearStore;
 
 wipeData();
 // Ensure that media player still works after logout.
-client.onResetStore(() => wipeData());
+client.onClearStore(() => wipeData());
 
 class ClientProvider extends PureComponent {
   static propTypes = {

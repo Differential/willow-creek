@@ -13,9 +13,8 @@ import {
   MediaThumbnailItem,
   H6,
 } from '@apollosproject/ui-kit';
+import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import { LiveConsumer } from '../../live/LiveContext';
-
-import { WebBrowserConsumer } from '../../ui/WebBrowser';
 
 import GET_CONTENT_MEDIA from './getContentMedia';
 
@@ -75,14 +74,14 @@ class MediaControls extends PureComponent {
   );
 
   renderWebView = ({ webViewUrl, coverImageSources }) => (
-    <WebBrowserConsumer>
+    <RockAuthedWebBrowser>
       {(openUrl) =>
         this.renderPlayButton({
           action: () => openUrl(webViewUrl),
           coverImageSources,
         })
       }
-    </WebBrowserConsumer>
+    </RockAuthedWebBrowser>
   );
 
   renderControls = ({

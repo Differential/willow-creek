@@ -5,7 +5,6 @@ import './src/bugsnag';
 import { AppRegistry, YellowBox } from 'react-native';
 import ApollosConfig from '@apollosproject/config';
 import Storybook from './storybook';
-// import MainApp from './src';
 
 const useStorybook = ApollosConfig.STORYBOOK === 'true';
 

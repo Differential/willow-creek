@@ -3,7 +3,7 @@ import { Linking } from 'react-native';
 import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
-import { WebBrowserConsumer } from 'WillowCreekApp/src/ui/WebBrowser';
+import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import { get } from 'lodash';
 import { Query } from 'react-apollo';
 import GET_USER_PROFILE from './getUserProfile';
@@ -11,7 +11,7 @@ import GET_USER_PROFILE from './getUserProfile';
 const Toolbar = () => (
   <Query query={GET_USER_PROFILE}>
     {({ data }) => (
-      <WebBrowserConsumer>
+      <RockAuthedWebBrowser>
         {(openUrl) => (
           <ActionBar>
             {get(data, 'currentUser.profile.campus.resources', [])
@@ -33,7 +33,7 @@ const Toolbar = () => (
               ))}
           </ActionBar>
         )}
-      </WebBrowserConsumer>
+      </RockAuthedWebBrowser>
     )}
   </Query>
 );

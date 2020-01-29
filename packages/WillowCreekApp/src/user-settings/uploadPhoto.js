@@ -9,7 +9,7 @@ import GET_USER_PHOTO from './getUserPhoto';
 
 const options = {
   title: 'Select Profile Image',
-  quality: 0,
+  quality: 0.7,
   storageOptions: {
     skipBackup: true,
     path: 'images',
