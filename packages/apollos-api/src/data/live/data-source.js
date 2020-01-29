@@ -1,21 +1,29 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import ApollosConfig from '@apollosproject/config';
+import { report } from '../bugsnag';
 
 export default class LiveStream extends RESTDataSource {
   async getIsLive({ channelId }) {
-    const response = await this.get(
-      `https://www.youtube.com/channel/${channelId}/live`,
-      null,
-      { cacheOptions: { ttl: 60 } }
-    );
+    let response;
+    try {
+      response = await this.get(
+        `https://www.youtube.com/channel/${channelId}/live`,
+        null,
+        { cacheOptions: { ttl: 60 } }
+      );
 
-    const isLive =
-      response.includes('og:video:url') &&
-      !response.includes('\\"status\\":\\"LIVE_STREAM_OFFLINE\\"');
+      const isLive =
+        response.includes('og:video:url') &&
+        !response.includes('\\"status\\":\\"LIVE_STREAM_OFFLINE\\"');
 
-    if (isLive) {
-      const videoId = response.match(/itemprop="videoId" content="(.*?)">/)[1];
-      return { isLive: true, videoId };
+      if (isLive) {
+        const videoId = response.match(
+          /itemprop="videoId" content="(.*?)">/
+        )[1];
+        return { isLive: true, videoId };
+      }
+    } catch (e) {
+      report(e, { Youtube: { ChannelId: channelId, Response: response } });
     }
     return { isLive: false };
   }
