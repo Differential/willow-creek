@@ -15,6 +15,22 @@ class ExtendedContentItem extends ContentItem.dataSource {
     return '';
   };
 
+  _getCursorByParentContentItemId = this.getCursorByParentContentItemId;
+
+  getCursorByParentContentItemId = async (id) => {
+    const cursor = await this._getCursorByParentContentItemId(id);
+
+    return cursor.orderBy('Priority'); // Changed from Core, ordering by Priority instead of 'order'
+  };
+
+  _getCursorBySiblingContentItemId = this.getCursorBySiblingContentItemId;
+
+  getCursorBySiblingContentItemId = async (id) => {
+    const cursor = await this._getCursorBySiblingContentItemId(id);
+
+    return cursor.orderBy('Priority'); // Changed from Core, ordering by Priority instead of 'order'
+  };
+
   async getCoverImage(root) {
     const pickBestImage = (images) => {
       // TODO: there's probably a _much_ more explicit and better way to handle this
