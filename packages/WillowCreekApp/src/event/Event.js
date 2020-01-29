@@ -9,11 +9,10 @@ import {
   PaddedView,
   H2,
   Paragraph,
+  StretchyView,
 } from '@apollosproject/ui-kit';
 
 import HTMLView from '@apollosproject/ui-htmlview';
-
-import StretchyView from '../ui/StretchyView';
 
 import { FlexedScrollView, EventInfoItem } from './components';
 
