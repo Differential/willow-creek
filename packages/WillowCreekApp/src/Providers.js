@@ -5,8 +5,8 @@ import { AnalyticsProvider } from '@apollosproject/ui-analytics';
 import { MediaPlayerProvider } from '@apollosproject/ui-media-player';
 
 import { AuthProvider } from '@apollosproject/ui-auth';
+import { LiveProvider } from '@apollosproject/ui-connected';
 import NotificationsProvider from './NotificationsProvider';
-import { LiveProvider } from './live/LiveContext';
 
 import NavigationService from './NavigationService';
 import ClientProvider from './client';
