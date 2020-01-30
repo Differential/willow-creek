@@ -2,6 +2,7 @@ import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
 import { flatten, get } from 'lodash';
 import Color from 'color';
+import { createGlobalId } from '@apollosproject/server-core';
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
@@ -238,6 +239,13 @@ class ExtendedContentItem extends ContentItem.dataSource {
     }
     return super.resolveType(attrs, ...otherProps);
   }
+
+  getShareUrl = async ({ id, ...args }) => {
+    const __typename = this.resolveType({ id, ...args });
+    return `${
+      ApollosConfig.ROCK.SHARE_URL
+    }/app-link/ContentSingle?itemId=${createGlobalId(id, __typename)}`;
+  };
 }
 
 export default ExtendedContentItem;
