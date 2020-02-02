@@ -99,10 +99,12 @@ class dataSource extends Event.dataSource {
       }))
     );
 
-    const sortedEvents = eventsWithMostRecentOccurence.sort(
-      (a, b) =>
-        a.mostRecentOccurence.getTime() - b.mostRecentOccurence.getTime()
-    );
+    const sortedEvents = eventsWithMostRecentOccurence
+      .filter(({ mostRecentOccurence }) => mostRecentOccurence)
+      .sort(
+        (a, b) =>
+          a.mostRecentOccurence.getTime() - b.mostRecentOccurence.getTime()
+      );
 
     if (limit != null) {
       return sortedEvents.slice(0, 3);
