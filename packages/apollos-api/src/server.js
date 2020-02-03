@@ -54,6 +54,7 @@ const apolloServer = new ApolloServer({
         'Custom Stacktrace': {
           trace: get(error, 'extensions.exception.stacktrace', []).join('\n'),
         },
+        'Auth Error Info': get(error, 'extensions.exception.userContext'),
       },
       (err) => {
         err.errorClass = error.message;
@@ -61,6 +62,9 @@ const apolloServer = new ApolloServer({
     );
     if (get(error, 'extensions.exception.stacktrace')) {
       delete error.extensions.exception.stacktrace;
+    }
+    if (get(error, 'extensions.exception.userContext')) {
+      delete error.extensions.exception.userContext;
     }
     return error;
   },

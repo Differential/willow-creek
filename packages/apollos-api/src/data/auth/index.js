@@ -1,3 +1,4 @@
+import { AuthenticationError } from 'apollo-server';
 import { Auth } from '@apollosproject/data-connector-rock';
 
 const { schema, resolver, contextMiddleware } = Auth;
@@ -15,6 +16,34 @@ class dataSource extends Auth.dataSource {
     } catch (err) {
       throw new Error('Unable to create profile!');
     }
+  };
+
+  getCurrentPerson = async ({ cookie = null } = { cookie: null }) => {
+    const { rockCookie, currentPerson } = this.context;
+    const userCookie = cookie || rockCookie;
+
+    if (currentPerson) {
+      return currentPerson;
+    }
+
+    if (userCookie) {
+      try {
+        const request = await this.request('People/GetCurrentPerson').get({
+          options: {
+            headers: { cookie: userCookie, 'Authorization-Token': null },
+          },
+        });
+        this.context.currentPerson = request;
+        return request;
+      } catch (e) {
+        const AuthError = new AuthenticationError('Invalid user cookie');
+        AuthError.userContext = { cookie: userCookie, error: e };
+        throw AuthError;
+      }
+    }
+    const AuthError = new AuthenticationError('Must be logged in');
+    AuthError.userContext = { cookie: userCookie };
+    throw AuthError;
   };
 }
 
