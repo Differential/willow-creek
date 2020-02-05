@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Linking } from 'react-native';
 // import NavigationActions from 'WillowCreekApp/src/NavigationService';
 import { get } from 'lodash';
 import {
@@ -31,7 +31,13 @@ const ActionTable = () => (
                 .filter(({ style }) => style === 'LIST_ITEM') // Resources with an icon show up in the action bar.
                 .map(({ url, title }) => (
                   <>
-                    <Touchable onPress={() => openUrl(url)}>
+                    <Touchable
+                      onPress={() =>
+                        url.includes('http')
+                          ? openUrl(url)
+                          : Linking.openURL(url)
+                      }
+                    >
                       <Cell>
                         <CellText>{title}</CellText>
                         <CellIcon name="arrow-next" />

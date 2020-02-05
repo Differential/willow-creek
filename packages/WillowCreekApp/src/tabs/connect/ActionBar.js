@@ -22,7 +22,7 @@ const Toolbar = () => (
               .map(({ url, title, icon, style }) => (
                 <ActionBarItem
                   onPress={() =>
-                    style === 'EXTERNAL_BAR_ITEM'
+                    style === 'EXTERNAL_BAR_ITEM' || !url.includes('http')
                       ? Linking.openURL(url)
                       : openUrl(url)
                   }
