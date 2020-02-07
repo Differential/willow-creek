@@ -100,7 +100,11 @@ class dataSource extends Event.dataSource {
     );
 
     const sortedEvents = eventsWithMostRecentOccurence
-      .filter(({ mostRecentOccurence }) => mostRecentOccurence)
+      .filter(
+        ({ mostRecentOccurence }) =>
+          mostRecentOccurence &&
+          mostRecentOccurence.getTime() > new Date().getTime()
+      )
       .sort(
         (a, b) =>
           a.mostRecentOccurence.getTime() - b.mostRecentOccurence.getTime()
