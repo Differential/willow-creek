@@ -6,8 +6,7 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { FeedView } from '@apollosproject/ui-kit';
-
-import SearchCard from '../../../ui/SearchCard';
+import { SearchCardConnected } from '@apollosproject/ui-connected';
 
 import GET_SEARCH_RESULTS from './getSearchResults';
 import NoResults from './NoResults';
@@ -37,7 +36,7 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
   >
     {({ loading, error, data, refetch }) => (
       <StyledFeedView
-        ListItemComponent={SearchCard}
+        ListItemComponent={SearchCardConnected}
         content={get(data, 'search.edges', [])}
         ListEmptyComponent={() => <NoResults searchText={searchText} />}
         hasContent={get(data, 'search.edges', []).length}

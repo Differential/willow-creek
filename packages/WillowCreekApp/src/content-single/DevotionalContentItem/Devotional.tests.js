@@ -1,8 +1,9 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { GET_CONTENT_ITEM_CONTENT } from '@apollosproject/ui-connected';
+
 import Providers from '../../Providers';
 import { renderWithApolloData } from '../../utils/testUtils';
-import GET_CONTENT_ITEM_CONTENT from '../HTMLContent/getContentItemContent';
 import GET_SCRIPTURE from './getScripture';
 import Devotional from '.';
 

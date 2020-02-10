@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import { get } from 'lodash';
 import { Query } from 'react-apollo';
-import GET_USER_PROFILE from './getUserProfile';
+import { GET_USER_PROFILE } from './UserAvatarHeader';
 
 const Toolbar = () => (
   <Query query={GET_USER_PROFILE}>
