@@ -12,6 +12,8 @@ APP:
   # It should match whatver is in your Info.plist `CFBundleURLTypes
   DEEP_LINK_HOST: WillowCreekApp
   ROOT_API_URL: ${ROOT_URL}
+  JOBS_USERNAME: ${JOBS_USERNAME}
+  JOBS_PASSWORD: ${JOBS_PASSWORD}
 UNIVERSAL_LINKS:
   APPLE_APP_ID: com.customchurchapps.appc2cui2f7
   APPLE_TEAM_ID: HBXNNZ69FP
