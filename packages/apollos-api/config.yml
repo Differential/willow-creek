@@ -42,6 +42,18 @@ ALGOLIA:
   API_KEY: ${ALGOLIASEARCH_API_KEY}
   # TODO: should we support multiple indices? how?
   SEARCH_INDEX: ContentItems
+  # Configure Algolia custom settings here
+  # https://www.algolia.com/doc/api-reference/settings-api-parameters/
+  CONFIGURATION:
+    searchableAttributes:
+      - title
+      - unordered(summary)
+    #customRankings:
+      # NOT CURRENTLY INCLUDED
+      # This just demonstrates what's possible
+      # To include likedCount (or any other field) override search package
+      # and add field to config below
+      #- desc(likedCount)s
 TWILIO:
   ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
   AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
