@@ -34,6 +34,14 @@ query getItem {
   }
 
   async indexAll() {
+    await new Promise((resolve, reject) =>
+      this.index.clearIndex((err, result) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(result);
+      })
+    );
     const { ContentItem } = this.context.dataSources;
     let itemsLeft = true;
     const args = { after: null, first: 100 };
