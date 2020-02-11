@@ -34,6 +34,11 @@ const contentItemOverrides = {
   },
   theme: (root, input, { dataSources }) =>
     dataSources.ContentItem.getTheme(root),
+  sharing: (root, args, { dataSources }) => ({
+    url: dataSources.ContentItem.getShareUrl(root), // core doesn't pass down root....
+    title: 'Share via ...',
+    message: `${root.title} - ${dataSources.ContentItem.createSummary(root)}`,
+  }),
 };
 
 const youtubeContentItemOverrides = {

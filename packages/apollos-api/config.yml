@@ -25,7 +25,7 @@ ROCK:
   API_URL: https://rock.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
   IMAGE_URL: ${ROCK_URL}/GetImage.ashx
-  SHARE_URL: https://willowcreek.tv
+  SHARE_URL: https://willowcreek-api.herokuapp.com
   # This should match the timezone of the Rock server
   TIMEZONE: 'America/Chicago'
   USE_PLUGIN: true
