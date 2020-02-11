@@ -84,6 +84,7 @@ class ChangePassword extends PureComponent {
               onPress={props.handleSubmit}
               title="Save"
               loading={props.isSubmitting}
+              type="secondary"
             />
           </PaddedView>
         </Footer>
