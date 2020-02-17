@@ -52,7 +52,6 @@ async function getMostRecentOccurenceForEvent(event) {
     .utcOffset(mostRecentOccurence);
 
   mostRecentOccurence = mostRecentOccurence.add(tzOffset, 'minutes').toDate();
-
   // Sometimes we have a "recurring rule"
   if (iCalEvent.rrule) {
     // Using the embeded RRule JS library, let's grab the next time this event occurs.
@@ -87,7 +86,11 @@ class dataSource extends Event.dataSource {
     const events = await this.findRecent()
       .andFilter(`CampusId eq ${campusId}`)
       .andFilter(
-        `(Schedule/EffectiveEndDate ge datetime'${new Date().toISOString()}' or Schedule/EffectiveEndDate eq null)`
+        `(Schedule/EffectiveEndDate ge datetime'${moment()
+          // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.
+          // It's okay to get already occured events, because we filter them out later on.
+          .subtract(1, 'day')
+          .toISOString()}' or Schedule/EffectiveEndDate eq null)`
       )
       .get();
 

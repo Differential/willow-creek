@@ -22,6 +22,9 @@ const colors = {
   background: {
     accent: '#9BCBEB',
   },
+  text: {
+    link: '#418fde',
+  },
 };
 
 const typography = {
