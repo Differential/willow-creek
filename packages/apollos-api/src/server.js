@@ -29,7 +29,7 @@ const cacheOptions = isDev
       cacheControl: {
         stripFormattedExtensions: false,
         calculateHttpHeaders: true,
-        defaultMaxAge: 600,
+        defaultMaxAge: 3600,
       },
     };
 

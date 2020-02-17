@@ -57,6 +57,8 @@ jest.mock('Animated', () => {
   };
 });
 
+jest.mock('NativeAnimatedHelper');
+
 jest.mock('react-native-safari-view', () => ({
   isAvailable: jest.fn().mockImplementation(() => Promise.resolve(true)),
   show: jest.fn(),

@@ -15,7 +15,7 @@ import {
 } from '@apollosproject/ui-kit';
 import { Query } from 'react-apollo';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
-import GET_USER_PROFILE from '../getUserProfile';
+import { GET_USER_PROFILE } from '../UserAvatarHeader';
 
 const ActionTable = () => (
   <Query query={GET_USER_PROFILE}>

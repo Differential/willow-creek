@@ -80,7 +80,7 @@ const campuses = [
   },
 ];
 
-describe('Display Native Map with Locations', () => {
+describe('The Location "finder"', () => {
   const initialRegion = {
     // roughly show the entire USA by default
     latitude: 39.809734,
@@ -88,11 +88,7 @@ describe('Display Native Map with Locations', () => {
     latitudeDelta: 100,
     longitudeDelta: 10,
   };
-  const userLocation = {
-    latitude: 39.104797,
-    longitude: -84.511959,
-  };
-  it('Render a native map view', async () => {
+  it('should render', async () => {
     const navigation = {
       navigate: jest.fn(),
       getParam: jest.fn(),
@@ -103,8 +99,8 @@ describe('Display Native Map with Locations', () => {
       request: {
         query: GET_CAMPUS_LOCATIONS,
         variables: {
-          latitude: userLocation.latitude,
-          longitude: userLocation.longitude,
+          latitude: undefined,
+          longitude: undefined,
         },
       },
       result: {

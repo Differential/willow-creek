@@ -3,6 +3,10 @@ import { Animated, Dimensions } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
+  ContentHTMLViewConnected,
+  LiveConsumer,
+} from '@apollosproject/ui-connected';
+import {
   styled,
   GradientOverlayImage,
   BackgroundView,
@@ -11,15 +15,11 @@ import {
   ThemeMixin,
   ThemeConsumer,
   CardLabel,
-  H4,
   withTheme,
   StretchyView,
 } from '@apollosproject/ui-kit';
 
-import { LiveConsumer } from '../../live/LiveContext';
-
 import MediaControls from '../MediaControls';
-import HTMLContent from '../HTMLContent';
 import HorizontalContentFeed from '../HorizontalContentFeed';
 import Features from '../Features';
 
@@ -53,13 +53,9 @@ const WeekendContentItem = ({ content, loading }) => {
         <BackgroundView>
           <StretchyView>
             {({ Stretchy, ...scrollViewProps }) => (
-              <FlexedScrollView>
+              <FlexedScrollView {...scrollViewProps}>
                 <Header hasMedia={content.videos && content.videos.sources}>
-                  <ThemeMixin
-                    mixin={{
-                      type: 'dark',
-                    }}
-                  >
+                  <ThemeMixin mixin={{ type: 'dark' }}>
                     {coverImageSources.length || loading ? (
                       <Stretchy
                         background
@@ -73,7 +69,6 @@ const WeekendContentItem = ({ content, loading }) => {
                         />
                       </Stretchy>
                     ) : null}
-
                     <LiveConsumer contentId={content.id}>
                       {(liveStream) => (
                         <LiveAwareLabel
@@ -87,15 +82,10 @@ const WeekendContentItem = ({ content, loading }) => {
                     <H2 padded isLoading={!content.title && loading}>
                       {content.title}
                     </H2>
-                    <H4>{content.summary}</H4>
-                    <PaddedView />
+                    <ContentHTMLViewConnected contentId={content.id} />
                   </ThemeMixin>
                 </Header>
                 <MediaControls contentId={content.id} />
-                <PaddedView />
-                <PaddedView>
-                  <HTMLContent contentId={content.id} />
-                </PaddedView>
                 <Features contentId={content.id} />
                 <HorizontalContentFeed contentId={content.id} />
               </FlexedScrollView>
