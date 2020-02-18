@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { withApollo } from 'react-apollo';
 import OneSignal from 'react-native-onesignal';
 import { NotificationsProvider } from '@apollosproject/ui-notifications';
+import gql from 'graphql-tag';
 
 class NotificationsInit extends NotificationsProvider {
   static propTypes = {
@@ -36,6 +37,18 @@ class NotificationsInit extends NotificationsProvider {
       this.navigate(url);
     });
     Linking.addEventListener('url', ({ url }) => this.navigate(url));
+    this.props.client.onClearStore(() =>
+      OneSignal.getPermissionSubscriptionState(({ userId }) => {
+        this.props.client.mutate({
+          mutation: gql`
+            mutation updateDevicePushId($pushId: String!) {
+              updateDevicePushId(pushId: $pushId) @client
+            }
+          `,
+          variables: { pushId: userId },
+        });
+      })
+    );
   }
 
   componentWillUnmount() {
