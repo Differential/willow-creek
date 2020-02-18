@@ -23,12 +23,12 @@ const AppProviders = (props) => (
         navigateToAuth={() => NavigationService.navigate('Auth')}
         navigate={NavigationService.navigate}
         closeAuth={() => NavigationService.navigate('Onboarding')}
-        useServerAnalytics={false}
       >
         <MediaPlayerProvider>
           <AnalyticsProvider
             trackFunctions={[track]}
             identifyFunctions={[identify]}
+            useServerAnalytics={false}
           >
             <LiveProvider>
               <Providers
