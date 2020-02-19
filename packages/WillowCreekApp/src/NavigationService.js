@@ -28,19 +28,25 @@ const navigate = performWhenReady((routeName, params) => {
   );
 });
 
+export const resetAction = ({ navigatorName, routeName }) =>
+  StackActions.reset({
+    index: 0,
+    key: null,
+    actions: [
+      NavigationActions.navigate({
+        routeName: navigatorName,
+        action: NavigationActions.navigate({
+          routeName,
+        }),
+      }),
+    ],
+  });
+
 const resetToAuth = performWhenReady(() => {
   _navigator.dispatch(
-    StackActions.reset({
-      index: 0,
-      key: null,
-      actions: [
-        NavigationActions.navigate({
-          routeName: 'Auth',
-          action: NavigationActions.navigate({
-            routeName: 'AuthSMSPhoneEntryConnected',
-          }),
-        }),
-      ],
+    resetAction({
+      navigatorName: 'Auth',
+      routeName: 'AuthSMSPhoneEntryConnected',
     })
   );
 });
@@ -57,6 +63,7 @@ const goBack = performWhenReady((from) => {
 export default {
   setTopLevelNavigator,
   navigate,
+  resetAction,
   goBack,
   resetToAuth,
 };

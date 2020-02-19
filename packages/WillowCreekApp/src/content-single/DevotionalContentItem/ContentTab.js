@@ -1,10 +1,12 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
-import { ContentHTMLViewConnected } from '@apollosproject/ui-connected';
+import {
+  ContentHTMLViewConnected,
+  HorizontalContentSeriesFeedConnected,
+} from '@apollosproject/ui-connected';
 import { PaddedView, H2, styled, withIsLoading } from '@apollosproject/ui-kit';
 import { ScriptureList } from '@apollosproject/ui-scripture';
-import HorizontalContentFeed from '../HorizontalContentFeed';
 
 const ContentContainer = withIsLoading(
   styled({ paddingVertical: 0 })(PaddedView)
@@ -35,7 +37,10 @@ const ContentTab = ({
       ) : null}
       <ContentHTMLViewConnected contentId={id} />
     </ContentContainer>
-    <HorizontalContentFeed contentId={id} navigation={navigation} />
+    <HorizontalContentSeriesFeedConnected
+      contentId={id}
+      navigation={navigation}
+    />
   </ScrollView>
 );
 
@@ -54,6 +59,7 @@ ContentTab.propTypes = {
   references: PropTypes.arrayOf(PropTypes.string),
   /** The devotional title */
   title: PropTypes.string,
+  navigation: PropTypes.shape({ navigate: PropTypes.array }).isRequired,
 };
 
 export default ContentTab;

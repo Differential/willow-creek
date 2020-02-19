@@ -2,7 +2,10 @@ import React from 'react';
 import { Animated } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
-import { ContentHTMLViewConnected } from '@apollosproject/ui-connected';
+import {
+  ContentHTMLViewConnected,
+  HorizontalContentSeriesFeedConnected,
+} from '@apollosproject/ui-connected';
 import {
   styled,
   GradientOverlayImage,
@@ -12,11 +15,15 @@ import {
   StretchyView,
 } from '@apollosproject/ui-kit';
 
-import MediaControls from '../MediaControls';
-import HorizontalContentFeed from '../HorizontalContentFeed';
 import Features from '../Features';
 
+import MediaControls from '../MediaControls';
+
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
+
+const StyledMediaControlsConnected = styled(({ theme }) => ({
+  marginTop: -(theme.sizing.baseUnit * 2.5),
+}))(MediaControls);
 
 const UniversalContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
@@ -33,7 +40,7 @@ const UniversalContentItem = ({ content, loading }) => {
                 />
               </Stretchy>
             ) : null}
-            <MediaControls contentId={content.id} />
+            <StyledMediaControlsConnected contentId={content.id} />
             {/* fixes text/navigation spacing by adding vertical padding if we dont have an image */}
             <PaddedView vertical={!coverImageSources.length}>
               <H2 padded isLoading={!content.title && loading}>
@@ -42,7 +49,7 @@ const UniversalContentItem = ({ content, loading }) => {
               <ContentHTMLViewConnected contentId={content.id} />
             </PaddedView>
             <Features contentId={content.id} />
-            <HorizontalContentFeed contentId={content.id} />
+            <HorizontalContentSeriesFeedConnected contentId={content.id} />
           </FlexedScrollView>
         )}
       </StretchyView>

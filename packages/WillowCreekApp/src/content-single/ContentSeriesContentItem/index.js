@@ -13,9 +13,8 @@ import {
   StretchyView,
 } from '@apollosproject/ui-kit';
 
-import { ContentHTMLViewConnected } from '@apollosproject/ui-connected';
+import { ContentHTMLViewConnected, HorizontalContentSeriesFeedConnected } from '@apollosproject/ui-connected';
 import MediaControls from '../MediaControls';
-import HorizontalContentFeed from '../HorizontalContentFeed';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
@@ -64,7 +63,7 @@ const ContentSeriesContentItem = ({ content, loading }) => {
                         <ContentHTMLViewConnected contentId={content.id} />
                       </PaddedView>
 
-                      <HorizontalContentFeed contentId={content.id} />
+                      <HorizontalContentSeriesFeedConnected contentId={content.id} />
                     </ThemeMixin>
                   </Content>
                 </FlexedScrollView>

@@ -1,19 +1,19 @@
+import hoistNonReactStatic from 'hoist-non-react-statics';
 import React from 'react';
 import { StatusBar } from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import SplashScreen from 'react-native-splash-screen';
 
 import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
-import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
-
 import Passes from '@apollosproject/ui-passes';
-import hoistNonReactStatic from 'hoist-non-react-statics';
-import Auth, { ProtectedRoute } from './auth';
+import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import Providers from './Providers';
 import NavigationService from './NavigationService';
 import ContentSingle from './content-single';
 import Event from './event';
+
 import EventFeed from './event-feed';
 import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
@@ -36,13 +36,12 @@ const ProtectedRouteWithSplashScreen = (props) => {
   return <ProtectedRoute {...props} onRouteChange={handleOnRouteChange} />;
 };
 
-const AuthWithBackground = (props) => (
+const EnhancedAuth = (props) => (
   <ThemeMixin mixin={{ type: 'onboarding' }}>
     <Auth BackgroundComponent={AuthBackground} emailRequired {...props} />
   </ThemeMixin>
 );
-
-hoistNonReactStatic(AuthWithBackground, Auth);
+hoistNonReactStatic(EnhancedAuth, Auth);
 
 const PassesWithBrand = (props) => (
   <ThemeMixin mixin={{ buttons: { primary: { accent: 'white' } } }}>
@@ -57,12 +56,12 @@ const AppNavigator = createStackNavigator(
     ProtectedRoute: ProtectedRouteWithSplashScreen,
     Tabs,
     ContentSingle,
-    Auth: AuthWithBackground,
+    Event,
+    Auth: EnhancedAuth,
     PersonalDetails,
     ChangePassword,
     Location,
     Passes: PassesWithBrand,
-    Event,
     EventFeed,
     UserWebBrowser,
     Onboarding,
