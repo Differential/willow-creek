@@ -4,9 +4,10 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
   ContentHTMLViewConnected,
-  LiveConsumer,
+  HorizontalContentSeriesFeedConnected,
 } from '@apollosproject/ui-connected';
 import {
+  withThemeMixin,
   styled,
   GradientOverlayImage,
   BackgroundView,
@@ -19,9 +20,9 @@ import {
   StretchyView,
 } from '@apollosproject/ui-kit';
 
-import MediaControls from '../MediaControls';
-import HorizontalContentFeed from '../HorizontalContentFeed';
 import Features from '../Features';
+import MediaControls from '../MediaControls';
+import { LiveConsumer } from '../../live/LiveContext';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
@@ -31,6 +32,18 @@ const Header = styled(({ hasMedia, theme }) => ({
   paddingBottom: hasMedia ? theme.sizing.baseUnit : theme.sizing.baseUnit * 2,
   // backgroundColor: theme.colors.primary,
 }))(PaddedView);
+
+const StyledMediaControlsConnected = styled(({ theme }) => ({
+  marginTop: -(theme.sizing.baseUnit * 2.5),
+}))(MediaControls);
+
+const StyledContentHTMLViewConnected = withThemeMixin({
+  colors: {
+    text: {
+      link: '#418fde',
+    },
+  },
+})(ContentHTMLViewConnected);
 
 const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
   ...(isLive
@@ -82,12 +95,12 @@ const WeekendContentItem = ({ content, loading }) => {
                     <H2 padded isLoading={!content.title && loading}>
                       {content.title}
                     </H2>
-                    <ContentHTMLViewConnected contentId={content.id} />
+                    <StyledContentHTMLViewConnected contentId={content.id} />
                   </ThemeMixin>
                 </Header>
-                <MediaControls contentId={content.id} />
+                <StyledMediaControlsConnected contentId={content.id} />
                 <Features contentId={content.id} />
-                <HorizontalContentFeed contentId={content.id} />
+                <HorizontalContentSeriesFeedConnected contentId={content.id} />
               </FlexedScrollView>
             )}
           </StretchyView>

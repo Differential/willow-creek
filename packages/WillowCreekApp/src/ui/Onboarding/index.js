@@ -6,11 +6,10 @@ import {
   RESULTS,
 } from 'react-native-permissions';
 import { withThemeMixin } from '@apollosproject/ui-kit';
-import { ApolloConsumer } from 'react-apollo';
 import { OnboardingSwiper } from '@apollosproject/ui-onboarding';
 
 import BackgroundImage from '../CityBackgroundImage';
-import AboutYouWithFirstName from './AboutYouWithFirstName';
+import { resetAction } from '../../NavigationService';
 import AskNotifications from './AskNotifications';
 
 function Onboarding({ navigation }) {
@@ -21,7 +20,7 @@ function Onboarding({ navigation }) {
         {({ swipeForward }) => (
           <>
             {/* <AskName onPressPrimary={swipeForward} /> */}
-            <AboutYouWithFirstName onPressPrimary={swipeForward} />
+            {/* <AboutYouWithFirstName onPressPrimary={swipeForward} /> */}
             <AskNotifications
               onRequestPushPermissions={(update) => {
                 checkNotifications().then((checkRes) => {
@@ -36,7 +35,14 @@ function Onboarding({ navigation }) {
                   }
                 });
               }}
-              onPressPrimary={() => navigation.replace('Tabs')}
+              onPressPrimary={() =>
+                navigation.dispatch(
+                  resetAction({
+                    navigatorName: 'Tabs',
+                    routeName: 'Home',
+                  })
+                )
+              }
               primaryNavText={'Finish'}
             />
           </>

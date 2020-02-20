@@ -22,9 +22,9 @@ const colors = {
   background: {
     accent: '#9BCBEB',
   },
-  text: {
-    link: '#418fde',
-  },
+  // text: {
+  //   link: '#418fde',
+  // },
 };
 
 const typography = {
@@ -105,6 +105,9 @@ const overrides = {
   'ui-auth.TitleText': {
     color: '#FFFFFF',
   },
+  'ui-auth.RadioLabel': {
+    color: '#FCFCFC',
+  },
   'Card.Image': {
     resizeMode: 'cover',
   },
@@ -122,6 +125,9 @@ const overrides = {
     borderColor: '#FCFCFC',
   },
   'ui-auth.PromptText': {
+    color: '#FCFCFC',
+  },
+  'ui-auth.FieldLabel': {
     color: '#FCFCFC',
   },
 };
@@ -185,12 +191,12 @@ const types = {
     colors: {
       text: {
         primary: themeColors.darkPrimary,
-        secondary: themeColors.lightSecondary,
+        secondary: 'white',
         tertiary: themeColors.lightTertiary,
         link: themeColors.tertiary,
       },
       background: {
-        screen: themeColors.lightSecondary,
+        screen: 'white',
         paper: themeColors.paper,
         accent: Color(themeColors.darkTertiary)
           .fade(alpha.medium)

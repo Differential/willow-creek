@@ -13,10 +13,11 @@ import {
   MediaThumbnailItem,
   H6,
 } from '@apollosproject/ui-kit';
-import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
+import {
+  RockAuthedWebBrowser,
+  GET_CONTENT_MEDIA,
+} from '@apollosproject/ui-connected';
 import { LiveConsumer } from '../../live/LiveContext';
-
-import GET_CONTENT_MEDIA from './getContentMedia';
 
 const Container = styled(({ theme }) => ({
   flexDirection: 'row',
