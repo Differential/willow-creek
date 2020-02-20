@@ -11,8 +11,11 @@ import {
   AuthEmailEntryConnected,
   AuthPasswordEntryConnected,
   AuthProfileEntryConnected,
-  Entry,
+  AuthProfileDetailsEntryConnected,
 } from '@apollosproject/ui-auth';
+
+import AuthProfileDetailsEntry from './AuthProfileDetailsEntry';
+import Entry from './Entry';
 
 export {
   LoginButton,
@@ -30,6 +33,12 @@ const StyledEntry = (props) => (
   </ThemeMixin>
 );
 
+const StyledProfileDetailsEntry = (props) => (
+  <ThemeMixin mixin={{ type: 'onboarding' }}>
+    <AuthProfileDetailsEntry {...props} />
+  </ThemeMixin>
+);
+
 const AuthNavigator = createStackNavigator(
   {
     AuthSMSPhoneEntryConnected: (props) => (
@@ -41,6 +50,12 @@ const AuthNavigator = createStackNavigator(
     ),
     AuthPasswordEntryConnected,
     AuthProfileEntryConnected,
+    AuthProfileDetailsEntryConnected: (props) => (
+      <AuthProfileDetailsEntryConnected
+        {...props}
+        Component={StyledProfileDetailsEntry}
+      />
+    ),
   },
   {
     initialRouteName: 'AuthSMSPhoneEntryConnected',

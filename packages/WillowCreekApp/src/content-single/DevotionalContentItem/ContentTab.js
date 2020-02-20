@@ -5,7 +5,13 @@ import {
   ContentHTMLViewConnected,
   HorizontalContentSeriesFeedConnected,
 } from '@apollosproject/ui-connected';
-import { PaddedView, H2, styled, withIsLoading } from '@apollosproject/ui-kit';
+import {
+  PaddedView,
+  H2,
+  styled,
+  withIsLoading,
+  withThemeMixin,
+} from '@apollosproject/ui-kit';
 import { ScriptureList } from '@apollosproject/ui-scripture';
 
 const ContentContainer = withIsLoading(
@@ -17,6 +23,15 @@ const ContentContainer = withIsLoading(
  * Displays a header, scripture list (using the ScriptureList component),
  * and the body text of the devo.
  */
+
+const StyledContentHTMLViewConnected = withThemeMixin({
+  colors: {
+    text: {
+      link: '#418fde',
+    },
+  },
+})(ContentHTMLViewConnected);
+
 const ContentTab = ({
   id,
   title,
@@ -35,7 +50,7 @@ const ContentTab = ({
           tabDestination={'scripture'}
         />
       ) : null}
-      <ContentHTMLViewConnected contentId={id} />
+      <StyledContentHTMLViewConnected contentId={id} />
     </ContentContainer>
     <HorizontalContentSeriesFeedConnected
       contentId={id}

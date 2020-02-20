@@ -13,6 +13,7 @@ import {
   PaddedView,
   H2,
   StretchyView,
+  withThemeMixin,
 } from '@apollosproject/ui-kit';
 
 import Features from '../Features';
@@ -20,6 +21,14 @@ import Features from '../Features';
 import MediaControls from '../MediaControls';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
+
+const StyledContentHTMLViewConnected = withThemeMixin({
+  colors: {
+    text: {
+      link: '#418fde',
+    },
+  },
+})(ContentHTMLViewConnected);
 
 const StyledMediaControlsConnected = styled(({ theme }) => ({
   marginTop: -(theme.sizing.baseUnit * 2.5),
@@ -46,7 +55,7 @@ const UniversalContentItem = ({ content, loading }) => {
               <H2 padded isLoading={!content.title && loading}>
                 {content.title}
               </H2>
-              <ContentHTMLViewConnected contentId={content.id} />
+              <StyledContentHTMLViewConnected contentId={content.id} />
             </PaddedView>
             <Features contentId={content.id} />
             <HorizontalContentSeriesFeedConnected contentId={content.id} />

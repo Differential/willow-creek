@@ -11,10 +11,22 @@ import {
   ThemeConsumer,
   H2,
   StretchyView,
+  withThemeMixin,
 } from '@apollosproject/ui-kit';
 
-import { ContentHTMLViewConnected, HorizontalContentSeriesFeedConnected } from '@apollosproject/ui-connected';
+import {
+  ContentHTMLViewConnected,
+  HorizontalContentSeriesFeedConnected,
+} from '@apollosproject/ui-connected';
 import MediaControls from '../MediaControls';
+
+const StyledContentHTMLViewConnected = withThemeMixin({
+  colors: {
+    text: {
+      link: '#418fde',
+    },
+  },
+})(ContentHTMLViewConnected);
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
@@ -60,10 +72,14 @@ const ContentSeriesContentItem = ({ content, loading }) => {
                         <H2 padded isLoading={!content.title && loading}>
                           {content.title}
                         </H2>
-                        <ContentHTMLViewConnected contentId={content.id} />
+                        <StyledContentHTMLViewConnected
+                          contentId={content.id}
+                        />
                       </PaddedView>
 
-                      <HorizontalContentSeriesFeedConnected contentId={content.id} />
+                      <HorizontalContentSeriesFeedConnected
+                        contentId={content.id}
+                      />
                     </ThemeMixin>
                   </Content>
                 </FlexedScrollView>
