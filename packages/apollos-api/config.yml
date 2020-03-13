@@ -350,21 +350,21 @@ HOME_FEATURES:
           first: 100
           contentChannelIds:
             - 26
-  - title:
-    subtitle: Upcoming Services
-    algorithms:
-      - type: POINTER_FEED
-        arguments:
-          first: 100
-          contentChannelIds:
-            - 28
-  - title:
-    subtitle: Here's what's coming up!
-    algorithms: [UPCOMING_EVENTS]
-    additionalAction:
-      title: 'See more'
-      action: VISIT_ROUTE
-      actionMeta: EventFeed
+#   - title:
+#     subtitle: Upcoming Services
+#     algorithms:
+#       - type: POINTER_FEED
+#         arguments:
+#           first: 100
+#           contentChannelIds:
+#             - 28
+#   - title:
+#     subtitle: Here's what's coming up!
+#     algorithms: [UPCOMING_EVENTS]
+#     additionalAction:
+#       title: 'See more'
+#       action: VISIT_ROUTE
+#       actionMeta: EventFeed
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
