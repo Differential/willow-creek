@@ -109,7 +109,7 @@ ROCK_MAPPINGS:
       ContentChannelTypeId: [6, 13]
     DevotionalContentItem:
       EntityType: ContentChannelItem
-      ContentChannelTypeId: [12]
+      ContentChannelTypeId: [] # Used to be 12, but we wanted to show YT instead of Scripture
     MediaContentItem:
       EntityType: ContentChannelItem
       ContentChannelTypeId: [5]
