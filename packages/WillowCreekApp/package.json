@@ -99,7 +99,7 @@
     "@storybook/addon-links": "4.1.16",
     "@storybook/addons": "4.1.16",
     "@storybook/react-native": "4.1.1",
-    "codecov": "3.0.2",
+    "codecov": "3.6.5",
     "get-dev-paths": "^0.1.0",
     "graphql-import": "^0.7.1",
     "jest": "^24.8.0",
