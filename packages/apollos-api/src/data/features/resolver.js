@@ -1,3 +1,3 @@
-import { Features as baseFeatures } from '@apollosproject/data-connector-rock';
+import { Feature as baseFeature } from '@apollosproject/data-connector-rock';
 
-export default baseFeatures.resolver;
+export default baseFeature.resolver;

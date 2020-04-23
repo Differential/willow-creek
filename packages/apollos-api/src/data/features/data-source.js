@@ -1,10 +1,10 @@
-import { Features as baseFeatures } from '@apollosproject/data-connector-rock';
+import { Feature as baseFeature } from '@apollosproject/data-connector-rock';
 import { get, flatten } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
 import moment from 'moment-timezone';
 
-export default class Features extends baseFeatures.dataSource {
+export default class Feature extends baseFeature.dataSource {
   ACTION_ALGORITHIMS = {
     // We need to make sure `this` refers to the class, not the `ACTION_ALGORITHIMS` object.
     PERSONA_FEED: this.personaFeedAlgorithm.bind(this),
