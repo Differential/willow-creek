@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import {
   ContentHTMLViewConnected,
   HorizontalContentSeriesFeedConnected,
+  LiveConsumer,
+  ContentSingleFeaturesConnected,
 } from '@apollosproject/ui-connected';
 import {
   withThemeMixin,
@@ -13,16 +15,14 @@ import {
   BackgroundView,
   PaddedView,
   H2,
+  StretchyView,
   ThemeMixin,
   ThemeConsumer,
   CardLabel,
   withTheme,
-  StretchyView,
 } from '@apollosproject/ui-kit';
 
-import Features from '../Features';
 import MediaControls from '../MediaControls';
-import { LiveConsumer } from '../../live/LiveContext';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
@@ -44,6 +44,7 @@ const StyledContentHTMLViewConnected = withThemeMixin({
     },
   },
 })(ContentHTMLViewConnected);
+
 
 const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
   ...(isLive
@@ -100,6 +101,7 @@ const WeekendContentItem = ({ content, loading }) => {
                 </Header>
                 <StyledMediaControlsConnected contentId={content.id} />
                 <Features contentId={content.id} />
+                <ContentSingleFeaturesConnected contentId={content.id} />
                 <HorizontalContentSeriesFeedConnected contentId={content.id} />
               </FlexedScrollView>
             )}
@@ -118,6 +120,7 @@ WeekendContentItem.propTypes = {
     }),
     id: PropTypes.string,
     title: PropTypes.string,
+    videos: PropTypes.arrayOf(PropTypes.shape({ sources: PropTypes.array })),
   }),
   loading: PropTypes.bool,
 };

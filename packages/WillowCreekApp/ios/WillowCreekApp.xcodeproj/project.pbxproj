@@ -180,6 +180,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = WillowCreekApp;
@@ -423,6 +424,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82AAE537241888D100D1EEC7 /* Images.xcassets in Resources */,
+				82AAE52F24187BB500D1EEC7 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +453,7 @@
 				776E5099155B4375AA5DB422 /* Gotham-BookItalic.otf in Resources */,
 				9571B2ACB05842CF8980A803 /* Gotham-Light.otf in Resources */,
 				E6B4468C072947738D48F9D2 /* Gotham-Medium.otf in Resources */,
+				82AAE52E24187BB500D1EEC7 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +469,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82AAE538241888D200D1EEC7 /* Images.xcassets in Resources */,
+				82AAE53124187BB500D1EEC7 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,8 +5,10 @@ import PropTypes from 'prop-types';
 
 import { View, SafeAreaView, StatusBar } from 'react-native';
 
-import { fetchMoreResolver } from '@apollosproject/ui-connected';
-
+import {
+  fetchMoreResolver,
+  FeaturesFeedConnected,
+} from '@apollosproject/ui-connected';
 import {
   FeedView,
   BackgroundView,
@@ -113,79 +115,15 @@ class Home extends PureComponent {
             <BackgroundView>
               <ThemedStatusBar />
               <FlexedSafeAreaView>
-                <FlexedView>
-                  <Query
-                    query={GET_USER_FEED}
-                    variables={{
-                      first: 10,
-                      after: null,
-                    }}
-                    fetchPolicy="cache-and-network"
-                  >
-                    {({
-                      loading,
-                      error,
-                      data,
-                      refetch: refetchFeed,
-                      fetchMore,
-                      variables,
-                    }) => (
-                      <FeedView
-                        ListItemComponent={ContentCardConnected}
-                        content={get(data, 'userFeed.edges', []).map(
-                          (edge) => edge.node
-                        )}
-                        fetchMore={fetchMoreResolver({
-                          collectionName: 'userFeed',
-                          fetchMore,
-                          variables,
-                          data,
-                        })}
-                        isLoading={loading}
-                        error={error}
-                        refetch={() =>
-                          Promise.all([
-                            refetchFeed(),
-                            this.refetchFeatures(),
-                            refetchCampaign(),
-                          ])
-                        }
-                        ListHeaderComponent={
-                          <>
-                            <PaddedView>
-                              <CampusSelectButton
-                                ButtonComponent={CampusTouchable}
-                              />
-                              <H2>My Willow</H2>
-                            </PaddedView>
-                            {featuredItem ? (
-                              <TouchableScale
-                                onPress={() =>
-                                  this.handleOnPress({
-                                    id: featuredItem.id,
-                                  })
-                                }
-                              >
-                                <ContentCardConnected
-                                  Component={FeaturedCard}
-                                  contentId={featuredItem.id}
-                                  isLoading={!featuredItem && isFeaturedLoading}
-                                />
-                              </TouchableScale>
-                            ) : null}
-                            <Features
-                              navigation={this.props.navigation}
-                              refetchRef={(refetch) => {
-                                this.refetchFeatures = refetch;
-                              }}
-                            />
-                          </>
-                        }
-                        onPressItem={this.handleOnPress}
-                      />
-                    )}
-                  </Query>
-                </FlexedView>
+                <FeaturesFeedConnected
+                  onPressActionItem={this.handleOnPressActionItem}
+                  ListHeaderComponent={
+                    <PaddedView>
+                      <CampusSelectButton ButtonComponent={CampusTouchable} />
+                      <H2>My Willow</H2>
+                    </PaddedView>
+                  }
+                />
               </FlexedSafeAreaView>
             </BackgroundView>
           );
