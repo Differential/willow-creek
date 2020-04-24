@@ -12,5 +12,11 @@ export default gql`
     OPEN_URL
   }
 
+  type LinkFeature implements Feature & Node {
+    id: ID!
+    order: Int
+    url: String
+  }
+
   ${Feature.schema}
 `;

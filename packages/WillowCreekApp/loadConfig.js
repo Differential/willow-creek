@@ -5,6 +5,34 @@ import gql from 'graphql-tag';
 ApollosConfig.loadJs({
   FRAGMENTS: {
     ...FRAGMENTS,
+    ACTION_LIST_FEATURE_FRAGMENT: gql`
+      fragment ActionListFeatureFragment on ActionListFeature {
+        id
+        title
+        subtitle
+        actions {
+          id
+          title
+          subtitle
+          action
+          image {
+            sources {
+              uri
+            }
+          }
+          relatedNode {
+            id
+            ... on LinkFeature {
+              url
+            }
+            ... on Event {
+              url
+              start
+            }
+          }
+        }
+      }
+    `,
     CAMPUS_PARTS_FRAGMENT: gql`
       fragment CampusParts on Campus {
         id

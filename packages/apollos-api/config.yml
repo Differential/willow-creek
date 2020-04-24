@@ -356,6 +356,13 @@ HOME_FEATURES:
           first: 100
           contentChannelIds:
             - 26
+  # - title:
+  #   subtitle: Here's what's coming up!
+  #   algorithms: [UPCOMING_EVENTS]
+  #   additionalAction:
+  #     title: 'See more'
+  #     action: VISIT_ROUTE
+  #     actionMeta: EventFeed
   - algorithms: [USER_FEED]
     type: VerticalCardList
 #   - title:
@@ -366,13 +373,6 @@ HOME_FEATURES:
 #           first: 100
 #           contentChannelIds:
 #             - 28
-#   - title:
-#     subtitle: Here's what's coming up!
-#     algorithms: [UPCOMING_EVENTS]
-#     additionalAction:
-#       title: 'See more'
-#       action: VISIT_ROUTE
-#       actionMeta: EventFeed
 
   # - algorithms: [CAMPAIGN_ITEMS]
   #   type: VerticalCardList
