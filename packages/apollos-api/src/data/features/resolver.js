@@ -20,7 +20,11 @@ function getSupportedTypes(info) {
     }
   });
 
-  return [...inlineFragmentTypes, ...fragmentTypes]
+  const fragmentFragmentTypes = Object.values(info.fragments).flatMap((f) =>
+    f.selectionSet.selections.map((s) => get(s, 'typeCondition.name.value'))
+  );
+
+  return [...inlineFragmentTypes, ...fragmentTypes, ...fragmentFragmentTypes]
     .filter((n) => !!n)
     .map((n) => n.replace('Feature', ''));
 }

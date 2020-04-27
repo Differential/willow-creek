@@ -176,12 +176,14 @@ export default class Feature extends baseFeature.dataSource {
     return {
       // The Feature ID is based on all of the action ids, added together.
       // This is naive, and could be improved.
-      id: createGlobalId(
-        actions
-          .map(({ relatedNode: { id } }) => id)
-          .reduce((acc, sum) => acc + sum, 0),
-        'ActionListFeature'
-      ),
+      id: this.createFeatureId({
+        type: 'ActionListFeature',
+        args: {
+          algorithms,
+          title,
+          subtitle,
+        },
+      }),
       actions,
       title,
       subtitle,
