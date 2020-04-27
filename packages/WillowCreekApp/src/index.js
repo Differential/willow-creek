@@ -29,8 +29,8 @@ import MediaPlayerYoutube from './ui/MediaPlayerYoutube';
 import Auth from './auth';
 
 const AppStatusBar = withTheme(({ theme }) => ({
-  barStyle: 'dark-content',
-  backgroundColor: theme.colors.paper,
+  barStyle: theme.barStyle,
+  backgroundColor: theme.colors.background.paper,
 }))(StatusBar);
 
 const ProtectedRouteWithSplashScreen = (props) => {
