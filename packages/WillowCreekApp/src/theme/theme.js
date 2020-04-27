@@ -242,3 +242,4 @@ export default {
   buttons,
   types,
 };
+

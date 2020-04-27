@@ -212,6 +212,12 @@ class ExtendedContentItem extends ContentItem.dataSource {
       .top(first);
   }
 
+  byUserFeed() {
+    return this.byUserCampus({
+      contentChannelIds: ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
+    });
+  }
+
   getActiveLiveStreamContent = async () => {
     const { LiveStream } = this.context.dataSources;
     const { isLive } = await LiveStream.getLiveStream();

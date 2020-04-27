@@ -29,7 +29,7 @@ import * as LiveStream from './live';
 import * as Theme from './theme';
 import * as Campus from './campus';
 import * as Event from './event';
-import * as Features from './features';
+import * as Feature from './features';
 import * as Person from './person';
 
 import * as Youtube from './youtube';
@@ -65,9 +65,9 @@ const data = {
   Campus,
   Youtube,
   BinaryFiles,
-  Features,
   YoutubeImport,
   Group,
+  Feature,
   Event,
   Cache,
 };

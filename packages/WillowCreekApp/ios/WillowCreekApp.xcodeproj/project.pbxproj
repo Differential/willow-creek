@@ -36,6 +36,7 @@
 		AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */; };
 		B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */; };
 		BF9C0F27233E4832008BCFBF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C0F26233E4832008BCFBF /* File.swift */; };
+		BFA3273D2453259E004F74E6 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA3273C2453259E004F74E6 /* BootSplash.storyboard */; };
 		E6B4468C072947738D48F9D2 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 31EE68D917254133A0F697A5 /* Gotham-Medium.otf */; };
 		E875558F3FB8FA2024EF7DC2 /* libPods-WillowCreekApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6B5B7B6A0D1ECB68CF0DD /* libPods-WillowCreekApp.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
@@ -99,6 +100,7 @@
 		AE85030F59F256E90D5A4C2B /* Pods-WillowCreekApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WillowCreekApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-WillowCreekApp-tvOS/Pods-WillowCreekApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		BF9C0F26233E4832008BCFBF /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		BF9C0F28233E4847008BCFBF /* WillowCreekApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WillowCreekApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		BFA3273C2453259E004F74E6 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = WillowCreekApp/BootSplash.storyboard; sourceTree = "<group>"; };
 		D394E3064D75710E81C51EB0 /* Pods-WillowCreekApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WillowCreekApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-WillowCreekApp-tvOSTests/Pods-WillowCreekApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Bold.otf"; path = "../assets/fonts/Inter-UI-Bold.otf"; sourceTree = "<group>"; };
 		DA9745795726553C6FA9E7A8 /* Pods-WillowCreekApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WillowCreekApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-WillowCreekApp-tvOSTests/Pods-WillowCreekApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		13B07FAE1A68108700A75B9A /* WillowCreekApp */ = {
 			isa = PBXGroup;
 			children = (
+				BFA3273C2453259E004F74E6 /* BootSplash.storyboard */,
 				BF9C0F28233E4847008BCFBF /* WillowCreekApp-Bridging-Header.h */,
 				BF9C0F26233E4832008BCFBF /* File.swift */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -436,6 +439,7 @@
 				B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */,
 				90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */,
 				93A2B0A9328A46A4B7DD5EFA /* DroidSerif-Regular.ttf in Resources */,
+				BFA3273D2453259E004F74E6 /* BootSplash.storyboard in Resources */,
 				68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */,
 				578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */,
 				7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */,
@@ -739,7 +743,7 @@
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = WillowCreekApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -771,7 +775,7 @@
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = WillowCreekApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

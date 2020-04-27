@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import {
   ContentHTMLViewConnected,
   HorizontalContentSeriesFeedConnected,
+  ContentSingleFeaturesConnected,
+  UpNextButtonConnected,
 } from '@apollosproject/ui-connected';
 import {
   styled,
@@ -40,7 +42,7 @@ const UniversalContentItem = ({ content, loading }) => {
     <BackgroundView>
       <StretchyView>
         {({ Stretchy, ...scrollViewProps }) => (
-          <FlexedScrollView>
+          <FlexedScrollView {...scrollViewProps}>
             {coverImageSources.length || loading ? (
               <Stretchy>
                 <GradientOverlayImage
@@ -57,7 +59,8 @@ const UniversalContentItem = ({ content, loading }) => {
               </H2>
               <StyledContentHTMLViewConnected contentId={content.id} />
             </PaddedView>
-            <Features contentId={content.id} />
+            <ContentSingleFeaturesConnected contentId={content.id} />
+            <UpNextButtonConnected contentId={content.id} />
             <HorizontalContentSeriesFeedConnected contentId={content.id} />
           </FlexedScrollView>
         )}

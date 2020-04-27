@@ -1,12 +1,13 @@
-import { Features as baseFeatures } from '@apollosproject/data-connector-rock';
+import { Feature as baseFeature } from '@apollosproject/data-connector-rock';
 import { get, flatten } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
 import moment from 'moment-timezone';
 
-export default class Features extends baseFeatures.dataSource {
+export default class Feature extends baseFeature.dataSource {
   ACTION_ALGORITHIMS = {
     // We need to make sure `this` refers to the class, not the `ACTION_ALGORITHIMS` object.
+    ...this.ACTION_ALGORITHIMS,
     PERSONA_FEED: this.personaFeedAlgorithm.bind(this),
     POINTER_FEED: this.pointerFeedAlgorithm.bind(this),
     CONTENT_CHANNEL: this.contentChannelAlgorithm.bind(this),
@@ -38,6 +39,14 @@ export default class Features extends baseFeatures.dataSource {
     return featureListItems.filter((item) => !!item);
   }
 
+  async createFeatureId({ args, type }) {
+    const {
+      campusId,
+    } = await this.context.dataSources.Person.getCurrentUserCampusId();
+    // doing this helps ensure that features are different because of different campuses end up with different ids.
+    return createGlobalId(JSON.stringify({ campusId, ...args }), type);
+  }
+
   async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
     const { ContentItem } = this.context.dataSources;
 
@@ -51,6 +60,64 @@ export default class Features extends baseFeatures.dataSource {
 
     // Map them into specific actions.
     return this.resolvePointers({ items });
+  }
+
+  async campaignItemsAlgorithm({ limit = 1 } = {}) {
+    const { ContentItem } = this.context.dataSources;
+
+    const channels = await (await ContentItem.byUserCampus({
+      contentChannelIds: ApollosConfig.ROCK_MAPPINGS.CAMPAIGN_CHANNEL_IDS,
+    })).get();
+
+    const items = flatten(
+      await Promise.all(
+        channels.map(async ({ id, title }) => {
+          const childItemsCursor = await ContentItem.getCursorByParentContentItemId(
+            id
+          );
+
+          const childItems = await childItemsCursor
+            .top(limit)
+            .expand('ContentChannel')
+            .get();
+
+          return childItems.map((item) => ({
+            ...item,
+            channelSubtitle: title,
+          }));
+        })
+      )
+    );
+
+    return items.map((item, i) => ({
+      id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
+      title: item.title,
+      subtitle: get(item, 'contentChannel.name'),
+      relatedNode: { ...item, __type: ContentItem.resolveType(item) },
+      image: ContentItem.getCoverImage(item),
+      action: 'READ_CONTENT',
+      summary: ContentItem.createSummary(item),
+    }));
+  }
+
+  async userFeedAlgorithm({ limit = 20 } = {}) {
+    const { ContentItem } = this.context.dataSources;
+
+    const cursor = await ContentItem.byUserCampus({
+      contentChannelIds: ApollosConfig.ROCK_MAPPINGS.FEED_CONTENT_CHANNEL_IDS,
+    });
+
+    const items = await cursor.top(limit).get();
+
+    return items.map((item, i) => ({
+      id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
+      title: item.title,
+      subtitle: get(item, 'contentChannel.name'),
+      relatedNode: { ...item, __type: ContentItem.resolveType(item) },
+      image: ContentItem.getCoverImage(item),
+      action: 'READ_CONTENT',
+      summary: ContentItem.createSummary(item),
+    }));
   }
 
   async pointerFeedAlgorithm({ contentChannelIds, first = 100 }) {

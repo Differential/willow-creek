@@ -2,4 +2,5 @@
 <resources>
     <color name="primary">#ffffff</color>
     <color name="splashBg">#0070b9</color>
+    <color name="bootsplash_background">#0070b9</color>
 </resources>

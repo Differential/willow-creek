@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { ErrorCard, ThemeMixin } from '@apollosproject/ui-kit';
 
 import { TrackEventWhenLoaded } from '@apollosproject/ui-analytics';
+import { InteractWhenLoadedConnected } from '@apollosproject/ui-connected';
 
 import ActionContainer from './ActionContainer';
 import GET_CONTENT_ITEM from './getContentItem';
@@ -120,6 +121,11 @@ class ContentSingle extends PureComponent {
             itemId: this.itemId,
             contentChannel: get(content, 'parentChannel.name'),
           }}
+        />
+        <InteractWhenLoadedConnected
+          isLoading={loading}
+          nodeId={this.itemId}
+          action={'COMPLETE'}
         />
         {this.renderContent({ content, loading, error })}
         <ActionContainer itemId={id} />
