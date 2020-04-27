@@ -88,7 +88,7 @@ export default class Feature extends baseFeature.dataSource {
       contentChannelIds: ApollosConfig.ROCK_MAPPINGS.CAMPAIGN_CHANNEL_IDS,
     })).get();
 
-    const items = flatten(
+    const allItems = flatten(
       await Promise.all(
         channels.map(async ({ id, title }) => {
           const childItemsCursor = await ContentItem.getCursorByParentContentItemId(
@@ -107,6 +107,8 @@ export default class Feature extends baseFeature.dataSource {
         })
       )
     );
+
+    const items = [allItems[0]];
 
     return items.map((item, i) => ({
       id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
