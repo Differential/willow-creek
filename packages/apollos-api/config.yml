@@ -349,7 +349,7 @@ HOME_FEATURES:
     isFeatured: true
   - title:
     subtitle: Next Steps
-    type: ActionListCard
+    type: ActionList
     algorithms:
       - type: PERSONA_FEED
         arguments:

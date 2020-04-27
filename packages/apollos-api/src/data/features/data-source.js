@@ -15,6 +15,25 @@ export default class Feature extends baseFeature.dataSource {
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
   };
 
+  async getHomeFeedFeatures({ supportedTypes }) {
+    return Promise.all(
+      get(ApollosConfig, 'HOME_FEATURES', [])
+        .filter(({ type }) => supportedTypes.includes(type))
+        .map((featureConfig) => {
+          switch (featureConfig.type) {
+            case 'VerticalCardList':
+              return this.createVerticalCardListFeature(featureConfig);
+            case 'HorizontalCardList':
+              return this.createHorizontalCardListFeature(featureConfig);
+            case 'ActionList':
+            default:
+              // Action list was the default in 1.3.0 and prior.
+              return this.createActionListFeature(featureConfig);
+          }
+        })
+    );
+  }
+
   async resolvePointers({ items }) {
     const { ContentItem } = this.context.dataSources;
     const featureListItems = await Promise.all(
