@@ -18,8 +18,6 @@ import {
   withThemeMixin,
 } from '@apollosproject/ui-kit';
 
-import Features from '../Features';
-
 import MediaControls from '../MediaControls';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);

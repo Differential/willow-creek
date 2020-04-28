@@ -45,7 +45,6 @@ const StyledContentHTMLViewConnected = withThemeMixin({
   },
 })(ContentHTMLViewConnected);
 
-
 const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
   ...(isLive
     ? {
@@ -100,7 +99,6 @@ const WeekendContentItem = ({ content, loading }) => {
                   </ThemeMixin>
                 </Header>
                 <StyledMediaControlsConnected contentId={content.id} />
-                <Features contentId={content.id} />
                 <ContentSingleFeaturesConnected contentId={content.id} />
                 <HorizontalContentSeriesFeedConnected contentId={content.id} />
               </FlexedScrollView>
