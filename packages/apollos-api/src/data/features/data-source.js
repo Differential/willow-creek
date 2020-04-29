@@ -108,7 +108,7 @@ export default class Feature extends baseFeature.dataSource {
       )
     );
 
-    const items = [allItems[0]];
+    const items = allItems.slice(0, 1);
 
     return items.map((item, i) => ({
       id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
