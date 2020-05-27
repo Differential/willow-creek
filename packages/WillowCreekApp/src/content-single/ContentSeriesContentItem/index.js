@@ -17,6 +17,7 @@ import {
 import {
   ContentHTMLViewConnected,
   HorizontalContentSeriesFeedConnected,
+  UpNextButtonConnected,
 } from '@apollosproject/ui-connected';
 import MediaControls from '../MediaControls';
 
@@ -76,7 +77,7 @@ const ContentSeriesContentItem = ({ content, loading }) => {
                           contentId={content.id}
                         />
                       </PaddedView>
-
+                      <UpNextButtonConnected contentId={content.id} />
                       <HorizontalContentSeriesFeedConnected
                         contentId={content.id}
                       />
