@@ -1,11 +1,18 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
-import { flatten, get } from 'lodash';
+import { flatten, get, uniq } from 'lodash';
 import Color from 'color';
-import { createGlobalId } from '@apollosproject/server-core';
+import { createGlobalId, parseGlobalId } from '@apollosproject/server-core';
+
+const { ROCK_MAPPINGS } = ApollosConfig;
 
 class ExtendedContentItem extends ContentItem.dataSource {
   expanded = true;
+
+  DEFAULT_SORT = () => [
+    { field: 'Priority', direction: 'asc' },
+    { field: 'StartDateTime', direction: 'asc' },
+  ];
 
   // A cursor returning content items by a guid.
   // Returns a more inclusive cursor if no guid is passed.
@@ -14,22 +21,6 @@ class ExtendedContentItem extends ContentItem.dataSource {
     const summary = get(attributeValues, 'summary.value', '');
     if (summary !== '') return summary;
     return '';
-  };
-
-  _getCursorByParentContentItemId = this.getCursorByParentContentItemId;
-
-  getCursorByParentContentItemId = async (id) => {
-    const cursor = await this._getCursorByParentContentItemId(id);
-
-    return cursor.orderBy('Priority'); // Changed from Core, ordering by Priority instead of 'order'
-  };
-
-  _getCursorBySiblingContentItemId = this.getCursorBySiblingContentItemId;
-
-  getCursorBySiblingContentItemId = async (id) => {
-    const cursor = await this._getCursorBySiblingContentItemId(id);
-
-    return cursor.orderBy('Priority'); // Changed from Core, ordering by Priority instead of 'order'
   };
 
   async getCoverImage(root) {
@@ -229,6 +220,69 @@ class ExtendedContentItem extends ContentItem.dataSource {
     })).first();
     return [mostRecentSermon];
   };
+
+  async getSeriesWithUserProgress() {
+    const { Auth, Interactions } = this.context.dataSources;
+
+    // Safely exit if we don't have a current user.
+    try {
+      await Auth.getCurrentPerson();
+    } catch (e) {
+      return this.request().empty();
+    }
+
+    const interactions = await Interactions.getInteractionsForCurrentUser({
+      actions: ['SERIES_START'],
+    });
+
+    const ids = uniq(
+      interactions.map(({ foreignKey }) => {
+        const { id } = parseGlobalId(foreignKey);
+        return id;
+      })
+    );
+
+    // We need to make sure we don't include the campaign channels.
+    // We could also consider doing this using a whitelist.
+    // This also may be part of a broader conversation about how we identify the true parent of a content item
+    const blacklistedIds = (await this.byContentChannelIds(
+      ROCK_MAPPINGS.CAMPAIGN_CHANNEL_IDS
+    ).get()).map(({ id }) => `${id}`);
+
+    const completedIds = (await Promise.all(
+      ids.map(async (id) => ({
+        id,
+        lastComplete: await this.getLastChildComplete({ id }),
+      }))
+    ))
+      .filter(({ lastComplete }) => lastComplete === true)
+      .map(({ id }) => id);
+
+    const finalIds = ids.filter(
+      (id) => ![...blacklistedIds, ...completedIds].includes(id)
+    );
+
+    return this.getFromIds(finalIds);
+  }
+
+  async getLastChildComplete({ id }) {
+    const lastChild = await (await this.getCursorByParentContentItemId(id))
+      .sort([
+        { field: 'Priority', direction: 'desc' },
+        { field: 'StartDateTime', direction: 'desc' },
+      ])
+      .first();
+    if (!lastChild) {
+      return true;
+    }
+    const completedInteractions = await this.context.dataSources.Interactions.getInteractionsForCurrentUserAndNodes(
+      {
+        nodeIds: [createGlobalId(lastChild.id, this.resolveType(lastChild))],
+        actions: ['COMPLETE'],
+      }
+    );
+    return !!completedInteractions.length;
+  }
 
   resolveType(attrs, ...otherProps) {
     const { contentChannelId } = attrs;

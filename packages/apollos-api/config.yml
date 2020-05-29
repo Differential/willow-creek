@@ -356,6 +356,9 @@ HOME_FEATURES:
           first: 100
           contentChannelIds:
             - 26
+  - algorithms: [SERIES_IN_PROGRESS]
+    type: HorizontalCardList
+    subtitle: Up next for you
   - title:
     subtitle: Here's what's coming up!
     algorithms: [UPCOMING_EVENTS]
