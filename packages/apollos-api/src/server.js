@@ -25,11 +25,11 @@ const extensions = isDev ? [() => new RockLoggingExtension()] : [];
 
 const plugins = [
   {
-    requestDidStart(context) {
+    requestDidStart() {
       return {
         didEncounterErrors({ errors, request }) {
+          const headers = fromPairs(Array.from(request.http.headers.entries()));
           errors.forEach((error) => {
-            console.log(request);
             report(
               error,
               {
@@ -38,9 +38,7 @@ const plugins = [
                   location: JSON.stringify(error.locations),
                   variables: request.variables,
                   operationName: request.operationName,
-                  headers: fromPairs(
-                    Array.from(request.http.headers.entries())
-                  ),
+                  headers,
                 },
                 'Auth Error Info': get(
                   error,
@@ -48,6 +46,11 @@ const plugins = [
                 ),
               },
               (err) => {
+                const ip = get(headers, 'fastly-client-ip', 'unknown');
+                err.user = {
+                  id: ip,
+                  appVersion: get(headers, 'user-agent', 'unknown'),
+                };
                 err.errorClass = error.message;
               }
             );
