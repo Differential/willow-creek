@@ -51,7 +51,6 @@ const plugins = [
                   id: ip,
                   appVersion: get(headers, 'user-agent', 'unknown'),
                 };
-                err.errorClass = error.message;
               }
             );
           });
