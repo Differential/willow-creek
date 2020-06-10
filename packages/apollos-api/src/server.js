@@ -82,6 +82,8 @@ const apolloServer = new ApolloServer({
 
 const app = express();
 
+app.set('etag', false);
+
 applyServerMiddleware({ app, dataSources, context });
 setupJobs({ app, dataSources, context });
 setupUniversalLinks({ app });
