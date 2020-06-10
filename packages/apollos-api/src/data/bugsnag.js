@@ -19,8 +19,8 @@ export const report = (error, metaData, beforeSend) => {
 const originaldidReceiveResponse = RESTDataSource.prototype.didReceiveResponse;
 
 RESTDataSource.prototype.didReceiveResponse = function(response, _request) {
-  if (response.status === 401) {
-    report(new Error('401 in RESTDataSource'), {
+  if (response.status !== 200) {
+    report(new Error(`${response.status} in RESTDataSource`), {
       metaData: {
         Response: {
           status: response.status,

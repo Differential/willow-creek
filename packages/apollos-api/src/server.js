@@ -2,7 +2,7 @@ import { ApolloServer } from 'apollo-server-express';
 import ApollosConfig from '@apollosproject/config';
 import express from 'express';
 import { RockLoggingExtension } from '@apollosproject/rock-apollo-data-source';
-import { get } from 'lodash';
+import { get, fromPairs } from 'lodash';
 import { setupUniversalLinks } from './universal-links';
 
 import {
@@ -23,6 +23,40 @@ const isDev =
 
 const extensions = isDev ? [() => new RockLoggingExtension()] : [];
 
+const plugins = [
+  {
+    requestDidStart(context) {
+      return {
+        didEncounterErrors({ errors, request }) {
+          errors.forEach((error) => {
+            console.log(request);
+            report(
+              error,
+              {
+                'GraphQL Info': {
+                  query: request.query,
+                  location: JSON.stringify(error.locations),
+                  variables: request.variables,
+                  operationName: request.operationName,
+                  headers: fromPairs(
+                    Array.from(request.http.headers.entries())
+                  ),
+                },
+                'Auth Error Info': get(
+                  error,
+                  'extensions.exception.userContext'
+                ),
+              },
+              (err) => {
+                err.errorClass = error.message;
+              }
+            );
+          });
+        },
+      };
+    },
+  },
+];
 const cacheOptions = isDev
   ? {}
   : {
@@ -45,21 +79,9 @@ const apolloServer = new ApolloServer({
   },
   introspection: true,
   extensions,
+  plugins,
   debug: true,
   formatError: (error) => {
-    report(
-      error,
-      {
-        'GraphQL Info': { path: error.path },
-        'Custom Stacktrace': {
-          trace: get(error, 'extensions.exception.stacktrace', []).join('\n'),
-        },
-        'Auth Error Info': get(error, 'extensions.exception.userContext'),
-      },
-      (err) => {
-        err.errorClass = error.message;
-      }
-    );
     if (get(error, 'extensions.exception.stacktrace')) {
       delete error.extensions.exception.stacktrace;
     }
