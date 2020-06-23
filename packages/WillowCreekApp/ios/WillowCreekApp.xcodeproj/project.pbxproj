@@ -22,11 +22,18 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* WillowCreekAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WillowCreekAppTests.m */; };
 		5052CC3F746A428BBC7D42E2 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 02F3C5944E354D39B99CE2B1 /* Gotham-Bold.otf */; };
-		578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */; };
-		68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC21254B449443F99016EBFD /* Inter-UI-Black.otf */; };
 		75F5B745DCF248D1B1DFE5E7 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = FC65D9722F1C4D3A94DA9A9C /* Gotham-Book.otf */; };
 		776E5099155B4375AA5DB422 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 688D5CCD18DC497883BF9E8B /* Gotham-BookItalic.otf */; };
 		7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */; };
+		578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */; };
+		68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC21254B449443F99016EBFD /* Inter-UI-Black.otf */; };
+		7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */; };
+		82AAE52E24187BB500D1EEC7 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */; };
+		82AAE52F24187BB500D1EEC7 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */; };
+		82AAE53024187BB500D1EEC7 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */; };
+		82AAE53124187BB500D1EEC7 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */; };
+		82AAE537241888D100D1EEC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		82AAE538241888D200D1EEC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		894732A70B4740678E85B593 /* Inter-UI-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5410F239E9477B9C2E86BD /* Inter-UI-BoldItalic.otf */; };
 		8EA9BDE542E09F685A47D9BE /* libPods-WillowCreekApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B9762ACA099D28C28DBB31 /* libPods-WillowCreekApp-tvOS.a */; };
 		90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */; };
@@ -105,6 +112,7 @@
 		D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Bold.otf"; path = "../assets/fonts/Inter-UI-Bold.otf"; sourceTree = "<group>"; };
 		DA9745795726553C6FA9E7A8 /* Pods-WillowCreekApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WillowCreekApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-WillowCreekApp-tvOSTests/Pods-WillowCreekApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Medium.otf"; path = "../assets/fonts/Inter-UI-Medium.otf"; sourceTree = "<group>"; };
+		DCB1270C2429347200079762 /* WillowCreekApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WillowCreekApp.entitlements; path = WillowCreekApp/WillowCreekApp.entitlements; sourceTree = "<group>"; };
 		DDB6B5B7B6A0D1ECB68CF0DD /* libPods-WillowCreekApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WillowCreekApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Bold.ttf"; path = "../assets/fonts/DroidSerif-Bold.ttf"; sourceTree = "<group>"; };
 		E98AC9782C338F13632EF710 /* Pods-WillowCreekAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WillowCreekAppTests.release.xcconfig"; path = "Target Support Files/Pods-WillowCreekAppTests/Pods-WillowCreekAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,12 +185,15 @@
 				BFA3273C2453259E004F74E6 /* BootSplash.storyboard */,
 				BF9C0F28233E4847008BCFBF /* WillowCreekApp-Bridging-Header.h */,
 				BF9C0F26233E4832008BCFBF /* File.swift */,
+				DCB1270C2429347200079762 /* WillowCreekApp.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = WillowCreekApp;
@@ -426,6 +437,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82AAE537241888D100D1EEC7 /* Images.xcassets in Resources */,
+				82AAE52F24187BB500D1EEC7 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,12 +447,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				08CE105F17284254AD54AF84 /* DroidSerif-Bold.ttf in Resources */,
 				B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */,
 				90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */,
 				93A2B0A9328A46A4B7DD5EFA /* DroidSerif-Regular.ttf in Resources */,
-				BFA3273D2453259E004F74E6 /* BootSplash.storyboard in Resources */,
 				68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */,
 				578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */,
 				7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */,
@@ -454,6 +465,7 @@
 				776E5099155B4375AA5DB422 /* Gotham-BookItalic.otf in Resources */,
 				9571B2ACB05842CF8980A803 /* Gotham-Light.otf in Resources */,
 				E6B4468C072947738D48F9D2 /* Gotham-Medium.otf in Resources */,
+				82AAE52E24187BB500D1EEC7 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				82AAE53024187BB500D1EEC7 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +482,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82AAE538241888D200D1EEC7 /* Images.xcassets in Resources */,
+				82AAE53124187BB500D1EEC7 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +557,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		43D579D8398224D7B09F58F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WillowCreekApp/Pods-WillowCreekApp-resources.sh",
+				"${PODS_ROOT}/google-cast-sdk-no-bluetooth/GoogleCastSDK-ios-4.4.7_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk-no-bluetooth/GoogleCastSDK-ios-4.4.7_static/GoogleCast.framework/GoogleCastUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WillowCreekApp/Pods-WillowCreekApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		9C20354F160AAF86C8281F23 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
