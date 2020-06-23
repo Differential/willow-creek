@@ -19,6 +19,7 @@ import {
   Template,
   Group,
   BinaryFiles,
+  PrayerRequest,
 } from '@apollosproject/data-connector-rock';
 
 // This module is used to attach Rock User updating to the OneSignal module.
@@ -70,6 +71,7 @@ const data = {
   Feature,
   Event,
   Cache,
+  PrayerRequest,
 };
 
 // If we are in development mode, we allow users to import data from Youtube.
