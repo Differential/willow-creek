@@ -7,10 +7,9 @@ import { ApolloLink } from 'apollo-link';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 
 import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
-import campusLink from './campusLink';
-
+import { NavigationService } from '@apollosproject/ui-kit';
 import { resolvers, schema, defaults } from '../store';
-import NavigationService from '../NavigationService';
+import campusLink from './campusLink';
 
 import httpLink from './httpLink';
 import cache, { ensureCacheHydration } from './cache';

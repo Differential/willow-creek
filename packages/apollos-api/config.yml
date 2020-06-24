@@ -353,7 +353,7 @@ HOME_FEATURES:
           contentChannelIds:
             - 26
   - algorithms: [DAILY_PRAYER]
-    isCard: false
+    isCard: true
     type: PrayerList
     title: Daily Prayer
   - algorithms: [SERIES_IN_PROGRESS]
