@@ -95,10 +95,12 @@ const WeekendContentItem = ({ content, loading }) => {
                     <H2 padded isLoading={!content.title && loading}>
                       {content.title}
                     </H2>
-                    <StyledContentHTMLViewConnected contentId={content.id} />
                   </ThemeMixin>
                 </Header>
                 <StyledMediaControlsConnected contentId={content.id} />
+                <PaddedView>
+                  <StyledContentHTMLViewConnected contentId={content.id} />
+                </PaddedView>
                 <ContentSingleFeaturesConnected contentId={content.id} />
                 <HorizontalContentSeriesFeedConnected contentId={content.id} />
               </FlexedScrollView>

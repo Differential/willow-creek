@@ -86,10 +86,9 @@ export default class Feature extends baseFeature.dataSource {
 
     const items = await personaFeed.orderBy('Priority').get();
 
-    console.log({ items });
-
     // Map them into specific actions.
-    return this.resolvePointers({ items });
+    const pointers = await this.resolvePointers({ items });
+    return (pointers || []).slice(0, first);
   }
 
   async campaignItemsAlgorithm({ limit = 1 } = {}) {

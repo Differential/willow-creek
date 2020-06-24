@@ -344,34 +344,35 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 3368
 
 HOME_FEATURES:
-  - algorithms: [DAILY_PRAYER]
-    isCard: true
-    type: PrayerList
-    title: Daily Prayer
-  - algorithms: [CAMPAIGN_ITEMS]
-    type: VerticalCardList
-    isFeatured: true
-  - title:
-    subtitle: Next Steps
-    type: ActionList
+  - type: HeroList
+    heroAlgorithms: [CAMPAIGN_ITEMS, USER_FEED]
     algorithms:
       - type: PERSONA_FEED
         arguments:
-          first: 100
+          first: 3
           contentChannelIds:
             - 26
+  - algorithms: [DAILY_PRAYER]
+    isCard: false
+    type: PrayerList
+    title: Daily Prayer
   - algorithms: [SERIES_IN_PROGRESS]
     type: HorizontalCardList
     title: Up next for you
-  - title:
-    subtitle: Here's what's coming up!
+  - title: Upcomming
+    subtitle: Events
     algorithms: [UPCOMING_EVENTS]
     additionalAction:
       title: 'See more'
       action: VISIT_ROUTE
       actionMeta: EventFeed
     type: ActionList
-  - algorithms: [USER_FEED]
+  - algorithms:
+      - type: PERSONA_FEED
+        arguments:
+          first: 24
+          contentChannelIds:
+            - 26
     type: VerticalCardList
 #   - title:
 #     subtitle: Upcoming Services
