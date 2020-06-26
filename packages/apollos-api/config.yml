@@ -356,6 +356,7 @@ HOME_FEATURES:
     isCard: true
     type: PrayerList
     title: Daily Prayer
+    subtitle: Join Us in Prayer
   - algorithms: [SERIES_IN_PROGRESS]
     type: HorizontalCardList
     title: Up next for you

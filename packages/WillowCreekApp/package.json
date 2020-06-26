@@ -24,7 +24,7 @@
     "@apollosproject/ui-analytics": "1.4.3",
     "@apollosproject/ui-auth": "1.4.3",
     "@apollosproject/ui-htmlview": "1.4.3",
-    "@apollosproject/ui-kit": "1.4.3",
+    "@apollosproject/ui-kit": "1.4.4-alpha.1",
     "@apollosproject/ui-media-player": "1.4.3",
     "@apollosproject/ui-notifications": "1.4.3",
     "@apollosproject/ui-onboarding": "1.4.3",
