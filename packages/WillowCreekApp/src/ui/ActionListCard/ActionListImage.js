@@ -46,7 +46,6 @@ const ActionListImage = ({ isLoading, source, start, type }) => {
   if (isLoading) {
     return <CellImage />;
   }
-  console.warn(type, source);
   if (hasNoImage(source) && type === 'Event') {
     const date = moment(start);
     return (
