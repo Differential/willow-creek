@@ -35,6 +35,16 @@ const resolver = {
     userFeedFeatures: async (root, args, { dataSources: { Feature } }, info) =>
       Feature.getHomeFeedFeatures({ supportedTypes: getSupportedTypes(info) }),
   },
+  CardListItem: {
+    ...baseFeature.resolver.CardListItem,
+    hasAction: (...args) => {
+      try {
+        return baseFeature.resolver.CardListItem.hasAction(...args);
+      } catch {
+        return false;
+      }
+    },
+  },
 };
 
 export default resolver;

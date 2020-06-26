@@ -3,8 +3,7 @@ import ApollosConfig from '@apollosproject/config';
 import express from 'express';
 import { RockLoggingExtension } from '@apollosproject/rock-apollo-data-source';
 import { get, fromPairs } from 'lodash';
-import { setupUniversalLinks } from './universal-links';
-
+import { setupUniversalLinks } from '@apollosproject/server-core';
 import {
   resolvers,
   schema,

@@ -9,7 +9,6 @@ export default gql`
 
   extend enum ACTION_FEATURE_ACTION {
     VISIT_ROUTE
-    OPEN_URL
   }
 
   type LinkFeature implements Feature & Node {

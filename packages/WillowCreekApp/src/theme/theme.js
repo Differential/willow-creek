@@ -130,6 +130,9 @@ const overrides = {
   'ui-auth.FieldLabel': {
     color: '#FCFCFC',
   },
+  'ui-prayer.PrayerExperienceConnected': {
+    showOnboarding: true,
+  },
 };
 
 const buttons = ({ colors: themeColors }) => ({
@@ -242,4 +245,3 @@ export default {
   buttons,
   types,
 };
-

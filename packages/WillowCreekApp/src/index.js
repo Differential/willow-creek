@@ -5,14 +5,18 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import RNBootSplash from 'react-native-bootsplash';
 
-import { BackgroundView, withTheme, ThemeMixin } from '@apollosproject/ui-kit';
+import {
+  BackgroundView,
+  withTheme,
+  ThemeMixin,
+  NavigationService,
+} from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
 import { ProtectedRoute } from '@apollosproject/ui-auth';
 
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import Providers from './Providers';
-import NavigationService from './NavigationService';
 import ContentSingle from './content-single';
 import Event from './event';
 

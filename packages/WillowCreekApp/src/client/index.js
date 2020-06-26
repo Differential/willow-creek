@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider as ApolloHookProvider } from '@apollo/react-hooks';
 import { ApolloClient } from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 
 import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
-import campusLink from './campusLink';
-
+import { NavigationService } from '@apollosproject/ui-kit';
 import { resolvers, schema, defaults } from '../store';
-import NavigationService from '../NavigationService';
+import campusLink from './campusLink';
 
 import httpLink from './httpLink';
 import cache, { ensureCacheHydration } from './cache';
@@ -74,7 +74,14 @@ class ClientProvider extends PureComponent {
   }
 
   render() {
-    return <ApolloProvider {...this.props} client={client} />;
+    const { children, ...otherProps } = this.props;
+    return (
+      <ApolloProvider {...otherProps} client={client}>
+        <ApolloHookProvider {...otherProps} client={client}>
+          {children}
+        </ApolloHookProvider>
+      </ApolloProvider>
+    );
   }
 }
 

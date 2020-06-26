@@ -5,11 +5,10 @@ import {
   requestNotifications,
   RESULTS,
 } from 'react-native-permissions';
-import { withThemeMixin } from '@apollosproject/ui-kit';
+import { withThemeMixin, NavigationService } from '@apollosproject/ui-kit';
 import { OnboardingSwiper } from '@apollosproject/ui-onboarding';
 
 import BackgroundImage from '../CityBackgroundImage';
-import { resetAction } from '../../NavigationService';
 import AskNotifications from './AskNotifications';
 
 function Onboarding({ navigation }) {
@@ -37,7 +36,7 @@ function Onboarding({ navigation }) {
               }}
               onPressPrimary={() =>
                 navigation.dispatch(
-                  resetAction({
+                  NavigationService.resetAction({
                     navigatorName: 'Tabs',
                     routeName: 'Home',
                   })
