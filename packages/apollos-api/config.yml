@@ -49,11 +49,11 @@ ALGOLIA:
       - title
       - unordered(summary)
     #customRankings:
-      # NOT CURRENTLY INCLUDED
-      # This just demonstrates what's possible
-      # To include likedCount (or any other field) override search package
-      # and add field to config below
-      #- desc(likedCount)
+    # NOT CURRENTLY INCLUDED
+    # This just demonstrates what's possible
+    # To include likedCount (or any other field) override search package
+    # and add field to config below
+    #- desc(likedCount)
 TWILIO:
   ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
   AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
@@ -344,14 +344,26 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 3368
 
 HOME_FEATURES:
-  - type: HeroList
-    heroAlgorithms: [CAMPAIGN_ITEMS, USER_FEED]
+  - type: VerticalCardList
+    algorithms:
+      - type: CAMPAIGN_ITEMS
+        arguments:
+          limit: 1
+  - type: ActionList
     algorithms:
       - type: PERSONA_FEED
         arguments:
           first: 3
           contentChannelIds:
             - 26
+  # - type: HeroList
+  #   heroAlgorithms: [CAMPAIGN_ITEMS, USER_FEED]
+  #   algorithms:
+  #     - type: PERSONA_FEED
+  #       arguments:
+  #         first: 3
+  #         contentChannelIds:
+  #           - 26
   - algorithms: [DAILY_PRAYER]
     isCard: true
     type: PrayerList
@@ -384,29 +396,28 @@ HOME_FEATURES:
 #           contentChannelIds:
 #             - 28
 
-  # - algorithms: [CAMPAIGN_ITEMS]
-  #   type: VerticalCardList
-  #   isFeatured: true
-  # - title: FOR YOU
-  #   algorithms: [SERMON_CHILDREN, PERSONA_FEED]
-  #   subtitle: Explore what God calls you to today
-  #   type: ActionList
-  # - algorithms: [PERSONA_FEED]
-  #   subtitle: Continue
-  #   type: HorizontalCardList
-  # - title: RECOMMENDED
-  #   algorithms: [SERMON_CHILDREN]
-  #   subtitle: For Him
-  #   type: VerticalCardList
-  # - title: BULLETIN
-  #   subtitle: What's happening at apollos?
-  #   type: ActionList
-  #   algorithms:
-  #     - type: CONTENT_CHANNEL
-  #       arguments:
-  #         contentChannelId: 13
-  #     - type: UPCOMING_EVENTS
-
+# - algorithms: [CAMPAIGN_ITEMS]
+#   type: VerticalCardList
+#   isFeatured: true
+# - title: FOR YOU
+#   algorithms: [SERMON_CHILDREN, PERSONA_FEED]
+#   subtitle: Explore what God calls you to today
+#   type: ActionList
+# - algorithms: [PERSONA_FEED]
+#   subtitle: Continue
+#   type: HorizontalCardList
+# - title: RECOMMENDED
+#   algorithms: [SERMON_CHILDREN]
+#   subtitle: For Him
+#   type: VerticalCardList
+# - title: BULLETIN
+#   subtitle: What's happening at apollos?
+#   type: ActionList
+#   algorithms:
+#     - type: CONTENT_CHANNEL
+#       arguments:
+#         contentChannelId: 13
+#     - type: UPCOMING_EVENTS
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
