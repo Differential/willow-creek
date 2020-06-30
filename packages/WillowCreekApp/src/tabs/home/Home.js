@@ -80,6 +80,7 @@ class Home extends PureComponent {
   renderNoCampusContent = () => <FindCampusAd />;
 
   handleOnPress = ({ openUrl }) => ({ action, relatedNode }) => {
+    console.log({ action, relatedNode });
     const { navigation } = this.props;
     if (action === 'READ_CONTENT') {
       navigation.navigate('ContentSingle', {
@@ -103,7 +104,7 @@ class Home extends PureComponent {
       <RockAuthedWebBrowser>
         {(openUrl) => (
           <BackgroundView>
-            <ThemedStatusBar />
+            <ThemedStatusBar barStyle="dark-content" />
             <FlexedSafeAreaView>
               <FeaturesFeedConnected
                 onPressActionItem={this.handleOnPress({ openUrl })}
