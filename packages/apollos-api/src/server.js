@@ -4,6 +4,7 @@ import express from 'express';
 import { RockLoggingExtension } from '@apollosproject/rock-apollo-data-source';
 import { get, fromPairs } from 'lodash';
 import { setupUniversalLinks } from '@apollosproject/server-core';
+import semver from 'semver';
 import {
   resolvers,
   schema,
@@ -68,7 +69,7 @@ const cacheOptions = isDev
       },
     };
 
-const { ENGINE } = ApollosConfig;
+const { ENGINE, CLIENT_COMPATIBILITY } = ApollosConfig;
 
 const apolloServer = new ApolloServer({
   typeDefs: schema,
@@ -76,7 +77,11 @@ const apolloServer = new ApolloServer({
   dataSources,
   context: ({ req, res, ...args }) => {
     res.set('Vary', 'X-Campus');
-    return context({ req, res, ...args });
+
+    return {
+      ...context({ req, res, ...args }),
+      clientVersion: req.headers['apollographql-client-version'],
+    };
   },
   introspection: true,
   extensions,

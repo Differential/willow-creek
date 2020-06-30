@@ -3,6 +3,7 @@ import { get, flatten } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
 import moment from 'moment-timezone';
+import semver from 'semver';
 
 export default class Feature extends baseFeature.dataSource {
   ACTION_ALGORITHIMS = {
@@ -16,8 +17,17 @@ export default class Feature extends baseFeature.dataSource {
   };
 
   async getHomeFeedFeatures({ supportedTypes }) {
+    let features = get(ApollosConfig, 'HOME_FEATURES', []);
+    if (this.context.clientVersion) {
+      ApollosConfig.CLIENT_COMPATIBILITY.forEach(({ lt, HOME_FEATURES }) => {
+        if (semver.lt(this.context.clientVersion, lt) && HOME_FEATURES) {
+          features = HOME_FEATURES;
+        }
+      });
+    }
+
     return Promise.all(
-      get(ApollosConfig, 'HOME_FEATURES', [])
+      features
         .filter(({ type }) => supportedTypes.includes(type))
         .map((featureConfig) => {
           switch (featureConfig.type) {

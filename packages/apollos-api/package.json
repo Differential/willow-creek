@@ -53,24 +53,21 @@
     "node-ical": "^0.10.0",
     "prettier": "1.12.1",
     "randomcolor": "0.5.3",
+    "semver": "^7.3.2",
     "unescape": "^1.0.1"
   },
   "devDependencies": {
     "@apollosproject/apollo-server-env-mock": "1.4.3",
     "@apollosproject/babel-preset-apollos": "1.4.3",
+    "@apollosproject/eslint-config": "1.4.3",
     "@babel/cli": "^7.4.5",
     "@babel/core": "^7.4.5",
-    "@entria/graphql-findbreakingchanges": "^1.0.1",
-    "codecov": "3.6.5",
-    "get-graphql-schema": "^2.1.2",
-    "graphql-schema-linter": "^0.2.0",
-    "nodemon": "^2.0.2",
     "@babel/node": "^7.7.4",
+    "@entria/graphql-findbreakingchanges": "^1.0.1",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
-    "linkemon": "^0.1.1",
-    "@apollosproject/eslint-config": "1.4.3",
+    "codecov": "3.6.5",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -78,6 +75,10 @@
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jest": "^21.15.2",
-    "eslint-plugin-prettier": "^2.6.0"
+    "eslint-plugin-prettier": "^2.6.0",
+    "get-graphql-schema": "^2.1.2",
+    "graphql-schema-linter": "^0.2.0",
+    "linkemon": "^0.1.1",
+    "nodemon": "^2.0.2"
   }
 }
