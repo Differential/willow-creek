@@ -133,6 +133,9 @@ const overrides = {
   'ui-prayer.PrayerExperienceConnected': {
     showOnboarding: true,
   },
+  'DateInput.DateTimePicker': {
+    textColor: colors.darkPrimary,
+  },
 };
 
 const buttons = ({ colors: themeColors }) => ({
