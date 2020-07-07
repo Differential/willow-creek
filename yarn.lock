@@ -291,22 +291,6 @@
     entities "^1.1.2"
     htmlparser2 "3.9.2"
 
-"@apollosproject/ui-kit@1.4.4-alpha.1":
-  version "1.4.4-alpha.1"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.4.4-alpha.1.tgz#e8b78b7ef3a8fc394d46817fa860542930ec634b"
-  integrity sha512-gHLX3Sg9xJx4QJo0WaEovk5nBcxPDMpQX0ONDUltjrvCas/i0DrOsKOGwXJ6XUrxwt7k4nZ+HOLnXyOlce3akw==
-  dependencies:
-    "@react-native-community/blur" "^3.6.0"
-    color "^3.1.0"
-    lodash "^4.17.11"
-    moment "^2.24.0"
-    numeral "^2.0.6"
-    react-native-modal-datetime-picker "8.7.1"
-    react-native-safe-area-context "^0.3.6"
-    react-native-tab-view "1.0.2"
-    recompose "^0.30.0"
-    rn-placeholder "1.2.0"
-
 "@apollosproject/ui-kit@^1.4.3":
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.4.3.tgz#bebb64300a7ba6d86ae2107fed4661f404bf85fd"
@@ -319,6 +303,21 @@
     numeral "^2.0.6"
     react-native-modal-datetime-picker "8.7.1"
     react-native-safe-area-context "^0.3.6"
+    react-native-tab-view "1.0.2"
+    recompose "^0.30.0"
+    rn-placeholder "1.2.0"
+
+"@apollosproject/ui-kit@^1.4.4-alpha.5":
+  version "1.4.4-alpha.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.4.4-alpha.5.tgz#155a2c7b1e5a891505ad6f0d6d9330decaf21dbb"
+  integrity sha512-UsXkYQmXtIbpxxRuqZthXxr9B0U1d18N1uxJHzWmxmb9yf1QwMkRk/cP8ijGopeh7P4Lsp5KTCaBaubBHgDTgw==
+  dependencies:
+    "@react-native-community/blur" "^3.6.0"
+    color "^3.1.0"
+    lodash "^4.17.11"
+    moment "^2.24.0"
+    numeral "^2.0.6"
+    react-native-modal-datetime-picker "8.7.1"
     react-native-tab-view "1.0.2"
     recompose "^0.30.0"
     rn-placeholder "1.2.0"
@@ -374,10 +373,10 @@
     graphql-tag "^2.10.1"
     react-apollo "2.5.5"
 
-"@apollosproject/ui-prayer@1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-prayer/-/ui-prayer-1.4.3.tgz#39bcaf0bcfb381d1c453d396a7675f311f0e7624"
-  integrity sha512-UI5lUX34VR1EaKyDum4gtdjTxgt3VQ/wdFh894iJTqwlHkgxAgD5eaHNnQtnKhzL5cRAEQu58ucn2Hp/tJiKmg==
+"@apollosproject/ui-prayer@^1.4.1-alpha.28":
+  version "1.4.1-alpha.28"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-prayer/-/ui-prayer-1.4.1-alpha.28.tgz#295b50bff5fb02e6f074244221aeee4b4af09ffa"
+  integrity sha512-wIRIbXoSchYWAI0/Trt1VUO1XxfcaSkorKCKfcF1sBfBO9QDihZNZ3gtz974biPfhX9IJvqDihbsCnc0YWHJ4Q==
   dependencies:
     formik "1.5.1"
     graphql-tag "2.9.2"
