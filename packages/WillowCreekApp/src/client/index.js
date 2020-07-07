@@ -6,9 +6,13 @@ import { ApolloClient } from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 
-import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
+import { authLink } from '@apollosproject/ui-auth';
+import { onError } from 'apollo-link-error';
+
 import { NavigationService } from '@apollosproject/ui-kit';
+import { AsyncStorage } from 'react-native';
 import { resolvers, schema, defaults } from '../store';
+import bugsnag from '../bugsnag';
 import campusLink from './campusLink';
 
 import httpLink from './httpLink';
@@ -20,14 +24,36 @@ const wipeData = () => cache.writeData({ data: defaults });
 
 let clearStore;
 let storeIsResetting = false;
-const onAuthError = async () => {
+const onAuthError = async (e) => {
   if (!storeIsResetting) {
+    const authToken = await AsyncStorage.getItem('authToken');
+    bugsnag.notify(e, (report) => {
+      report.metadata = { // eslint-disable-line
+        authToken,
+      };
+    });
+    AsyncStorage.removeItem('authToken');
     storeIsResetting = true;
     await clearStore();
   }
   storeIsResetting = false;
   goToAuth();
 };
+
+const buildErrorLink = (func) =>
+  onError(({ graphQLErrors, networkError }) => {
+    if (graphQLErrors)
+      graphQLErrors.map(({ extensions: { code } }) => {
+        // wipe out all data and go somewhere
+        if (code === 'UNAUTHENTICATED') {
+          func();
+        }
+        return null;
+      });
+
+    if (networkError) return null;
+    return null;
+  });
 
 const errorLink = buildErrorLink(onAuthError);
 

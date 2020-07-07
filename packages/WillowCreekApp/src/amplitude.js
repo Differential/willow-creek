@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import { get } from 'lodash';
 import { getVersion } from 'react-native-device-info';
 import { client } from './client';
+import bugsnag from './bugsnag';
 
 amplitude.getInstance().init(Config.AMPLITUDE_KEY, null, {
   useNativeDeviceInfo: true,
@@ -46,4 +47,6 @@ export const identify = () => {
     campusName: get(data, 'currentUser.profile.campus.name'),
     appVersion: getVersion(),
   });
+
+  bugsnag.setUser(get(data, 'currentUser.profile.id'));
 };
