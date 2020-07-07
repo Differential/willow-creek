@@ -98,7 +98,7 @@ function getActiveRouteName(navigationState) {
 const App = () => (
   <Providers>
     <BackgroundView>
-      <AppStatusBar barStyle="dark-content" />
+      <AppStatusBar />
       <AnalyticsConsumer>
         {({ track }) => (
           <AppContainer
