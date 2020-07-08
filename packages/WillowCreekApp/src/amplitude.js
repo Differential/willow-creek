@@ -11,9 +11,7 @@ amplitude.getInstance().init(Config.AMPLITUDE_KEY, null, {
 });
 
 export const track = ({ eventName, properties = null }) => {
-  amplitude
-    .getInstance()
-    .logEvent(eventName, properties, (...args) => console.log(args));
+  amplitude.getInstance().logEvent(eventName, properties);
 };
 
 export const identify = () => {

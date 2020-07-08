@@ -32,11 +32,6 @@ import AuthBackground from './ui/AuthBackground';
 import MediaPlayerYoutube from './ui/MediaPlayerYoutube';
 import Auth from './auth';
 
-const AppStatusBar = withTheme(({ theme }) => ({
-  barStyle: theme.barStyle,
-  backgroundColor: theme.colors.background.paper,
-}))(StatusBar);
-
 const ProtectedRouteWithSplashScreen = (props) => {
   const handleOnRouteChange = () => RNBootSplash.hide({ duration: 250 });
 
@@ -98,7 +93,6 @@ function getActiveRouteName(navigationState) {
 const App = () => (
   <Providers>
     <BackgroundView>
-      <AppStatusBar />
       <AnalyticsConsumer>
         {({ track }) => (
           <AppContainer

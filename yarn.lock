@@ -307,10 +307,10 @@
     recompose "^0.30.0"
     rn-placeholder "1.2.0"
 
-"@apollosproject/ui-kit@^1.4.4-alpha.5":
-  version "1.4.4-alpha.5"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.4.4-alpha.5.tgz#155a2c7b1e5a891505ad6f0d6d9330decaf21dbb"
-  integrity sha512-UsXkYQmXtIbpxxRuqZthXxr9B0U1d18N1uxJHzWmxmb9yf1QwMkRk/cP8ijGopeh7P4Lsp5KTCaBaubBHgDTgw==
+"@apollosproject/ui-kit@^1.4.4-alpha.6":
+  version "1.4.4-alpha.6"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.4.4-alpha.6.tgz#15e1e08b59e3571cb3cf418b1e4815deb2813f15"
+  integrity sha512-hZjwaC1SzB1ifuWEj3B3S/Xi7Fjf5AOen3zGK1580PGAEEfCOuXRKAjU76/bmJ1H11cw7d5Z17z5G//mww22hg==
   dependencies:
     "@react-native-community/blur" "^3.6.0"
     color "^3.1.0"
@@ -373,10 +373,10 @@
     graphql-tag "^2.10.1"
     react-apollo "2.5.5"
 
-"@apollosproject/ui-prayer@^1.4.1-alpha.28":
-  version "1.4.1-alpha.28"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-prayer/-/ui-prayer-1.4.1-alpha.28.tgz#295b50bff5fb02e6f074244221aeee4b4af09ffa"
-  integrity sha512-wIRIbXoSchYWAI0/Trt1VUO1XxfcaSkorKCKfcF1sBfBO9QDihZNZ3gtz974biPfhX9IJvqDihbsCnc0YWHJ4Q==
+"@apollosproject/ui-prayer@^1.4.4-alpha.6":
+  version "1.4.4-alpha.6"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-prayer/-/ui-prayer-1.4.4-alpha.6.tgz#f474ed4f5b0b08374589916e20b13a2e90c953ef"
+  integrity sha512-BfZ2eQ+EfHorypgx6GmQZmHV7JKlJ4mq2VeoNina9QMpOJ9HzLfsDbyqUIZ5ixvHvOLIJsvuEnkHzYPxNPkAuA==
   dependencies:
     formik "1.5.1"
     graphql-tag "2.9.2"

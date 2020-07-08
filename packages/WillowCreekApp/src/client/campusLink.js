@@ -1,9 +1,24 @@
 import { get } from 'lodash';
 import { setContext } from 'apollo-link-context';
 import gql from 'graphql-tag';
+import { ensureCacheHydration } from './cache';
+import { client } from '.';
 
-export default setContext((request, { headers, cache }) => {
+export default setContext(async (request, { headers, cache }) => {
   try {
+    await ensureCacheHydration;
+
+    const {
+      data: { isLoggedIn },
+    } = await client.query({
+      query: gql`
+        query {
+          isLoggedIn @client
+        }
+      `,
+    });
+    if (!isLoggedIn) return { headers };
+
     const data = cache.readQuery({
       query: gql`
         query currentCampusId {

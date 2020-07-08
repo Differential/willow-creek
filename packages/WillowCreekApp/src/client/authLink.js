@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 
 import { ensureCacheHydration } from './cache';
 
-import { client } from './'; // eslint-disable-line
+import { client } from '.';
 
 export default setContext(async (request, { headers }) => {
   try {
