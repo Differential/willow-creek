@@ -349,7 +349,6 @@ HOME_FEATURES:
     algorithms:
       - type: PERSONA_FEED
         arguments:
-          first: 3
           contentChannelIds:
             - 26
   - algorithms: [DAILY_PRAYER]
@@ -368,13 +367,13 @@ HOME_FEATURES:
       action: VISIT_ROUTE
       actionMeta: EventFeed
     type: ActionList
-  - algorithms:
-      - type: PERSONA_FEED
-        arguments:
-          first: 24
-          contentChannelIds:
-            - 26
-    type: VerticalCardList
+#   - algorithms:
+#       - type: PERSONA_FEED
+#         arguments:
+#           first: 24
+#           contentChannelIds:
+#             - 26
+#     type: VerticalCardList
 #   - title:
 #     subtitle: Upcoming Services
 #     algorithms:
