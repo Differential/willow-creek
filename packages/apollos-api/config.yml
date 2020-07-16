@@ -359,7 +359,7 @@ HOME_FEATURES:
   - algorithms: [SERIES_IN_PROGRESS]
     type: HorizontalCardList
     title: Up next for you
-  - title: Upcomming
+  - title: Upcoming
     subtitle: Events
     algorithms: [UPCOMING_EVENTS]
     additionalAction:
