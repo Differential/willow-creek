@@ -374,14 +374,14 @@ HOME_FEATURES:
 #           contentChannelIds:
 #             - 26
 #     type: VerticalCardList
-#   - title:
-#     subtitle: Upcoming Services
-#     algorithms:
-#       - type: POINTER_FEED
-#         arguments:
-#           first: 100
-#           contentChannelIds:
-#             - 28
+  - title:
+    subtitle: Upcoming Services
+    algorithms:
+      - type: POINTER_FEED
+        arguments:
+          first: 100
+          contentChannelIds:
+            - 28
 
 # - algorithms: [CAMPAIGN_ITEMS]
 #   type: VerticalCardList
