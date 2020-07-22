@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Linking } from 'react-native';
-// import NavigationActions from 'WillowCreekApp/src/NavigationService';
 import { get } from 'lodash';
 import {
+  NavigationService,
   TableView,
   Cell,
   CellText,
@@ -50,7 +50,7 @@ const ActionTable = () => (
             {/* <TableView> */}
             {/*   <Touchable */}
             {/*     onPress={() => */}
-            {/*       NavigationActions.navigate('TestingControlPanel') */}
+            {/*       NavigationService.navigate('TestingControlPanel') */}
             {/*     } */}
             {/*   > */}
             {/*     <Cell> */}

@@ -1,7 +1,25 @@
 import { AuthenticationError } from 'apollo-server';
 import { Auth } from '@apollosproject/data-connector-rock';
+import gql from 'graphql-tag';
 
-const { schema, resolver, contextMiddleware } = Auth;
+const { contextMiddleware } = Auth;
+
+const schema = gql`
+  ${Auth.schema}
+  extend type Mutation {
+    triggerError: Boolean
+  }
+`;
+
+const resolver = {
+  ...Auth.resolver,
+  Mutation: {
+    ...Auth.resolver.Mutation,
+    triggerError: () => {
+      throw new AuthenticationError('Triggered error');
+    },
+  },
+};
 
 class dataSource extends Auth.dataSource {
   createUserProfile = async ({ email, ...otherFields }) => {

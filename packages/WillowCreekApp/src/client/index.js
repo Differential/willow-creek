@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHookProvider } from '@apollo/react-hooks';
 import { ApolloClient } from 'apollo-client';
-import { ApolloLink } from 'apollo-link';
+import { ApolloLink, Observable } from 'apollo-link';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 
 import { authLink } from '@apollosproject/ui-auth';
@@ -27,9 +27,9 @@ let storeIsResetting = false;
 const onAuthError = async (e) => {
   if (!storeIsResetting) {
     const authToken = await AsyncStorage.getItem('authToken');
-    bugsnag.notify(e, (report) => {
+    bugsnag.notify(new Error('Client Auth Error'), (report) => {
       report.metadata = { // eslint-disable-line
-        authToken,
+        Details: { authToken, ...e },
       };
     });
     AsyncStorage.removeItem('authToken');
@@ -40,17 +40,39 @@ const onAuthError = async (e) => {
   goToAuth();
 };
 
+// No async functions in `onError`, what a shame.
+// https://github.com/apollographql/apollo-link/issues/646#issuecomment-479966447
+// https://github.com/apollographql/apollo-link/pull/1066
+const promiseToObservable = (promise) =>
+  new Observable((subscriber: any) => {
+    promise.then(
+      (value) => {
+        if (subscriber.closed) return;
+        subscriber.next(value);
+        subscriber.complete();
+      },
+      (err) => subscriber.error(err)
+    );
+  });
+
 const buildErrorLink = (func) =>
   onError(({ graphQLErrors, networkError }) => {
-    if (graphQLErrors)
-      graphQLErrors.map(({ extensions: { code } }) => {
-        // wipe out all data and go somewhere
-        if (code === 'UNAUTHENTICATED') {
-          func();
-        }
-        return null;
-      });
-
+    if (graphQLErrors) {
+      return promiseToObservable(
+        Promise.all(
+          graphQLErrors.map(async (error) => {
+            const {
+              extensions: { code },
+            } = error;
+            // wipe out all data and go somewhere
+            if (code === 'UNAUTHENTICATED') {
+              await func(error);
+            }
+            return null;
+          })
+        )
+      );
+    }
     if (networkError) return null;
     return null;
   });
@@ -72,11 +94,14 @@ export const client = new ApolloClient({
 
 // Hack to give auth link access to method on client;
 // eslint-disable-next-line prefer-destructuring
-clearStore = client.clearStore;
+clearStore = client.clearStore.bind(client);
 
 wipeData();
 // Ensure that media player still works after logout.
-client.onClearStore(() => wipeData());
+client.onClearStore(async () => {
+  const ret = await wipeData();
+  return ret;
+});
 
 class ClientProvider extends PureComponent {
   static propTypes = {

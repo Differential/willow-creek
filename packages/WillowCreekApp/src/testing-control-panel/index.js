@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { TableView } from '@apollosproject/ui-kit';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
+import { Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
 import { UserWebBrowserConsumer } from '../user-web-browser';
 import TouchableCell from './TouchableCell';
 
@@ -69,6 +71,21 @@ export default class TestingControlPanel extends PureComponent {
           iconName="Avatar"
           cellText={`Launch Onboarding`}
         />
+        <Mutation
+          mutation={gql`
+            mutation triggerError {
+              triggerError
+            }
+          `}
+        >
+          {(triggerError) => (
+            <TouchableCell
+              iconName="settings"
+              cellText={'Trigger Auth Error'}
+              handlePress={triggerError}
+            />
+          )}
+        </Mutation>
       </TableView>
     );
   }
