@@ -40,10 +40,6 @@ const plugins = [
                   operationName: request.operationName,
                   headers,
                 },
-                'Auth Error Info': get(
-                  error,
-                  'extensions.exception.userContext'
-                ),
               },
               (err) => {
                 const ip = get(headers, 'fastly-client-ip', 'unknown');

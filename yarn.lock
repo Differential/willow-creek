@@ -170,7 +170,26 @@
     apollo-datasource "^0.2.0"
     ioredis "4.14.1"
 
-"@apollosproject/data-connector-rock@1.4.3", "@apollosproject/data-connector-rock@^1.4.3":
+"@apollosproject/data-connector-rock@1.4.4-alpha.18":
+  version "1.4.4-alpha.18"
+  resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-rock/-/data-connector-rock-1.4.4-alpha.18.tgz#7ce57f6ceca66a742929aa00cf8a2f3f29db1013"
+  integrity sha512-nUvSxB/Hk6HNkYEABu8hWXe7rmXEbKSRttO7pQDtZz8T5+6zQ9wR8M5Tq0N7IWyYfmEECpcOP7xpAJ0SOp4wrA==
+  dependencies:
+    "@apollosproject/data-schema" "^1.4.3"
+    "@apollosproject/server-core" "^1.4.3"
+    awesome-phonenumber "^2.4.2"
+    form-data "^2.3.3"
+    hyphenation.en-us "^0.2.1"
+    hypher "^0.2.5"
+    jest "^23.6.0"
+    jsonwebtoken "^8.5.1"
+    lodash "^4.17.11"
+    moment "^2.22.2"
+    moment-timezone "^0.5.23"
+    natural "^0.6.2"
+    sanitize-html "^1.19.3"
+
+"@apollosproject/data-connector-rock@^1.4.3":
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-rock/-/data-connector-rock-1.4.3.tgz#08a974ab557a8e37cf1db5be21c8e849437658b1"
   integrity sha512-PQxpnD85Fl/CXps22J72W9GYnEdQxkkqzbJ3KJtG+HSZXdSrfrHoLiP23p73Lh4Xj/TWMxQ/W4MR70IkUQsQmg==
