@@ -58,7 +58,7 @@ const data = {
   Sharable,
   Analytics,
   OneSignal,
-  PersonalDevice,
+  PersonalDevice: { dataSource: PersonalDevice.dataSource },
   OneSignalWithRock,
   Pass,
   Search,
