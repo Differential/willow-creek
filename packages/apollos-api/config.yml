@@ -362,10 +362,18 @@ HOME_FEATURES:
   - title: Upcoming
     subtitle: Events
     algorithms: [UPCOMING_EVENTS]
-    additionalAction:
+    primaryAction:
+      # Right now, you hardcode exactly what GraphQL should return.
+      # Long term, we hope to have a more sophisticated mechanism for driving this field
+      action: OPEN_URL
       title: 'See more'
-      action: VISIT_ROUTE
-      actionMeta: EventFeed
+      relatedNode:
+        __typename: Url
+        url: 'WillowCreekApp://WillowCreekApp/app-link/EventFeed'
+    # additionalAction:
+    #   title: 'See more'
+    #   action: VISIT_ROUTE
+    #   actionMeta: EventFeed
     type: ActionList
 #   - algorithms:
 #       - type: PERSONA_FEED

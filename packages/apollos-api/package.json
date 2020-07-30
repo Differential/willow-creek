@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "TZ=UTC yarn start:dev",
-    "start:dev": "nodemon ./src/index.js --exec babel-node --delay 2",
+    "start:dev": "nodemon ./src/index.js --exec babel-node --delay 2 -e js,yaml,json,yml",
     "start:prod": "NODE_ENV=production node ./lib/index.js",
     "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
     "test": "echo \"No tests in apollos-church-api, all tested code is located in @apollosproject npm modules\"",
