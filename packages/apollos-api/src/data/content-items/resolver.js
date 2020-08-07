@@ -6,6 +6,19 @@ import { get } from 'lodash';
 const { ROCK_MAPPINGS } = ApollosConfig;
 
 const contentItemOverrides = {
+  videos: ({
+    attributeValues: {
+      youtubeId: { value },
+    },
+  }) => value ? [
+    {
+      __typename: 'VideoMedia',
+      key: 'youtube',
+      label: 'Watch now',
+      youtubeId: value,
+      sources: [],
+    },
+  ] : null,
   siblingContentItemsConnection: async ({ id }, args, { dataSources }) => {
     // For the time being, we don't have a endpoint that will both return items by ID and filter by an attribute value
     // Thus, we need to do our campus filtering in the JS.
