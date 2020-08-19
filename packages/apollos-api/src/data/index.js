@@ -12,7 +12,7 @@ import * as Sms from '@apollosproject/data-connector-twilio';
 import {
   Followings,
   Interactions,
-  RockConstants,
+  // RockConstants,
   ContentChannel,
   Sharable,
   PersonalDevice,
@@ -37,6 +37,7 @@ import * as Youtube from './youtube';
 import * as Search from './search';
 import * as Auth from './auth';
 import * as AuthSms from './auth-sms';
+import * as RockConstants from './RockConstants';
 
 // Included only in Dev.
 import * as YoutubeImport from './youtube-import';
