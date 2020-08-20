@@ -1,4 +1,24 @@
+import React from 'react';
+import { get } from 'lodash';
+import {
+  DefaultCard,
+  HighlightCard,
+  FeaturedCard,
+} from '@apollosproject/ui-kit';
 import Color from 'color';
+
+const cardMapper = (props) => {
+  if (get(props, 'isFeatured', true)) {
+    return <FeaturedCard {...props} />;
+  }
+  switch (get(props, '__typename')) {
+    case 'ContentSeriesContentItem':
+    case 'DevotionalContentItem':
+      return <HighlightCard {...props} />;
+    default:
+      return <DefaultCard {...props} />;
+  }
+};
 
 const colors = {
   primary: '#243E85',
@@ -65,6 +85,9 @@ const overrides = {
     fontFamily: 'Gotham-Bold',
     fontSize: 24,
     lineHeight: 28,
+  },
+  ContentCardComponentMapper: {
+    Component: () => cardMapper,
   },
   'Onboarding.SlideContent.Title': {
     color: '#FFFFFF',
