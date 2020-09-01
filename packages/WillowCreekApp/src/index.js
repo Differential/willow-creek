@@ -98,14 +98,6 @@ const App = () => (
               NavigationService.setTopLevelNavigator(navigatorRef);
             }}
             {...props}
-            onNavigationStateChange={(prevState, currentState) => {
-              const currentScreen = getActiveRouteName(currentState);
-              const prevScreen = getActiveRouteName(prevState);
-
-              if (prevScreen !== currentScreen) {
-                track({ eventName: `Viewed ${currentScreen}` });
-              }
-            }}
           />
         )}
       </CoreNavigationAnalytics>
