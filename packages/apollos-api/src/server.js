@@ -2,9 +2,9 @@ import { ApolloServer } from 'apollo-server-express';
 import ApollosConfig from '@apollosproject/config';
 import express from 'express';
 import { RockLoggingExtension } from '@apollosproject/rock-apollo-data-source';
-import { get, fromPairs } from 'lodash';
+import { get } from 'lodash';
 import { setupUniversalLinks } from '@apollosproject/server-core';
-import semver from 'semver';
+import { BugsnagPlugin } from '@apollosproject/bugsnag';
 import {
   resolvers,
   schema,
@@ -14,7 +14,6 @@ import {
   applyServerMiddleware,
   setupJobs,
 } from './data';
-import { report } from './data/bugsnag';
 
 export { resolvers, schema, testSchema };
 
@@ -23,38 +22,6 @@ const isDev =
 
 const extensions = isDev ? [() => new RockLoggingExtension()] : [];
 
-const plugins = [
-  {
-    requestDidStart() {
-      return {
-        didEncounterErrors({ errors, request }) {
-          const headers = fromPairs(Array.from(request.http.headers.entries()));
-          errors.forEach((error) => {
-            report(
-              error,
-              {
-                'GraphQL Info': {
-                  query: request.query,
-                  location: JSON.stringify(error.locations),
-                  variables: request.variables,
-                  operationName: request.operationName,
-                  headers,
-                },
-              },
-              (err) => {
-                const ip = get(headers, 'fastly-client-ip', 'unknown');
-                err.user = {
-                  id: ip,
-                  appVersion: get(headers, 'user-agent', 'unknown'),
-                };
-              }
-            );
-          });
-        },
-      };
-    },
-  },
-];
 const cacheOptions = isDev
   ? {}
   : {
@@ -65,7 +32,7 @@ const cacheOptions = isDev
       },
     };
 
-const { ENGINE, CLIENT_COMPATIBILITY } = ApollosConfig;
+const { ENGINE } = ApollosConfig;
 
 const apolloServer = new ApolloServer({
   typeDefs: schema,
@@ -81,15 +48,10 @@ const apolloServer = new ApolloServer({
   },
   introspection: true,
   extensions,
-  plugins,
-  debug: true,
+  plugins: [new BugsnagPlugin()],
   formatError: (error) => {
-    if (get(error, 'extensions.exception.stacktrace')) {
-      delete error.extensions.exception.stacktrace;
-    }
-    if (get(error, 'extensions.exception.userContext')) {
-      delete error.extensions.exception.userContext;
-    }
+    // eslint-disable-next-line no-console
+    console.error(get(error, 'extensions.exception.stacktrace').join('\n'));
     return error;
   },
   playground: {
