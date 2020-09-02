@@ -3,14 +3,10 @@ import { get } from 'lodash';
 import {
   DefaultCard,
   HighlightCard,
-  FeaturedCard,
 } from '@apollosproject/ui-kit';
 import Color from 'color';
 
 const cardMapper = (props) => {
-  if (get(props, 'isFeatured', true)) {
-    return <FeaturedCard {...props} />;
-  }
   switch (get(props, '__typename')) {
     case 'ContentSeriesContentItem':
     case 'DevotionalContentItem':

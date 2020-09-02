@@ -535,7 +535,6 @@ CLIENT_COMPATIBILITY:
     HOME_FEATURES:
       - algorithms: [CAMPAIGN_ITEMS]
         type: VerticalCardList
-        isFeatured: true
       - title:
         subtitle: Next Steps
         type: ActionList
