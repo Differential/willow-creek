@@ -1,9 +1,6 @@
 import React from 'react';
 import { get } from 'lodash';
-import {
-  DefaultCard,
-  HighlightCard,
-} from '@apollosproject/ui-kit';
+import { DefaultCard, HighlightCard } from '@apollosproject/ui-kit';
 import Color from 'color';
 
 const cardMapper = (props) => {

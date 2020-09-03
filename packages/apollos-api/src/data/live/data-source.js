@@ -1,6 +1,6 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import ApollosConfig from '@apollosproject/config';
-import { report } from '../bugsnag';
+// import { report } from '../bugsnag';
 
 export default class LiveStream extends RESTDataSource {
   async getIsLive({ channelId }) {
