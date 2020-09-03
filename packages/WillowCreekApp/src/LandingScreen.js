@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { styled, ConnectedImage } from '@apollosproject/ui-kit';
 
 import ApollosLandingScreen from './ui/LandingScreen';
