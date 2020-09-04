@@ -64,34 +64,34 @@ const typography = {
 };
 
 const overrides = {
-  H1: {
+  'ui-kit.Typography.H1': {
     fontFamily: 'Gotham-Bold',
     fontSize: 43,
     lineHeight: 50,
   },
-  H2: {
+  'ui-kit.Typography.H2': {
     fontFamily: 'Gotham-Bold',
     fontSize: 36,
     lineHeight: 39,
   },
-  H3: {
+  'ui-kit.Typography.H3': {
     fontFamily: 'Gotham-Bold',
     fontSize: 24,
     lineHeight: 28,
   },
-  ContentCardComponentMapper: {
+  'ui-connected.ContentCardConnected.ContentCardComponentMapper': {
     Component: () => cardMapper,
   },
-  'Onboarding.SlideContent.Title': {
+  'ui-onboarding.Slide.SlideContent.Title': {
     color: '#FFFFFF',
   },
-  'Onboarding.SlideContent.Description': {
+  'ui-onboarding.Slide.SlideContent.Description': {
     color: '#FFFFFF',
   },
-  'InputUnderline.blurred': {
+  'ui-kit.inputs.InputUnderline.BlurredUnderline': {
     backgroundColor: '#ffffff',
   },
-  'InputUnderline.focused': {
+  'ui-kit.inputs.InputUnderline.FocusedUnderline': {
     backgroundColor: '#ffffff',
   },
   // 'Slide.NavWrapper': {
@@ -99,57 +99,57 @@ const overrides = {
   //   alignItems: 'stretch',
   //   flexDirection: 'column',
   // },
-  'Onboarding.Slide.PrimaryButton': {
+  'ui-onboarding.Slide.Slide.PrimaryButton': {
     backgroundColor: '#ffffff',
     borderColor: '#ffffff',
     flex: 1,
     // borderRadius: 8,
   },
-  'Onboarding.Slide.SkipButton': {
+  'ui-onboarding.Slide.Slide.SkipButton': {
     // alignSelf: 'flex-end',
   },
-  'Onboarding.Swiper.PaginationDot.Active': {
+  'ui-onboarding.OnboardingSwiper.PaginationDotActive': {
     backgroundColor: '#ffffff',
   },
-  'Onboarding.Swiper.PaginationDot': {
+  'ui-onboarding.OnboardingSwiper.PaginationDot': {
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
   },
-  'DateInput.Chip': {
+  'ui-kit.inputs.DateInput.StyledChip': {
     backgroundColor: 'transparent',
     borderColor: 'white',
   },
-  'ui-auth.TitleText': {
+  'ui-auth.styles.TitleText': {
     color: '#FFFFFF',
   },
-  'ui-auth.RadioLabel': {
+  'ui-auth.styles.RadioLabel': {
     color: '#FCFCFC',
   },
-  'Card.Image': {
+  'ui-kit.Card.Image.Image': {
     resizeMode: 'cover',
   },
-  'ui-kit.inputs.Search.InputWrapper': {
+  'ui-kit.inputs.Search.styles.InputWrapper': {
     backgroundColor: '#F4F4F5',
   },
-  'ui-kit.inputs.Search.ClearSearchButtonBackground': {
+  'ui-kit.inputs.Search.styles.ClearSearchButtonBackground': {
     backgroundColor: '#F4F4F5',
   },
-  'ui-auth.TabCard': {
+  'ui-auth.styles.TabCard': {
     backgroundColor: '#FFFFFF',
   },
   'ui-auth.NextButton': {
     backgroundColor: '#FCFCFC',
     borderColor: '#FCFCFC',
   },
-  'ui-auth.PromptText': {
+  'ui-auth.styles.PromptText': {
     color: '#FCFCFC',
   },
-  'ui-auth.FieldLabel': {
+  'ui-auth.styles.FieldLabel': {
     color: '#FCFCFC',
   },
   'ui-prayer.PrayerExperienceConnected': {
     showOnboarding: true,
   },
-  'DateInput.DateTimePicker': {
+  'ui-kit.inputs.DateInput.StyledDateTimePicker': {
     textColor: colors.darkPrimary,
   },
 };
