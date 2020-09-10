@@ -79,7 +79,7 @@ const overrides = {
     fontSize: 24,
     lineHeight: 28,
   },
-  'ui-connected.ContentCardConnected.ContentCardComponentMapper': {
+  ContentCardComponentMapper: {
     Component: () => cardMapper,
   },
   'ui-onboarding.Slide.SlideContent.Title': {
