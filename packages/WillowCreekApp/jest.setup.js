@@ -43,6 +43,15 @@ ApollosConfig.loadJs({
   ONE_SIGNAL_KEY: 'doesntmatter',
 });
 
+jest.mock('amplitude-js', () => ({
+  getInstance: () => ({
+    logEvent: jest.fn(),
+    setUserProperties: jest.fn(),
+    setUserId: jest.fn(),
+    init: jest.fn(),
+  }),
+}));
+
 jest.mock('Animated', () => {
   const ActualAnimated = require.requireActual('Animated');
   return {

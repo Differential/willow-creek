@@ -5563,10 +5563,10 @@ algoliasearch@^3.34.0:
     semver "^5.1.0"
     tunnel-agent "^0.6.0"
 
-amplitude-js@^5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/amplitude-js/-/amplitude-js-5.5.0.tgz#a747d39bc3796d5ee9bd018bd6d2d1e4743e13dc"
-  integrity sha512-6FV72xscEKGak5LRmYWn6Byii6zlJMPl+FZ4aOSxKnyEb3JscCgCja8smNOPJDuoNGB8UozcYQC/lGGQSpkIBQ==
+amplitude-js@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/amplitude-js/-/amplitude-js-6.2.0.tgz#fc5d3b4d0cecd8f4b17d8d9770f13ed565aaaea0"
+  integrity sha512-l+00XubD0ZJHcWUBMzV6JrtXs1JhsqO/qGoDbYLtljtgup/cCclOAuirwQJMtYLRP6vEmstGjZtq1Ew9nWnzug==
   dependencies:
     "@amplitude/ua-parser-js" "0.7.20"
     blueimp-md5 "^2.10.0"
