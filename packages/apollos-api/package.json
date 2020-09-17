@@ -35,7 +35,7 @@
     "@apollosproject/data-connector-onesignal": "1.5.0",
     "@apollosproject/data-connector-passes": "1.5.0",
     "@apollosproject/data-connector-redis-cache": "1.5.0",
-    "@apollosproject/data-connector-rock": "1.5.0",
+    "@apollosproject/data-connector-rock": "1.5.1-alpha.31",
     "@apollosproject/data-connector-twilio": "1.5.0",
     "@apollosproject/data-schema": "1.5.0",
     "@apollosproject/rock-apollo-data-source": "1.5.0",
