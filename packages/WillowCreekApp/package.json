@@ -100,7 +100,7 @@
     "url": "^0.11.0",
     "wml": "^0.0.83",
     "yup": "0.26.6",
-    "@metarouter/analytics-react-native": "^1.1.5"
+    "@apollosproject/metarouter-analytics-react-native": "^1.1.5"
   },
   "devDependencies": {
     "@apollosproject/eslint-config": "1.5.0",
