@@ -21,7 +21,7 @@ export default (props) => {
 
 const serverSchema = makeExecutableSchema({
   typeDefs: importSchema(
-    `${process.cwd()}/../apollos-church-api/local.graphql`
+    `${process.cwd()}/../apollos-api/local.graphql`
   ),
   resolverValidationOptions: {
     requireResolversForResolveType: false,

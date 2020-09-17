@@ -1,20 +1,18 @@
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import React from 'react';
-import { StatusBar } from 'react-native';
+// import { StatusBar } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-
 import RNBootSplash from 'react-native-bootsplash';
 
 import {
   BackgroundView,
-  withTheme,
+  // withTheme,
   ThemeMixin,
   NavigationService,
 } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
+import { CoreNavigationAnalytics } from '@apollosproject/ui-analytics';
 import { ProtectedRoute } from '@apollosproject/ui-auth';
-
-import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import Providers from './Providers';
 import ContentSingle from './content-single';
@@ -93,23 +91,16 @@ function getActiveRouteName(navigationState) {
 const App = () => (
   <Providers>
     <BackgroundView>
-      <AnalyticsConsumer>
-        {({ track }) => (
+      <CoreNavigationAnalytics>
+        {(props) => (
           <AppContainer
             ref={(navigatorRef) => {
               NavigationService.setTopLevelNavigator(navigatorRef);
             }}
-            onNavigationStateChange={(prevState, currentState) => {
-              const currentScreen = getActiveRouteName(currentState);
-              const prevScreen = getActiveRouteName(prevState);
-
-              if (prevScreen !== currentScreen) {
-                track({ eventName: `Viewed ${currentScreen}` });
-              }
-            }}
+            {...props}
           />
         )}
-      </AnalyticsConsumer>
+      </CoreNavigationAnalytics>
       <MediaPlayerYoutube />
     </BackgroundView>
   </Providers>

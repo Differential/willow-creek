@@ -12,7 +12,6 @@ import * as Sms from '@apollosproject/data-connector-twilio';
 import {
   Followings,
   Interactions,
-  // RockConstants,
   ContentChannel,
   Sharable,
   PersonalDevice,

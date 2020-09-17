@@ -5,10 +5,11 @@ import { AnalyticsProvider } from '@apollosproject/ui-analytics';
 import { MediaPlayerProvider } from '@apollosproject/ui-media-player';
 
 import { AuthProvider } from '@apollosproject/ui-auth';
+import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
 import NotificationsProvider from './NotificationsProvider';
 import { LiveProvider } from './live/LiveContext';
 
-import ClientProvider from './client';
+import ClientProvider, { client } from './client';
 import customTheme, { customIcons } from './theme';
 import { track, identify } from './amplitude';
 
@@ -21,7 +22,12 @@ const AppProviders = (props) => (
       <AuthProvider
         navigateToAuth={() => NavigationService.navigate('Auth')}
         navigate={NavigationService.navigate}
-        closeAuth={() => NavigationService.navigate('Onboarding')}
+        closeAuth={() =>
+          checkOnboardingStatusAndNavigate({
+            client,
+            navigation: NavigationService,
+          })
+        }
       >
         <MediaPlayerProvider>
           <AnalyticsProvider
