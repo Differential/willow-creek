@@ -17,13 +17,6 @@ APP:
 BUGSNAG:
   ## Optional, but you'll need to remove references to @apollosproject/bugsnag if you don't wish to use.
   API_KEY: ${BUGSNAG_API_KEY}
-UNIVERSAL_LINKS:
-  APPLE_APP_ID: com.customchurchapps.appc2cui2f7
-  APPLE_TEAM_ID: HBXNNZ69FP
-  APP_STORE_LINK: https://apps.apple.com/us/app/willow-creek-church-app/id1447664228
-  GOOGLE_APP_ID: com.willowcreekapp
-  GOOGLE_KEYSTORE_SHA256: 56:32:BF:42:A3:4D:33:AC:14:36:FC:E5:C4:93:6B:49:6E:C9:8B:E2:01:A0:9A:2A:B9:8E:A0:15:F4:EA:89:69
-  PLAY_STORE_LINK: https://play.google.com/store/apps/details?id=com.willowcreekapp
 ROCK:
   API_URL: https://rock.willowcreek.org/api
   API_TOKEN: ${ROCK_TOKEN}
@@ -33,6 +26,13 @@ ROCK:
   TIMEZONE: 'America/Chicago'
   USE_PLUGIN: true
   SHOW_INACTIVE_CONTENT: ${ROCK_SHOW_INACTIVE_CONTENT}
+UNIVERSAL_LINKS:
+  APPLE_APP_ID: com.customchurchapps.appc2cui2f7
+  APPLE_TEAM_ID: HBXNNZ69FP
+  APP_STORE_LINK: https://apps.apple.com/us/app/willow-creek-church-app/id1447664228
+  GOOGLE_APP_ID: com.willowcreekapp
+  GOOGLE_KEYSTORE_SHA256: 56:32:BF:42:A3:4D:33:AC:14:36:FC:E5:C4:93:6B:49:6E:C9:8B:E2:01:A0:9A:2A:B9:8E:A0:15:F4:EA:89:69
+  PLAY_STORE_LINK: https://play.google.com/store/apps/details?id=com.willowcreekapp
 ONE_SIGNAL:
   APP_ID: 537c4960-f27c-4a41-a57a-4471ae0228bb
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
@@ -43,7 +43,6 @@ CHURCH_ONLINE:
 ALGOLIA:
   APPLICATION_ID: EHIORCCAE1
   API_KEY: ${ALGOLIASEARCH_API_KEY}
-  # TODO: should we support multiple indices? how?
   SEARCH_INDEX: ContentItems
   # Configure Algolia custom settings here
   # https://www.algolia.com/doc/api-reference/settings-api-parameters/
