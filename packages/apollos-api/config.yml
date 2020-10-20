@@ -393,6 +393,8 @@ HOME_FEATURES:
           first: 100
           contentChannelIds:
             - 28
+  - algorithms: [USER_FEED]
+    type: VerticalCardList
 
 # - algorithms: [CAMPAIGN_ITEMS]
 #   type: VerticalCardList
