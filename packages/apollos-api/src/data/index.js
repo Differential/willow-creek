@@ -22,6 +22,7 @@ import {
   Group,
   BinaryFiles,
   PrayerRequest,
+  ActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 
 // This module is used to attach Rock User updating to the OneSignal module.
@@ -75,6 +76,7 @@ const data = {
   Group,
   Feature,
   FeatureFeed,
+  ActionAlgorithm,
   Event,
   Cache,
   PrayerRequest,
