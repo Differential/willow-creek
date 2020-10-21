@@ -1,6 +1,8 @@
 package com.willowcreekapp;
 
-import androidx.multidex.MultiDexApplication;
+// TODO may need this instead
+//import androidx.multidex.MultiDexApplication;
+import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.PackageList;
@@ -15,7 +17,9 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainApplication extends MultiDexApplication implements ReactApplication {
+// TODO may need this instead
+//public class MainApplication extends MultiDexApplication implements ReactApplication {
+public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override

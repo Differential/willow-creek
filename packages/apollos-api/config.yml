@@ -418,6 +418,162 @@ HOME_FEATURES:
 #         contentChannelId: 13
 #     - type: UPCOMING_EVENTS
 
+DISCOVER_FEATURES:
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 17
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Sermon Series
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 17
+        name: Sermon Series
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 22
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Devo Series
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 22
+        name: Devo Series
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 14
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Worship
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 14
+        name: Worship
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 24
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Podcast Series
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 24
+        name: Podcast Series
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 18
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Articles
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 18
+        name: Articles
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 20
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Note from Pastor
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 20
+        name: Note from Pastor
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 27
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Study Guides
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 27
+        name: Study Guides
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 19
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Church Updates
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 19
+        name: Church Updates
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 13
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Stories
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 13
+        name: Stories
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 12
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Willow Creative
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 12
+        name: Willow Creative
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 15
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Classes
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 15
+        name: Classes
+
 NOTIFICATIONS:
   PRAYING: 'Your church family is praying for you right now.'
 

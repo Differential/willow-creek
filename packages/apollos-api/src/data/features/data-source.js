@@ -11,9 +11,9 @@ export default class Feature extends baseFeature.dataSource {
     ...this.ACTION_ALGORITHIMS,
     PERSONA_FEED: this.personaFeedAlgorithm.bind(this),
     POINTER_FEED: this.pointerFeedAlgorithm.bind(this),
-    CONTENT_CHANNEL: this.contentChannelAlgorithm.bind(this),
-    SERMON_CHILDREN: this.sermonChildrenAlgorithm.bind(this),
+    USER_FEED: this.userFeedAlgorithm.bind(this),
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
+    CAMPAIGN_ITEMS: this.campaignItemsAlgorithm.bind(this),
   };
 
   async getHomeFeedFeatures({ supportedTypes }) {

@@ -2,7 +2,6 @@ import { Campus } from '@apollosproject/data-connector-rock';
 import gql from 'graphql-tag';
 import ApollosConfig from '@apollosproject/config';
 import { parseGlobalId } from '@apollosproject/server-core';
-import { get } from 'lodash';
 
 const {
   dataSource: originalDataSource,
@@ -11,7 +10,7 @@ const {
 } = Campus;
 
 class dataSource extends originalDataSource {
-  async webResourcesForCampus({ id }) {
+  webResourcesForCampus = async ({ id }) => {
     const campusConfig = ApollosConfig.ROCK_MAPPINGS.CAMPUS_DATA_VIEWS.find(
       ({ CampusId }) => CampusId === id
     );
@@ -19,7 +18,7 @@ class dataSource extends originalDataSource {
       return campusConfig.ProfileLinks;
     }
     return [];
-  }
+  };
 
   updateCurrentUserCampus = async ({ campusId }) => {
     const { Auth } = this.context.dataSources;
