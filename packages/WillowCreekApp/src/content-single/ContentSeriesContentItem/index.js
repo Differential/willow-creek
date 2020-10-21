@@ -36,6 +36,7 @@ const Content = styled(() => ({
 }))(View);
 
 const ContentSeriesContentItem = ({ content, loading }) => {
+  console.log(content);
   const coverImageSources = get(content, 'coverImage.sources', []);
   return (
     <ThemeConsumer>
@@ -67,7 +68,7 @@ const ContentSeriesContentItem = ({ content, loading }) => {
                           />
                         </Stretchy>
                       ) : null}
-                      <MediaControls contentId={content.id} />
+                      <MediaControls nodeId={content.id} />
 
                       <PaddedView>
                         <H2 padded isLoading={!content.title && loading}>

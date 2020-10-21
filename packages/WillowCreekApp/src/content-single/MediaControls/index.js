@@ -161,6 +161,7 @@ class MediaControls extends PureComponent {
             variables={{ contentId: this.props.contentId }}
           >
             {({ data, loading, error }) =>
+              console.log(this.props.contentId) ||
               this.renderControls({ data, loading, error, liveStream })
             }
           </Query>

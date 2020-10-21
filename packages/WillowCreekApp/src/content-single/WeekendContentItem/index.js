@@ -100,7 +100,7 @@ const WeekendContentItem = ({ content, loading }) => {
                     <StyledContentHTMLViewConnected contentId={content.id} />
                   </ThemeMixin>
                 </Header>
-                <StyledMediaControlsConnected contentId={content.id} />
+                <StyledMediaControlsConnected nodeId={content.id} />
                 <FeaturesFeedConnected
                   featureFeedId={content.featureFeed?.id}
                 />
