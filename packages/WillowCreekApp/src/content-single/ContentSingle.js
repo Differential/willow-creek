@@ -40,10 +40,12 @@ class ContentSingle extends PureComponent {
   }
 
   renderContent = ({ content, loading, error }) => {
+    console.log(content);
     let { __typename } = content;
     if (!__typename && this.itemId) {
       [__typename] = this.itemId.split(':');
     }
+    console.log(__typename);
 
     switch (__typename) {
       case 'ContentSeriesContentItem':

@@ -30,7 +30,7 @@ const StyledMediaThumbnail = styled({ marginVertical: 0 })(MediaThumbnail);
 
 class MediaControls extends PureComponent {
   static propTypes = {
-    contentId: PropTypes.string,
+    nodeId: PropTypes.string,
   };
 
   renderPlayButton = ({ action, coverImageSources }) => (
@@ -151,17 +151,16 @@ class MediaControls extends PureComponent {
   };
 
   render() {
-    if (!this.props.contentId) return null;
+    if (!this.props.nodeId) return null;
     return (
-      <LiveConsumer contentId={this.props.contentId}>
+      <LiveConsumer nodeId={this.props.nodeId}>
         {(liveStream) => (
           <Query
             query={GET_CONTENT_MEDIA}
             fetchPolicy="cache-and-network"
-            variables={{ contentId: this.props.contentId }}
+            variables={{ nodeId: this.props.nodeId }}
           >
             {({ data, loading, error }) =>
-              console.log(this.props.contentId) ||
               this.renderControls({ data, loading, error, liveStream })
             }
           </Query>
