@@ -77,12 +77,11 @@ export default class Feature extends baseFeature.dataSource {
     return featureListItems.filter((item) => !!item);
   }
 
-  async createFeatureId({ args, type }) {
-    const {
-      campusId,
-    } = await this.context.dataSources.Person.getCurrentUserCampusId();
-    // doing this helps ensure that features are different because of different campuses end up with different ids.
-    return createGlobalId(JSON.stringify({ campusId, ...args }), type);
+  createFeatureId({ args }) {
+    return JSON.stringify({
+      campusId: this.context.currentPerson?.primaryCampusId || null,
+      ...args,
+    });
   }
 
   async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {

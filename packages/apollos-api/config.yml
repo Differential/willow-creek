@@ -372,18 +372,7 @@ HOME_FEATURES:
       relatedNode:
         __typename: Url
         url: 'WillowCreekApp://WillowCreekApp/app-link/EventFeed'
-    # additionalAction:
-    #   title: 'See more'
-    #   action: VISIT_ROUTE
-    #   actionMeta: EventFeed
     type: ActionList
-#   - algorithms:
-#       - type: PERSONA_FEED
-#         arguments:
-#           first: 24
-#           contentChannelIds:
-#             - 26
-#     type: VerticalCardList
   - title:
     subtitle: Upcoming Services
     algorithms:
@@ -394,29 +383,6 @@ HOME_FEATURES:
             - 28
   - algorithms: [USER_FEED]
     type: VerticalCardList
-
-# - algorithms: [CAMPAIGN_ITEMS]
-#   type: VerticalCardList
-#   isFeatured: true
-# - title: FOR YOU
-#   algorithms: [SERMON_CHILDREN, PERSONA_FEED]
-#   subtitle: Explore what God calls you to today
-#   type: ActionList
-# - algorithms: [PERSONA_FEED]
-#   subtitle: Continue
-#   type: HorizontalCardList
-# - title: RECOMMENDED
-#   algorithms: [SERMON_CHILDREN]
-#   subtitle: For Him
-#   type: VerticalCardList
-# - title: BULLETIN
-#   subtitle: What's happening at apollos?
-#   type: ActionList
-#   algorithms:
-#     - type: CONTENT_CHANNEL
-#       arguments:
-#         contentChannelId: 13
-#     - type: UPCOMING_EVENTS
 
 DISCOVER_FEATURES:
   - algorithms:

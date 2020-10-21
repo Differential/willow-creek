@@ -32,8 +32,17 @@ function getSupportedTypes(info) {
 const resolver = {
   ...baseFeature.resolver,
   Query: {
-    userFeedFeatures: async (root, args, { dataSources: { Feature } }, info) =>
-      Feature.getHomeFeedFeatures({ supportedTypes: getSupportedTypes(info) }),
+    // deprecated
+    userFeedFeatures: async (
+      root,
+      args,
+      { dataSources: { Feature, Person } },
+      info
+    ) => {
+      // pops currentPerson into the context
+      await Person.getCurrentUserCampusId();
+      Feature.getHomeFeedFeatures({ supportedTypes: getSupportedTypes(info) });
+    },
   },
   CardListItem: {
     ...baseFeature.resolver.CardListItem,

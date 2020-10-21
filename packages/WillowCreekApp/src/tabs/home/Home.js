@@ -26,13 +26,6 @@ import Icon from './Icon';
 
 import GET_USER_CAMPUS from './getUserCampus';
 
-const ThemedStatusBar = styled(
-  ({ theme }) => ({
-    backgroundColor: theme.colors.paper,
-  }),
-  'Home.ThemedStatusBar'
-)(StatusBar);
-
 const FlexedSafeAreaView = styled({
   flex: 1,
 })(SafeAreaView);
@@ -107,7 +100,6 @@ class Home extends PureComponent {
       <RockAuthedWebBrowser>
         {(openUrl) => (
           <BackgroundView>
-            <ThemedStatusBar barStyle="dark-content" />
             <FlexedSafeAreaView>
               <Query query={GET_HOME_FEED}>
                 {({ data }) => (
