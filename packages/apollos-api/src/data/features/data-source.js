@@ -79,6 +79,7 @@ export default class Feature extends baseFeature.dataSource {
 
   // add in campus to feature IDs
   createFeatureId({ args }) {
+    console.log(this.context.campusId);
     return JSON.stringify({
       campusId: this.context.campusId || null,
       ...args,

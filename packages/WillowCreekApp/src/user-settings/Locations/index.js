@@ -3,7 +3,7 @@ import React from 'react';
 import { MapViewConnected } from '@apollosproject/ui-mapview';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
-import { GET_FEED_FEATURES } from '@apollosproject/ui-connected';
+import { GET_HOME_FEED } from '../../tabs/home';
 
 const Location = (props) => (
   <AnalyticsConsumer>

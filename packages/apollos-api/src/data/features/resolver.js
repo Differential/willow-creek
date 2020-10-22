@@ -40,7 +40,8 @@ const resolver = {
       info
     ) => {
       // pops currentPerson into the context
-      await Person.getCurrentUserCampusId();
+      const { campusId } = await Person.getCurrentUserCampusId();
+      this.context.campusId = campusId;
       Feature.getHomeFeedFeatures({ supportedTypes: getSupportedTypes(info) });
     },
   },
