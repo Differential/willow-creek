@@ -21,7 +21,7 @@ const Location = (props) => (
         }}
         changeCampusOptions={{
           awaitRefetchQueries: true,
-          refetchQueries: [{ query: GET_FEED_FEATURES, variables: undefined }],
+          refetchQueries: [{ query: GET_HOME_FEED, variables: undefined }],
         }}
       />
     )}
