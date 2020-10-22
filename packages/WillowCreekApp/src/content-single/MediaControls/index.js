@@ -15,7 +15,7 @@ import {
 } from '@apollosproject/ui-kit';
 import {
   RockAuthedWebBrowser,
-  GET_CONTENT_MEDIA,
+  GET_NODE_MEDIA,
 } from '@apollosproject/ui-connected';
 import { LiveConsumer } from '../../live/LiveContext';
 
@@ -156,7 +156,7 @@ class MediaControls extends PureComponent {
       <LiveConsumer nodeId={this.props.nodeId}>
         {(liveStream) => (
           <Query
-            query={GET_CONTENT_MEDIA}
+            query={GET_NODE_MEDIA}
             fetchPolicy="cache-and-network"
             variables={{ nodeId: this.props.nodeId }}
           >
