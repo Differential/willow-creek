@@ -96,7 +96,6 @@ const WeekendContentItem = ({ content, loading }) => {
                     <H2 padded isLoading={!content.title && loading}>
                       {content.title}
                     </H2>
-                    <ContentHTMLViewConnected contentId={content.id} />
                     <StyledContentHTMLViewConnected contentId={content.id} />
                   </ThemeMixin>
                 </Header>
