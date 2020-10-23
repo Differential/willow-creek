@@ -33,16 +33,13 @@ const resolver = {
   ...baseFeature.resolver,
   Query: {
     // deprecated
-    userFeedFeatures: async (
-      root,
-      args,
-      { dataSources: { Feature, Person } },
-      info
-    ) => {
-      // pops currentPerson into the context
+    userFeedFeatures: async (root, args, context, info) => {
+      const { Feature, Person } = context.dataSources;
       const { campusId } = await Person.getCurrentUserCampusId();
-      this.context.campusId = campusId;
-      Feature.getHomeFeedFeatures({ supportedTypes: getSupportedTypes(info) });
+      context.campusId = campusId;
+      return Feature.getHomeFeedFeatures({
+        supportedTypes: getSupportedTypes(info),
+      });
     },
   },
   CardListItem: {
