@@ -1,13 +1,13 @@
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import React from 'react';
-// import { StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import RNBootSplash from 'react-native-bootsplash';
 
 import {
   BackgroundView,
-  // withTheme,
   ThemeMixin,
+  withTheme,
   NavigationService,
 } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
@@ -29,6 +29,13 @@ import Onboarding from './ui/Onboarding';
 import AuthBackground from './ui/AuthBackground';
 import MediaPlayerYoutube from './ui/MediaPlayerYoutube';
 import Auth from './auth';
+
+import NodeSingle from './node-single';
+
+const AppStatusBar = withTheme(({ theme }) => ({
+  barStyle: theme.barStyle,
+  backgroundColor: theme.colors.background.paper,
+}))(StatusBar);
 
 const ProtectedRouteWithSplashScreen = (props) => {
   const handleOnRouteChange = () => RNBootSplash.hide({ duration: 250 });
@@ -56,6 +63,7 @@ const AppNavigator = createStackNavigator(
     ProtectedRoute: ProtectedRouteWithSplashScreen,
     Tabs,
     ContentSingle,
+    NodeSingle,
     Event,
     Auth: EnhancedAuth,
     PersonalDetails,
@@ -76,21 +84,10 @@ const AppNavigator = createStackNavigator(
 
 const AppContainer = createAppContainer(AppNavigator);
 
-function getActiveRouteName(navigationState) {
-  if (!navigationState) {
-    return null;
-  }
-  const route = navigationState.routes[navigationState.index];
-  // dive into nested navigators
-  if (route.routes) {
-    return getActiveRouteName(route);
-  }
-  return route.routeName;
-}
-
 const App = () => (
   <Providers>
     <BackgroundView>
+      <AppStatusBar />
       <CoreNavigationAnalytics>
         {(props) => (
           <AppContainer

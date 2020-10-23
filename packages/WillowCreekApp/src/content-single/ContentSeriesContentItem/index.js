@@ -67,7 +67,7 @@ const ContentSeriesContentItem = ({ content, loading }) => {
                           />
                         </Stretchy>
                       ) : null}
-                      <MediaControls contentId={content.id} />
+                      <MediaControls nodeId={content.id} />
 
                       <PaddedView>
                         <H2 padded isLoading={!content.title && loading}>

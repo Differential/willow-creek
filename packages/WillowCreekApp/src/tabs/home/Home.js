@@ -2,11 +2,14 @@ import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 
-import { View, SafeAreaView, StatusBar } from 'react-native';
+import { View, StatusBar } from 'react-native';
+import SafeAreaView from 'react-native-safe-area-view';
+import gql from 'graphql-tag';
 
 import {
   RockAuthedWebBrowser,
   FeaturesFeedConnected,
+  FEATURE_FEED_ACTION_MAP,
 } from '@apollosproject/ui-connected';
 
 import {
@@ -22,13 +25,6 @@ import CampusSelectButton from '../../ui/CampusSelectButton';
 import Icon from './Icon';
 
 import GET_USER_CAMPUS from './getUserCampus';
-
-const ThemedStatusBar = styled(
-  ({ theme }) => ({
-    backgroundColor: theme.colors.paper,
-  }),
-  'Home.ThemedStatusBar'
-)(StatusBar);
 
 const FlexedSafeAreaView = styled({
   flex: 1,
@@ -48,6 +44,26 @@ const CampusTouchable = (
     <CampusTouchableRow {...props} />
   </Touchable>
 );
+
+function handleOnPress({ action, ...props }) {
+  if (FEATURE_FEED_ACTION_MAP[action]) {
+    FEATURE_FEED_ACTION_MAP[action]({ action, ...props });
+  }
+  // If you add additional actions, you can handle them here.
+  // Or add them to the FEATURE_FEED_ACTION_MAP, with the syntax
+  // { [ActionName]: function({ relatedNode, action, ...FeatureFeedConnectedProps}) }
+}
+
+// getHomeFeed uses the HOME_FEATURES in the config.yml
+// You can also hardcode an ID if you are confident it will never change
+// Or use some other strategy to get a FeatureFeed.id
+export const GET_HOME_FEED = gql`
+  query getHomeFeatureFeed {
+    homeFeedFeatures {
+      id
+    }
+  }
+`;
 
 class Home extends PureComponent {
   static navigationOptions = () => ({
@@ -79,42 +95,28 @@ class Home extends PureComponent {
 
   renderNoCampusContent = () => <FindCampusAd />;
 
-  handleOnPress = ({ openUrl }) => ({ action, relatedNode }) => {
-    console.log({ action, relatedNode });
-    const { navigation } = this.props;
-    if (action === 'READ_CONTENT') {
-      navigation.navigate('ContentSingle', {
-        itemId: relatedNode.id,
-        transitionKey: 2,
-      });
-    }
-    if (action === 'READ_EVENT') {
-      navigation.navigate('Event', {
-        eventId: relatedNode.id,
-        transitionKey: 2,
-      });
-    }
-    if (action === 'OPEN_URL') {
-      openUrl(relatedNode.url);
-    }
-  };
-
   renderMyWillowContent() {
     return (
       <RockAuthedWebBrowser>
         {(openUrl) => (
           <BackgroundView>
-            <ThemedStatusBar barStyle="dark-content" />
             <FlexedSafeAreaView>
-              <FeaturesFeedConnected
-                onPressActionItem={this.handleOnPress({ openUrl })}
-                ListHeaderComponent={
-                  <PaddedView>
-                    <CampusSelectButton ButtonComponent={CampusTouchable} />
-                    <H2>My Willow</H2>
-                  </PaddedView>
-                }
-              />
+              <Query query={GET_HOME_FEED}>
+                {({ data }) => (
+                  <FeaturesFeedConnected
+                    openUrl={openUrl}
+                    navigation={this.props.navigation}
+                    featureFeedId={data?.homeFeedFeatures?.id}
+                    onPressActionItem={handleOnPress}
+                    ListHeaderComponent={
+                      <PaddedView>
+                        <CampusSelectButton ButtonComponent={CampusTouchable} />
+                        <H2>My Willow</H2>
+                      </PaddedView>
+                    }
+                  />
+                )}
+              </Query>
             </FlexedSafeAreaView>
           </BackgroundView>
         )}

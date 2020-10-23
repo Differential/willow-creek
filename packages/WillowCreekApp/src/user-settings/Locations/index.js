@@ -3,8 +3,7 @@ import React from 'react';
 import { MapViewConnected } from '@apollosproject/ui-mapview';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
-import { GET_FEED_FEATURES } from '@apollosproject/ui-connected';
-import GET_CONTENT_CHANNELS from '../../tabs/discover/DiscoverFeed/getContentChannels';
+import { GET_HOME_FEED } from '../../tabs/home';
 
 const Location = (props) => (
   <AnalyticsConsumer>
@@ -22,10 +21,7 @@ const Location = (props) => (
         }}
         changeCampusOptions={{
           awaitRefetchQueries: true,
-          refetchQueries: [
-            { query: GET_FEED_FEATURES, variables: undefined },
-            { query: GET_CONTENT_CHANNELS, variables: undefined },
-          ],
+          refetchQueries: [{ query: GET_HOME_FEED, variables: undefined }],
         }}
       />
     )}

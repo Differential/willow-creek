@@ -1,6 +1,9 @@
 import { gql } from 'apollo-server';
 
-import { createApolloServerConfig } from '@apollosproject/server-core';
+import {
+  createApolloServerConfig,
+  Interfaces,
+} from '@apollosproject/server-core';
 
 import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
@@ -19,6 +22,7 @@ import {
   Group,
   BinaryFiles,
   PrayerRequest,
+  ActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 
 // This module is used to attach Rock User updating to the OneSignal module.
@@ -30,6 +34,7 @@ import * as Theme from './theme';
 import * as Campus from './campus';
 import * as Event from './event';
 import * as Feature from './features';
+import * as FeatureFeed from './feature-feeds';
 import * as Person from './person';
 
 import * as Youtube from './youtube';
@@ -42,6 +47,7 @@ import * as RockConstants from './RockConstants';
 import * as YoutubeImport from './youtube-import';
 
 const data = {
+  Interfaces,
   Followings,
   ContentChannel,
   ContentItem,
@@ -69,6 +75,8 @@ const data = {
   YoutubeImport,
   Group,
   Feature,
+  FeatureFeed,
+  ActionAlgorithm,
   Event,
   Cache,
   PrayerRequest,

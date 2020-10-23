@@ -11,9 +11,9 @@ export default class Feature extends baseFeature.dataSource {
     ...this.ACTION_ALGORITHIMS,
     PERSONA_FEED: this.personaFeedAlgorithm.bind(this),
     POINTER_FEED: this.pointerFeedAlgorithm.bind(this),
-    CONTENT_CHANNEL: this.contentChannelAlgorithm.bind(this),
-    SERMON_CHILDREN: this.sermonChildrenAlgorithm.bind(this),
+    USER_FEED: this.userFeedAlgorithm.bind(this),
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
+    CAMPAIGN_ITEMS: this.campaignItemsAlgorithm.bind(this),
   };
 
   async getHomeFeedFeatures({ supportedTypes }) {
@@ -77,15 +77,16 @@ export default class Feature extends baseFeature.dataSource {
     return featureListItems.filter((item) => !!item);
   }
 
-  async createFeatureId({ args, type }) {
-    const {
-      campusId,
-    } = await this.context.dataSources.Person.getCurrentUserCampusId();
-    // doing this helps ensure that features are different because of different campuses end up with different ids.
-    return createGlobalId(JSON.stringify({ campusId, ...args }), type);
+  // add in campus to feature IDs
+  createFeatureId({ args }) {
+    return JSON.stringify({
+      campusId: this.context.campusId || null,
+      ...args,
+    });
   }
 
   async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
+    this.setCacheHint({ maxAge: 0, scope: 'PRIVATE' });
     const { ContentItem } = this.context.dataSources;
 
     // Get the first three persona items.

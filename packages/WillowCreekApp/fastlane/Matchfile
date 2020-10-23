@@ -1,0 +1,6 @@
+git_url("https://github.com/ApollosProject/certificates")
+
+storage_mode("git")
+
+app_identifier(["com.willowcreekapp"])
+username("apps@apollos.app")

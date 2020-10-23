@@ -70,6 +70,11 @@ const app = express();
 
 app.set('etag', false);
 
+// health check
+app.get('/health', (req, res) => {
+  res.send('ok');
+});
+
 applyServerMiddleware({ app, dataSources, context });
 setupJobs({ app, dataSources, context });
 setupUniversalLinks({ app });

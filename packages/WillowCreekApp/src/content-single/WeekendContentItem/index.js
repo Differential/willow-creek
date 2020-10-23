@@ -6,8 +6,9 @@ import {
   ContentHTMLViewConnected,
   HorizontalContentSeriesFeedConnected,
   LiveConsumer,
-  ContentSingleFeaturesConnected,
+  FeaturesFeedConnected,
 } from '@apollosproject/ui-connected';
+
 import {
   withThemeMixin,
   styled,
@@ -95,13 +96,13 @@ const WeekendContentItem = ({ content, loading }) => {
                     <H2 padded isLoading={!content.title && loading}>
                       {content.title}
                     </H2>
+                    <StyledContentHTMLViewConnected contentId={content.id} />
                   </ThemeMixin>
                 </Header>
-                <StyledMediaControlsConnected contentId={content.id} />
-                <PaddedView>
-                  <StyledContentHTMLViewConnected contentId={content.id} />
-                </PaddedView>
-                <ContentSingleFeaturesConnected contentId={content.id} />
+                <StyledMediaControlsConnected nodeId={content.id} />
+                <FeaturesFeedConnected
+                  featureFeedId={content.featureFeed?.id}
+                />
                 <HorizontalContentSeriesFeedConnected contentId={content.id} />
               </FlexedScrollView>
             )}
@@ -125,6 +126,9 @@ WeekendContentItem.propTypes = {
         sources: PropTypes.arrayOf(PropTypes.shape({ uri: PropTypes.string })),
       })
     ),
+    featureFeed: PropTypes.shape({
+      id: PropTypes.string,
+    }),
   }),
   loading: PropTypes.bool,
 };
