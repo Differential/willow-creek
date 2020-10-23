@@ -36,7 +36,6 @@ const Content = styled(() => ({
 }))(View);
 
 const ContentSeriesContentItem = ({ content, loading }) => {
-  console.log(content);
   const coverImageSources = get(content, 'coverImage.sources', []);
   return (
     <ThemeConsumer>
