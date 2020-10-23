@@ -86,6 +86,7 @@ export default class Feature extends baseFeature.dataSource {
   }
 
   async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
+    this.setCacheHint({ maxAge: 0, scope: 'PRIVATE' });
     const { ContentItem } = this.context.dataSources;
 
     // Get the first three persona items.
