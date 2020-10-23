@@ -10,6 +10,7 @@ class FeatureFeed extends coreFeatureFeed.dataSource {
     const {
       campusId,
     } = await this.context.dataSources.Person.getCurrentUserCampusId();
+    this.context.campusId = campusId;
     return this.baseGetFeed({ type, args: { ...args, campusId } });
   };
 }

@@ -283,10 +283,10 @@
     graphql-tag "2.9.2"
     yup "^0.27.0"
 
-"@apollosproject/ui-connected@1.6.1-alpha.21":
-  version "1.6.1-alpha.21"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-connected/-/ui-connected-1.6.1-alpha.21.tgz#f1313ddca807a4b3cfe5daa39a4f16a4a0ad1576"
-  integrity sha512-Q/5YTa8XmysOOjgsJV39fNRA75mzXzOAfeOTqP7xKxYCHEOlyMvDsTXNDQjiI9EW0Iup8Q7txPbgzVynGYIW4A==
+"@apollosproject/ui-connected@^1.7.0-beta.1":
+  version "1.7.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-connected/-/ui-connected-1.7.0-beta.1.tgz#911f6bbadea21b9bd403f8664823a4ed7d353037"
+  integrity sha512-m8RALxGIgKTpqwPL/ittTdvM83zO4v+I47iOpFpa7qwlMtlliSkckQ+un9BmWd8d9Ql4L94TzNNtN/ChNpCsBg==
   dependencies:
     apollo-storybook-react-native "0.2.12"
     apollo-upload-client "9.0.0"
@@ -294,10 +294,10 @@
     lodash "^4.17.11"
     react-apollo "2.5.5"
 
-"@apollosproject/ui-fragments@^1.7.0-beta.0":
-  version "1.7.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-fragments/-/ui-fragments-1.7.0-beta.0.tgz#7328b31e7d735df72c83e48ac169911f4d145d47"
-  integrity sha512-xWecmEKlWky12zThpHAVU81RdD1kRmn5/o1Mt3INbLnMvZn2PeHvMsZNG0qx8Jij0wQETgbKC3b9LF092fCf4g==
+"@apollosproject/ui-fragments@^1.6.1-alpha.19":
+  version "1.6.1-alpha.19"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-fragments/-/ui-fragments-1.6.1-alpha.19.tgz#a7aab0a623cb57d802752f730255c7c238ffc423"
+  integrity sha512-oyxBjZip5ECEjmwWBMZlGUu9XbxckS7vokbe/cNAjc8ICLhx9Bpx3rOWJWdVNApgZN/I3F2JO0YfCfd9CN02jw==
   dependencies:
     graphql-tag "2.9.2"
 

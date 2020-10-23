@@ -79,21 +79,11 @@ export default class Feature extends baseFeature.dataSource {
 
   // add in campus to feature IDs
   createFeatureId({ args }) {
-    console.log(this.context.campusId);
     return JSON.stringify({
       campusId: this.context.campusId || null,
       ...args,
     });
   }
-
-  // pop out campus ID from feature feed id
-  baseGetFeatures = this.getFeatures;
-
-  getFeatures = async (args) => {
-    // campusId is only in the args from our custom FeatureFeed.getFeed function
-    this.context.campusId = args.campusId;
-    return this.baseGetFeatures(args);
-  };
 
   async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
     const { ContentItem } = this.context.dataSources;
