@@ -130,9 +130,6 @@ const overrides = {
   'ui-kit.inputs.Search.styles.InputWrapper': {
     backgroundColor: '#F4F4F5',
   },
-  'ui-kit.inputs.Search.styles.ClearSearchButtonBackground': {
-    backgroundColor: '#F4F4F5',
-  },
   'ui-auth.styles.TabCard': {
     backgroundColor: '#FFFFFF',
   },
