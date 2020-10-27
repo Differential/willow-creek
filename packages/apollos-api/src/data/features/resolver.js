@@ -36,9 +36,9 @@ const resolver = {
     userFeedFeatures: async (root, args, context, info) => {
       const { Feature, Person } = context.dataSources;
       const { campusId } = await Person.getCurrentUserCampusId();
-      context.campusId = campusId;
       return Feature.getHomeFeedFeatures({
         supportedTypes: getSupportedTypes(info),
+        campusId: createGlobalId(campusId, 'Campus'), // matches arg from getHomeFeed query
       });
     },
   },
