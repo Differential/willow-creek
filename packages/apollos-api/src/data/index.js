@@ -35,7 +35,6 @@ import * as Theme from './theme';
 import * as Campus from './campus';
 import * as Event from './event';
 import * as Feature from './features';
-// import * as FeatureFeed from './feature-feeds';
 import * as Person from './person';
 
 import * as Youtube from './youtube';
