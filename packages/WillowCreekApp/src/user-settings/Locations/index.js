@@ -19,10 +19,6 @@ const Location = (props) => (
           });
           identify();
         }}
-        changeCampusOptions={{
-          awaitRefetchQueries: true,
-          refetchQueries: [{ query: GET_HOME_FEED, variables: undefined }],
-        }}
       />
     )}
   </AnalyticsConsumer>

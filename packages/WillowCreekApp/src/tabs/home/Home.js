@@ -58,8 +58,8 @@ function handleOnPress({ action, ...props }) {
 // You can also hardcode an ID if you are confident it will never change
 // Or use some other strategy to get a FeatureFeed.id
 export const GET_HOME_FEED = gql`
-  query getHomeFeatureFeed {
-    homeFeedFeatures {
+  query getHomeFeatureFeed($campusId: ID) {
+    homeFeedFeatures(campusId: $campusId) {
       id
     }
   }
@@ -95,13 +95,13 @@ class Home extends PureComponent {
 
   renderNoCampusContent = () => <FindCampusAd />;
 
-  renderMyWillowContent() {
+  renderMyWillowContent(campus) {
     return (
       <RockAuthedWebBrowser>
         {(openUrl) => (
           <BackgroundView>
             <FlexedSafeAreaView>
-              <Query query={GET_HOME_FEED}>
+              <Query query={GET_HOME_FEED} variables={{ campusId: campus.id }}>
                 {({ data }) => (
                   <FeaturesFeedConnected
                     openUrl={openUrl}
@@ -133,7 +133,7 @@ class Home extends PureComponent {
         }) =>
           !campus && !loading
             ? this.renderNoCampusContent()
-            : this.renderMyWillowContent()
+            : this.renderMyWillowContent(campus)
         }
       </Query>
     );

@@ -1,6 +1,6 @@
 import { Feature as baseFeature } from '@apollosproject/data-connector-rock';
 import { get, flatten } from 'lodash';
-import { createGlobalId } from '@apollosproject/server-core';
+import { createGlobalId, parseGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
 import moment from 'moment-timezone';
 import semver from 'semver';
@@ -16,7 +16,7 @@ export default class Feature extends baseFeature.dataSource {
     CAMPAIGN_ITEMS: this.campaignItemsAlgorithm.bind(this),
   };
 
-  async getHomeFeedFeatures({ supportedTypes }) {
+  async getHomeFeedFeatures({ supportedTypes, campusId }) {
     let features = get(ApollosConfig, 'HOME_FEATURES', []);
     if (this.context.clientVersion) {
       ApollosConfig.CLIENT_COMPATIBILITY.forEach(({ lt, HOME_FEATURES }) => {
@@ -30,24 +30,25 @@ export default class Feature extends baseFeature.dataSource {
       features
         .filter(({ type }) => supportedTypes.includes(type))
         .map((featureConfig) => {
+          const args = { ...featureConfig, campusId };
           switch (featureConfig.type) {
             case 'VerticalCardList':
-              return this.createVerticalCardListFeature(featureConfig);
+              return this.createVerticalCardListFeature(args);
             case 'HorizontalCardList':
-              return this.createHorizontalCardListFeature(featureConfig);
+              return this.createHorizontalCardListFeature(args);
             case 'HeroListFeature':
               console.warn(
                 'Deprecated: Please use the name "HeroList" instead. You used "HeroListFeature"'
               );
-              return this.createHeroListFeature(featureConfig);
+              return this.createHeroListFeature(args);
             case 'HeroList':
-              return this.createHeroListFeature(featureConfig);
+              return this.createHeroListFeature(args);
             case 'PrayerList':
-              return this.createPrayerListFeature(featureConfig);
+              return this.createPrayerListFeature(args);
             case 'ActionList':
             default:
               // Action list was the default in 1.3.0 and prior.
-              return this.createActionListFeature(featureConfig);
+              return this.createActionListFeature(args);
           }
         })
     );
@@ -75,14 +76,6 @@ export default class Feature extends baseFeature.dataSource {
     );
 
     return featureListItems.filter((item) => !!item);
-  }
-
-  // add in campus to feature IDs
-  createFeatureId({ args }) {
-    return JSON.stringify({
-      campusId: this.context.campusId || null,
-      ...args,
-    });
   }
 
   async personaFeedAlgorithm({ contentChannelIds, first = 100 }) {
@@ -177,17 +170,17 @@ export default class Feature extends baseFeature.dataSource {
     return this.resolvePointers({ items });
   }
 
-  async upcomingEventsAlgorithm() {
+  async upcomingEventsAlgorithm({ campusId }) {
     const { Event, Person } = this.context.dataSources;
-
-    const { campusId } = await Person.getCurrentUserCampusId();
 
     if (!campusId) {
       return [];
     }
 
+    const { id: parsedId } = parseGlobalId(campusId);
+
     const events = await Event.getUpcomingEventsByCampus({
-      campusId,
+      campusId: parsedId,
       limit: 3,
     });
 
