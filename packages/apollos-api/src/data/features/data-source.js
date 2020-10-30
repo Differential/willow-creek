@@ -1,6 +1,6 @@
 import { Feature as baseFeature } from '@apollosproject/data-connector-rock';
 import { get, flatten } from 'lodash';
-import { createGlobalId, parseGlobalId } from '@apollosproject/server-core';
+import { parseGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
 import moment from 'moment-timezone';
 import semver from 'semver';
@@ -8,7 +8,7 @@ import semver from 'semver';
 export default class Feature extends baseFeature.dataSource {
   ACTION_ALGORITHIMS = {
     // We need to make sure `this` refers to the class, not the `ACTION_ALGORITHIMS` object.
-    ...this.ACTION_ALGORITHIMS,
+    // ...this.ACTION_ALGORITHIMS,
     PERSONA_FEED: this.personaFeedAlgorithm.bind(this),
     POINTER_FEED: this.pointerFeedAlgorithm.bind(this),
     USER_FEED: this.userFeedAlgorithm.bind(this),
@@ -65,7 +65,7 @@ export default class Feature extends baseFeature.dataSource {
         }
 
         return {
-          id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
+          id: `${item.id}${i}`,
           title: item.title,
           subtitle: get(item, 'attributeValues.subtitle.value', ''),
           relatedNode,
@@ -125,7 +125,7 @@ export default class Feature extends baseFeature.dataSource {
     const items = allItems.slice(0, 1);
 
     return items.map((item, i) => ({
-      id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
+      id: `${item.id}${i}`,
       title: item.title,
       subtitle: get(item, 'contentChannel.name'),
       relatedNode: { ...item, __type: ContentItem.resolveType(item) },
@@ -144,8 +144,8 @@ export default class Feature extends baseFeature.dataSource {
 
     const items = await cursor.top(limit).get();
 
-    return items.map((item, i) => ({
-      id: createGlobalId(`${item.id}${i}`, 'ActionListAction'),
+    return items.map((item) => ({
+      id: 'ActionListAction',
       title: item.title,
       subtitle: get(item, 'contentChannel.name'),
       relatedNode: { ...item, __type: ContentItem.resolveType(item) },
@@ -171,7 +171,7 @@ export default class Feature extends baseFeature.dataSource {
   }
 
   async upcomingEventsAlgorithm({ campusId }) {
-    const { Event, Person } = this.context.dataSources;
+    const { Event } = this.context.dataSources;
 
     if (!campusId) {
       return [];
@@ -186,7 +186,7 @@ export default class Feature extends baseFeature.dataSource {
 
     // Map them into specific actions.
     return events.map((event, i) => ({
-      id: createGlobalId(`${event.id}${i}`, 'ActionListAction'),
+      id: `${event.id}${i}`,
       title: Event.getName(event),
       subtitle: moment(event.mostRecentOccurence) // we add the `mostRecentOccurence` field in the `getUpcomingEventsByCampus` method.
         .tz('America/Chicago')

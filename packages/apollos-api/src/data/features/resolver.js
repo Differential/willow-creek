@@ -1,3 +1,4 @@
+import { createGlobalId } from '@apollosproject/server-core';
 import { Feature as baseFeature } from '@apollosproject/data-connector-rock';
 import { get } from 'lodash';
 
