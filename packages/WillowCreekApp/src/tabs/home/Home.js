@@ -101,7 +101,7 @@ class Home extends PureComponent {
         {(openUrl) => (
           <BackgroundView>
             <FlexedSafeAreaView>
-              <Query query={GET_HOME_FEED} variables={{ campusId: campus.id }}>
+              <Query query={GET_HOME_FEED} variables={{ campusId: campus?.id }}>
                 {({ data }) => (
                   <FeaturesFeedConnected
                     openUrl={openUrl}
