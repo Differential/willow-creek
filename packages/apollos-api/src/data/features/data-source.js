@@ -16,7 +16,7 @@ export default class Feature extends baseFeature.dataSource {
     CAMPAIGN_ITEMS: this.campaignItemsAlgorithm.bind(this),
   };
 
-  async getHomeFeedFeatures({ supportedTypes, campusId }) {
+  getHomeFeedFeatures = async ({ supportedTypes, campusId }) => {
     let features = get(ApollosConfig, 'HOME_FEATURES', []);
     if (this.context.clientVersion) {
       ApollosConfig.CLIENT_COMPATIBILITY.forEach(({ lt, HOME_FEATURES }) => {
@@ -52,7 +52,7 @@ export default class Feature extends baseFeature.dataSource {
           }
         })
     );
-  }
+  };
 
   async resolvePointers({ items }) {
     const { ContentItem } = this.context.dataSources;
