@@ -51,7 +51,7 @@ const apolloServer = new ApolloServer({
   plugins: [new BugsnagPlugin()],
   formatError: (error) => {
     // eslint-disable-next-line no-console
-    console.error(get(error, 'extensions.exception.stacktrace').join('\n'));
+    console.error(get(error, 'extensions.exception.stacktrace', []).join('\n'));
     return error;
   },
   playground: {
