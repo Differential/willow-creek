@@ -386,7 +386,7 @@ HOME_FEATURES:
 
 DISCOVER_FEATURES:
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 17
           limit: 3
@@ -400,7 +400,7 @@ DISCOVER_FEATURES:
         id: 17
         name: Sermon Series
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 22
           limit: 3
@@ -414,7 +414,7 @@ DISCOVER_FEATURES:
         id: 22
         name: Devo Series
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 14
           limit: 3
@@ -428,7 +428,7 @@ DISCOVER_FEATURES:
         id: 14
         name: Worship
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 24
           limit: 3
@@ -442,7 +442,7 @@ DISCOVER_FEATURES:
         id: 24
         name: Podcast Series
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 18
           limit: 3
@@ -470,7 +470,7 @@ DISCOVER_FEATURES:
         id: 20
         name: Note from Pastor
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 27
           limit: 3
@@ -484,7 +484,7 @@ DISCOVER_FEATURES:
         id: 27
         name: Study Guides
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 19
           limit: 3
@@ -498,7 +498,7 @@ DISCOVER_FEATURES:
         id: 19
         name: Church Updates
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 13
           limit: 3
@@ -512,7 +512,7 @@ DISCOVER_FEATURES:
         id: 13
         name: Stories
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 12
           limit: 3
@@ -526,7 +526,7 @@ DISCOVER_FEATURES:
         id: 12
         name: Willow Creative
   - algorithms:
-      - type: CONTENT_CHANNEL
+      - type: CONTENT_CAMPUS_CHANNEL
         arguments:
           contentChannelId: 15
           limit: 3

@@ -14,6 +14,7 @@ export default class Feature extends baseFeature.dataSource {
     USER_FEED: this.userFeedAlgorithm.bind(this),
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
     CAMPAIGN_ITEMS: this.campaignItemsAlgorithm.bind(this),
+    CONTENT_CAMPUS_CHANNEL: this.contentCampusChannelAlgorithm.bind(this),
   };
 
   getHomeFeedFeatures = async ({ supportedTypes, campusId }) => {
@@ -196,6 +197,27 @@ export default class Feature extends baseFeature.dataSource {
       // Current app design calls for no user-supplied images.
       image: null,
       action: 'OPEN_URL',
+    }));
+  }
+
+  async contentCampusChannelAlgorithm({ limit = null, contentChannelId }) {
+    const { ContentItem } = this.context.dataSources;
+
+    const cursor = await ContentItem.byUserCampus({
+      contentChannelIds: [contentChannelId],
+      fallback: () => ContentItem.byContentChannelId(contentChannelId),
+    });
+
+    const items = limit ? await cursor.top(limit).get() : await cursor.get();
+
+    return items.map((item, i) => ({
+      id: `${item.id}${i}`,
+      title: item.title,
+      subtitle: get(item, 'contentChannel.name'),
+      relatedNode: { ...item, __type: ContentItem.resolveType(item) },
+      image: ContentItem.getCoverImage(item),
+      action: 'READ_CONTENT',
+      summary: ContentItem.createSummary(item),
     }));
   }
 
