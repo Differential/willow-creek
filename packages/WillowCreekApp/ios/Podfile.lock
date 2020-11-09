@@ -1,5 +1,4 @@
 PODS:
-  - AstronomerAnalytics (3.6.9)
   - boost-for-react-native (1.63.0)
   - BugsnagReactNative (2.23.2):
     - BugsnagReactNative/Core (= 2.23.2)
@@ -27,6 +26,7 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.1)
     - Protobuf (~> 3.12)
   - GTMSessionFetcher/Core (1.4.0)
+  - MetarouterAnalytics (3.8.0-beta.4)
   - OneSignal (2.15.2)
   - Permission-Notifications (2.0.8):
     - RNPermissions
@@ -140,7 +140,7 @@ PODS:
   - RNAirplay (1.0.0):
     - React
   - RNAnalytics (1.1.5):
-    - AstronomerAnalytics
+    - MetarouterAnalytics (~> 3.8.0-beta.3)
     - React
   - RNBootSplash (2.2.3):
     - React
@@ -204,7 +204,7 @@ DEPENDENCIES:
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNAirplay (from `../node_modules/@apollosproject/react-native-airplay-btn`)"
-  - "RNAnalytics (from `../node_modules/@metarouter/analytics-react-native`)"
+  - "RNAnalytics (from `../node_modules/@apollosproject/metarouter-analytics-react-native`)"
   - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - "RNDateTimePicker (from `../node_modules/@react-native-community/datetimepicker`)"
@@ -219,10 +219,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AstronomerAnalytics
     - boost-for-react-native
     - google-cast-sdk-no-bluetooth
     - GTMSessionFetcher
+    - MetarouterAnalytics
     - OneSignal
     - Protobuf
 
@@ -306,7 +306,7 @@ EXTERNAL SOURCES:
   RNAirplay:
     :path: "../node_modules/@apollosproject/react-native-airplay-btn"
   RNAnalytics:
-    :path: "../node_modules/@metarouter/analytics-react-native"
+    :path: "../node_modules/@apollosproject/metarouter-analytics-react-native"
   RNBootSplash:
     :path: "../node_modules/react-native-bootsplash"
   RNCAsyncStorage:
@@ -331,7 +331,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-youtube-sdk"
 
 SPEC CHECKSUMS:
-  AstronomerAnalytics: 36f48678a387e41481650edd6247c6c95d994131
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BugsnagReactNative: 0a24a1dd2cac88862d67b938f809bec8274130a9
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
@@ -340,6 +339,7 @@ SPEC CHECKSUMS:
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   google-cast-sdk-no-bluetooth: 73ac8e9edbee16f52c2a445e391bd531e116bb31
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  MetarouterAnalytics: cb2db15cf7d0a6beeab46a81b4dd68c93ff5b94a
   OneSignal: 9531e385388565f4d31797ddadbe0fcc786430ec
   Permission-Notifications: 0722c1cd783b86d2ae77a1a0c925d525f9170e7d
   Permission-PhotoLibrary: c15c7245aeb74aff3ad5edf70ce34adbcf02541b
@@ -376,7 +376,7 @@ SPEC CHECKSUMS:
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   rn-fetch-blob: 651b8d076b43d0d7aa294a3d9ec16c00aab8bef9
   RNAirplay: 75777dd55dafbd3687703c3eb9c290ea6cc43248
-  RNAnalytics: 360b0680753d0e1d37152a25d47aa34a015cab72
+  RNAnalytics: 93b68dbcf5ee073410700ca2515d02396ee53958
   RNBootSplash: bbf3c78bd12e3e990eeb8c52db2025ab717b6385
   RNCAsyncStorage: 2e2e3feb9bdadc752a026703d8c4065ca912e75a
   RNDateTimePicker: 3d1931e387248cb8f1d1d33740d4a1a82dfe622a
