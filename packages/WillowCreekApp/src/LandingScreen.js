@@ -7,8 +7,6 @@ import ApollosLandingScreen from './ui/LandingScreen';
 const FullScreenImage = styled({
   resizeMode: 'cover',
   ...StyleSheet.absoluteFill,
-  width: '100%',
-  backgroundColor: 'red',
 })(Image);
 
 const LandingScreen = ({ navigation }) => (
