@@ -143,9 +143,6 @@ const overrides = {
   'ui-auth.styles.FieldLabel': {
     color: '#FCFCFC',
   },
-  'ui-prayer.PrayerExperienceConnected': {
-    showOnboarding: true,
-  },
   'ui-kit.inputs.DateInput.StyledDateTimePicker': {
     textColor: colors.darkPrimary,
   },
