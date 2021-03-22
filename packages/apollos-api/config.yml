@@ -153,6 +153,7 @@ ROCK_MAPPINGS:
     - 14
     - 16 # Sermons
     - 21 # Devotionals
+    - 27 # Group Guides
 
   CAMPAIGN_CHANNEL_IDS:
     - 25
@@ -388,6 +389,20 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
+          contentChannelId: 27
+          limit: 3
+    type: HorizontalCardList
+    subtitle: Group Guides
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'View More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 27
+        name: Group Guides
+  - algorithms:
+      - type: CONTENT_CAMPUS_CHANNEL
+        arguments:
           contentChannelId: 17
           limit: 3
     type: HorizontalCardList
@@ -469,20 +484,6 @@ DISCOVER_FEATURES:
         __typename: ContentChannel
         id: 20
         name: Note from Pastor
-  - algorithms:
-      - type: CONTENT_CAMPUS_CHANNEL
-        arguments:
-          contentChannelId: 27
-          limit: 3
-    type: HorizontalCardList
-    subtitle: Study Guides
-    primaryAction:
-      action: OPEN_CHANNEL
-      title: 'View More'
-      relatedNode:
-        __typename: ContentChannel
-        id: 27
-        name: Study Guides
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
