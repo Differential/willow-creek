@@ -48,7 +48,9 @@ class ContentFeed extends PureComponent {
                   isLoading={loading}
                   error={error}
                   refetch={refetch}
-                  onPressItem={(event) => openUrl(event.url)}
+                  onPressItem={(event) =>
+                    openUrl(event.url, {}, { useRockToken: true })
+                  }
                 />
               )}
             </Query>
