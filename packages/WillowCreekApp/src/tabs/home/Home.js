@@ -45,9 +45,16 @@ const CampusTouchable = (
   </Touchable>
 );
 
+const CUSTOM_ACTION_MAP = {
+  ...FEATURE_FEED_ACTION_MAP,
+  OPEN_URL: ({ openUrl, relatedNode }) => {
+    openUrl(relatedNode.url, {}, { useRockToken: true });
+  },
+};
+
 function handleOnPress({ action, ...props }) {
-  if (FEATURE_FEED_ACTION_MAP[action]) {
-    FEATURE_FEED_ACTION_MAP[action]({ action, ...props });
+  if (CUSTOM_ACTION_MAP[action]) {
+    CUSTOM_ACTION_MAP[action]({ action, ...props });
   }
   // If you add additional actions, you can handle them here.
   // Or add them to the FEATURE_FEED_ACTION_MAP, with the syntax
