@@ -111,7 +111,7 @@ ROCK_MAPPINGS:
       ContentChannelTypeId: [6, 13]
     DevotionalContentItem:
       EntityType: ContentChannelItem
-      ContentChannelTypeId: [] # Used to be 12, but we wanted to show YT instead of Scripture
+      ContentChannelTypeId: [12] # Change to [] if Willow would like to show Youtube vids isntead of scripture
     MediaContentItem:
       EntityType: ContentChannelItem
       ContentChannelTypeId: [5]
