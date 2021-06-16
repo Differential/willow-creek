@@ -184,7 +184,7 @@ ROCK_MAPPINGS:
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
-          url: https://pushpay.com/pay/wcchicago
+          url: https://www.mywell.org/give/willowcreek/sign-in 
           style: EXTERNAL_BAR_ITEM
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/chicago
@@ -205,7 +205,7 @@ ROCK_MAPPINGS:
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
-          url: https://pushpay.com/pay/wccasadeluz
+          url: https://www.mywell.org/give/willowcreek/sign-in 
           style: EXTERNAL_BAR_ITEM
         - title: Join a small group
           url: https://www.willowcreek.org/en/connect/ministries/small-groups-and-section-communities/casa-de-luz
@@ -222,7 +222,7 @@ ROCK_MAPPINGS:
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
-          url: https://pushpay.com/pay/wccrystallake
+          url: https://www.mywell.org/give/willowcreek/sign-in 
           style: EXTERNAL_BAR_ITEM
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/crystal-lake
@@ -243,7 +243,7 @@ ROCK_MAPPINGS:
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
-          url: https://pushpay.com/pay/wchuntley
+          url: https://www.mywell.org/give/willowcreek/sign-in 
           style: EXTERNAL_BAR_ITEM
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/huntley
@@ -264,7 +264,7 @@ ROCK_MAPPINGS:
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
-          url: https://pushpay.com/pay/wcnorthshore
+          url: https://www.mywell.org/give/willowcreek/sign-in 
           style: EXTERNAL_BAR_ITEM
         - title: Join a small group
           url: https://www.northshoregroups.org/
@@ -283,7 +283,7 @@ ROCK_MAPPINGS:
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
-          url: https://pushpay.com/g/willowcreek?src=hpp
+          url: https://www.mywell.org/give/willowcreek/sign-in 
           style: EXTERNAL_BAR_ITEM
         - title: Get help or get involved
           url: https://www.willowcreek.org/en/updates/south-barrington/get-help-get-involved
@@ -304,7 +304,7 @@ ROCK_MAPPINGS:
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
-          url: https://pushpay.com/pay/wcsouthlake
+          url: https://www.mywell.org/give/willowcreek/sign-in 
           style: EXTERNAL_BAR_ITEM
         - title: Find a serving opportunity
           url: https://www.willowcreek.org/en/serving-opportunities/south-lake
@@ -325,7 +325,7 @@ ROCK_MAPPINGS:
           style: BAR_ITEM
         - title: Give
           icon: love-it-hand
-          url: http://pushpay.com/pay/wcwheaton
+          url: https://www.mywell.org/give/willowcreek/sign-in 
           style: EXTERNAL_BAR_ITEM
         - title: Find a serving opportunity
           url: mailto:lmclaughlin@willowcreek.org?subject=I would like to serve!
