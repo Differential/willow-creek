@@ -26,6 +26,7 @@ export default gql`
     parentChannel: ContentChannel
     theme: Theme
     liveStream: LiveStream
+    publishDate: String
   }
 
   extend type VideoMedia {
