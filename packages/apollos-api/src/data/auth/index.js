@@ -1,6 +1,7 @@
 import { AuthenticationError } from 'apollo-server';
 import { Auth } from '@apollosproject/data-connector-rock';
 import gql from 'graphql-tag';
+import moment from 'moment';
 
 const { contextMiddleware } = Auth;
 
@@ -33,6 +34,24 @@ class dataSource extends Auth.dataSource {
       });
     } catch (err) {
       throw new Error('Unable to create profile!');
+    }
+  };
+
+  createUserLogin = async (props = {}) => {
+    try {
+      const { email, password, personId } = props;
+
+      return await this.post('/UserLogins', {
+        PersonId: personId,
+        EntityTypeId: 27, // A default setting we use in Rock-person-creation-flow
+        UserName: email,
+        PlainTextPassword: password,
+        LastLoginDateTime: `${moment().toISOString()}`,
+        // If this value is false, logging in is impossible.
+        IsConfirmed: true,
+      });
+    } catch (err) {
+      throw new Error('Unable to create user login!');
     }
   };
 }
