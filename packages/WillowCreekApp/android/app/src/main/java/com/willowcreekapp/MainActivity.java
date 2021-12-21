@@ -20,7 +20,7 @@ public class MainActivity extends GoogleCastActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RNBootSplash.init(R.drawable.bootsplash, com.willowcreekapp.MainActivity.this);
+        RNBootSplash.init(R.drawable.screen, com.willowcreekapp.MainActivity.this);
     }
 
     @Override
