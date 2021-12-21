@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StatusBar } from 'react-native';
+import { Image, StatusBar } from 'react-native';
 
 import {
   styled,
   withTheme,
   Icon,
   H1,
-  H4,
+  H5,
   PaddedView,
   BackgroundView,
 } from '@apollosproject/ui-kit';
@@ -19,23 +19,24 @@ const Content = styled({
   justifyContent: 'center',
 })(PaddedView);
 
-const BrandIcon = withTheme(({ theme, color }) => ({
-  name: 'brand-icon',
-  size: theme.sizing.baseUnit * 3,
-  ...(color ? { fill: color } : {}),
+const BrandImage = withTheme(({ theme }) => ({
+  source: require('../BrandImage.png'),
   style: {
+    resizeMode: 'contain',
+    height: theme.sizing.baseUnit * 3,
+    width: theme.sizing.baseUnit * 3,
     marginBottom: theme.sizing.baseUnit,
   },
-}))(Icon);
+}))(Image);
 
 const Title = styled(({ theme, color }) => ({
   marginBottom: theme.sizing.baseUnit,
   ...(color ? { color } : {}),
 }))(H1);
 
-const StyledH4 = styled(({ color }) => ({
+const StyledH5 = styled(({ color }) => ({
   ...(color ? { color } : {}),
-}))(H4);
+}))(H5);
 
 const LandingScreen = ({
   slideTitle,
@@ -53,9 +54,9 @@ const LandingScreen = ({
     <Slide {...props} scrollEnabled={false}>
       {BackgroundComponent}
       <Content>
-        <BrandIcon color={textColor} />
+        <BrandImage />
         <Title color={textColor}>{slideTitle}</Title>
-        <StyledH4 color={textColor}>{description}</StyledH4>
+        <StyledH5 color={textColor}>{description}</StyledH5>
       </Content>
     </Slide>
   </BackgroundView>

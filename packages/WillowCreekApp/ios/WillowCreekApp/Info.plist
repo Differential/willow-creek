@@ -87,6 +87,12 @@
 		<string>Gotham-BookItalic.otf</string>
 		<string>Gotham-Light.otf</string>
 		<string>Gotham-Medium.otf</string>
+		<string>Montserrat-ExtraBold.ttf</string>
+		<string>Montserrat-ExtraBoldItalic.ttf</string>
+		<string>Montserrat-Italic.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>SourceSerifPro-SemiBold.ttf</string>
+		<string>SourceSerifPro-SemiBoldIt.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

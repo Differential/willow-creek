@@ -43,39 +43,39 @@ const colors = {
 const typography = {
   baseFontSize: 16,
   baseLineHeight: 23.04, // 1.44 ratio
-  // sans: {
-  //   regular: {
-  //     default: 'Gotham-Book',
-  //     italic: 'Gotham-BookItalic',
-  //   },
-  //   medium: {
-  //     default: 'Gotham-Medium',
-  //     italic: 'Gotham-Medium',
-  //   },
-  //   bold: {
-  //     default: 'Gotham-Medium',
-  //     italic: 'Gotham-Medium',
-  //   },
-  //   black: {
-  //     default: 'Gotham-Bold',
-  //     italic: 'Gotham-BoldItalic',
-  //   },
-  // },
+  sans: {
+    regular: {
+      default: 'Montserrat',
+      italic: 'Montserrat-Italic',
+    },
+    medium: {
+      default: 'Montserrat',
+      italic: 'Montserrat-Italic',
+    },
+    bold: {
+      default: 'Montserrat-ExtraBold',
+      italic: 'Montserrat-ExtraBoldItalic',
+    },
+    black: {
+      default: 'SourceSerifPro-SemiBold',
+      italic: 'SourceItalicPro-SemiBoldIt',
+    },
+  },
 };
 
 const overrides = {
   'ui-kit.Typography.H1': {
-    fontFamily: 'Gotham-Bold',
+    fontFamily: 'SourceSerifPro-SemiBold',
     fontSize: 43,
     lineHeight: 50,
   },
   'ui-kit.Typography.H2': {
-    fontFamily: 'Gotham-Bold',
+    fontFamily: 'SourceSerifPro-SemiBold',
     fontSize: 36,
     lineHeight: 39,
   },
   'ui-kit.Typography.H3': {
-    fontFamily: 'Gotham-Bold',
+    fontFamily: 'SourceSerifPro-SemiBold',
     fontSize: 24,
     lineHeight: 28,
   },
