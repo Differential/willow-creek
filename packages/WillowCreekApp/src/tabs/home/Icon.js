@@ -2,7 +2,7 @@ import React from 'react';
 import Svg, { Circle, Path } from 'react-native-svg';
 import PropTypes from 'prop-types';
 
-const Icon = ({ size = 24, tintColor, ...otherProps } = {}) => (
+const Icon = ({ size = 30, tintColor, ...otherProps } = {}) => (
   <Svg width={size} height={size} viewBox="0 0 1024 1024" {...otherProps}>
     <Circle cx="512" cy="512" r="512" fill={tintColor} />
     <Path

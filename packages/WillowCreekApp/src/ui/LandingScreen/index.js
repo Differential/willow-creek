@@ -5,7 +5,6 @@ import { Image, StatusBar } from 'react-native';
 import {
   styled,
   withTheme,
-  Icon,
   H1,
   H5,
   PaddedView,

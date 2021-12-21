@@ -14,26 +14,27 @@ const cardMapper = (props) => {
 };
 
 const colors = {
-  primary: '#243E85',
-  secondary: '#022C71',
-  tertiary: '#8AA7C5',
+  primary: '#00A9E0',
+  secondary: '#0C2340',
+  tertiary: '#F0B323',
+  quaternary: '#FA4616',
   screen: '#FCFCFC',
   paper: '#FFFFFF',
   alert: '#c64f55',
 
   // Dark shades
   darkPrimary: '#303030',
-  darkSecondary: '#999899',
+  darkSecondary: '#97999B',
   darkTertiary: '#C9C8C7',
 
   // Light shades
   lightPrimary: '#FCFCFC',
   lightSecondary: '#C9C8C7',
-  lightTertiary: '#999899',
+  lightTertiary: '#97999B',
   // Statics
   wordOfChrist: '#8b0000', // only used in Scripture.
   background: {
-    accent: '#9BCBEB',
+    accent: '#F0B323',
   },
   // text: {
   //   link: '#418fde',
@@ -146,6 +147,20 @@ const overrides = {
   'ui-kit.inputs.DateInput.StyledDateTimePicker': {
     textColor: colors.darkPrimary,
   },
+  'ui-kit.Avatar.Avatar.NotificationDot': {
+    backgroundColor: colors.quaternary,
+  },
+  'ui-kit.ActionList.FullWidthButton': {
+    // backgroundColor: colors.primary,
+    borderColor: colors.primary,
+  },
+  // 'ui-kit.Button.ButtonStyles': {
+  //   backgroundColor: colors.secondary,
+  //   borderColor: colors.secondary,
+  // },
+  'ui-kit.ButtonLink.ButtonLink': {
+    color: colors.primary,
+  },
 };
 
 const buttons = ({ colors: themeColors }) => ({
@@ -155,7 +170,7 @@ const buttons = ({ colors: themeColors }) => ({
   },
   ghost: {
     fill: '#ffffff',
-    accent: '#989A98',
+    accent: colors.lightTertiary,
   },
 });
 
