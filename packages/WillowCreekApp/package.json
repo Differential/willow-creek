@@ -51,6 +51,7 @@
     "apollo-link": "1.2.8",
     "apollo-link-http": "1.5.11",
     "apollo-link-schema": "1.1.6",
+    "apollo-storybook-react-native": "0.2.12",
     "apollo-upload-client": "9.0.0",
     "buffer": "^5.4.3",
     "bugsnag-react-native": "^2.23.2",
@@ -103,9 +104,7 @@
     "stream": "^0.0.2",
     "url": "^0.11.0",
     "wml": "^0.0.83",
-    "yup": "0.26.6",
-    "@apollosproject/metarouter-analytics-react-native": "^1.1.5",
-    "apollo-storybook-react-native": "0.2.12"
+    "yup": "0.26.6"
   },
   "devDependencies": {
     "@apollosproject/eslint-config": "^1.7.0-beta.3",
@@ -114,6 +113,7 @@
     "@storybook/addons": "4.1.16",
     "@storybook/react-native": "4.1.1",
     "babel-eslint": "10.0.1",
+    "babel-plugin-module-resolver": "^4.0.0",
     "codecov": "3.7.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
@@ -129,6 +129,7 @@
     "eslint-plugin-react-hooks": "^4.0.2",
     "eslint-plugin-react-native": "^3.2.1",
     "get-dev-paths": "^0.1.0",
+    "get-graphql-schema": "^2.1.2",
     "graphql-import": "^0.7.1",
     "jest": "^25.1.0",
     "jest-react-native": "18.0.0",
@@ -141,9 +142,7 @@
     "react-native-storybook-loader": "1.8.0",
     "react-native-version": "2.6.2",
     "react-test-renderer": "16.8.6",
-    "waait": "1.0.2",
-    "babel-plugin-module-resolver": "^4.0.0",
-    "get-graphql-schema": "^2.1.2"
+    "waait": "1.0.2"
   },
   "jest": {
     "preset": "react-native",

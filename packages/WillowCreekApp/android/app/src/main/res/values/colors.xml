@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#ffffff</color>
-    <color name="splashBg">#0070b9</color>
-    <color name="bootsplash_background">#0070b9</color>
+    <color name="primary">#0C2340</color>
+    <color name="splashBg">#0C2340</color>
+    <color name="bootsplash_background">#0C2340</color>
+    <color name="colorPrimaryDark">#000000</color>
 </resources>
