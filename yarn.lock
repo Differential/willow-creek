@@ -253,6 +253,11 @@
   resolved "https://registry.yarnpkg.com/@apollosproject/eslint-config/-/eslint-config-1.7.0-beta.3.tgz#df14a56a12930b4f5cd2e829807b41c3777cce15"
   integrity sha512-x0OhMUHcFSM5/9YK6Z7Ycj0YW44YWm8YamTQKAdysXMztD4NjsGtFxteqkHKLrQ9/KNr6aqCdnal+WYa8csJ3g==
 
+"@apollosproject/metarouter-analytics-react-native@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/metarouter-analytics-react-native/-/metarouter-analytics-react-native-1.1.5.tgz#1d75a95f124ecbd3f9f8ce348b6f9f0ef99b3cf2"
+  integrity sha512-NlZeZDJsUXsmtOgqn5uNQgWE8XwadOYhtb5kS7rwALGvVwqis8yA2T0kw/HhZye/JMzRjY+ybj9gT+Td5nCSow==
+
 "@apollosproject/react-native-airplay-btn@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@apollosproject/react-native-airplay-btn/-/react-native-airplay-btn-0.2.0.tgz#19c1c7154e6c04fd4d5a5587faf6a69cb34d8a79"

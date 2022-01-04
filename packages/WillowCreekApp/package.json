@@ -20,12 +20,13 @@
     "start": "react-native start",
     "generate-stories": "rnstl --searchDir ./src --pattern **/*.stories.js",
     "test": "jest",
-    "postinstall": "jetify"
+    "postinstall": "yarn pods && jetify"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
     "@apollosproject/config": "^1.7.0-beta.3",
     "@apollosproject/react-native-airplay-btn": "^0.2.0",
+    "@apollosproject/metarouter-analytics-react-native": "^1.1.5",
     "@apollosproject/ui-analytics": "^1.7.0-beta.3",
     "@apollosproject/ui-auth": "^1.7.0-beta.3",
     "@apollosproject/ui-connected": "^1.7.0-beta.3",
