@@ -773,6 +773,7 @@
 			baseConfigurationReference = 54F271B8EB67A4997A2C7D96 /* Pods-WillowCreekApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WillowCreekApp/WillowCreekApp.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
@@ -785,6 +786,7 @@
 				INFOPLIST_FILE = WillowCreekApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -806,6 +808,7 @@
 			baseConfigurationReference = 1F8F5BC4745C8F22C695573D /* Pods-WillowCreekApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WillowCreekApp/WillowCreekApp.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
@@ -817,6 +820,7 @@
 				INFOPLIST_FILE = WillowCreekApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
