@@ -386,6 +386,7 @@ HOME_FEATURES:
         arguments:
           contentChannelIds:
             - 18 # articles
+            - 19 # church updates
             - 20 # note from pastor
           limit: 10
 
