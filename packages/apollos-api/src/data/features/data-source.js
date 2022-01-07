@@ -200,11 +200,11 @@ export default class Feature extends baseFeature.dataSource {
     }));
   }
 
-  async contentCampusChannelAlgorithm({ limit = null, contentChannelId }) {
+  async contentCampusChannelAlgorithm({ limit = null, contentChannelIds }) {
     const { ContentItem } = this.context.dataSources;
 
     const cursor = await ContentItem.byUserCampus({
-      contentChannelIds: [contentChannelId],
+      contentChannelIds,
       fallback: () => ContentItem.byContentChannelId(contentChannelId),
     });
 

@@ -347,21 +347,18 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 3368
 
 HOME_FEATURES:
+  - algorithms: [DAILY_PRAYER]
+    isCard: false
+    type: PrayerList
+    title: Daily Prayer
   - type: HeroList
+    title: Featured
     heroAlgorithms: [CAMPAIGN_ITEMS, USER_FEED]
     algorithms:
       - type: PERSONA_FEED
         arguments:
           contentChannelIds:
             - 26
-  - algorithms: [DAILY_PRAYER]
-    isCard: true
-    type: PrayerList
-    title: Daily Prayer
-    subtitle: Join Us in Prayer
-  - algorithms: [SERIES_IN_PROGRESS]
-    type: HorizontalCardList
-    title: Up next for you
   - title: Upcoming
     subtitle: Events
     algorithms: [UPCOMING_EVENTS]
@@ -382,14 +379,22 @@ HOME_FEATURES:
           first: 100
           contentChannelIds:
             - 28
-  - algorithms: [USER_FEED]
-    type: VerticalCardList
+  - subtitle: At Your Campus
+    type: HorizontalCardList
+    algorithms:
+      - type: CONTENT_CAMPUS_CHANNEL
+        arguments:
+          contentChannelIds:
+            - 18 # articles
+            - 20 # note from pastor
+          limit: 10
 
 DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 27
+          contentChannelIds:
+            - 27
           limit: 3
     type: HorizontalCardList
     subtitle: Group Guides
@@ -403,7 +408,8 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 17
+          contentChannelIds:
+            - 17
           limit: 3
     type: HorizontalCardList
     subtitle: Sermon Series
@@ -417,7 +423,8 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 22
+          contentChannelIds:
+            - 22
           limit: 3
     type: HorizontalCardList
     subtitle: Devo Series
@@ -431,7 +438,8 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 14
+          contentChannelIds:
+            - 14
           limit: 3
     type: HorizontalCardList
     subtitle: Worship
@@ -445,21 +453,8 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 24
-          limit: 3
-    type: HorizontalCardList
-    subtitle: Podcast Series
-    primaryAction:
-      action: OPEN_CHANNEL
-      title: 'View More'
-      relatedNode:
-        __typename: ContentChannel
-        id: 24
-        name: Podcast Series
-  - algorithms:
-      - type: CONTENT_CAMPUS_CHANNEL
-        arguments:
-          contentChannelId: 18
+          contentChannelIds:
+            - 18
           limit: 3
     type: HorizontalCardList
     subtitle: Articles
@@ -487,7 +482,8 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 19
+          contentChannelIds:
+            - 19
           limit: 3
     type: HorizontalCardList
     subtitle: Church Updates
@@ -501,7 +497,8 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 13
+          contentChannelIds:
+            - 13
           limit: 3
     type: HorizontalCardList
     subtitle: Stories
@@ -515,7 +512,8 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 12
+          contentChannelIds:
+            - 12
           limit: 3
     type: HorizontalCardList
     subtitle: Willow Creative
@@ -529,7 +527,8 @@ DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CAMPUS_CHANNEL
         arguments:
-          contentChannelId: 15
+          contentChannelIds:
+            - 15
           limit: 3
     type: HorizontalCardList
     subtitle: Classes
