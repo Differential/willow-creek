@@ -6,6 +6,8 @@ import ApollosLandingScreen from './ui/LandingScreen';
 
 const FullScreenImage = styled({
   resizeMode: 'cover',
+  height: '100%',
+  width: '100%',
   ...StyleSheet.absoluteFill,
 })(Image);
 
