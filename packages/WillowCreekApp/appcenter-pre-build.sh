@@ -4,8 +4,8 @@ droid_dir=$(pwd)/android
 
 cp $droid_dir/gradle.properties.appcenter $droid_dir/gradle.properties
 
-cd ios
-pod install
+#cd ios
+#pod install
 # cd ..
 
 # You can comment this out if your app doesn't have an existing build number.
