@@ -95,7 +95,7 @@
     "react-native-swiper": "^1.5.14",
     "react-native-video": "^5.0.0",
     "react-native-video-controls": "2.2.3",
-    "react-native-webview": "^7.0.0",
+    "react-native-webview": "^10.0.0",
     "react-native-youtube-sdk": "^1.0.4",
     "react-navigation": "^3.11.0",
     "react-navigation-tabs": "0.6.0",
