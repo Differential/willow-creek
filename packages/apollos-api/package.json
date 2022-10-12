@@ -45,7 +45,7 @@
     "@apollosproject/server-core": "^1.7.0-beta.3",
     "@babel/node": "^7.2.2",
     "apollo-datasource-rest": "^0.4.0",
-    "apollo-server": "^2.14.2",
+    "apollo-server": "^2.25.4",
     "apollo-server-express": "2.14.2",
     "color": "3.0.0",
     "dotenv": "6.0.0",
